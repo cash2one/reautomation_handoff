@@ -1,0 +1,24 @@
++ wlan access-rule %(cppm_server_name)s
++  rule any any match any any any permit
++ wlan ssid-profile %(cppm_server_name)s
++  enable
++  type guest
++  essid %(cppm_server_name)s
++  opmode opensystem
++  max-authentication-failures 0
++  auth-server %(Authentication_server)s
++  rf-band all
++  captive-portal external profile %(Captive_Role_Name)s
++  dtim-period 1
++  inactivity-timeout 1000
++  broadcast-filter none
++  dmo-channel-utilization-threshold 90
++  local-probe-req-thresh 0
++  max-clients-threshold 64
++  okc-disable
++ wlan external-captive-portal RoleTest
++  server 10.17.50.110
++  port 5000
++  url "www.yahoo.com"
++  auth-text "RoleTest"
++  auto-whitelist-disable

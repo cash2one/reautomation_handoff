@@ -1,0 +1,9 @@
++  80mhz-support
+!  band-steering-mode prefer-5ghz
+!  air-time-fairness-mode fair-access
+!  band-steering-mode balance-bands
+!  air-time-fairness-mode preferred-access
+!  scanning
+!  client-match
+!  client-match calc-threshold 1
+!  client-match calc-interval 20

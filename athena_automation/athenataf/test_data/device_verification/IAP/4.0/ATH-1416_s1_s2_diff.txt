@@ -1,0 +1,1 @@
++ ntp-server %(right_ntp_server_ip)s

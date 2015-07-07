@@ -1,0 +1,4 @@
+!  type voice
+!  type employee
+!  local-probe-req-thresh 100
+!  local-probe-req-thresh 0

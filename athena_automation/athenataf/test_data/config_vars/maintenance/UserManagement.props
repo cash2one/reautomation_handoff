@@ -1,0 +1,5 @@
+valid_user_email									: admin1@alpha.com
+access_level_adminstrator             				: administrator
+access_level_read_write								: read/write
+default_user_scope									: default
+access_level_read_only								: read only

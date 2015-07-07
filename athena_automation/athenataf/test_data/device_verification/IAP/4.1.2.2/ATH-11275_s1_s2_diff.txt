@@ -1,0 +1,20 @@
++ wlan access-rule Test1934
++  rule any any match any any any permit
++ wired-port-profile Test1934
++  switchport-mode trunk
++  allowed-vlan 20
++  native-vlan 20
++  no shutdown
++  access-rule-name Test1934
++  speed auto
++  duplex auto
++  poe
++  type guest
++  captive-portal internal
++  no dot1x
++  set-vlan AP-Group contains athena 20
++  set-vlan AP-Group not-equals ah 810
++  set-vlan AP-Group ends-with jing 7
++  set-vlan AP-Group equals aruba 810
++  set-vlan AP-Group starts-with ah 7
++  set-vlan AP-Group equals han 102

@@ -1,0 +1,118 @@
+new_background_spectrum_5ghz_value 									:  Enabled
+new_interface_immunity_5ghz_value 									:  4
+wide_channel_bands_value 											:  5 GHz
+min_transmit_power_value 											:  18
+minimum_transmit_power_value 										:  3
+maximum_transmit_power_value 										:  18
+legacy_only_5ghz_value 												:  Disabled
+background_spectrum_24ghz_value 									:  Disabled
+client_aware_value 													:  Enabled
+new_airtime_fairness_mode_value 									:  Preferred Access
+cm_threshold_boundry_value 											:  1
+band_steering_mode_value 											:  Prefer 5GHz
+slb_mode_value_2nd 													:  Radio
+channel_switch_announce_24ghz_value 								:  0
+band_streering_disable 												:  Disable
+wide_channel_bands_none 											:  None
+wide_channel_bands_5ghz 											:  5 GHz
+new_wide_channel_bands_value 										:  None
+new_max_transmit_power_value 										:  15
+new_dropdown_11d_11h_24ghz_value 									:  Enabled
+invalid_cm_calculating_interval_value 								:  200
+band_streering_force_5ghz 											:  Force 5GHz
+airtime_fairness_mode_default_access 								:  Default Access
+new_cm_threshold_value 												:  22
+wide_channel_bands_all 												:  All
+background_spectrum_5ghz_value 										:  Disabled
+new_legacy_only_24ghz_value 										:  Enabled
+beacon_interval_value 												:  100
+cm_threshold_value 													:  2
+new_background_spectrum_24ghz_value 								:  Enabled
+wide_channel_bands_24ghz 											:  2.4 GHz
+network_value 														:  Error
+change_min_transmit_power_value 									:  21
+new_interface_immunity_24ghz_value 									:  4
+airtime_fairness_mode_fair_access 									:  Fair Access
+enable_mhz_support_value 											:  Enabled		
+new_cm_neighbour_matching_value 									:  150
+new_channel_switch_announce_5ghz_value 								:  5
+channel_switch_announce_5ghz_value 									:  0
+client_match_enabled 												:  Enabled
+new_cm_calculating_interval_value 									:  15			
+scanning_value 														:  Enabled
+new_min_transmit_power_value 										:  12
+mhz_support_value 													:  Disabled
+cm_neighbour_matching_boundry_value 								:  100
+new_mhz_support_value 												:  Enabled
+dropdown_11d_11h_5ghz_value 										:  Disabled
+client_match_disabled 												:  Disabled
+legacy_only_24ghz_value 											:  Disabled
+Default_band_steering_mode 											:  Prefer 5GHz
+new_beacon_interval_value 											:  300
+slb_mode_value_3rd 													:  Channel + Radio
+new_client_match_value 												:  Enabled
+cm_neighbour_matching_value 										:  75
+beacon_interval_value_outside_range 								:  50
+new_dropdown_11d_11h_5ghz_value 									:  Enabled
+cm_calculating_interval_value 										:  30
+interface_immunity_5ghz_value 										:  2
+dropdown_11d_11h_24ghz_value 										:  Disabled
+new_scanning_value 													:  Disabled
+enable_scanning                                                     :  Enabled
+band_streering_balance_band 										:  Balance Bands
+new_client_aware_value 												:  Disabled
+max_transmit_power_value 											:  Max
+new_band_steering_mode_value 										:  Balance Bands
+interface_immunity_24ghz_value 										:  2
+airtime_fairness_mode_preferred_access 								:  Preferred Access
+client_match_value 													:  Disabled
+change_max_transmit_power_value 									:  33
+new_legacy_only_5ghz_value 											:  Enabled
+band_streering_prefer_5ghz 											:  Prefer 5GHz
+slb_mode_value 														:  Channel
+new_channel_switch_announce_24ghz_value 							:  5
+airtime_fairness_mode_value 										:  Fair Access
+char_cm_calculating_interval_value 									:  c
+cm_calculating_interval_boundry_value 								:  20
+legacy_only_enabled													:  Enabled
+legacy_only_disabled												:  Disabled
+band_802_enabled													:  Enabled
+band_802_disabled													:  Disabled
+spectrum_monitoring_enabled											:  Enabled
+spectrum_monitoring_disabled										:  Disabled
+interface_immunity_5												:  5
+beacon_interval_value_200											:  200
+interface_immunity_1												:  1
+new_channel_switch_announce_5										:  10
+beacon_interval_value_120											:  120
+cm_calculating_interval_boundry_value1								: 50
+cm_neighbour_matching_value1										: 80
+cm_threshold_value1													: 10
+new_min_transmit_power_value1										: 9
+max_transmit_power_value1											: 24
+cm_calculating_interval_boundry_value2								: 80
+cm_neighbour_matching_value2										: 100
+cm_threshold_value2													: 20
+beacon_interval_value_outside_range_600        						: 600
+beacon_interval_value_preceding_zero      							  : 0100
+beacon_interval_value_alpa_spl_char       							  : abc*
+empty_value															:
+valid_cm_calculating_interval										: 100
+zero_preceding_cm_calcultng_interval								: 060
+string_cm_calculating_interval										: ab-c a$%
+zero_cm_neighbour_matching_boundry									: 0
+zero_preceding_cm_neighbour_matching								: 040
+one_cm_neighbour_matching											: 1
+string_cm_neighbour_matching										: -xyz a&*	
+zero_preceding_cm_threshold_value									: 010
+string_cm_threshold_value											: xy$ -2
+zero_cm_threshold_value												: 0
+one_cm_threshold_value												: 1
+sixty																: 60
+ninty_five															: 95
+cm_calculating_interval_85											: 85
+new_beacon_interval_value1											: 110
+new_channel_switch_announce_3 										: 3
+announcement_count_8												: 8
+beacon_interval_450													: 450
+cm_calculating_interval_66											: 66

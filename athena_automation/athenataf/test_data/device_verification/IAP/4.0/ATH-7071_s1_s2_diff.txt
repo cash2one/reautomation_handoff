@@ -1,0 +1,22 @@
++ wlan access-rule XXXX
++  rule any any match any any any permit
++ wlan access-rule "new role"
++  rule any any match any any any permit
++ wlan ssid-profile XXXX
++  enable
++  type employee
++  essid XXXX
++  opmode wpa2-psk-aes
++  max-authentication-failures 0
++  auth-server InternalServer
++  set-role AP-Group equals something2 "new role"
++  rf-band all
++  captive-portal disable
++  dtim-period 1
++  inactivity-timeout 1000
++  broadcast-filter none
++  blacklist
++  dmo-channel-utilization-threshold 90
++  local-probe-req-thresh 0
++  max-clients-threshold 64
++  okc-disable

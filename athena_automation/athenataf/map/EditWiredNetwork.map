@@ -1,0 +1,75 @@
+speed											: select&id&Wired_Speed
+duplex											: select&id&Wired_Duplex
+admin_status									: select&id&Wired_Admin_Status
+uplink											: select&id&Wired_Uplink
+network_assign                                   :button&xpath&//*[@id='accordion-section-6']/div[1]
+network_assign1									: button&xpath&//span[@class='accordion-arrow']&6
+network_assign_content							: button&id&accordion-section-content-6
+profile_1										: select&id&Wired_Profile_1
+save											: submit&id&ngSave
+content											: select&id&Wired_Content_Filtering
+speed_assert									: button&text&10
+duplex_assert									: button&text&half
+admin_assert									: button&text&Up
+profile_0										: select&id&Wired_Profile_0
+
+poe												: select&id&Wired_POE
+spanning_tree									: select&id&spanning_tree
+primary_usage_employee							: button&id&PrimaryUsageEmployee
+vlans_accordion                                 :button&xpath&//*[@id='accordion-section-3']/div[1]
+vlans_accordion1									: button&xpath&//span[@class='accordion-arrow']&3
+access_accordion								: button&xpath&//*[@id='accordion-section-5']/div[1]
+security_accordion								: button&xpath&//*[@id='accordion-section-4']/div[1]
+mode											: select&id&vlan_mode_select
+network_assigned								: button&xpath&//label[text() ='Network Assigned']/../input
+splash_page_type								: select&id&security_captive_portal
+access_vlan										: textbox&id&access_vlan
+new_vlan_rule_button							: button&id&new_vlan_rule_button
+vlan_rule_type									: select&id&vlan_rule_type
+vlan_rule_assign_operator						: select&id&vlan_rule_assign_operator
+vlan_rule_name									: textbox&id&vlan_rule_name
+rule_vlan										: textbox&id&rule_vlan
+submit_vlan_form_button							: button&id&submit_vlan_form_button
+mac_authentication_no_enterprise				: select&id&mac_authentication_no_enterprise
+reauth_interval									: textbox&xpath&//input[@name = 'reauth_interval']
+reauth_unit										: select&id&reauth_unit
+checkbox_box_3g									: checkbox&id&disable_uplink_0
+checkbox_box_wifi								: checkbox&id&disable_uplink_1
+checkbox_box_ethernet							: checkbox&id&disable_uplink_2
+role_based										: button&id&role-based
+create_role										: button&id&create_role
+role_input										: textbox&id&role_input
+create_role_ok									: button&id&create_new_role
+new_role_assignment								: button&id&new_role_assignment
+role_assign_attribute							: select&id&role_assign_attribute
+role_assign_operator							: select&id&role_assign_operator
+role_assign_operand								: textbox&id&role_assign_operand
+role_assign_name								: select&id&role_assign_name
+save_role_assignments							: button&id&save_role_assignments
+wired_profile_2 								: select&id&Wired_Profile_2
+wired_profile_3 								: select&id&Wired_Profile_3
+wired_profile_4 								: select&id&Wired_Profile_4
+wired_profile_5 								: select&id&Wired_Profile_5
+save_settings									: button&xpath&//span[text()= 'Save Settings']
+show_users_link 								: link&id&show_users_link
+userTxt											: textbox&id&userTxt
+pswdTxt											: textbox&id&pswdTxt
+pswdTxt2										: textbox&id&pswdTxt2
+typeTxt											: select&id&typeTxt
+updateButton									: button&id&updateButton
+okButton										: button&id&OkButton
+authentication_server							: select&name&auth_server1
+authentication_server_2							: select&id&auth_server2
+vlan_rule_0										: button&id&vlan_rule_0
+delete_vlan_rule								: button&id&delete_vlan_rule_button
+move_selected_rule_down							: button&id&move_selected_rule_down
+move_selected_rule_up							: button&id&move_selected_rule_up
+vlan_rule_3										: button&id&vlan_rule_3
+authentication_802_1x							: select&id&dot1x
+auth_server_name								: textbox&id&auth_server_name
+auth_ipaddr										: textbox&id&auth_ipaddr
+Auth_Sharedkey									: textbox&id&Auth_Sharedkey
+Retype_auth_shared_key							: textbox&id&Retype_auth_shared_key&0
+save_server										: button&id&confirm-save-ok&0
+mac_authentication_fail_through					: select&id&l2_auth_failthrough_wired
+load_balancing_dropdown							: select&id&load_balancing

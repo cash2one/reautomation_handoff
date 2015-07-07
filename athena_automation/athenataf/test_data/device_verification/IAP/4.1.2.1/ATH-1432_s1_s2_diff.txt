@@ -1,0 +1,5 @@
++ pppoe-uplink-profile
++  pppoe-username %(Cell_Usb_User)s
++  pppoe-passwd 
++  pppoe-svcname %(Service_Name)s
++  pppoe-chapsecret 

@@ -1,0 +1,7 @@
+  
+  arm
+   wide-bands 5ghz
++  80mhz-support
+   min-tx-power 18
+   max-tx-power 127
+   band-steering-mode prefer-5ghz

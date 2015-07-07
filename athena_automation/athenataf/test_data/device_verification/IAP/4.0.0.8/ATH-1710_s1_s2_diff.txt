@@ -1,0 +1,24 @@
++ wlan access-rule %(Network_name)s
++  rule any any match any any any permit
++ wlan ssid-profile %(Network_name)s
++  enable
++  type guest
++  essid test1
++  opmode opensystem
++  max-authentication-failures 0
++  set-role AP-Group contains %(ap_group)s default_wired_port_profile
++  set-role AP-Name value-of
++  set-role Acct-Session-Id equals %(acct_session_id)s default_wired_port_profile
++  set-role Aruba-Port-Id not-equals %(aruba_port_id)s default_wired_port_profile
++  set-role dhcp-option starts-with %(dhcp_option)s default_wired_port_profile
++  set-role mac-address-and-dhcp-options matches-regular-expression  default_wired_port_profile
++  set-role dot1x-authentication-type ends-with %(dot1x_authentication_type)s default_wired_port_profile
++  rf-band all
++  captive-portal internal
++  dtim-period 1
++  inactivity-timeout 1000
++  broadcast-filter none
++  dmo-channel-utilization-threshold 90
++  local-probe-req-thresh 0
++  max-clients-threshold 64
++  okc-disable

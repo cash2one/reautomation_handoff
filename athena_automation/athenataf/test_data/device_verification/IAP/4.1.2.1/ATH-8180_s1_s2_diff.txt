@@ -1,0 +1,2 @@
+!  wireless-containment none
+!  wireless-containment tarpit-all-sta

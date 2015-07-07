@@ -1,0 +1,53 @@
+create_new_pci_report											: button&id&Create_PCI
+pci_run_report_now												: button&id&now
+pci_run_report_later											: button&id&later
+report_repeat									                : select&id&report_periodic
+pci_run_report_schedule_later_date       						: ignore&xpath&//input[@id='enddate2']
+pci_date_sep_30									 				: button&xpath&//a[text()='30']
+date_15									 	                    : button&xpath&//a[text()='15']
+pci_time														: select&id&timelist
+pci_email_report			           							: checkbox&id&emailreport
+pci_report_email												: textbox&css&#Email_Id_List
+cde_subnets														: button&id&cdsubnets
+cde_ssids      													: button&id&cdessids
+create_new_cde_subnets											: button&id&Create_cde_subnets
+cde_subnets_network												: textbox&id&cde_ip_addr
+cde_subnets_mask												: textbox&id&cde_sub_netmsk
+cde_subnets_add													: button&id&add_cde_subnets
+cde_subnets_cancel												: button&id&cancel_cde_subnets
+select_all_cde_ssids											: checkbox&id&cdeSSIDsConfig_toggle_select_all 
+generate_pci_report												: button&css&#createnewreport
+cancel_new_report												: button&id&cancelnewreport
+
+multiSelect														: ignore&xpath&//input[@id="reportsTable_toggle_select_all"]
+
+delete_pci_reports												: button&css&#Delete_PCI
+pci_scheduled_status											: label&xpath&//span[text()='Scheduled']&0
+pci_completed_status											: label&xpath&//span[text()='Completed']&8
+pci_completed_export											: button&xpath&//span[ @class="ng-binding" and text()='Export']&10
+pci_email_user_button											: button&xpath&//a[@class='button blue small']/span[text()='Email']&0
+pci_email_user													: textbox&id&Send_Email_Id_List
+success_msg														: label&xpath&//div[@class='success-msg email-notify' and @ng-show='successMsg']
+pci_disabled_delete_button										: button&xpath&//button[@disabled="disabled" and @class="button delete medium" ]
+email_ok														: button&xpath&//span[text()='OK']&0
+pci_next_month													: button&xpath&//span[text()='Next']
+pci_report_1                                                    : chain&id&reportsTable_report_name_display_0
+pci_report_details_table                                        : chain&xpath&//table[@id='pci_report_aps']
+pci_compliance_reports_table                                    : table&id&pci_summary_reportsTable
+pci_report_confirm_content                                      : ignore&xpath&//div[@id='ConfirmContent_common' and text()='Please select either CDE SSIDs or CDE Subnet.']
+
+pci_create_new_report_close                                     : ignore&xpath&//a[@id='overlay-sch-close']/span
+pci_cde_subnet_required_network                                 : ignore&xpath&//span[@id='requiredip']
+pci_cde_subnet_required_mask                                    : ignore&xpath&//span[@id='requiredmask']
+pci_compliance_table_empty                                      : ignore&xpath&//div[@id='reportsTable__no_data_msg' and text()='No data to display']
+pci_email_main_table_user_button								: button&id&pciReportEmailButton
+warning_button_ok                                               : ignore&xpath&//div[@id='warnigBox_common_Alert']/div[2]/div/a
+pci_select_group                                                : ignore&xpath&//ul[@class='select2-choices']//li//input
+all_groups_tag                                                  : ignore&xpath&//label[text()='All Groups']
+device_groups                                                   : ignore&xpath&//input[contains(@id,"s2id_autogen")]
+invalid_email_message                                           : ignore&id&invalidEmail
+report_details_email_button						                : button&id&email_pci_report
+report_details_close_button						                : button&id&cancel_pci_report
+select_group_icon								                : ignore&xpath&//span[@class='slider-menu-icon toggleGroupOff']
+select_default_group                                            : ignore&xpath&//span[contains(@id,'group_name_')]/span[text()="default"]
+default_group_label                                             : button&xpath&//label[text()='default']

@@ -1,0 +1,69 @@
+create_new_report								: button&id&CreateNetReport
+custom_report_name								: textbox&id&customReportName
+time_span										: select&id&TimeSpan
+run_report_now									: button&id&now
+run_report_schedule_for_later					: button&id&later
+report_repeat									: select&id&report_periodic
+email_report           							: checkbox&id&emailreport
+create											: button&id&createnewreport
+cancel_report									: button&id&cancelnewreport
+report_email									: textbox&id&Email_Id_List
+completed_status    	 						: label&xpath&//span[text()='Completed']&0
+select_all										: checkbox&id&reportsTableNetworks_toggle_select_all
+delete_network_report							: button&id&DeleteNetReport
+run_report_schedule_later_date       			: ignore&id&enddate2
+date_sep_30										: button&xpath&//a[text()='30']
+scheduled_status								: label&id&reportsTable_status_display_0
+disabled_delete_button							: button&xpath&//button[@disabled="disabled" and  @id="DeleteNetReport"]/label/span
+export_11										: label&xpath&//span[text()='Export']&11
+completed_export_11       						: label&xpath&//span[ @class="ng-binding" and text()='Export']&11 
+export_8  										: label&xpath&//span[text()='Export']&8
+next_month										: button&xpath&//span[text()='Next']
+scheduled_status_chkbx							:checkbox&xpath&//td[@id='reportsTable_row_selector_0']/input
+device_groups                                   : ignore&xpath&//input[contains(@id,"s2id_autogen")]
+date_15									 	    : button&xpath&//a[text()='15']
+select_group                                    : ignore&xpath&//select[@ng-model='selectedGroups']
+invalid_email_message                           : ignore&id&invalidEmail
+email_user_button								: button&xpath&//a[@class='button blue small']/span[text()='Email']&0
+email_user										: textbox&id&Send_Email_Id_List
+first_report                                    : ignore&xpath&//tr[@id='reportsTableNetworks_select_row_0']//td[2]
+ap_table                                        : ignore&xpath&//table[@id='reports_netsum_aps_table']
+report_export                                   : ignore&id&networkReportExportButton
+number_of_aps_label                             : ignore&xpath&//span[text()='NUMBER OF APs']
+ap_model_label                                  : ignore&xpath&//div[text()='AP MODEL']
+top_ten_wireless_clients_label                  : ignore&xpath&//label[text()='TOP TEN WIRELESS CLIENTS BY USAGE']
+email_ok										: button&xpath&//span[text()='OK']&0
+success_msg										: ignore&xpath&//div[@class='success-msg email-notify' and @ng-show='successMsg']
+email_success_msg_details_page                  : ignore&xpath&//div[@class='success-msg email_notify' and @ng-show='successMsg']
+report_details_email_button						: button&id&email_net_report
+report_details_close_button						: button&id&cancel_net_report
+first_report_title                              : ignore&id&reportsTableNetworks_select_row_0
+end_date										: ignore&id&enddate
+
+confirm_end_date_less_than_start                : ignore&xpath&//div[@id='ConfirmContent_common' and text()='End Date should be greater than Start Date']
+warning_button_ok                               : ignore&xpath&//div[@id='warnigBox_common_Alert']/div[2]/div/a
+calendar_prev_month								: button&xpath&//span[text()='Prev']
+
+select_group_icon								: ignore&xpath&//span[@class='slider-menu-icon toggleGroupOff']
+select_default_group                            : ignore&xpath&//span[@id='group_name_0']
+select_next_group                               : ignore&xpath&//span[@id='group_name_1']
+show_swarms                                     : ignore&id&show_swarms_0
+vc_name                                         : ignore&id&swarm_name_0
+all_groups_tag                                  : ignore&xpath&//label[text()='All Groups']
+default_group_label                             :   button&xpath&//label[text()='default']
+device_types_label                              : ignore&xpath&//div[text()='DEVICE TYPES']
+top_ten_aps_usage_label                         : ignore&xpath&//label[text()='TOP TEN APs BY USAGE']
+top_usage_by_ssid                               : ignore&xpath&//div[text()='TOTAL USAGE BY SSID']
+wireless_clients_label                          : ignore&xpath&//div[text()='WIRELESS CLIENTS']
+wireless_data_usage                             : ignore&xpath&//div[text()='WIRELESS DATA USAGE']
+close_detail_report                             : ignore&xpath&//button[@ng-click='closeReport()']
+export_detail_report                            : ignore&id&export_net_report
+email_id_input                                  : ignore&xpath&//input[@id='Send_Email_Id_List']
+email_input_ok                                  : ignore&xpath&//button[@ng-click='submitted=true;']
+email_confirmation                              : ignore&xpath&//span[@help-id='netsum_rep_mail_sent']
+toolTip                                         : ignore&xpath&//tr[@class='tooltip tttop ng-scope ng-isolate-scope' and @id='reportsTableNetworks_select_row_0']
+report_group                                    : ignore&id&reportsTableNetworks_groupNames_display_0
+select_first_report                             : ignore&id&reportsTableNetworks_row_selector_0
+report_saved_by                                 : ignore&id&reportsTableNetworks_saved_by_display_0
+invalid_schedule_date_message                   : ignore&xpath&//div[text()='Scheduled date should be greater than or equal to current date']
+start_date                                      : ignore&id&StartDate

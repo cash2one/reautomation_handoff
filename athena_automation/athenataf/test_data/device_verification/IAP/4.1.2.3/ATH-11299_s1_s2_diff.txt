@@ -1,0 +1,16 @@
++ wlan access-rule testwired
++  rule any any match udp 8200 8200 permit log blacklist classify-media tos 0 dot1p-priority 0
++  rule any any match udp 67 68 permit log blacklist classify-media tos 0 dot1p-priority 0
++  rule any any match udp 53 53 permit log blacklist classify-media tos 0 dot1p-priority 0
++ wired-port-profile testwired
++  switchport-mode trunk
++  allowed-vlan all
++  native-vlan guest
++  no shutdown
++  access-rule-name testwired
++  speed auto
++  duplex auto
++  poe
++  type employee
++  captive-portal disable
++  no dot1x

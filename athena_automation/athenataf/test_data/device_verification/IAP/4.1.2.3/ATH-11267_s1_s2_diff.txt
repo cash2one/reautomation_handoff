@@ -1,0 +1,14 @@
++ wlan access-rule testwired
++  rule any any match any any any permit
++ wired-port-profile testwired
++  switchport-mode access
++  allowed-vlan all
++  native-vlan guest
++  no shutdown
++  access-rule-name testwired
++  speed auto
++  duplex auto
++  poe
++  type employee
++  captive-portal disable
++  no dot1x

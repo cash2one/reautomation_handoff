@@ -1,0 +1,8 @@
++ proxy server 192.168.1.10 2345
++ proxy exception 192.168.1.34
++ proxy exception 192.168.1.30
++ proxy exception 10.10.1.10
++ proxy exception 152.10.2.24
++ proxy exception 192.168.1.24
++ proxy exception yahoo.com
++ proxy exception aruba.com

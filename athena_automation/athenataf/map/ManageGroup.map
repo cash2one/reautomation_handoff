@@ -1,0 +1,82 @@
+sample_group											: button&xpath&//span[text()='samplegroup' and @class="ng-binding"]&0
+sample_group1											: button&xpath&//span[text()='samplegroup' and @class="ng-binding"]&1
+new_group												: button&xpath&//span[text()='newgroup' and @class="ng-binding"]&0
+delete													: submit&xpath&//span[text()='Delete']&0
+close													: submit&id&close_group_manage
+logo													: button&css_class&logo
+close_icon												: submit&id&close_manage_group_overlay&1
+group_list												: button&css_class&group-list-table&0
+move													: submit&xpath&//span[text()='Move']
+virtual_controller										: button&xpath&//td[@id='manageVCListTable_row_selector_0']/input
+default_group											: button&xpath&//span[text()='default' and @class="ng-binding"]&0
+save													: submit&xpath&//a[@id='save_group_assignment']/span
+create_new_group										: submit&xpath&//label[text()='Create New Group']
+select_all												: checkbox&xpath&//input[@id='manageVCListTable_toggle_select_all']
+alert_msg												: button&id&ConfirmContent_common
+alert_ok												: button&xpath&//div[@id='warnigBox_common_Alert']/div[2]/div/a
+manage_group_close										: button&xpath&//a[@id='close_group_manage']/span
+switch_group											: button&xpath&//span[text()='switch' and @class="ng-binding"]&1
+group1													: button&xpath&//span[text()='group1' and @class="ng-binding"]&0
+select_vc												: button&id&manageSwitchListTable_toggle_select_all
+group2													: button&xpath&//span[text()='group2' and @class="ng-binding"]&0
+no_data_message											: label&id&manageSwitchListTable__no_data_msg
+clone													: button&id&clone_group
+group_name												: textbox&xpath&//input[@id='new_group_name' and @type="text"]
+save_group												: submit&xpath&//a[@id='hide_manage_overlay']/following-sibling::button[text()='Save']&0
+samplegroup2											: button&xpath&//span[text()='samplegroup2' and @class="ng-binding"]&0
+alert_msg_for_current_working_group      				: button&xpath&//div[@id='ConfirmContent_common' and text()='Working group cannot be deleted.']
+alert_msg_for_moving_group_without_selecting_vc   		: button&xpath&//div[@id='ConfirmContent_common' and text()='Please select at least one VC to move.']
+all_group            									: button&xpath&//span[text()='All' and @class="ng-binding"]
+disabled_delete           								: button&xpath&//button[@id='delete_group' and @disabled='disabled']
+disabled_clone           								: button&xpath&//button[@id='clone_group' and @disabled='disabled']
+manage_alpha_group_a									: button&xpath&//span[text()='ab']&1
+manage_alpha_group_b									: button&xpath&//span[text()='bc']&1
+manage_alpha_group_c									: button&xpath&//span[text()='cd']&1
+manage_alpha_group_d									: button&xpath&//span[text()='de']&1
+manage_alpha_group_e									: button&xpath&//span[text()='ef']&1
+manage_alpha_group_f									: button&xpath&//span[text()='fg']&1
+manage_alpha_group_g									: button&xpath&//span[text()='gh']&1
+manage_alpha_group_h									: button&xpath&//span[text()='hi']&1
+manage_alpha_group_i									: button&xpath&//span[text()='ij']&1
+manage_alpha_group_j									: button&xpath&//span[text()='jk']&1
+group_name_a    										: button&xpath&//span[text()='a' and @class="ng-binding"]&0
+group_name_spcl_char    								: button&xpath&//span[text()='[]{}|||\\\<>??""' and @class="ng-binding"]&0
+group_name_8    										: button&xpath&//span[text()='8' and @class="ng-binding"]&0
+group_name_1group    									: button&xpath&//span[text()='1group' and @class="ng-binding"]&0
+default_group1											: button&xpath&//span[text()='default' and @class="ng-binding"]&1
+manage_groups_button						            : button&id&hide_manage
+create_groups_button						            : button&id&hide_manage_2
+all_groups_button 										: button&xpath&//span[text()='All Groups' and @class="ng-binding"]
+Mygroup													: button&xpath&//span[text()='Mygroup' and @class="ng-binding"]&0
+Mynew													: button&xpath&//span[text()='Mynew' and @class="ng-binding"]&0
+Mygroup2												: button&xpath&//span[text()='Mygroup2' and @class="ng-binding"]&0
+group_3													: button&xpath&//span[text()='group3' and @class="ng-binding"]&0
+group_4													: button&xpath&//span[text()='group4' and @class="ng-binding"]&0
+group_5													: button&xpath&//span[text()='group5' and @class="ng-binding"]&0
+group_6													: button&xpath&//span[text()='group6' and @class="ng-binding"]&0
+group_7													: button&xpath&//span[text()='group7' and @class="ng-binding"]&0
+group_8													: button&xpath&//span[text()='group8' and @class="ng-binding"]&0
+group_9													: button&xpath&//span[text()='group9' and @class="ng-binding"]&0
+group_10													: button&xpath&//span[text()='group10' and @class="ng-binding"]&0
+move_from_default										: button&xpath&//span[text()='default' and @class="ng-binding"]&0
+move_to_group1											: button&xpath&//span[text()='group1' and @class="ng-binding"]&1
+select_group_1											: button&xpath&//span[text()='group1']
+switches_toggle 										: button&xpath&//a[@id='toggle_sw']
+select_switch1											: checkbox&id&manageSwitchListTable_row_selector_0
+select_switch2											: checkbox&id&manageSwitchListTable_row_selector_1
+move_to_group2											: button&xpath&//span[text()='group2' and @class="ng-binding"]&1
+
+group1_switch											: checkbox&xpath&//span[contains(.,'group1')]/../../td[1]/input
+toggle_switch										    : button&id&toggle_sw 
+
+switch_group1											: button&xpath&//span[text()='switch' and @class="ng-binding"]&0
+group2_move												: button&xpath&//span[text()='group2' and @class="ng-binding"]&1
+
+
+unprovisioned_new_group								: button&xpath&//label[@help-id='createnewgroup' and text()='New Group']
+existing_group										: button&xpath&//label[text()='Existing Group']
+password_text										: textbox&id&cddc_password&1
+confirm_password_text								: textbox&id&cddc_password_confirm&1
+group_sidebar_close_icon							:button&id&group_sidebar_close_icon
+creategroup_btn										: button&id&group_sidebar_creategroup_btn
+slider_icon											: button&css&.slider-menu-icon.toggleGroupOff

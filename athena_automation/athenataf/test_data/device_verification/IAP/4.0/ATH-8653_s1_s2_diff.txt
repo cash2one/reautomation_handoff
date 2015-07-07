@@ -1,0 +1,10 @@
+  arm
+   wide-bands 5ghz
+!  min-tx-power %(min_transmit_power_value)s
+   max-tx-power 127
+   band-steering-mode prefer-5ghz
+  arm
+   wide-bands 5ghz
+!  min-tx-power %(new_min_transmit_power_value)s
+   max-tx-power 127
+   band-steering-mode prefer-5ghz

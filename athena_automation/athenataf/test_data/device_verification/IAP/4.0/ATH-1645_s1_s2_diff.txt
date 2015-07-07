@@ -1,0 +1,8 @@
++ wlan ldap-server %(ldap_valid_name)s
++  ip %(ldap_valid_ip)s
++  port 389
++  admin-dn %(dn_value)s
++  admin-password 
++  base-dn %(dn_value)s
++  filter (objectclass=*)
++  key-attribute sAMAccountName

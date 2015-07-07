@@ -1,0 +1,22 @@
++ wlan access-rule %(Network_name)s
++  rule any any match any any any permit
++  rule any any match udp 67 68 dst-nat ip %(action_ip)s %(action_port)s
++  rule any any match udp 53 53 permit
++  rule any any match esp any any src-nat log blacklist classify-media disable-scanning tos 0 dot1p-priority 0
++  rule any any match tcp 21 21 deny
++  rule any any match gre any any permit
++  rule any any match tcp 1720 1720 deny
++ wlan ssid-profile %(Network_name)s
++  enable
++  type guest
++  essid %(Network_name)s
++  opmode opensystem
++  max-authentication-failures 0
++  rf-band all
++  captive-portal internal
++  dtim-period 1
++  inactivity-timeout 1000
++  broadcast-filter none
++  dmo-channel-utilization-threshold 90
++  local-probe-req-thresh 0
++  max-clients-threshold 64

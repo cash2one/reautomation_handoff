@@ -1,0 +1,4 @@
+!  band-steering-mode prefer-5ghz
+!  band-steering-mode balance-bands
+
+  

@@ -1,0 +1,20 @@
+access_vlan											: 3
+access_vlan1										: 1
+admin_down											: Down
+admin_up											: Up
+portmode_access										: Access
+portmode_trunk										: Trunk
+native_vlan_default									: 1
+poe1_enabled										: Enabled
+poe1_disabled										: Disabled
+allowed_vlan_default								: 1-4094
+speed_auto											: Auto
+speed_10mbps										: 10 Mbps
+speed_100mbps										: 100 Mbps
+speed_1gbps											: 1 Gbps
+invalid_access_vlan									: 0
+invalid_access_vlan1								: 4095
+invalid_access_vlan2								: abc
+allowed_vlan_1										: 4-10
+native_vlan_1										: 60
+allowed_vlan_2										: 10

@@ -1,0 +1,5 @@
++  client-match nb-matching %(basic_speed)s
++  client-match calc-threshold %(cm_threshold_boundry_value)s
++  client-match calc-interval %(cm_calculating_interval_boundry_value)s
+  
+  

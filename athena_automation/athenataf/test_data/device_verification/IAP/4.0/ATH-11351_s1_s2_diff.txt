@@ -1,0 +1,40 @@
+  
+  enet0-port-profile default_wired_port_profile
+  
+  uplink
+   preemption
+!  enforce none
+   failover-internet-pkt-lost-cnt 10
+   failover-internet-pkt-send-freq 30
+!  failover-vpn-timeout 180
+  
+  l3-mobility
+   home-agent-load-balancing
+  
+  enet0-port-profile default_wired_port_profile
+  
++ cellular-uplink-profile
++  4g-usb-type def
++  usb-type abc
++  usb-dev ghi
++  usb-tty jkl
++  usb-init mno
++  usb-auth-type CHAP
++  usb-user wxyz
++  usb-passwd 
++  usb-dial pqrs
++  usb-modeswitch tuv
++ wlan sta-profile
++  essid Guest123
++  cipher-suite wpa-tkip-psk
++  uplink-band dot11g
+  uplink
+   preemption
+!  enforce ethernet
+!  failover-internet
+   failover-internet-pkt-lost-cnt 10
+   failover-internet-pkt-send-freq 30
+!  failover-vpn-timeout 3600
+  
+  l3-mobility
+   home-agent-load-balancing

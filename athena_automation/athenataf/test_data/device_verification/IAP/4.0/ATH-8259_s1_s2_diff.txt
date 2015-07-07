@@ -1,0 +1,2 @@
++ ale-server %(service_server)s:8088
++ ale-report-interval %(report_interval_location_new)s

@@ -1,0 +1,13 @@
+!  enforce none
+!  enforce wifi
+!  failover-vpn-timeout 180
+!  failover-vpn-timeout 2500
+!  uplink-priority ethernet 2
+!  uplink-priority wifi 0
+!  uplink-priority cellular 1
+! 
+! pppoe-uplink-profile
+!  pppoe-username testuser
+!  pppoe-passwd 
+!  pppoe-svcname newservice
+!  pppoe-chapsecret 

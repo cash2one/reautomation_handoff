@@ -1,0 +1,18 @@
++ wlan access-rule test1
++  rule 10.1.1.1 255.255.255.255 invert udp 137 137 src-nat
++ wlan ssid-profile test1
++  enable
++  type employee
++  essid test1
++  opmode wpa2-psk-aes
++  max-authentication-failures 0
++  auth-server InternalServer
++  rf-band all
++  captive-portal disable
++  dtim-period 1
++  inactivity-timeout 1000
++  broadcast-filter none
++  dmo-channel-utilization-threshold 90
++  local-probe-req-thresh 0
++  max-clients-threshold 64
++  okc-disable

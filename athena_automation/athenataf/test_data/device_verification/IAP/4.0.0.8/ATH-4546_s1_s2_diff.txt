@@ -1,0 +1,13 @@
++ ip dhcp "%(Dhcp_name)s"
++  server-type %(Dhcp_Network_Type)s
++  server-vlan %(vlan_id)s
++  ip-range %(subnet_address)s %(vc_ip_address)s
++  subnet-mask %(subnet_mask)s
++  reserve first %(Edit_Reserve_First)s
++  reserve last %(Reserve_Last)s
++  lease-time 3000
++  default-router %(Edit_Dhcp_Default_Router)s
++  dns-server %(Edit_Dhcp_Dns_Server)s
++  domain-name %(domain_name)s
++  client-count %(Edit_Client_Per_Branch)s
++  option %(vlan_id)s "%(vlan_id)s"

@@ -1,0 +1,12 @@
+default_group									: button&xpath&//*[@id='allgroupsTable_select_row_0']/td[1]/span[2]
+switch_group									: button&xpath&//tr[@id='allgroupsTable_select_row_1']/td[1]/span[2]
+switch_configuration						    : link&id&switchConfigurationMainMenu
+group_babel										: label&xpath&//h1/label[text()='Groups']
+sample_group									: button&xpath&//tr[@id='allgroupsTable_select_row_2']/td[1]/span[2]
+group1_group									: button&xpath&//tr[@id='allgroupsTable_select_row_2']/td[1]/span[contains(.,'group1')]
+group2_group									: button&xpath&//tr[@id='allgroupsTable_select_row_3']/td[1]/span[contains(.,'group2')]
+group_name_label        						: button&xpath&//label[text()='Name']&1
+ap_label          								: button&xpath&//label[text()='APs']&1
+samplegroup         						 	: button&xpath&//tr[@id='allgroupsTable_select_row_1']/td[1]/span[contains(.,'samplegroup')]
+default_aps          							: button&xpath&//tr[@id='allgroupsTable_select_row_0']/td[2]/span[contains(.,'1')]
+samplegroup_aps         						: button&xpath&//tr[@id='allgroupsTable_select_row_1']/td[2]/span[contains(.,'0')]

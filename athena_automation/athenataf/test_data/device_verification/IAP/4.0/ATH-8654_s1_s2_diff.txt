@@ -1,0 +1,16 @@
+  
+  arm
+   wide-bands 5ghz
+!  min-tx-power 18
+!  max-tx-power 127
+   band-steering-mode prefer-5ghz
+   air-time-fairness-mode fair-access
+   client-aware
+  
+  arm
+   wide-bands 5ghz
+!  min-tx-power 3
+!  max-tx-power 18
+   band-steering-mode prefer-5ghz
+   air-time-fairness-mode fair-access
+   client-aware

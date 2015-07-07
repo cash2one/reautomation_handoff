@@ -1,0 +1,59 @@
+create_new                                      : button&id&Create_SecSum
+time_span										: select&id&TimeSpan
+run_report_now									: button&id&now
+run_report_schedule_for_later					: button&id&later
+report_repeat									: select&id&report_periodic
+email_report           							: ignore&id&emailreport
+create											: button&id&createnewreport
+cancel											: button&id&cancelnewreport
+report_email									: textbox&id&Email_Id_List
+time_list										: select&id&timelist
+completed_one									: label&xpath&//td[@title='Completed']&0
+completed_two									: label&xpath&//td[@title='Completed']&1
+completed_three									: label&xpath&//td[@title='Completed']&2
+scheduled_one									: checkbox&xpath&//td[@id='reportsTableSecurity_row_selector_0']/input
+scheduled_two									: checkbox&xpath&//td[@id='reportsTableSecurity_row_selector_1']/input
+scheduled_three									: checkbox&xpath&//td[@id='reportsTableSecurity_row_selector_2']/input
+delete_report									: button&id&Delete_secSum
+title											: checkbox&id&reportsTableSecurity_toggle_select_all
+start_date										: ignore&id&StartDate
+end_date										: ignore&id&enddate
+date_22											: button&xpath&//a[text()='22']
+date_23											: button&xpath&//a[text()='23']
+report_group                                    : ignore&id&reportsTableSecurity_groupNames_display_0
+report_saved_by                                 : ignore&id&reportsTableSecurity_saved_by_display_0
+yesterday                                       : button&xpath&//a[text()='%s']
+date_15									 	    : button&xpath&//a[text()='15']
+next_month										: button&xpath&//span[text()='Next']
+run_report_schedule_later_date       		    : ignore&id&enddate2
+device_groups                                   : ignore&xpath&//input[contains(@id,"s2id_autogen")]
+select_group                                    : ignore&xpath&//select[@ng-model='selectedGroups']
+invalid_email_message                           : ignore&id&invalidEmail
+email_user_button								: button&xpath&//a[@class='button blue small']/span[text()='Email']&0
+report_details_email_button						: ignore&id&email_sec_report
+report_details_close_button						: button&id&cancel_sec_report
+rogue_ap_label                                  : ignore&xpath&//label[@ng-bind='SecurityLabels.rouge_aps']
+rogue_ap_detected_chart                         : ignore&id&rogue_aps_chart
+wireless_intrusion_detected_label               : ignore&xpath&//label[@ng-bind='SecurityLabels.wireless_instr']
+wireless_intrusion_total_chart                  : ignore&id&intrusions_detected_chart
+security_events_label                           : ignore&id&security_event_map
+select_group_icon								: ignore&xpath&//span[@class='slider-menu-icon toggleGroupOff']
+select_default_group                            : ignore&xpath&//span[@id='group_name_0']
+select_next_group                               : ignore&xpath&//span[@id='group_name_1']
+show_swarms                                     : ignore&id&show_swarms_0
+vc_name                                         : ignore&id&swarm_name_0
+all_groups_tag                                  : ignore&xpath&//label[text()='All Groups']
+security_report_title                           : ignore&xpath&//div[@class='section-header medium-6 columns']/h1/label/span
+
+
+email_textbox                                   : textbox&id&Send_Email_Id_List
+email_send_button                               : button&xpath&//form[@id='emailReportForm']/div[2]/button[2]
+success_msg										: label&xpath&//div[@class='success-msg email-notify' and @ng-show='successMsg']
+
+
+
+calendar_prev_month								: button&xpath&//span[text()='Prev']
+first_report_title                              : ignore&id&reportsTableSecurity_report_name_display_0
+confirm_end_date_less_than_start                : ignore&xpath&//div[@id='ConfirmContent_common' and text()='End Date should be greater than Start Date']
+warning_button_ok                               : ignore&xpath&//div[@id='warnigBox_common_Alert']/div[2]/div/a
+invalid_schedule_date_message                   : ignore&xpath&//div[text()='Scheduled date should be greater than or equal to current date']

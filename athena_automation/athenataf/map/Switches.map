@@ -1,0 +1,31 @@
+mac_address_label									: label&text&MAC ADDRESS&1
+hostname_label										: button&text&HOSTNAME&1
+hostname											: textbox&id&configSwitchesTable_sw_hostname_field_0
+save_settings										: button&text&Save Settings&1
+switch_page											: label&xpath&//label[text()='Switches']&2
+assert_switch										: button&xpath&//span[@class='badge label ng-binding' and contains(.,'0')]
+switch_1											: button&xpath&//span[@class='badge label ng-binding' and contains(.,'1')]
+mac_address											: button&xpath&//span[contains(.,'00:0b:86:96:03:f7')]
+ip_assignment										: label&xpath&//div[@class="ngCellText col2 colt2 tbl_switches_ip_assign"]
+ip_assignment_dropdown								: select&id&configSwitchesTable_sw_ip_assign_field_0
+ip_address											: textbox&id&configSwitchesTable_sw_ip_addr_field_0
+netmask												: textbox&id&configSwitchesTable_sw_netmask_field_0
+gateway												: textbox&id&configSwitchesTable_sw_default_gateway_field_0
+edit												: button&id&configSwitchesTable_inline_edit_action_0
+save												: button&id&configSwitchesTable__accept_edit_0
+switch_count										: button&css&span[class*='badge label ng-binding']
+mac_address_1										: label&xpath&//*[@id='configSwitchesTable_sw_mac_addr_display_0']
+host_name											: textbox&id&configSwitchesTable_sw_hostname_display_0
+ip_assign_dhcp										: textbox&xpath&//span[@id='configSwitchesTable_sw_ip_assign_display_0' and text()='DHCP']
+default_ip_address									: textbox&xpath&//span[@id='configSwitchesTable_sw_ip_addr_display_0' and text()='-']
+default_netmask										: textbox&xpath&//span[@id='configSwitchesTable_sw_netmask_display_0' and text()='-']
+default_gateway										: textbox&xpath&//span[@id='configSwitchesTable_sw_default_gateway_display_0' and text()='-']
+ip_netmask_error									: label&id&ConfirmContent_common
+ok_error_msg										: button&xpath&//a[@onclick="athenaAlert_close()" and text()='OK']
+host_name_error										: label&xpath&//li[contains(.,'Error in field')]
+ok_error_msg_2										: button&xpath&//div[@class='overlay-warn-box']/span/div/a
+netmask_error										: label&xpath&//li[text()=' "NETMASK": Not a valid NETMASK']
+ip_error											: label&xpath&//li[text()=' "IP ADDRESS": Not a valid IP ADDRESS']
+ip_netmask_error_ok									: button&xpath&//div[@id='configuration-switches-switchesTable']/div[2]/span/div/a
+invalid_hostname_error								: label&xpath&//li[text()=' "HOSTNAME": HOSTNAME cannot be more than 63 characters']
+blank_hostname_error								: label&xpath&//li[text()=' "HOSTNAME": Field is required.']

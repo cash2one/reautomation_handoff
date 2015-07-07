@@ -1,0 +1,31 @@
++ wlan access-rule %(Network_name)s
++  rule any any match any any any permit
++ wlan ssid-profile %(Network_name)s
++  enable
++  termination
++  type employee
++  essid %(Network_name)s
++  opmode wpa-tkip
++  max-authentication-failures 0
++  auth-server %(auth_server_name)s
++  auth-server %(auth_server_name2)s
++  rf-band all
++  captive-portal disable
++  hide-ssid
++  dtim-period 1
++  inactivity-timeout 1000
++  broadcast-filter none
++  dmo-channel-utilization-threshold 90
++  local-probe-req-thresh 0
++  max-clients-threshold 64
++  okc-disable
++ wlan auth-server authradius
++  ip %(auth_ipaddr)s
++  port 1812
++  acctport 1813
++  key
++ wlan auth-server testradius_2
++  ip %(auth_ipaddr)s
++  port 1812
++  acctport 1813
++  key

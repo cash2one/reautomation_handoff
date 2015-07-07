@@ -1,0 +1,6 @@
++ wlan external-captive-portal RoleTest
++  server %(Captive_Role_Ip)s
++  port %(Captive_Role_Port)s
++  url "%(redirect_url)s"
++  auth-text "Authentication text"
++  auto-whitelist-disable

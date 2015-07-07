@@ -1,0 +1,9 @@
+scriptStart : 'TESTLINK ID:[ ]+(\S+)'
+testcaseStart : 'TEST METHOD:[ ]+(\S+)'
+testcaseResult : 'TEST CASE RESULT : (\S+)'
+
+
+
+
+
+

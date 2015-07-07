@@ -1,0 +1,26 @@
+  
+  arm
+   wide-bands 5ghz
+   min-tx-power %(min_transmit_power_value)s
+   max-tx-power 127
+   band-steering-mode prefer-5ghz
+!  air-time-fairness-mode fair-access
+   client-aware
+   scanning
+  
+  
+  syslog-level warn ap-debug 
+  syslog-level warn network 
+  
+  arm
+   wide-bands 5ghz
+   min-tx-power %(min_transmit_power_value)s
+   max-tx-power 127
+   band-steering-mode prefer-5ghz
+!  air-time-fairness-mode preferred-access
+   client-aware
+   scanning
+  
+  
+  syslog-level warn ap-debug 
+  syslog-level warn network 

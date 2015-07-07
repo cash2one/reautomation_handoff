@@ -1,0 +1,4 @@
++ l3-mobility
++  home-agent-load-balancing
++  virtual-controller 192.168.1.10
++  subnet 192.168.1.0 255.255.255.0 4093 192.168.1.10

@@ -1,0 +1,199 @@
+next											: chain&id&network_create_next
+passphrase										: textbox&name&wpa_passphrase
+retype_passphrase								: textbox&name&wpa_passphrase_retype
+splash_page_type								: select&name&security_captive_portal
+wispr											: select&name&security_wispr
+mac_authentication								: select&name&mac_authentication_no_enterprise
+authentication_server							: select&name&auth_server1
+blacklisting									: select&name&blacklist
+mac_authentication_dropdown						: button&text&MAC AUTHENTICATION&0
+wired_captive_portal							: select&name&external_captive
+captive_name									: textbox&id&Captive_Name&0
+captive_type									: select&id&External_Selection&0
+captive_ip										: textbox&id&Captive_IP&0
+captive_url										: textbox&id&Captive_Url&0
+captive_port									: textbox&id&Captive_Port&0
+captive_auth_text								: textbox&id&Captive_AuthText&0
+save											: button&id&cap-save&0
+enteprise										: button&css&input[value='Enterprise']
+okc_option										: button&text&Opportunistic Key Caching (OKC)
+open_security									: button&css&input[value='Open']
+personal_uppercase_support						: select&name&mac_auth_uppercase_support
+personal_delimeter								: textbox&name&mac_auth_delimiter
+enterprise_mac_authentication					: button&css&input[ng-model*='mac_authentication']&0
+roaming_open									: checkbox&id&security_dot11r
+personal										: button&css&input[value='Personal']
+personal_wep_key								: textbox&id&wep_key
+personal_re_wep_key								: textbox&id&wep_key_retype
+banner_title									: textbox&id&internal_banner_title&0
+header_color									: textbox&id&internal_header_color
+welcome_text									: textbox&name&internal_welcome_text
+policy_text										: textbox&id&internal_policy_text
+background_color								: textbox&id&internal_bg_color
+redirect_url									: textbox&id&internal_redirect_url
+save_button										: button&id&captive_portal_partial_save
+passphrase_mismatch_error_msg					: button&id&wpa_passphrase_mismatch_error
+passphrase_length_error_msg						: button&id&wpa_passphrase_error_length
+reauth_interval_error_msg_mins					: button&xpath&//span[text()='Must be a number ranges from 0 - 32768']&0
+reauth_interval_error_msg_hrs					: button&xpath&//span[text()='Must be a number ranges from 0 - 546']&0
+delimiter_error_msg								: button&xpath&//div[@class='field-error column-error' and contains(.,'Maximum length should be 1 and accepts only : / , - space')]
+okc_checkbox									: checkbox&name&enable_OKC
+auth_server_name								: textbox&id&auth_server_name
+auth_ipaddr										: textbox&id&auth_ipaddr
+Auth_Sharedkey									: textbox&id&Auth_Sharedkey
+Retype_auth_shared_key							: textbox&id&Retype_auth_shared_key
+save_server										: button&id&confirm-save-ok&0
+authentication_server_2							: select&id&auth_server2
+reauth_interval									: textbox&name&reauth_interval
+show_users_link									: button&id&show_users_link
+userTxt											: textbox&id&userTxt
+pswdTxt											: textbox&id&pswdTxt
+pswdTxt2										: textbox&id&pswdTxt2
+typeTxt											: select&id&typeTxt
+updateButton									: button&id&updateButton
+okButton										: button&id&OkButton
+wireless_encryption                         	: select&id&wireless_encryption
+security_key_management							: select&id&security_key_management
+user_name_error									: button&text&User name already exists!
+ok_button										: button&text&OK&3
+name_error										: button&id&auth_server_name_error
+ip_error										: button&id&auth_ipaddr_error&0
+shared_key_error								: button&id&Auth_Sharedkey_error&0
+retype_shared_key_error 						: button&id&Retype_auth_shared_key_error&0
+name_error1										: button&text&* No special characters allowed, only - : and _ allowed
+password_error									: button&xpath&//div[text()='* This field is required']&1
+type_error										: button&xpath&//div[text()='* This field is required']&2
+dot1x											: select&id&dot1x
+mac_authentication_enterprise					: button&id&mac_authentication_enterprise
+wpa_passphrase_format							: select&id&wpa_passphrase_format
+passphrase_error_required						: label&xpath&//input[@id='wpa_passphrase']/following-sibling::div[contains(.,'* Required')]
+network_finish_button							: button&id&network_create_finish
+open_radio_button								: button&id&security_level&2
+auth_failthru_enterprise						: button&id&l2_auth_failthru_enterprise
+termination										: select&id&security_termination
+leap_use_session_key							: button&id&leap_use_session_key
+wep_key_size         							: select&id&wep_key_size
+wep_key_index         							: select&id&wep_key_index
+reauth_intrvl_unit								: select&id&reauth_unit
+auth_survivability								: select&id&auth_survivability
+cache_timeout									: textbox&name&auth_cache_timeout
+cache_timeout_field_error						: label&xpath&//span[text()='Must be a number in range 1 - 99' and @class="field-error"]
+delimiter_char_error							: label&xpath&//div[contains(.,": / , - space") and @class="field-error column-error"]
+accounting										: select&id&radius_accounting
+accounting_interval								: textbox&id&radius_interim_accounting_interval
+accounting_interval_error_msg					: label&id&int_act_interval_error_range
+max_auth_fail_error_msg							: label&xpath&//*[@id='max_auth_failures_error_range']&0
+passphrase_req_error							: label&xpath&//div[contains(.,'Required') and @class="field-error column-error"]
+passphrase_hex_length_err						: label&id&wpa_passphrase_error_hex
+wep_key_len_error								: label&id&wep_key_size_error_26
+wep_key_req_error								: label&id&wep_key_error_required
+wep_key_64_len_error							: label&id&wep_key_size_error_10
+max_auth_failures								: textbox&id&max_auth_failures
+load_balancing									: select&id&load_balancing
+enterprise_radio_button							: button&id&security_level&0
+back											: button&id&network_create_back
+Auth_Account_Port								: textbox&id&Auth_Account_Port
+deadtime										: textbox&id&deadtime
+auth_timeout									: textbox&id&auth_timeout
+retry_count										: textbox&id&retry_count
+AuthPort										: textbox&id&AuthPort
+Auth_Account_Port_error							: button&id&Auth_Account_Port_error
+deadtime_error									: button&id&deadtime_error
+auth_timeout_error								: button&id&auth_timeout_error
+Auth_Retry_Count_error							: button&id&Auth_Retry_Count_error&0
+AuthPort_error									: button&id&AuthPort_error&0
+confirm_save_close_server						: button&xpath&//span[@class='overlay-close-icon']&7
+auth_server1_error_required						: button&id&auth_server1_error_required
+duplicate_user_exist_error						: button&xpath&//div[text()='User name already exists!']
+select_user_name								: button&xpath&//span[text()='CALEA']&0
+port_validate_error								: button&text&Must be a number in range 1-65534&0
+blacklist_whitelist								: button&id&security_walled_garden_link
+blacklist_new									: button&id&blacklist_new
+blacklist_edit									: button&id&blacklist_edit
+blacklist_delete								: button&id&blacklist_delete
+whitelist_new									: button&id&whitelist_new
+whitelist_edit									: button&id&whitelist_edit
+whitelist_delete								: button&id&whitelist_delete
+new_regex										: textbox&id&new_regex
+walled_new_save									: button&id&walled-new-save
+walled_cancel									: button&id&walled-cancel
+black_list_error								: button&text&Maximum 64 characters allowed&0
+select_blacklist								: button&xpath&//span[contains(.,'yahoo.com')]
+network_create_cancel							: button&id&network_create_cancel
+cap_cancel										: button&id&cap-cancel&0
+security_level_personal							: label&xpath&//label[text()='Personal']					
+radius											: radio&id&AuthName1
+ldap											: radio&id&AuthName2
+ldap_auth_port									: textbox&id&ldapPort
+auth_coa_only_check_box							: button&id&auth_coa_only
+air_group_coa_port								: textbox&id&AirGroup_Port
+captive_name_required_error						: label&id&Captive_Name_req_error&0
+captive_ip_req_error							: label&id&Captive_IP_req_error&0
+captive_url_req_error							: label&id&Captive_Uri_req_error&0
+captive_port_error								: label&id&Captive_Port_error&0
+captive_authtext_req_error						: label&id&Captive_Authtext_req_error&0
+redirect_url_error_message						: button&xpath&//div[@id='internal_redirect_url_error']
+policy_text_label								: button&xpath&//label[text()='POLICY TEXT']
+changes_saved									: label&id&changes_saved_notification
+vlan_rules_list									: button&id&vlan_rules_list
+ok_button1										: button&text&OK&1
+testuser_checkbox								: button&class&ngSelectionCheckbox
+delete_all_button								: button&xpath&//label[text() = 'Delete all']
+user_count0										: button&xpath&//span[text() = '0']/..[contains(.,'Users')]
+preview_splash_page								: button&id&preview_splash_page
+preview_splash_page_close						: button&xpath&//div[@id='preview-splash-page-overlay-close']/span
+threeg_or_fourg									: checkbox&id&disable_uplink_0
+wifi											: checkbox&id&disable_uplink_1
+ethernet										: checkbox&id&disable_uplink_2
+search_user										: label&xpath&//span[text()='Users'] 
+user_count1										: button&xpath&//span[text() = '1']/..[contains(.,'Users')]
+delete_auth_server								: button&id&delete_auth_server
+accounting_mode        						    : select&id&radius_accounting_mode
+zero_users_warning								: label&id&zero-users-warning
+edit_captive_portal								: button&xpath&//select[@id='external_captive']/../span/a
+Security_CaptivePortalFailure					: select&id&Security_CaptivePortalFailure&0
+Secuirty_auto_url_whitelisting					: checkbox&id&Secuirty_AutoUrlWhitelisting&0
+Secuirty_redirect_url							: textbox&id&Captive_RedirectUrl&0
+mac_authentication_fail_through					: select&id&l2_auth_failthrough_wired	
+disabled_default								: textbox&xpath&//input[@id='Captive_Name' and @disabled='disabled']
+walled_save										: button&id&walled-save
+invisble_roaming_open							: button&xpath&//span[@class='ng-hide']//input[@id='security_dot11r']
+splash_page_user_name							: textbox&id&user
+splash_page_password							: textbox&id&password
+splash_page_login								: button&xpath&//input[@id='password']/../input&2
+external_radius_authentication					: label&xpath&//option[text()='External - RADIUS Authentication' and @disabled='disabled']
+external_authentication_text					: label&xpath&//option[text()='External - Authentication Text' and @disabled='disabled']
+splash_page_type_external						: label&xpath&//select[@id='security_captive_portal']/option[text()='External']
+captive_portal_error_msg						: label&id&captive_portal_profile_error
+use_https										: checkbox&id&SecurityUseHttps&0
+external_radius_server_disabled					: label&xpath&//option[@disabled='disabled' and @value='External-Radius-Server']
+external_auth_text								: label&xpath&//option[@disabled='disabled' and @value='External-Auth-Text']
+no_logo_image									: label&xpath&//label[@class= 'field-label image-field-label image-name ng-binding']
+logo_upload										: label&id&img_upload_button
+logo_disabled_delete_button						: label&xpath&//label[@id='img_upload_button']/../../span[3]/label[@class="field-label ng-binding disabled"]
+disable_upload_button							: button&xpath&//li[@id="custom-logo" and @class="disabled"]/span[3]/ul/li/span[1]/label
+auth_shared_key_space_error						: label&id&Auth_Sharedkey_space_error
+auth_rfc										: checkbox&id&auth_rfc_3576
+auth_server_cancel_button						: button&id&confirm-save-cancel
+auth_server_1_option_New						: label&xpath&//select[@name='auth_server1']/option[text()='New']
+auth_server_2_option_New						: label&xpath&//select[@name='auth_server2']/option[text()='New']
+logo_preview        						    : label&id&custom-logo-preview
+delete_logo            						    : button&xpath&//label[text()='Delete']
+splash_banner_logo            				    : label&id&splash-banner-logo
+change_logo         							 : button&text&Change
+drpvlan											: textbox&id&drpvlan
+invalid_logo_error								: label&text&Invalid Logo Image file format
+logo_size_error									: label&text&The Logo Image was not uploaded, the file size should be within 1-16 KB
+logo_text_msg									: label&xpath&//*[text()='logo5kb.jpg']
+logo_preview_msg								: chain&xpath&//img[@id='custom-logo-preview' and @class="logo_preview"]
+logo_upload_error_ok_button						: button&xpath&//a[text()='OK' and @onclick="athenaAlert_close()"]
+accounting_disabled								: button&xpath&//select[@id='radius_accounting' and @disabled='disabled']
+accounting_interval_disabled					: button&xpath&//input[@id='radius_interim_accounting_interval' and @disabled='disabled']
+roaming_open_k									: checkbox&id&security_dot11k
+roaming_open_v									: checkbox&id&security_dot11v
+nas_ip						 					: textbox&id&auth_nas_ip_addr
+nas_identifier									: textbox&id&nas_id
+drpmask         							    : textbox&id&drpmask
+drpgateway          							: textbox&id&drpgateway
+external_automatic_url_whitelisting				: select&id&external_automatic_url_whitelisting
+external_captive_portal_failure					: select&id&external_captive_portal_failure

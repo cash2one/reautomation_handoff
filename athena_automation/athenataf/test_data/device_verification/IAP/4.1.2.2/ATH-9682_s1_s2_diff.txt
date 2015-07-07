@@ -1,0 +1,6 @@
++ user testuser  radius
++ wlan auth-server authradius
++  ip 10.17.50.110
++  port 1812
++  acctport 1813
++  key 

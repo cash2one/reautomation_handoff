@@ -1,0 +1,26 @@
++ wlan access-rule %(Network_name)s
++  rule any any match any any any permit
++ wlan ssid-profile %(Network_name)s
++  enable
++  type employee
++  essid %(Network_name)s
++  wep-key  %(tx4)s
++  opmode static-wep
++  max-authentication-failures %(max_auth_failures)s
++  auth-server %(edit_auth_server_name)s
++  rf-band all
++  captive-portal disable
++  mac-authentication
++  dtim-period 1
++  inactivity-timeout 1000
++  broadcast-filter none
++  radius-reauth-interval 180
++  blacklist
++  dmo-channel-utilization-threshold 90
++  local-probe-req-thresh 0
++  max-clients-threshold 64
++ wlan auth-server %(edit_auth_server_name)s
++  ip %(edit_auth_ipaddr)s
++  port 1812
++  acctport 1813
++  key 

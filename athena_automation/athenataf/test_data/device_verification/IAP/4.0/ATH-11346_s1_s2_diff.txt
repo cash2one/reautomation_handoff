@@ -1,0 +1,5 @@
++ firewall-external-enforcement pan
++  ip 2.2.2.2
++  port 445
++  user UserTest 
++  enable

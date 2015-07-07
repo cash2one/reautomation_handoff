@@ -1,0 +1,2 @@
+!  wide-bands 5ghz
+!  wide-bands 24ghz

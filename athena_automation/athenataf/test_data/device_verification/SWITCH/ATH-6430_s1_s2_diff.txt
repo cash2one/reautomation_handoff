@@ -1,0 +1,36 @@
++ vlan "2"
++    description "test2"
++ !
++ vlan "3"
++    description "test2"
++ !
++ vlan "4"
++    description "test2"
++ !
++ vlan "5"
++    description "test2"
++ !
++ vlan "6"
++    description "test2"
++ !
++ vlan "7"
++    description "test2"
++ !
++ interface vlan "2"
++    ip address 2.2.2.2 255.0.0.0
++ !
++ interface vlan "3"
++    ip address 175.16.1.1 255.255.240.0
++ !
++ interface vlan "4"
++    ip address 172.16.1.1 255.255.240.0
++ !
++ interface vlan "5"
++    ip address 10.10.1.1 255.240.0.0
++ !
++ interface vlan "6"
++    ip address 175.190.1.1 255.255.192.0
++ !
++ interface vlan "7"
++    ip address 180.180.1.1 255.255.224.0
++ !

@@ -1,0 +1,6 @@
+!  wide-bands 5ghz
+!  min-tx-power %(min_transmit_power_value)s
+!  max-tx-power 127
+!  wide-bands none
+!  min-tx-power %(new_min_transmit_power_value)s
+!  max-tx-power %(new_max_transmit_power_value)s

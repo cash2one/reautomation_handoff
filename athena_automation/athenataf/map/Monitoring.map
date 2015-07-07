@@ -1,0 +1,303 @@
+access_points_label                             :   label&xpath&//span[@ng-bind='ap_overview_Labels.access_point']
+nav_all_ap                                      :   ignore&id&nav_to_all_ap
+clients                                         :   link&id&clientSubMenu
+access_point                                    :   link&id&accessPointSubMenu
+overview_label                                  :   label&xpath&//h1/label[text()='Overview']
+overview_wlan_ssid                              :   ignore&xpath&//span[@id='overview_wlans_ssid_display_0']
+wlan_table                                      :   ignore&xpath&//table[@id='overview_wlans_table']&0
+wlan_table_value                                :   ignore&xpath&//table[@id='overview_wlans_ssid_display_0']&0
+toolTip                                         :   ignore&xpath&//tr[@class='tooltip tttop ng-scope ng-isolate-scope' and @id='overview_wlans_select_row_0']
+up_ap                                           :   ignore&id&nav_to_up_ap
+down_ap                                         :   ignore&id&nav_to_down_ap
+wifi_client                                     :   ignore&xpath&//div[@ng-bind='overviewModel.counts.total_wireless_clients']
+wired_client                                    :   ignore&xpath&//div[@ng-bind='overviewModel.counts.total_wired_clients']
+verify_ap_page                                  :   ignore&id&accesspointsContainer
+verify_client_page                              :   ignore&id&clientsContainer
+map_tag                                         :   ignore&xpath&//aruba-opensource-map[@id='gmContainer']
+create_new_network_quicklink_tag                :   ignore&xpath&//select[@id='quicklinks_dropdown']//option[text()='Create New Network']
+create_report_quicklink_tag                     :   ignore&xpath&//select[@id='quicklinks_dropdown']//option[text()='Create Report']
+manage_groups_quicklink_tag                     :   ignore&xpath&//select[@id='quicklinks_dropdown']//option[text()='Manage Groups']
+update_device_firmware_quicklink_tag            :   ignore&xpath&//select[@id='quicklinks_dropdown']//option[text()='Update Device Firmware']
+set_security_quicklink_tag                      :   ignore&xpath&//select[@id='quicklinks_dropdown']//option[text()='Set Security']
+manage_devices_quicklink_tag                    :   ignore&xpath&//select[@id='quicklinks_dropdown']//option[text()='Manage Devices']
+all_groups_tag                                  :   ignore&xpath&//label[text()='All Groups']
+verify_all_groups_network                       :   ignore&xpath&//table[@id='configuration-allgroups-allgroupsTable']
+verify_report                                   :   ignore&xpath&//table[@id='net_summary_reportsTable']
+verify_manage_groups_quicklink                  :   ignore&xpath&//label[@id='hide_manage' and text()='Manage Groups']
+close_manage_groups                             :   ignore&xpath&//span[@data-ng-bind='labels.action_close' and text()='Close']
+overview_map_ap                                 :   ignore&xpath&//div[@id='gm-container']/div[1]/div[2]/div[3]/img
+overview_map_points_zoom_in                     :   ignore&xpath&//a[@title='Zoom in' and @class='leaflet-control-zoom-in']&0
+overview_map_points_zoom_out                    :   ignore&xpath&//a[@title='Zoom out' and @class='leaflet-control-zoom-out']&0
+verify_update_device_firmware_quicklink         :   ignore&xpath&//table[@id='firmwareUpgradeVCTable']
+verify_manage_devices_quicklink                 :   ignore&xpath&//table[@id='device_management_list_table']
+select_group_icon								:   ignore&xpath&//span[@class='slider-menu-icon toggleGroupOff']
+select_default_group                            :   ignore&xpath&//span[@id='group_name_0']
+select_next_group                               :   ignore&xpath&//span[@id='group_name_1']
+default_group_label                             :   button&xpath&//label[text()='default']
+create_network_page                             :   link&xpath&//div[@class='athena main-container network-create-view ng-scope' and @ng-controller='createNetworkController']
+configuration_security_page                     :   ignore&xpath&//label[text()='Configuration - Security']
+group_manage_devices_alert                      :   ignore&xpath&//div[@id='warnigBox_common_Alert']
+group_manage_devices_alert_confirm              :   ignore&xpath&/html/body/div[25]/div[2]/div/a
+
+
+
+overview_alerts                                 :   chain&xpath&//span[text()='ALERTS']&0
+overview_access                                 :   chain&xpath&//span[text()='ACCESS POINTS']&0
+overview_clients                                :   chain&id&client_Overview
+overview_throughput                             :   chain&id&throughput_overview
+overview_all_groups                             :   chain&xpath&//span[text()='All Groups']&0
+overview_clients_type                           :   chain&xpath&//div[text()='CLIENTS TYPE']&0
+overview_wlans                                  :   chain&xpath&//span[text()='WLANS']&0
+help_button									    :   button&xpath&//a[@class='helpButton Header_Help icosolo icon_help']
+help_content                                    :   ignore&xpath&//div[@id='auto-help-content']/div[3]/p
+
+monitoring_notification                         :   ignore&xpath&//a[@pageid="NOTIFICATIONS"]
+notification_page                               :   ignore&xpath&//span[@data-ng-bind="NotificationLabels.notification_title"]
+enable_notification_email                       :   button&xpath&//input[contains(@id, 'notification_emailCheck_')]&-1
+add_notification_email                          :   ignore&xpath&//input[contains(@id, 'notification_email_')]&-1
+all_page_message_icon                           :   link&xpath&//a[@class='icosolo icon_mail']
+all_page_notifications_settings                 :   link&id&toggle_notification_settings
+all_page_notifications_close                    :   link&xpath&//div[@class='notification row']//a[@class='icosolo icon_close']
+any_notification_delete                         :   button&xpath&//a[@id='notification_delete_0']
+add_notification_button                         :   button&id&add_notification_setting
+add_notification_type                           :   select&xpath&//select[contains(@id, 'notification_type_')]&-1
+add_notification_event                          :   select&xpath&//select[contains(@id, 'notification_event_')]&-1
+add_notification_group                          :   select&xpath&//select[contains(@id, 'notification_group_')]&-1
+add_notification_cancel                         :   button&xpath&//a[@id="notification_cancel" and @class="button small white standard"]
+warning_message                                 :   ignore&xpath&//div[text()="Settings already exists"]
+warning_ok_button                               :   button&xpath&/html/body/div[49]/div/div/div[3]/div/a
+notifications_settings_close                    :   ignore&xpath&//a[@id="notification_alert" and @class="overlay-close"]
+acknowledge_all_button                          :   chain&xpath&//a[@id="acknowledgeall"]
+acknowledge_button                              :   chain&xpath&//a[@class="Acknowledge AcknowledgeShowAll button small blue"]&0
+all_notifications                               :   button&xpath&//a[@id="show_all_notifications"]
+latest_notification                             :   ignore&xpath&//ul[@class="notification-list columns"]/li[1]/p
+notification_count                              :   ignore&xpath&//span[@id="notification_count"]
+add_notification_save                           :   button&xpath&//a[contains(@id, 'notification_save_') and @class="button small blue standard"]
+notification_ok_button                          :   button&xpath&//a[text()='OK']
+
+access_points_map_close                         :   ignore&id&monitor_access_close_icosolo_icon
+access_points_flagged                           :   chain&xpath&//span[text()='FLAGGED']&0
+access_points_clients                           :   chain&xpath&//span[text()='CLIENTS']&0
+access_points_throughput                        :   chain&xpath&//span[text()='THROUGHPUT']&0
+access_points_flagged_ap                        :   chain&xpath&//label[@help-id="flagged_access_point" and text()='ACCESS POINT']
+access_points_flagged_util                      :   chain&xpath&//label[@help-id="flagged_table_util" and text()="UTIL(%)"]
+access_points_flagged_table_noise               :   chain&xpath&//label[@help-id="flagged_table_noise" and text()="NOISE(dBm)"]
+access_points_flagged_table_errors              :   chain&xpath&//label[@help-id="flagged_table_errors" and text()="ERRORS"]
+access_points_flagged_table_clients             :   chain&xpath&//label[@help-id="flagged_table_clients" and text()="CLIENTS"]
+access_points_flagged_table_memory              :   chain&xpath&//label[@help-id="flagged_table_memory" and text()="MEMORY"]
+access_points_ap_location                       :   chain&xpath&//label[@help-id="tbl_ap_location" and text()="LOCATION"]
+access_points_ap_status                         :   chain&xpath&//label[@help-id="tbl_ap_status" and text()="STATUS"]
+access_points_ap_clients                        :   chain&xpath&//label[@help-id="tbl_ap_clients" and text()="CLIENTS"]
+access_points_ap_ipadder                        :   chain&xpath&//label[@help-id="tbl_ap_ipadder" and text()="IP ADDRESS"]
+access_points_ap_uptime                       :   chain&xpath&//label[@help-id="tbl_ap_uptime" and text()="UPTIME"]
+access_points_ap_vc_name                        :   chain&xpath&//label[@help-id="tbl_ap_vc_name" and text()="VIRTUAL CONTROLLERS]
+access_points_ap_label                          :   chain&xpath&//label[@help-id="tbl_ap_label" and text()="LABELS"]
+access_page_ap_count                            :   ignore&id&totAP
+access_points_aps_table                         :   ignore&xpath&//table[@id='monitoring-accessPoints-apsTable']
+access_points_add_label_name                    :   ignore&xpath&//input[@id='AR_Overview_Lable_Name']
+access_points_add_label_button                  :   button&xpath&//a[text()='Add']&0
+access_points_close_add_label                   :   button&xpath&//a[@id='ar_label_hide_popup']
+access_points_check_label                       :   ignore&xpath&//div[@id='labels-displayer']
+access_points_add_label_close_alert             :   ignore&xpath&//a[@onclick='athenaAlert_close()']
+access_ap_table_empty                          :   ignore&xpath&//div[@id='apsTable__no_data_msg' and text()='No data to display']
+access_label_max_length_error                   :  ignore&xpath&//span[@id='Label_Max_Length']
+access_points_vc_td                             :   ignore&xpath&//td[@key='vc_name']
+access_points_display_option                    :   ignore&id&apsTable_col_display_link
+access_points_display_type                      :   ignore&id&apsTable_model_col_display_toggle
+access_points_display_vc                        :   ignore&id&apsTable_vc_name_col_display_toggle
+access_points_search_ap                         :   ignore&xpath&//div[@id='apsTable_search_toggle']//a[@ng-click='toggleSearch()']
+access_points_search_ap_name                    :   textbox&id&apsTable_name_search_field
+access_points_search_ap_vc                      :   textbox&id&apsTable_vc_name_search_field
+access_points_search_ap_status                  :   textbox&id&apsTable_status_search_field
+access_points_search_ap_location                :   textbox&id&apsTable_loc_detail_search_field
+access_points_search_ap_type                    :   textbox&xpath&//input[@id='apsTable_model_search_field']
+access_points_search_submit                     :   button&id&apsTable_search_confirm
+access_points_search_cancel                     :   button&id&apsTable_search_cancel
+access_points_search_clear_values               :   link&id&apsTable_search_clear
+access_points_select_vc                         :   ignore&xpath&//td[@config='apsTable' and @class='ar-td ng-isolate-scope masterVC']//span[contains(@id,'apsTable_name_display')]&0
+access_points_select_non_vc                     :   ignore&xpath&//td[@config='apsTable' and @class='ar-td ng-isolate-scope']//span[contains(@id,'apsTable_name_display')]&0
+access_points_verify_ap_name                    :   ignore&id&apName
+access_points_verify_ap_vc                      :   ignore&id&vcName
+access_points_ap_reboot                         :   ignore&id&reboot_link
+access_points_ap_reboot_continue                :   button&id&continue_reboot
+access_points_get_label_names_with_single_ap    :   ignore&xpath&/html/body/div[1]/div[1]/div[6]/div/div[2]/div[2]/div/div/div[1]/div[4]/div/div/div/div[3]/div[3]/table/tbody/tr/td[12]/span[2]&0
+access_points_get_label_names_with_multiple_ap  :   ignore&xpath&/html/body/div[1]/div[1]/div[6]/div/div[2]/div[2]/div/div/div[1]/div[4]/div/div/div/div[3]/div[3]/table/tbody/tr[1]/td[12]/span[2]
+access_points_alert_table                       :   ignore&xpath&//table[@id='monitoring-apDetails-alertsTable']
+access_points_map_overlay                       :   ignore&id&gm_overlay&0
+access_points_close                             :   ignore&id&close_large_map&0
+access_points_zoom_in                           :   ignore&xpath&//a[@title='Zoom in' and @class='leaflet-control-zoom-in']&0
+access_points_zoom_out                          :   ignore&xpath&//a[@title='Zoom out' and @class='leaflet-control-zoom-out']&0
+access_points_detail                            :   ignore&id&load_access_point
+access_points_totalDown                         :   ignore&id&totDown
+clients_flagged                                 :   chain&xpath&//label[@help-id="flagged" and text()='FLAGGED']
+clients_throughput                              :   chain&xpath&//label[@help-id="throughput"]
+first_ap_in_aps_table                           :   ignore&xpath&//table[@id='monitoring-accessPoints-apsTable']/tbody[1]/tr[1]/td[1]/span[2]
+ap_details_wired_interface_table                :   ignore&xpath&//table[@id='monitoring-apDetails-wiredIntTable']
+ap_details_reboot_ap_button                     :   chain&xpath&//a[@id="reboot_link"]     
+ap_details_console_access_button                :   chain&xpath&//a[@id="console_link"]
+ap_details_device_status                        :   chain&xpath&//label[text()="DEVICE STATUS"]
+ap_details_connected_clients                    :   chain&xpath&//label[text()="CONNECTED CLIENTS"]
+ap_details_uplink_type                          :   chain&xpath&//label[text()="UPLINK TYPE"]
+ap_details_alerts                               :   chain&xpath&//label[@help-id="alerts" and text()="ALERTS"]
+ap_details_client_type_distribution             :   chain&xpath&//label[text()="Client Type Distribution"]
+ap_details_aggregate                            :   chain&xpath&//label[text()="Aggregate"]
+ap_details_2_4_ghz                              :   chain&xpath&//label[text()="2.4 GHz"]
+ap_details_5_ghz                                :   chain&xpath&//label[text()="5 GHz"]
+ap_details_wired_interface_mac_address          :   chain&xpath&//label[@help-id="mac_add" and text()="MAC ADDRESS"]
+ap_details_wired_interface_status               :   chain&xpath&//label[@help-id="admin_status" and text()="STATUS"]
+ap_details_wired_interface_link_type            :   chain&xpath&//label[@help-id="link_type" and text()="LINK TYPE"]
+ap_details_wired_interface_duplex_mode          :   chain&xpath&//label[@help-id="duplex" and text()="DUPLEX MODE"]
+ap_details_wireless_interface_radio_type        :   chain&xpath&//label[@help-id="tbl_radio_type" and text()="RADIO TYPE"]
+ap_details_wireless_interface_status            :   chain&xpath&//label[@help-id="tbl_status" and text()="STATUS"]
+ap_details_wireless_interface_clients           :   chain&xpath&//label[@help-id="tbl_clients" and text()="CLIENTS"]
+ap_details_wireless_interface_ssids             :   chain&xpath&//label[@help-id="tbl_ssid" and text()="SSIDs"]
+ap_details_wireless_interface_channel           :   chain&xpath&//label[@help-id="tbl_channel" and text()="CHANNEL"]
+ap_details_wireless_interface_tx_power          :   chain&xpath&//label[@help-id="tbl_tx" and text()="TX POWER"]
+ap_details_wireless_interface_antenna_type      :   chain&xpath&//label[@help-id="tbl_anten" and text()="ANTENNA TYPE"]
+ap_details_wireless_interface_role              :   chain&xpath&//label[@help-id="tbl_role" and text()="ROLE"]
+ap_details_clients_os                           :   chain&xpath&//label[@help-id="tbl_wireless_os" and text()="OS"]
+ap_details_clients_network                      :   chain&xpath&//label[@help-id="tbl_wireless_network" and text()="NETWORK"]
+ap_details_clients_channel                      :   chain&xpath&//label[@help-id="tbl_wireless_channel" and text()="CHANNEL"]
+ap_details_clients_type                         :   chain&xpath&//label[@help-id="tbl_wireless_type" and  text()="TYPE"]
+ap_details_clients_role                         :   chain&xpath&//label[@help-id="tbl_wireless_role" and text()="ROLE"]
+
+
+
+client_details_signal                           :   chain&xpath&//label[@help-id="signal" and text()='SIGNAL'] 
+client_details_speed                            :   chain&xpath&//label[@help-id="speed" and text()='SPEED']
+client_details_ap_ssid                          :   chain&xpath&//label[@help-id="apssid" and text()='AP/SSID']
+client_details_alerts                           :   chain&xpath&//label[@help-id="alerts" and text()='ALERTS']
+clients_mac_address                             :   chain&xpath&//label[@help-id="mac_address" and text()='MAC ADDRESS']&0
+clients_ip_address                              :   chain&xpath&//label[@help-id="ip_address" and text()='IP ADDRESS']&0
+clients_signal                                  :   chain&xpath&//label[@help-id="signal" and text()='SIGNAL']&0
+clients_table_mac_address                       :   chain&xpath&//label[@help-id="mac_address" and text()='MAC ADDRESS']&1
+clients_table_ip_address                        :   chain&xpath&//label[@help-id="ip_address" and text()='IP ADDRESS']&1
+clients_table_username                          :   chain&xpath&//label[@help-id="username" and text()='USERNAME']
+clients_table_host_name                         :   chain&xpath&//label[@help-id="host_name" and text()='HOST NAME']
+clients_table_device_type                       :   chain&xpath&//label[@help-id="tbl_device_type" and text()='DEVICE TYPE']
+clients_table_connected_to                      :   chain&xpath&//label[@help-id="connected_to" and text()='CONNECTED TO']
+clients_table_ssid                              :   chain&xpath&//label[@help-id="ssid" and text()='SSID']
+clients_table_connection                        :   chain&xpath&//label[@help-id="connection" and text()='CONNECTION']
+clients_table_label                             :   chain&xpath&//label[@help-id="tbl_client_label" and text()='LABELS']
+
+client_details_inbound                          :   chain&xpath&//label[@help-id="p3_graph_inbound" and text()='Inbound']
+client_details_outbound                         :   chain&xpath&//label[@help-id="p3_graph_outbound" and text()='Outbound']
+wids_label                                      :   label&xpath&//span[@ng-bind='widsLabels.wids']
+wids_change_setting                             :   link&id&wids_change_sett
+wireless_wids_protection_page                   :   label&xpath&//span[@ng-bind='WIPlabels.wids_title']
+monitoring_wids_rogue_aps                       :   ignore&id&Rogue_Aps_Count
+monitoring_wids_interfing_aps                   :   ignore&id&Interfering_Aps_Count
+monitoring_wids_infrasturucture_attacks         :   ignore&id&Infrasturucture_Attacks_Count
+monitoring_client_attacks_count                 :   ignore&id&Client_Attacks_Count
+
+monitoring_wids_rogue_aps_label                 :   chain&xpath&//span[@help-id="wids_rouge" and text()="ROGUE APS"]
+monitoring_wids_interfering_aps_label           :   chain&xpath&//span[@help-id="wids_interfering" and text()="INTERFERING APS"]
+monitoring_wids_infrastructure_attacks_label    :   chain&xpath&//span[@help-id="wids_infra_attack" and text()="INFRASTRUCTURE ATTACKS"]
+monitoring_wids_client_attacks_label            :   chain&xpath&//span[@help-id="wids_cli_attack" and text()="CLIENT ATTACKS"]
+monitoring_wids_ap_type                         :   chain&xpath&//div[@help-id="wids_ap_type" and text()="AP TYPE"]
+monitoring_wids_ids_attack_detected             :   chain&xpath&//div[@help-id="wids_ids_attack" and text()="IDS ATTACK DETECTED"]
+monitoring_wids_wids_events_description         :   chain&xpath&//label[@help-id="wids_table_description" and text()="DESCRIPTION"]
+monitoring_wids_wired_containment               :   ignore&id&wired_containment
+monitoring_wids_wireless_containment            :   ignore&id&wireless_containment
+monitoring_wids_client_protection_level         :   ignore&id&client_protection_level
+monitoring_wids_infrastructure_protection_level :   ignore&id&infrastructure_protection_level
+monitoring_wids_client_detection_level          :   ignore&id&client_detection_level
+monitoring_wids_infrastructure_detection_level  :   ignore&id&infrastructure_detection_level
+monitoring_wids_wids_events_table               :   ignore&xpath&//table[@id='Wids_AccessPoints']
+monitoring_wids_table_first_row                 :   ignore&id&monitoringWIDSEventsTable_select_row_0
+monitoring_wids_table_search                    :   ignore&xpath&//a[@ng-click='toggleSearch()']
+
+
+monitoring_wids_search_submit                   :   button&id&monitoringWIDSEventsTable_search_confirm
+monitoring_wids_search_clear_values             :   link&id&monitoringWIDSEventsTable_search_clear
+monitoring_wids_search_level                    :   ignore&id&monitoringWIDSEventsTable_level_search_field
+monitoring_wids_search_description              :   ignore&id&monitoringWIDSEventsTable_description_search_field
+
+monitoring_wids_search_type                     :   ignore&id&monitoringWIDSEventsTable_type_search_field
+monitoring_wids_search_detecting_ap             :   ignore&id&monitoringWIDSEventsTable_detected_ap_search_field
+monitoring_wids_search_virtual_controller       :   ignore&id&monitoringWIDSEventsTable_virtual_controller_search_field
+monitoring_wids_search_radio                    :   ignore&id&monitoringWIDSEventsTable_radio_band_search_field
+monitoring_wids_search_station_mac              :   ignore&id&monitoringWIDSEventsTable_station_mac_search_field
+
+monitoring_wids_table_rows_per_page             :   select&id&monitoringWIDSEventsTable_pagelength_select
+monitoring_wids_table_pagination                :   ignore&xpath&//div[contains(@id,'monitoringWIDSEventsTable_pagination_nav')]/div[@class='pager']/a
+monitoring_wids_jump_input                      :   ignore&id&monitoringWIDSEventsTable_page_jump_input
+monitoring_wids_jump_input_confirm              :   ignore&id&monitoringWIDSEventsTable_page_jump_confirm
+monitoring_wids_current_page                    :   ignore&xpath&//a[@class='ng-scope ng-binding current_page enable' and text()=4]
+monitoring_event_log                            :   ignore&xpath&//a[@pageid="EVENTLOG"]
+monitoring_event_log_label                      :   ignore&xpath&//span[@ng-bind="EventLabels.evn_tbl_event_log"]
+ap_details_page_map_edit_loc                    :   ignore&xpath&//label[@ng-bind='APDetailslabels.estimate_location_edit']
+ap_details_page_map                             :   ignore&xpath&//div[@ng-mouseover='mapOverlay = true']
+ap_details_edit_loc_city                        :   ignore&id&ap_map_city
+ap_details_edit_ap_map_state                    :   ignore&id&ap_map_state
+ap_details_edit_loc_save                        :   button&id&save_ap_map
+ap_details_edit_map_address                     :   ignore&id&ap_map_address
+ap_details_edit_zip                             :   ignore&id&ap_map_zip
+
+
+client_label                                    :   ignore&xpath&//label[@help-id='clients']
+client_monitoring_table                         :   ignore&xpath&//table[@id='monitoring-clients-clientsTable']
+client_details_page_label                       :   ignore&xpath&//h2[@ng-bind='client.selectedClient']
+client_device_type                              :   ignore&xpath&//label[ng-bind='client.client.devicetype']
+client_map_overlay                              :   ignore&id&gm_overlay&0
+client_map_close                                :   ignore&id&close_large_map&0
+client_map_zoom_in                              :   ignore&xpath&//a[@title='Zoom in' and @class='leaflet-control-zoom-in']&0
+client_map_zoom_out                             :   ignore&xpath&//a[@title='Zoom out' and @class='leaflet-control-zoom-out']&0
+
+_timeline_1H                                    :   ignore&xpath&//div[contains(@class, 'graph-intervals') and text()='1H']
+_timeline_3H                                    :   ignore&xpath&//div[contains(@class, 'graph-intervals') and text()='3H']
+_timeline_1D                                    :   ignore&xpath&//div[contains(@class, 'graph-intervals') and text()='1D']
+_timeline_1W                                    :   ignore&xpath&//div[contains(@class, 'graph-intervals') and text()='1W']
+_timeline_1Y                                    :   ignore&xpath&//div[contains(@class, 'graph-intervals') and text()='1Y']
+_upstream_graph                                 :   ignore&xpath&//*[text()='Up']
+_downstream_graph                               :   ignore&xpath&//*[text()='Down']
+access_points_throughput_graph                  :   ignore&xpath&//span[@ng-bind='ap_overview_Labels.ap_grap_throughput']
+clients_page_throughput_graph                   :   ignore&xpath&//span[@ng-bind='CLIENTSlabels.throughput']
+client_details_throughput_graph                 :   ignore&id&select_throughput
+client_details_inbound_graph                    :   ignore&xpath&//label[text()='Inbound']
+client_details_outbound_graph                   :   ignore&xpath&//label[text()='Outbound']
+ap_details_page                                 :   ignore&xpath&//label[@help-id='access_points' and text()="AP DETAILS"]
+ap_details_ap_name                              :   ignore&xpath&//div[@id='accesspointContainer']/div/div/div[2]/div[1]/h2/label
+ap_details_wireless_interface_table             :   ignore&xpath&//table[@id='monitoring-apDetails-wirelessIntTable']
+access_points_flagged_ap_table                  :   ignore&xpath&//table[@id='monitoring-accessPoints-flaggedAPsTable']
+
+access_points_detail_client_table               :   ignore&xpath&//table[@id='monitoring-apDetails-clientsIntTable']
+
+access_points_detail_first_alert                :   ignore&id&alertsTable_select_row_0
+access_points_detail_event_log_table            :   ignore&xpath&//table[@id='monitoring-apDetails-eventsTable']
+access_points_detail_event_log_help             :   ignore&xpath&//label[text()='EVENT LOG']
+
+overview_alert_count                            :   ignore&id&go_to_alerts
+
+add_new_group									:	ignore&xpath&//a[@data-ng-click='showAddGroup()']
+new_group_text_box								:	ignore&id&new_group_name
+new_group_next_button							:	ignore&xpath&//button[@class='button large blue standard ng-binding' and text()='Next >>']&0
+new_group_password								:	ignore&id&cddc_password&1
+new_group_password_confirm						:	ignore&id&cddc_password_confirm&1
+new_group_save_button							:	ignore&xpath&//button[@class='button large blue standard ng-binding' and text()='Save']&1
+edit_group                                      :   ignore&xpath&//a[@class='group-controls-item icosolo icon_edit button blue']
+edit_group_select_all_devices                   :   ignore&id&manageVCListTable_toggle_select_all
+edit_group_move_devices                         :   ignore&id&move_group
+delete_group                                    :   ignore&id&delete_group
+
+event_log_label                                 :   ignore&xpath&//span[text()='Event Log']
+event_log_display_dropDown                      :   ignore&id&EVENT_LOG_TABLE_col_display_link
+event_log_display_select_mac                    :   ignore&id&EVENT_LOG_TABLE_mac_addr_col_display_toggle
+event_log_table                                 :   ignore&xpath&//table[@id='EventLogTable']
+
+monitoring_event_log_date_time                  :   chain&xpath&//label[@help-id="evn_tbl_date_time" and text()="DATE/TIME"]
+monitoring_event_log_hostname                   :   chain&xpath&//label[@help-id="evn_tbl_hostname" and text()="HOSTNAME"]
+monitoring_event_log_mac_address                :   chain&xpath&//label[@help-id="evn_tbl_mac_addr" and text()="MAC ADDRESS"]
+monitoring_event_log_device_type                :   chain&xpath&//label[@help-id="evn_tbl_device_type" and text()="DEVICE TYPE"]
+monitoring_event_log_event_type                 :   chain&xpath&//label[@help-id="evn_tbl_event_type" and text()="EVENT TYPE"]
+monitoring_event_log_description                :   chain&xpath&//label[@help-id="evn_tbl_description" and text()="DESCRIPTION"]
+
+global_search_input                             :   ignore&xpath&//input[@ng-model="localSearchText"]
+manage_group_close                              :   ignore&id&group_sidebar_close_icon
+help_button_enabled                             :   ignore&xpath&//li[@class="HelpNotification HelpClass"]
+monitoring_wids_1h                              :   ignore&xpath&//div[@class='graphOption right']/div[text()='1H']
+monitoring_wids_1d                              :   ignore&xpath&//div[@class='graphOption right']/div[text()='1D']
+monitoring_wids_1w                              :   ignore&xpath&//div[@class='graphOption right']/div[text()='1W']
+first_alert                                     :   ignore&id&alertsTable_alert_display_0
+delete                                          :   ignore&xpath&//span[text()='Delete']&0
+manage_group                                    :   button&xpath&//label[text()='MANAGE']/../..

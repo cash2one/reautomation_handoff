@@ -1,0 +1,17 @@
++ wlan access-rule test1
++  vlan 2300
++  rule any any match any any any permit
++ wlan ssid-profile test1
++  enable
++  type guest
++  essid test1
++  opmode opensystem
++  max-authentication-failures 0
++  rf-band all
++  captive-portal internal
++  dtim-period 1
++  inactivity-timeout 1000
++  broadcast-filter none
++  dmo-channel-utilization-threshold 90
++  local-probe-req-thresh 0
++  max-clients-threshold 64

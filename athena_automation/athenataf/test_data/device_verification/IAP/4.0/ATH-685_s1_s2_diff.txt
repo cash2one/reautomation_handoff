@@ -1,0 +1,5 @@
+  ids
+   wireless-containment none
++  infrastructure-detection-level high
+  
+  

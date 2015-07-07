@@ -1,0 +1,11 @@
++ vpn primary 10.17.50.110 
++ vpn backup 1.1.1.0 
++ vpn preemption 
++ vpn fast-failover 
++ vpn hold-time 800 
++ vpn monitor-pkt-send-freq 65 
++ vpn monitor-pkt-lost-cnt 65 
++ vpn reconnect-user-on-failover 
++ vpn gre-outside
++ vpn reconnect-time-on-failover 65 
++ gre per-ap-tunnel

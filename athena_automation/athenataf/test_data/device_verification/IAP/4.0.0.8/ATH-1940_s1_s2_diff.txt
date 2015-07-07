@@ -1,0 +1,18 @@
++ wlan access-rule %(wired_network_name)s
++  rule any any match any any any permit
++  rule %(destination_ip)s %(destination_mask)s match any any any permit log blacklist classify-media tos 0 dot1p-priority 0
++ wired-port-profile %(wired_network_name)s
++  switchport-mode trunk
++  allowed-vlan all
++  native-vlan guest
++  no shutdown
++  access-rule-name %(wired_network_name)s
++  speed auto
++  duplex auto
++  poe
++  type employee
++  captive-portal disable
++  no dot1x
++  set-role AP-Group contains something default_wired_port_profile
++  set-role AP-Group value-of
++  set-role AP-Group equals something2 default_wired_port_profile

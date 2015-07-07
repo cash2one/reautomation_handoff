@@ -1,0 +1,74 @@
+virtual_controller										: button&id&device_vc
+switch_tab												: button&xpath&//a[@id='device_switch']
+switch_checkbox											: button&xpath&//input[@class='ngSelectionCheckbox']
+upgrade_button											: button&xpath&//button[@id='show_upg_firmware']
+final_upgrade_button									: button&xpath&//a[@id='post_firmware_upgrade']
+switch_no_data_message									: label&id&firmwareUpgradeSwitchTable__no_data_msg
+firmware_label											: label&xpath&//h1/label[text()='Firmware']
+vc_check												: checkbox&id&firmwareUpgradeVcTable_toggle_select_all
+hostname												: label&id&firmwareUpgradeSwitchTable_host_name_display_0
+macaddress												: label&id&firmwareUpgradeSwitchTable_mac_addr_display_0
+version													: label&id&firmwareUpgradeSwitchTable_version_display_0
+status													: label&xpath&//span[@class="status-required icofirst icon_pointer_down ng-scope"]
+location												: label&xpath&//td[@class='medium_width ar-td ng-scope']
+firmware_version_label 									: label&text&RECOMMENDED FIRMWARE VERSION
+no_data_msg 									        : label&id&firmwareUpgradeVcTable__no_data_msg
+vc_name													: label&text&VC NAME&1
+aps													    : label&text&APs&1
+location_label	     								    : label&xpath&//table[@id='firmwareUpgradeVCTable']/thead/tr/th[4]
+firmware_version	     							    : label&text&FIRMWARE VERSION&1
+status_label											: label&text&STATUS&1
+no_vc_error_message										: label&id&ConfirmContent_common
+warning_ok_button										: button&xpath&//div[@id='warnigBox_common_Alert']/div[2]/div/a
+cbuild_image											: label&css&.message-notify.with-icon.response-available
+post_upgrade											: button&css&#post_firmware_upgrade
+select_device          									: checkbox&xpath&//td[@id='firmwareUpgradeVcTable_row_selector_0']/input
+manual_upgrade           								: radio&id&manual-upgrade
+version_type           									: select&id&LVersion
+firmware_version_text         							: textbox&id&firmwareVersion
+ap_over_details_table									: button&css&.ap-details-table
+aps_box			 										: button&xpath&//div[@class ='ap-details-cell ng-scope ng-binding']
+latest_version_number_text 								: button&xpath&//label[@ng-bind='latestVersion']
+select_device_disabled									: checkbox&xpath&//td[@id='firmwareUpgradeVcTable_row_selector_0']/input[@disabled="disabled"]
+later_date_radio										: radio&id&schedule-later
+dateField_textbox										: textbox&id&dateField
+post_firmware_upgrade									: button&id&post_firmware_upgrade
+cancel_upgrade											: button&xpath&//*[@id='firmwareUpgradeVcTable_select_row_0']/td[6]/span[2]/span/button
+Firmware_modem_country 									: select&xpath&//select[@id='Firmware_modem_country']
+TimeList												: select&xpath&//select[@id='TimeList']
+TimeMinList												: select&xpath&//select[@id='TimeMinList']
+SessionList												: select&xpath&//select[@id='SessionList']
+disable_subscription									: link&xpath&//a[@id='Licenses_Link' and @state="disable"]/label
+disable_device_management								: link&xpath&//a[@id='Device_Management_Link' and @state="disable"]
+disable_upgrade_button									: button&xpath&//a[@id="post_firmware_upgrade" and @class="button large standard disable-upgrade"]
+upgrade_status											: label&xpath&//tr[@id='firmwareUpgradeVcTable_select_row_0']/td[6]/span[2]/span/span/span
+version_list											: select&id&VersionList
+firm_vc_name											: button&id&firmwareUpgradeVcTable_vc_name_display_0
+firm_vc_location										: button&xpath&//span[@class='responsive-colhead ng-scope ng-binding']&1
+firm_vc_version											: button&id&firmwareUpgradeVcTable_version_display_0
+firm_second_vc											: checkbox&css&firmwareUpgradeVcTable_row_selector_1>input
+firm_vc_name2											: button&id&firmwareUpgradeVcTable_vc_name_display_1
+firm_vc_location2										: button&xpath&//span[@class='responsive-colhead ng-scope ng-binding']&1
+firm_vc_version2										: button&id&firmwareUpgradeVcTable_version_display_1
+upgrading_label											: label&xpath&//span[@ng-switch-when="processed"]&0
+version_error_message									: label&text&Invalid firmware version
+select_device_2											: checkbox&xpath&//td[@id='firmwareUpgradeVcTable_row_selector_1']/input
+select_device_3											: checkbox&xpath&//td[@id='firmwareUpgradeVcTable_row_selector_2']/input
+upgrade_status_2										: label&xpath&//tr[@id='firmwareUpgradeVcTable_select_row_1']/td[6]/span[2]/span/span/span
+upgrade_status_3										: label&xpath&//tr[@id='firmwareUpgradeVcTable_select_row_2']/td[6]/span[2]/span/span/span
+cancel_firmware											: button&id&cancel_firmware_overlay	
+subscptions_key_link_disabled							: label&xpath&//a[@id='Licenses_Link' and @state='disable']
+device_management_link_disabled							: label&xpath&//a[@id='Device_Management_Link' and @state='disable']
+select_all_switch	          						    : checkbox&id&firmwareUpgradeSwitchTable_toggle_select_all
+auto_upgrade											: radio&id&auto-upgrade
+upgrading						      					: button&xpath&//span[text()='STATUS']/../span[2]/span
+upgraded_successful										: label&xpath&//span[@class='upgrade-complete']
+date_picker												: button&xpath&//div[@id='ui-datepicker-div']
+next_month												: button&xpath&//div[@id='ui-datepicker-div']/div/a[2]/span[text()='Next']
+date_in_month											: button&xpath&//a[text()='6']
+upgrading_status										: button&xpath&//span[text()='STATUS']/../span[2]/span[contains(.,'Upgrading...')]
+select_switch											: checkbox&xpath&//td[@id='firmwareUpgradeSwitchTable_row_selector_0']/input
+cancel_icon												: button&id&cancel_upgrade_firmware
+reboot													: button&text&Reboot
+version_unavailable_img									: label&xpath&//div[@class='message-notify with-icon response-unavailable']/span
+upgrade_failed											: label&xpath&//span[text()='STATUS']/../span[2]/span[contains(.,'failed')]

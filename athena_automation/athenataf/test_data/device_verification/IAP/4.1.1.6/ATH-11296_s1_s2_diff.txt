@@ -1,0 +1,25 @@
++ wlan access-rule testwired
++  rule any any match any any any permit
++ wlan auth-server authradius
++  ip 10.17.50.110
++  port 1812
++  acctport 1813
++  key
++ wired-port-profile testwired
++  switchport-mode trunk
++  allowed-vlan 102
++  native-vlan 20
++  no shutdown
++  spanning-tree
++  access-rule-name testwired
++  speed auto
++  duplex auto
++  poe
++  type employee
++  auth-server authradius
++  captive-portal disable
++  mac-authentication
++  l2-auth-failthrough
++  dot1x
++  radius-reauth-interval 5
++  set-vlan AP-Group equals aruba 20

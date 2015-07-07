@@ -1,0 +1,20 @@
++ wlan access-rule Test1948
++  rule any any match any any any permit
++ wlan auth-server testuser
++  ip 1.2.3.4
++  port 1812
++  acctport 1813
++  key
++ wired-port-profile Test1948
++  switchport-mode trunk
++  allowed-vlan all
++  native-vlan guest
++  no shutdown
++  access-rule-name Test1948
++  speed 100
++  duplex half
++  poe
++  type guest
++  auth-server testuser
++  captive-portal internal
++  no dot1x

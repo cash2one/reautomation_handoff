@@ -1,0 +1,4 @@
+! mgmt-user viewonly  read-only
+! mgmt-user Guestnetwork  guest-mgmt
+! mgmt-user viewonly123  read-only
+! mgmt-user Myguestnetwork  guest-mgmt

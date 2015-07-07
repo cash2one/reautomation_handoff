@@ -1,0 +1,5 @@
++ wlan wispr-profile
++  wispr-location-name-operator-name Belong
++  wispr-location-name-location Australia
++  wispr-location-id-network Guest123
++  wispr-location-id-isocc 61

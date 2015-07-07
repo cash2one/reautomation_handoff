@@ -1,0 +1,15 @@
+  airgroup
+!  disable
+  
+  airgroup
+!  enable
+  
+  airgroupservice allowall
+!  disable
+  
+  airgroupservice allowall
+!  enable
+!  disallow-role default_wired_port_profile
+!  disallow-vlan 1
+!  disallow-vlan 2
+  

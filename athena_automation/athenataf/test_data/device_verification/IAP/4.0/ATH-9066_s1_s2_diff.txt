@@ -1,0 +1,3 @@
+  terminal-access
++ airwave-rtls 10.10.10.10 2  30 include-unassoc-sta
+  clock timezone none 00 00

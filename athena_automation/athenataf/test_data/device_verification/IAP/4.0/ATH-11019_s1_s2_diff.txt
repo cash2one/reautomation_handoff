@@ -1,0 +1,5 @@
++ calea
++  ip %(calea_ip_address_without_preceding_zeros)s
++  encapsulation-type gre
++  gre-type 25944
++  ip mtu 1500

@@ -1,0 +1,2 @@
++  a-channels 44
++  g-channels 3

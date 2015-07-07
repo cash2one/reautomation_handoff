@@ -1,0 +1,24 @@
+admin_passwd									: label&id&//span[text()='ADMIN PASSWORD']
+name_server										: textbox&id&configsystem_name_server
+save_settings									: button&xpath&//span[text()='Save Settings']
+admin_pass										: textbox&id&configsystem_admin_pwd
+admin_confirm_pass								: textbox&id&configsystem_admin_pwd_confirm
+enable_pass										: textbox&id&configsystem_enable_pwd
+enable_confirm_pass								: textbox&id&configsystem_enable_pwd_confirm
+cancel											: button&id&ngCancel
+admin_pass_required_field						: label&id&configsystem_admin_pwd_requiredError
+admin_confirm_required_field					: label&id&configsystem_admin_pwd_confirm_requiredError
+admin_pass_mismatch								: label&id&configsystem_admin_pwd_mismatchError
+admin_confirm_mismatch							: label&id&configsystem_admin_pwd_confirm_mismatchError
+admin_pass_lengtherror							: label&id&configsystem_admin_pwd_lengthError
+admin_confirm_lengtherror						: label&id&configsystem_admin_pwd_confirm_lengthError
+enable_pass_required_field						: label&id&configsystem_enable_pwd_requiredError
+enable_confirm_required_field					: label&id&configsystem_enable_pwd_confirm_requiredError
+enable_pass_mismatch							: label&id&configsystem_enable_pwd_mismatchError
+enable_confirm_mismatch							: label&id&configsystem_enable_pwd_confirm_mismatchError
+enable_pass_lengtherror							: label&id&configsystem_enable_pwd_lengthError
+enable_confirm_lengtherror						: label&id&configsystem_enable_pwd_confirm_lengthError
+admin_pass_pattern_mismatch						: label&id&configsystem_admin_pwd_patternError
+admin_confirm_pattern_mismatch					: label&id&configsystem_admin_pwd_confirm_patternError
+enable_pass_pattern_mismatch					: label&id&configsystem_enable_pwd_patternError
+enable_confirm_pattern_mismatch					: label&id&configsystem_enable_pwd_confirm_patternError

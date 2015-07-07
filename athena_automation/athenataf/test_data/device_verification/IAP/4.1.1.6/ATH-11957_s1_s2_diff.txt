@@ -1,0 +1,18 @@
++ syslog-server 192.168.1.11
++ syslog-level critical
+! syslog-level warn ap-debug
+! syslog-level warn network
+! syslog-level warn security
+! syslog-level warn system
+! syslog-level warn user
+! syslog-level warn user-debug
+! syslog-level warn wireless
+! syslog-level alert ap-debug
+! syslog-level critical network
+! syslog-level emergency security
+! syslog-level error system
+! syslog-level alert user
+! syslog-level critical user-debug
+! syslog-level error wireless
++ tftp-dump-server 192.168.1.12
+  

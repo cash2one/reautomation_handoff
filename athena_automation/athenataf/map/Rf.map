@@ -1,0 +1,158 @@
+page_header									: button&text&Configuration - RF
+band_steering_mode							: select&id&arm_band_steering_mode
+airtime_fairness_mode						: select&id&arm_air_time_fairness_mode
+client_match								: select&id&client_match
+cm_calculating_interval						: textbox&id&cm_calc_interval
+cm_neighbour_matching						: textbox&id&cm_neighbour_matching
+cm_threshold								: textbox&id&cm_threshold
+slb_mode									: select&id&slb_mode
+min_transmit_power							: select&id&arm_min_transmit
+max_transmit_power							: select&id&arm_max_power_transmit
+client_aware								: select&id&arm_client_aware
+scanning									: select&id&arm_scanning
+wide_channel_bands							: select&id&arm_wide_channel
+mhz_support									: select&id&eightysupport
+arm_section									: button&css_class&section-title&0
+radio_section								: button&css_class&section-title&1
+save_button_disabled                        : ignore&xpath&//div[@class="save-items-popup ng-hide"]
+save_settings								: button&xpath&//span[text()= 'Save Settings']
+customize_valid_channels					: button&id&valid_check
+edit_24_ghz									: link&text&Edit&0
+edit_5_ghz									: link&text&Edit&1
+ghz_24_1									: button&xpath&//span[text()='1']/preceding-sibling::span[1]/input
+ghz_24_2									: button&xpath&//span[text()='2']/preceding-sibling::span[1]/input
+ghz_24_3									: button&xpath&//span[text()='3']/preceding-sibling::span[1]/input
+ghz_5_36									: button&xpath&//span[text()='36']/preceding-sibling::span[1]/input
+ghz_5_40									: button&xpath&//span[text()='40']/preceding-sibling::span[1]/input
+ghz_5_44									: button&xpath&//span[text()='44']/preceding-sibling::span[1]/input
+selected_channels_24_ghz					: button&text&1, 2, 3
+selected_channels_5_ghz						: button&text&36, 40, 44
+legacy_only_24ghz							: select&id&dot11g_legacy_mode
+dropdown_11d_11h_24ghz						: select&id&dot11g_dot11h
+interface_immunity_24ghz					: select&id&dot11g_interference_immunity
+channel_switch_announce_24ghz				: select&id&dot11g_csa_count
+background_spectrum_24ghz					: select&id&dot11g_spectrum_monitor
+legacy_only_5ghz							: select&id&dot11a_legacy_mode
+dropdown_11d_11h_5ghz						: select&id&dot11a_dot11h
+interface_immunity_5ghz						: select&id&dot11a_interference_immunity
+channel_switch_announce_5ghz				: select&id&dot11a_csa_count
+background_spectrum_5ghz					: select&id&dot11a_spectrum_monitor
+beacon_interval_24ghz						: textbox&id&dot11g_beacon_interval
+beacon_interval_5ghz						: textbox&id&dot11a_beacon_interval
+error_message_calc_intr						: button&id&arm_cm_cal_intval_error
+error_mssg_neigh_match						: button&id&arm_cm_neig_matching_error
+error_mssg_threshold						: button&id&arm_cm_threshold_error
+beacon_interval_24ghz_error					: button&id&dot11g_beacon_interval_error
+beacon_interval_5ghz_error					: button&id&dot11a_beacon_interval_error
+client_match_text							: button&text&CLIENT MATCH
+cm_calculating_int_text						: button&text&CM CALCULATING INTERVAL
+cm_neighbour_matching_text					: button&text&CM NEIGHBOR MATCHING
+cm_threshold_text							: button&text&CM THRESHOLD
+rf_cancel_button							: button&id&ngCancel
+selected_few_channels_24_ghz				: button&text&3&0
+selected_few_channels_5_ghz					: button&text&44&0
+arm_client_control_span						: button&text&CLIENT CONTROL
+radio_ghz_band_span							: button&text&2.4 GHz BAND
+help_button									: button&xpath&//a[@class='helpButton Header_Help icosolo icon_help']
+access_point_button							: button&id&apsSubMenu
+help_content								: button&id&auto-help-content
+save_button									: button&id&ngSave
+client_control_label						: button&xpath&//span[text()='CLIENT CONTROL']
+band_streering_mode_help_link				: chain&xpath&//span[text()='BAND STEERING MODE']
+
+confirm_save_ok								: button&xpath&//*[@id='confirm-save-ok']/span[text()='OK']
+confirm_save_cancel							: button&xpath&//a[@id='confirm-save-cancel']/span&0
+channel_24ghz_1								: button&id&channel_24_checkbox_1
+channel_24ghz_2								: button&id&channel_24_checkbox_2
+channel_24ghz_3								: button&id&channel_24_checkbox_3
+channel_24ghz_4								: button&id&channel_24_checkbox_4
+channel_24ghz_5								: button&id&channel_24_checkbox_5
+channel_24ghz_6								: button&id&channel_24_checkbox_6
+channel_24ghz_7								: button&id&channel_24_checkbox_7
+channel_24ghz_8								: button&id&channel_24_checkbox_8
+channel_24ghz_9								: button&id&channel_24_checkbox_9
+channel_24ghz_10							: button&id&channel_24_checkbox_10
+channel_24ghz_11							: button&id&channel_24_checkbox_11
+channel_24ghz_12							: button&id&channel_24_checkbox_12
+channel_24ghz_13							: button&id&channel_24_checkbox_13
+channel_24ghz_1plus							: button&id&channel_24_checkbox_1+
+channel_24ghz_2plus							: button&id&channel_24_checkbox_2+
+channel_24ghz_3plus							: button&id&channel_24_checkbox_3+
+channel_24ghz_4plus							: button&id&channel_24_checkbox_4+
+channel_24ghz_5plus							: button&id&channel_24_checkbox_5+
+channel_24ghz_6plus							: button&id&channel_24_checkbox_6+
+channel_24ghz_7plus							: button&id&channel_24_checkbox_7+
+channel_5ghz_36								: button&id&channel_5_checkbox_36
+channel_5ghz_40								: button&id&channel_5_checkbox_40
+channel_5ghz_44								: button&id&channel_5_checkbox_44
+channel_5ghz_48								: button&id&channel_5_checkbox_48
+channel_5ghz_52								: button&id&channel_5_checkbox_52
+channel_5ghz_56								: button&id&channel_5_checkbox_56
+channel_5ghz_60								: button&id&channel_5_checkbox_60
+channel_5ghz_64								: button&id&channel_5_checkbox_64
+channel_5ghz_100							: button&id&channel_5_checkbox_100
+channel_5ghz_104							: button&id&channel_5_checkbox_104
+channel_5ghz_108							: button&id&channel_5_checkbox_108
+channel_5ghz_112							: button&id&channel_5_checkbox_112
+channel_5ghz_116							: button&id&channel_5_checkbox_116
+channel_5ghz_120							: button&id&channel_5_checkbox_120
+channel_5ghz_124							: button&id&channel_5_checkbox_124
+channel_5ghz_128							: button&id&channel_5_checkbox_128
+channel_5ghz_132							: button&id&channel_5_checkbox_132
+channel_5ghz_136							: button&id&channel_5_checkbox_136
+channel_5ghz_140							: button&id&channel_5_checkbox_140
+channel_5ghz_149							: button&id&channel_5_checkbox_149
+channel_5ghz_153							: button&id&channel_5_checkbox_153
+channel_5ghz_157							: button&id&channel_5_checkbox_157
+channel_5ghz_161							: button&id&channel_5_checkbox_161
+channel_5ghz_165							: button&id&channel_5_checkbox_165
+channel_5ghz_36plus							: button&id&channel_5_checkbox_36+
+channel_5ghz_44plus							: button&id&channel_5_checkbox_44+
+channel_5ghz_52plus							: button&id&channel_5_checkbox_52+
+channel_5ghz_60plus							: button&id&channel_5_checkbox_60+
+channel_5ghz_100plus						: button&id&channel_5_checkbox_100+
+channel_5ghz_108plus						: button&id&channel_5_checkbox_108+
+channel_5ghz_132plus						: button&id&channel_5_checkbox_132+
+channel_5ghz_149plus						: button&id&channel_5_checkbox_149+
+channel_5ghz_157plus					    : button&id&channel_5_checkbox_157+
+channel_5ghz_36E							: button&id&channel_5_checkbox_36E
+channel_5ghz_52E							: button&id&channel_5_checkbox_52E
+channel_5ghz_100E							: button&id&channel_5_checkbox_100E
+channel_5ghz_116E							: button&id&channel_5_checkbox_116E
+channel_5ghz_132E							: button&id&channel_5_checkbox_132E
+channel_5ghz_149E							: button&id&channel_5_checkbox_149E
+close_24ghz_channels						: button&id&close_24ghz_channels
+hide_5ghz_channels							: button&id&hide_5ghz_channels
+all_group_button  							: button&xpath&//span[@class='slider-menu-icon toggleGroupOff']
+default_expand_button 					    : button&id&show_swarms_0
+default_group_instant_option 				: button&id&swarm_name_0
+override_flag_button_1					    : button&xpath&//img[contains(@src,'Override2.png')]/..
+override_flag_button_2					    : button&xpath&//*[@id='swarmObj.id']
+override_flag_button					    :button&xpath&//*[@id='body']/div[1]/div[1]/div[6]/div/div[1]/div/div[6]
+override_flag_client_aware 					: button&xpath&//*[@id='group_sidebar_diff']&1
+override_flag_scanning  					: button&xpath&//*[@id='group_sidebar_diff']&2
+override_flag_nb_matching 					:button&xpath&//*[@id='group_sidebar_diff']&3
+override_flag_calc_threshold 				: button&xpath&//*[@id='group_sidebar_diff']&4
+rf_radio_override_flag_vc_name 				: button&xpath&//*[@id='swarmOverrideListTable_name_display_0']
+rf_radio_override_flag_options			    : button&xpath&//*[@id='swarmOverrideListTable_select_row_0']/td[1]/span[3]
+override_resolv_button					    : button&id&resolve_all_overrides
+
+cm_calculating_interval_seconds_label 		: button&xpath&//input[@id='cm_calc_interval']/../span
+cm_neighbor_matching_style					: button&xpath&//input[@id='cm_neighbour_matching']/../span
+edit_5_ghz_label 							: button&xpath&//a[@id='show_24ghz_channels']/../label
+edit_24_ghz_label 							: button&xpath&//a[@id='show_5ghz_channels']/../label
+
+client_match_multiversion				:button&xpath&//select[@id='client_match' and @disabled='disabled']/../img[@title='Supported in 6.3.1.2-4.0.0 and above']
+
+slb_mode_multiversion					:button&xpath&//select[@id='slb_mode' and @disabled='disabled']/../img[@title='Supported in 6.3.1.2-4.0.0 and above']
+
+eightysupport_multiversion				:button&xpath&//select[@id='eightysupport' and @disabled='disabled']/../img[@title='Supported in 6.3.1.2-4.0.0 and above']
+override_flag_button_new					: button&xpath&//div[@class='override-icon icosolo icon_link_broken ng-scope']
+override_diff1								: button&xpath&//td[@class='overrides ar-td ng-scope']/span[2]
+override_diff2								: button&xpath&//td[@class='overrides ar-td ng-scope']/span[3]
+override_diff3								: button&xpath&//td[@class='overrides ar-td ng-scope']/span[4]
+override_diff4								: button&xpath&//td[@class='overrides ar-td ng-scope']/span[5]
+override_diff5								: button&xpath&//td[@class='overrides ar-td ng-scope']/span[6]
+override_diff6								: button&xpath&//td[@class='overrides ar-td ng-scope']/span[7]
+override_diff7								: button&xpath&//td[@class='overrides ar-td ng-scope']/span[8]
+close_overrides_overlay						: button&xpath&//a[@id='close_overrides_overlay']/span

@@ -1,0 +1,21 @@
++ wlan access-rule test1
++  rule any any match any any any permit
++ wlan ssid-profile test1
++  enable
++  type voice
++  essid test1
++  opmode wpa-psk-tkip,wpa2-psk-aes
++  max-authentication-failures 0
++  vlan 300
++  auth-server InternalServer
++  set-vlan AP-Group contains abcdef 200
++  rf-band all
++  captive-portal disable
++  mac-authentication
++  dtim-period 1
++  inactivity-timeout 1000
++  broadcast-filter none
++  dmo-channel-utilization-threshold 90
++  local-probe-req-thresh 0
++  max-clients-threshold 64
++  dot11r

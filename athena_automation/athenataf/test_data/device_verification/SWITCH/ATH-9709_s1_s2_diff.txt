@@ -1,0 +1,19 @@
++ ip dhcp pool "test"
++    dns-server 10.10.10.11
++    dns-server 10.10.10.12
++    dns-server 10.10.10.13
++    dns-server 10.10.10.14
++    dns-server 10.10.10.15
++    dns-server 10.10.10.16
++    dns-server 10.10.10.17
++    dns-server 10.10.10.18
++    netbios-name-server 10.10.10.11
++    netbios-name-server 10.10.10.12
++    netbios-name-server 10.10.10.13
++    netbios-name-server 10.10.10.14
++    netbios-name-server 10.10.10.15
++    netbios-name-server 10.10.10.16
++    netbios-name-server 10.10.10.17
++    netbios-name-server 10.10.10.18
++    vendor-class-identifier ArubaAP
++ !

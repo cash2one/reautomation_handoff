@@ -1,0 +1,194 @@
+Wired_Captive_Profile_Default 									:  default
+Authentication_wpa2 											:  WPA-2 Personal
+Authentication_server 											:  InternalServer
+open_roaming_value 												:  Disabled
+Encryption_Guest 												:  Enabled
+userTxt 														:  testuser
+reauth_interval 												:  180
+wep_key 														:  0123456789ABCDEF0123456789
+security_key_management 										:  Both(WPA-2 & WPA)
+pswdTxt 														:  test123
+pswdTxt2 														:  test123
+enterprise_key_mgt_value 										:  Dynamic- WEP With 802.1x
+BlackListing_Guest 												:  Enabled
+Splash_page_external 											:  External
+Auth_Sharedkey 													:  123456789
+new_server 														:  -- New --
+new_open_roaming_value 											:  Enabled
+Wired_Captive_Profile_New 										:  -- New --
+InternalServer 													:  InternalServer
+Authentication_Wpa_Enterprise 									:  WPA Enterprise
+Authentication_wpa_wpa2 										:  Both(WPA-2 & WPA)
+Retype_auth_shared_key 											:  123456789
+typeTxt 														:  Guest
+Splash_page_none 												:  None
+Uppercase_Support_Enabled 										:  Enabled
+Splash_page_Authenticated 										:  Internal - Authenticated
+invalid_input 													:  *
+Security_Mac_Authentication_Enabled 							:  Enabled
+Authentication_interval 										:  40
+Splash_page_Acknowledged 										:  Internal - Acknowledged
+Security_Mac_Authentication 									:  Disabled
+Authentication_Wpa2_Enterprise 									:  WPA-2 Enterprise
+auth_server_name 												:  authradius
+Wispr_status 													:  Disabled
+Captive_Role_Radius_Authentication 								:  Radius Authentication
+Captive_Role_Name 												:  RoleTest
+personal_key_mgt_value 											:  Static WEP
+Authentication_Wpa2_WPA_Enterprise 								:  Both(WPA-2 & WPA)
+open_roaming_value_enabled										:  Enabled
+wpa2_enterprise	 												:  WPA-2 Enterprise
+enable_option													: Enabled
+disable_option													: Disabled
+pass_phrase_format_8_63_chars									: 8-63 chars
+pass_phrase_format_64_hexa_chars								: 64 hexadecimal chars
+roaming_option													: Enabled
+blacklisting_option												: Enabled
+max_authentication_failure										: 10
+delimeter_value													: :
+invalid_accounting												: 62
+valid_accounting												: 60
+reauth_interval_default_value									: 0
+reauth_intrvl_unit_min           								: min.
+reauth_intrvl_unit_hrs          							    : hrs.
+max_authentication_default_value								: 0
+wep_key_option_1												: 128-bit
+wep_key_option_2												: 64-bit
+wpa_personal													: WPA Personal
+reauth_intrvl_alpha												:  abcdef
+reauth_intrvl_num_invalid										:  32769
+reauth_intrvl_num_invalid_hrs									:  547
+reauth_intrvl_spcl_char											:  %&$#
+reauth_intrvl_num_valid											:  123
+auth_survivability_enable										:  Enabled
+cache_timeout_invalid_num										:  0
+delimiter_char_valid											:  :
+delimiter_char_two												:  /:
+termination_disabled											:  Disabled
+accounting_enabled												:  Enabled
+accounting_intrvl_invalid										:  61
+accounting_intrvl_valid											:  40
+blacklisting_enabled											:  Enabled
+max_auth_failure_invalid_num									:  11
+max_auth_failure_valid_num										:  5
+key_management_wpa												:  WPA Personal
+passphrase_frmt_8_63_char										:  8-63 chars
+passphrase_alpha												:  abcdefghi
+passphrase_spcl_char											:  !@#$%^&*(
+passphrase_invalid												:  abcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*()-_=+[]{}\|;:'",<.>/?
+passphrase_frmt_64_hex											:  64 hexadecimal chars
+passphrase_hex_alpha_valid										:  abcdefabcdefabcdefabcdefabcdefabcdefabcdefabcdefabcdefabcdefabcd
+passphrase_hex_alpha_invalid									:  ghijklmnopqrstuvwxyzghijklmnopqrstuvwxyzghijklmnopqrstuvwxyzghij
+passphrase_hex_num_valid										:  0123456789012345678901234567890123456789012345678901234567890123
+passphrase_hex_spcl_char										:  !@#$%^&*()_+~`-=[{]}\|;:'",<.>/?!@#$%^&*()_+~`-=[{]}\|;:'",<.>/?
+passphrase_hex_num_invalid										:  01234567890123456789012345678901234567890123456789012345678901234567
+key_mngmt_static												:  Static WEP
+wep_key_size_128												:  128-bit
+wep_key_alpha_valid												:  abcdefabcdefabcdefabcdefab
+wep_key_alpha_invalid											:  ghijklmnopqrstuvwxyzghijkl
+wep_key_num_valid												:  12345678901234567890123456
+wep_key_chars													:  !@#$%^&*()_+~`-=[{]}\|;:'"
+wep_key_size_64													:  64-bit
+wep_key_64_alpha												:  abcdefabcd
+wep_key_64_alpha_invalid										:  ghijklmnop
+wep_key_64_num_valid											:  1234567890
+wep_key_64_spcl_char											:  !@#$%^&*()
+wireless_encryption 											:  Enabled
+auth_ipaddr 													:  10.17.50.110
+
+auth_server_name2												: testradius_2
+passphrase_format_8												: 8-63 chars
+passphrase_format_64											: 64 hexadecimal chars
+wep_key_index													: 1
+wep_key_size													: 128-bit
+max_auth_failure							  					: 10
+security_passphrase											: dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+personal_delimeter												: :
+accounting_interval_value										: 1
+reauth_interval10												: 10
+key_management													: WPA Personal
+keymanagement_value												: Dynamic- WEP With 802.1x
+auth_survivability_value										: Enabled
+reauth_value													: 10
+new_reauth_value												: 3
+invalid_zero_input												: 0
+select															: -- Select --
+user_type_value													: Guest
+Wired_Captive_Profile_Role_test									: Role Test
+Wired_Captive_Profile_test_role									: test Role
+captive_port_default											: 1080
+captive_port_invalid											: 68888
+new_regex_error													: dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+new_regex_valid													: yahoo.com
+wispr_enable													: Enabled
+default_AuthPort												: 1812
+default_Auth_Account_Port										: 1813
+default_dead_time												: 5
+default_ldap_auth_port											: 389
+default_air_group_coa_port_value								: 5999
+default_time_out												: 5
+internal_server													: InternalServer
+captive_portal_auth_text										: Authentication text
+invalid_redirect_url											: www.yahoo.com
+valid_redirect_url												: http://www.yahoo.com
+splash_page_external_auth_text									: External - Authentication Text
+splash_page_external_radius_auth								: External - RADIUS Authentication
+banner_title_new_value											: Title Header - Welcom
+welcome_text_new_value											: Welcome to Aruba Guest Cloud WiFi
+policy_text_new_value											: Confirm your BYOD click accept
+typeTxt_employee												: Employee
+passphrase_invalid_hex_value									: 12345678
+edit_banner_title_new_value									    : Title Header - Hello
+edit_welcome_text_new_value										: Welcome to Aruba 
+edit_policy_text_new_value										: Confirm your BYOD
+cache_timeout_default											: 19
+accounting_mode													: Authentication
+hypen_underscore												: -_
+valid_auth_server_ip											: 1.2.3.4
+auth_shared_key													: 1234
+
+external_captive_ip												: 10.30.40.50
+external_captive_url											: /
+external_captive_port											: 80
+external_captive_portal_failure									: Deny Internet
+external_captive_auth_text  									: Authenticated
+blacklist_name													: www.bing.com
+whitelist_name													: www.gmail.com
+banner_title_guest_network_default								: Welcome to Guest Network
+header_color_default											: #ff
+welcome_text_default											: Please read and accept terms and conditions and then login.
+policy_text_default												: This network is not secure and use it at your own risk.
+background_color_default										: #ff00
+redirect_url_default											: 
+accounting_mode_association										: Association
+reauth_interval_145												: 145
+accounting_interval_value_20									: 20
+captive_portal_ip 												: 10.2.112.10
+captive_portal_url												: /guest/guest_register.php
+captive_portal_failure_allow									: Allow Internet
+acct_mode_association											: Association
+thirty															: 30
+fifteen															: 15
+two																: 2
+allow_internet													: Allow Internet
+deny_internet													: Deny Internet
+captive_url														: http://www.google.com
+ninety 															: 90
+hyphen															: -	
+delimeter_dot         										    : .
+reauth_30           										    : 30
+reauth_40  											            : 40
+reauth_2              											: 2
+reauth_interval_1440											: 1440
+max_authentication_2											: 2
+auth_server_name_new											: New
+ten_hexa_decimal_chars											: aaaaaaaaaa	
+logo_5_kb														: logo5kb.jpg
+logo_16_kb														: logo16kb.jpg
+logo_20_kb														: logo20kb.jpg
+textfile														: textfile.txt
+logo1															: logo1.jpg
+logo_file_name_with_space										: cp test.jpg
+logo_2															: logo2.jpg
+action_role 													: Deny
+auth_text_edit													:  Authentication Via External Radius Server

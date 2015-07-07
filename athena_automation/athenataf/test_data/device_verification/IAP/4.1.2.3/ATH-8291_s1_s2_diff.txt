@@ -1,0 +1,3 @@
++ gre primary %(host_gre)s
++ gre type %(gre_type)s
++ gre per-ap-tunnel

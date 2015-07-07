@@ -1,0 +1,16 @@
++ l2tpv3 tunnel %(tunnel_name)s
++  failover-mode non-preemptive
++  failover-retry-count %(fail_count)s
++  failover-retry-interval %(retry_interval)s
++  hello-timeout %(interval)s
++  local-port %(local_port)s
++  message-digest-type SHA1
++  mtu %(tunnel_mtu)s
++  primary peer-address %(primary_add)s
++  backup peer-address %(backup_add)s
++  peer-port %(local_port)s
++  secret-key 
++ l2tpv3 session %(session_name)s
++  cookie len 8 value DDDDDDDDDDDDDDDD
++  tunnel-ip %(valid_session_ip_adress)s mask %(valid_session_netmask)s vlan %(valid_session_vlan)s
++  remote-end-id %(valid_session_remote_end_id)s

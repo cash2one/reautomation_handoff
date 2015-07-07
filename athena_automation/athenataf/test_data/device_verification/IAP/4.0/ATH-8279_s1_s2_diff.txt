@@ -1,0 +1,7 @@
+  
+  airgroup
+   disable
++  enable-guest-multicast
+  
+  airgroupservice airplay
+   disable

@@ -1,0 +1,7 @@
+subscription_keys_label							: label&xpath&//label[text()='Subscription Keys' and @help-id="maintenance_licenses"]
+name_label										: label&xpath&//table[@id='Maintenance_License_Table']/thead/tr[1]/th[1]/label
+type_label										: label&xpath&//table[@id='Maintenance_License_Table']/thead/tr[1]/th[2]/label
+start_date_label								: label&xpath&//table[@id='Maintenance_License_Table']/thead/tr[1]/th[3]/label
+end_date_label									: label&xpath&//table[@id='Maintenance_License_Table']/thead/tr[1]/th[4]/label
+capacity_label									: label&xpath&//table[@id='Maintenance_License_Table']/thead/tr[1]/th[5]/label
+used_label										: label&xpath&//table[@id='Maintenance_License_Table']/thead/tr[1]/th[6]/label

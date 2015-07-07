@@ -1,0 +1,86 @@
+dhcp_scopes_new							: button&id&DHCP_Scopes_New
+dhcp_name								: textbox&id&Distributed_DHCP_UsrName
+dhcp_network							: textbox&id&DHCPPool_IPAddres
+dhcp_netmask							: textbox&id&DHCPPool_Net_Mask
+dhcp_router								: textbox&id&Distributed_DHCP_Default_Routes
+dhcppool_option_type					: select&id&dhcppool_option_type
+dhcp_add								: button&id&Finish_add&0
+dhcp_delete								: button&id&Delete_Distribute_0
+dhcp_duplicate_error					: label&id&dhcppool_name_dup_error
+dhcp_dns_server							: textbox&id&dhcp_pool_dns0
+dhcp_wins_server						: textbox&id&dhcp_pool_wins0
+dhcp_pools_label						: label&text&DHCP Pools&1
+enable_dhcp_service						: checkbox&id&dhcp_service
+dhcp_pool_table							: label&xpath&//div[@class='panel table rounded white no_pad']&6
+exclude_address_start					: textbox&id&distributed_ip_start0
+exclude_address_end						: textbox&id&distributed_ip_end0
+dhcp_name_required_field_msg			: label&id&dhcppool_name_required_error
+save_settings							: button&id&ngSave
+dhcp_cancel								: button&id&Hide_NewDHCp
+test2									: button&xpath&//span[contains(.,'test2')]
+test2_edit								: button&xpath&//span[contains(.,'test2')]/../following-sibling::td[4]/div/a[1]
+test2_delete_icon						: button&xpath&//span[contains(.,'test2')]/../following-sibling::td[4]/div/a[2]
+exclude_address_add_button_1			: button&id&add_new_ip_range&0
+exclude_address_add_button_2			: button&id&add_new_ip_range&1
+exclude_address_add_button_3			: button&id&add_new_ip_range&2
+exclude_address_start_1					: textbox&id&distributed_ip_start1
+exclude_address_end_1					: textbox&id&distributed_ip_end1
+exclude_address_start_2					: textbox&id&distributed_ip_start2
+exclude_address_end_2					: textbox&id&distributed_ip_end2
+option_add_button						: button&id&add_new_scope_option&0
+option_add_button_1						: button&id&add_new_scope_option&1
+option_add_button_2						: button&id&add_new_scope_option&2
+option_add_button_3						: button&id&add_new_scope_option&3
+option_add_button_4						: button&id&add_new_scope_option&4
+option_add_button_5						: button&id&add_new_scope_option&5
+option_add_button_6						: button&id&add_new_scope_option&6
+option_add_button_7						: button&id&add_new_scope_option&7
+add_dns_server1							: button&id&add_new_dns_server&0
+add_dns_server2							: button&id&add_new_dns_server&1
+add_dns_server3							: button&id&add_new_dns_server&2
+add_dns_server4							: button&id&add_new_dns_server&3
+add_dns_server5							: button&id&add_new_dns_server&4
+add_dns_server6							: button&id&add_new_dns_server&5
+add_dns_server7							: button&id&add_new_dns_server&6
+add_dns_server8							: button&id&add_new_dns_server&7
+add_dns_server9							: button&id&add_new_dns_server&8
+dhcp_dns_server1						: textbox&id&dhcp_pool_dns1
+dhcp_dns_server2						: textbox&id&dhcp_pool_dns2
+dhcp_dns_server3						: textbox&id&dhcp_pool_dns3
+dhcp_dns_server4						: textbox&id&dhcp_pool_dns4
+dhcp_dns_server5						: textbox&id&dhcp_pool_dns5
+dhcp_dns_server6						: textbox&id&dhcp_pool_dns6
+dhcp_dns_server7						: textbox&id&dhcp_pool_dns7
+dhcp_dns_server8						: textbox&id&dhcp_pool_dns8
+add_wins_server1						: button&id&add_new_wins_server&0
+add_wins_server2						: button&id&add_new_wins_server&1
+add_wins_server3						: button&id&add_new_wins_server&2
+add_wins_server4						: button&id&add_new_wins_server&3
+add_wins_server5						: button&id&add_new_wins_server&4
+add_wins_server6						: button&id&add_new_wins_server&5
+add_wins_server7						: button&id&add_new_wins_server&6
+add_wins_server8						: button&id&add_new_wins_server&7
+add_wins_server9						: button&id&add_new_wins_server&8
+dhcp_wins_server1						: textbox&id&dhcp_pool_wins1
+dhcp_wins_server2						: textbox&id&dhcp_pool_wins2
+dhcp_wins_server3						: textbox&id&dhcp_pool_wins3
+dhcp_wins_server4						: textbox&id&dhcp_pool_wins4
+dhcp_wins_server5						: textbox&id&dhcp_pool_wins5
+dhcp_wins_server6						: textbox&id&dhcp_pool_wins6
+dhcp_wins_server7						: textbox&id&dhcp_pool_wins7
+dhcp_wins_server8						: textbox&id&dhcp_pool_wins8
+dhcppool_option_code					: textbox&id&dhcppool_option_code0
+dhcppool_option_value					: textbox&id&dhcppool_option_name0
+name_error_msg							: button&id&dhcppool_name_length_error
+network_error_msg						: button&id&dhcp_pool_ip_required_error
+netmask_error_msg						: button&id&dist_dhcp_netmask_pattern_error
+default_router_error_msg				: button&id&dist_dhcp_def_router_required_error
+dns_server_error_msg					: button&id&dhcp_dns_server_error
+wins_server_error_msg					: button&id&dhcp_pool_wins_server_error
+exclude_address_error_msg				: button&id&dist_ip_start_error
+option_code_error_msg					: button&text&* Valid range is 1 - 255
+option_value_error_msg					: button&css&div[class$='value-field-error ng-binding']
+delete_dhcp_pool						: button&id&confirm-save-ok&0
+
+
+

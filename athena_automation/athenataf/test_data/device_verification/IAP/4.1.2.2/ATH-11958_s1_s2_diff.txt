@@ -1,0 +1,4 @@
++ snmp-server community
++ snmp-server user newcom MD5  DES
++ snmp-server host 10.10.1.10 version 2c newcom inform
++ snmp-server host 152.10.2.54 version 1 abcdefg udp-port 65534

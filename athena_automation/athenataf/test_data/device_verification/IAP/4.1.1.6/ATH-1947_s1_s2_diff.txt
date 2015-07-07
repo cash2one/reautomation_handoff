@@ -1,0 +1,14 @@
++ wlan access-rule testwired
++  rule any any match any any any permit
++ wired-port-profile %(wired_network_name)s
++  switchport-mode access
++  allowed-vlan all
++  native-vlan guest
++  no shutdown
++  access-rule-name %(wired_network_name)s
++  speed auto
++  duplex auto
++  poe
++  type guest
++  captive-portal internal
++  no dot1x

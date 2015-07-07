@@ -1,0 +1,17 @@
++ wlan ssid-profile %(Network_name)s
++  enable
++  type employee
++  essid %(Network_name)s
++  opmode dynamic-wep
++  max-authentication-failures 0
++  auth-server %(Authentication_server)s
++  rf-band all
++  captive-portal disable
++  mac-authentication
++  mac-authentication-upper-case
++  dtim-period 1
++  inactivity-timeout 1000
++  broadcast-filter none
++  dmo-channel-utilization-threshold 90
++  local-probe-req-thresh 0
++  max-clients-threshold 255

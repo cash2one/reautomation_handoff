@@ -1,0 +1,16 @@
+  
++ wlan auth-server %(Network_name)s
++  ip %(cppm_server_ip)s
++  port 1812
++  acctport 1813
++  key 
++  cppm-rfc3576-only
++  cppm-rfc3576-port %(coa_port)s
+  wlan external-captive-portal
+  airgroup
+!  disable
+  
+  airgroup
+!  enable
+!  cppm-server %(cppm_server_name)s
+  

@@ -1,0 +1,4 @@
++  infrastructure-protection-level high
++  client-protection-level low
+  
+  

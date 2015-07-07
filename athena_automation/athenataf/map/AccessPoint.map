@@ -1,0 +1,80 @@
+iap_mode_value										: button&xpath&//span[contains(.,'access')]&0
+edit												: submit&text&Edit
+access_point										: button&xpath&//div[contains(@title,':')]
+radio												: button&xpath&//label[text()='RADIO']
+message												: button&xpath&//div[text()='Reboot AP for changes to take effect.']&3
+save_button											: button&id&ngSave
+alert_continue										: button&id&Reboot_Continue
+arm_radio_24g										: radio&id&Adaptive_Assigned_2_4g
+aa_radio_24g										: radio&id&Admin_Assigned_2_4g
+aa_radio_5g											: radio&id&Admin_Assigned_5g
+uplink												: button&xpath&//label[text()='UPLINK']
+etho_bridging_msg									: button&xpath&//div[@class="instructions ng-binding"]
+uplink_vlan											: textbox&id&UPLINK_VLAN
+channel												: select&id&Admin_Assign_2_4g_channel
+transmit_power										: textbox&id&Admin_Assign_2_4g_txPower
+access_label										: button&xpath&//h1/label[text()='Access Points']
+name												: button&xpath&//label[contains(.,'NAME') and @class="ng-scope ng-binding"]&4
+status												: button&xpath&//label[text() = 'STATUS']&1
+ip_address											: button&xpath&//label[text()='IP ADDRESS']&1
+ip_assignment										: button&xpath&//label[text()='IP ASSIGNMENT']&1
+type												: button&xpath&//label[text()='TYPE']&1
+ghz_24_channel										: button&xpath&//label[text()='2.4GHz (CH/PWR)']&1
+ghz_5_channel										: button&xpath&//label[text()='5GHz (CH/PWR)']&1
+basic_info_section									: button&id&accordion-section-content-1
+basic_info_name_field								: button&xpath&//span[text()='NAME']
+prefered_master										: select&id&prefered_master
+ip_address_for_ap									: button&text&IP ADDRESS FOR ACCESS POINT:
+get_ip_from_dhcp									: button&id&IP_from_DHCP
+radio_accordion										: button&xpath&//div[@id='accordion-section-2']/div[1]/span
+uplink_accordion									: button&xpath&//div[@id='accordion-section-4']/div[1]/span
+radio_section										: button&id&accordion-section-content-2
+uplink_section										: button&id&accordion-section-content-4
+mode_picklist										: select&id&Wifi_Maode
+adaptive_radio_mgmt_5								: button&id&Adaptive_Assigned_5g
+eth0_bridging										: select&id&ETH0_BRIDGING
+access_point_name									: textbox&id&Ap_Name
+access_point_name_error_msg							: button&xpath&//div[text()='* Maximum 32 characters allowed']
+access_point_24Ghz_label							: button&xpath&//span[text()='2.4GHz BAND']
+access_point_5Ghz_label								: button&xpath&//span[text()='5GHz BAND']
+mode_label											: label&xpath&//label[text()='MODE']&1
+vlan_mgt_3333_reserved_error						: label&xpath&//div[text() = '* VLAN 3333 is reserved']
+ap_uplink_mgt_vlan_error							: label&id&ap_uplink_mgt_vlan_error
+Reboot_Cancel										: button&id&Reboot_Cancel
+ap_edit_button										: button&xpath&//a[@value='ap_edit']&0
+channel_5ghz										: select&id&Admin_Assign_5g_chennal
+transmit_power_5g									: textbox&id&Admin_Assign_5g_txPower_Text
+channel_5ghz_153									: button&id&//option[text()='153']
+transmit_power_error_msg_24ghz						: button&id&gtxpower_error
+transmit_power_error_msg_5ghz						: button&id&atxpower_error
+page_dropdown										: select&id&APTableData_pagelength_select
+page_label											: label&xpath&//div[@id='APTableData_pagination_nav']/div[1]/span
+page_no_text										: textbox&id&APTableData_page_jump_input
+go_button											: button&id&APTableData_page_jump_confirm
+page_navigation_arrow								: select&xpath&//div[@id='APTableData_pagination_nav']/div[3]
+cancel_button										: button&xpath&//a[@id='ngCancel']/span		
+static_radio										: button&id&Static_IP_Radio
+ip_address_textbox									: textbox&id&Ap_IP_Address
+netmask_textbox										: textbox&id&Ap_Net_Mask
+default_gateway										: textbox&id&Default_Gatway
+dns_server											: textbox&id&DNS_IP
+domain_name											: textbox&id&Domain_Name
+access_page_ap_name									: label&id&APTableData_name_display_0
+reboot_ap_warning									: button&css&div[class$='reboot-warningblock ip_warningblock']
+ip_invalid_error									: label&id&ap_ip_address_error
+netmask_invalid_error								: label&id&ap_netmask_error
+gateway_invalid_error								: label&id&ap_default_gateway_error&0
+gateway_ip_error									: label&text&* Default Gateway address and IP address should be in same subnet
+dns_invalid_error									: label&id&ap_dns_server_error
+domain_invalid_error								: label&id&ap_domain_name_error
+reboot_ok_button									: button&xpath&//div[@id='confirm-save-box']/div/div/a[@ng-click="redirectToAPDetail()"]	
+type_134_iap_edit									: button&xpath&//td[@title='AP-134']/following-sibling::td[3]
+type_135_iap_edit									: button&xpath&//td[@title='RAP-109']/following-sibling::td[3]
+external_antenna_accordion							: button&xpath&//div[@id='accordion-section-3']/div[1]/div/label[text()='EXTERNAL ANTENNA']
+antenna_gain_24ghz   								: textbox&xpath&//input[@id='24GHzgain']
+antenna_gain_5ghz									: textbox&xpath&//input[@id='5GHzgain']
+antenna_2GHz_gain_error								: label&id&antenna_2GHz_gain_error
+antenna_5GHz_gain_error								: label&id&antenna_5GHz_gain_error
+slave_vc_edit										: button&xpath&//a[@ name='ap_edit']&1
+reboot_popup_ok										: button&xpath&//a[@id='conf_apedit_reboot_popup_ok']
+access_point_spl_char								: button&xpath&//span[contains(.,'@#$@') and @class="ng-binding ng-scope"]

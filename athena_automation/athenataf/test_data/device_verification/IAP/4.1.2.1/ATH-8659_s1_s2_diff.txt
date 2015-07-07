@@ -1,0 +1,2 @@
++  a-channels 36,44+,52E
++  g-channels 3,5+

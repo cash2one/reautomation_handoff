@@ -1,0 +1,64 @@
+!
+! wired-port-profile default_wired_port_profile
+!  switchport-mode trunk
+!  allowed-vlan all
+!  native-vlan 1
+!  shutdown
+!  access-rule-name default_wired_port_profile
+!  speed auto
+!  duplex full
+!  no poe
+!  type employee
+!  captive-portal disable
+!  no dot1x
+!
+! wired-port-profile wired-instant
+!  switchport-mode access
+!  allowed-vlan all
+!  native-vlan guest
+!  no shutdown
+!  access-rule-name wired-instant
+!  speed auto
+!  duplex auto
+!  no poe
+!  type guest
+!  captive-portal disable
+!  no dot1x
+!
+!
+! enet0-port-profile default_wired_port_profile
+!
+! uplink
+!  preemption
+!  enforce none
+!  failover-internet-pkt-lost-cnt 10
+!  failover-internet-pkt-send-freq 30
+!  failover-vpn-timeout 180
+!
+!
+! airgroup
+!  disable
+!
+! airgroupservice airplay
+!  disable
+!  description AirPlay
+!
+! airgroupservice airprint
+!  disable
+!  description AirPrint
+!
+! airgroupservice itunes
+!  disable
+!
+! airgroupservice allowall
+!  disable
+!
+! airgroupservice sharing
+!  disable
+!
+! airgroupservice remotemgmt
+!  disable
+!
+! airgroupservice chat
+!  disable
+! ip dhcp >.#

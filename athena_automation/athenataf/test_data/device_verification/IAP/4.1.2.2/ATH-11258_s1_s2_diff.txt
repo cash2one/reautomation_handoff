@@ -1,0 +1,10 @@
++ ip dhcp Demo
++  server-type Local,L3
++  server-vlan 34
++  subnet 1.1.1.1
++  subnet-mask 255.255.0.0
++  exclude-address 1.1.1.1
++  lease-time 3000
++  dns-server 1.1.1.1
++  domain-name yahoo.com
++  option 80 "1"

@@ -1,0 +1,24 @@
+edit_profile2 										:  wired-instant
+content 											:  Disabled
+speed_edit 											:  10
+admin_edit 											:  Up
+duplex_edit 										:  Half
+uplink 												:  Enabled
+edit_profile1 										:  default_wired_port_profile
+admin_down1											:  Down
+poe_disabled1										:  Disabled
+mode_access											:  Access
+attribute_ap_name									:  AP-Name
+attribute_ap_group									:  AP-Group
+operator_contains									:  contains
+operator_not_equals									:  not-equals
+string												:  testuser
+vlan_rule											:  24
+internal_acknowledge1								:  Internal-Acknowledged
+internal_authenticated 								:  Internal - Authenticated
+internal_server1 									:  InternalServer
+reauth_unit		 									:  hrs.
+role_value											:  wired-instant
+new_role1											:  new_role1
+attribute_arap_features								: ARAP-Features
+attribute_arap_security								: ARAP-Security

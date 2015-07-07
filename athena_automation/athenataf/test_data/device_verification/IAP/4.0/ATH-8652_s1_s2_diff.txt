@@ -1,0 +1,11 @@
+   max-tx-power 127
+   band-steering-mode prefer-5ghz
+   air-time-fairness-mode fair-access
+   client-aware
+   scanning
++  client-match calc-threshold %(cm_threshold_boundry_value)s
+  
+  
+  syslog-level warn ap-debug 
+  syslog-level warn network 
+  syslog-level warn security 

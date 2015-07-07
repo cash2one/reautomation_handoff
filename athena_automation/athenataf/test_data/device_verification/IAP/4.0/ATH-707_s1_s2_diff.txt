@@ -1,0 +1,6 @@
+  ids
+   wireless-containment none
++  client-protection-level custom
++  protect-valid-sta
+  
+  

@@ -1,0 +1,255 @@
+edit_values_ip									: submit&id&VC_Ip_Edit
+edit_values_name								: submit&id&VC_Name_Edit
+timezone										: select&id&timezone-select
+preferred_band									: select&id&general_prefered_band
+dynamic_cpu_utilization							: select&id&Dynamic_Cpu_util
+auto_join_mode									: select&id&general_auto_join_mode
+terminal_access									: select&id&general_access
+telnet_server									: select&id&telnetserver
+led_display										: select&id&general_led
+extended_ssid									: select&id&general_ssid
+deny_inter_using								: select&id&general_deny_inter
+deny_local_routing								: select&id&general_deny_local
+dynamic_radius_proxy							: select&id&general_dynamic_proxy
+mas_integration									: select&id&general_mas_integration
+vc_name											: textbox&name&variablesname
+vc_ip											: textbox&name&vc_ip_variables
+save_name										: submit&id&system_save_values
+save_ip											: submit&id&save_ip_value
+save_settings									: submit&xpath&//div[@class='save-items-popup']/div/a[@id='ngSave']
+ntp_server										: textbox&id&general_ntp_server
+ntp_server_error_msg							: button&xpath&//input[@id='general_ntp_server']/following-sibling::div
+admin_tab										: button&xpath&//*[@id='accordion-section-2']/div[1]/div/label
+admin_authentication							: select&id&select_auth_type
+u_name											: textbox&id&admin_user_name
+p_word											: textbox&id&admin_password
+retype_p_word									: textbox&id&admin_repassword
+uname_pwd_error_msg								: button&xpath&//div[@class="field-error ng-binding"]&1
+auth_server_1									: select&id&admin_auth_server1
+auth_server_name								: textbox&id&auth_server_name
+auth_server_ip									: textbox&id&auth_ipaddr
+auth_server_shared_key							: textbox&id&Auth_Sharedkey
+re_auth_server_shared_key						: textbox&id&Retype_auth_shared_key
+save_server										: submit&xpath&//button[@id='confirm-save-ok']
+dhcp_tab										: button&text&DHCP&1
+domain_name_dhcp								: textbox&id&dhcp_domain_name
+dns_server										: textbox&id&dhcp_dns_server
+lease_time										: textbox&id&dhcp_lease_time
+network1										: textbox&id&dhcp_network
+mask											: textbox&id&dhcp_mask
+enterprise_domain								: button&text&ENTERPRISE DOMAINS
+new_domain										: submit&id&create_new_domain
+domain_name 									: textbox&id&enterprise_domain
+save_domain										: submit&id&save_domain
+selected_domain									: button&xpath&//span[contains(.,'www.yahoo.com')]
+delete											: submit&id&delete_domain_0
+no_doamin_present								: button&text&No Enterprise Domain(s) Configured!
+logging											: button&text&LOGGING
+syslog_server									: textbox&id&log_syslog_server
+invalid_ip										: button&xpath&//*[@id='accordion-section-content-7']/div/div[1]/ul[1]/li[1]/div
+syslog_level 									: select&id&log_sys_log_level
+ap_debug										: select&id&log_ap_debug
+network											: select&id&log_network
+security										: select&id&log_security
+system											: select&id&log_system
+user											: select&id&log_user
+user_debug										: select&id&log_user_debug
+wireless										: select&id&log_wireless
+l3_mobility										: button&xpath&//*[@id='accordion-section-5']/div[1]/div/label
+home_agent_load_balancing						: button&text&HOME AGENT LOAD BALANCING
+selected_ip_address								: button&xpath&//span[text()='4.4.4.0']
+selected_subnets								: button&xpath&//span[text()='1.1.1.0']
+new_vc_ip_address								: submit&id&create_new_vc
+new_subnet										: submit&id&create_new_subnet
+delete_vc_ip_address							: submit&id&delete_vc__0
+delete_subnet									: submit&id&delete_subnet_0
+vc_ip_address									: textbox&id&vc_ip_address
+save_vc											: submit&id&save_virtual_controller
+save_subnet										: submit&id&save_subnet
+subnet_address									: textbox&id&subnet_address
+subnet_mask										: textbox&id&subnet_mask
+vlan_id							     			: textbox&id&vlan_id
+subnet_vc_ip									: textbox&id&subnet_vc_ip
+wifi_name										: textbox&id&wifi_name_ssid
+wifi_passphrase									: textbox&id&wifi_passphrase_txt
+uplink_accordion								: button&xpath&//*[@id='accordion-section-4']/div[1]/div/label
+cancel											: button&xpath&//div[@class='save-items-popup']/div/a[@id='ngCancel']
+manage_enforce_uplink							: select&id&manage_enforce_uplink
+wifi_sta										: button&text&Wifi-sta
+arrow_up										: button&id&nav_up
+arrow_up_disabled								: button&xpath&//img[@id='disable_up' and @class='disabledArrow icosolo icon_arrow_up']
+cancel_pop_up 									: button&id&CAN_NAV_Alert_Cancel
+pp_chap_secret1									: textbox&id&pp_chap_secret1
+pp_chap_secret2									: textbox&id&pp_chap_secret2
+pp_user											: textbox&id&pp_user
+pp_service_name									: textbox&id&pp_service_name
+pp_password										: textbox&id&pp_password
+pp_password_retype								: textbox&id&pp_password_retype
+modem_country									: select&id&modem_country
+modem_isp										: select&id&modem_isp
+cell_usb										: textbox&xpath&//input[@id='cell_usb']
+cell_4g_type									: textbox&id&cell_4g_type&0
+cell_usb_dev									: textbox&id&cell_usb_dev&0
+cell_usb_tty									: textbox&id&cell_usb_tty&0
+cell_usb_init									: textbox&id&cell_usb_init&0
+cell_usb_dial									: textbox&id&cell_usb_dial&0
+cell_usb_mode_switch							: textbox&id&cell_usb_mode_switch&0
+cell_usb_user									: textbox&id&cell_usb_user&0
+cell_usb_password								: textbox&id&cell_usb_password&0
+uplink											: button&text&UPLINK
+usb_auth_type									: select&id&conf_sys_uplink_usbauthtype_sel
+manage_internet_failover						: select&id&manage_internet_failover
+failover_packet_send_frequency					: textbox&id&manage_pkt_frequency
+failover_packet_lost_count						: textbox&id&manage_fail_pkt_count
+internet_ckeck_timeout							: textbox&id&manage_check_timeout	
+vc_ip_address_error								: button&id&conf_sys_mob_field_ipaddress
+subnet_address_error							: button&id&l3_error_ip
+subnet_mask_error								: button&id&mask_error_field
+vlan_id_error									: button&id&l3_vlan_error_range
+subnet_vc_ip_error								: button&id&l3_vc_error_ip
+packet_send_frequency_error						: button&text&*  Valid range is 1-3600
+packet_lost_count_error							: button&text&*  Valid range is 1-1000
+internet_ckeck_timeout_error					: button&id&uplink_error
+auth_server_1_label								: button&xpath&//span[text()='AUTH SERVER 1']
+auth_server_2_label								: button&xpath&//span[text()='AUTH SERVER 2']
+username_label									: button&xpath&//span[text()='USERNAME']&0
+password_label									: button&xpath&//span[text()='PASSWORD']&0
+retype_password_label							: button&xpath&//span[text()='RETYPE PASSWORD']&0
+manage_pre_empt									: select&id&manage_pre_empt
+manage_time_txt									: textbox&id&manage_time_txt
+vc_name_edit_icon								: button&id&VC_TABLE_inline_edit_action_0
+vc_name_textbox									: textbox&id&VC_TABLE_name_field_0
+vc_ip_edit_icon									: button&id&VC_IP_TABLE_inline_edit_action_0
+vc_ip_textbox									: textbox&id&VC_IP_TABLE_ipaddr_field_0
+least_time_dropdown								: select&id&System_GeneralSystemLocation
+gen_vc_netmask									: textbox&id&gen_vc_netmask
+gen_vc_gateway									: textbox&id&gen_vc_gateway
+gen_vc_vlan										: textbox&id&gen_vc_vlan
+vc_netmask_error 								: button&id&vc_netmask_error
+vc_gateway_error 								: button&id&vc_gateway_error
+vc_vlan_error									: button&id&vc_vlan_error
+usernamereadonly								: textbox&id&usernamereadonly
+passwordreadonly								: textbox&id&passwordreadonly
+retypepasswordreadonly							: textbox&id&retypepasswordreadonly
+usernameguest									: textbox&id&usernameguest
+passwordguest									: textbox&id&passwordguest
+retypepasswordguest								: textbox&id&retypepasswordguest
+snmp_tab										: button&xpath&//label[text()='SNMP']
+new_snmp_button									: button&id&create_new_snmp
+snmp_community_string_textbox					: textbox&id&new_community
+snmp_string_error								: button&xpath&//div[text()='* Single or Double Quotes are not allowed']
+snmp_save_new_community							: button&id&save_new_community
+delete_snmp_button								: button&id&delete_snmp_table_0
+proxy_tab										: button&xpath&//div[@id='accordion-section-10']/div[1]/div/label
+Proxy_Server									: textbox&id&Proxy_Server
+Proxy_Port									    : textbox&id&Proxy_Port
+no_data_to_display_label						: button&id&SYSTEM_PROXY_TABLE__no_data_msg
+create_new_proxy								: button&id&create_new_proxy
+new_exception_textbox							: textbox&id&exception_new
+cancel_proxy									: button&id&cancel_proxy
+proxy_server_error								: button&id&sys_proxyserver_error
+proxy_port_error								: button&xpath&//*[@id='accordion-section-content-10']/div/div/ul/li[2]/div[1]
+proxy_exception_error							: button&xpath&//input[@id='exception_new']/../div[6]
+save_proxy_exception							: button&id&save_proxy
+invalid_ip_address_msg								: label&xpath&//*[@id='Configuration_System_VCIP_Table']/div[2]/div[2]/div/ul/li
+invalid_vc_name_msg								: label&xpath&//*[@id='Configuration_System_VC_Table']/div[2]/div[2]/div/ul/li
+save_vc_ip										: button&id&VC_IP_TABLE__accept_edit_0
+close_pop_up									: button&id&close_general_ip_overlay
+close_pop_up_vc									: button&id&close_general_name_popup
+help_button          							: button&xpath&//a[@class='helpButton Header_Help icosolo icon_help']
+authentication_label       						: chain&xpath&//span[text()='AUTHENTICATION']
+help_content         							: button&id&auto-help-content
+tftp_dump_server         						: textbox&id&log_sys_log_dump_server
+Proxy_exception0								: button&id&delete_proxy_table_0
+country_label									: label&id&//span[text()='COUNTRY']
+system_label               						: chain&xpath&//span[text()='SYSTEM']
+syslog_help_content        						: button&xpath&//p[text()='Log about configuration and system status.']
+iso_code										: textbox&id&iso_country_code
+e164_area_code									: textbox&id&e_area_code
+operator_name									: textbox&id&operator_name
+e164_country_code								: textbox&id&e_country_code
+ssid_zone										: textbox&id&ssid_zone
+location_name									: textbox&id&location_name
+wispr											: button&text&WISPr
+wifi_band										: select&id&wifi_band
+wifi_management									: select&id&wifi_key_management
+wifi_passphrase_format							: select&id&wifi_passphrase_format
+pp_local_interafce								: select&id&pp_local_interface
+uplink_priority_default_value					: label&xpath&//tr[@class="tooltip tttop ng-scope ng-isolate-scope selected"]
+wifi_passphrase_text_error1						: button&xpath&//input[@id='wifi_passphrase_txt']/../div[1]
+wifi_passphrase_text_error2						: button&xpath&//input[@id='wifi_passphrase_txt']/../div[2]
+manage_vpn_failover_timeout_error    			: button&xpath&//input[@id='manage_time_txt']/../div
+pp_chap_secret_error							: button&xpath&//input[@id='pp_chap_secret2']/../div
+pp_password_error						    	: button&xpath&//input[@id='pp_password_retype']/../div
+enterprise_domains_table_no_data_msg   				: label&id&SYSTEM_ENTERPRISE_DOMAIN_TABLE__no_data_msg
+snmpv3_new_button        							: button&id&create_snmp_table
+snmp_trap_new_button       							: button&id&create_new_trap
+snmp_cancel_button        							: button&id&cancel_community
+snmpv3_user_name        							: textbox&id&snmp_user_name
+snmpv3_save_snmp_user_button     					: button&id&save_snmp_user
+snmpv3_pwd_required_error1      					: label&id&snmp_pw_error_required
+snmpv3_pwd_required_error2      					: label&xpath&//input[@id = 'snmp_user_privacy_password']/following-sibling::div
+snmpv3_password_mismatch_error1     				: label&xpath&id//input[@id = 'snmp_user_auth_re_password']/following-sibling::div
+snmpv3_password_mismatch_error2     				: label&xpath&//input[@id = 'snmp_user_privacy_re_password']/following-sibling::div
+snmpv3_cancel_button       							: button&id&cancel_snmp_user
+uplink_priority_3g_4g							: button&xpath&//td[@title="3G/4G"]
+uplink_priority_Eth0							: button&xpath&//td[@title="Eth0"]
+uplink_priority_Wifi_sta						: button&xpath&//td[@title="Wifi-sta"]
+uplink_priority_second							: label&xpath&//tr[@class="tooltip tttop ng-scope ng-isolate-scope"]&0
+uplink_priority_third							: label&xpath&//tr[@class="tooltip tttop ng-scope ng-isolate-scope"]&1
+arrow_down										: button&xpath&//a[@id='nav_down' and @class='icosolo icon_arrow_down']
+delete_traps          							: button&id&delete_traps_0
+delete_snmp_user        						 : button&id&delete_snmp_user_0
+edit_snmp_user          						: button&id&edit_snmp_user_0
+edit_trap           							: button&id&edit_trap_0
+edit_comm_string								: button&id&edit_snmp_table_0
+snmp_user_auth_password       					: textbox&id&snmp_user_auth_password
+snmp_user_auth_re_password       				: textbox&id&snmp_user_auth_re_password
+snmp_user_privacy_password       				: textbox&id&snmp_user_privacy_password
+snmp_user_privacy_re_password	      			: textbox&id&snmp_user_privacy_re_password
+cancel_traps          							: button&id&cancel_traps
+snmp_trap_ip_field         						: textbox&id&new_trap_host
+snmp_port           							: textbox&id&new_trap_port
+save_traps											: button&id&save_traps
+snmp_trap_invalid_ip_error							: label&xpath&//span[text() = '* Invalid IP address']&2
+community_name          							: textbox&id&new_trap_name
+home_agent_load_balance							: select&id&home_agent_load_bl
+vc_ip_no_data_msg								: label&xpath&//tr[contains(@id,"SYSTEM_VIRTUALCONTROLLER_IPADDRESS_TABLE_select_row_")]
+subnet_no_data_msg								: label&xpath&//tr[contains(@id,"SYSTEM_L2MOBILITY_SUBNET_TABLE_select_row_")]
+vc_ip_cancel_button								: button&id&cancel_virtual_controller
+subnet_cancel_button							: button&id&cancel_subnet
+gmail_delete_icon								: button&xpath&//span[contains(.,'gmail.com')]/../following-sibling::td/a
+yahoo_co_in_delete_icon							: button&xpath&//span[contains(.,'yahoo.co.in')]/../following-sibling::td/a
+arubathena_com_delete_icon						: button&xpath&//span[contains(.,'arubathena.com')]/../following-sibling::td/a
+google_delete_icon								: button&xpath&//span[contains(.,'google.com')]/../following-sibling::td/a
+yahoo_com_delete_icon							: button&xpath&//span[contains(.,'yahoo.com')]/../following-sibling::td/a
+netmask_not_supported_error						: label&id&mark_error_supported
+vc_ip_address_error1							: button&xpath&//*[@id='accordion-section-content-5']/div[1]/div/div[4]/div/div[3]
+edit_vc_ip_address								: button&id&edit_vc_0
+edit_subnet										: button&id&edit_subnet_0
+up_arrow_enable									: button&xpath&//a[@class="icosolo icon_arrow_up"]
+snmp_trap_reciever_trap_version					: select&id&new_trap_version
+snmp_inform										: select&id&new_trap_inform
+snmpv3_auth_protocol							: select&id&snmp_user_auth_protocol
+community_string_no_data						: label&id&SYSTEM_SNMPV1_TABLE__no_data_msg
+snmpv3_no_data									: label&id&SYSTEM_SNMPV3_TABLE__no_data_msg
+snmp_traps_no_data								: label&id&SYSTEM_SNMP_TRAPS_TABLE__no_data_msg
+des_privacy_protocol							: label&text&DES
+lease_time_error								: label&xpath&//div[text()='* Valid range is 1 - 23']
+lease_time_range_error							: label&text&* Valid range is 2 - 59
+name_label										: chain&xpath&//span[text()='NAME']&0
+save_vc_name_id                                 : submit&xpath&//td[@class="ar-td ng-isolate-scope"]/following-sibling::td/div/a[@id="VC_TABLE__accept_edit_0"]
+save_vc_ip_id                                   : submit&xpath&//td[@class="ar-td ng-isolate-scope"]/following-sibling::td/div/a[@id="VC_IP_TABLE__accept_edit_0"]
+vc_name_textbox1								: textbox&xpath&//input[@id = 'VC_TABLE_name_field_0']/../../..
+auth_server_2									: select&id&admin_auth_server2
+tacacs_option									: radio&id&AuthName3
+tacacs_name										: textbox&id&auth_server_tacacs_name
+tacacs_ip										: textbox&id&auth_tacacs_ipaddr
+tacacs_shared_key								: textbox&id&Auth_Tacacs_Sharedkey
+tacacs_retype									: textbox&id&Retype_auth_tacacs_shared_key
+local_uname_error_msg							: button&xpath&//input[@id='admin_user_name']/../div[2]
+local_paswd_error_msg							: button&xpath&//input[@id='admin_repassword']/../div
+viewonly_uname_error							: button&id&username_length_error
+viewonly_paswd_error							: button&id&password_error_mismatch
+admin_password_error_mismatch					: button&id&admin_password_error_mismatch
+scroll_bar										: button&xpath&//div[@id="accordion-section-content-1"]/div/div[4]

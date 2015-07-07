@@ -1,0 +1,291 @@
+firewall_settings								: button&text&FIREWALL SETTINGS
+create_auth										: button&xpath&//div[@class='table-container authServerTable']
+management_subnet								: button&text&MANAGEMENT SUBNETS
+network_subnet									: textbox&id&corpsubnet
+network_mask									: textbox&id&corpmask
+add_subnet										: button&text&ADD&1
+subnet_value									: button&text&4.4.4.0
+delete											: button&xpath&//a[@id='blacklist_delete']
+delete_all										: button&text&Delete All
+external_captive_profile					    : button&text&EXTERNAL CAPTIVE PORTAL&0
+captive_role									: button&xpath&//td[@title="RoleTest"]
+roles_accordion									: button&xpath&//*[@id='accordion-section-3']/div[1]/span
+create_role										: button&id&create_role
+role_input										: textbox&name&role_input
+ok												: button&id&create_new_role
+cancel_new_role									: button&id&cancel_new_role
+new_role										: button&xpath&//span[contains(.,'testRole')]
+delete_role										: button&xpath&//span[contains(.,'testRole')]/../following-sibling::td[1]/div/a[contains(@id,'delete_role')]
+
+delete_role_1									: button&xpath&//span[contains(.,'new role')]/../following-sibling::td[1]/div/a[contains(@id,'delete_role')]
+delete_external_captive							: button&xpath&//span[contains(.,'RoleTest')]/../following-sibling::td[1]/div/a[@id='DeleteExternalCaptive']
+cppm_server_name								: button&xpath&//span[contains(.,'test1')]
+delete_auth_server								: button&id&delete_auth_server&0
+captive_portal_name								: button&xpath&//td[@title="testRole"]
+captive_portal_type								: select&id&External_Selection&1
+captive_ip				             			: textbox&xpath&//*[@id='Captive_IP']&0
+captive_portal_ip								: textbox&id&Captive_IP&1
+captive_portal_url								: textbox&id&Captive_Url&1
+captive_portal_port								: textbox&id&Captive_Port&1
+captive_portal_auth_text						: textbox&id&Captive_AuthText&1
+captive_portal_save_button						: button&id&cap-save&1
+name											: button&text&NAME&4
+auth_server_name								: button&text&authradius
+user_for_internal_server						: button&text&USER FOR INTERNAL SERVER
+internal_server_name							: button&text&internalserver1
+role1											: button&xpath&//td[@title='role1']
+role2											: button&xpath&//td[@title='role2']
+role3											: button&xpath&//td[@title='role3']
+default_network_role							: button&xpath&//td[@title='test1']
+network_delete_button_disabled					: button&xpath&//button[@id='delete_role' and @disabled='disabled']
+role4											: button&xpath&//span[contains(.,'new role')]
+walled_garden									: button&xpath&//div[@id='accordion-section-6']/div[1]/div/label
+walled_garden_data								: link&id&show_walled_garden_data
+blacklist_new									: submit&id&blacklist_new
+whitelist_new									: submit&id&whitelist_new
+walled_garden_header							: button&id&overla-walled-header
+blacklist_textbox								: textbox&id&new_regex
+domain_name_error_msg							: button&xpath&//div[text()='Invalid Domain name']
+
+blacklist_table_element							: button&xpath&//span[contains(.,'www.gooogle.com')]
+whitelist_table_element							: button&xpath&//span[contains(.,'www.yahoo.com')]
+blacklist_edit									: button&id&blacklist_edit&0
+blacklist_delete_domain							: button&id&blacklist_delete&0
+whitelist_edit									: button&id&blacklist_edit&1                                                   
+whitelist_delete								: button&id&blacklist_delete
+walled_save										: submit&xpath&//*[@id='walled-save']
+walled_cancel									: submit&id&walled-cancel
+walled_new_save									: submit&id&walled-new-save
+edited_blacklist_table_element					: button&xpath&//span[contains(.,'www.bing.com')]
+edited_whitelist_table_element					: button&xpath&//span[contains(.,'www.gmail.com')]
+blacklisting_accordion							: button&xpath&//div[@id='accordion-section-4']/div[1]/span
+manual_blacklisting								: button&text&MANUAL BLACKLISTING
+new_blacklisting								: button&id&BlacklistingNew
+new_mac_address									: textbox&id&new_mac_addr
+invalid_mac_msg									: button&id&auth_fail_blacklist_error
+new_blacklist_ok								: submit&id&create_new_blacklist
+blacklist_bar									: button&xpath&//span[contains(.,'ab:12:34:cd:56:ef')]
+blacklist_delete								: submit&xpath&//span[contains(.,'ab:12:34:cd:56:ef')]/../following-sibling::td[2]/div/a
+dynamic_blacklist_time_value					: textbox&id&auth_time_value
+dynamic_blacklist_time_unit						: select&id&auth_time_unit
+dynm_blacklist_range_error						: button&id&auth_fail_time_error
+role_accordion									: button&xpath&//label[text()='ROLES']/..
+new_role_invalid_msg							: button&id&role_input_single_double_quotation_error
+newly_created_role								: button&xpath&//span[contains(., 'new role')]
+wired_instant_role								: button&xpath&//span[contains(.,'wired-instant')]
+access_rule_add_button							: button&id&tableheadingicon
+service_dropdown								: select&id&Service_Role2
+rule_type_dropdown_1							: select&id&RuleType_Role2
+rule_type_dropdown_2							: select&id&RuleType_Role3
+rule_save_button_1								: button&id&save_roles_action&5
+rule_save_button_2								: button&id&save_roles_action&6
+rule_save_button_3								: button&id&save_roles_action&7
+rule_save_button_4								: button&id&save_roles_action&8
+rule_save_button_5								: button&id&save_roles_action&9
+vlan_id_textbox									: textbox&id&access_rule_vlan_id&6
+vlan_invalid_error								: button&id&access_rules_vlan_id_error&6
+downstream_textbox								: textbox&id&access_downstream&6
+upstream_textbox								: textbox&id&access_upstream&6
+down_arrow_button								: button&xpath&//a[@id='access_control_last_0']
+up_arrow_button									: button&xpath&//a[@id='access_control_first']
+
+sip_enable										: button&name&sip_radio&1
+vocera_enable									: button&name&vocera_radio&1
+alcatel_enable									: button&name&alcatel_radio&1
+cisco_enable									: button&name&cisco_radio&1
+drop_arp_enable									: button&name&drop_arp_radio&1
+malformed_dhcp_enable							: button&name&fix_malformed_radio&1
+arp_poison_enable								: button&name&arp_position_radio&1
+sip_disable										: button&name&sip_radio&0
+vocera_disable									: button&name&vocera_radio&0
+alcatel_disable									: button&name&alcatel_radio&0
+cisco_disable									: button&name&cisco_radio&0
+drop_arp_disable								: button&name&drop_arp_radio&0
+malformed_dhcp_disable							: button&name&fix_malformed_radio&0
+arp_poison_disable								: button&name&arp_position_radio&0
+cancel_button									: button&i&Create_New_user
+user_for_internal_server_button					: button&xpath&//label[text()='USER FOR INTERNAL SERVER']/../..
+create_new_user									: button&id&user_new
+user_name	 									: textbox&id&userTxt
+pswd_txt 										: textbox&id&pswdTxt
+retype_pswd										: textbox&id&pswdTxt2
+user_type										: select&id&typeTxt
+create_user										: button&id&CancelUserRoles
+internal_server_delete_button					: button&id&UserDeleteButton
+internal_server_edit_button						: button&id&UserEditButton
+assert_internal_server_name						: button&xpath&//div[text()='* No special characters allowed, only - and _ allowed']
+external_captive_protal_button					: button&xpath&//label[text()='EXTERNAL CAPTIVE PORTAL']/../..
+create_external_captive							: button&id&CreateExternalCaptive
+name_text_box									: textbox&id&Captive_Name&1
+save_setting									: button&id&ngSave
+select_external_captive_name					: button&xpath&//span[text()='testrole2']/..
+
+create_auth_server								: button&id&create_auth_server
+radius_auth_server								: button&id&AuthName1
+authentication_server_name						: textbox&id&auth_server_name
+auth_server_ip_address							: textbox&id&auth_ipaddr
+auth_server_shared_key  						: textbox&id&Auth_Sharedkey
+auth_server_retype_shared_key  					: textbox&id&Retype_auth_shared_key
+auth_server_save								: submit&id&confirm-save-ok&0
+auth_server_cancel								: button&id&confirm-save-cancel&0
+auth_server_name1								: button&xpath&//span[text()='auth1']/..
+assert_ip										: button&xpath&//div[@id="auth_ipaddr_error" and text()='Invalid IP Address']
+assert_RFC_3576									: button&id&auth_rfc_3576
+assert_accounting_port							: button&id&Auth_Account_Port_error
+assert_auth_port								: button&id&AuthPort_error&0
+assert_time_out									: button&id&auth_timeout_error&0
+assert_retry_count								: button&id&Auth_Retry_Count_error&0
+assert_NAS_ipaddress							: button&id&auth_nas_ip_addr_error&0
+assert_dead_time								: button&id&deadtime_error&0
+accounting_port		 		 					: textbox&id&Auth_Account_Port&0
+auth_port					 					: textbox&id&AuthPort
+dead_time					 					: textbox&id&deadtime
+time_out					 					: textbox&id&auth_timeout
+retry_count					 					: textbox&id&retry_count
+NAS_ip						 					: textbox&id&auth_nas_ip_addr
+confirm-save-close-server						: button&xpath&//a[@id="confirm-save-close-server"]/span
+auth_server_name_error							: button&id&auth_server_name_error&0
+auth_sharedkey_space_error						: button&id&Auth_Sharedkey_space_error&0
+coa_only_checkbox								: button&id&auth_coa_only
+coa_invalid_ipaddr_msg							: button&id&auth_ipaddr_error&0
+coa_invalid_sharedkey_msg						: button&id&Auth_Sharedkey_error&0
+coa_invalid_retype_shared_msg					: button&id&Retype_auth_shared_key_error&0
+created_server_name_type						: button&xpath&//span[contains(.,'coa')]/../following-sibling::td[1]/span[2]
+created_server_name								: button&xpath&//span[contains(.,'coa')]
+ldap_radio_button								: button&id&AuthName2
+ldap_server_name								: textbox&id&ldap_server_name
+ldap_ip_header									: textbox&id&ldap_ipaddr
+ldap_admin_password								: textbox&id&LDAP_Admin_Pass
+ldap_admin_repassword							: textbox&id&LDAP_Admin_RePass
+ldap_name_error									: button&id&ldap_server_name_error
+ldap_ip_error									: button&id&ldap_ipaddr_error
+ldap_admin_password_error						: button&id&LDAP_Admin_Pass_error
+ldap_admin_repassword_error						: button&id&LDAP_Admin_RePass_error
+created_ldap_server_name						: button&xpath&//span[text()='ldap']
+created_external_server_name					: button&xpath&//span[contains(.,'authradius')]
+created_external_server_name_2					: button&xpath&//span[contains(.,'testradius_2')]
+auth_server_name2								: button&text&testradius_2
+networks										: link&xpath&//a[contains(.,'Networks')]
+admin_dn										: textbox&id&LDAP_Admin
+base_dn										    : textbox&id&LDAP_baseDN
+delete_user_all									: button&id&UserDeleteAllButton
+disabled_delete_user_all						: button&xpath&//button[@id='UserDeleteAllButton' and @disabled='disabled']
+delete_external_captive_2						: button&xpath&//span[contains(.,'testRole')]/../following-sibling::td[1]/div/a[@id='DeleteExternalCaptive']
+
+delete_role1									: button&xpath&//span[contains(.,'role1')]/../following-sibling::td[1]/div/a[contains(@id,'delete_role')]
+delete_role2									: button&xpath&//span[contains(.,'role2')]/../following-sibling::td[1]/div/a[contains(@id,'delete_role')]
+delete_role3									: button&xpath&//span[contains(.,'role3')]/../following-sibling::td[1]/div/a[contains(@id,'delete_role')]
+network_delete_button_disabled_1				: button&xpath&//td[contains(.,'test1')]/following-sibling::td/div/a[@class="icosolo delete icon_delete ng-scope disabled"]&0
+
+security_use_https								: checkbox&id&SecurityUseHttps&1
+edit_testradius1								: button&xpath&//span[@class="ng-scope ng-binding" and contains(.,'testradius1')]/../following-sibling::td/div/a[1]
+cancel											: button&id&cap-cancel&1
+captive_role_1									: button&xpath&//td[@title="testradius1"]
+captive_role_2									: button&xpath&//td[@title="testradius2"]
+captive_role_3									: button&xpath&//td[@title="authradius"]
+captive_role_4									: button&xpath&//td[@title="authradius2"]
+delete_external_captive_1						: button&xpath&//span[contains(.,'testradius1')]/../following-sibling::td[1]/div/a[@id='DeleteExternalCaptive']
+delete_external_captive_5						: button&xpath&//span[contains(.,'testradius2')]/../following-sibling::td[1]/div/a[@id='DeleteExternalCaptive']
+delete_external_captive_3						: button&xpath&//span[contains(.,'authradius')]/../following-sibling::td[1]/div/a[@id='DeleteExternalCaptive']
+delete_external_captive_4						: button&xpath&//span[contains(.,'authradius2')]/../following-sibling::td[1]/div/a[@id='DeleteExternalCaptive']
+drpip           								: textbox&id&drpip
+drpmask         							    : textbox&id&drpmask
+drpgateway          							: textbox&id&drpgateway
+drpvlan           								: textbox&id&drpvlan
+edit_auth_server								: button&id&edit_auth_server
+disabled_auth_server							: button&xpath&//span[contains(.,'authradius') ]/../../td[3]/div/a[2][@class='icosolo delete icon_delete ng-scope disabled']
+nas_identifier									: textbox&id&nas_id
+tacacs_radio							        : button&id&AuthName3
+auth_server_tacacs_name 					    : textbox&id&auth_server_tacacs_name
+Auth_Tacacs_Sharedkey       					: textbox&id&Auth_Tacacs_Sharedkey
+Retype_auth_tacacs_shared_key     				: textbox&id&Retype_auth_tacacs_shared_key
+auth_tacacs_ipaddr        						: textbox&id&auth_tacacs_ipaddr
+no_data_msg          							: button&id&AuthServerTable__no_data_msg
+name_col          								: button&xpath&//table[@id='authServer_table_wrapper']/thead/tr/th[1]/label
+type_col          								: button&xpath&//table[@id='authServer_table_wrapper']/thead/tr/th[2]/label
+configuration_security							: label&text&Configuration - Security
+black_list_window								: link&xpath&//div[@id='walled_garden_wrapper']/div/div[3]/div[1]
+walled_new_cancel								: button&id&walled-new-cancel
+air_group_coa_port_1								: textbox&id&AirGroup_Port
+coa_server										: button&xpath&//span[contains(.,'CoAServer')]
+coa_server1										: button&xpath&//span[contains(.,'CoAServer1')]
+ldap_server										: button&xpath&//span[contains(.,'LDAPser')]
+ldap_server1									: button&xpath&//span[contains(.,'LDAPser123')]
+ldap_port         							    : textbox&id&ldapPort
+ldap_filter          						    : textbox&id&LDAP_Filter
+LDAP_KeyAttribute      					        : textbox&id&LDAP_KeyAttribute
+ldap_timeout         						    : textbox&id&timeTxt
+LDAP_RetryCount        				            : textbox&id&LDAP_RetryCount
+ldapser_edit           						    : button&xpath&//td[@title='LDAPser']/following-sibling::td[2]/div/a[1]
+ldapser_delete       			                : button&xpath&//td[@title='LDAPser']/following-sibling::td[2]/div/a[2]
+ldapport_error         			                : label&id&ldapPort_error
+timeTxt_error           					    : label&id&timeTxt_error
+ldap_retry_count_error           			    : label&id&LDAP_RetryCount_error
+
+
+drpmask_error 									: label&id&drpmask_error
+drpvlan_error 									: label&id&drpvlan_error
+Captive_Name_splchars_error						: label&id&Captive_Name_splchars_error&1
+AirGroup_Port_error								: label&id&AirGroup_Port_error
+
+drpip_disabled           						: textbox&xpath&//input[@id='drpip' and @disabled='disabled']
+drpmask_disabled        					    : textbox&xpath&//input[@id='drpmask' and @disabled='disabled']
+drpgateway_disabled          					: textbox&xpath&//input[@id='drpgateway' and @disabled='disabled']
+drpvlan_disabled          						: textbox&xpath&//input[@id='drpvlan' and @disabled='disabled']
+Auth_Tacacs_Port     						    : textbox&id&Auth_Tacacs_Port
+auth_tacacs_timeout       						: textbox&id&auth_tacacs_timeout
+auth_tacacs_retry_count       					: textbox&id&auth_tacacs_retry_count
+testRole_edit									: button&xpath&//td[@title='testRole']/following-sibling::td[2]/div/a[1]
+testRole_delete									: button&xpath&//td[@title='testRole']/following-sibling::td[2]/div/a[2]
+AuthPort_error									: label&id&AuthPort_error&1
+auth_tacacs_timeout_error						: label&id&auth_tacacs_timeout_error
+Auth_Retry_Count_error							: label&id&Auth_Retry_Count_error&1
+
+edit_rad2										: button&xpath&//td[@title="rad2"]/following-sibling::td[2]/div/a[1]
+delete_auth_server_2							: button&xpath&//td[@title="rad2"]/following-sibling::td[2]/div/a[2]
+delete_auth_server_3							: button&xpath&//td[@title="authradius_2"]/following-sibling::td[2]/div/a[2]
+tac123_edit										: button&xpath&//td[@title='TAC123']/following-sibling::td[2]/div/a[1]
+tac123_delete									: button&xpath&//td[@title='TAC123']/following-sibling::td[2]/div/a[2]
+
+default_rule									: button&xpath&//span[contains(.,'Allow any to all destinations')]&0
+delete_default									: button&id&access_control_delete_0
+
+network_service									: button&id&ac_network&4
+ac_app_category1								: button&id&ac_app_category&4
+service_application								: radio&id&ac_app&4
+ac_web_category									: button&id&ac_web_category&4
+webreputation1        						    : radio&id&ac_web_reputation&4	
+rule_captive_portal								: select&xpath&//select[@id='RuleType_Role1']/option[text()='Captive portal']&4
+rule_calea										: select&xpath&//select[@id='RuleType_Role1']/option[text()='CALEA']&4
+rule_bandwidth									: select&xpath&//select[@id='RuleType_Role1']/option[text()='Bandwidth Contract']&4
+cancel_button_1									: button&id&ngCancel
+captive_portal_failure							: select&id&Security_CaptivePortalFailure&1
+auto_url_whitelisting							: checkbox&id&Secuirty_AutoUrlWhitelisting&1
+redirect_url									: textbox&id&Captive_RedirectUrl&1
+edit_captive_portal1							: button&id&EditExternalCaptive&1
+delete_captive_portal							: button&id&ExternalCaptivePortalTable_row_actions_1
+edit_external_captive							: button&xpath&//span[contains(.,'Cp1')]/../following-sibling::td[1]/div/a[@id='EditExternalCaptive']
+delete_cp1										: button&xpath&//span[contains(.,'Cp1')]/../following-sibling::td[1]/div/a[@id='DeleteExternalCaptive']
+captive_ip_error       						    : label&id&Captive_IP_error&1
+captive_url_req_error      					    : label&id&Captive_Uri_req_error&1
+captive_port_error        	  					: label&id&Captive_Port_error&1
+captive_auth_text_req_error        	  			: label&id&Captive_Authtext_req_error&1
+default_captive_name_disabled					: input&xpath&//input[@name="Captive_Name" and  @disabled="disabled"]&1
+ac_app_category6								: radio&id&ac_app_category&6
+antivirus1										: checkbox&xpath&//input[@id='role_search']/../../div[1]/div[1]/input
+Collaboration1									: checkbox&xpath&//input[@id='role_search']/../../div[1]/div[4]/input
+action_role										: select&id&Action_Role2
+
+throttle_enable									: checkbox&id&throttle_enable
+options_log_6           						: button&id&AccessRuleOptionLog&5
+options_media_6           						: button&id&AccessRuleOptionMedia&5
+options_dscp_6           						: button&id&AccessRuleOptionDSCP&5
+options_blacklist_6          					: button&id&AccessRuleOptionBlackList&5
+options_p_802_6           						: button&id&AccessRuleOptionP802&5
+web_category_log_7           					: button&id&AccessRuleOptionLog&6
+web_category_blacklist_7          				: button&id&AccessRuleOptionBlackList&6
+peruserdownstream           					: button&id&peruserdownstream&6
+peruserupstream           						: button&id&peruserupstream&6
+ac_web_category_6								: button&id&ac_web_category&6
+localSearchText									: textbox&xpath&//input[@ng-model='localSearchText']
+search_result									: button&xpath&//div[@class="searchContent ng-isolate-scope"]

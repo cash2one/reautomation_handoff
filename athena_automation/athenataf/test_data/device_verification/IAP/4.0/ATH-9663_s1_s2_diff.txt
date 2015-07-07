@@ -1,0 +1,11 @@
+  ids
+!  wireless-containment none
+  
+  ids
+!  wireless-containment tarpit-all-sta
+!  wired-containment
+!  infrastructure-detection-level high
+!  client-detection-level high
+!  infrastructure-protection-level high
+!  client-protection-level high
+  

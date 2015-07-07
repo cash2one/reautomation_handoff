@@ -1,0 +1,5 @@
++ wlan wispr-profile
++  wispr-location-name-operator-name Airtel
++  wispr-location-name-location India
++  wispr-location-id-network Emp123
++  wispr-location-id-isocc 91

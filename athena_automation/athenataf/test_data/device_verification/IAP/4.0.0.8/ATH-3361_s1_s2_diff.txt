@@ -1,0 +1,20 @@
++ wlan access-rule %(Network_name)s
++  rule any any match any any any permit
++ wlan ssid-profile %(Network_name)s
++  enable
++  type employee
++  essid %(Network_name)s
++  opmode wpa2-aes
++  max-authentication-failures 0
++  auth-server InternalServer
++  set-role-machine-auth %(Network_name)s %(Network_name)s
++  set-role AP-Group contains %(edit_ap_group)s default_wired_port_profile
++  rf-band all
++  captive-portal disable
++  dtim-period 1
++  inactivity-timeout 1000
++  broadcast-filter none
++  dmo-channel-utilization-threshold 90
++  local-probe-req-thresh 0
++  max-clients-threshold 64
++  okc-disable

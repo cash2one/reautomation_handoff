@@ -1,0 +1,2 @@
++ internal-domains
++  domain-name www.yahoo.com

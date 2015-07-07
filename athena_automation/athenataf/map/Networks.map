@@ -1,0 +1,52 @@
+createnetwork									: button&id&createNetwork
+network_based									: button&xpath&//div[@class='main-section-content foundation-row']
+network_name									: button&xpath&//td[@title ='test1']
+wired_network									: button&xpath&//div[@class="ng-scope ng-binding" and contains(.,'testwired')]
+delete_wireless_network							: button&xpath&//td[@title ='test1']/following-sibling::td[4]/div/a[2]
+edit											: button&xpath&//td[@title ='test1']/following-sibling::td[4]/div/a[1]
+def_wired_port									: button&xpath&//div[@class="ng-scope ng-binding" and contains(.,'default_wired_port_profile')]
+wired_instant									: button&xpath&//div[@class="ng-scope ng-binding" and contains(.,'wired-instant')]
+edit_instant									: submit&xpath&//td[@title ='wired-instant']/following-sibling::td[4]/div/a[1]
+edit_port_profile								: submit&xpath&//td[@title ='default_wired_port_profile']/following-sibling::td[4]/div/a[1]
+wired_network2									: button&xpath&//div[@class="ng-scope ng-binding" and contains(.,'test')]&0
+edit_wired										: button&xpath&//td[@title ='testwired']/following-sibling::td[4]/div/a[1]
+delete_wired									: button&xpath&//td[@title ='test']/following-sibling::td[4]/div/a[2]
+uplink											: button&id&Wired_Uplink
+network_accor									: submit&id&Network_Assignment_Accordion
+network_drop									: select&id&Wired_Profile_0
+save											: submit&id&hidsave
+new_network_name								: button&xpath&//td[@title ='Aruba']
+new_network_delete_button						: button&xpath&//td[@title ='Aruba']/following-sibling::td[4]/div/a[2]
+new_edit										: button&xpath&//td[@title ='Aruba']/following-sibling::td[4]/div/a[1]
+custom_guest_network							: button&xpath&//span[text()='NAME']/..[@title ='guest']
+delete_wired_network1							: button&xpath&//td[@title ='guest']/following-sibling::td[4]/div/a[2]
+network_name1									: button&id&wired_name_1
+new_test_network_name							: button&xpath&//td[@title ='XXXX']
+new_test_delete_network_button					: button&xpath&//td[@title ='XXXX']/following-sibling::td[4]/div/a[2]
+general_primary_usage							: label&xpath&//td[@title ='employee']
+eneral_security_level							: label&xpath&//td[@title ='Personal']
+wired_network_name								: button&xpath&//td[@title ='Test1949']
+wired_network_delete							: button&xpath&//td[@title ='Test1949']/following-sibling::td[4]/div/a[2]
+wired_network_1									: button&xpath&//td[@title ='network1']
+wired_network_2									: button&xpath&//td[@title ='network2']
+wired_network_3									: button&xpath&//td[@title ='network3']
+wired_network_4									: button&xpath&//td[@title ='network4']
+wired_network_1_delete							: button&xpath&//td[@title ='network1']/following-sibling::td[4]/div/a[2]
+wired_network_2_delete							: button&xpath&//td[@title ='network2']/following-sibling::td[4]/div/a[2]
+wired_network_3_delete							: button&xpath&//td[@title ='network3']/following-sibling::td[4]/div/a[2]
+wired_network_4_delete							: button&xpath&//td[@title ='network4']/following-sibling::td[4]/div/a[2]
+edit_wired_network_4							: button&xpath&//td[@title ='network4']/following-sibling::td[4]/div/a[1]
+new_wired_network_delete_button					: button&xpath&//td[@title ='testwired']/following-sibling::td[4]/div/a[2]
+new_test_1934_delete_button						: button&xpath&//td[@title ='Test1934']/following-sibling::td[4]/div/a[2]
+new_test_1934_network							: button&xpath&//td[@title ='Test1934']
+left_panel_add_button							: button&xpath&//label[text()='ADD']/../..
+left_panel_close_button							: button&xpath&//span[@class='list_icon top']/..
+group_close_icon								: button&xpath&//span[@class='slider-menu-icon toggleGroup']
+group_controls                                  : button&xpath&//div[@class='group-controls']
+left_panel_close_group_button                   : button&xpath&//div[@class='slider-menu link-label']
+wired_network_1948							    : button&xpath&//td[@title ='Test1948']
+wired_network_1948_delete					    : button&xpath&//td[@title ='Test1948']/following-sibling::td[4]/div/a[2]
+guest_nw1										: button&xpath&//span[text()='Guest-Nw1']
+guest_nw1_delete								: button&xpath&//span[text() ='Guest-Nw1']/../../td[5]/div/a[2]
+guest_nw2										: button&xpath&//span[text()='Guest-Nw2']
+guest_nw2_delete								: button&xpath&//span[text() ='Guest-Nw2']/../../td[5]/div/a[2]

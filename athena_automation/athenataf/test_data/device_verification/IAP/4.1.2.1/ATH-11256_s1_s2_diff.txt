@@ -1,0 +1,10 @@
++ ip dhcp athena
++  server-type Local,L3
++  server-vlan 10
++  subnet 10.10.10.10
++  subnet-mask 255.255.255.0
++  exclude-address 10.10.10.15
++  lease-time 18000
++  dns-server 10.10.10.15
++  domain-name google.com
++  option 23 "42"

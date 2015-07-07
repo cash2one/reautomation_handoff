@@ -1,0 +1,4 @@
+pci_time_2pm												: 3:00 PM
+pci_email													: admin1@alpha.com
+cde_subnets_network											: 10.1.0.0
+cde_subnets_mask											: 255.255.0.0

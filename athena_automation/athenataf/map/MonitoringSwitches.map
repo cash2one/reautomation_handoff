@@ -1,0 +1,2 @@
+confirm_delete_switch_ok_button 					: button&id&confirm-save-ok&0
+switches_label 										: label&xpath&//div[@id='switchesContainer']/div/div/div[1]/div/h1/label

@@ -1,0 +1,22 @@
+version_type_value							: Custom Build
+version_firmware							: 6.2.1.0-3.3.0.0_38115		
+date										: 27/03/2015
+time_zoneNew_Delhi							: New-Delhi UTC+05:30
+hrs8										: 08
+min30										: 30
+session_AM									: AM
+version_type_value_2						: General Availability Build
+version_firmware_2							: 6.4.2.3-4.1.2.0_49233
+special_char_version						: #%#$@#
+session_PM									: PM
+version_type_value_3 						: Early Availability Build
+switch_version								: 7.4.0.0_45556
+version_firmware_3							: 6.3.1.8-4.0.0.9_47220
+invalid_version_firmware					: 6.22.1.0-3.3.0.0_38115
+upgrade_version								: 6.3.1.8-4.0.0.8_46401
+firmware_upgrade_version					: 6.3.1.8-4.0.0.9_47220
+firmware_base_version                       : 6.3.1.8-4.0.0.8_46401
+firmware_downgrade_version					: 6.3.1.8-4.0.0.7_44641
+c_builb_image_version						: 6.4.2.3-4.1.2.0_48710
+switch_version_2							: 7.3.2.5_49473
+

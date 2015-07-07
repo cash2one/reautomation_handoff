@@ -1,0 +1,11 @@
++ vpn primary %(primary_text)s 
++ vpn backup %(backup_text)s 
++ vpn preemption 
++ vpn fast-failover 
++ vpn hold-time %(holdTime)s 
++ vpn monitor-pkt-send-freq %(secs_test_packets)s 
++ vpn monitor-pkt-lost-cnt %(max_text_packet)s 
++ vpn reconnect-user-on-failover 
++ vpn gre-outside
++ vpn reconnect-time-on-failover %(vpn_failover_time)s 
++ gre per-ap-tunnel

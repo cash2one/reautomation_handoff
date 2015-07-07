@@ -1,0 +1,9 @@
+access_point_label									: label&xpath&//span[text()='Access Point']
+iap													: button&id&apsTable_name_display_0
+monitor_mode										: label&xpath&//span[@id ='mode' and @title='monitor']
+access_mode											: label&xpath&//span[@id ='mode' and @title='access']
+spectrum_mode										: label&xpath&//span[@id ='mode' and @title='spectrum']
+wireless_role_0          							: label&xpath&//span[@id='wirelessInterfaceTable_role_display_0']/..
+wireless_role_1          							: label&xpath&//span[@id='wirelessInterfaceTable_role_display_1']/..
+master_vc											: label&xpath&//td[@title = '24:de:c6:ca:08:c6' and @class="ar-td ng-isolate-scope masterVC"]
+slave_vc											: label&xpath&//td[@title='6c:f3:7f:cc:a4:58' and @class="ar-td ng-isolate-scope"]&1 

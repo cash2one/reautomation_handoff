@@ -1,0 +1,3 @@
++ snmp-server community 
++ snmp-server user admin SHA  DES 
++ snmp-server host 10.10.10.1 version 2c newcom inform

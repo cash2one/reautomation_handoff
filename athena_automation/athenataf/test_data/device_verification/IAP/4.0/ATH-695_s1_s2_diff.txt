@@ -1,0 +1,6 @@
+  ids
+   wireless-containment none
++  client-detection-level custom
++  detect-omerta-attack
+  
+  

@@ -1,0 +1,7 @@
+finish											: button&id&network_create_finish
+wired_profile									: select&id&Wired_Profile_0
+assignment_profile4								: select&id&Wired_Profile_4
+assignment_profile1								: select&id&Wired_Profile_1
+back											: link&text&Back
+assignment_profile2								: select&id&Wired_Profile_2
+assignment_profile3								: select&id&Wired_Profile_3

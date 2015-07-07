@@ -1,0 +1,9 @@
+! virtual-controller-ip 10.1.10.30
+! virtual-controller-ip 10.10.1.110
+! virtual-controller-vlan 123 255.255.0.0 10.10.1.1
+! clock timezone none 00 00
+! rf-band all
+! ntp-server 1.2.3.4
+! clock timezone Pacific-Time -07 00
+! rf-band 2.4
+! dynamic-cpu-mgmt disable

@@ -1,0 +1,24 @@
++ wlan access-rule test1
++  rule any any match any any any permit
++ wlan ssid-profile test1
++  enable
++  type voice
++  essid test1
++  wep-key  1
++  opmode static-wep
++  max-authentication-failures 0
++  auth-server InternalServer
++  rf-band all
++  captive-portal disable
++  dtim-period 1
++  inactivity-timeout 1000
++  broadcast-filter none
++  content-filtering
++  dmo-channel-utilization-threshold 90
++  local-probe-req-thresh 0
++  max-clients-threshold 64
++ wlan auth-server authradius
++  ip 10.17.50.110
++  port 1812
++  acctport 1813
++  key

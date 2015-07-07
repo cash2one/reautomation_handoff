@@ -1,0 +1,19 @@
++ wlan access-rule %(Network_name)s
++  rule any any match any any any permit
++ wlan ssid-profile %(Network_name)s
++  enable
++  type employee
++  essid %(Network_name)s
++  opmode wpa2-psk-aes
++  max-authentication-failures %(channel_switch_announce_5ghz_value)s
++  auth-server %(Authentication_server)s
++  rf-band all
++  captive-portal disable
++  mac-authentication
++  dtim-period %(invalid_auth_sharedkey_value)s
++  inactivity-timeout %(calea_mtu)s
++  broadcast-filter none
++  dmo-channel-utilization-threshold 90
++  local-probe-req-thresh %(channel_switch_announce_5ghz_value)s
++  max-clients-threshold 64
++  okc-disable

@@ -1,0 +1,8 @@
+username							: textbox&name&admin
+password							: textbox&name&password
+submit								: button&id&SubmitButton
+iap_username						: textbox&id&usernameId
+iap_password						: textbox&id&passwordId
+iap_submit							: button&id&login-dialog-button
+username_sso						: textbox&id&username
+sign_in								: submit&id&SignIn

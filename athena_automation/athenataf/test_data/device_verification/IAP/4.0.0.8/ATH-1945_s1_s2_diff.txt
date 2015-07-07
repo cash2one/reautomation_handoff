@@ -1,0 +1,17 @@
++ wlan access-rule %(wired_network_name)s
++  rule any any match any any any permit
++ wired-port-profile %(wired_network_name)s
++  switchport-mode trunk
++  allowed-vlan all
++  native-vlan guest
++  uplink-enable
++  no shutdown
++  access-rule-name %(wired_network_name)s
++  speed %(basic_speed)s
++  duplex half
++  poe
++  type guest
++  auth-server %(Authentication_server)s
++  captive-portal internal
++  content-filtering
++  no dot1x

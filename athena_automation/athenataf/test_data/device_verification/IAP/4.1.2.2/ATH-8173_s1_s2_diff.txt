@@ -1,0 +1,7 @@
++  infrastructure-protection-level custom
++  client-protection-level custom
++  protect-adhoc-network
++  protect-ap-impersonation
++  protect-windows-bridge
+  
+  

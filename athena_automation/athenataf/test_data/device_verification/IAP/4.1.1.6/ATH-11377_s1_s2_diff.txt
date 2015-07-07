@@ -1,0 +1,6 @@
++ wlan wispr-profile
++  wispr-location-name-operator-name Alpha
++  wispr-location-name-location Australia
++  wispr-location-id-network 456
++  wispr-location-id-ac 5023
++  wispr-location-id-isocc 61

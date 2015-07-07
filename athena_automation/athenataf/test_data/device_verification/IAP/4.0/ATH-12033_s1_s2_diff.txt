@@ -1,0 +1,20 @@
++ wlan access-rule test1
++  rule any any match any any any permit
++ wlan ssid-profile test1
++  enable
++  type voice
++  essid test1
++  opmode wpa-psk-tkip
++  max-authentication-failures 10
++  auth-server InternalServer
++  rf-band all
++  captive-portal disable
++  dtim-period 1
++  inactivity-timeout 1000
++  broadcast-filter none
++  blacklist
++  dmo-channel-utilization-threshold 90
++  local-probe-req-thresh 0
++  max-clients-threshold 64
++  wmm-background-share 90
++  okc-disable

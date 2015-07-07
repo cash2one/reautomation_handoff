@@ -1,0 +1,2 @@
++ rf dot11g-radio-profile
++  legacy-mode

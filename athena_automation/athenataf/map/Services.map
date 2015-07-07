@@ -1,0 +1,173 @@
+enable_air_group								: button&name&air_group_enable
+guest_bonjour									: button&name&bonjour_check
+rtls_menu										: button&xpath&//div[@id='accordion-section-2']/div[1]/span
+aruba_rtls										: checkbox&id&rtls_chk
+aero_scout										: checkbox&id&scout_chk
+rtls_ip_address									: textbox&id&rtls_ip_address
+rtls_port										: textbox&id&rtls_port
+rtls_passphrase									: textbox&id&rtls_passphrase
+rtls_re_passphrase								: textbox&id&rtls_re_passphrase
+save_setting									: submit&id&ngSave
+scout_ip_address								: textbox&id&scout_ip_address
+scout_port										: textbox&id&scout_port
+cppm_server_select								: select&id&cppm_server1_select
+enable_clear_pass								: button&id&enforce_clear_chk
+itunes											: button&id&enable_itunes
+airprint_editrole								: button&id&airprint_editrole
+new_role										: button&text&testRole
+close_Roles_popUp								: button&id&close_Roles_popUp
+location_engine									: button&id&location_engine
+service_server									: textbox&id&service_server
+report_interval_location						: textbox&id&report_interval_location
+enable_air_group_text							: button&id&enable_air_chk
+open_dns_accordion								: button&xpath&//div[@id='accordion-section-3']/div[1]/span
+dns_username									: textbox&id&dns_username
+dns_password									: textbox&id&dns_password
+calea_accordion									: button&xpath&//div[@id='accordion-section-4']/div[1]/span
+calea_ip_address								: textbox&id&calea_ip_address
+calea_encapsulation_type						: select&id&calea_encapsulation_type
+calea_gre_type									: textbox&id&calea_gre_type
+calea_mtu										: textbox&id&calea_mtu
+ip_addess_error									: textbox&id&calea_ip_address_error
+calea_mtu_error									: textbox&id&calea_mtu_error
+calea_cancel_button								: button&id&ngCancel
+enable_air_mobile_chk							: button&id&enable_air_mobile_chk
+enable_air_print								: checkbox&id&enable_print
+enable_air_play									: button&id&enable_play
+enable_remote_mgemt								: button&id&enable_remotemgemt
+enable_sharing									: button&id&enable_charing
+enable_chat										: button&id&enable_chat
+enable_allowall									: button&id&enable_allowall
+edit_air_print_disallowed_roles					: button&xpath&//a[@id='airprint_editrole']/span
+edit_air_print_disallowed_vlans					: button&xpath&//a[@id='airprint_editvlan']/span
+edit_air_play_disallowed_roles					: button&xpath&//a[@id='airplay_editrole']/span
+edit_air_play_disallowed_vlans					: button&xpath&//a[@id='airplay_editvlan']/span
+itunes_disallowed_roles							: button&xpath&//a[@id='itunes_editrole']/span
+itunes_disallowed_vlans							: button&xpath&//a[@id='itunes_editvlan']/span
+remote_management_disallowed_roles				: button&xpath&//a[@id='remotemgmt_editrole']/span
+remote_management_disallowed_vlans				: button&xpath&//a[@id='remotemgmt_editvlan']/span
+sharing_disallowed_roles						: button&xpath&//a[@id='sharing_editrole']/span
+sharing_disallowed_vlans						: button&xpath&//a[@id='sharing_editvlan']/span
+chat_disallowed_roles							: button&xpath&//a[@id='chat_editrole']/span
+chat_disallowed_vlans							: button&xpath&//a[@id='chat_editvlan']/span
+allowall_disallowed_roles						: button&xpath&//a[@id='allowall_editrole']/span
+allowall_disallowed_vlans						: button&xpath&//a[@id='allowall_editvlan']/span
+auth_coa_only									: button&id&auth_coa_only
+auth_server_name								: textbox&id&auth_server_name
+auth_ipaddr										: textbox&id&auth_ipaddr
+auth_sharedkey									: textbox&id&Auth_Sharedkey
+retype_auth_shared_key							: textbox&id&Retype_auth_shared_key
+airgroup_port									: textbox&id&AirGroup_Port
+cppm_save_button								: button&xpath&//button[@id='confirm-save-ok']
+auth_server_name_error							: button&id&auth_server_name_error
+auth_ipaddr_error								: button&id&auth_ipaddr_error&0
+auth_Sharedkey_error							: button&id&Auth_Sharedkey_error&0
+retype_auth_shared_key_error					: button&id&Retype_auth_shared_key_error&0
+airgroup_port_error								: button&id&AirGroup_Port_error
+cppm_server2_select								: select&id&cppm_server2_select
+coa_server_select								: select&id&coa_server_select
+rtls_unassociated_chk							: button&id&rtls_unassociated_chk
+scout_unassociated_chk							: button&id&scout_unassociated_chk
+save_roles_popup								: button&id&save_Roles_popUp
+role1											: button&xpath&//option[text()='role1']
+role2											: button&xpath&//option[text()='role2']
+role3											: button&xpath&//option[text()='role3']
+airplay_editrole								: button&id&airplay_editrole
+confirm_save_close_roles						: button&id&confirm-save-close-roles
+service_server_error							: button&id&service_server_error
+report_interval_location_error					: button&id&report_interval_location_error
+network_integration_accordion					: button&xpath&//div[@id='accordion-section-5']/div[1]/span
+alto_enable           							: button&id&alto_enable
+alto_username									: textbox&id&alto_username
+alto_password									: textbox&id&alto_password
+alto_retype_password							: textbox&id&alto_retype_password
+alto_ip_address									: textbox&id&alto_ip_address
+alto_port										: textbox&id&alto_port
+alto_username_error  							: button&id&alto_username_error
+alto_password_error  							: button&id&alto_password_error
+alto_retype_password_error  					: button&id&alto_retype_password_error
+alto_ip_address_error   						: button&id&alto_ip_address_error
+alto_error  									: button&id&alto_error
+default_role_option   					       : button&xpath&//option[text()='default_wired_port_profile']
+move_role_button       						   : button&id&move_roles_1
+air_print_disallowed_vlan_id_textbox   		   : textbox&id&vlans_list
+air_print_disallowed_vlan_OK_button   		   : button&id&save_Vlans_popUp
+vlans_list_error       						   : button&id&vlans_list_error
+created_default_role_text    				   : button&xpath&//span[@id='service_air_print_roles']
+created_vlans_text_1      					   : button&xpath&//span[@class='ng-binding' and text()='1']&2
+created_vlans_text_2       					   : button&xpath&//span[@class='ng-binding' and text()='2']
+invalid_ip_address_msg							: button&id&rtls_ip_address_error
+invalid_port_error_msg							: button&id&rtls_port_error
+invalid_passphrase_error_msg					: button&id&rtls_passphrase_error
+invalid_re_passphrase_error_msg					: button&id&rtls_re_passphrase_error
+open_dns_passwd_error							: label&xpath&//input[@id='dns_password']/../div[1]
+open_dns_passwd_error1							: label&xpath&//input[@id='dns_password']/../div[2]
+save_alert_ok									: button&id&CAN_NAV_Alert_Ok
+wired_instant_role								: button&xpath&//option[text()='wired-instant']
+new_test_role									:button&xpath&//select[@id='roles_available']/option[2]
+close_vlans_popup								: button&id&close_Vlans_popUp
+rtls_update								          : textbox&id&rtls_update
+air_play_default_role							:button&xpath&//span[@id='service_air_play_roles']/span/span[1]
+air_play_vlan_text1								: button&xpath&//span[@id='service_air_play_vlans']/span[1]/span[1]
+air_play_vlan_text2 							: button&xpath&//span[@id='service_air_play_vlans']/span[2]/span[1]
+itunes_default_role								: button&xpath&//span[@id='service_itunes_roles']/span/span[1]
+itunes_vlan_text1								:button&xpath&//span[@id='service_itunes_vlans']/span[1]/span[1]
+itunes_vlan_text2								:button&xpath&//span[@id='service_itunes_vlans']/span[2]/span[1]
+remote_management_default_role					: button&xpath&//span[@id='service_remotemgnt_roles']/span/span[1]
+remote_management_vlan_text1					:button&xpath&//span[@id='service_remotemgnt_vlans']/span[1]/span[1]
+remote_management_vlan_text2					:button&xpath&//span[@id='service_remotemgnt_vlans']/span[2]/span[1]
+sharing_default_role							:button&xpath&//span[@id='service_charing_roles']/span/span[1]
+sharing_vlan_text1								:button&xpath&//span[@id='service_charing_vlans']/span[1]/span[1]
+sharing_vlan_text2								:button&xpath&//span[@id='service_charing_vlans']/span[2]/span[1]
+chat_default_role							    :button&xpath&//span[@id='service_chat_roles']/span/span[1]
+chat_vlan_text1								    :button&xpath&//span[@id='service_chat_vlans']/span[1]/span[1]
+chat_vlan_text2								    :button&xpath&//span[@id='service_chat_vlans']/span[2]/span[1]
+allow_all_default_role							:button&xpath&//span[@id='service_allowall_roles']/span/span[1]
+allow_all_vlan_text1						    :button&xpath&//span[@id='service_allowall_vlans']/span[1]/span[1]
+allow_all_vlan_text2						    :button&xpath&//span[@id='service_allowall_vlans']/span[2]/span[1]
+app_rf_accordion								: button&xpath&//div[@id='accordion-section-6']/div[1]/span
+enable_dpi                                      :button&xpath&//*[@id='enable_app_rf']
+enable_dpi_1										: button&id&enable_app_rf
+radius											: button&id&AuthName1
+rfc_3576										: checkbox&id&auth_rfc_3576
+accounting_port									: textbox&id&Auth_Account_Port
+deadtime										: textbox&id&deadtime
+timeout											: textbox&id&auth_timeout
+retrycount										: textbox&id&retry_count
+nas_ip_address									: textbox&id&auth_nas_ip_addr
+nas_identifier									: textbox&id&nas_id
+authport										: textbox&id&AuthPort
+tacacs_radio							        : button&id&AuthName3
+auth_server_tacacs_name 					     : textbox&id&auth_server_tacacs_name
+Auth_Tacacs_Sharedkey       					: textbox&id&Auth_Tacacs_Sharedkey
+Retype_auth_tacacs_shared_key     				: textbox&id&Retype_auth_tacacs_shared_key
+Auth_Tacacs_Port        						: textbox&id&Auth_Tacacs_Port
+auth_tacacs_timeout        						: textbox&id&auth_tacacs_timeout
+auth_tacacs_ipaddr        						: textbox&id&auth_tacacs_ipaddr
+auth_tacacs_retry_count       					: textbox&id&auth_tacacs_retry_count
+cppm_cancel_button        						: button&xpath&//button[@id='confirm-save-cancel']
+move_role_back_button       					: button&id&move_roles_3
+edit_cppm_server1								: button&id&server1_edit
+number_range_error_msg							: button&id&rtls_update_error
+aeroscout_ip_error_msg							: button&id&scout_ip_address_error
+aeroscout_port_error_msg						: button&id&scout_port_error
+auth_server_name_maxlength_error				: button&id&auth_server_name_maxlength_error&0
+auth_account_port_error							: button&id&Auth_Account_Port_error
+drpmask											: textbox&id&drpmask
+deadtime_error									: button&id&deadtime_error
+drpmask_error									: button&id&drpmask_error
+drpgateway									    : textbox&id&drpgateway
+auth_timeout_error							    : button&id&auth_timeout_error
+auth_retry_count_error							: button&id&Auth_Retry_Count_error&0
+auth_nas_ip_addr_error							: button&id&auth_nas_ip_addr_error
+auth_port_error									: button&id&AuthPort_error&0
+drp_ip											: textbox&id&drpip
+drp_vlan										: textbox&id&drpvlan
+drp_vlan_error									: button&id&drpvlan_error
+tacacs_name_maxlength_error						: button&id&tacacs_server_tacacs_name_maxlength_error
+tacacs_Sharedkey_error							: button&id&Auth_Sharedkey_error&1
+tacacs_auth_port_error							: button&id&AuthPort_error&1
+auth_tacacs_timeout_error						: button&id&auth_tacacs_timeout_error
+auth_ipaddr_tacacs_error						: button&id&auth_ipaddr_tacacs_error
+tacacs_retry_count_error						: button&id&Auth_Retry_Count_error&1
+override_flag_button_new						: button&xpath&//div[@class='override-icon icosolo icon_link_broken ng-scope']

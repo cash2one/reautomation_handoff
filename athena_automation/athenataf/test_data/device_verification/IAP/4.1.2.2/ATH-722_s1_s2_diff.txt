@@ -1,0 +1,7 @@
++ rf dot11a-radio-profile
++  legacy-mode
++  spectrum-monitor
++  beacon-interval %(new_beacon_interval_value)s
++  dot11h
++  interference-immunity %(Edit_Reserve_First)s
++  csa-count %(new_channel_switch_announce_5ghz_value)s

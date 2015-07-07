@@ -1,0 +1,15 @@
+cancel										: button&css_class&cloudclose
+terms_of_use								: button&text&Terms of Use
+access_point								: button&id&ap_select
+access_point_element						: button&xpath&//span[text() = 'ACCESS POINTS']/../..
+clients_element								: button&xpath&//*[@id='overviewContainer']/div/div/div[2]/div/div/div[3]/div/label/span
+alerts_element								: button&xpath&//span[text() = 'ALERTS']/../..
+graph_element								: button&xpath&//*[@id='throughput_overview']/label/span
+map_element                            : button&xpath&//*[@id='overview_topaps_table']/div[2]/div[3]/div[1]/label
+quicklinks_dropdown							: select&id&quicklinks_dropdown
+overview_sub_menu							: link&id&overviewSubMenu
+switch_0									: button&xpath&//div[@class='count-view ng-binding' and @title='0' and contains(.,'0')]&1
+
+help_button											: button&xpath&//a[@class='helpButton Header_Help icosolo icon_help']
+auto_help_content									: label&xpath&//div[@class='button_close Close_Failed_Confirm HelpClass']/../following-sibling::div[1]
+all_group_link_label								: chain&xpath&//label[@class='link-label heron-help-white ng-binding HelpClass']

@@ -1,0 +1,207 @@
+detect_omerta_attack_page						: button&xpath&//ul[@id='detect_client']/li[4]
+detection_form									: button&id&detect_infra
+protection_form									: button&id&protect_infra
+detection_infrastructure_threat_high			: button&name&infra_detect&0
+detection_infrastructure_threat_med				: button&name&infra_detect&1
+detection_infrastructure_threat_low				: button&name&infra_detect&2
+detection_infrastructure_threat_off				: button&name&infra_detect&3
+detection_infrastructure_threat_custom			: button&name&infra_detect&4
+detection_clients_threat_high					: button&name&clent_detect&0
+detection_clients_threat_med					: button&name&clent_detect&1
+detection_clients_threat_low					: button&name&clent_detect&2
+detection_clients_threat_off					: button&name&clent_detect&3
+detection_clients_threat_custom					: button&name&clent_detect&4
+save_settings									: button&id&ngSave
+detect_windows_bridge							: button&xpath&//li[contains(.,'detect_windows_bridge')]
+signature_deassociation_broadcast				: button&xpath&//li[contains(.,'signature_deassociation_broadcast')]
+signature_deauth_broadcast						: button&xpath&//li[contains(.,'signature_deauth_broadcast')]
+detect_apspoofing								: button&xpath&//li[contains(.,'detect_apspoofing')]
+detect_adhoc_using_valid_ssid					: button&xpath&//li[contains(.,'detect_adhoc_using_valid_ssid')]
+detect_malformed_large_duration					: button&xpath&//li[contains(.,'detect_malformed_large_duration')]
+detect_overflow_eapol_key						: button&xpath&//li[contains(.,'detect_overflow_eapol_key')]
+detect_invalid_addresscombination				: button&xpath&//li[contains(.,'detect_invalid_addresscombination')]
+detect_ap_impersonation 						: button&xpath&//li[contains(.,'detect_ap_impersonation')]
+detect_ap_flood									: button&xpath&//li[contains(.,'detect_ap_flood')]
+detect_beacon_wrong_channel						: button&xpath&//li[contains(.,'detect_beacon_wrong_channel')]
+detect_ht_greenfield							: button&xpath&//li[contains(.,'detect_ht_greenfield')]
+detect_overflow_ie								: button&xpath&//li[contains(.,'detect_overflow_ie')]
+detect_rts_rate_anomaly							: button&xpath&//li[contains(.,'detect_rts_rate_anomaly')]
+detect_malformed_htie							: button&xpath&//li[contains(.,'detect_malformed_htie')]
+detect_cts_rate_anomaly							: button&xpath&//li[contains(.,'detect_cts_rate_anomaly')]
+detect_malformed_frame_auth						: button&xpath&//li[contains(.,'detect_malformed_frame_auth')]
+detect_invalid_mac_oui							: button&xpath&//li[contains(.,'detect_invalid_mac_oui')]
+detect_malformed_assoc_req						: button&xpath&//li[contains(.,'detect_malformed_assoc_req')]
+detect_bad_wep									: button&xpath&//li[contains(.,'detect_bad_wep')]
+detect_wireless_bridge							: button&xpath&//li[contains(.,'detect_wireless_bridge')]
+detect_ht_40mhz_intolerance						: button&xpath&//li[contains(.,'detect_ht_40mhz_intolerance')]
+detect_valid_ssid_misuse						: button&xpath&//li[contains(.,'detect_valid_ssid_misuse')]
+detect_adhoc_network							: button&xpath&//li[contains(.,'detect_adhoc_network')]
+detect_client_flood								: button&xpath&//li[contains(.,'detect_client_flood')]
+detect_valid_clientmisassociation				: button&xpath&//li[contains(.,'detect_valid_clientmisassociation')]
+detect_hotspotter_attack						: button&xpath&//li[contains(.,'detect_hotspotter_attack')]
+detect_power_save_dos_attack					: button&xpath&//li[contains(.,'detect_power_save_dos_attack')]
+detect_omerta_attack							: button&xpath&//li[contains(.,'detect_omerta_attack')]
+detect_disconnect_sta 							: button&xpath&//li[contains(.,'detect_disconnect_sta')]
+detect_unencrypted_valid						: button&xpath&//li[contains(.,'detect_unencrypted_valid')]
+detect_block_ack_attack							: button&xpath&//li[contains(.,'detect_block_ack_attack')]
+detect_fatajack									: button&xpath&//li[contains(.,'detect_fatajack')]
+detect_rate_anomalies							: button&xpath&//li[contains(.,'detect_rate_anomalies')]
+detect_chopchop_attack							: button&xpath&//li[contains(.,'detect_chopchop_attack')]
+detect_eap_rate_anomaly							: button&xpath&//li[contains(.,'detect_eap_rate_anomaly')]
+detect_tkip_replay_attack 						: button&xpath&//li[contains(.,'detect_tkip_replay_attack')]
+signature_airjack								: button&xpath&//li[contains(.,'signature_airjack')]
+signature_asleap 								: button&xpath&//li[contains(.,'signature_asleap')]
+detect_windows_bridge_tick						: button&xpath&//li[contains(.,'detect_windows_bridge')]/span
+signature_deassociation_broadcast_tick			: button&xpath&//li[contains(.,'signature_deassociation_broadcast')]/span
+signature_deauth_broadcast_tick					: button&xpath&//li[contains(.,'signature_deauth_broadcast')]/span
+detect_apspoofing_tick							: button&xpath&//li[contains(.,'detect_apspoofing')]/span
+detect_adhoc_using_valid_ssid_tick				: button&xpath&//li[contains(.,'detect_adhoc_using_valid_ssid')]/span
+detect_malformed_large_duration_tick			: button&xpath&//li[contains(.,'detect_malformed_large_duration')]/span
+detect_overflow_eapol_key_tick					: button&xpath&//li[contains(.,'detect_overflow_eapol_key')]/span
+detect_invalid_addresscombination_tick			: button&xpath&//li[contains(.,'detect_invalid_addresscombination')]/span
+detect_ap_impersonation_tick 					: button&xpath&//li[contains(.,'detect_ap_impersonation')]/span
+detect_ap_flood_tick							: button&xpath&//li[contains(.,'detect_ap_flood')]/span
+detect_beacon_wrong_channel_tick				: button&xpath&//li[contains(.,'detect_beacon_wrong_channel')]/span
+detect_ht_greenfield_tick						: button&xpath&//li[contains(.,'detect_ht_greenfield')]/span
+detect_overflow_ie_tick							: button&xpath&//li[contains(.,'detect_overflow_ie')]/span
+detect_rts_rate_anomaly_tick					: button&xpath&//li[contains(.,'detect_rts_rate_anomaly')]/span
+detect_malformed_htie_tick						: button&xpath&//li[contains(.,'detect_malformed_htie')]/span
+detect_cts_rate_anomaly_tick					: button&xpath&//li[contains(.,'detect_cts_rate_anomaly')]/span
+detect_malformed_frame_auth_tick				: button&xpath&//li[contains(.,'detect_malformed_frame_auth')]/span
+detect_invalid_mac_oui_tick						: button&xpath&//li[contains(.,'detect_invalid_mac_oui')]/span
+detect_malformed_assoc_req_tick					: button&xpath&//li[contains(.,'detect_malformed_assoc_req')]/span
+detect_bad_wep_tick								: button&xpath&//li[contains(.,'detect_bad_wep')]/span
+detect_wireless_bridge_tick						: button&xpath&//li[contains(.,'detect_wireless_bridge')]/span
+detect_ht_40mhz_intolerance_tick				: button&xpath&//li[contains(.,'detect_ht_40mhz_intolerance')]/span
+detect_valid_ssid_misuse_tick					: button&xpath&//li[contains(.,'detect_valid_ssid_misuse')]/span
+detect_adhoc_network_tick						: button&xpath&//li[contains(.,'detect_adhoc_network')]/span
+detect_client_flood_tick						: button&xpath&//li[contains(.,'detect_client_flood')]/span
+detect_invalid_addresscombination_chkbox		: button&xpath&//li[contains(.,'detect_invalid_addresscombination')]/span/input
+detect_ap_impersonation_chkbox 					: button&xpath&//li[contains(.,'detect_ap_impersonation')]/span/input
+detect_valid_clientmisassociation_tick			: button&xpath&//li[contains(.,'detect_valid_clientmisassociation')]/span
+detect_hotspotter_attack_tick					: button&xpath&//li[contains(.,'detect_hotspotter_attack')]/span
+detect_power_save_dos_attack_tick				: button&xpath&//li[contains(.,'detect_power_save_dos_attack')]/span
+detect_omerta_attack_tick						: button&xpath&//li[contains(.,'detect_omerta_attack')]/span
+detect_disconnect_sta_tick 						: button&xpath&//li[contains(.,'detect_disconnect_sta')]/span
+detect_unencrypted_valid_tick					: button&xpath&//li[contains(.,'detect_unencrypted_valid')]/span
+detect_block_ack_attack_tick					: button&xpath&//li[contains(.,'detect_block_ack_attack')]/span
+detect_fatajack_tick							: button&xpath&//li[contains(.,'detect_fatajack')]/span
+detect_rate_anomalies_tick						: button&xpath&//li[contains(.,'detect_rate_anomalies')]/span
+detect_chopchop_attack_tick						: button&xpath&//li[contains(.,'detect_chopchop_attack')]/span
+detect_eap_rate_anomaly_tick					: button&xpath&//li[contains(.,'detect_eap_rate_anomaly')]/span
+detect_tkip_replay_attack_tick 					: button&xpath&//li[contains(.,'detect_tkip_replay_attack')]/span
+signature_airjack_tick							: button&xpath&//li[contains(.,'signature_airjack')]/span
+signature_asleap_tick 							: button&xpath&//li[contains(.,'signature_asleap')]/span
+detect_chopchop_attack_chkbox					: button&xpath&//li[contains(.,'detect_chopchop_attack')]/span/input
+detect_fatajack_chkbox							: button&xpath&//li[contains(.,'detect_fatajack')]/span/input
+threat_detection_level_text_infra				: button&text&THREAT DETECTION LEVEL:&0
+threat_detection_level_text_client				: button&text&THREAT DETECTION LEVEL:&1
+
+confirm_save_ok									: button&xpath&//*[@id='confirm-save-ok']/span[text()='OK']&1
+confirm_save_ok_1									: button&xpath&//*[@id='confirm-save-ok']/span[text()='OK']&0
+
+detection_accordion								: chain&text&DETECTION
+
+protection_accordion							: button&text&PROTECTION
+protection_section								: button&id&accordion-section-content-2
+client_protect_off								: button&id&client_protect_off
+infra_protect_off								: button&id&infra_protect_off
+rogue_containment								: button&xpath&//li[contains(.,'rogue_containment')]
+protect_ap_impersonation						: button&xpath&//li[contains(.,'protect_ap_impersonation')]
+protect_adhoc_network 							: button&xpath&//li[contains(.,'protect_adhoc_network')]
+protect_windows_bridge							: button&xpath&//li[contains(.,'protect_windows_bridge')]
+wired_containment								: select&id&wired_containment
+wireless_containment							: select&id&wireless_containment
+infra_protect_high								: button&id&infra_protect_high
+infra_protect_low								: button&id&infra_protect_low
+client_protect_high								: button&id&client_protect_high
+client_protect_low								: button&id&client_protect_low
+rogue_containment_checked						: button&xpath&//li[contains(.,'rogue_containment')]/span
+protect_ssid_checked							: button&xpath&//li[contains(.,'protect_ssid')]/span
+protect_ap_impersonation_checked				: button&xpath&//li[contains(.,'protect_ap_impersonation')]/span
+protect_adhoc_network_checked 					: button&xpath&//li[contains(.,'protect_adhoc_network')]/span
+protect_valid_sta_checked						: button&xpath&//li[contains(.,'protect_valid_sta')]/span
+protect_windows_bridge_checked					: button&xpath&//li[contains(.,'protect_windows_bridge')]/span
+save											: button&xpath&//div[@class='save-items-popup']/div/a[@id='ngSave']
+restore_default									: button&id&savedivpop
+infrastructure_threat_protection_level  		: button&xpath&//span[text()='THREAT PROTECTION LEVEL:']&0
+client_threat_protection_level   				: button&xpath&//span[text()='THREAT PROTECTION LEVEL:']&1
+rogue_containment_edit							: button&xpath&//li[contains(.,'rogue_containment')]/span/input[@class='ng-pristine ng-valid']
+protect_ssid_edit								: button&xpath&//li[contains(.,'protect_ssid')]/span/input[@class='ng-pristine ng-valid']
+protect_ap_impersonation_edit					: button&xpath&//li[contains(.,'protect_ap_impersonation')]/span/input[@class='ng-pristine ng-valid']
+protect_adhoc_network_edit 						: button&xpath&//li[contains(.,'protect_adhoc_network')]/span/input[@class='ng-pristine ng-valid']
+protect_valid_sta_edit							: button&xpath&//li[contains(.,'protect_valid_sta')]/span/input[@class='rightmargin ng-pristine ng-valid']
+protect_windows_bridge_edit 					: button&xpath&//li[contains(.,'protect_windows_bridge')]/span/input[@class='rightmargin ng-pristine ng-valid']
+protect_windows_bridge_enabled 					: button&xpath&//li[contains(.,'protect_windows_bridge')]/span/input[@class='rightmargin ng-valid ng-dirty']
+client_protect_custom							: button&id&client_protect_custom
+rogue_containment_unchecked						: button&xpath&//li[contains(.,'rogue_containment')]/span/img[@class='']
+protect_ssid_unchecked							: button&xpath&//li[contains(.,'protect_ssid')]/span/img[@class='']
+protect_ap_impersonation_unchecked				: button&xpath&//li[contains(.,'protect_ap_impersonation')]/span/img[@class='']
+protect_adhoc_network_unchecked 				: button&xpath&//li[contains(.,'protect_adhoc_network')]/span/img[@class='']
+protect_valid_sta_unchecked						: button&xpath&//li[contains(.,'protect_valid_sta')]/span/img[@class='']
+protect_windows_bridge_unchecked				: button&xpath&//li[contains(.,'protect_windows_bridge')]/span/img[@class='']
+infrastructure_protect_custom					: button&id&infra_protect_custom
+rogue_containment_enabled						: button&xpath&//li[contains(.,'rogue_containment')]/span/input[@class='ng-valid ng-dirty']
+protect_adhoc_network_enabled 					: button&xpath&//li[contains(.,'protect_adhoc_network')]/span/input[@class='ng-valid ng-dirty']
+default_setting_msg								: button&xpath&//a[@id='savedivpop']/../span&1
+protect_ssid									: button&xpath&//ul[@id='protect_infra']/li[2]/span/input
+detect_power_save_dos_attack_chbox				: button&xpath&//li[contains(.,'detect_power_save_dos_attack')]/span/input
+detect_tkip_replay_attack_chbox					: button&xpath&//li[contains(.,'detect_tkip_replay_attack')]/span/input
+detect_disconnect_sta_chbox						: button&xpath&//li[contains(.,'detect_disconnect_sta')]/span/input
+protect_ap_impersonation_checkbox				: button&xpath&//li[contains(.,'protect_ap_impersonation')]/span/input
+protect_adhoc_network_checkbox					: button&xpath&//li[contains(.,'protect_adhoc_network')]/span/input
+protect_protect_windows_bridge_checkbox			: button&xpath&//li[contains(.,'protect_windows_bridge')]/span/input
+rogue_containment_checkbox						: button&xpath&//li[contains(.,'rogue_containment')]/span/input
+protect_ssid_checkbox							: button&xpath&//li[contains(.,'protect_ssid')]/span/input
+detect_windows_bridge_chkbox					: button&xpath&//li[contains(.,'detect_windows_bridge')]/span/input
+signature_deauth_broadcast_chkbox				: button&xpath&//li[contains(.,'signature_deauth_broadcast')]/span/input
+signature_deassociation_broadcast_chkbox		: button&xpath&//li[contains(.,'signature_deassociation_broadcast')]/span/input
+detection_help_msg								: button&xpath&//div[@id='auto-help-content']/div[3]/p
+detect_infastructure							: chain&text&INFRASTRUCTURE&0
+detect_infastructure_help_msg					: button&text&Configures which wireless attacks to detect on access points.
+detect_client									: chain&text&CLIENTS&0
+detect_client_help_msg							: button&xpath&//*[@id='auto-help-content']/div[3]/p
+detect_client_help_msg_1						: button&text&Configures which wireless attacks to detect on clients.
+help_button										: button&xpath&//a[@class='helpButton Header_Help icosolo icon_help']
+infra_detect_off								: button&id&infra_detect_off
+client_detect_off								: button&id&client_detect_off
+protect_infastructure							: chain&text&INFRASTRUCTURE&1
+protect_infastructure_help_msg					: button&text&Configures which wireless attacks to protect against on access points.
+protect_cleints_help_msg_1						: button&text&Configures which wireless attacks to protect against on clients.
+protect_client									: chain&text&CLIENTS&1
+protect_cleints_help_msg						: button&xpath&//*[@id='auto-help-content']/div[2]
+override_flag_vc_name							: button&xpath&//span[text()='Instant-CD:F8:36']&1
+override_flag_wireless_param					: button&xpath&//span[contains(.,'wireless-containment tarpit-non-valid-sta')]
+override_flag_wired_param						: button&xpath&//span[contains(.,'wired-containment')]
+override_resolv_button							: button&id&resolve_all_overrides
+all_group_button								: button&xpath&//div[@class='slider-menu link-label']
+default_expand_button							: button&id&show_swarms_0
+default_expand_button_1							: button&id&show_swarms_1
+default_group_instant_option					: button&id&swarm_name_0
+default_group_instant_option_1					: button&id&swarm_name_1
+override_flag_button_1							: button&xpath&//img[contains(@src,'Override2.png')]/..
+override_flag_button							: button&xpath&//*[@id='body']/div[1]/div[1]/div[6]/div/div[1]/div/div[6]
+override_flag_signature_deassociation			: button&xpath&//*[@id='swarmOverrideListTable_select_row_0']/td[1]/span[3]
+override_flag_detect_omerta_attack				: button&xpath&//*[@id='swarmOverrideListTable_select_row_0']/td[1]/span[4]
+override_flag_detect_windows_bridge				: button&xpath&//*[@id='swarmOverrideListTable_select_row_0']/td[1]/span[5]
+override_flag_detect_power_save_dos_attack		: button&xpath&//*[@id='swarmOverrideListTable_select_row_0']/td[1]/span[6]
+override_flag_detect_ap_spoofing				: button&xpath&//*[@id='swarmOverrideListTable_select_row_0']/td[1]/span[7]
+override_flag_sig_deauth_broadcast				: button&xpath&//*[@id='swarmOverrideListTable_select_row_0']/td[1]/span[8]
+override_flag_detect_hotspotter_attack			: button&xpath&//*[@id='swarmOverrideListTable_select_row_0']/td[1]/span[9]
+override_flag_detect_valid_client_mis			: button&xpath&//*[@id='swarmOverrideListTable_select_row_0']/td[1]/span[10]
+override_flag_infrastructure_detection_level	: button&xpath&//*[@id='swarmOverrideListTable_select_row_0']/td[1]/span[11]
+override_flag_client_detection_level			: button&xpath&//*[@id='swarmOverrideListTable_select_row_0']/td[1]/span[12]
+detect_apspoofing_chkbox						: button&xpath&//li[contains(.,'detect_apspoofing')]/span/input
+detect_hotspotter_attack_chkbox					: button&xpath&//li[contains(.,'detect_hotspotter_attack')]/span/input
+detect_valid_clientmisassociation_chkbox		: button&xpath&//li[contains(.,'detect_valid_clientmisassociation')]/span/input
+detect_omerta_attack_chkbox						: button&xpath&//li[contains(.,'detect_omerta_attack')]/span/input
+confirm_save_cancel        						: button&xpath&//a[@id='confirm-save-cancel']/span&1
+cancel_settings         						: button&id&ngCancel
+save_nav          								: button&id&CAN_NAV_Alert_Ok
+rf_menu           								: chain&id&rfSubMenu
+page_header        								: button&text&Configuration - RF
+monitoring_menu									: button&xpath&//a[@id='monitoringMainMenu']/label
+quicklinks_dropdown								: button&xpath&//select[@id='quicklinks_dropdown']
+infra_detect_low								: button&id&infra_detect_low
+override_flag_on_top_panel						: button&xpath&//div[@class='override-icon icosolo icon_link_broken ng-scope']
+

@@ -1,0 +1,6 @@
+!  min-tx-power 18
+!  max-tx-power 127
+!  a-channels 36,40,44
+!  g-channels 1,2,3
+!  min-tx-power %(change_min_transmit_power_value)s
+!  max-tx-power %(change_max_transmit_power_value)s

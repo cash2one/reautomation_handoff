@@ -1,0 +1,17 @@
+  airgroup
+!  disable
+  
+  airgroup
+!  enable
+  
+  airgroupservice airprint
+!  disable
+   description AirPrint
+  
+  airgroupservice airprint
+!  enable
+   description AirPrint
++  disallow-role default_wired_port_profile
++  disallow-vlan 1
++  disallow-vlan 2
+  

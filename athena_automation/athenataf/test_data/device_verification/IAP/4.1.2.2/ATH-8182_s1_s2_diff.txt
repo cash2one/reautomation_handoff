@@ -1,0 +1,3 @@
+!  wireless-containment none
+!  wireless-containment deauth-only
+!  wired-containment

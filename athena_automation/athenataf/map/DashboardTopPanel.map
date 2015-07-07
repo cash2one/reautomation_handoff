@@ -1,0 +1,19 @@
+slider_icon										: button&css_class&newnetwork
+all_groups										: button&css_class&default-menu
+default_group									: button&css_class&ngCellText&0 
+innerleft_panel_icon							: button&css_class&slider-menu-icon
+user_setting								: button&xpath&//a[@id='LoginUserName']
+account_settings							: button&text&Account Settings
+user_setting_group							: select&id&User_Setting_Group
+user_setting_timeZone						: label&id&User_Setting_TimeZone
+user_setting_idel_time						: textbox&id&User_Setting_Idel_Time
+idel_timeout_error							: button&xpath&//span[text()='Must be number in range 5-10080']
+cancel_button								: button&id&User_Setting_Cancel
+save_button									: button&id&User_Setting_Save_Butt
+user_name									: button&xpath&//ul[@class='UserCredentials']/li/a[text()='admin@alpha.com']
+change_password								: button&text&Change Password
+logout										: button&text&Logout
+cancel_session_timeout						: button&id&cancel-session-timeout
+idle_timeout_error_2						: button&xpath&//span[text()="Must be number in range 5-10080" and contains(@class,'ng-hide')]
+close_user_setting_pop_up					: button&id&cancel&3
+user_profile_name							: button&xpath&//ul[@class='UserCredentials']/li[1]/a

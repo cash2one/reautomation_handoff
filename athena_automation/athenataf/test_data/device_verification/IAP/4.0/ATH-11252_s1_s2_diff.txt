@@ -1,0 +1,3 @@
++ ip dhcp %(centralized_dhcp_name_special_char)s
++  server-type Centralized,L2
++  server-vlan 10

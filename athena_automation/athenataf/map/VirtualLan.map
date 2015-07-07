@@ -1,0 +1,59 @@
+next							:chain&id&network_create_next
+network_assigned				:button&xpath&//input[@id='client_ip_assignment_Network Assigned']
+default							:button&id&client_vlan_assignment_Default
+back							:button&text&Back
+static							:button&id&client_vlan_assignment_Static
+vlanid							:textbox&name&vlan_id&0
+virtual_controller				:button&xpath&//input[@id='client_ip_assignment_Virtual Controller Assigned']
+dynamic_vlan					:button&id&client_vlan_assignment_Dynamic
+default_vlan_attribute_list		:label&xpath&//span[text()='Default VLAN']/following-sibling::span[text()='1']
+new								:button&id&new_vlan_rule_button
+rule_attribute					:select&name&vlan_rule_type
+rule_operator					:select&name&vlan_rule_assign_operator
+rule_string						:textbox&name&vlan_rule_name
+rule_vlan_textbox			    :textbox&name&rule_vlan
+ok								:button&id&submit_vlan_form_button
+mode							:select&id&vlan_mode_select
+vlan_number_value_error			:button&id&rule_vlan_id_error
+vlan_id_range_error				:button&id&vlan_id_comma_error
+vlan_id_req_error				:button&id&vlan_id_req_error
+vlan_id_max_error				:button&id&vlan_id_max_error
+default_vlan_id					:button&id&default_vlan_rule
+default_vlan_edit				:button&id&edit_default_vlan_rule_button
+vlanid_default					:textbox&xpath&//input[@name='vlan_id']&1
+vlan_id_edit_ok					:button&id&confirm_vlan_id_edit
+vlan_id_edit_range_error		:button&id&pending_vlan_id_range_error
+vlan_id_edit_max_error			:button&id&pending_vlan_id_max_error
+vlan_rule_strng_req_err			:button&id&rule_vlan_name_error_required
+vlan_rule_strng_max_err			:button&xpath&//span[contains(.,'* 1-32 characters')]
+vlan_strng_max_mac_dhcp_err		:button&xpath&//span[contains(.,'1-255 characters')]
+vlan_rule_id_req_err			:button&id&rule_vlan_id_error_required
+client_ip_assignment			:label&text&CLIENT IP ASSIGNMENT
+disabled_up_icon				: button&xpath&//a[@id='move_selected_rule_up' and @class='button blue icosolo icon_arrow_up disabled_icon']
+disabled_down_icon				: button&xpath&//a[@id='move_selected_rule_down' and @class='button blue icosolo icon_arrow_down disabled_icon']
+vlan_string						: button&id&vlan_rule_0
+delete_button					: button&id&delete_vlan_rule_button
+vlan_id							:textbox&xpath&//input[@ng-model='pendingVLAN']
+vlan_id_textbox					:textbox&xpath&//p[contains(.,'VLAN ID')]/input
+vlan_rules_list					:textbox&id&vlan_rules_list
+acct_input_gigawords			: button&xpath&//span[text()="Acct-Input-Gigawords"]
+arap_zone_access				: button&xpath&//span[text()="ARAP-Zone-Access"]
+default_vlan					: button&xpath&//span[text()="Default VLAN"]&0
+disable_delete					: button&xpath&//button[@id='delete_vlan_rule_button' and @disabled='disabled']
+network_create_cancel			: button&id&network_create_cancel
+wired_vlan_id_textbox			: textbox&id&allowed_vlan
+wired_invalid_vlan_id_msg		: button&xpath&//span[@class='field-error' and contains(.,"*Comma separated list,range or 'all'. *Valid range is 1-4093 except 3333.")] 
+allowed_vlan_label				: label&xpath&//span[text()='ALLOWED VLAN']
+wired_native_vlan_textbox		: textbox&id&native_vlan
+wired_native_vlan_error 		: label&id&native_vlan_req_error&1
+wired_native_vlan_error1 		: label&id&native_vlan_range_error
+wired_vlan_string_error 		: label&xpath&//span[@class='field-error vlan-rule-error']&0
+cancel_vlan_form_button 		: button&id&cancel_vlan_form_button
+edit_vlan_rule_button 		    : button&id&edit_vlan_rule_button
+
+allowed_vlan_max_error			: label&xpath&//span[@class='field-error']&1
+move_selected_rule_down			: button&id&move_selected_rule_down
+move_selected_rule_up			: button&id&move_selected_rule_up
+vlan_string5					: button&id&vlan_rule_4
+access_vlan						: textbox&id&access_vlan
+vlan_access_range_error			: label&id&vlan_access_range_error

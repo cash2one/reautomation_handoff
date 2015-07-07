@@ -1,0 +1,169 @@
+new_vlan												: button&id&configVlansTable_add_row_icon
+delete_vlan												: button&id&Delete_Vlan_0
+save_setting											: button&xpath&//span[text()='Save Settings']
+click_description										: button&xpath&//div[@class="ngCellText col1 colt1 tbl_vlans_desc"]
+click_ip_address										: button&xpath&//div[@class='ngCellText col2 colt2 tbl_vlans_ip_addr']
+click_net_mask											: button&xpath&//div[@class="ngCellText col3 colt3 tbl_vlans_netmask"]
+set_id													: textbox&id&configVlansTable_vlan_id_field_0
+set_description											: textbox&id&configVlansTable_vlan_description_field_0
+set_ip_address											: textbox&id&configVlansTable_vlan_ip_addr_field_0
+set_net_mask											: textbox&id&configVlansTable_vlan_net_mask_field_0
+click_description_2										: button&xpath&//div[@class="ngCellText col1 colt1 tbl_vlans_desc"]&1
+click_ip_address_2										: button&xpath&//div[@class='ngCellText col2 colt2 tbl_vlans_ip_addr']&1
+click_net_mask_2										: button&xpath&//div[@class="ngCellText col3 colt3 tbl_vlans_netmask"]&1
+set_id_2												: textbox&id&configVlansTable_vlan_id_field_1
+set_description_2										: textbox&id&configVlansTable_vlan_description_field_1
+set_ip_address_2										: textbox&id&configVlansTable_vlan_ip_addr_field_1
+set_net_mask_2											: textbox&id&configVlansTable_vlan_net_mask_field_1
+click_description_3										: button&xpath&//div[@class="ngCellText col1 colt1 tbl_vlans_desc"]&2
+click_ip_address_3										: button&xpath&//div[@class='ngCellText col2 colt2 tbl_vlans_ip_addr']&2
+click_net_mask_3										: button&xpath&//div[@class="ngCellText col3 colt3 tbl_vlans_netmask"]&2
+set_id_3												: textbox&id&configVlansTable_vlan_id_field_2
+set_description_3										: textbox&id&configVlansTable_vlan_description_field_2
+set_ip_address_3										: textbox&id&configVlansTable_vlan_ip_addr_field_2
+set_net_mask_3											: textbox&id&configVlansTable_vlan_net_mask_field_2
+click_description_4										: button&xpath&//div[@class="ngCellText col1 colt1 tbl_vlans_desc"]&3
+click_ip_address_4										: button&xpath&//div[@class='ngCellText col2 colt2 tbl_vlans_ip_addr']&3
+click_net_mask_4										: button&xpath&//div[@class="ngCellText col3 colt3 tbl_vlans_netmask"]&3
+set_id_4												: textbox&id&configVlansTable_vlan_id_field_3
+set_description_4										: textbox&id&configVlansTable_vlan_description_field_3
+set_ip_address_4										: textbox&id&configVlansTable_vlan_ip_addr_field_3
+set_net_mask_4											: textbox&id&configVlansTable_vlan_net_mask_field_3
+cancel_vlan												: button&xpath&//a[@id='ngCancel']/span
+id_header												: button&xpath&//label[text()='ID']&1
+netmask_error_msg										: button&xpath&//*[@id='ConfirmContent_common']
+ok_error_msg											: button&xpath&//a[@onclick="athenaAlert_close()"]
+click_source_nat										: button&xpath&//div[@class="source-nat-column"]&0
+check_source_nat										: button&id&configVlansTable_vlan_source_nat_field_0
+click_source_nat_2										: button&xpath&//div[@class="source-nat-column"]&1
+check_source_nat_2										: button&id&configVlansTable_vlan_source_nat_field_1
+click_source_nat_3										: button&xpath&//div[@class="source-nat-column"]&2
+check_source_nat_3										: button&id&configVlansTable_vlan_source_nat_field_2
+
+test1													: button&xpath&//span[text()='test1']
+test2													: button&xpath&//span[text()='test2']
+test3													: button&xpath&//span[text()='test3']
+test4													: button&xpath&//span[text()='test4']
+vlan_id_label											: label&text&ID&1
+description_label										: label&text&DESCRIPTION&1
+ip_label												: label&text&IP ADDRESS&1
+netmask_label											: label&text&NETMASK&1
+update_vlan_1											: button&id&configVlansTable_accept_edit_0
+
+update_vlan_2											: button&id&configVlansTable_accept_edit_1
+edit_vlan_2												: button&id&configVlansTable_inline_edit_action_1
+update_vlan_3											: button&id&configVlansTable_accept_edit_2
+edit_vlan_3												: button&id&configVlansTable_inline_edit_action_2
+update_vlan_4											: button&id&configVlansTable_accept_edit_3
+edit_vlan_4												: button&id&configVlansTable_inline_edit_action_3
+duplicate_ip_error										: label&xpath&//li[text()=' "IP ADDRESS": Duplicate IP ADDRESS']
+ok_error_button											: button&xpath&//div[@id='configuration-switches-vlansTable']/div[2]/span/div/a
+edit_cancle_1											: button&id&configVlansTable_cancel_edit_&0
+edit_cancle_2											: button&id&configVlansTable_cancel_edit_&1
+duplicate_id											: label&xpath&//li[text()=' "ID": Duplicate VLAN ID']
+invalid_netmask_error									: label&xpath&//li[text()=' "NETMASK": Invalid NET MASK']
+invalid_ip_error										: label&xpath&//li[text()=' "IP ADDRESS": Invalid IP ADDRESS']
+invalid_ip_netmask										: label&id&ConfirmContent_common
+ok_warning_button										: button&xpath&//div[@id='warnigBox_common_Alert']/div[2]/div/a
+delete_vlan2											: button&id&Delete_Vlan_1
+
+set_id_5												: textbox&id&configVlansTable_vlan_id_field_4
+set_description_5										: textbox&id&configVlansTable_vlan_description_field_4
+set_ip_address_5										: textbox&id&configVlansTable_vlan_ip_addr_field_4
+set_net_mask_5											: textbox&id&configVlansTable_vlan_net_mask_field_4
+
+set_id_6												: textbox&id&configVlansTable_vlan_id_field_5
+set_description_6										: textbox&id&configVlansTable_vlan_description_field_5
+set_ip_address_6										: textbox&id&configVlansTable_vlan_ip_addr_field_5
+set_net_mask_6											: textbox&id&configVlansTable_vlan_net_mask_field_5
+
+set_id_7												: textbox&id&configVlansTable_vlan_id_field_6
+set_description_7										: textbox&id&configVlansTable_vlan_description_field_6
+set_ip_address_7										: textbox&id&configVlansTable_vlan_ip_addr_field_6
+set_net_mask_7											: textbox&id&configVlansTable_vlan_net_mask_field_6
+
+set_id_8												: textbox&id&configVlansTable_vlan_id_field_7
+set_description_8										: textbox&id&configVlansTable_vlan_description_field_7
+set_ip_address_8										: textbox&id&configVlansTable_vlan_ip_addr_field_7
+set_net_mask_8											: textbox&id&configVlansTable_vlan_net_mask_field_7
+
+set_id_9												: textbox&id&configVlansTable_vlan_id_field_8
+set_description_9										: textbox&id&configVlansTable_vlan_description_field_8
+set_ip_address_9										: textbox&id&configVlansTable_vlan_ip_addr_field_8
+set_net_mask_9											: textbox&id&configVlansTable_vlan_net_mask_field_8
+
+set_id_10												: textbox&id&configVlansTable_vlan_id_field_9
+set_description_10										: textbox&id&configVlansTable_vlan_description_field_9
+set_ip_address_10										: textbox&id&configVlansTable_vlan_ip_addr_field_9
+set_net_mask_10											: textbox&id&configVlansTable_vlan_net_mask_field_9
+
+set_id_11												: textbox&id&configVlansTable_vlan_id_field_10
+set_description_11										: textbox&id&configVlansTable_vlan_description_field_10
+set_ip_address_11										: textbox&id&configVlansTable_vlan_ip_addr_field_10
+set_net_mask_11											: textbox&id&configVlansTable_vlan_net_mask_field_10
+
+set_id_12												: textbox&id&configVlansTable_vlan_id_field_11
+set_description_12										: textbox&id&configVlansTable_vlan_description_field_11
+set_ip_address_12										: textbox&id&configVlansTable_vlan_ip_addr_field_11
+set_net_mask_12											: textbox&id&configVlansTable_vlan_net_mask_field_11
+
+set_id_13												: textbox&id&configVlansTable_vlan_id_field_12
+set_description_13										: textbox&id&configVlansTable_vlan_description_field_12
+set_ip_address_13										: textbox&id&configVlansTable_vlan_ip_addr_field_12
+set_net_mask_13											: textbox&id&configVlansTable_vlan_net_mask_field_12
+
+set_id_14												: textbox&id&configVlansTable_vlan_id_field_13
+set_description_14										: textbox&id&configVlansTable_vlan_description_field_13
+set_ip_address_14										: textbox&id&configVlansTable_vlan_ip_addr_field_13
+set_net_mask_14											: textbox&id&configVlansTable_vlan_net_mask_field_13
+
+set_id_15												: textbox&id&configVlansTable_vlan_id_field_14
+set_description_15										: textbox&id&configVlansTable_vlan_description_field_14
+set_ip_address_15										: textbox&id&configVlansTable_vlan_ip_addr_field_14
+set_net_mask_15											: textbox&id&configVlansTable_vlan_net_mask_field_14
+
+set_id_16												: textbox&id&configVlansTable_vlan_id_field_15
+set_description_16										: textbox&id&configVlansTable_vlan_description_field_15
+set_ip_address_16										: textbox&id&configVlansTable_vlan_ip_addr_field_15
+set_net_mask_16											: textbox&id&configVlansTable_vlan_net_mask_field_15
+
+set_id_17												: textbox&id&configVlansTable_vlan_id_field_16
+set_description_17										: textbox&id&configVlansTable_vlan_description_field_16
+set_ip_address_17										: textbox&id&configVlansTable_vlan_ip_addr_field_16
+set_net_mask_17											: textbox&id&configVlansTable_vlan_net_mask_field_16
+
+set_id_18												: textbox&id&configVlansTable_vlan_id_field_17
+set_description_18										: textbox&id&configVlansTable_vlan_description_field_17
+set_ip_address_18										: textbox&id&configVlansTable_vlan_ip_addr_field_17
+set_net_mask_18											: textbox&id&configVlansTable_vlan_net_mask_field_17
+
+set_id_19												: textbox&id&configVlansTable_vlan_id_field_18
+set_description_19										: textbox&id&configVlansTable_vlan_description_field_18
+set_ip_address_19										: textbox&id&configVlansTable_vlan_ip_addr_field_18
+set_net_mask_19											: textbox&id&configVlansTable_vlan_net_mask_field_18
+
+set_id_20												: textbox&id&configVlansTable_vlan_id_field_19
+set_description_20										: textbox&id&configVlansTable_vlan_description_field_19
+set_ip_address_20										: textbox&id&configVlansTable_vlan_ip_addr_field_19
+set_net_mask_20											: textbox&id&configVlansTable_vlan_net_mask_field_19
+
+update_vlan_5											: button&id&configVlansTable_accept_edit_4
+update_vlan_6											: button&id&configVlansTable_accept_edit_5
+update_vlan_7											: button&id&configVlansTable_accept_edit_6
+update_vlan_8											: button&id&configVlansTable_accept_edit_7
+update_vlan_9											: button&id&configVlansTable_accept_edit_8
+update_vlan_10											: button&id&configVlansTable_accept_edit_9
+update_vlan_11											: button&id&configVlansTable_accept_edit_10
+update_vlan_12											: button&id&configVlansTable_accept_edit_11
+update_vlan_13											: button&id&configVlansTable_accept_edit_12
+update_vlan_14											: button&id&configVlansTable_accept_edit_13
+update_vlan_15											: button&id&configVlansTable_accept_edit_14
+update_vlan_16											: button&id&configVlansTable_accept_edit_15
+update_vlan_17											: button&id&configVlansTable_accept_edit_16
+update_vlan_18											: button&id&configVlansTable_accept_edit_17
+update_vlan_19											: button&id&configVlansTable_accept_edit_18
+zero_vlans												: label&xpath&//span[@class="badge label ng-binding" and contains(.,'0')]
+invalid_vlan_id_error_msg								: label&css&.overlay-warn-content>ul>li
+set_description_33_char_error_msg						: button&xpath&//li[contains(.,'"DESCRIPTION": VLAN Description cannot exceed more than 32 characters')]
+no_of_vlans												: label&xpath&//span[text()='4 ']
+edit_vlan_1												: button&id&configVlansTable_inline_edit_action_0

@@ -1,0 +1,46 @@
+select_all											: button&xpath&//input[@id='createVCListTable_toggle_select_all']
+group_name											: textbox&id&new_group_name
+next												: button&css&.button.large.blue.standard.ng-binding&1
+error_message										: button&id&group_name_required_error
+logo												: button&css_class&logo
+warning_box											: button&xpath&//div[text()='Group name exists']
+OK													: submit&xpath&//div[@id='warnigBox_common_Alert']/div[2]/div/a
+cancel												: submit&xpath&//span[text()='Cancel' and @ng-bind="labels.action_cancel"]&0
+select_vc											: checkbox&xpath&//td[@id='createVCListTable_row_selector_0']/input
+group1_with_device									: button&xpath&//span[@id='group_name_1']/span[text()='1']
+verify_switch										: button&xpath&//span[@id='createSwitchListTable_name_display_0']
+grp1_plus_sign										: button&xpath&//span[@id='show_swarms_1']
+select_switch										: button&xpath&//span[@id='sw_swarm_name_0']
+switch_at_title										: button&xpath&//div[@class="group-menu-arrow"]&1
+group1_at_title										: button&xpath&//div[@class="group-menu-arrow"]&2
+group1_with_switch_at_title							: button&xpath&//label[@class="link-label-number ng-binding" and text()='1']
+samplegroup											: button&text&samplegroup&0
+alpha_group_a										: button&xpath&//span[@id='group_name_0']/span[text()='ab']
+alpha_group_b										: button&xpath&//span[@id='group_name_1']/span[text()='bc']
+alpha_group_c										: button&xpath&//span[@id='group_name_2']/span[text()='cd']
+alpha_group_d										: button&xpath&//span[@id='group_name_3']/span[text()='de']
+alpha_group_e										: button&xpath&//span[@id='group_name_5']/span[text()='ef']
+alpha_group_f										: button&xpath&//span[@id='group_name_6']/span[text()='fg']
+alpha_group_g										: button&xpath&//span[@id='group_name_7']/span[text()='gh']
+alpha_group_h										: button&xpath&//span[@id='group_name_8']/span[text()='hi']
+alpha_group_i										: button&xpath&//span[@id='group_name_9']/span[text()='ij']
+alpha_group_j										: button&xpath&//span[@id='group_name_10']/span[text()='jk']
+device_password										: textbox&id&cddc_password&1
+confirm_device_password								: textbox&id&cddc_password_confirm&1
+save1												: button&xpath&//*[@id='save_group_withcdc']
+select_all_switch									: checkbox&xpath&//input[@id="createSwitchListTable_toggle_select_all"]
+group_name_length_error								: button&id&group_name_length_error
+cancel_group_button									: button&id&hide_manage_overlay
+cddc_password_length_error							: button&id&cddc_password_length_error&1
+cddc_password_mismatch_error						: button&id&cddc_password_mismatch_error&1
+create_page_textbox									: textbox&id&createVCListTable_page_jump_input
+save												: button&xpath&//button[@class = 'button large blue standard ng-binding']&2
+select_vc1											: checkbox&xpath&//td[@id='createVCListTable_row_selector_1']/input
+next1												: button&xpath&//button[@class = 'button large blue standard ng-binding']&1
+switch1												: checkbox&xpath&//td[@id='createSwitchListTable_row_selector_0']/input
+switch_toggle										: button&id&sw_toggle
+unprovision_switch_checkbox 						: checkbox&xpath&//span[@class='ng-scope ng-binding' and contains(.,'unprovisioned')]/../preceding-sibling::td[3]/input
+vc_toggle    										: button&id&vc_toggle
+switch2												: checkbox&xpath&//td[@id='createSwitchListTable_row_selector_1']/input
+switch3												: checkbox&xpath&//td[@id='createSwitchListTable_row_selector_2']/input
+switch4												: checkbox&xpath&//td[@id='createSwitchListTable_row_selector_3']/input

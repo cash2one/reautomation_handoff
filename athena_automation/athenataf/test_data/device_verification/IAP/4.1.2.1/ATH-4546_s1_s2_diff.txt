@@ -1,0 +1,12 @@
++ ip dhcp "a1 _"
++  server-type Distributed,L2
++  server-vlan 10
++  ip-range 10.1.10.10 10.1.10.30
++  subnet-mask 255.255.255.0
++  reserve first 4
++  lease-time 3000
++  default-router 10.1.10.3
++  dns-server 10.2.20.127
++  domain-name www.yahoo.com
++  client-count 8
++  option 10 "10"

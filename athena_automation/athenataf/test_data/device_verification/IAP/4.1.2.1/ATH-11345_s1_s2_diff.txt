@@ -1,0 +1,3 @@
++ aeroscout-rtls 10.17.50.110 5000
++ airwave-rtls 10.17.50.110 5000  30
++ ale-server 10.17.50.110

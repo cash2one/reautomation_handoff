@@ -1,0 +1,19 @@
++ user testuser  portal
++ wlan access-rule testwired
++  rule any any match any any any permit
++ wired-port-profile testwired
++  switchport-mode trunk
++  allowed-vlan 102
++  native-vlan 20
++  no shutdown
++  access-rule-name testwired
++  speed auto
++  duplex auto
++  poe
++  type employee
++  auth-server InternalServer
++  captive-portal disable
++  mac-authentication
++  dot1x
++  radius-reauth-interval 180
++  set-vlan AP-Group equals aruba 20

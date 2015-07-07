@@ -1,0 +1,13 @@
++ wlan tacacs-server testUser1
++  ip 1.1.1.1
++  port 1234
++  key 
++  timeout 10
++  retry-count 1
++ wlan auth-server testUser2
++  ip 1.1.1.1
++  port 1812
++  acctport 1813
++  key 
++  cppm-rfc3576-only
++  cppm-rfc3576-port 1234

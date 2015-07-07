@@ -1,0 +1,27 @@
++    switchport-mode trunk
++    native-vlan 3
++    trunk allowed vlan 4-6
++ vlan "3"
++    description "test1"
++ !
++ vlan "4"
++    description "test2"
++ !
++ vlan "5"
++    description "test3"
++ !
++ vlan "6"
++    description "test4"
++ !
++ interface vlan "3"
++    ip address 10.10.10.1 255.255.255.0
++ !
++ interface vlan "4"
++    ip address 20.20.20.2 255.255.0.0
++ !
++ interface vlan "5"
++    ip address 30.30.30.3 255.255.0.0
++ !
++ interface vlan "6"
++    ip address 40.40.40.4 255.255.0.0
++ !

@@ -1,0 +1,95 @@
+import logging
+logger = logging.getLogger('athenataf')
+
+
+from athenataf.lib.functionality.test.ConfigurationTest import ConfigurationTest
+
+class Roles(ConfigurationTest):
+	'''
+		Test class for Roles.
+	'''
+
+	def test_ath_1702_create_new_role(self):
+		self.take_s1_snapshot()
+		security_page = self.LeftPanel.go_to_security()
+		security_page.delete_newly_created_role()
+		security_page.create_role_with_access_rules() 
+		# security_page.click_on_up_down_arrow()
+		self.take_s2_snapshot()
+		security_page.delete_newly_created_role()
+		self.take_s3_snapshot()
+		self.assert_s1_s2_diff(0)
+		self.assert_s1_s3_diff()
+		self.clear()
+		
+	def test_ath_1704_delete_new_role(self):
+		self.take_s1_snapshot()
+		security_page = self.LeftPanel.go_to_security()
+		security_page.create_role_if_not_present()
+		self.take_s2_snapshot()
+		security_page.delete_newly_created_role()
+		self.take_s3_snapshot()
+		self.assert_s1_s2_diff(0)
+		self.assert_s1_s3_diff()
+		self.clear()
+		
+	def test_ath_2575_delete_role_used_by_network(self):
+		self.NetworkPage.delete_network_if_present()
+		self.take_s1_snapshot()
+		basic_info = self.NetworkPage.create_new_network()
+		virtual_lan = basic_info.guest_network_info()
+		security = virtual_lan.use_vlan_defaults()
+		access = security.use_security_default()
+		access.click_role_access()
+		access.create_role()
+		access.finish_network_setup()
+		security_page = self.LeftPanel.go_to_security()
+		security_page.delete_newly_created_role()
+		self.LeftPanel.go_to_network_page()
+		self.NetworkPage.assert_new_network()
+		self.take_s2_snapshot()
+		self.NetworkPage.delete_network_if_present()
+		self.take_s3_snapshot()
+		self.assert_s1_s2_diff(0)
+		self.assert_s1_s3_diff()
+		self.clear()
+		
+	def test_ath_6713_check_the_access_rules_for_the_role(self):
+		conf=self.config.config_vars
+		self.NetworkPage.delete_network_if_present()
+		security_page = self.LeftPanel.go_to_security()
+		security_page.delete_newly_created_role()
+		self.take_s1_snapshot()
+		security_page.create_role_if_not_present()
+		security_page.clicking_on_add_rule()
+		security_page.click_app_category_service()
+		security_page.click_antivirus()
+		security_page.select_application_throttling()
+		security_page.select_log_option()
+		security_page.select_dscp_option()
+		security_page.select_blacklist_option()
+		security_page.select_priority_option()
+		security_page.access_control_save_roles_action()
+		security_page.clicking_on_add_rule()
+		security_page.set_rule_type(conf.rule_type_value_calea)
+		security_page.calea_save_roles_action()
+		security_page.clicking_on_add_rule()
+		security_page.set_rule_type(conf.rule_type_bw)
+		security_page.set_bandwidth_downstream_value(conf.valid_downstream)
+		security_page.set_bandwidth_upstream_value(conf.valid_downstream)
+		security_page.check_uncheck_bandwidth_contract_options(True,True)
+		security_page.calea_save_roles_action()
+		security_page.clicking_on_add_rule()
+		security_page.click_web_category_service()
+		security_page.web_category_select_log_blacklist(True,True)
+		security_page.calea_save_roles_action()
+		security_page.clicking_on_add_rule()
+		security_page.set_rule_type(conf.rule_type_vlan)
+		security_page.set_vlan_id(conf.valid_vlan_id_value)
+		security_page.calea_save_roles_action()
+		self.take_s2_snapshot()
+		security_page.delete_newly_created_role()
+		self.take_s3_snapshot()
+		self.assert_s1_s2_diff(0)
+		self.assert_s1_s3_diff()
+		self.clear()

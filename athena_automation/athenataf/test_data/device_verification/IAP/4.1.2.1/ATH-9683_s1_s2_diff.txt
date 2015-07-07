@@ -1,0 +1,29 @@
++ wlan access-rule %(Network_name)s
++  rule any any match tcp 80 80 permit
++  rule any any match tcp 443 443 permit
++  rule any any match tcp 8080 8080 permit
++  rule any any match tcp 8888 8888 permit
++  rule any any match udp 67 68 permit
++  rule any any match udp 53 53 permit
++  rule any any match udp 67 69 permit
++  rule any any match icmp any any permit
++  rule any any match tcp 80 80 deny
++  rule any any match tcp 443 443 deny
++  rule any any match tcp 8080 8080 deny
++ wlan ssid-profile %(Network_name)s
++  enable
++  type guest
++  essid %(Network_name)s
++  opmode wpa2-psk-aes
++  max-authentication-failures 0
++  vlan guest
++  auth-server InternalServer
++  rf-band all
++  captive-portal internal
++  dtim-period 1
++  inactivity-timeout 1000
++  broadcast-filter none
++  radius-reauth-interval 60
++  dmo-channel-utilization-threshold 90
++  local-probe-req-thresh 0
++  max-clients-threshold 64

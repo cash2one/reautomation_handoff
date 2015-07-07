@@ -1,0 +1,5 @@
++ calea
++  ip 10.3.3.4
++  encapsulation-type gre
++  gre-type 1234
++  ip mtu 99

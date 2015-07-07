@@ -1,0 +1,13 @@
++ rf dot11g-radio-profile
++  spectrum-monitor
++  beacon-interval %(new_beacon_interval_value)s
++  dot11h
++  interference-immunity %(new_interface_immunity_24ghz_value)s
++  csa-count %(new_channel_switch_announce_5ghz_value)s
++ rf dot11a-radio-profile
++  legacy-mode
++  spectrum-monitor
++  beacon-interval %(new_beacon_interval_value)s
++  dot11h
++  interference-immunity %(new_interface_immunity_24ghz_value)s
++  csa-count %(new_channel_switch_announce_24ghz_value)s

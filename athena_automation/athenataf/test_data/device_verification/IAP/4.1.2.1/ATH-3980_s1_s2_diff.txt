@@ -1,0 +1,5 @@
++ calea
++  ip %(calea_ip_address)s
++  encapsulation-type gre
++  gre-type %(calea_gre_type)s
++  ip mtu %(calea_mtu)s

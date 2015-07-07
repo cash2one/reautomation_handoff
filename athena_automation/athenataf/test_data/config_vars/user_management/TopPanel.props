@@ -1,0 +1,15 @@
+user_setting_group_default					: All
+user_setting_group_value					: default
+user_idel_time_default						: 30
+user_idel_time_value						: 5
+user_idel_time_error						: 2
+user_access_level_read_only					: read only
+email_read_only        						: admin123456@alpha.com
+email_read_write       						: aruba123@alpha.com
+user_access_level_read_write				: read/write
+new_user_email								: automation123@arubathena.com
+new_user_passwd								: password is set via sso
+new_user_email_2							: automation_1234@arubathena.com
+administrator_user							: admin1234@alpha.com
+administrator_access_level					: administrator
+new_user_email_3    					    : alpha-123@arubathena.com

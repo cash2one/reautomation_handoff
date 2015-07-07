@@ -1,0 +1,10 @@
++ wlan auth-server test1
++  ip 1.1.1.1
++  port 1812
++  acctport 1813
++  key
++  cppm-rfc3576-only
++  cppm-rfc3576-port 5999
+!  disable
+!  enable
+!  cppm-server test1

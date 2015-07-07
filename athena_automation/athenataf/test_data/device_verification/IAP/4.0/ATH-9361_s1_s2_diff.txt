@@ -1,0 +1,12 @@
+!  type employee
+!  type voice
+!  max-authentication-failures 10
+!  auth-server %(auth_server_value)s
+!  auth-server %(auth_server_value_2)s
+!  max-authentication-failures 0
+!  vlan guest
+!  auth-server InternalServer
+!  inactivity-timeout 1000
+!  inactivity-timeout 3600
+!  local-probe-req-thresh 100
+!  local-probe-req-thresh 0

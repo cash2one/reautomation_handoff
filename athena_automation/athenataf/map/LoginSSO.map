@@ -1,0 +1,3 @@
+username_sso						: textbox&id&username
+password_sso						: textbox&id&password
+sign_in								: submit&text&Sign in

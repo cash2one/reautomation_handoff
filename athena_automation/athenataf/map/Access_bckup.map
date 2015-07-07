@@ -1,0 +1,300 @@
+finish											: submit&text&Finish
+access_rules									: button&text&ACCESS RULES
+access_radio									: button&id&UnrestrictedRadio
+next											: submit&text&Next
+role_radio										: button&id&role-based
+rule											: select&xpath&//option[text()='Access Control']/..&5
+rule1											: select&xpath&//option[text()='Access Control']/..&6
+rule2											: select&xpath&//option[text()='Access Control']/..&7
+rule3											: select&xpath&//option[text()='Access Control']/..&8
+action											: select&xpath&//option[text()='Allow']/..&1
+
+service											: select&xpath&//option[text()='Any']/..&6
+destination										: select&xpath&//option[text()='To all destinations']/..&5
+destination1									: select&xpath&//option[text()='To all destinations']/..&7
+destination2									: select&xpath&//option[text()='To all destinations']/..&8
+log												: button&id&AccessRuleOptionLog&5
+media											: button&id&AccessRuleOptionMedia&5
+dscp											: button&id&AccessRuleOptionDSCP&5
+blacklist										: button&id&AccessRuleOptionBlackList&5
+p_802											: button&id&AccessRuleOptionP802&5
+save1											: submit&id&save_roles_action
+ok1												: submit&id&save_role_assignments
+delete											: submit&css&img[src*='delete.png']&4
+protocol1										: select&id&ProtocolS&6
+service_port1									: textbox&id&PortS&6
+destination_ip1									: textbox&id&IpAddressD&7
+destination_ip2									: textbox&id&IpAddressD&8
+destination_ip3									: textbox&id&IpAddressD&5
+destination_mask1								: textbox&id&NetMaskD&8
+destination_mask2								: textbox&id&NetMaskD&5
+new_role_assign									: link&id&new_role_assignment
+role_operator									: select&id&role_assign_operator
+string											: textbox&id&role_assign_operand
+default_role									: button&text&Default role: test1
+network_based									: radio&id&network-based
+add_icon										: submit&xpath&//a[text()='Add Rule']
+rule_type										: select&xpath&//option[text()='Access Control']/..
+captive_selection								: select&id&ac_rule_add_splashpage_type
+captive_profile									: select&id&captive_portal_profile_select
+save_settings									: submit&id&save_roles_action
+downstream										: textbox&xpath&//span[text()='Downstream']/following-sibling::multi-version/input
+upstream										: textbox&xpath&//span[text()='Upstream']/following-sibling::multi-version/input
+destination_role								: select&css&select[ng-options*='dstId']&5
+domain_name										: textbox&id&ac_rule_add_acc_ctrl_netmask_index
+calea_bar										: button&xpath&//span[@class="ng-binding" and text()='CALEA']
+downstream_error_message						: button&id&ac_rule_bw_dwstream_err
+edit_pencil										: button&xpath&//a[@id='access_control_edit_0']
+new_rule_type_1									: select&id&RuleType_Role1
+new_service_1									: select&id&Service_Role1
+new_action_1									: select&id&Action_Role1
+new_destination_1								: select&id&Destination_Role1
+new_log_1										: button&id&AccessRuleOptionLog
+new_classify_media_1							: button&id&AccessRuleOptionMedia
+new_dscp_tag_1									: button&id&AccessRuleOptionDSCP
+new_blacklist_1									: button&id&AccessRuleOptionBlackList(deleted)
+new_disable_scaning_1							: button&id&AccessRuleOptionScanning
+new_dot1_priority_1								: button&id&AccessRuleOptionP802
+dscp_tag_values									: select&id&dscp_tos
+dot_1_priority_values							: select&id&OptionPriorityText
+invalid_vlan_id_error							: button&id&ac_rule_add_field_vlanid_err
+created_rule_vlan_assignment					: button&xpath&//span[text()='Assign to VLAN']
+downstream_textbox								: textbox&xpath&//input[@id='access_downstream']
+upstream_textbox								: textbox&xpath&//input[@id='access_upstream']
+downstream_error								: button&xpath&//*[@id='ac_rule_bw_dwstream_err']
+upstream_error									: button&xpath&//*[@id='ac_rule_bw_upstream_err']
+created_bandwidth_contract_assignment			: button&xpath&//span[contains(.,'Bandwidth Contract: upstream 2000 kbps')]
+peruser_chkbox_1								: button&id&peruserdownstream
+peruser_chkbox_2								: button&id&peruserupstream
+default_rule									: button&xpath&//span[contains(.,'Allow any to all destinations')]&0
+delete_default									: button&id&access_control_delete_0
+network_service									: button&id&ac_network
+destination_ip4        							: textbox&id&IpAddressD
+service_protocol								: select&id&ProtocolS
+destination_netmask								: textbox&id&NetMaskD
+ip_addr_error_msg								: button&id&ac_destination_ip_error
+netmaskd_error									: button&id&netmaskd_error
+protocol_id										: textbox&id&protocol_id
+protocol_id_error_msg							: button&xpath&//div[text()='* Valid range is 1 - 255' and @class="field-error ng-binding"]
+
+invalid_domain_name_error_1						: button&id&invalid_domain_name_error&5
+invalid_port_error								: button&xpath&//div[text()='* Valid range is 1-65534' and @class="field-error ng-binding"]
+add_rule_plus_button							: button&xpath&//a[@id='tableheadingicon']
+rule_type_dropdown								: select&id&RuleType_Role2
+destination_ip_error							: button&id&ac_destination_ip_error
+role_assign_attribute							: select&id&role_assign_attribute
+create_new_role									: button&id&create_role
+role_input										: textbox&id&role_input
+save_role										: button&id&create_new_role
+role1											: button&xpath&//span[contains(.,'abcd')]
+role2											: button&xpath&//span[contains(.,'AP-Name')]
+role4											: button&xpath&//span[contains(.,'Aruba-Port-Id')]
+edit_role_assignment							: button&xpath&//div[@id="roleAssignmentRulesTable_row_actions_0"]/a[1]
+role3											: button&xpath&//span[contains(.,'Acct-Session-Id')]
+role6											: button&xpath&//span[contains(.,'mac-address-and-dhcp-options')]
+delete_role_assignment							: button&xpath&//div[@id="roleAssignmentRulesTable_row_actions_0"]/a[2]
+ng_wired_pre_auth_role							: button&id&ng_wired_pre_auth_role
+ng_wired_enforce_mac_auth						: button&id&ng_wired_enforce_mac_auth
+ng_Wired_Access_pre_Auth						: select&id&ng_Wired_Access_pre_Auth
+ng_Wired_Access_Machine_Auth					: select&id&ng_Wired_Access_Machine_Auth
+ng_Wired_User_Auth								: select&id&ng_Wired_User_Auth
+ng_Wired_Role_Mac_Auth							: button&id&ng_Wired_Role_Mac_Auth
+action_role2									: select&id&Action_Role2
+action_role3									: select&id&Action_Role3
+action_role4									: select&id&Action_Role4
+action_role5									: select&id&Action_Role5
+action_role6									: select&id&Action_Role6
+action_role7									: select&id&Action_Role7
+service_role2									: select&id&Service_Role2
+service_role3									: select&id&Service_Role3
+service_role4									: select&id&Service_Role4
+service_role5									: select&id&Service_Role5
+service_role6									: select&id&Service_Role6
+service_role7									: select&id&Service_Role7
+log_3											: button&id&AccessRuleOptionLog&7
+media_3											: button&id&AccessRuleOptionMedia&7
+dscp_3											: button&id&AccessRuleOptionDSCP&7
+blacklist_3										: button&id&AccessRuleOptionBlackList
+
+
+service_port_1									: textbox&id&PortS(deleted)
+port_error										: button&xpath&//div[text()='* Valid range is 1-65534']&12
+role_assign_name								: select&id&role_assign_name
+rule_type_3										: select&id&RuleType_Role3
+vlan_id											: textbox&id&access_rule_vlan_id
+destination_role_2								: select&id&Destination_Role2
+created_rule_calea								: button&xpath&//span[text()='CALEA']
+access_rule_down_0								: button&css&#access_control_down_0
+access_rule_up_1								: button&css&#access_control_up_1
+maximum_32_chars								: button&xpath&//div[text()='* Maximum 32 characters allowed' and @class='field-error ng-binding']
+role_name_validation_error						: button&id&role_input_single_double_quotation_error
+network_delete_button_disabled					: button&xpath&//a[@class='icosolo icon_delete ng-scope' and @disabled='disabled']&5
+default_network_role							: button&xpath&//td[@title='test1']
+access_edit										: button&id&access_edit
+security_captive_portal_failure					: select&id&Security_CaptivePortalFailure&1
+secuirty_auto_url_whitelisting					: button&id&Secuirty_AutoUrlWhitelisting&1
+internal_banner_title							: textbox&id&internal_banner_title&1
+role_welcome_text								: textbox&id&role_welcome_text
+policy_text										: textbox&id&Policytext
+captive_portal_profile_select					: select&id&captive_portal_profile_select
+captive_name									: textbox&id&Captive_Name&1
+captive_ip										: textbox&id&Captive_IP&1
+captive_url										: textbox&id&Captive_Url&1
+captive_port									: textbox&id&Captive_Port&1
+cap_save										: button&id&cap-save&1
+action_ip4										: textbox&id&IpAddressA
+action_port4									: textbox&id&PortA
+ip_address_field_error							: button&id&ip_address_field_error
+ac_destination_port_error						: button&id&ac_destination_port_error
+allow_any_to_all_destination_msg				: button&xpath&//div[@id='role_content_0']/span[1]
+custom_tcp_port									: textbox&id&PortS
+port_error_message								: button&xpath&//div[text()='* Valid range is 1-65534']&12
+new_created_deny_tcp_role						: button&xpath&//span[contains(.,'Deny tcp on port 1 on server 10.2.2.2')]&0
+new_created_allow_h323_udp						: button&xpath&//span[@class="ng-binding" and contains(.,'Allow h323-udp to all')]
+new_created_deny_smb_domain						: button&xpath&//span[@class="ng-binding" and contains(.,'Deny smb-tcp on domain google.com')]
+invalid_domain_name_error						: button&id&invalid_domain_name_error
+domain_textbox									: textbox&id&DomainNameText&5
+rule_delete_button								: button&xpath&//a[@id='access_control_delete_0']
+new_created_allow_h323							: button&xpath&//span[contains(.,'Allow h323-udp to all destinations and change source address')]
+service_bootp_dropdown_6						: select&id&Service_Role8
+service_bootp_dropdown_7						: select&id&Service_Role9
+service_bootp_dropdown_8						: select&id&Service_Role10
+service_bootp_dropdown_9						: select&id&Service_Role11
+action_dropdown_7								: select&id&Action_Role9
+action_dropdown_8								: select&id&Action_Role10
+action_dropdown_9								: select&id&Action_Role11
+ipaddress_textbox								: textbox&id&IpAddressA(deleted)
+port_textbox									: textbox&id&PortA&7
+ipaddress_textbox_1								: textbox&id&IpAddressA(deleted1)
+port_textbox_1									: textbox&id&PortA&14
+save_button_1									: button&id&save_roles_action&6
+save_button_2									: button&id&save_roles_action&7
+save_button_3									: button&id&save_roles_action&8
+save_button_4									: button&id&save_roles_action&9
+save_button_5									: button&id&save_roles_action&10
+save_button_6									: button&id&save_roles_action(deleted)
+save_button_7									: button&id&save_roles_action&12
+save_button_8									: button&id&save_roles_action&13
+save_button_9									: button&id&save_roles_action&14
+new_log_2										: button&id&AccessRuleOptionLog&11
+new_classify_media_2							: button&id&AccessRuleOptionMedia&11
+new_dscp_tag_2									: button&id&AccessRuleOptionDSCP&11
+new_blacklist_2									: button&id&AccessRuleOptionBlackList&11
+new_disable_scaning_2							: button&id&AccessRuleOptionScanning&11
+new_dot1_priority_2								: button&id&AccessRuleOptionP802&11
+new_log_3										: button&id&AccessRuleOptionLog&12
+new_classify_media_3							: button&id&AccessRuleOptionMedia&12
+new_dscp_tag_3									: button&id&AccessRuleOptionDSCP&12
+new_blacklist_3									: button&id&AccessRuleOptionBlackList(deleted)
+new_disable_scaning_3							: button&id&AccessRuleOptionScanning&12
+new_dot1_priority_3								: button&id&AccessRuleOptionP802&12
+new_log_4										: button&id&AccessRuleOptionLog&13
+new_classify_media_4							: button&id&AccessRuleOptionMedia&13
+new_dscp_tag_4									: button&id&AccessRuleOptionDSCP&13
+new_blacklist_4									: button&id&AccessRuleOptionBlackList&13
+new_disable_scaning_4							: button&id&AccessRuleOptionScanning&13
+new_dot1_priority_4								: button&id&AccessRuleOptionP802&13
+edit_icon										: submit&css&img[src*='edit.png']&4
+port_range_error_msg							: button&xpath&//input[@id='PortS']/../following-sibling::div[1]&4
+vlan_id_4										: textbox&id&access_rule_vlan_id
+invalid_vlan_id_error_4							: label&xpath&//*[@id='ac_rule_add_field_vlanid_err']
+reserve_vlan_id_error							: label&xpath&//*[@id='access_rules_reserved_vlan_error']
+edit_icon_vlan									: button&xpath&//a[@id='edit_vlan_role_rule']
+new_rule_type_vlan								: select&id&RuleType_Role1&0
+save_vlan										: submit&id&save_roles_action&0
+protocol_id_error								: label&xpath&//input[@id='protocol_id']/following-sibling::div
+domain_name_req_err								: label&id&destination_domain_name_error
+string_req_err									: label&xpath&//input[@id='role_assign_operand']/following-sibling::div[3]
+string_quote_err								: label&xpath&//input[@id='role_assign_operand']/following-sibling::div[4 and @class='field-error ng-binding']
+string_max_255_err								: label&xpath&//input[@id='role_assign_operand']/following-sibling::div[2]
+duplicate_rule_error_message					: button&xpath&//div[contains(.,'This rule already exists.')]&1
+assigned_role_name								: button&xpath&//span[contains(., 'new role')]&0
+cancel_button									: button&id&network_create_cancel
+duplicate_role_error_message					: button&xpath&//span[contains(text(),'Dupicate Role name')]
+default_rule_edit								: button&xpath&//a[@id='access_control_edit_0' and @class='iconbuttons edit']/img
+default_rule_delete								: button&xpath&//a[@id='access_control_delete_0' and @class='iconbuttons delete']/img
+action_role8									: select&id&Action_Role8
+delete_vlan_role_rule							: button&xpath&//a[@id='delete_vlan_role_rule']
+delete_captive_portal							: button&xpath&//a[@id='delete_individual_captive_portal']
+delete_calea_rule								: button&xpath&//a[@id='calea_delete_link']
+cancel_role_assignments							: button&id&cancel_role_assignments
+edit_role_assignment_1							: button&xpath&//span[contains(.,'If AP-Group contains abcd assign role: default_wired_port_profile')]/../following-sibling::td[1]/div/a[1]
+edit_role_assignment_3							: button&xpath&//span[contains(.,'If Acct-Session-Id equals 34 assign role: default_wired_port_profile')]/../following::td[1]/div/a[1]
+edit_role_assignment_6							: button&xpath&//span[contains(.,'If mac-address-and-dhcp-options matches-regular-expression 00:03:7F assign role: default_wired_port_profile')]/../following::td[1]/div/a[1]
+delete_role_assignment_1						: button&xpath&//a[@class='icosolo icon_delete ng-scope']&0
+delete_role_assignment_2						: button&xpath&//a[@class='icosolo icon_delete ng-scope']&1
+delete_role_assignment_4						: button&xpath&//a[@class='icosolo icon_delete ng-scope']&3
+delete_role_assignment_6						: button&xpath&//a[@class='icosolo icon_delete ng-scope']&5
+port_range_error_msg_new						: button&xpath&//*[@id='PortS']
+role_delete_disable								: button&xpath&//td[contains(.,'new role')]/following-sibling::td/div/a[@class="icosolo delete icon_delete ng-scope disabled"]
+network_delete_button_disabled1					: button&xpath&//td[contains(.,'test1')]/following-sibling::td/div/a[@class="icosolo delete icon_delete ng-scope disabled"]&0
+role1_name										: button&xpath&//td[contains(.,'role1')]
+role2_name										: button&xpath&//td[contains(.,'role2')]
+role3_name										: button&xpath&//td[contains(.,'role3')]
+log_7											: button&id&AccessRuleOptionLog&6
+media_7											: button&id&AccessRuleOptionMedia&6
+dscp_7											: button&id&AccessRuleOptionDSCP&6
+blacklist_7										: button&id&AccessRuleOptionBlackList&6
+p_802_7											: button&id&AccessRuleOptionP802&6
+ac_app_category1								: button&id&ac_app_category&4
+antivirus1										: checkbox&xpath&//input[@id='role_search']/../../div[1]/div[1]/input
+Collaboration1									: checkbox&xpath&//input[@id='role_search']/../../div[1]/div[4]/input
+ac_app_category2								: button&id&ac_app_category&5
+ac_app_category3								: button&id&ac_app_category&6
+Gaming1											: checkbox&xpath&//input[@id='role_search']/../../div[1]/div[7]/input
+dscp_tag_value7									: select&id&dscp_tos&6
+dot_1_priority_value6							: select&id&OptionPriorityText&6
+service_application								: radio&id&ac_app&4
+application_01_net								: checkbox&xpath&//span[text()='01net']/../input
+application_4399_com							: checkbox&xpath&//span[text()='4399com']/../input
+application_adobe_update						: checkbox&xpath&//span[text()='adobe_update']/../input
+application_yahoo								: checkbox&xpath&//span[text()='yahoo']/../input
+dscp_tag										: select&id&dscp_tos&7
+dot_1_priority									: select&id&OptionPriorityText&7
+application_throttling							: checkbox&id&throttle_enable&7
+throttle_downstream								: textbox&id&throttle_downstream&7
+throttle_upstream								: textbox&id&throttle_upstream&7
+service_application_5							: radio&id&ac_app&5
+service_application_6							: radio&id&ac_app&6
+service_application_7							: radio&id&ac_app&7
+allow_rule_before_moving      : button&xpath&//div[@id='role_content_0']/span[1]/span[text()=' Allow any to all destinations ']
+deny_rule_before_moving       : button&xpath&//div[@id='role_content_1']/span[1]/span[text()=' Allow h323-udp to all destinations and change source address ']
+allow_rule_after_moving       : button&xpath&//div[@id='role_content_1']/span[1]/span[text()=' Allow any to all destinations ']
+deny_rule_after_moving       : button&xpath&//div[@id='role_content_0']/span[1]/span[text()=' Allow h323-udp to all destinations and change source address ']
+webreputation1        						    : radio&id&ac_web_reputation&4	
+ac_web_category									: button&id&ac_web_category&4
+ac_web_category1								: button&id&ac_web_category&5
+shopping										: checkbox&xpath&//input[@id='role_search']/../../div[1]/div[75]/input
+travel  										: checkbox&xpath&//input[@id='role_search']/../../div[1]/div[83]/input
+application_throttling1       					: checkbox&id&throttle_enable&4
+throttle_downstream1        					: textbox&id&throttle_downstream&4
+throttle_upstream1       						: textbox&id&throttle_upstream&4
+throttle_downstream_error1						: label&id&throttle_downstream_error&4
+throttle_upstream_error1						: label&id&throttle_upstream_error&4
+webreputation									: radio&id&ac_web_reputation&5
+selector_reputation								: button&xpath&//div[@class="selector-reputation ng-isolate-scope ng-pristine ng-valid ui-slider ui-slider-vertical ui-widget ui-widget-content ui-corner-all"]&1
+selectorreputation1								: button&xpath&//div[@class="selector-reputation ng-isolate-scope ng-pristine ng-valid ui-slider ui-slider-vertical ui-widget ui-widget-content ui-corner-all"]&2
+scanning										: checkbox&id&AccessRuleOptionScanning&5
+webreputation2									: radio&id&ac_web_reputation&6
+port_range_error								: button&xpath&//input[@id='PortS']/../../li[2]/div[2]&5
+destination_role_3								: select&id&Destination_Role3
+destination_role_4								: select&id&Destination_Role4
+destination_role_5								: select&id&Destination_Role5
+destination_ip6									: textbox&id&IpAddressD&6
+ac_app_category_disabled						: label&xpath&//span[@class="disabled"]/label[contains(.,'App Category')]&5
+ac_app_disabled						            : label&xpath&//span[@class="disabled"]/label[contains(.,'Application')]&5
+ac_web_category_disabled					    : label&xpath&//span[@class="disabled"]/label[contains(.,'Web Category')]&5
+ac_web_reputation_disabled				        : button&xpath&//span[@class="disabled"]/label[contains(.,'Web Reputation')]&5
+rule_captive_portal								: select&xpath&//select[@id='RuleType_Role1']/option[text()='Captive portal']&4
+rule_calea										: select&xpath&//select[@id='RuleType_Role1']/option[text()='CALEA']&4
+rule_bandwidth									: select&xpath&//select[@id='RuleType_Role1']/option[text()='Bandwidth Contract']&4
+ng_wired_enforce_mac_auth_access				: select&id&ng_Wired_Enforce_Mac_Auth_Access
+webreputation4									: radio&id&ac_web_reputation&7
+supported_flatform_warning						: label&xpath&//div[@class ='field-error']/span
+ac_web_category_2								: button&id&ac_web_category&6
+application_throttling_2       					: checkbox&id&throttle_enable&5
+throttle_downstream_2							: textbox&id&throttle_downstream&5
+throttle_upstream_2								: textbox&id&throttle_upstream&5
+application_throttling_3       					: checkbox&id&throttle_enable&6
+throttle_downstream_3							: textbox&id&throttle_downstream&6
+throttle_upstream_3								: textbox&id&throttle_upstream&6

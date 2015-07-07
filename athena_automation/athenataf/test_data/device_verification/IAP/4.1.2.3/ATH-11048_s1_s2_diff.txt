@@ -1,0 +1,2 @@
++ wlan access-rule testRole
++  rule any any match any any any permit

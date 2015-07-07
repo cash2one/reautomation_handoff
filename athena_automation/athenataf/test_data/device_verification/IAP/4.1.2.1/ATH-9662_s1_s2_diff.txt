@@ -1,0 +1,25 @@
++  80mhz-support
+!  band-steering-mode prefer-5ghz
+!  air-time-fairness-mode fair-access
+!  band-steering-mode balance-bands
+!  air-time-fairness-mode preferred-access
+!  scanning
+!  client-match
+!  client-match calc-threshold 1
+!  client-match calc-interval 20
+!
+! rf dot11g-radio-profile
+!  legacy-mode
+!  spectrum-monitor
+!  beacon-interval 300
+!  dot11h
+!  interference-immunity 4
+!  csa-count 5
+!
+! rf dot11a-radio-profile
+!  legacy-mode
+!  spectrum-monitor
+!  beacon-interval 300
+!  dot11h
+!  interference-immunity 4
+!  csa-count 5

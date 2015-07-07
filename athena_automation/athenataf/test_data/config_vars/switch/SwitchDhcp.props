@@ -1,0 +1,44 @@
+dhcp_name							: test2
+dhcp_network						: 10.10.10.11
+dhcp_netmask						: 255.255.255.0
+dhcp_router							: 10.10.10.10
+option_type_ip						: IP
+dhcp_name_5							: text5
+address_range						: 10.10.10.20
+exclude_address_start_1				: 10.10.10.50
+exclude_address_end_1				: 10.10.10.60
+exclude_address_start_2				: 10.10.10.100
+exclude_address_end_2				: 10.10.10.110
+dhcp_name1							: test1
+dns_server1							: 10.10.10.11
+dns_server2							: 10.10.10.12
+dns_server3							: 10.10.10.13
+dns_server4							: 10.10.10.14
+dns_server5							: 10.10.10.15
+dns_server6							: 10.10.10.16
+dns_server7							: 10.10.10.17
+dns_server8							: 10.10.10.18
+dns_server9							: 10.10.10.19
+wins_server1						: 10.10.10.11
+wins_server2						: 10.10.10.12
+wins_server3						: 10.10.10.13
+wins_server4						: 10.10.10.14
+wins_server5						: 10.10.10.15
+wins_server6						: 10.10.10.16
+wins_server7						: 10.10.10.17
+wins_server8						: 10.10.10.18
+wins_server9						: 10.10.10.19
+dhcp_name_invalid					: abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdasdasdfg
+dhcp_network_invalid				: 10.10.10.270
+dhcp_netmask_invalid				: 234.233.22.345
+dhcp_router_invalid					: 13.2.3.290
+dns_server_invalid					: 1.1.1.2222
+wins_server_invalid					: 2.2.2.400
+exclude_address_start_invalid		: 1.1.1.290
+exclude_address_end_invalid			: 1.1.1.300
+dhcp_option_code_invalid			: a
+dhcp_option_value_invalid			: 1
+
+
+
+

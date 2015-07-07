@@ -1,0 +1,2 @@
+!  min-tx-power %(min_transmit_power_value)s
+!  min-tx-power %(new_min_transmit_power_value)s

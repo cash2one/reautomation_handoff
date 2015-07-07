@@ -1,0 +1,23 @@
+   rule any any match any any any permit
+   rule any any match tcp 8211 8211 deny
+   rule any any match udp 67 68 src-nat
++ wlan access-rule %(Network_name)s
++  rule any any match any any any deny
++ wlan ssid-profile %(Network_name)s
++  enable
++  type guest
++  essid %(Network_name)s
++  opmode opensystem
++  max-authentication-failures 0
++  rf-band all
++  captive-portal internal
++  dtim-period 1
++  inactivity-timeout 1000
++  broadcast-filter none
++  dmo-channel-utilization-threshold 90
++  local-probe-req-thresh 0
++  max-clients-threshold 64
++  okc-disable
+  
+  auth-survivability cache-time-out 24
+  

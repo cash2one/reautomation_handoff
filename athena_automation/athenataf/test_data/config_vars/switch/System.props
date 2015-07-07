@@ -1,0 +1,7 @@
+name_server_1								: 192.168.1.1
+name_server_2								: 10.10.10.1
+name_server_default							: 
+admin										: admin
+thirtythree_chars							: 012345678901234567890123456789012
+admin_space									: admin admin
+admin_special_char							: admin?@admin

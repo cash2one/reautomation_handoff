@@ -1,0 +1,40 @@
++ wlan access-rule testRole
++  rule any any match any any any permit
+!  disable
+!  enable
+!  enable-guest-multicast
+!  disable
+!  enable
++  disallow-role default_wired_port_profile
++  disallow-vlan 1
++  disallow-vlan 2
+!  disable
+!  enable
++  disallow-role default_wired_port_profile
++  disallow-vlan 1
++  disallow-vlan 2
+!  disable
+!  enable
+!  disallow-role default_wired_port_profile
+!  disallow-vlan 1
+!  disallow-vlan 2
+!  disable
+!  enable
+!  disallow-role default_wired_port_profile
+!  disallow-vlan 1
+!  disallow-vlan 2
+!  disable
+!  enable
+!  disallow-role default_wired_port_profile
+!  disallow-vlan 1
+!  disallow-vlan 2
+!  disable
+!  enable
+!  disallow-role default_wired_port_profile
+!  disallow-vlan 1
+!  disallow-vlan 2
+!  disable
+!  enable
+!  disallow-role default_wired_port_profile
+!  disallow-vlan 1
+!  disallow-vlan 2

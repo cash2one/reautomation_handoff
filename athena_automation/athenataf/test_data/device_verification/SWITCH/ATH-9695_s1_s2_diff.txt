@@ -1,0 +1,8 @@
++ # test1
++ subnet 10.10.10.0 netmask 255.255.255.0 {
++ 	default-lease-time 43200;
++ 	max-lease-time 43200;
++ 	option vendor-class-identifier  "ArubaAP";
++ 	range 10.10.10.1 10.10.10.254;
++ 	authoritative;
++ }

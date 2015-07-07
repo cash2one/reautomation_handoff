@@ -1,0 +1,18 @@
++ wlan access-rule %(default_network_role)s
++  rule %(destination_ip)s %(destination_mask)s match %(protocol_id)s any any dst-nat ip %(action_ip4)s %(action_port4)s
++ wlan ssid-profile %(default_network_role)s
++  enable
++  type employee
++  essid %(default_network_role)s
++  opmode wpa2-psk-aes
++  max-authentication-failures 0
++  auth-server %(Authentication_server)s
++  rf-band all
++  captive-portal disable
++  dtim-period 1
++  inactivity-timeout 1000
++  broadcast-filter none
++  dmo-channel-utilization-threshold 90
++  local-probe-req-thresh 0
++  max-clients-threshold 64
++  okc-disable

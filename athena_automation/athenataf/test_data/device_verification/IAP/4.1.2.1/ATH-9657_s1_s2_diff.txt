@@ -1,0 +1,90 @@
++ wlan access-rule %(wired_network_name)s
++  rule any any match any any any permit
++ wlan access-rule network1
++  rule any any match any any any permit
++ wlan access-rule network2
++  rule any any match any any any permit
++ wlan access-rule network3
++  captive-portal internal
++  rule any any match any any any permit tos 3 dot1p-priority 3
++  rule any any match any any any dst-nat ip 10.17.50.110 5000 log blacklist classify-media tos 0 dot1p-priority 0
++  rule any any match tcp 5000 5000 permit
++  rule %(destination_ip)s %(valid_syslog_server)s match any any any permit
++ wlan access-rule network4
++  rule any any match any any any permit
++ wlan auth-server %(auth_server_value)s
++  ip 10.17.50.110
++  port 1812
++  acctport 1813
++  key 
++ wlan auth-server %(auth_server_value_2)s
++  ip 10.17.50.110
++  port 1812
++  acctport 1813
++  key 
++ wired-port-profile %(wired_network_name)s
++  switchport-mode trunk
++  allowed-vlan all
++  native-vlan guest
++  shutdown
++  access-rule-name %(wired_network_name)s
++  speed 100
++  duplex half
++  poe
++  type employee
++  captive-portal disable
++  content-filtering
++  no dot1x
++ wired-port-profile network1
++  switchport-mode trunk
++  allowed-vlan 100-200
++  native-vlan guest
++  no shutdown
++  access-rule-name network1
++  speed auto
++  duplex auto
++  poe
++  type employee
++  captive-portal disable
++  no dot1x
++ wired-port-profile network2
++  switchport-mode trunk
++  allowed-vlan all
++  native-vlan guest
++  no shutdown
++  access-rule-name network2
++  speed auto
++  duplex auto
++  poe
++  type employee
++  auth-server %(auth_server_value)s
++  auth-server %(auth_server_value_2)s
++  captive-portal disable
++  mac-authentication
++  server-load-balancing
++  no dot1x
++  radius-reauth-interval 10
++ wired-port-profile network3
++  switchport-mode trunk
++  allowed-vlan all
++  native-vlan guest
++  no shutdown
++  access-rule-name network3
++  speed auto
++  duplex auto
++  poe
++  type employee
++  captive-portal disable
++  no dot1x
++ wired-port-profile network4
++  switchport-mode trunk
++  allowed-vlan all
++  native-vlan guest
++  no shutdown
++  access-rule-name network4
++  speed auto
++  duplex auto
++  poe
++  type employee
++  captive-portal disable
++  no dot1x

@@ -1,0 +1,96 @@
+import logging
+logger = logging.getLogger('athenataf')
+from athenataf.lib.functionality.test.ConfigurationTest import ConfigurationTest
+
+class VlanAssignment(ConfigurationTest):
+    '''
+        Test class for Vlan Assignment.
+    '''
+
+    def test_ath_8617_create_vlan_assignment_rule(self):
+        self.NetworkPage.delete_network_if_present()
+        self.take_s1_snapshot()
+        basic_info = self.NetworkPage.create_new_network()
+        virtual_lan = basic_info.guest_network_info()
+        security = virtual_lan.use_vlan_defaults()
+        access = security.use_security_default()
+        access.create_vlan_rule()
+        self.NetworkPage.assert_new_network()
+        self.take_s2_snapshot()
+        self.NetworkPage.delete_network_if_present()
+        self.take_s3_snapshot()
+        self.assert_s1_s2_diff(0)
+        self.assert_s1_s3_diff()
+        self.clear()
+        
+        
+    def test_ath_8884_delete_vlan_assignment_rule(self):
+        self.NetworkPage.delete_network_if_present()
+        self.take_s1_snapshot()
+        basic_info = self.NetworkPage.create_new_network()
+        virtual_lan = basic_info.guest_network_info()
+        security = virtual_lan.use_vlan_defaults()
+        access = security.use_security_default()
+        access.create_vlan_rule()
+        edit_network_page = self.NetworkPage.edit_network()
+        edit_network_page.delete_existing_rule()
+        self.NetworkPage.assert_new_network()
+        self.take_s2_snapshot()
+        self.NetworkPage.delete_network_if_present()
+        self.take_s3_snapshot()
+        self.assert_s1_s2_diff(0)
+        self.assert_s1_s3_diff()
+        self.clear()
+        
+        
+    def test_ath_8619_change_existing_rule(self):
+        self.NetworkPage.delete_network_if_present()
+        self.take_s1_snapshot()
+        basic_info = self.NetworkPage.create_new_network()
+        virtual_lan = basic_info.guest_network_info()
+        security = virtual_lan.use_vlan_defaults()
+        access = security.use_security_default()
+        access.create_vlan_rule()
+        edit_network_page = self.NetworkPage.edit_network()
+        edit_network_page.change_existing_vlan_id_1()
+        edit_network_page = self.NetworkPage.edit_network()
+        edit_network_page.change_existing_vlan_id_4093()
+        self.NetworkPage.assert_new_network()
+        self.take_s2_snapshot()
+        self.NetworkPage.delete_network_if_present()
+        self.take_s3_snapshot()
+        self.assert_s1_s2_diff(0)
+        self.assert_s1_s3_diff()
+        self.clear()
+        
+        
+    def test_ath_8618_change_vlan_assignment_rule(self):
+        self.NetworkPage.delete_network_if_present()
+        self.take_s1_snapshot()
+        basic_info = self.NetworkPage.create_new_network()
+        virtual_lan = basic_info.guest_network_info()
+        security = virtual_lan.use_vlan_defaults()
+        access = security.use_security_default()
+        access.create_vlan_rule()
+        edit_network_page = self.NetworkPage.edit_network()
+        edit_network_page.change_vlan_to_calea()
+        edit_network_page = self.NetworkPage.edit_network()
+        edit_network_page.create_new_vlan_rule()
+        edit_network_page = self.NetworkPage.edit_network()
+        edit_network_page.change_vlan_to_captive_portal()
+        self.NetworkPage.assert_new_network()
+        self.NetworkPage.delete_network_if_present()
+        self.NetworkPage.delete_new_network_if_present()
+        basic_info = self.NetworkPage.create_new_network()
+        virtual_lan = basic_info.guest_new_network_info()
+        security = virtual_lan.use_vlan_defaults()
+        access = security.use_security_default()
+        access.create_vlan_rule()
+        edit_network_page = self.NetworkPage.edit_new_network()
+        edit_network_page.change_vlan_to_access_control()
+        self.take_s2_snapshot()
+        self.NetworkPage.delete_new_network_if_present()
+        self.take_s3_snapshot()
+        self.assert_s1_s2_diff(0)
+        self.assert_s1_s3_diff()
+        self.clear()

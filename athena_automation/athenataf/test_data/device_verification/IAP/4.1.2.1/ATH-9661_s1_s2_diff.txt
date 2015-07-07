@@ -1,0 +1,102 @@
++ user testuser  portal
++ wlan access-rule network1
++  rule any any match any any any permit
++ wlan access-rule network2
++  rule any any match any any any permit
++ wlan access-rule network3
++  rule any any match any any any permit
++ wlan access-rule Test1949
++  vlan 2300
++  captive-portal external
++  rule any any match any any any permit
++  rule any any match udp 8200 8200 deny
++  rule any any match tcp 8211 8211 src-nat
++  rule any any match udp 67 68 dst-nat ip 10.2.2.2 1
++  rule any any match udp 53 53 permit
++  rule any any match gre any any permit
++  rule any any match tcp 1720 1720 deny
++  rule any any match udp 67 69 permit log blacklist classify-media tos 0 dot1p-priority 0
++  rule any any match tcp 515 515 deny log blacklist classify-media tos 0 dot1p-priority 0
++  rule any any match esp any any src-nat log blacklist classify-media tos 0 dot1p-priority 0
++  rule any any match udp 1718 1719 dst-nat ip 10.2.2.2 1
++ wlan access-rule network4
++  rule any any match any any any permit
++ wlan captive-portal
++  background-color 13421772
++  banner-color 16750848
++  banner-text "Welcome to Guest Network"
++  terms-of-use "This network is not secure, and use is at your own risk"
++  use-policy "Please read terms and conditions before using Guest Network"
++ wired-port-profile network1
++  switchport-mode trunk
++  allowed-vlan all
++  native-vlan guest
++  uplink-enable
++  no shutdown
++  spanning-tree
++  access-rule-name network1
++  speed 1000
++  duplex auto
++  poe
++  type guest
++  captive-portal internal
++  content-filtering
++  no dot1x
++  inactivity-timeout 1000
++ wired-port-profile network2
++  switchport-mode access
++  allowed-vlan all
++  native-vlan guest
++  no shutdown
++  access-rule-name network2
++  speed auto
++  duplex auto
++  poe
++  type guest
++  captive-portal internal
++  no dot1x
++  inactivity-timeout 1000
++ wired-port-profile network3
++  switchport-mode trunk
++  allowed-vlan all
++  native-vlan guest
++  no shutdown
++  access-rule-name network3
++  speed auto
++  duplex auto
++  poe
++  type guest
++  auth-server InternalServer
++  captive-portal internal
++  mac-authentication
++  no dot1x
++  inactivity-timeout 1000
++ wired-port-profile Test1949
++  switchport-mode trunk
++  allowed-vlan all
++  native-vlan guest
++  uplink-enable
++  no shutdown
++  spanning-tree
++  access-rule-name Test1949
++  speed 100
++  duplex full
++  no poe
++  type guest
++  captive-portal internal
++  content-filtering
++  no dot1x
++  inactivity-timeout 1000
++ wired-port-profile network4
++  switchport-mode trunk
++  allowed-vlan all
++  native-vlan guest
++  no shutdown
++  access-rule-name network4
++  speed auto
++  duplex auto
++  poe
++  type guest
++  captive-portal internal
++  no dot1x
++  inactivity-timeout 1000

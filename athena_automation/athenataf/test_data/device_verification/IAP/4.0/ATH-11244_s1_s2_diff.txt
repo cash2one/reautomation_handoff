@@ -1,0 +1,12 @@
++ ip dhcp "a1 _"
++  server-type Distributed,L2
++  server-vlan 34
++  ip-range 1.1.0.10 1.1.1.100
++  subnet-mask 255.255.0.0
++  reserve first 2
++  reserve last 3
++  default-router 1.1.1.1
++  dns-server 1.1.1.1
++  domain-name yahoo.com
++  client-count 35
++  option 80 "athena"

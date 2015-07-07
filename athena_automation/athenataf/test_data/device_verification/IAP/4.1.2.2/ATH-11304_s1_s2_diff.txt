@@ -1,0 +1,4 @@
++ virtual-controller-ip 10.10.1.110
+! rf-band all
+! rf-band 2.4
+! dynamic-cpu-mgmt disable

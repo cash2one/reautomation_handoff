@@ -1,0 +1,4 @@
+!  min-tx-power 18
+!  max-tx-power 127
+!  min-tx-power 3
+!  max-tx-power 18

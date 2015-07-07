@@ -1,0 +1,21 @@
++ wlan access-rule %(wired_network_name)s
++  rule any any match any any any permit
++ wlan external-captive-portal %(Captive_Role_Name)s
++  server %(Captive_Role_Ip)s
++  port %(Captive_Role_Port)s
++  url "%(domain_name)s"
++  auth-text "%(Captive_Role_Name)s"
++  auto-whitelist-disable
++ wired-port-profile %(wired_network_name)s
++  switchport-mode trunk
++  allowed-vlan all
++  native-vlan guest
++  no shutdown
++  access-rule-name %(wired_network_name)s
++  speed auto
++  duplex auto
++  poe
++  type guest
++  auth-server InternalServer
++  captive-portal external profile %(Captive_Role_Name)s
++  no dot1x

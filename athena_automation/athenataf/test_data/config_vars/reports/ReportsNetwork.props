@@ -1,0 +1,15 @@
+custom_report_name1												: report1
+custom_report_name2												: report2
+custom_report_name3												: report3
+time_span_last_day												: Last day
+time_span_last_week												: Last week
+time_span_last_month											: Last month
+time_span_last_year												: Last year
+time_span_custom_range  										: Custom range
+repeat_one_time													: One Time
+repeat_daily_interval											: Daily Interval
+repeat_weekly_interval											: Weekly Interval
+repeat_monthly_interval											: Monthly Interval
+repeat_yearly_interval											: Yearly Interval
+run_report_schedule_later_date_25							    : 25
+report_email													: admin1@alpha.com

@@ -1,0 +1,6 @@
+  ids
+   wireless-containment none
++  infrastructure-protection-level low
++  client-protection-level high
+  
+  

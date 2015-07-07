@@ -1,0 +1,128 @@
+import logging
+logger = logging.getLogger('athenataf')
+from athenataf.lib.functionality.test.ConfigurationTest import ConfigurationTest
+
+class EditRules(ConfigurationTest):
+    '''
+        Test class for Edit Rules.
+    '''
+
+    def test_ath_8955_check_default_rule(self):
+        self.take_s1_snapshot()
+        self.NetworkPage.delete_network_if_present()
+        basic_info = self.NetworkPage.create_new_network()
+        virtual_lan = basic_info.guest_network_info()
+        security = virtual_lan.use_vlan_defaults()
+        access = security.use_security_default()
+        access.check_default_rule()
+        edit_network_page = self.NetworkPage.edit_network()
+        edit_network_page.change_rule_to_deny_h323()
+        edit_network_page = self.NetworkPage.edit_network()
+        edit_network_page.change_rule_to_allow_any()
+        self.take_s2_snapshot()
+        self.NetworkPage.delete_network_if_present()
+        self.take_s3_snapshot()
+        self.assert_s1_s2_diff(0)
+        self.assert_s1_s3_diff()
+        self.clear()
+        
+        
+    def test_ath_8883_change_existing_rules(self):
+        self.take_s1_snapshot()
+        self.NetworkPage.delete_network_if_present()
+        basic_info = self.NetworkPage.create_new_network()
+        virtual_lan = basic_info.guest_network_info()
+        security = virtual_lan.use_vlan_defaults()
+        access = security.use_security_default()
+        access.change_network_rule()
+        edit_network_page = self.NetworkPage.edit_network()
+        edit_network_page.change_access_rule_to_captive_portal()
+        edit_network_page = self.NetworkPage.edit_network()
+        edit_network_page.create_calea_rule()
+        self.take_s2_snapshot()
+        self.NetworkPage.delete_network_if_present()
+        self.take_s3_snapshot()
+        self.assert_s1_s2_diff(0)
+        self.assert_s1_s3_diff()
+        self.clear()
+        
+        
+    def test_ath_8881_check_duplicate_existing_rule(self):
+        self.take_s1_snapshot()
+        self.NetworkPage.delete_network_if_present()
+        basic_info = self.NetworkPage.create_new_network()
+        virtual_lan = basic_info.guest_network_info()
+        security = virtual_lan.use_vlan_defaults()
+        access = security.use_security_default()
+        access.create_new_rule()
+        edit_network_page = self.NetworkPage.edit_network()
+        self.take_s2_snapshot()
+        edit_network_page.assert_duplicate_rule_message()
+        self.NetworkPage.delete_network_if_present()
+        self.take_s3_snapshot()
+        self.assert_s1_s2_diff(0)
+        self.assert_s1_s3_diff()
+        self.clear()
+        
+        
+    def test_ath_8824_configure_access_rule_domain(self):
+        self.take_s1_snapshot()
+        self.NetworkPage.delete_network_if_present()
+        basic_info = self.NetworkPage.create_new_network()
+        virtual_lan = basic_info.guest_network_info()
+        security = virtual_lan.use_vlan_defaults()
+        access = security.use_security_default()
+        access.create_new_rule_with_domain()
+        self.take_s2_snapshot()
+        self.NetworkPage.delete_network_if_present()
+        self.take_s3_snapshot()
+        self.assert_s1_s2_diff(0)
+        self.assert_s1_s3_diff()
+        self.clear()
+		
+	def test_ath_8620_delete_existing_rule(self):
+		self.take_s1_snapshot()
+		self.NetworkPage.delete_network_if_present()
+		basic_info = self.NetworkPage.create_new_network()
+		virtual_lan = basic_info.guest_network_info()
+		security = virtual_lan.use_vlan_defaults()
+		access = security.use_security_default()
+		access.click_network_access()
+		access.delete_existing_rule()
+		edit_network_page = self.NetworkPage.edit_network()
+		self.take_s2_snapshot()
+		edit_network_page.assert_deny_rule_message()
+		self.NetworkPage.delete_network_if_present()
+		basic_info = self.NetworkPage.create_new_network()
+		virtual_lan = basic_info.guest_network_info()
+		security = virtual_lan.use_vlan_defaults()
+		access = security.use_security_default()
+		access.create_rule_h323_udp()
+		edit_network_page = self.NetworkPage.edit_network()
+		edit_network_page.delete_created_h323_udp_rule()
+		edit_network_page = self.NetworkPage.edit_network()
+		edit_network_page.assert_deny_rule_message_after_delete()
+		self.take_s3_snapshot()
+		self.NetworkPage.delete_network_if_present()
+		self.assert_s1_s2_diff(None)
+		self.assert_s1_s3_diff()
+		self.clear()
+		
+    def test_ath_8956_create_different_rule(self):
+        self.take_s1_snapshot()
+        self.NetworkPage.delete_network_if_present()
+        basic_info = self.NetworkPage.create_new_network()
+        virtual_lan = basic_info.guest_network_info()
+        security = virtual_lan.use_vlan_defaults()
+        access = security.use_security_default()
+        access.create_different_rules()
+        edit_network_page = self.NetworkPage.edit_network()
+        edit_network_page.delete_and_edit_rules()
+        self.take_s2_snapshot()
+        self.NetworkPage.delete_network_if_present()
+        self.take_s3_snapshot()
+        self.assert_s1_s2_diff(0)
+        self.assert_s1_s3_diff()
+        self.clear()        
+        
+        

@@ -1,0 +1,7 @@
++  work-without-uplink
+!  opmode dynamic-wep
+!  opmode wpa-tkip,wpa-aes,wpa2-aes,wpa2-tkip
+!  inactivity-timeout 3600
+!  inactivity-timeout 1000
++  radius-reauth-interval 10
++  okc-disable

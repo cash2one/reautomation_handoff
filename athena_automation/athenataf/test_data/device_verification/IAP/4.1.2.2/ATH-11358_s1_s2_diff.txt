@@ -1,0 +1,5 @@
++ internal-domains
++  domain-name aruba.com
++  domain-name yahoo.com
++  domain-name yahoo.co.in
++  domain-name arubathena.com

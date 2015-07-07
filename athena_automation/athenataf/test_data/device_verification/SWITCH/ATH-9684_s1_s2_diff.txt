@@ -1,0 +1,2 @@
+!     ip nat inside Enabled
+!     ip nat inside Disabled

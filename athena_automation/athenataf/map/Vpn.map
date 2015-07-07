@@ -1,0 +1,110 @@
+primary_host								: button&text&PRIMARY HOST
+protocol									: select&id&vpn_control_protocol
+primary_host_textbox						: textbox&id&control_primary_host
+secs_bet_packet								: textbox&id&control_packet_count
+max_text_packet								: textbox&id&control_packet_frequency
+backup_host_textbox							: textbox&id&control_backup_host
+preemption									: checkbox&id&control_preemption
+hold_time									: textbox&id&control_hold_time
+fast_failover								: checkbox&id&control_fast_failover    
+save										: submit&id&ngSave
+gre_host									: textbox&id&control_gre_host
+gre_type									: textbox&id&control_gre_type
+gre_tunnel									: button&id&control_gre_tunnel
+routing										: button&xpath&//span[text()='ROUTING']
+new											: submit&id&new_vpn_route
+vpn_destination								: textbox&id&vpn_destination
+vpn_netmask									: textbox&id&vpn_netmask
+vpn_gateway									: textbox&id&vpn_gateway
+ok											: button&id&CreateNew_Router
+netmask										: button&xpath&//span[contains(.,'255.255.255.0')]
+edited_gateway								: button&xpath&//span[contains(.,'3.0.0.0')]					
+edit										: submit&id&edit_vpn_route_0
+delete										: submit&id&delete_vpn_route_0
+cancel										: submit&id&ngCancel
+controller									: submit&text&CONTROLLER
+Create_tunnel								: submit&id&CreateTunnelProfile
+failover_mode								: select&id&tunnel_failover_mode
+profile_name								: textbox&id&tunnel_pro_name
+primary_adress								: textbox&id&tunnel_primary_addr
+backup_address								: textbox&id&tunnel_backup_addr
+local_port									: textbox&id&tunnel_local_port
+udp_port									: textbox&id&tunnel_udp_port
+hello_interval								: textbox&id&tunnel_hello_intvl
+hello_interval_invisible					: textbox&xpath&//input[@id="tunnel_shared_key" and @disabled="disabled"]
+msg_digest									: select&id&tunnel_msg_digest
+key											: textbox&id&tunnel_shared_key
+failover_retry								: textbox&id&tunnel_failover_intvl
+failover_count								: textbox&id&tunnel_failover_count
+failover_mtu								: textbox&id&tunnel_mtu
+save_internal								: submit&id&tunnel-save
+tunnel_created								: button&xpath&//select[@id='widgets_list']/option
+delete_tunnel								: submit&id&DeleteTunnelProfile
+reconnect									: button&id&select_reconnect_failover
+vpn_failover								: textbox&id&vpn_time_on_failover
+save_pop_up									: button&id&CAN_NAV_Alert_Ok
+
+edit_route_label							: button&xpath&//span[text()='EDIT ROUTE']/..
+checksum_checkbox							: button&id&tunnel_checksum
+destination_error_msg						: button&xpath&//*[@id='vpn_destination_error']/span
+netmask_error_msg							: button&id&vpn_netmask_error
+gateway_error_msg							: button&id&vpn_gateway_error
+primary_peer_error_msg						: button&xpath&//span[text()='Invalid IP Address format']&0
+peer_udp_port_error_msg						: button&xpath&//span[text()='Must be a number in range 1 - 65534']&0
+local_udp_port_error_msg					: button&xpath&//span[text()='Must be a number in range 1 - 65534']&1
+hello_interval_error_msg					: button&xpath&//div[@id="vpn_tp_hello_interval_error" and @class="field-error"]
+failover_interval_error_msg					: button&xpath&//span[text()='Must be a number in range 60 - 300']
+failover_count_error_msg					: button&xpath&//span[text()='Must be a number in range 0 - 5']
+mtu_error_msg								: button&xpath&//span[text()='Must be a number in range 1 - 65534']&2
+create_new_session_button					: button&id&CreateSessionProfile
+session_profile_name						: textbox&id&session_pro_name
+session_tunnel_ip_addr						: textbox&id&session_ip_addr
+session_tunnel_netmask						: textbox&id&session_netmask
+session_tunnel_vlan							: textbox&id&session_vlan
+session_cookie_lenght						: select&id&Cookielength
+session_cookie								: textbox&id&CookieField
+session_remote_end_id						: textbox&id&session_remote
+session_tunnel_ip_error						: button&xpath&//span[text()='Invalid IP Address format']&2
+session_tunnel_netmask_error				: button&xpath&//span[text()='Invalid Netmask format']&0
+session_tunnel_val_error					: button&xpath&//span[text()='Must be a number in range 2 - 4094 except 3333']
+session_cookie_error						: button&xpath&//span[text()='Cookie must be 8 hex chars']
+session_remote_id_end_error					: button&xpath&//span[text()='Must be in range 1-2147483647']
+session_save_button							: button&id&session-save
+session_profile_list_name					: button&xpath&//option[text()='session']
+session_name_delete_button					: button&id&DeleteSessionProfile
+
+disabled_cookie								: button&xpath&//input[@id='CookieField'and @disabled='disabled']
+session_cancel_button						: button&id&session-cancel
+create_tunnel1								: button&xpath&//button[@id='CreateTunnelProfile']
+create_session								: button&xpath&//button[@id='CreateSessionProfile'and @disabled='disabled']
+primary_host1								: button&xpath&//span[text()='PRIMARY HOST']
+backup_host									: button&xpath&//span[text()='BACKUP HOST']		
+gre_tunnel1									: button&xpath&//span[text()='PER-AP-TUNNEL']
+gre_host1									: button&xpath&//span[text()='HOST']
+primary_add_error							: button&xpath&//div[@class='field-error']&0
+backup_add_error							: button&id&vpn_backup_host_error
+secs_bet_packet_error						: button&id&vpn_monitor_pkt_send_count_error
+max_text_packet_error				   		: button&id&vpn_monitor_pkt_send_freq_error
+hold_time_error								: button&id&vpn_holdtime_error
+reconnect_time_failover_error				: button&id&vpn_reconnect_time_on_failover_error
+backup_peer_error_msg						: button&xpath&//span[text()='Invalid IP Address format']&1
+gre_host_error								: button&id&vpn_gre_primary_error
+gre_type_error								: button&id&gre_type_error
+new_route									: button&id&notification_count
+cancel_button								: button&id&HideRouter
+protocol_label								: label&xpath&//span[text()='PROTOCOL']
+failover_retry_count_error_msg				: label&xpath&//span[text()='Must be a number in range 1 - 5']
+tunnel_name_req_error						: label&xpath&//div[@id='vpn_tp_profile_name_error']/span
+invalid_primary_peer_ip_error				: label&xpath&//div[@id='vpn_tp_primary_error' and @class="field-error"]/span
+shared_key_req_error						: label&xpath&//div[@id='vpn_tp_shared_key_error']/span
+l2_sublayer 								: checkbox&id&session_l2_sublayer
+multiversion_msg							: chain&xpath&//img[@title='Supported in 6.4.0.2-4.1.0 and above']
+disabled_l2_sublayer						: button&xpath&//input[@id='session_l2_sublayer' and @disabled='disabled']
+created_session								: button&xpath&//select[@id='session_profiles']/option
+multiversion_msg1							: button&xpath&//img[@title='Supported in 6.3.1.2-4.0.0 and above']
+
+vpn_sp_profile_name_error					: button&css&vpn_sp_profile_name_error>span
+vpn_sp_tp_ip_error				        	: button&css&vpn_sp_tp_ip_error>span
+session_tunnel_name				        	: textbox&id&session_tunnel_name
+session_tunnel_vlan_error					: button&css&vpn_sp_tp_vlan_error>span
+session_cookie_error_16						: button&css&vpn_sp_cookie_error1>span		

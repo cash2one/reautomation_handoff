@@ -1,0 +1,104 @@
+vlan_id_1										: 1
+vlan_id_4093									: 4093
+access_rule_vlan_assignment						: VLAN Assignment
+access_rule_captive_portal						: Captive portal
+access_rule_vlan_calea							: CALEA
+access_rule_access_control						: Access Control
+default_rule_type 								: Access Control
+rule_type_calea 								: CALEA
+service_h323_tcp								: h323-tcp
+service_h323_udp								: h323-udp
+service_any										: Any
+action_deny_option								: Deny
+action_allow									: Allow
+enterprise_delimeter							: :
+roaming_dropdown_value							: Disabled
+mac_authentication_value						: Enabled
+authentication_server_value						: InternalServer
+new_external_server								: -- New --
+auth_server_value	 							: authradius
+auth_server_value_2								: testradius_2
+auth_ipaddr_value 								: 10.17.50.110
+Auth_Sharedkey_value 							: 123456789
+uppercase_support_value_enabled					: Enabled
+reauth_interval_value							: 10
+blacklisting_value								: Enabled
+max_authentication_zero							: 0
+blacklisting_disabled							: Disabled
+edit_reauth_interval							: 3
+max_client_threshold							: 255
+accounting_interval								: 10
+edit_broadcasefiltering							: ARP
+edit_dtiminterval								: 3 beacons
+edit_new_open_roaming_value 					: Enabled
+edit_broadcasefiltering_all						: ALL
+edit_dtiminterval_7_beacons						: 7 beacons
+edit_new_open_roaming_value_default 			: Disabled
+edit_Security_Mac_Authentication_Enabled 		: Enabled
+edit_Authentication_server 						: InternalServer
+edit_broadcasefiltering_disabled				: Disabled
+edit_dtiminterval_1_beacon						: 1 beacon
+edit_new_server 			    				:  -- New --
+edit_invalid_input 								:  *
+edit_auth_server_name 							:  authradius
+edit_auth_ipaddr 								:  10.17.50.110
+edit_Auth_Sharedkey 							:  123456789
+edit_pswdTxt 									:  test123
+edit_Retype_auth_shared_key 					:  123456789
+edit_Uppercase_Support_Enabled 					:  Enabled
+edit_auth_server_name2							: testradius_2
+edit_besteffort									: 100
+edit_Vlan_Id_new								:  1
+edit_besteffort_default							: 0
+edit_passphrase_format_8						: 8-63 chars
+edit_passphrase_format_64						: 64 hexadecimal chars
+passphrase										: dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+disabled										: Disabled
+enabled											: Enabled
+edit_video_wmm_share							: 0
+Wpa2_WPA_Enterprise								: Both(WPA-2 & WPA)
+max_auth_failures								: 5
+edit_reauth_intervals							: 3
+tx4												: 4
+max_auth_failure0 								: 0
+default_inactivity_timeout						: 1000
+edit_band_all									: All
+wpa_2_personal									: WPA-2 Personal
+channelutilizationthresh						: 1
+edit_personal_delimeter							: /
+edit_accounting_interval60						:60
+edit_accounting_interval						: 1
+edit_localprobe									: 100
+edit_max_auth_failures							: 10
+new_accounting_interval							: 60
+delimeter_textbox_value							: /
+uppercase_support_disabled						: Disabled
+content_filtering_disabled						: Disabled
+key_management_value							: WPA Personal
+band_value										: 2.4 GHz
+new_key_management_value						: Both(WPA-2 & WPA)
+auth_survivability								: Enabled
+termination_enabled								: Enabled
+key_management_dynamic							: Dynamic- WEP With 802.1x
+reauth_unit_hrs									: hrs.
+valid_max_client_threshold_value				: 255
+max_authentication_ten							: 10
+load_balancing_enabled							: Enabled
+enabled_option									: Enabled
+disabled_option									: Disabled
+edit_wpa2_enterprise							: WPA-2 Enterprise
+localprobe_request_threshold					: 100
+edit_service_action_value						: Source-NAT
+static_wep_value								: Static WEP
+internal_acknowledge							: Internal-Acknowledged
+tx_key_1										: 1
+band_value_5ghz									: 5 GHz
+max_value_36									: 36
+min_value_9										: 9
+max_value_48									: 48
+value_65535										: 65535
+cache_timeout_value								: 19
+cache_timeout_19								: 19
+radius_authentication							: Radius Authentication
+authentication_text								: Authentication text
+edit_action_dest_nat                            : Destination-NAT

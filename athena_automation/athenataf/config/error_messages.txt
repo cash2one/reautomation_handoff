@@ -1,0 +1,25 @@
+MessageID:Message
+001:* This field is required
+002:* Key must be 8-63 chars
+003:* Sorry! We didn't recognize the username or password you entered. Please try again.
+004:* Invalid Net Mask
+005:* Invalid IP address
+006:* Maximum 4 characters allowed
+007:* Maximum value is 4093
+008:* Key must be 26 chars
+009:* Key must be 10 chars
+010:* No special characters allowed, only - and _ allowed
+011:* Fields do not match
+012:* Sorry! We didn't recognize the username or password you entered. Please try again.
+013:* Invalid Net Mask
+014:* Invalid IP address
+015:* Maximum 4 characters allowed
+016:* Maximum value is 4093
+017:* Key must be 26 chars
+018:* Key must be 10 chars
+019:* Key must be 26 chars
+020:* Valid range is 1 - 65534
+021:* Valid range is 1-30
+022:* Valid range is 1 - 5
+023:* This field is mandatory
+024:* Not a valid integer

@@ -1,0 +1,330 @@
+ports												: label&id&configPortsContainer
+check_box_6											: button&xpath&//td[@id='configPortsTable_row_selector_6']/input
+edit												: button&id&portsEditButton
+access_vlan											: textbox&id&configport_access_vlan
+save												: button&id&Location_Override_Save
+cancel												: button&id&Location_Override_Cancel
+disable_native_vlan									: textbox&xpath&//input[@id='configport_native_vlan' and @disabled='disabled']
+disable_allowed_vlan								: textbox&xpath&//input[@id='configport_allowed_vlan' and @disabled='disabled']
+admin_status										: select&xpath&//select[@name="configport_adminstatus_combo_name"]
+port_mode											: select&xpath&//select[@name="configport_portmode_combo_name"]
+poe													: select&xpath&//select[@name="configport_poe_combo_name"]
+speed_duplex										: select&xpath&//select[@name="configport_speed_combo_name"]
+native_vlan											: textbox&id&configport_native_vlan
+allowed_vlan										: textbox&id&configport_allowed_vlan
+port_number_label									: label&xpath&//label[text()='PORT NUMBER']&1
+admin_status_label									: label&xpath&//label[text()='ADMIN STATUS']&1
+port_mode_label										: label&xpath&//label[text()='PORT MODE']&1
+vlan_label											: label&xpath&//label[text()='VLAN']&1
+poe_label											: label&xpath&//label[text()='POE']&1
+speed_duplex_label									: label&xpath&//label[text()='SPEED/DUPLEX']&1
+check_box_3											: button&xpath&//td[@id='configPortsTable_row_selector_3']/input
+check_box_4											: button&xpath&//td[@id='configPortsTable_row_selector_4']/input
+check_box_5											: button&xpath&//td[@id='configPortsTable_row_selector_5']/input
+access_vlan_error_msg								: label&text&ACCESS VLAN should be a number between 1 and 4094
+allowed_vlan_error_msg								: label&id&configport_allowed_vlan_patternError
+edit_port_label										: label&xpath&//label[text()='Edit Ports']
+port_48th											: button&id&configPortsTable_port_no_display_47
+uplink_port_4th										: button&id&configPortsTable_port_no_display_51
+port_format											: button&xpath&//span[@id='configPortsTable_port_no_display_1' and contains(.,'0/0/1')]
+port_12th											: button&id&configPortsTable_port_no_display_11
+uplink_port_2nd										: button&id&configPortsTable_port_no_display_13
+edit_disabled										: button&xpath&//button[@id='portsEditButton' and @disabled="disabled"]
+check_box_0											: button&xpath&//td[@id='configPortsTable_row_selector_0']/input
+access_vlan_enabled									: label&xpath&//label[@class='field-label']/span[text() = 'ACCESS VLAN' ]
+access_vlan_disabled								: label&xpath&//label[@class='field-label labelDisabled']/span[text() = 'ACCESS VLAN' ]
+native_vlan_enabled									: label&xpath&//label[@class='field-label']/span[text() = 'NATIVE VLAN' ]
+native_vlan_disabled								: label&xpath&//label[@class='field-label labelDisabled']/span[text() = 'NATIVE VLAN' ]
+allowed_vlan_enabled								: label&xpath&//label[@class='field-label']/span[text() = 'ALLOWED VLAN' ]
+allowed_vlan_disabled								: label&xpath&//label[@class='field-label labelDisabled']/span[text() = 'ALLOWED VLAN' ]
+
+port_page_admin_status								: label&id&configPortsTable_status_display_0
+port_page_port_mode									: label&id&configPortsTable_mode_display_0
+port_page_vlan										: label&id&configPortsTable_vlan_display_0
+port_page_poe										: label&id&configPortsTable_poe_display_0
+port_page_speed										: label&id&configPortsTable_speed_display_0
+
+port_page_admin_status_1							: label&id&configPortsTable_status_display_1
+port_page_port_mode_1								: label&id&configPortsTable_mode_display_1
+port_page_vlan_1									: label&id&configPortsTable_vlan_display_1
+port_page_poe_1										: label&id&configPortsTable_poe_display_1
+port_page_speed_1									: label&id&configPortsTable_speed_display_1
+
+port_page_admin_status_2							: label&id&configPortsTable_status_display_2
+port_page_port_mode_2								: label&id&configPortsTable_mode_display_2
+port_page_vlan_2									: label&id&configPortsTable_vlan_display_2
+port_page_poe_2										: label&id&configPortsTable_poe_display_2
+port_page_speed_2									: label&id&configPortsTable_speed_display_2
+
+port_page_admin_status_3							: label&id&configPortsTable_status_display_3
+port_page_port_mode_3								: label&id&configPortsTable_mode_display_3
+port_page_vlan_3									: label&id&configPortsTable_vlan_display_3
+port_page_poe_3										: label&id&configPortsTable_poe_display_3
+port_page_speed_3									: label&id&configPortsTable_speed_display_3
+
+port_page_admin_status_4							: label&id&configPortsTable_status_display_4
+port_page_port_mode_4								: label&id&configPortsTable_mode_display_4
+port_page_vlan_4									: label&id&configPortsTable_vlan_display_4
+port_page_poe_4										: label&id&configPortsTable_poe_display_4
+port_page_speed_4									: label&id&configPortsTable_speed_display_4
+
+port_page_admin_status_5							: label&id&configPortsTable_status_display_5
+port_page_port_mode_5								: label&id&configPortsTable_mode_display_5
+port_page_vlan_5									: label&id&configPortsTable_vlan_display_5
+port_page_poe_5										: label&id&configPortsTable_poe_display_5
+port_page_speed_5									: label&id&configPortsTable_speed_display_5
+
+port_page_admin_status_6							: label&id&configPortsTable_status_display_6
+port_page_port_mode_6								: label&id&configPortsTable_mode_display_6
+port_page_vlan_6									: label&id&configPortsTable_vlan_display_6
+port_page_poe_6										: label&id&configPortsTable_poe_display_6
+port_page_speed_6									: label&id&configPortsTable_speed_display_6
+
+port_page_admin_status_7							: label&id&configPortsTable_status_display_7
+port_page_port_mode_7								: label&id&configPortsTable_mode_display_7
+port_page_vlan_7									: label&id&configPortsTable_vlan_display_7
+port_page_poe_7										: label&id&configPortsTable_poe_display_7
+port_page_speed_7									: label&id&configPortsTable_speed_display_7
+
+port_page_admin_status_8							: label&id&configPortsTable_status_display_8
+port_page_port_mode_8								: label&id&configPortsTable_mode_display_8
+port_page_vlan_8									: label&id&configPortsTable_vlan_display_8
+port_page_poe_8										: label&id&configPortsTable_poe_display_8
+port_page_speed_8									: label&id&configPortsTable_speed_display_8
+
+port_page_admin_status_9							: label&id&configPortsTable_status_display_9
+port_page_port_mode_9								: label&id&configPortsTable_mode_display_9
+port_page_vlan_9									: label&id&configPortsTable_vlan_display_9
+port_page_poe_9										: label&id&configPortsTable_poe_display_9
+port_page_speed_9									: label&id&configPortsTable_speed_display_9
+
+port_page_admin_status_10							: label&id&configPortsTable_status_display_10
+port_page_port_mode_10								: label&id&configPortsTable_mode_display_10
+port_page_vlan_10									: label&id&configPortsTable_vlan_display_10
+port_page_poe_10									: label&id&configPortsTable_poe_display_10
+port_page_speed_10									: label&id&configPortsTable_speed_display_10
+
+port_page_admin_status_11							: label&id&configPortsTable_status_display_11
+port_page_port_mode_11								: label&id&configPortsTable_mode_display_11
+port_page_vlan_11									: label&id&configPortsTable_vlan_display_11
+port_page_poe_11									: label&id&configPortsTable_poe_display_11
+port_page_speed_11									: label&id&configPortsTable_speed_display_11
+
+port_page_admin_status_12							: label&id&configPortsTable_status_display_12
+port_page_port_mode_12								: label&id&configPortsTable_mode_display_12
+port_page_vlan_12									: label&id&configPortsTable_vlan_display_12
+port_page_poe_12									: label&id&configPortsTable_poe_display_12
+port_page_speed_12									: label&id&configPortsTable_speed_display_12
+
+port_page_admin_status_13							: label&id&configPortsTable_status_display_13
+port_page_port_mode_13								: label&id&configPortsTable_mode_display_13
+port_page_vlan_13									: label&id&configPortsTable_vlan_display_13
+port_page_poe_13									: label&id&configPortsTable_poe_display_13
+port_page_speed_13									: label&id&configPortsTable_speed_display_13
+
+port_page_admin_status_14							: label&id&configPortsTable_status_display_14
+port_page_port_mode_14								: label&id&configPortsTable_mode_display_14
+port_page_vlan_14									: label&id&configPortsTable_vlan_display_14
+port_page_poe_14									: label&id&configPortsTable_poe_display_14
+port_page_speed_14									: label&id&configPortsTable_speed_display_14
+
+port_page_admin_status_15							: label&id&configPortsTable_status_display_15
+port_page_port_mode_15								: label&id&configPortsTable_mode_display_15
+port_page_vlan_15									: label&id&configPortsTable_vlan_display_15
+port_page_poe_15									: label&id&configPortsTable_poe_display_15
+port_page_speed_15									: label&id&configPortsTable_speed_display_15
+
+port_page_admin_status_16							: label&id&configPortsTable_status_display_16
+port_page_port_mode_16								: label&id&configPortsTable_mode_display_16
+port_page_vlan_16									: label&id&configPortsTable_vlan_display_16
+port_page_poe_16									: label&id&configPortsTable_poe_display_16
+port_page_speed_16									: label&id&configPortsTable_speed_display_16
+
+port_page_admin_status_17							: label&id&configPortsTable_status_display_17
+port_page_port_mode_17								: label&id&configPortsTable_mode_display_17
+port_page_vlan_17									: label&id&configPortsTable_vlan_display_17
+port_page_poe_17									: label&id&configPortsTable_poe_display_17
+port_page_speed_17									: label&id&configPortsTable_speed_display_17
+
+port_page_admin_status_18							: label&id&configPortsTable_status_display_18
+port_page_port_mode_18								: label&id&configPortsTable_mode_display_18
+port_page_vlan_18									: label&id&configPortsTable_vlan_display_18
+port_page_poe_18									: label&id&configPortsTable_poe_display_18
+port_page_speed_18									: label&id&configPortsTable_speed_display_18
+
+port_page_admin_status_19							: label&id&configPortsTable_status_display_19
+port_page_port_mode_19								: label&id&configPortsTable_mode_display_19
+port_page_vlan_19									: label&id&configPortsTable_vlan_display_19
+port_page_poe_19									: label&id&configPortsTable_poe_display_19
+port_page_speed_19									: label&id&configPortsTable_speed_display_19
+
+port_page_admin_status_20							: label&id&configPortsTable_status_display_20
+port_page_port_mode_20								: label&id&configPortsTable_mode_display_20
+port_page_vlan_20									: label&id&configPortsTable_vlan_display_20
+port_page_poe_20									: label&id&configPortsTable_poe_display_20
+port_page_speed_20									: label&id&configPortsTable_speed_display_20
+
+port_page_admin_status_21							: label&id&configPortsTable_status_display_21
+port_page_port_mode_21								: label&id&configPortsTable_mode_display_21
+port_page_vlan_21									: label&id&configPortsTable_vlan_display_21
+port_page_poe_21									: label&id&configPortsTable_poe_display_21
+port_page_speed_21									: label&id&configPortsTable_speed_display_21
+
+port_page_admin_status_22							: label&id&configPortsTable_status_display_22
+port_page_port_mode_22								: label&id&configPortsTable_mode_display_22
+port_page_vlan_22									: label&id&configPortsTable_vlan_display_22
+port_page_poe_22									: label&id&configPortsTable_poe_display_22
+port_page_speed_22									: label&id&configPortsTable_speed_display_22
+
+port_page_admin_status_23							: label&id&configPortsTable_status_display_23
+port_page_port_mode_23								: label&id&configPortsTable_mode_display_23
+port_page_vlan_23									: label&id&configPortsTable_vlan_display_23
+port_page_poe_23									: label&id&configPortsTable_poe_display_23
+port_page_speed_23									: label&id&configPortsTable_speed_display_23
+
+port_page_admin_status_24							: label&id&configPortsTable_status_display_24
+port_page_port_mode_24								: label&id&configPortsTable_mode_display_24
+port_page_vlan_24									: label&id&configPortsTable_vlan_display_24
+port_page_poe_24									: label&id&configPortsTable_poe_display_24
+port_page_speed_24									: label&id&configPortsTable_speed_display_24
+
+port_page_admin_status_25							: label&id&configPortsTable_status_display_25
+port_page_port_mode_25								: label&id&configPortsTable_mode_display_25
+port_page_vlan_25									: label&id&configPortsTable_vlan_display_25
+port_page_poe_25									: label&id&configPortsTable_poe_display_25
+port_page_speed_25									: label&id&configPortsTable_speed_display_25
+
+port_page_admin_status_26							: label&id&configPortsTable_status_display_26
+port_page_port_mode_26								: label&id&configPortsTable_mode_display_26
+port_page_vlan_26									: label&id&configPortsTable_vlan_display_26
+port_page_poe_26									: label&id&configPortsTable_poe_display_26
+port_page_speed_26									: label&id&configPortsTable_speed_display_26
+
+port_page_admin_status_27							: label&id&configPortsTable_status_display_27
+port_page_port_mode_27								: label&id&configPortsTable_mode_display_27
+port_page_vlan_27									: label&id&configPortsTable_vlan_display_27
+port_page_poe_27									: label&id&configPortsTable_poe_display_27
+port_page_speed_27									: label&id&configPortsTable_speed_display_27
+
+port_page_admin_status_28							: label&id&configPortsTable_status_display_28
+port_page_port_mode_28								: label&id&configPortsTable_mode_display_28
+port_page_vlan_28									: label&id&configPortsTable_vlan_display_28
+port_page_poe_28									: label&id&configPortsTable_poe_display_28
+port_page_speed_28									: label&id&configPortsTable_speed_display_28
+
+port_page_admin_status_29							: label&id&configPortsTable_status_display_29
+port_page_port_mode_29								: label&id&configPortsTable_mode_display_29
+port_page_vlan_29									: label&id&configPortsTable_vlan_display_29
+port_page_poe_29									: label&id&configPortsTable_poe_display_29
+port_page_speed_29									: label&id&configPortsTable_speed_display_29
+
+port_page_admin_status_30							: label&id&configPortsTable_status_display_30
+port_page_port_mode_30								: label&id&configPortsTable_mode_display_30
+port_page_vlan_30									: label&id&configPortsTable_vlan_display_30
+port_page_poe_30									: label&id&configPortsTable_poe_display_30
+port_page_speed_30									: label&id&configPortsTable_speed_display_30
+
+port_page_admin_status_31							: label&id&configPortsTable_status_display_31
+port_page_port_mode_31								: label&id&configPortsTable_mode_display_31
+port_page_vlan_31									: label&id&configPortsTable_vlan_display_31
+port_page_poe_31									: label&id&configPortsTable_poe_display_31
+port_page_speed_31									: label&id&configPortsTable_speed_display_31
+
+port_page_admin_status_32							: label&id&configPortsTable_status_display_32
+port_page_port_mode_32								: label&id&configPortsTable_mode_display_32
+port_page_vlan_32									: label&id&configPortsTable_vlan_display_32
+port_page_poe_32									: label&id&configPortsTable_poe_display_32
+port_page_speed_32									: label&id&configPortsTable_speed_display_32
+
+port_page_admin_status_33							: label&id&configPortsTable_status_display_33
+port_page_port_mode_33								: label&id&configPortsTable_mode_display_33
+port_page_vlan_33									: label&id&configPortsTable_vlan_display_33
+port_page_poe_33									: label&id&configPortsTable_poe_display_33
+port_page_speed_33									: label&id&configPortsTable_speed_display_33
+
+port_page_admin_status_34							: label&id&configPortsTable_status_display_34
+port_page_port_mode_34								: label&id&configPortsTable_mode_display_34
+port_page_vlan_34									: label&id&configPortsTable_vlan_display_34
+port_page_poe_34									: label&id&configPortsTable_poe_display_34
+port_page_speed_34									: label&id&configPortsTable_speed_display_34
+
+port_page_admin_status_35							: label&id&configPortsTable_status_display_35
+port_page_port_mode_35								: label&id&configPortsTable_mode_display_35
+port_page_vlan_35									: label&id&configPortsTable_vlan_display_35
+port_page_poe_35									: label&id&configPortsTable_poe_display_35
+port_page_speed_35									: label&id&configPortsTable_speed_display_35
+
+port_page_admin_status_36							: label&id&configPortsTable_status_display_36
+port_page_port_mode_36								: label&id&configPortsTable_mode_display_36
+port_page_vlan_36									: label&id&configPortsTable_vlan_display_36
+port_page_poe_36									: label&id&configPortsTable_poe_display_36
+port_page_speed_36									: label&id&configPortsTable_speed_display_36
+
+port_page_admin_status_37							: label&id&configPortsTable_status_display_37
+port_page_port_mode_37								: label&id&configPortsTable_mode_display_37
+port_page_vlan_37									: label&id&configPortsTable_vlan_display_37
+port_page_poe_37									: label&id&configPortsTable_poe_display_37
+port_page_speed_37									: label&id&configPortsTable_speed_display_37
+
+port_page_admin_status_38							: label&id&configPortsTable_status_display_38
+port_page_port_mode_38								: label&id&configPortsTable_mode_display_38
+port_page_vlan_38									: label&id&configPortsTable_vlan_display_38
+port_page_poe_38									: label&id&configPortsTable_poe_display_38
+port_page_speed_38									: label&id&configPortsTable_speed_display_38
+
+port_page_admin_status_39							: label&id&configPortsTable_status_display_39
+port_page_port_mode_39								: label&id&configPortsTable_mode_display_39
+port_page_vlan_39									: label&id&configPortsTable_vlan_display_39
+port_page_poe_39									: label&id&configPortsTable_poe_display_39
+port_page_speed_39									: label&id&configPortsTable_speed_display_39
+
+port_page_admin_status_40							: label&id&configPortsTable_status_display_40
+port_page_port_mode_40								: label&id&configPortsTable_mode_display_40
+port_page_vlan_40									: label&id&configPortsTable_vlan_display_40
+port_page_poe_40									: label&id&configPortsTable_poe_display_40
+port_page_speed_40									: label&id&configPortsTable_speed_display_40
+
+port_page_admin_status_41							: label&id&configPortsTable_status_display_41
+port_page_port_mode_41								: label&id&configPortsTable_mode_display_41
+port_page_vlan_41									: label&id&configPortsTable_vlan_display_41
+port_page_poe_41									: label&id&configPortsTable_poe_display_41
+port_page_speed_41									: label&id&configPortsTable_speed_display_41
+
+port_page_admin_status_42							: label&id&configPortsTable_status_display_42
+port_page_port_mode_42								: label&id&configPortsTable_mode_display_42
+port_page_vlan_42									: label&id&configPortsTable_vlan_display_42
+port_page_poe_42									: label&id&configPortsTable_poe_display_42
+port_page_speed_42									: label&id&configPortsTable_speed_display_42
+
+port_page_admin_status_43							: label&id&configPortsTable_status_display_43
+port_page_port_mode_43								: label&id&configPortsTable_mode_display_43
+port_page_vlan_43									: label&id&configPortsTable_vlan_display_43
+port_page_poe_43									: label&id&configPortsTable_poe_display_43
+port_page_speed_43									: label&id&configPortsTable_speed_display_43
+
+port_page_admin_status_44							: label&id&configPortsTable_status_display_44
+port_page_port_mode_44								: label&id&configPortsTable_mode_display_44
+port_page_vlan_44									: label&id&configPortsTable_vlan_display_44
+port_page_poe_44									: label&id&configPortsTable_poe_display_44
+port_page_speed_44									: label&id&configPortsTable_speed_display_44
+
+port_page_admin_status_45							: label&id&configPortsTable_status_display_45
+port_page_port_mode_45								: label&id&configPortsTable_mode_display_45
+port_page_vlan_45									: label&id&configPortsTable_vlan_display_45
+port_page_poe_45									: label&id&configPortsTable_poe_display_45
+port_page_speed_45									: label&id&configPortsTable_speed_display_45
+
+port_page_admin_status_46							: label&id&configPortsTable_status_display_46
+port_page_port_mode_46								: label&id&configPortsTable_mode_display_46
+port_page_vlan_46									: label&id&configPortsTable_vlan_display_46
+port_page_poe_46									: label&id&configPortsTable_poe_display_46
+port_page_speed_46									: label&id&configPortsTable_speed_display_46
+
+port_page_admin_status_47							: label&id&configPortsTable_status_display_47
+port_page_port_mode_47								: label&id&configPortsTable_mode_display_47
+port_page_vlan_47									: label&id&configPortsTable_vlan_display_47
+port_page_poe_47									: label&id&configPortsTable_poe_display_47
+port_page_speed_47									: label&id&configPortsTable_speed_display_47
+
+
+

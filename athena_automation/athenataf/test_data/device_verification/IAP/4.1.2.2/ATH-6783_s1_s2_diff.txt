@@ -1,0 +1,4 @@
++  infrastructure-detection-level custom
++  detect-ap-spoofing
+  
+  

@@ -1,0 +1,28 @@
++ wlan access-rule testwired
++  rule any any match any any any permit
++ wlan auth-server authradius
++  ip 0.0.0.0
++  port 1812
++  acctport 1813
++  key
++ wlan auth-server testradius_2
++  ip 10.17.50.110
++  port 1812
++  acctport 1813
++  key
++ wired-port-profile testwired
++  switchport-mode trunk
++  allowed-vlan all
++  native-vlan guest
++  no shutdown
++  access-rule-name testwired
++  speed auto
++  duplex auto
++  poe
++  type employee
++  auth-server authradius
++  auth-server testradius_2
++  captive-portal disable
++  mac-authentication
++  no dot1x
++  radius-reauth-interval 10

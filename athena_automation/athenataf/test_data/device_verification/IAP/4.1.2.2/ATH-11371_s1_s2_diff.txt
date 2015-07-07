@@ -1,0 +1,4 @@
++ aeroscout-rtls 1.1.1.1 11 include-unassoc-sta
++ airwave-rtls 1.1.1.1 11  10 include-unassoc-sta
++ ale-server 2.2.2.2
++ ale-report-interval 59

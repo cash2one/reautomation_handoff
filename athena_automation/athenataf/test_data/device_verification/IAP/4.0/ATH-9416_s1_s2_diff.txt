@@ -1,0 +1,31 @@
++ wlan access-rule %(Network_name)s
++  rule any any match any any any permit
++ wlan ssid-profile %(Network_name)s
++  enable
++  type employee
++  essid %(Network_name)s
++  opmode wpa2-psk-aes
++  max-authentication-failures 0
++  vlan %(edit_Vlan_Id_new)s
++  auth-server %(edit_auth_server_name)s
++  auth-server %(edit_auth_server_name2)s
++  rf-band all
++  captive-portal disable
++  mac-authentication
++  dtim-period 1
++  inactivity-timeout 1000
++  broadcast-filter none
++  dmo-channel-utilization-threshold 90
++  local-probe-req-thresh 0
++  max-clients-threshold 64
++  wmm-best-effort-share 100
++ wlan auth-server %(edit_auth_server_name)s
++  ip %(edit_auth_ipaddr)s
++  port 1812
++  acctport 1813
++  key 
++ wlan auth-server %(edit_auth_server_name2)s
++  ip %(edit_auth_ipaddr)s
++  port 1812
++  acctport 1813
++  key 

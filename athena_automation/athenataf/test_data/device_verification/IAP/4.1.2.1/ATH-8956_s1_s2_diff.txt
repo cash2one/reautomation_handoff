@@ -1,0 +1,23 @@
++ wlan access-rule test1
++  rule any any match any any any permit
++  rule any any match tcp 8211 8211 src-nat
++  rule any any match udp 53 53 permit
++  rule any any match tcp 1720 1720 deny
++  rule any any match udp 67 69 permit log blacklist classify-media tos 0 dot1p-priority 0
++  rule any any match tcp 515 515 deny log blacklist classify-media tos 0 dot1p-priority 0
++  rule any any match esp any any src-nat log blacklist classify-media tos 0 dot1p-priority 0
++  rule any any match udp 1718 1719 dst-nat ip 10.2.2.2 1
++ wlan ssid-profile test1
++  enable
++  type guest
++  essid test1
++  opmode opensystem
++  max-authentication-failures 0
++  rf-band all
++  captive-portal internal
++  dtim-period 1
++  inactivity-timeout 1000
++  broadcast-filter none
++  dmo-channel-utilization-threshold 90
++  local-probe-req-thresh 0
++  max-clients-threshold 64

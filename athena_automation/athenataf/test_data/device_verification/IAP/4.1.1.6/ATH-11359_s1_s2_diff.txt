@@ -1,0 +1,5 @@
++ internal-domains
++  domain-name yahoo.com
++  domain-name yahoo.co.in
++  domain-name google.com
++  domain-name gmail.com

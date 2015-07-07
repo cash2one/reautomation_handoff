@@ -1,0 +1,8 @@
+url											: https://jenkins-deploydemo-sng-411.test.sng1.arubathena.com
+email										: regression2@alpha.com
+password									: password is set via sso
+username_sso								: 2014-05-05-07.17.27.983641@testcp.com
+password_sso								: Welcome1
+email_read_only        						: admin123456@alpha.com
+email_read_write       						: aruba123@alpha.com
+url_group                                   : https://jenkins-deploydemo-sng-426.test.sng1.arubathena.com/admin/#/ALLGROUP

@@ -1,0 +1,16 @@
++ l2tpv3 tunnel tunnel1
++  failover-mode non-preemptive
++  failover-retry-count 2
++  failover-retry-interval 75
++  hello-timeout 65
++  local-port 1706
++  message-digest-type MD5
++  mtu 2001
++  primary peer-address 1.1.1.0
++  backup peer-address 10.17.50.111
++  peer-port 1706
++  secret-key
++ l2tpv3 session session
++  l2tpv3 tunnel tunnel1
++  tunnel-ip 4.4.4.0 mask 255.255.255.0 vlan 5
++  remote-end-id 10

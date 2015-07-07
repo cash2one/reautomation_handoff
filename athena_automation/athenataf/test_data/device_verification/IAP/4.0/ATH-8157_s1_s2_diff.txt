@@ -1,0 +1,6 @@
+  ids
+   wireless-containment none
++  infrastructure-detection-level high
++  client-detection-level high
+  
+  

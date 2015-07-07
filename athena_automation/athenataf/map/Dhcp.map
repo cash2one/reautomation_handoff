@@ -1,0 +1,132 @@
+new_dhcp									: button&id&DHCP_Scopes_New
+dhcp_name									: button&xpath&//span[contains(., 'a1 _')]
+network_name								: textbox&id&Distributed_DHCP_UsrName
+vlan_name									: textbox&id&Distributed_DHCP_Vlan
+netmask										: textbox&id&Distributed_DHCP_NetMask
+default_router								: textbox&id&Distributed_DHCP_Default_Routes
+dns_server									: textbox&id&Distributed_DHCP_DNS
+domain_name									: textbox&id&Distributed_DHCP_Domain_Name
+distributed_ip_start						: textbox&name&distributed_ip_start
+distributed_ip_end							: textbox&name&distributed_ip_end
+distributed_option_type						: textbox&name&distributed_option_type
+distributed_option_value					: textbox&name&distributed_option_value
+client_per_branch							: textbox&id&Distributed_DHCP_Per_Branch
+next_button									: button&id&dist_dhcp_next
+reserve_first								: textbox&id&Distributed_DHCP_Rev_First
+reserve_last								: textbox&id&Distributed_DHCP_Rev_Last
+finish_button								: submit&id&Finish_create
+delete_dhcp									: button&id&Delete_Distribute_0
+edit										: button&id&Edit_Distribute_0
+network_type								: select&id&Distributed_DHCP_type_Select
+vlan_error									: button&id&dist_dhcp_vlan_required_error
+netmask_error								: button&id&dist_dhcp_netmask_required_error
+ip_address_error							: button&id&dist_dhcp_def_router_required_error
+domain_name_error							: button&text&* Invalid Domain name&0
+lease_time									: textbox&id&Distributed_DHCP_LTime
+lease_time_error							: button&text&* Must be number in range is 2-1440&0
+option_type_error							: button&text&* Valid range is 1-254&0
+cancel										: button&id&Hide_NewDHCp
+dhcp_name_error								: textbox&text&* This field is required&5
+client_per_branch_error						: textbox&xpath&//span[contains(.,'Valid range is 1')]&1
+reserve_first_error							: textbox&xpath&//span[contains(.,'Valid range is 0')]&0
+reserve_last_error							: textbox&xpath&//span[contains(.,'Valid range is 0')]&1
+mandatory_vlan_error						: textbox&text&* Must be number in range 1-4093&0
+mandatory_netmask_error						: textbox&text&* Invalid Netmask&0
+mandatory_ip_address_error					: textbox&text&* Invalid IP address&0
+ipaddress_range_start						: textbox&xpath&//input[@name="distributed_ip_start"]
+ipaddress_range_end							: textbox&xpath&//input[@name="distributed_ip_end"]
+option_type									: textbox&xpath&//input[@name="distributed_option_type"]
+option_value								: textbox&xpath&//input[@name="distributed_option_value"]
+dhcp_name_error_msg							: button&id&distributed_dhcpscope_name_length_error
+dhcp_dns_server_error     					: textbox&id&dist_dhcp_dns_server_error
+dhcp_distributed_add_new_ip_range			: button&id&add_new_ip_range
+distributed_ip_start_one					: textbox&name&distributed_ip_start&1
+distributed_ip_end_one						: textbox&name&distributed_ip_end&1
+centralize_accordion						: button&id&conf_cent_dhcp_header
+centralized_name							: textbox&id&centralized_name
+centralized_vlan							: textbox&id&centralized_vlan
+dhcp_relay									: checkbox&id&conf_dhcp_cent_relay_check
+centralized_helper_address					: textbox&id&centralized_helper_address
+centralized_vlanIp							: textbox&id&centralized_vlanIp
+centralized_vlan_mask						: textbox&id&centralized_vlan_mask
+centralized_option82						: select&id&centralized_option82
+centralize_ok								: button&id&newDhcpCentralized
+centralize_new								: button&id&DhcpCentralNew
+centralize_name_error						: button&text&* This field is required&6
+centralize_name_max_error					: button&text&* Maximum 32 characters allowed&1
+centralize_vlan_error						: button&text&* Must be number in range 1-4093&1
+centralize_vlan_reserved_error				: button&text&* VLAN 3333 is reserved&1
+helper_address_error						: button&id&helper_address_error
+centralize_vlan_ip_error					: button&id&cent_dhcp_vlan_ip_error
+centralize_vlan_mask_error					: button&id&cent_dhcp_netmask_error
+cancel_centralized_dhcp						: button&id&closeDhcpCentralized
+delete_centralized_dhcp_button				: button&id&Delete_Central_0
+local_dhcp_scopes_accordion     			: label&xpath&//label[text()='LOCAL DHCP SCOPES']&0
+new_local_dhcp        						: button&id&createDhcp
+local_dhcp_type        						: select&id&dhcp_server_selection
+local_dhcp_ok        						: button&id&CreateNew_DHCp
+local_dhcp_name_req_field_error    			: label&id&dhcp_name_error_required
+local_dhcp_vlan_range_error     			: label&id&dhcp_vlan_error_required
+local_dhcp_network_invalid_error   			: label&id&dhcp_network_error_required
+local_dhcp_netmask_req_error    			: label&id&dhcp_netmark_error_required
+local_dhcp_name        						: textbox&id&NameTxt
+name_max_length_error      					: label&id&dhcp_name_error_length
+local_dhcp_vlan_3333      					: label&xpath&//div[@id = 'dhcp_vlan_error_required' and text() = '* Must be number in range 1-4093']/following-sibling::div
+local_dhcp_vlan								: textbox&id&vlanTxt
+local_dhcp_network							: textbox&id&networkTxt
+local_dhcp_netmask							: textbox&id&netmaskTxt
+local_dhcp_excluded_address					: textbox&id&excludeTxt
+local_dhcp_dns_server						: textbox&id&dnsTxt
+local_dhcp_domain_name						: textbox&id&domainTxt
+local_dhcp_option							: textbox&id&dhcp_option_type2PA
+local_dhcp_lease_time						: textbox&id&leaseTxt
+local_dhcp_option_type						: textbox&xpath&//input[@name = 'dhcp_option_type']
+local_dhcp_option_value						: textbox&xpath&//input[@name = 'dhcp_option_value']
+local_dhcp_dns_server_error					: label&id&dns_server_error
+local_dhcp_domain_name_error				: label&id&domain_name_error
+local_dhcp_excluded      					: label&xpath&//div[@class = 'field-error']
+dhcp_edit_button     					    : button&id&editDhcp_0
+dhcp_delete_button    					    : button&id&deleteDhcp_0
+dhcp_local_lease_time_error                 :label&xpath&//*[@id='lease_time_error']
+dhcp_local_lease_time_error1				: label&text&lease_time_error
+dhcp_local_edit_icon     					: button&xpath&//span[contains(.,'athena')]/../following-sibling::td[4]/div/a[1]
+dhcp_local_scope_delete_button				: button&xpath&//span[contains(.,'athena')]/../following-sibling::td[4]/div/a[2]
+
+distributed_dhcp_scopes_network_label		: label&xpath&//div[@class='ArrowMenus']
+distributed_dhcp_scopes_vlan_error   		: label&text&* VLAN 3333 is reserved&0
+distributed_dhcp_scopes_lease_time__error   : label&text&* Must be number in range is 2-1440&0
+distributed_dhcp_scopes_ip_error		    : label&id&new_ip_range_error
+distributed_ip_start_two					: textbox&name&distributed_ip_start&2
+distributed_ip_end_two						: textbox&name&distributed_ip_end&2
+distributed_ip_start_three					: textbox&name&distributed_ip_start&3
+distributed_ip_end_three					: textbox&name&distributed_ip_end&3
+distributed_dhcp_client_per_branch_error	: textbox&xpath&//span[contains(.,'Valid range is 1')]&1
+dist_reverse_last_range_error				: textbox&xpath&//*[@id='dist_reverse_last_range_error']/span[2]
+dist_reverse_range_error				    : textbox&xpath&//*[@id='dist_reverse_range_error']/span[2]
+dhcp_distributed_add_new_ip_range1			: button&id&add_new_ip_range&1
+dhcp_distributed_add_new_ip_range2			: button&id&add_new_ip_range&2
+centralize_dhcp_name						: button&xpath&//span[contains(.,"Demo")]
+local_dhcp_exclud_ip_range_error			: label&xpath&//span[text()='* Valid range is']
+created_centralized_dhcp_scope				: label&xpath&//span[contains(.,'athena')]
+
+centralized_dhcp_edit_icon   				: button&id&EditCentralized_0
+delete_dhcp_scope							: button&xpath&//span[contains(., 'testUser1')]/..//following-sibling::td[4]/div/a[2]
+dscope1_delete								: button&xpath&//td[@title='Dscope1']/following-sibling::td[4]/div/a[2]
+dscope2_delete								: button&xpath&//td[@title='Dscope2']/following-sibling::td[4]/div/a[2]
+cscope1_delete								: button&xpath&//td[@title='Cscope1']/following-sibling::td[2]/div/a[2]
+cscope2_delete								: button&xpath&//td[@title='Cscope2']/following-sibling::td[2]/div/a[2]
+lscope1_delete								: button&xpath&//td[@title='Lscope1']/following-sibling::td[4]/div/a[2]
+lscope2_delete								: button&xpath&//td[@title='Lscope2']/following-sibling::td[4]/div/a[2]
+new_disabled								: button&xpath&//button[@id='DHCP_Scopes_New' and @disabled="disabled"]
+ip_range_error								: label&id&valid_ip_range_error
+remove_ip_range_button						: button&id&remove_ip_range&1
+add_new_option								: button&id&add_new_scope_option
+
+option_type_2								: textbox&xpath&//input[@name="distributed_option_type"]&1
+remove_option_type							: button&id&remove_scope_option&1
+option_value_quote_error					: button&text&* Single or Double Quotes are not allowed&1
+client_reserve_error						: button&xpath&//span[text()='* Valid range is 0 - ']/../span[text()='35']&0
+dhcp_edit									: button&xpath&//td[@title="testUser"]/../td[5]/div/a[1]
+
+char_255_error								: button&text&* Must be 1-255 chars&0
+client_per_branch_error_2					: button&xpath&//span[text()='* Valid range is 1 - ']/../span[text()='101']&0

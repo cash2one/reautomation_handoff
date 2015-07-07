@@ -1,0 +1,8 @@
++ rf dot11g-radio-profile
++  spectrum-monitor
++  beacon-interval 300
++  csa-count 5
++ rf dot11a-radio-profile
++  spectrum-monitor
++  beacon-interval 200
++  csa-count 10

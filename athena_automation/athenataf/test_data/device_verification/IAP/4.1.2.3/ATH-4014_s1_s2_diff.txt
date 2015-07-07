@@ -1,0 +1,6 @@
++ wlan external-captive-portal %(captive_portal_name)s
++  server %(Captive_Role_Ip)s
++  port %(Captive_Role_Port)s
++  url "%(redirect_url)s"
++  auth-text "%(Captive_Role_Text)s"
++  auto-whitelist-disable

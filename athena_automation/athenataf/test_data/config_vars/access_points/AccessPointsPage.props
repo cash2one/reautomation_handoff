@@ -1,0 +1,49 @@
+rule_type_bandwidth_contract      				:  Bandwidth Contract
+downstream_value         		  				:  1000
+upstream_value          		  				:  2000
+preffered_master_enable			  				: Enabled
+preffered_master_disable		 				: Disabled
+monitor_wifi_mode				 				: Monitor
+spectrum_wifi_mode				  				: Spectrum
+etho_bridging_disabled			 				: Disabled
+etho_bridging_enabled			  				: Enabled
+new_access_point_name			  				: 12:ab:34:cd:56:ef
+uplink_mgt_vlan_reserved_value	  				: 3333
+uplink_mgt_vlan_0_preceed     	  				: 0883
+uplink_mgt_vlan_invalid_value	  				: 4937
+uplink_mgt_vlan_0_value	  		  				: 0
+uplink_mgt_vlan_valid_value	      				: 300
+uplink_mgt_vlan_string_value  	  				: somestring
+uplink_mgt_vlan_in_range_value    				: 10-50
+uplink_mgt_vlan_comma	          				: 2,45
+access_wifi_mode				  				: Access
+channel_24g_value				  				: 8
+channel_5ghz_value  			  				: 153
+transmit_power_24g_value1		  				: 108
+transmit_power_24g_value2		  				: 11
+transmit_power_5g_value1		  				: 121
+transmit_power_5g_value2		  				: 12
+invalid_transmit_power_5g_value	  				:130
+invalid_transmit_power_24g_value  				:144
+alpha_transmit_power_5g_value	  				:abc22
+alpha_transmit_power_24g_value	 				:hii45
+transmit_power_24g_default_value  				: 0
+valid_transmit_power_24g_zero_preceded_value	: 050
+no_value										: 
+valid_transmit_power_5g_zero_preceded_value		: 080
+default_value									: 0.0.0.0
+ip_address_value								: 192.168.11.150
+netmask_address									: 255.255.255.0
+default_gateway									: 192.168.11.1
+gateway_error									: 192.168.13.1
+invalid_address									: 10.10.10
+invalid_domain									: gmail@.com
+valid_domain									: gmail.com,yahoo.com
+valid_default_gateway 							: 10.15.141.55
+zero_dbi										: 0
+gain_alpha_numeric								: 2a
+slave_netmask									: 255.255.255.254
+slave_ip_default								: 10.29.14.11
+slave_ip										: 10.29.14.13
+channel_24g_value_default				  	    : 1
+channel_5ghz_value_default 			  		    : 36

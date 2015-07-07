@@ -1,0 +1,20 @@
++ wlan access-rule Test1934
++  rule any any match any any any permit
++ wlan auth-server authradius
++  ip 10.17.50.110
++  port 1812
++  acctport 1813
++  key
++ wired-port-profile Test1934
++  switchport-mode trunk
++  allowed-vlan all
++  native-vlan guest
++  no shutdown
++  access-rule-name Test1934
++  speed auto
++  duplex auto
++  poe
++  type employee
++  auth-server authradius
++  captive-portal disable
++  dot1x

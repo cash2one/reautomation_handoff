@@ -1,0 +1,4 @@
+!  opmode wpa-tkip,wpa-aes,wpa2-aes,wpa2-tkip
+!  opmode wpa-tkip
+!  auth-server authradius
+!  auth-server InternalServer

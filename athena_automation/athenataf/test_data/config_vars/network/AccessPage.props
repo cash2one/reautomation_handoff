@@ -1,0 +1,244 @@
+action_ip 										:  10.17.50.110
+Access_Rule_Captive_portal 						:  Captive portal
+Captive_selection_External 						:  External
+role_string1 									:  something
+role_string3 									:  something2
+svc_port 										:  5000
+Access_Rule_Upstream 							:  65535
+service 										:  CUSTOM
+Access_Rule_Domain_Name 						:  yahoo.com
+destination 									:  To a particular server
+rule_calea_type 								:  CALEA
+role_operator3 									:  equals
+role_operator2 									:  Is the role
+role_operator1 									:  contains
+destination_mask 								:  255.255.0.0
+dot_1_priority_value 							:  3
+destination_ip_2                              :10.10.1.0
+destination_ip 									:  8.8.8.8
+destination_ip_1                                :  10.10.0.0
+Access_Control 									:  Access Control
+Access_Rule_Downstream 							:  1
+action_port 									:  5000
+Access_Rule_Destination_Role 					:  To a Domain Name
+Access_Rule_Bandwidth_Contract 					:  Bandwidth Contract
+destination2 									:  To a network
+rule_type 										:  Access Control
+dscp_tag_value 									:  DS3
+svc_protocol 									:  TCP
+action 											:  Destination-NAT
+Captive_Profile_Default 						:  default
+access_rule_type_vlan_assignment				:  VLAN Assignment
+valid_vlan_id									:  2300
+service_default_value							:  Any
+action_default_value							:  Allow
+destination_default_value						:  To all destinations
+service_adp										:  adp
+service_bootp									:  bootp
+dest_particular_server							:  To a particular server
+dest_ip											:  10.10.0.0
+service_cfgm									:  cfgm-tcp
+dest_except_partclr_server						:  Except to a particular server
+service_custom									:  CUSTOM
+service_protocol								:  OTHER
+service_protocol_id								:  56
+dest_to_a_ntwrk									:  To a network
+dest_netmask									:  255.255.0.0
+service_http_proxy								:  http-proxy2
+dest_except_ntwrk								:  Except to a network
+service_protocol_udp							:  UDP
+dest_to_a_domain								:  To a Domain Name
+service_https									:  http
+service_ldp_udp									:  lpd-udp
+service_netbios									:  netbios-ns
+service_port									:  8600
+service_nterm									:  nterm
+service_pptp									:  pptp
+service_sip_tcp									:  sip-tcp
+service_mspsc_udp								:  msrpc-udp
+service_syslog									:  syslog
+service_snmp									:  snmp
+action_deny										: Deny
+Service_Role1_any								: Any
+Service_Role1_cups								: cups
+Service_Role1_dns								: dns
+Service_Role1_esp								: esp
+Service_Role1_icmp								: icmp
+Service_Role1_custom 							: CUSTOM
+Service_Role1_svp								: svp
+Service_Role1_http_proxy3						: http-proxy3
+Service_Role1_msrpc_tcp						    : msrpc-tcp
+Service_Role1_noe								: noe
+Service_Role1_ntp								: ntp
+Service_Role1_rtsp								: rtsp
+Service_Role1_smb_tcp							: smb-tcp
+Service_Role1_vocera							: vocera
+Destination_Role1_To_a_particular_server		: To a particular server
+Destination_Role1_Except_to_a_particular_server : Except to a particular server							
+Destination_Role1_To_a_network					: To a network
+Destination_Role1_Except_to_a_network			: Except to a network
+Destination_Role1_To_a_Domain_Name 				: To a Domain Name
+invalid_destination_ip							: 10.1.1.1.1
+invalid_protocol_id								: 999
+protocol_id										: 10
+protocols_other									: OTHER
+protocols_tcp									: TCP
+invalid_port									: 0
+port											: 10
+invalid_domain_name                             : 123mko
+domain_names									: google.com
+vlan_id_0										:  0
+vlan_id_4094									:  4094
+invalid_upstream								:  65536
+invalid_downstream								:  0
+service_bootp_value								:  bootp
+destination_value								:  To a particular server
+invalid_destination_ip_1						:  0.0.0.0
+invalid_destination_ip_2						:  10.1.1.255
+invalid_destination_ip_3						:  240.0.0.0
+service_dropdown_adp							:  adp
+action_dropdown_deny							:  Deny
+service_cfgm_value								:  cfgm-tcp
+service_action_value							:  Source-NAT
+service_cup_value								:  cup
+service_dhcp_value								:  dhcp
+action_dropdown_destination_nat					:  Destination-NAT
+ap_group										: abcd
+acct_session_id									: 34
+aruba_port_id									: 4556
+dhcp_option										: enable
+mac_address_and_dhcp_options					: 00:03:7F
+dot1x_authentication_type						: peap
+role_name										: new role
+edit_ap_group									: efgh
+edit_acct_session_id							: 78
+dropdown_ap_group								: AP-Group
+dropdown_ap_name								: AP-Name
+dropdown_acct_session_id						: Acct-Session-Id
+dropdown_aruba_port_id							: Aruba-Port-Id
+dropdown_dhcp_option							: dhcp-option
+dropdown_mac_address_and_dhcp_options			: mac-address-and-dhcp-options
+dropdown_dot1x_authentication_type				: dot1x-authentication-type
+dropdown_mac_address							: mac-address
+dropdown_is_the_role							: Is the role
+dropdown_equals									: equals
+dropdown_not_equals								: not-equals
+dropdown_starts_with							: starts-with
+dropdown_matches_regular_expression				: matches-regular-expression
+dropdown_ends_with								: ends-with
+dropdown_contains								: contains
+service_role_dhcp								: dhcp
+service_role_dns								: dns
+service_role_esp								: esp
+service_role_ftp								: ftp
+service_role_gre								: gre
+service_role_h323_tcp							: h323-tcp
+service_role_CUSTOM								: CUSTOM
+action_role_destination_nat						: Destination-NAT
+action_role_allow								: Allow
+action_role_deny								: Deny
+action_role_source_nat							: Source-NAT
+role_name_1										: role1
+role_name_2										: role2
+role_name_3										: role3
+tcp_port_range									: 1-356
+udp_port_range									: 1-6553
+protocol_udp									: UDP
+access_rule_calea								: CALEA
+invalid_character								: 222222222222222222222222222222222
+invalid_role_name_single_quotes					: 'Test Role'
+invalid_role_name_double_quotes					: "Test Role"
+default_network_role							: test1
+captive_portal_failure							: Allow Internet
+captive_portal_profile							: New
+banner_title									: Hiii Guest
+welcome_text									: Before login read the terms and conditions Thanks
+policy_text										: Use this network at your own risk It is not secured
+captive_role_ip 								: 10.17.50.110
+captive_portal_name 							: testRole
+captive_role_port 								: 5000
+action_ip4										: 10.30.40.50
+action_port4									: 1453
+Service_Role1_http_proxy						: http
+Service_Role1_h323_tcp							: h323-tcp
+Service_Role1_ike								: ike	
+Service_Role1_kerberos							: kerberos
+Service_Role1_lpd_tcp							: lpd-tcp
+Service_Role1_netbios_dgm						: netbios-dgm
+Service_Role1_netbios_ssn						: netbios-ssn
+Service_Role1_pop3								: pop3
+Service_Role1_sips								: sips
+Service_Role1_smb_udp							: smb-udp
+Service_Role1_telnet							: telnet
+Service_Role1_snmp_trap							: snmp-trap
+Service_Role1_smtp								: smtp
+action_source_nat								: Source-NAT
+action_source_nat_port							: 26
+action_ftp										: ftp
+action_h323_udp									: h323-udp
+action_gre										: gre
+action_l2tp										: l2tp
+action_natt										: natt
+action_noe_oxo									: noe-oxo
+action_papi										: papi
+action_sccp										: sccp
+action_sip_udp									: sip-udp
+action_tftp										: tftp
+action_ssh										: ssh
+service_custom_value							: CUSTOM
+custom_port_value								: 1
+ip_valid_value									: 10.2.2.2
+service_smb_tcp									: smb-tcp
+service_h323_udp_value							: h323-udp
+service_h323_tcp_value							: h323-tcp
+destination_domain_option						: To a Domain Name
+valid_domain_name								: google.com
+service_adp_value								: adp
+service_cups									: cups
+service_esp										: esp
+service_ftp										: ftp
+service_gre										: gre
+Service_Role1_adp								: adp
+port_alpha										: abcde
+port_num_valid									: 2000
+port_num_range									: 100-2000
+port_num_invalid								: 65536
+port_char										: *#@%
+ip_invalid										: 110
+port_num_invalid_0								: 0
+protocol_id_invalid								: 256
+invalid_ip										: 256.255.255.255
+domain_name_alpha								: abc.def
+domain_name_num									: 22343.abc
+domain_name_spcl_char							: abc-def.ghi
+role_assignment_string_spcl						: &*^%
+string_max_len									: abcdefghijklmnopqrstuvwxyz1234567
+string_max_len_mac								: abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789abcd
+role_assignment_string_quotes					: ''"
+valid_destination_ip							: 10.1.1.1
+valid_destination_ip_1                          : 10.1.1.0
+valid_destination_ip_2                          : 10.0.0.0
+service_http									: https
+netbios_destination_ip							: 192.168.10.1
+netbios_destination_ip_1						: 192.168.10.0
+ntp_destination_ip								: 10.16.10.1
+ntp_destination_ip_1							: 10.16.10.0
+ntp_destination_ip_2							: 10.16.0.0
+papi_destination_ip								: 172.10.10.1
+papi_destination_ip_1							: 172.10.10.0
+pop3_destination_ip								: 172.10.10.168
+pop3_destination_ip_1							: 172.10.10.0
+dest1_net_mask									: 255.255.255.0
+dest2_net_mask									: 255.255.255.0
+Port_26											: 26
+dest3_net_mask									: 255.0.0.0
+dest3_net_mask_1                                :255.255.255.0
+dscp_tag_value_DS10								: DS10
+priority_value_7								: 7
+dscp_tag_value_DS2								: DS2
+dscp_tag_value_59 								: DS59
+priority_value_4								: 4
+downstream										: 400
+upstream										: 500
+invalid_port_range								: 1024-200
+stream											: 1000

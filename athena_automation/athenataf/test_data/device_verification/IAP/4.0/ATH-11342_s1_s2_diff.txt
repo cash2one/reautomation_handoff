@@ -1,0 +1,44 @@
+  
+  enet0-port-profile default_wired_port_profile
+  
+  wlan sta-profile
+!  essid testwifi
+   cipher-suite wpa2-ccmp-psk
+!  uplink-band dot11g
+  
+  uplink
+   preemption
+!  enforce ethernet
+   failover-internet-pkt-lost-cnt 10
+   failover-internet-pkt-send-freq 30
+!  failover-vpn-timeout 3600
+  
+  l3-mobility
+   home-agent-load-balancing
+  
+  enet0-port-profile default_wired_port_profile
+  
++ cellular-uplink-profile
++  modem-isp Airtel-3G
++  modem-country India
+  wlan sta-profile
+!  essid Guest123
+   cipher-suite wpa2-ccmp-psk
+!  uplink-band dot11a
+  
+  uplink
+   preemption
+!  enforce cellular
+!  failover-internet
+   failover-internet-pkt-lost-cnt 10
+   failover-internet-pkt-send-freq 30
+!  failover-vpn-timeout 320
+! 
+! pppoe-uplink-profile
+!  pppoe-username aruba
+!  pppoe-passwd 
+!  pppoe-svcname myserve
+!  pppoe-chapsecret 
+  
+  l3-mobility
+   home-agent-load-balancing

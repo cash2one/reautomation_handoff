@@ -1,0 +1,12 @@
++ ip dhcp "%(Dhcp_name)s"
++  server-type Distributed,L2
++  server-vlan %(Dhcp_Vlan)s
++  ip-range %(Distributed_Ip_Start)s %(Distributed_Ip_End)s
++  subnet-mask %(Dhcp_Netmask)s
++  reserve first %(Reserve_First)s
++  reserve last %(Reserve_Last)s
++  default-router %(Dhcp_Default_Router)s
++  dns-server %(Dhcp_Dns_Server)s
++  domain-name %(Dhcp_Domain_Name)s
++  client-count %(Client_Per_Branch)s
++  option %(Distributed_Option_Type)s "%(Vlan_Rule_String2)s"

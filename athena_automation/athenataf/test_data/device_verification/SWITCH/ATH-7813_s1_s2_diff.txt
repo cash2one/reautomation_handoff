@@ -1,0 +1,2 @@
+! GE0/0/6    Enable  0                Low            Off
+! GE0/0/6    Disable  0                Low            Off

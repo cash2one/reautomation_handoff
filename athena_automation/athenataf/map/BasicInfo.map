@@ -1,0 +1,54 @@
+next								: chain&id&network_create_next
+networkname							: textbox&id&nameTxt
+wireless							: button&id&wireless_type
+employee							: button&id&PrimaryUsageEmployee
+voice								: button&id&PrimaryUsageVoice
+spanning_tree						: select&id&spanning_tree
+wired								: button&id&wired_type
+speed								: select&id&Wired_Speed
+duplex								: select&id&Wired_Duplex
+admin_status						: select&id&Wired_Admin_Status
+filtering							: select&id&Wired_Content_Filtering
+wired_network_guest					: button&id&PrimaryUsageGuest
+name_error							: button&id&ssid_name_error
+Wired_POE							: select&id&Wired_POE
+Wired_Uplink						: select&id&Wired_Uplink
+show_advanced_options				: button&xpath&//a[@id='show_advanced_network_options']
+inactivity_timeout					: textbox&id&inactivitytimeout
+inactivity_error					: label&text&Valid range is 60 - 3600
+without_uplink						: button&id&withoutuplink
+max_client_threshold				: textbox&id&maxclientthreshold
+spcl_char_error_msg					: button&id&ssid_invalid_char_error
+max_length_error_msg				: button&id&ssid_name_length_error
+broadcasefiltering					: select&id&broadcasefiltering
+dtiminterval						: select&id&dtiminterval
+besteffort_wmm_share				: textbox&id&besteffort
+video_wmm_share						: textbox&id&videowmm
+voice_wmm_share						: textbox&id&voicewmm
+background_wmm						: textbox&id&backgroundwmm
+content_filtering_dropdown 		    : select&id&contentfiltering
+band								: select&id&rfband
+disable_ssid						: button&id&disablessid
+local_probe_req_textbox				: textbox&id&localprobe
+inactivity_timeout_error			: button&xpath&//div[text()='Valid range is 60 - 3600']
+hide_ssid_checkbox					: button&id&hidessid
+duplicate_network_name_error_msg	: button&xpath&//div[text()='This name already exists']
+message_dialog_ok_button			: button&xpath&//a[text()='OK']&3
+basic_info_cancel_button			: button&id&network_create_cancel
+dmo_channel_utilization_threshold	: textbox&id&channelutilizationthresh
+airtime_check_box					: button&id&Air_Time_limit
+airtime								: textbox&id&Air_Time_val
+multicastratetransmission			: select&id&multicastratetransmission
+dynamicmulticast					: select&id&dynamicmulticast
+band_24ghzmin						: select&id&24ghzmin
+band_24ghzmax						: select&id&24ghzmax
+band_5ghzmin						: select&id&5ghzmin
+band_5ghzmax						: select&id&5ghzmax
+each_radio_check_box 			   : button&id&Each_Radio
+each_radio       				   : textbox&id&Each_Radio_val
+basic_info_label        			: label&css&vlan_arrow>label>span
+basic_info_text_label 				: label&xpath&//label[@class = 'field-label']/span[text()='TYPE']&0
+basic_info_name_label 				: label&xpath&//span[text()='NAME (SSID)']
+basic_info_primary_usage_label 		: label&xpath&//span[text()='PRIMARY USAGE']&0
+spanning_text_msg					: chain&xpath&//select[@id='spanning_tree' and @disabled='disabled']/../img[@title='Supported in 6.3.1.2-4.0.0 and above']
+

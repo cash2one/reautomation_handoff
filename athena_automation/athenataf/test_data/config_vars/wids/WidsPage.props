@@ -1,0 +1,6 @@
+Wireless_Containment_Tarpit_All 							:  Tarpit all stations
+Wireless_Containment_Tarpit_Invalid 						:  Tarpit invalid stations
+Wired_Containment_Off 										:  Off
+Wired_Containment_On 										:  On
+Wireless_Containment_Deauthenticate 						:  Deauthenticate only
+Wireless_Containment_None 									:  None

@@ -1,0 +1,7 @@
++    access-vlan 3
++ vlan "3"
++    description "test1"
++ !
++ interface vlan "3"
++    ip address 10.10.10.1 255.255.255.0
++ !

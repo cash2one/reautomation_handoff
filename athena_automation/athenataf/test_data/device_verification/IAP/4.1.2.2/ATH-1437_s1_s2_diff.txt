@@ -1,0 +1,13 @@
++ syslog-level emergency
+! syslog-level warn ap-debug
+! syslog-level warn network
+! syslog-level warn security
+! syslog-level alert ap-debug
+! syslog-level critical network
+! syslog-level error security
+! syslog-level warn user
+! syslog-level warn user-debug
+! syslog-level warn wireless
+! syslog-level notice user
+! syslog-level info user-debug
+! syslog-level debug wireless

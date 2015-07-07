@@ -1,0 +1,6 @@
+  arm
+!  wide-bands 5ghz
+   min-tx-power 18
+  arm
+!  wide-bands 24ghz
+   min-tx-power 18

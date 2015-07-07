@@ -1,0 +1,7 @@
+  uplink
+   preemption
+   enforce none
++  failover-internet
+   failover-internet-pkt-lost-cnt %(failover_packet_lost_count)s
+   failover-internet-pkt-send-freq %(failover_packet_send_frequency)s
+   failover-vpn-timeout 180

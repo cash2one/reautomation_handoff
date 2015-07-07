@@ -1,0 +1,75 @@
+Spanning_Tree_Status 								:  Enabled		
+basic_filter 										:  Enabled
+basic_uplink 										:  Enabled
+Network_name2 										:  test
+basic_admin 										:  Down
+basic_speed 										:  100			
+Network_name 										:  test1
+basic_duplex 										:  Half
+guest_network_name									: guest
+valid_inactivity_timeout							: 3600
+invalid_inactivity_timeout							: 30
+ntwrk_name_alphabet									:  abcdefg
+ntwrk_name_blank									:	
+ntwrk_name_number									:  123456
+ntwrk_name_spcl_char								:  @#$%
+ntwrk_name_spcl_char_invalid						: ""
+ntwrk_name_max										:  abcdefghijklmnopqrstuvwxyz1234567890
+broadcasefiltering_arp								: ARP
+dtiminterval_3_beacons								: 3 beacons
+broadcasefiltering_all								: ALL
+dtiminterval_7_beacons								: 7 beacons
+besteffort											: 100
+video_wmm_share										: 100
+voice_wmm_share										: 100
+invalid_voice_wmm_share								: 140
+background_wmm										: 90
+invalid_background_wmm								: 121
+invalid_besteffort_wmm_share						: 105
+invalid_video_wmm_share								: 200
+basic_enabled										: Enabled	
+band												: 5 GHz
+content_filtering_value								: Enabled
+valid_max_client_threshold							: 255
+invalid_max_client_threshold						: 300
+invalid_dmo_channel_utilization_threshold			: 101
+invalid_local_probe_req_textbox						: 111
+invalid_airtime										: 0
+band_24ghzmin_default								: 1
+band_24ghzmax_default								: 54
+band_5ghzmin_default								: 6
+band_5ghzmax_default								: 54
+content_filtering_default							: Disabled
+band_default										: All
+inactivity_timeout_default							: 1000
+valid_network_name									: Test1949
+speed_10											: 10
+speed_1000											: 1000
+full_duplex											: Full
+poe_disabled										: Disabled
+poe_enabled											: Enabled
+admin_status_up										: Up
+uplink_disabled										: Disabled
+local_probe_request_threshold						: 100
+dynamicmulticast_default							: Disabled
+dynamicmulticast_value								: Enabled
+background_wmm_value								: 40
+video_wmm_share_value								: 50
+voice_wmm_share_value								: 60
+besteffort_wmm_value								: 40
+local_probe_default									: 0
+local_probe_value									: 50
+airtime_value										: 100
+basic_speed_1000									: 1000
+basic_admin_up										: Up
+valid_network_name2									: test12@#$+
+new_test_1934										: Test1934
+basic_disabled										: Disabled
+band24												: 2.4 GHz
+dtiminterval_1_beacon								: 1 beacon
+max_client_default        						    : 64
+band_24ghz											: 2.4 GHz
+new_test_1948										: Test1948
+network_name1										: network1
+network_name2										: network2
+network_name3										: network3

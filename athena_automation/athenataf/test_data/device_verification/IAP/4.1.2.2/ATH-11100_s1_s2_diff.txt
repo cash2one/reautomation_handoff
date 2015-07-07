@@ -1,0 +1,3 @@
++ rf dot11g-radio-profile
++  beacon-interval 120
++  csa-count 5

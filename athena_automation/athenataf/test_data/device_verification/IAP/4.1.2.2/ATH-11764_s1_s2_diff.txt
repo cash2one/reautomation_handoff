@@ -1,0 +1,9 @@
++ wlan auth-server authradius
++  ip 172.16.0.0
++  port 65534
++  acctport 65534
++  timeout 25
++  deadtime 1440
++  retry-count 2
++  key
++  nas-ip 10.10.10.10

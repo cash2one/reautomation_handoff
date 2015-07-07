@@ -1,0 +1,26 @@
++ wlan access-rule %(Network_name)s
++  captive-portal external profile testRole
++  rule any any match any any any permit
++ wlan ssid-profile %(Network_name)s
++  enable
++  type employee
++  essid test1
++  opmode wpa2-psk-aes
++  max-authentication-failures 0
++  auth-server InternalServer
++  rf-band all
++  captive-portal disable
++  mac-authentication
++  dtim-period 1
++  inactivity-timeout 1000
++  broadcast-filter none
++  dmo-channel-utilization-threshold 90
++  local-probe-req-thresh 0
++  max-clients-threshold 64
++ wlan external-captive-portal testRole
++  server 10.17.50.110
++  port 5000
++  url "www.yahoo.com"
++  auth-text ""
++  auto-whitelist-disable
++  https

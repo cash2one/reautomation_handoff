@@ -1,0 +1,31 @@
+  airgroup
+!  disable
+  
+  airgroupservice airplay
+!  disable
+   description AirPlay
+  airgroup
+!  enable
+!  multi-swarm
+  
+  airgroupservice airplay
+!  enable
+   description AirPlay
+  airgroupservice airprint
+!  disable
+   description AirPrint
+  
+  airgroupservice airprint
+!  enable
+   description AirPrint
++ airgroupservice itunes
++  enable
++ airgroupservice allowall
++  enable
++ airgroupservice sharing
++  enable
++ airgroupservice remotemgmt
++  enable
++ airgroupservice chat
++  enable
+  

@@ -1,0 +1,60 @@
+device_management								: label&xpath&//span[text()='Device Management']
+divice_vc										: button&id&deviceManagementTable_serial_display_0			
+select											: select&xpath&//select[@name='selectedTypeMain']
+select_button									: button&xpath&//button[@class = 'button blue' and text() = 'Select']
+unassign_button									: button&xpath&//span[@class= 'ng-binding' and text() = 'Unassign']
+unassigned_licence_text 						: button&xpath&//span[@id = 'deviceManagementTable_licensed_display_0' and contains(.,'Unassigned')]
+device_selector_1		 						: checkbox&xpath&//td[@id='deviceManagementTable_row_selector_0']/input
+assigned_licence_button 						: button&xpath&//span[@class= 'ng-binding' and text() ='Assign License(s)']
+assign_button			 						: button&xpath&//div[@id='licensesTable_row_actions_1']/a
+search_icon 									: button&xpath&//div[@id='deviceManagementTable_search_toggle']/a
+mac_search_field								: textbox&id&deviceManagementTable_mac_search_field
+search_button   								: button&id&deviceManagementTable_search_confirm
+mac_display   			        				: button&id&deviceManagementTable_mac_display_0
+type_display   			        				: button&id&deviceManagementTable_model_display_0
+serial_number_label								: label&xpath&//label[@class="ng-scope ng-binding" and text()='SERIAL NUMBER']
+mac_address_label								: label&xpath&//label[@class="ng-scope ng-binding" and text()='MAC ADDRESS']
+type_label										: label&xpath&//label[@class="ng-scope ng-binding" and text()='TYPE']&0
+add_device										: button&xpath&//span[@ng-bind="deviceMgmt_Labels.where_device" and text()='Add Devices']
+activation_key									: textbox&xpath&//input[@name="device_activation_key"]
+device_mac_address								: textbox&xpath&//input[@name="device_mac_addr"]
+add_button										: button&id&add_devices_manually
+cancel_button									: button&xpath&close_device_popup
+unassign_key									: label&xpath&//span[@id='deviceManagementTable_licensed_display_0' and contains(.,'Unassigned')]
+assign_license									: button&xpath&save_assignment
+assign_button_0									: button&id&assign_0
+license_key										: label&xpath&//a[@id='assign_0']/../../../td[1]/span[2]
+subscription_key								: label&xpath&deviceManagementTable_licensed_display_0
+unprovisioned_label								: label&xpath&//span[@id='deviceManagementTable_prov_group_name_display_0' and contains(.,'unprovisioned')]
+assign_group									: button&xpath&//a[@id='save_group']/span
+group1											: button&xpath&//select[@name='selectedGroupMain']/option[text()='group1']
+assign											: button&xpath&//div[@class='assign-group-assign']/button
+group_name										: label&id&deviceManagementTable_prov_group_name_display_0
+default_group									: button&xpath&//select[@id='selectedGroup']/option[text()='default']
+all_group										: button&xpath&//select[@id='selectedGroup']/option[text()='All Groups']		
+permission_denied_msg   					    : label&xpath&//div[@id='ConfirmContent_common' and text()='Permission Denied']
+close_assign_popup	 							: button&xpath&//div[@id='close_assign_popup']
+group_text_group1		 						: button&xpath&//span[@id='deviceManagementTable_prov_group_name_display_0' and contains(.,'group1')]
+created_group1             						: button&xpath&//select[@id='selectedGroup']/option[text()='group1']	
+add_group_button								: button&xpath&//div[@class="add-group-button button blue small icosolo icon_add"]
+permission_denied_label							: button&id&ConfirmContent_common
+new_group_name									: textbox&id&newGroupName
+plus_button 									: button&xpath&//div[@class='add-group-button button blue small icosolo icon_add']
+access_denied									: label&text&Access Denied
+non_preconfigured_group							: label&xpath&//span[@id='deviceManagementTable_prov_group_name_display_0' and contains(.,'default')]
+device_with_capacity1							: label&xpath&//td[@key='capacity' and contains(.,'1')]
+device_with_capacity1_assign					: button&xpath&//td[@key='capacity' and contains(.,'1')]/following-sibling::td/div/a
+select_all										: checkbox&id&deviceManagementTable_toggle_select_all
+unassigned_licence_text1 						: button&xpath&//span[@id = 'deviceManagementTable_licensed_display_1' and contains(.,'Unassigned')]
+device_selector_2		 						: checkbox&xpath&//td[@id='deviceManagementTable_row_selector_1']/input
+disabled_assign_button							: button&xpath&//a[@id='assign_0' and  @class='button blue small ng-scope disabled']
+group2											: button&xpath&//select[@name='selectedGroupMain']/option[text()='group2']
+cancel_icon_2									: button&xpath&//div[@id='cancel' and @class="button_close cloudclose"]
+
+switch_tab       							  	 : button&id&device_switch
+vc_tab          								 : button&id&device_vc
+assign_button_2     						   	 : button&id&assign_2
+ok_button                						 : button&xpath&//div[@id='warnigBox_common_Alert']/div[2]/div/a
+
+created_group2                				   : button&xpath&//select[@id='selectedGroup']/option[text()='group2']
+no_device_found_msg      					  : label&id&deviceManagementTable__no_data_msg

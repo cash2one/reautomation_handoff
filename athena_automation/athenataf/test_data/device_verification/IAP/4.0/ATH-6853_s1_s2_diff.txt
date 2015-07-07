@@ -1,0 +1,20 @@
++ wlan access-rule %(new_test_1934)s
++  rule any any match any any any permit
++ wlan auth-server %(auth_server_name)s
++  ip %(auth_ipaddr_value)s
++  port 1812
++  acctport 1813
++  key 
++ wired-port-profile %(new_test_1934)s
++  switchport-mode trunk
++  allowed-vlan all
++  native-vlan guest
++  no shutdown
++  access-rule-name %(new_test_1934)s
++  speed auto
++  duplex auto
++  poe
++  type employee
++  auth-server %(auth_server_name)s
++  captive-portal disable
++  no dot1x

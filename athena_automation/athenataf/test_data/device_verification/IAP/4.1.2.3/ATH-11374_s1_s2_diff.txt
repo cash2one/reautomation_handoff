@@ -1,0 +1,5 @@
++ firewall-external-enforcement pan
++  ip %(Ip_Address1)s
++  port 445
++  user %(User_Name1)s
++  enable

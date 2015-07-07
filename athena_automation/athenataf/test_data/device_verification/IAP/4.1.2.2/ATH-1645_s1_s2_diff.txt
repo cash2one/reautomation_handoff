@@ -1,0 +1,8 @@
++ wlan ldap-server ldap
++  ip 10.1.1.1
++  port 389
++  admin-dn 100
++  admin-password
++  base-dn 100
++  filter (objectclass=*)
++  key-attribute sAMAccountName

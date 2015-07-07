@@ -1,0 +1,6 @@
+!  band-steering-mode prefer-5ghz
+!  air-time-fairness-mode fair-access
+!  band-steering-mode balance-bands
+!  air-time-fairness-mode preferred-access
+
+  

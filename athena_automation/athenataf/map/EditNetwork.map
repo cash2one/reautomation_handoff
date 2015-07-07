@@ -1,0 +1,230 @@
+vlan_settings				: button&xpath&//*[@id='accordion-section-3']/div[1]
+basic_info					: button&text&PRIMARY USAGE&0
+dynamic						: button&id&client_vlan_assignment_Dynamic
+save_settings				: button&id&ngSave
+network_assigned			: button&xpath&//*[@id='client_ip_assignment_Network Assigned']
+network_type				: button&id&accordion-section-content-1&0
+network_list				: button&id&createNetwork
+security_settings			: button&css_class&accordion-arrow&3
+splash_page_guest			: select&id&SplashPage_Guest
+blacklist_guest				: select&id&BlackListing_Guest
+vlan_rule_table				: button&css_class&VlanRuleColumn1&5
+vlan_static					: button&id&client_vlan_assignment_Static
+security_enterprise			: button&name&security_level&0
+vlan_networks_form			: button&name&networks_vlan_form
+security_accordion			: button&text&SECURITY&0
+rule_delete_button			: button&xpath&//a[@id='delete_vlan_role_rule']
+network_button				: button&xpath&//a[contains(*,'Networks')]
+rule_edit_button			: button&xpath&//a[@id='edit_vlan_role_rule']
+vlan_id						: textbox&id&access_rule_vlan_id&0
+vlan_id_2					: textbox&id&access_rule_vlan_id
+save						: submit&id&save_roles_action&0
+save_1						: submit&id&save_roles_action&5
+access_rule_type_CALEA		: button&xpath&//span[text()='CALEA']
+created_vlan_assignment 	: button&xpath&//span[contains(.,':2300')]
+add_rule_plus_button		: button&xpath&//a[text()='Add Rule']
+rule_type_dropdown			: select&id&RuleType_Role1&0
+rule_type_dropdown_1		: select&id&RuleType_Role2
+action_dropdown				: select&id&Action_Role2
+bw_rule_delete_button		: button&xpath&//a[@id='bandwidth_delete']
+bw_rule_assignment			: button&xpath&//span[contains(.,'Bandwidth Contract: upstream 2000 kbps')]
+bw_dropdown_1				: select&id&RuleType_Role1&3
+vlan_id_1					: textbox&id&access_rule_vlan_id&3
+bw_rule_edit_button			: button&xpath&//a[@id='bandwidth_edit']
+save_2						: submit&id&save_roles_action&3
+access_accordion			: button&xpath&//div[@id='accordion-section-5']/div[1]/span
+role_based					: button&id&role-based
+network_based				: button&id&network-based
+delete						: submit&xpath&//a[@id='access_control_delete_0']
+networks					: link&xpath&//a[contains(.,'Networks')]&1
+new_service_1				: select&id&Service_Role1
+new_destination_1			: select&id&Destination_Role1
+edit						: button&xpath&//a[@id='access_control_edit_0']
+calea_delete				: submit&xpath&//a[@id='calea_delete_link']
+calea_edit					: submit&xpath&//a[@id='calea_edit_link']
+new_rule_type_1				: select&id&RuleType_Role1&2
+save1						: submit&id&save_roles_action&2
+unrestricted_radio			: button&id&UnrestrictedRadio
+role1						: button&xpath&//span[contains(.,'abcd')]
+role2						: button&xpath&//span[contains(.,'AP-Name')]
+role4						: button&xpath&//span[contains(.,'Aruba-Port-Id')]
+role3						: button&xpath&//span[contains(.,'Acct-Session-Id')]
+role6						: button&xpath&//span[contains(.,'mac-address-and-dhcp-options')]
+delete_role_assignment		: button&id&delete_role_assignment
+access_rule_2				: button&xpath&//span[contains(.,'dns')]
+access_rule_3				: button&xpath&//span[contains(.,'esp')]
+access_rule_4				: button&xpath&//span[contains(.,'ftp')]
+access_control_delete_1		: button&id&access_control_delete_1
+access_control_delete_2		: button&id&access_control_delete_2
+access_control_delete_3		: button&id&access_control_delete_3
+access_control_down_0		: button&css&#access_control_down_0
+access_control_down_2		: button&css&#access_control_down_2
+access_control_up_3			: button&css&#access_control_up_3
+access_control_up_6			: button&css&#access_control_up_6
+edit_captive_portal			: button&id&edit_individual_captive_portal&0
+rule_type_1					: select&id&RuleType_Role1
+delete_captive_portal		: button&id&delete_individual_captive_portal&0
+enforce_captive_portal		: button&text&Enforce Captive Portal&1
+edit_action_dropdown		: select&id&Action_Role1
+save_rule_button			: submit&id&save_roles_action
+save_rule_button_2			: submit&id&save_roles_action(deleted11)
+modified_rule_deny_h323tcp	: button&xpath&//span[@class="ng-binding" and contains(.,'Deny h323-tcp to all destinations')]
+change_rule_type			: select&id&RuleType_Role1&4
+created_captive_portal_msg	: button&xpath&//span[text()='Enforce Captive Portal']
+created_deny_rule			: button&xpath&//span[contains(.,'Deny any to all destinations')]&0
+duplicate_rule_msg			: button&xpath&//div[text()='This rule already exists.']
+msg_ok_button				: button&xpath&//a[text()='OK']&3
+rule_delete_button_1		: button&xpath&//a[@id='access_control_delete_1']
+rule_delete_button_2		: button&xpath&//a[@id='access_control_delete_2']
+rule_delete_button_3		: button&xpath&//a[@id='access_control_delete_3']
+rule_edit_pencil_button		: button&xpath&//a[@id='access_control_edit_1']
+service_dropdown			: select&id&Service_Role2
+deleted_rule_1				: button&xpath&//span[contains(.,'Deny adp to all destinations')]
+deleted_rule_2				: button&xpath&//span[contains(.,'Allow cfgm-tcp to all destinations and change source address')]
+deleted_rule_3				: button&xpath&//span[contains(.,'Allow dhcp to all destinations and change destination address to 10.2.2.2/1')]		
+present_rules_check			: button&xpath&//span[@class="ng-binding" and contains(.,'Allow any to all destinations')]
+mac_auth_delimiter			: textbox&id&mac_auth_delimiter
+auth_server_name			: textbox&id&auth_server_name
+auth_ipaddr					: textbox&id&auth_ipaddr
+Auth_Sharedkey				: textbox&id&Auth_Sharedkey
+Retype_auth_shared_key		: textbox&id&Retype_auth_shared_key&0
+save_server					: button&id&confirm-save-ok&0
+created_network_name		: button&xpath&//span[text()='test1']
+selected_employee_button	: button&id&PrimaryUsageEmployee
+enteprise					: button&css&input[value='Enterprise']
+advanced_settings_accordion	: button&xpath&//div[@id='accordion-section-2']/div[1]/span
+without_uplink				: button&id&withoutuplink
+okc_checkbox				: button&id&enable_OKC
+reauth_unit					: select&id&reauth_unit
+broadcasefiltering			: select&id&broadcasefiltering
+max_client_threshold		: textbox&id&maxclientthreshold
+mac_authentication_enterprise: button&id&mac_authentication_enterprise
+auth_failthru_enterprise    : button&id&l2_auth_failthru_enterprise
+accounting_dropdown			: select&id&radius_accounting
+account_interval			: textbox&id&radius_interim_accounting_interval
+load_balancing_dropdown		: select&id&load_balancing
+vlans_accordion									: button&xpath&//div[@id='accordion-section-3']/div[1]/span
+virtual_controller_assigned 					: button&xpath&//input[@id='client_ip_assignment_Virtual Controller Assigned']
+passphrase_format								: select&id&wpa_passphrase_format
+dtiminterval									: select&id&dtiminterval
+roaming_open									: checkbox&id&security_dot11r
+mac_authentication								: select&name&mac_authentication_no_enterprise
+authentication_server							: select&name&auth_server1
+name_error										: button&id&auth_server_name_error
+ip_error										: button&id&auth_ipaddr_error&0
+shared_key_error								: button&xpath&//div[@id="Auth_Sharedkey_error" and @ng-show="(AuthForm.Auth_Sharedkey.$error.length)"]
+retype_shared_key_error 						: button&xpath&//*[@id='Retype_auth_shared_key_error' and @ng-show="(AuthForm.Retype_auth_shared_key.$error.match)"]
+authentication_server_2							: select&id&auth_server2
+reauth_interval									: textbox&name&reauth_interval
+open_uppercase_support							: select&name&mac_auth_uppercase_support
+besteffort_wmm_share							: textbox&id&besteffort
+vlanid											: textbox&name&vlan_id&0
+passphrase										: textbox&name&wpa_passphrase
+retype_passphrase								: textbox&name&wpa_passphrase_retype
+blacklisting									: select&name&blacklist
+video_wmm_share									: textbox&id&videowmm
+voice_wmm_share									: textbox&id&voicewmm
+key_management_enterprise							: select&id&key_management_enterprise
+wep_key_size									: select&id&wep_key_size
+wep_key_index									: select&id&wep_key_index
+max_auth_failures								: textbox&id&max_auth_failures
+background_wmm									: textbox&id&backgroundwmm
+hide_ssid					: checkbox&id&hidessid
+security_termination		: select&id&security_termination
+security_open				: radio&name&security_level&2
+security_personal			: radio&name&security_level&1
+auth_survivability			: select&id&auth_survivability
+inactivity_timeout			: textbox&id&inactivitytimeout
+band											: select&id&rfband
+wep_key											: textbox&id&wep_key
+content_filtering_dropdown 					    : select&id&contentfiltering
+multicastratetransmission						: select&id&multicastratetransmission
+dynamicmulticast								: select&id&dynamicmulticast
+channelutilizationthresh						: textbox&id&channelutilizationthresh
+disable_ssid									: button&id&disablessid
+localprobe										: textbox&id&localprobe
+advance_settings_accordion	: button&xpath&//span[text()='ADVANCE SETTINGS']
+use_session_key				: button&id&leap_use_session_key
+max_client_threshold_error	: button&xpath&//div[text()='Valid range is 0 - 255']
+local_probe_req_error		: button&xpath&//div[text()='Must be a number in range 0-100']&5
+vlan_accordion				: button&xpath&//span[text()='VLANS']
+cache_timeout				: textbox&xpath&//span[contains(.,'Cache timeout (global)')]/input
+security_key_management							: select&id&security_key_management
+auth_cache_timeout								: textbox&name&auth_cache_timeout
+default_role_test1								: button&xpath&//span[contains(.,'Default role:test1')]
+edit_disabled									: button&xpath&//a[@class='icosolo blue icon_edit ng-scope disabled']
+delete_disabled									: button&xpath&//a[@class='icosolo delete icon_delete ng-scope disabled']&3
+splash_page_type								: select&id&security_captive_portal
+role1_rule										: button&xpath&//span[contains(.,'role1')]&0
+role2_rule										: button&xpath&//span[contains(.,'role2')]&0
+delete_role										: button&xpath&//button[@id='delete_role' and text()='Delete']
+access_control_up_2								: button&id&access_control_up_2
+role_test1										: button&xpath&//span[contains(.,'test1')]&1
+auth_server_2_disable							: select&xpath&//select[@id='auth_server2' and @ disabled="disabled"]
+delete_role_assignment_1						: button&xpath&//span[contains(.,'If AP-Group contains abcd assign role: default_wired_port_profile')]/../following-sibling::td[1]/div/a[2]
+delete_role_assignment_2						: button&xpath&//span[contains(.,'Assign role returned as value of AP-Name')]/../following-sibling::td[1]/div/a[2]
+delete_role_assignment_4						: button&xpath&//span[contains(.,'If Aruba-Port-Id not-equals 4556 assign role: default_wired_port_profile')]/../following-sibling::td[1]/div/a[2]
+delete_role_assignment_6						: button&xpath&//span[contains(.,'If mac-address-and-dhcp-options matches-regular-expression 00:03:7F assign role: default_wired_port_profile')]/../following-sibling::td[1]/div/a[2]
+delete_role_1         							: button&xpath&//a[@id='delete_role_1']
+basic_info_accordion							: button&text&BASIC INFO&0
+guest_option									: button&id&PrimaryUsageGuest
+wep_key_retype									: textbox&id&wep_key_retype
+max24ghz										: select&id&24ghzmax
+min24ghz										: select&id&24ghzmin
+max5ghz											: select&id&5ghzmax
+min5ghz											: select&id&5ghzmin
+airtime_check_box								: button&id&Air_Time_limit
+airtime											: textbox&id&Air_Time_val
+each_radio_check_box 							: button&id&Each_Radio
+each_radio       								: textbox&id&Each_Radio_val
+selected_voice_button						: button&id&PrimaryUsageVoice
+vlan_id_200									: button&xpath&//p[contains(.,'200') and contains(.,'abcdef')]
+default_vlan_id_300							: button&xpath&//div[@id="default_vlan_rule" and contains(.,'300')]
+network_assigned1 								: button&xpath&//input[@id='client_ip_assignment_Network Assigned']
+captive_portal_edit_link 						: button&xpath&//a[text() = 'Edit']
+cative_portal_type	 							: select&id&External_Selection&0
+auth_text			 							: textbox&id&Captive_AuthText&0
+save_captive_profile			 			    : button&id&cap-save&0
+log												: button&id&AccessRuleOptionLog&5
+dscp											: button&id&AccessRuleOptionDSCP&5
+cancel											: button&id&cancel_roles_action&4
+cancel_2										: button&id&cancel_roles_action&5
+service_application								: radio&id&ac_app&4
+service_application_5							: radio&id&ac_app&5
+application_01_net								: checkbox&xpath&//span[text()='01net']/../input
+application_4399_com							: checkbox&xpath&//span[text()='4399com']/../input
+delete_01_net									: button&xpath&//span[contains(.,'Allow 01net')]/span[3]/a[6]
+delete_4399_com									: button&xpath&//span[contains(.,'Deny 4399com')]/span[3]/a[6]
+delete_adobe_update								: button&xpath&//span[contains(.,'Deny adobe_update')]/span[3]/a[6]
+delete_yahoo									: button&xpath&//span[contains(.,'yahoo')]/span[3]/a[6]
+banner_title									: textbox&id&internal_banner_title&0
+header_color									: textbox&id&internal_header_color
+welcome_text									: textbox&name&internal_welcome_text
+policy_text										: textbox&id&internal_policy_text
+background_color								: textbox&id&internal_bg_color
+redirect_url									: textbox&id&internal_redirect_url
+save_captive_portal_partial						: button&id&captive_portal_partial_save
+logo_upload										: button&id&img_upload_button
+logo_preview									: label&id&custom-logo-preview
+delete_logo           				            : button&xpath&//label[text()='Delete']
+logo_disabled_delete_button						: label&xpath&//label[@id='img_upload_button']/../../span[3]/label[@class="field-label ng-binding disabled"]
+no_logo_image									: label&xpath&//label[@class= 'field-label image-field-label image-name ng-binding']
+preview_splash_page								: button&id&preview_splash_page
+splash_banner_logo            				    : label&id&splash-banner-logo
+preview_splash_page_close						: button&xpath&//div[@id='preview-splash-page-overlay-close']/span
+disable_delete_logo								: button&xpath&//*[@id='imageUploadDelete']/ul/li/span[3]/label[@class="field-label ng-binding disabled"]
+change_logo         							: button&text&Change
+delete_rule_something							: button&xpath&//span[contains(.,'If AP-Group contains something')]/../../td[2]/div/a[2]
+delete_rule_something2							: button&xpath&//span[contains(.,'If AP-Group equals something2')]/../../td[2]/div/a[2]
+cancel_page										: button&id&ngCancel
+delete_noe										: button&xpath&//span[@class="ng-binding" and contains(.,'Deny noe on server 10.1.1.1')]/../../span[2]/a[6]
+delete_bootp									: button&xpath&//span[@class="ng-binding" and contains(.,'Deny bootp to all destination')]/../../span[2]/a[6]
+service_role_4									: select&id&Service_Role4
+action_role_4									: select&id&Action_Role4
+destination_role4								: select&id&Destination_Role4
+save_rule_button_7								: submit&id&save_roles_action&7
+delete_http										: button&xpath&//span[@class="ng-binding" and contains(.,'Deny http to all destination')]/../../span[2]/a[6]
+ng_wired_pre_auth_role							: button&id&ng_wired_pre_auth_role
+ng_Wired_Role_Mac_Auth							: button&id&ng_Wired_Role_Mac_Auth
+
+

@@ -1,0 +1,2 @@
+! GE0/0/6    Enable  Down           Down  Enable  Yes      Access
+! GE0/0/6    Enable  Down           Down  Enable  Yes      Trunk

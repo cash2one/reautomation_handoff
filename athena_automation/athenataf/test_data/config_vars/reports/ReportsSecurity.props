@@ -1,0 +1,42 @@
+last_week										: Last week
+last_day										: Last day
+last_month										: Last month
+last_year										: Last year
+custom_range									: Custom range
+one_time										: One Time
+daily_interval									: Daily Interval
+weekly_interval									: Weekly Interval
+monthly_interval								: Monthly Interval	
+yearly_interval									: Yearly Interval
+now												: Now
+schedule_for_later								: Schedule for later
+email_security									: jumbo.tester01@gmail.com
+one_am											: 1:00 AM
+two_am											: 2:00 AM
+three_am										: 3:00 AM
+four_am											: 4:00 AM
+five_am											: 5:00 AM
+six_am											: 6:00 AM
+seven_am										: 7:00 AM
+eight_am										: 8:00 AM
+nine_am											: 9:00 AM
+ten_am											: 10:00 AM
+eleven_am										: 11:00 AM
+twelve_am										: 12:00 AM
+one_pm											: 1:00 PM
+two_pm											: 2:00 PM
+three_pm										: 3:00 PM
+four_pm											: 4:00 PM
+five_pm											: 5:00 PM
+six_pm											: 6:00 PM
+seven_pm										: 7:00 PM
+eight_pm										: 8:00 PM
+nine_pm											: 9:00 PM
+ten_pm											: 10:00 PM
+eleven_pm										: 11:00 PM
+sep_22											: 09/22/2014
+report_generation_max_time                      : 500
+single_email                                    : abc@xyz.com
+multiple_emails                                 : abc@xyz.com,def@pqr.com,ghi@india.com,fgh@chennai.com
+email_without_at_character                      : abcxyz.com
+email_without_dot_com                           : abc@xyzcom

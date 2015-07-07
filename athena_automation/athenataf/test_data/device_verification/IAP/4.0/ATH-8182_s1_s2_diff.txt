@@ -1,0 +1,7 @@
+  ids
+!  wireless-containment none
+  
+  ids
+!  wireless-containment deauth-only
+!  wired-containment
+  

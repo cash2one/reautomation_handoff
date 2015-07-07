@@ -1,0 +1,5 @@
+user								: button&css_class&AdminUser
+logout_button						: button&text&Logout
+logged_out_sso						: label&xpath&//div[contains(text(),'You have logged out')]
+logged_out_devel					: textbox&id&primary_email
+iap_logout							: button&id&logout

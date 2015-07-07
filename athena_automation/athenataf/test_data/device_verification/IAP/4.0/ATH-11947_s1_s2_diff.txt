@@ -1,0 +1,15 @@
++ cellular-uplink-profile
++  4g-usb-type def
++  usb-type abc
++  usb-dev ghi
++  usb-tty jkl
++  usb-init mno
++  usb-auth-type CHAP
++  usb-user wxyz
++  usb-passwd
++  usb-dial pqrs
++  usb-modeswitch tuv
++ wlan sta-profile
++  essid Guest123
++  cipher-suite wpa-tkip-psk
++  uplink-band dot11g

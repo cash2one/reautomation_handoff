@@ -1,0 +1,6 @@
++ wlan access-rule "new role"
++  vlan 4
++  captive-portal internal
++  calea
++  rule any any match any any any permit
++  rule any any match udp 8200 8200 permit

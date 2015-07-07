@@ -1,0 +1,17 @@
++ wlan access-rule testwired
++  rule any any match any any any permit
++ wired-port-profile testwired
++  switchport-mode trunk
++  allowed-vlan all
++  native-vlan guest
++  uplink-enable
++  no shutdown
++  spanning-tree
++  access-rule-name testwired
++  speed 1000
++  duplex auto
++  poe
++  type guest
++  captive-portal internal
++  content-filtering
++  no dot1x

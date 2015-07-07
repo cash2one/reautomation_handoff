@@ -1,0 +1,9 @@
++ wlan auth-server %(auth_server_name_value)s
++  ip %(auth_server_ip)s
++  port %(auth_port_valid)s
++  acctport %(auth_port_valid)s
++  timeout %(time_out_valid)s
++  deadtime %(dead_time_valid)s
++  retry-count %(retry_count_valid)s
++  key 
++  nas-ip %(auth_nas_ip_addr_valid)s

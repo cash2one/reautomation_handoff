@@ -1,0 +1,38 @@
+monitoring									: link&id&monitoringMainMenu
+configuration								: link&id&configurationMainMenu
+rf_menu										: link&id&rfSubMenu
+security_menu								: link&id&pefSubMenu
+access_points_menu							: link&id&apsSubMenu
+vpn_menu									: link&id&vpnSubMenu
+services_menu								: link&id&serviceSubMenu
+save_pop_up									: button&id&CAN_NAV_Alert_Ok
+dhcp_menu									: link&id&dhcpSubMenu
+wids_menu									: link&id&wipSubMenu
+system_menu									: link&id&systemSubMenu
+maintenance									: link&id&maintenanceMainMenu
+user_management								: link&css&a[pageid="USERMANAGEMENT"]
+monitoring_access_points					: link&id&accessPointSubMenu
+monitoring_clients							: link&id&clientSubMenu
+monitoring_wids								: link&id&widsSubMenu
+monitoring_event_log						: link&id&eventLogSubMenu
+monitoring_notifications					: link&id&fwSubMenu&0
+network_menu								: link&id&configSubMenu
+slider_menu_icon							: button&css&.slider-menu-icon
+expand_plus_button							: button&id&show_swarms_0
+delta_config_icon							: button&id&failed_state_0
+maintenance_subscription_keys				: link&id&Licenses_Link
+maintenance_device_management				: link&id&Device_Management_Link
+switch_configuration						: link&id&switchConfigurationMainMenu
+ports										: link&id&configportsSubMenu
+vlans										: link&id&configvlanSubMenu
+system										: link&id&configsystemSubMenu
+reports										: link&id&reportsMainMenu
+reports_network								: link&id&networkSubMenu
+reports_security							: link&id&securitySubMenu
+maintenance_firmware						: link&css&a[pageid="FIRMWARE"]
+reports_pci_compliance						: link&id&pciSubMenu
+switches									: button&xpath&//a[@id='configSubMenu']/label[text()='Switches']
+dhcp_pools									: label&text&DHCP Pools
+subscription_key_disabled					: button&xpath&//a[@id='Licenses_Link' and @state='disable']
+device_management							: button&xpath&//a[@id='Device_Management_Link' and @state='disable']
+SwitchesSubMenu								: link&id&SwitchesSubMenu

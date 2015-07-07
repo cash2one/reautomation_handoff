@@ -1,0 +1,24 @@
++  80mhz-support
+!  band-steering-mode prefer-5ghz
+!  air-time-fairness-mode fair-access
+!  band-steering-mode balance-bands
+!  air-time-fairness-mode preferred-access
+!  scanning
+!  client-match
+!  client-match calc-threshold 1
+!  client-match calc-interval %(cm_calculating_interval_boundry_value)s
+! 
+! rf dot11g-radio-profile
+!  spectrum-monitor
+!  beacon-interval %(new_beacon_interval_value)s
+!  dot11h
+!  interference-immunity %(new_interface_immunity_24ghz_value)s
+!  csa-count %(new_channel_switch_announce_5ghz_value)s
+! 
+! rf dot11a-radio-profile
+!  legacy-mode
+!  spectrum-monitor
+!  beacon-interval %(new_beacon_interval_value)s
+!  dot11h
+!  interference-immunity %(new_interface_immunity_24ghz_value)s
+!  csa-count %(new_channel_switch_announce_24ghz_value)s

@@ -1,0 +1,5 @@
++ firewall-external-enforcement pan
++  ip %(Ip_Address)s
++  port %(Port)s
++  user %(User_Name)s 
++  enable

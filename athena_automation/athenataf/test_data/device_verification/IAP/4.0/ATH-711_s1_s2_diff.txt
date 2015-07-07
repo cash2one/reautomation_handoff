@@ -1,0 +1,6 @@
+  ids
+!  wireless-containment none
+  
+  ids
+!  wireless-containment tarpit-non-valid-sta
+  

@@ -1,0 +1,95 @@
++ user testuser  portal
++ wlan access-rule network1
++  rule any any match any any any permit
++ wlan access-rule network2
++  rule any any match any any any permit
++ wlan access-rule %(valid_network_name)s
++  vlan %(valid_vlan_id)s
++  captive-portal external profile default
++  rule any any match any any any permit
++  rule any any match udp 8200 8200 deny
++  rule any any match tcp 8211 8211 src-nat
++  rule any any match udp 67 68 dst-nat ip %(ip_valid_value)s 1
++  rule any any match udp 53 53 permit
++  rule any any match gre any any permit
++  rule any any match tcp 1720 1720 deny
++  rule any any match udp 67 69 permit log blacklist classify-media disable-scanning tos 0 dot1p-priority 0
++  rule any any match tcp 515 515 deny log blacklist classify-media disable-scanning tos 0 dot1p-priority 0
++  rule any any match esp any any src-nat log blacklist classify-media disable-scanning tos 0 dot1p-priority 0
++  rule any any match udp 1718 1719 dst-nat ip %(ip_valid_value)s 1
++ wlan access-rule network3
++  rule any any match any any any permit
++ wlan access-rule network4
++  rule any any match any any any permit
++ wired-port-profile network1
++  switchport-mode trunk
++  allowed-vlan all
++  native-vlan guest
++  uplink-enable
++  no shutdown
++  spanning-tree
++  access-rule-name network1
++  speed 1000
++  duplex auto
++  poe
++  type guest
++  auth-server %(Authentication_server)s
++  captive-portal internal
++  content-filtering
++  no dot1x
++ wired-port-profile network2
++  switchport-mode access
++  allowed-vlan all
++  native-vlan guest
++  no shutdown
++  access-rule-name network2
++  speed auto
++  duplex auto
++  poe
++  type guest
++  auth-server %(Authentication_server)s
++  captive-portal internal
++  no dot1x
++ wired-port-profile network3
++  switchport-mode trunk
++  allowed-vlan all
++  native-vlan guest
++  no shutdown
++  access-rule-name network3
++  speed auto
++  duplex auto
++  poe
++  type guest
++  auth-server %(Authentication_server)s
++  captive-portal internal
++  mac-authentication
++  no dot1x
++ wired-port-profile %(valid_network_name)s
++  switchport-mode trunk
++  allowed-vlan all
++  native-vlan guest
++  uplink-enable
++  no shutdown
++  spanning-tree
++  access-rule-name %(valid_network_name)s
++  speed 100
++  duplex full
++  no poe
++  type guest
++  auth-server %(Authentication_server)s
++  captive-portal internal
++  content-filtering
++  no dot1x
++ wired-port-profile network4
++  switchport-mode trunk
++  allowed-vlan all
++  native-vlan guest
++  no shutdown
++  access-rule-name network4
++  speed auto
++  duplex auto
++  poe
++  type guest
++  auth-server %(Authentication_server)s
++  captive-portal internal
++  no dot1x

@@ -1,0 +1,1 @@
++ virtual-controller-ip %(auth_server_ip)s

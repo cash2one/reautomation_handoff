@@ -1,0 +1,17 @@
++ wlan access-rule Aruba
++  rule any any match any any any permit
++  rule any any match any any any deny
++ wlan ssid-profile Aruba
++  enable
++  type guest
++  essid Aruba
++  opmode opensystem
++  max-authentication-failures 0
++  rf-band all
++  captive-portal internal
++  dtim-period 1
++  inactivity-timeout 1000
++  broadcast-filter none
++  dmo-channel-utilization-threshold 90
++  local-probe-req-thresh 0
++  max-clients-threshold 64

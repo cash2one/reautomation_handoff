@@ -1,0 +1,4 @@
++ snmp-server community 
++ snmp-server user admin MD5  DES 
++ snmp-server user newcom MD5  DES 
++ snmp-server host 10.10.10.1 version 2c newcom udp-port 240
