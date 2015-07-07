@@ -1,4 +1,5 @@
 from athenataf.lib.util.WebPage import WebPage
+from Device_Module.ObjectModule import Device
 import logging
 logger = logging.getLogger('athenatef')
 import time
@@ -2434,4 +2435,33 @@ class RfPage(WebPage):
         # logger.debug("FirmwarePage : waiting to receive prompt")
         output = myDevice.receive("#")
         if not armconfig in output:
-            raise AssertionError("%s is not pushed to %s" %(armconfig,ap))  
+            raise AssertionError("%s is not pushed to %s" %(armconfig,ap)) 
+
+	def assert_slb_mode_multiversion(self,flag = False):
+		logger.debug('RFPage:Checking for multiversion flag msg	 ')
+		time.sleep(10)
+		# actions = self.browser.get_action_chain()
+		# actions.move_to_element(self.slb_mode_multiversion).perform()
+		# time.sleep(20)
+		if flag == True:
+			if not self.slb_mode_multiversion:
+				raise AssertionError(" 'Supported in 6.3.1.2-4.0.0 and above' message is not visible i.e. Traceback: %s" %traceback.format_exc())
+		else :
+			if self.slb_mode_multiversion:
+				raise AssertionError(" 'Supported in 6.3.1.2-4.0.0 and above' message is visible i.e. Traceback: %s" %traceback.format_exc())
+
+	def assert_arm_channels(self,ap,channel=''):
+		'''
+		Assert min and max transmit power values 
+		'''
+		logger.debug("RFPage : creating object of Device")
+		myDevice = Device.getDeviceObject(ap)
+		logger.debug("RFPage : waiting to receive prompt")
+		myDevice.receive("#")
+		logger.debug("RFPage : passing command 'show aem-channels' ")
+		myDevice.transmit("show arm-channels")
+		logger.debug("RFPage : waiting to receive prompt")
+		output = myDevice.receive("#")
+		if not channel in output:
+			raise AssertionError("%s is not pushed to %s" %(channel,ap))  
+				

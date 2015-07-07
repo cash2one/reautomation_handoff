@@ -396,7 +396,7 @@ class InnerLeftPanel(WebPage):
 	def assert_unprovisioned_alert_popup(self):
 		time.sleep(4)
 		logger.debug('Asserting Unprovision Alert" ')
-		if self.existing_group and self.new_group_button:
+		if not self.existing_group and self.new_group_button:
 			raise AssertionError("InnerLeftPanel: Unprovision Alert pop up did not appear")
 		logger.debug('InnerLeftPanel: Clicking on close icon')
 		self.close_hide_popup.click()

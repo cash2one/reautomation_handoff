@@ -1325,16 +1325,19 @@ class VpnPage(WebPage):
 					self.l2_sublayer.click()
 					
 					
-	def check_multiversion_text_availablility(self):
-		logger.debug('VpnPage: L2TPV3 :Checking for multiversion flag msg  ')
-		time.sleep(10)
-		self.browser.key_press(u'\ue009')
-		self.browser.key_press( u'\ue00f')
-		actions = self.browser.get_action_chain()
-		actions.move_to_element(self.multiversion_msg).perform()
-		time.sleep(20)
-		if not self.multiversion_msg:
-			raise AssertionError(" 'Supported in 6.3.1.2-4.0.0 and above' message is not visible i.e. Traceback: %s" %traceback.format_exc())
+	def check_multiversion_text_availablility(self,asrt = True):
+		# time.sleep(10)
+		# self.browser.key_press(u'\ue009')
+		# self.browser.key_press( u'\ue00f')
+		# actions = self.browser.get_action_chain()
+		# actions.move_to_element(self.multiversion_msg).perform()
+		# time.sleep(20)
+		if asrt:
+			if not self.multiversion_msg:
+				raise AssertionError(" 'Supported in 6.3.1.2-4.0.0 and above' message is not visible i.e. Traceback: %s" %traceback.format_exc())
+		else :	
+			if self.multiversion_msg:
+				raise AssertionError(" 'Supported in 6.3.1.2-4.0.0 and above' message is visible for 4.1 and above version i.e. Traceback: %s" %traceback.format_exc())
 			
 			
 	def assert_multiversion_flag_unavailablility(self):

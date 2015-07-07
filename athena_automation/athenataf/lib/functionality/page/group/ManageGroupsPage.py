@@ -84,7 +84,7 @@ class ManageGroupsPage(WebPage):
         if not self.virtual_controller:
             self.logo.click()
         time.sleep(6)
-        self.all_groups_button.click()
+        # self.all_groups_button.click()
 
 
 
