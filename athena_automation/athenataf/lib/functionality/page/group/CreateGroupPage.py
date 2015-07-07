@@ -11,7 +11,7 @@ class CreateGroupPage(WebPage):
         
         
     def isPageLoaded(self):
-        if self.next:
+        if self.create_new_group_label:
             return True 
         else:
             return False 
@@ -706,3 +706,19 @@ class CreateGroupPage(WebPage):
         self.save.click()
         import time
         time.sleep(80)
+        
+    def move_unprovisional_device_to_new_group(self,group_name):
+        '''
+        Creates new group and moves selected unprovisional device to that group.
+        '''
+        self.set_group_name(group_name)
+        logger.debug("CreateGroupPage: Saves new group name")
+        self.save_unprovisional_device.click()
+        logger.debug("CreateGroupPage: writing password in Password textbox ")
+        self.device_password.set(self.config.config_vars.device_password)
+        logger.debug("CreateGroupPage: writing password to confirm password in ConfirmPassword textbox ")
+        self.confirm_device_password.set(self.config.config_vars.device_password)
+        logger.debug("CreateGroupPage: clicking on save button ")
+        self.buy_time()
+        self.save.click()
+        self.buy_time()

@@ -11,7 +11,7 @@ class ManageGroupsPage(WebPage):
         self.test.assertPageLoaded(self)
         
     def isPageLoaded(self):
-        if self.close:
+        if self.manage_group_label:
             return True    
         else:
             return False

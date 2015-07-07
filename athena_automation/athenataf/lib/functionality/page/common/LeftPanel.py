@@ -316,3 +316,9 @@ class LeftPanel(WebPage):
         if self.SwitchesSubMenu:
             self.SwitchesSubMenu.click()
         return MonitoringSwitchesPage(self.test, self.browser, self.config)
+        
+    def go_to_monitoring_switches_page(self):
+        self.buy_time()
+        if self.SwitchesSubMenu:
+            self.SwitchesSubMenu.click()
+        return MonitoringSwitchesPage(self.test, self.browser, self.config)
