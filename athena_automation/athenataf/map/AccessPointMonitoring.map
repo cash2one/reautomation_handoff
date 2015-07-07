@@ -1,4 +1,4 @@
-access_point_label									: label&xpath&//span[text()='Access Point']
+access_point_label									: label&id&monitor_access_point
 iap													: button&id&apsTable_name_display_0
 monitor_mode										: label&xpath&//span[@id ='mode' and @title='monitor']
 access_mode											: label&xpath&//span[@id ='mode' and @title='access']
@@ -7,3 +7,7 @@ wireless_role_0          							: label&xpath&//span[@id='wirelessInterfaceTable
 wireless_role_1          							: label&xpath&//span[@id='wirelessInterfaceTable_role_display_1']/..
 master_vc											: label&xpath&//td[@title = '24:de:c6:ca:08:c6' and @class="ar-td ng-isolate-scope masterVC"]
 slave_vc											: label&xpath&//td[@title='6c:f3:7f:cc:a4:58' and @class="ar-td ng-isolate-scope"]&1 
+monitoring_wids										: button&xpath&//a[@id='widsSubMenu']/label
+eth1_ip												: label&xpath&//*[@id='wiredInterfaceTable_select_row_0']/td[3]
+eth0_ip												: label&xpath&//*[@id='wiredInterfaceTable_select_row_1']/td[3]
+mac_address											: label&xpath&//span[@id='apsTable_name_display_0']

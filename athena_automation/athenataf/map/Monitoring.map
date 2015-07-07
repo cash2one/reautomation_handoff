@@ -1,3 +1,4 @@
+quicklinks										: select&id&quicklinks_dropdown
 access_points_label                             :   label&xpath&//span[@ng-bind='ap_overview_Labels.access_point']
 nav_all_ap                                      :   ignore&id&nav_to_all_ap
 clients                                         :   link&id&clientSubMenu
@@ -301,3 +302,6 @@ monitoring_wids_1w                              :   ignore&xpath&//div[@class='g
 first_alert                                     :   ignore&id&alertsTable_alert_display_0
 delete                                          :   ignore&xpath&//span[text()='Delete']&0
 manage_group                                    :   button&xpath&//label[text()='MANAGE']/../..
+
+infrastructure_detection_level_medium		: button&xpath&//div[@id='infrastructure_detection_level']/span[text()='medium']
+client_detection_level_high			        : button&xpath&//div[@id='client_detection_level']/span[text()='high']
