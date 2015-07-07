@@ -80,3 +80,4 @@ confirm_password_text								: textbox&id&cddc_password_confirm&1
 group_sidebar_close_icon							:button&id&group_sidebar_close_icon
 creategroup_btn										: button&id&group_sidebar_creategroup_btn
 slider_icon											: button&css&.slider-menu-icon.toggleGroupOff
+manage_group_label										: label&xpath&//label[text()='Manage Groups']&0

@@ -44,3 +44,5 @@ vc_toggle    										: button&id&vc_toggle
 switch2												: checkbox&xpath&//td[@id='createSwitchListTable_row_selector_1']/input
 switch3												: checkbox&xpath&//td[@id='createSwitchListTable_row_selector_2']/input
 switch4												: checkbox&xpath&//td[@id='createSwitchListTable_row_selector_3']/input
+create_new_group_label 								: label&xpath&//label[text()='Create New Group']
+save_unprovisional_device							: button&id&group_sidebar_creategroup_btn
