@@ -19,4 +19,4 @@ firmware_base_version                       : 6.3.1.8-4.0.0.8_46401
 firmware_downgrade_version					: 6.3.1.8-4.0.0.7_44641
 c_builb_image_version						: 6.4.2.3-4.1.2.0_48710
 switch_version_2							: 7.3.2.5_49473
-
+firmware_version_4122						: 6.4.2.3-4.1.2.2_49816
