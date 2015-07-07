@@ -273,4 +273,33 @@ def assert_backend(device,command=None,expected=None):
         if not expected in output:
             raise AssertionError("%s not found in config." %expected)
 
+def configure_deny_inter_user_bridging_and_deny_local_routing(ap):
+    import time
+    myDevice = Device.getDeviceObject(ap)
+    myDevice.receive("#")
+    myDevice.transmit("show ap debug cloud-server")
+    myDevice.transmit("configure terminal")
+    # myDevice.receive("(config) #")
+    time.sleep(8)
+    myDevice.receive("#")
+    myDevice.transmit("wlan ssid-profile em1")
+    time.sleep(8)
+    myDevice.receive("#")
+    myDevice.transmit("deny-inter-user-bridging")
+    time.sleep(8)
+    myDevice.receive("#")
+    myDevice.transmit("deny-local-routing")
+    time.sleep(8)
+    myDevice.receive("#")
+    myDevice.transmit("end")
+    time.sleep(8)
+    myDevice.receive("#")
+    myDevice.transmit("commit apply")
+    time.sleep(8)
+    myDevice.receive("#")
+    myDevice.transmit("sh ru | inc deny")
+    time.sleep(8)
+    myDevice.receive("#")
+    
+    # myDevice.connect_device_to_server()
         
