@@ -1,6 +1,6 @@
 import logging
 logger = logging.getLogger('athenataf')
-
+import time
 from athenataf.lib.functionality.test.ConfigurationTest import ConfigurationTest
 
 class NonDefaultValue(ConfigurationTest):
@@ -35,17 +35,21 @@ class NonDefaultValue(ConfigurationTest):
 		self.clear()
 		
 
-		
 	def test_ath_11050_check_dhcp_non_default_values(self):
-		self.take_s1_snapshot()
 		path = self.config.config_vars
 		system_page = self.LeftPanel.go_to_system_page()
 		system_page.edit_dhcp_non_default_values()
 		logger.debug("SystemPage : Click 'Save Settings' button")
 		system_page._save_settings()
-		self.take_s2_snapshot()
+		time.sleep(20)
+		system_page.assert_system_page_vc_field_values("IAP_1","sh ru | inc allow","allowed-vlan all")
+		system_page.assert_system_page_vc_field_values("IAP_1","sh ru | inc telnet","telnet-server")
+		system_page.assert_system_page_vc_field_values("IAP_1","sh ru | inc led","led-off")
+		system_page.assert_system_page_vc_field_values("IAP_1","sh ru | inc deny","deny-inter-user-bridging")
+		system_page.assert_system_page_vc_field_values("IAP_1","sh ru | inc dynamic","dynamic-radius-proxy")
+		system_page.assert_system_page_vc_field_values("IAP_1","sh ru | inc mas","mas-integration")
+		
 		system_page.set_dropdown_value_default('auto join mode')
-		system_page.set_dropdown_value_default('terminal access')
 		system_page.set_dropdown_value_default('led display')
 		system_page.set_dropdown_value_default('extended ssid')
 		system_page.set_dropdown_value_default('deny inter')
@@ -57,10 +61,3 @@ class NonDefaultValue(ConfigurationTest):
 		system_page.mas_integration.set(path.dynamic_radius_proxy_new_value)
 		logger.debug("SystemPage : Click 'Save Settings' button")
 		system_page._save_settings()
-		self.take_s3_snapshot()
-		self.assert_s1_s2_diff(None)
-		self.assert_s1_s3_diff()
-		self.clear()
-		
-
-		
