@@ -11,7 +11,7 @@ group_name_without_vc						: button&xpath&//span[@id='group_name_1' and contains
 expand_group_icon							: button&id&show_swarms_0
 device										: button&id&swarm_name_0
 default_switch								: button&xpath&//span[text()='switch']&0
-switch                                      : button&xpath&//*[@id='group_name_2']&0
+switch										: button&xpath&//*[@id='group_name_2']&0
 group1										: button&xpath&//span[@title="group1"]
 group2										: button&xpath&//span[@title="group2"]
 aruba_switch								: button&id&sw_swarm_name_0
@@ -21,12 +21,12 @@ manage_groups_button						: button&id&hide_manage
 samplegroup									: button&text&samplegroup&0
 samplegroup2								: button&text&samplegroup2&0
 expand_switch_icon_2						: button&xpath&//span[text()='switch']/../../span[1]
-wireless_configuration_module    			: button&xpath&//label[text()='Wireless Configuration']
-all_groups_label       						: button&xpath&//label[text()="All Groups"]
+wireless_configuration_module				: button&xpath&//label[text()='Wireless Configuration']
+all_groups_label							: button&xpath&//label[text()="All Groups"]
 group_name_1group							: button&xpath&//span[@id='group_name_0']/span[text()='1group']
-group_name_8							    : button&xpath&//span[@id='group_name_1']/span[text()='8']
-group_name_a							    : button&xpath&//span[@id='group_name_3']/span[text()='a']
-group_name_spcl_char					    : button&xpath&//span[@id='group_name_2']/span[text()='[]{}|||\\\<>??""']
+group_name_8								: button&xpath&//span[@id='group_name_1']/span[text()='8']
+group_name_a								: button&xpath&//span[@id='group_name_3']/span[text()='a']
+group_name_spcl_char						: button&xpath&//span[@id='group_name_2']/span[text()='[]{}|||\\\<>??""']
 mygroup_name_with_vc						: button&xpath&//span[@id='group_name_1' and  contains(.,'(1)')]
 mygroup_name_without_vc						: button&xpath&//span[@id='group_name_1' and  contains(.,'(0)')]
 Mynew_group									: button&text&Mynew&0
@@ -47,22 +47,22 @@ group1_with_vc								: button&xpath&//span[contains(.,'(1)')]/span[text()='grou
 virtual_controller_with_one_vc				: label&xpath&//a[@class="group-list-detail-container ng-binding" and contains(.,'(1)')]
 expand_group1								: button&xpath&//span[text()='group1']/../preceding-sibling::span[2]
 select_vc_inside_group					: button&xpath&//span[@id='group_name_1']/span[text()='group1']/../../../ul/li/a/span[contains(.,'nstant-')]
-default_group_click						    : button&xpath&//span[text()='default']
+default_group_click							: button&xpath&//span[text()='default']
 expand_group_icon1							: button&id&show_swarms_1
 group2_expand_icon							: button&xpath&//span[text()='group2']/../preceding-sibling::span[2]
 switch_header								: button&xpath&//span[text()='Switches']
 vc_header									: button&xpath&//span[text()='Virtual Controllers']
-group1_label       							: button&xpath&//label[text()="group1"]
+group1_label								: button&xpath&//label[text()="group1"]
 switch_label								: button&xpath&//label[text()="ArubaSwitch"]
 vc_label									: button&xpath&//label[contains(.,'nstant-')]&0
 createnetwork								: button&id&createNetwork
-verify_unprovision_switch_1 				: button&xpath&//span[@class='group-header unprovisioned']/../ul/li/a/span/span[@id='sw_dev_name_1']
-existing_group              				: button&xpath&//a[@id='Manage_Group_Pre_Config1']/label
-swarm_name1								    : button&xpath&//span[@id='swarm_name_0' and text()='instant-CB:7A:7E']
+verify_unprovision_switch_1					: button&xpath&//span[@class='group-header unprovisioned']/../ul/li/a/span/span[@id='sw_dev_name_1']
+existing_group								: button&xpath&//a[@id='Manage_Group_Pre_Config1']/label
+swarm_name1									: button&xpath&//span[@id='swarm_name_0' and text()='instant-CB:7A:7E']
 swarm_1										: button&id&sw_dev_name_0
 swarm_1_group1								: button&id&//span[@id='sw_swarm_name_0']
-group2_without_switch						: button&xpath&//span[@id='group2' and  contains(.,'(0)')]
-import_msg  								: button&xpath&//div[@id='unpro_link_wrapper']/label
+group2_without_switch						: button&xpath&//span[@id='group2' and	contains(.,'(0)')]
+import_msg									: button&xpath&//div[@id='unpro_link_wrapper']/label
 mac_24_de_c6_cb_7c_80						: label&xpath&//span[contains(.,'CB:7C:80')]
 new_group_button							: button&id&New_Group_Pre_Config1
 verify_unprovision_switch					: button&xpath&//span[@class='group-header unprovisioned']/../ul/li/a/span/span[@id='sw_dev_name_0']
@@ -76,13 +76,15 @@ switch_2									: label&xpath&//span[text()='Switches']/..[contains(.,'(2)')]
 switch_3									: label&xpath&//span[text()='Switches']/..[contains(.,'(3)')]
 switch_4									: label&xpath&//span[text()='Switches']/..[contains(.,'(4)')]
 expand_group_icon2							: button&id&show_swarms_2
-group2_with_switch_and_vc1			     	: button&xpath&//span[@id='group_name_2' and  contains(.,'(1)')]
+group2_with_switch_and_vc1					: button&xpath&//span[@id='group_name_2' and  contains(.,'(1)')]
 switches_2									: label&xpath&//span[text()='Switches']/..[contains(.,'(1)')]&1
-check_group1 								: label&xpath&//span[contains(.,'(6)')]/span[text()='group1']
-check_group2 								: label&xpath&//span[contains(.,'(4)')]/span[text()='group1']
+check_group1								: label&xpath&//span[contains(.,'(6)')]/span[text()='group1']
+check_group2								: label&xpath&//span[contains(.,'(4)')]/span[text()='group1']
 verify_unprovision_iap	:button&xpath&//span[@class='group-header unprovisioned']/../ul/li/a/span/span[@id='unprovisioned_swarm_name_0']
 close_hide_popup						: button&xpath&//a[@id='ap_label_hide_popup']
 device_2									: button&id&swarm_name_1
 master_slave_group							: button&xpath&//span[@id='group_sidebar_groupname' and text()='master_slave']
-
+select_country								: select&xpath&//div[@class="country-select-overlay-container"]/div[2]/div[1]/div[2]/form/ul/li/select[@id='country_select_code']
+country_code_save							: button&xpath&//div[@class="country-select-overlay-container"]/div[2]/div[1]/div[3]/div[1]/a[2]
+ok_alert_button								: button&id&alert_close_button
 
