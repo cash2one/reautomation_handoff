@@ -5,6 +5,7 @@ from athenataf.lib.test.TestCase import TestCase
 import time
 import traceback
 from athenataf.config import devices
+from Device_Module.ObjectModule import Device
 
 class SystemPage(WebPage):
 	def __init__(self, test, browser, config):
@@ -236,7 +237,7 @@ class SystemPage(WebPage):
 			
 		elif drop_box_elem == 'dynamic cpu utilization disabled':
 			logger.debug("SystemPage : asserting the non-default value of 'DYNAMIC CPU UTILIZATION' drop-down")
-			test_case.assertEquals(self.dynamic_cpu_utilization.get_selected() , path.dynamic_cpu_utilization_disable , "value of 'DYNAMIC CPU UTILIZATION' not set to  'Always Disabled in all APs'")
+			test_case.assertEquals(self.dynamic_cpu_utilization.get_selected() , path.dynamic_cpu_utilization_disable , "value of 'DYNAMIC CPU UTILIZATION' not set to	'Always Disabled in all APs'")
 			
 		elif drop_box_elem == 'dynamic cpu utilization enabled':
 			logger.debug("SystemPage : asserting the non-default value of 'DYNAMIC CPU UTILIZATION' drop-down")
@@ -279,6 +280,7 @@ class SystemPage(WebPage):
 		
 	def go_to_admin_tab(self):
 		logger.debug("SystemPage : Click 'Admin' bar")
+		time.sleep(6)
 		self.admin_tab.click()
 		if not self.admin_authentication:
 			self.admin_tab.click()
@@ -477,13 +479,13 @@ class SystemPage(WebPage):
 		test_case.assertEquals(self.security.get_selected() ,  path.Error , "value of 'SECURITY' was not changed")
 		
 		logger.debug("SystemPage : Changing the value of SYSTEM")
-		test_case.assertEquals(self.system.get_selected() ,  path.Warning , "value of 'SYSTEM' was not  changed")
+		test_case.assertEquals(self.system.get_selected() ,	 path.Warning , "value of 'SYSTEM' was not	changed")
 		
 		logger.debug("SystemPage : Changing the value of USER")
 		test_case.assertEquals(self.user.get_selected() ,  path.Notice , "value of 'USER' was not changed")
 		
 		logger.debug("SystemPage : Changing the value of USER-DEBUG")
-		test_case.assertEquals(self.user_debug.get_selected() ,  path.Information , "value of 'USER-DEBUG' was not changed")
+		test_case.assertEquals(self.user_debug.get_selected() ,	 path.Information , "value of 'USER-DEBUG' was not changed")
 		
 		logger.debug("SystemPage : Changing the value of WIRELESS")
 		test_case.assertEquals(self.wireless.get_selected() , path.Debug , "value of 'WIRELESS' was not changed")
@@ -821,7 +823,7 @@ class SystemPage(WebPage):
 			logger.debug("Invalid IP address")
 			return True
 		else:
-			raise AssertionError("VC IP adress  accepting invalid values i.e . Traceback: %s" % traceback.format_exc())
+			raise AssertionError("VC IP adress	accepting invalid values i.e . Traceback: %s" % traceback.format_exc())
 			
 	def _assert_admin_local_radius_server_fallback_fields(self):
 		if not(self.auth_server_1_label and self.auth_server_2_label and self.username_label and self.password_label and self.retype_password_label):
@@ -849,7 +851,7 @@ class SystemPage(WebPage):
 			raise AssertionError("LEASE TIME textbox  is not zero by default. i.e. Traceback: %s" %traceback.format_exc())
 		logger.debug("SystemPage : asserting the default value of 'LEASE TIME' dropdown")
 		if not self.least_time_dropdown.get_selected() == self.config.config_vars.least_time_days :
-			raise AssertionError(" LEASE TIME dropdown  is not Days by default. i.e. Traceback: %s" %traceback.format_exc())
+			raise AssertionError(" LEASE TIME dropdown	is not Days by default. i.e. Traceback: %s" %traceback.format_exc())
 		logger.debug("SystemPage : asserting the default value of 'NETWORK' textbox")
 		if not self.network1.get() == '':
 			raise AssertionError(" NETWORK textbox is not empty by default. i.e. Traceback: %s" %traceback.format_exc())
@@ -941,17 +943,18 @@ class SystemPage(WebPage):
 
 	def restore_guest_registration_only_default_values(self):
 		logger.debug("SystemPage : Restoring default values")
-		self.usernameguest.set('')
-		self.passwordguest.set('')
-		self.retypepasswordreadonly.set('')
+		self.usernameguest.clear()
+		self.passwordguest.clear()
+		self.retypepasswordguest.clear()
 		logger.debug("SystemPage : Click 'Save Settings' button")
 		self._save_settings()
 
 	def restore_view_only_default_values(self):
 		logger.debug("SystemPage : Restoring default values")
-		self.usernamereadonly.set('')
-		self.passwordreadonly.set('')
-		self.retypepasswordguest.set('')
+		time.sleep(6)
+		self.usernamereadonly.clear()
+		self.passwordreadonly.clear()
+		self.retypepasswordreadonly.clear()
 		logger.debug("SystemPage : Click 'Save Settings' button")
 		self._save_settings()
 		
@@ -970,7 +973,7 @@ class SystemPage(WebPage):
 		self.snmp_community_string_textbox.set(self.config.config_vars.snmp_invalid_string)
 		self.snmp_save_new_community.click()
 		if not self.snmp_string_error :
-			raise AssertionError("Snmp community string textbox  Feild is accepting invalid input.Traceback: %s " %traceback.format_exc())
+			raise AssertionError("Snmp community string textbox	 Feild is accepting invalid input.Traceback: %s " %traceback.format_exc())
 		self.snmp_community_string_textbox.set(self.config.config_vars.snmp_valid_string)
 		self.snmp_save_new_community.click()
 		# self.snmp_save_new_community.click()
@@ -1043,7 +1046,7 @@ class SystemPage(WebPage):
 			if not self.proxy_server_error:
 				raise AssertionError("Proxy Server accepting Invalid Host or IP Address: %s" %traceback.format_exc())
 		elif assert_error == 'false':
-			if  self.proxy_server_error:
+			if	self.proxy_server_error:
 				raise AssertionError(" Invalid Host or IP Address given for Proxy Server  : %s" %traceback.format_exc())
 		
 	def set_proxy_port_value(self,value):
@@ -1065,7 +1068,7 @@ class SystemPage(WebPage):
 			if not self.proxy_port_error:
 				raise AssertionError("Proxy Port accepting Invalid range: %s" %traceback.format_exc())
 		elif assert_error == 'false':
-			if  self.proxy_port_error:
+			if	self.proxy_port_error:
 				raise AssertionError(" Proxy Port Valid range is 1-65534   : %s" %traceback.format_exc())		
 		
 	def click_on_proxy_new_exception(self):
@@ -1098,8 +1101,8 @@ class SystemPage(WebPage):
 			if not self.proxy_exception_error:
 				raise AssertionError("Proxy exception accepting Invalid Host or IP Address: %s" %traceback.format_exc())
 		elif assert_error == 'false':
-			if  self.proxy_exception_error:
-				raise AssertionError(" Invalid Host or IP Address given for Proxy exception  : %s" %traceback.format_exc())			
+			if	self.proxy_exception_error:
+				raise AssertionError(" Invalid Host or IP Address given for Proxy exception	 : %s" %traceback.format_exc())			
 	
 	def click_on_proxy_exception_ok(self):
 		'''
@@ -1314,25 +1317,25 @@ class SystemPage(WebPage):
 		logger.debug("SystemPage : Asserting the DEFAULT value of SYSLOG LEVEL")
 		test_case.assertEquals(self.syslog_level.get_selected() ,  path.Warning , "value of 'SYSLOG LEVEL' was not set to Warning")
 
-		logger.debug("SystemPage :  Asserting the DEFAULT value of AP-DEBUG")
+		logger.debug("SystemPage :	Asserting the DEFAULT value of AP-DEBUG")
 		test_case.assertEquals(self.ap_debug.get_selected() ,  path.Warning , "value of 'AP-DEBUG' was not set to Warning")
 
-		logger.debug("SystemPage :  Asserting the DEFAULT value of NETWORK")
-		test_case.assertEquals(self.network.get_selected() , path.Warning , "value of 'NETWORK' was not  set to Warning")
+		logger.debug("SystemPage :	Asserting the DEFAULT value of NETWORK")
+		test_case.assertEquals(self.network.get_selected() , path.Warning , "value of 'NETWORK' was not	 set to Warning")
 
-		logger.debug("SystemPage :  Asserting the DEFAULT value of SECURITY")
+		logger.debug("SystemPage :	Asserting the DEFAULT value of SECURITY")
 		test_case.assertEquals(self.security.get_selected() ,  path.Warning , "value of 'SECURITY' was not set to Warning")
 
-		logger.debug("SystemPage :  Asserting the DEFAULT value of SYSTEM")
-		test_case.assertEquals(self.system.get_selected() ,  path.Warning , "value of 'SYSTEM' was not  set to Warning")
+		logger.debug("SystemPage :	Asserting the DEFAULT value of SYSTEM")
+		test_case.assertEquals(self.system.get_selected() ,	 path.Warning , "value of 'SYSTEM' was not	set to Warning")
 
-		logger.debug("SystemPage :  Asserting the DEFAULT value of USER")
+		logger.debug("SystemPage :	Asserting the DEFAULT value of USER")
 		test_case.assertEquals(self.user.get_selected() ,  path.Warning , "value of 'USER' was not set to Warning")
 
-		logger.debug("SystemPage :  Asserting the DEFAULT value of USER-DEBUG")
-		test_case.assertEquals(self.user_debug.get_selected() ,  path.Warning , "value of 'USER-DEBUG' was not set to Warning")
+		logger.debug("SystemPage :	Asserting the DEFAULT value of USER-DEBUG")
+		test_case.assertEquals(self.user_debug.get_selected() ,	 path.Warning , "value of 'USER-DEBUG' was not set to Warning")
 
-		logger.debug("SystemPage :  Asserting the DEFAULT value of WIRELESS")
+		logger.debug("SystemPage :	Asserting the DEFAULT value of WIRELESS")
 		test_case.assertEquals(self.wireless.get_selected() , path. Warning , "value of 'WIRELESS' was not set to Warning")
 
 	def assert_syslog_server(self):
@@ -1555,29 +1558,29 @@ class SystemPage(WebPage):
 			Asserting the default values under 3G/4G
 		'''
 		if not self.cell_usb.get() == '':
-			raise AssertionError("Default value is not set for  USB type")
+			raise AssertionError("Default value is not set for	USB type")
 		if not self.cell_4g_type.get() == "":
-			raise AssertionError("Default value is not set for  4G USB type")
+			raise AssertionError("Default value is not set for	4G USB type")
 		if not self.cell_usb_dev.get() == '':
-			raise AssertionError("Default value is not set for  USB dev")
+			raise AssertionError("Default value is not set for	USB dev")
 		if not self.cell_usb_tty.get() == '':
-			raise AssertionError("Default value is not set for  USB tty")
+			raise AssertionError("Default value is not set for	USB tty")
 		if not self.cell_usb_init.get() == '':
-			raise AssertionError("Default value is not set for  USB init")
+			raise AssertionError("Default value is not set for	USB init")
 		if not self.cell_usb_dial.get() == '':
-			raise AssertionError("Default value is not set for  USB dial")
+			raise AssertionError("Default value is not set for	USB dial")
 		if not self.cell_usb_mode_switch.get() == '':
-			raise AssertionError("Default value is not set for  USB mode switch")
+			raise AssertionError("Default value is not set for	USB mode switch")
 		if not self.cell_usb_user.get() == '':
-			raise AssertionError("Default value is not set for  USB user")
+			raise AssertionError("Default value is not set for	USB user")
 		if not self.cell_usb_password.get() == '':
-			raise AssertionError("Default value is not set for  USB password")
+			raise AssertionError("Default value is not set for	USB password")
 		if not self.modem_country.get_selected() == 'None':
-			raise AssertionError("Default value is not set for  Country")
+			raise AssertionError("Default value is not set for	Country")
 		if not self.modem_isp.get_selected() == 'None':
-			raise AssertionError("Default value is not set for  ISP")
+			raise AssertionError("Default value is not set for	ISP")
 		if not self.usb_auth_type.get_selected() == 'NONE':
-			raise AssertionError("Default value is not set for  USB auth type")
+			raise AssertionError("Default value is not set for	USB auth type")
 	
 	
 	def assert_wi_fi_default_value(self):
@@ -1683,8 +1686,8 @@ class SystemPage(WebPage):
 			if not self.wifi_passphrase_text_error1:
 				raise AssertionError("WIFI Passphrase accepting Invalid Passphrase : %s" %traceback.format_exc())
 		elif assert_error == 'false':
-			if  self.wifi_passphrase_text_error1:
-				raise AssertionError(" Key must be 8-63 Characters  : %s" %traceback.format_exc())
+			if	self.wifi_passphrase_text_error1:
+				raise AssertionError(" Key must be 8-63 Characters	: %s" %traceback.format_exc())
 				
 	def assert_wifi_passphrase_text_error2(self,assert_error):
 		'''
@@ -1695,8 +1698,8 @@ class SystemPage(WebPage):
 			if not self.wifi_passphrase_text_error2:
 				raise AssertionError("WIFI Passphrase accepting Invalid Passphrase : %s" %traceback.format_exc())
 		elif assert_error == 'false':
-			if  self.wifi_passphrase_text_error2:
-				raise AssertionError(" Key must be 8-63 Characters  : %s" %traceback.format_exc())
+			if	self.wifi_passphrase_text_error2:
+				raise AssertionError(" Key must be 8-63 Characters	: %s" %traceback.format_exc())
 	
 	def set_management_enforce_uplink(self,value):
 		'''
@@ -1727,7 +1730,7 @@ class SystemPage(WebPage):
 		set value to MANAGEMENT Vpn Failover Timedout Textbox
 		'''
 		self.buy_time()
-		if  value == None:
+		if	value == None:
 			logger.debug('SystemPage: Writting default value 180 in vpn fail over time out')
 			self.manage_time_txt.set(self.config.config_vars.vpn_failover_timeout)
 		else:
@@ -1743,8 +1746,8 @@ class SystemPage(WebPage):
 			if not self.manage_vpn_failover_timeout_error:
 				raise AssertionError("management vpn_failover_timeout  accepting Invalid value : %s" %traceback.format_exc())
 		elif assert_error == 'false':
-			if  self.manage_vpn_failover_timeout_error:
-				raise AssertionError("  Valid range is 0-3600 : %s" %traceback.format_exc())
+			if	self.manage_vpn_failover_timeout_error:
+				raise AssertionError("	Valid range is 0-3600 : %s" %traceback.format_exc())
 
 	def set_management_internet_failover(self,value=None):
 		'''
@@ -1803,7 +1806,7 @@ class SystemPage(WebPage):
 			if not self.packet_send_frequency_error:
 				raise AssertionError("Accepting Invalid values for Failover packet send frequency. i.e. Traceback: %s" %traceback.format_exc())		
 		elif assert_error == 'false':
-			if  self.packet_send_frequency_error:
+			if	self.packet_send_frequency_error:
 				raise AssertionError("Valid range is 1-3600. i.e. Traceback: %s" %traceback.format_exc())		
 				
 	def assert_management_packet_lost_count_error(self,assert_error):
@@ -1815,7 +1818,7 @@ class SystemPage(WebPage):
 			if not self.packet_lost_count_error:
 				raise AssertionError("Accepting Invalid values for Failover packet send frequency. i.e. Traceback: %s" %traceback.format_exc())		
 		elif assert_error == 'false':
-			if  self.packet_lost_count_error:
+			if	self.packet_lost_count_error:
 				raise AssertionError("Valid range is 1-1000. i.e. Traceback: %s" %traceback.format_exc())					
 				
 	def assert_management_internet_check_timeout_error(self,assert_error):
@@ -1827,7 +1830,7 @@ class SystemPage(WebPage):
 			if not self.internet_ckeck_timeout_error:
 				raise AssertionError("Accepting Invalid values for Failover packet send frequency. i.e. Traceback: %s" %traceback.format_exc())		
 		elif assert_error == 'false':
-			if  self.internet_ckeck_timeout_error:
+			if	self.internet_ckeck_timeout_error:
 				raise AssertionError("Valid range is 0-3600. i.e. Traceback: %s" %traceback.format_exc())						
 	
 	def pppoe_service_name(self,value):
@@ -1844,7 +1847,7 @@ class SystemPage(WebPage):
 	
 	def set_pp_chap_secret1(self,value):
 		'''
-		write PPPOE Chap Secret  
+		write PPPOE Chap Secret	 
 		'''
 		self.buy_time()
 		if value == None:
@@ -1856,11 +1859,11 @@ class SystemPage(WebPage):
 	
 	def set_pp_chap_secret2(self,value):
 		'''
-		write PPPOE Retype Chap Secret  
+		write PPPOE Retype Chap Secret	
 		'''
 		self.buy_time()
 		if value == None:
-			logger.debug("SystemPage :  Set retype chap secret.")
+			logger.debug("SystemPage :	Set retype chap secret.")
 			self.pp_chap_secret2.clear()
 		else:
 			logger.debug("SystemPage : Set retype chap secret.")
@@ -1886,8 +1889,14 @@ class SystemPage(WebPage):
 			logger.debug("SystemPage : Set retype password.")
 			self.pp_password_retype.clear()	
 		else:
+			time.sleep(5)
+			self.browser.key_press(u'\ue00d')
+			time.sleep(5)
+			self.browser.key_press(u'\ue00d')
 			logger.debug("SystemPage : Set retype password.")
-			self.pp_password_retype.set(value)	
+			self.pp_password_retype.set(value)
+			time.sleep(3)
+			self.pp_password_retype.set(value)
 		
 	def assert_pp_chap_secret_error(self,assert_error):
 		'''
@@ -1898,19 +1907,19 @@ class SystemPage(WebPage):
 			if not self.pp_chap_secret_error:
 				raise AssertionError("Accepting Invalid values . i.e. Traceback: %s" %traceback.format_exc())		
 		elif assert_error == 'false':
-			if  self.pp_chap_secret_error:
+			if	self.pp_chap_secret_error:
 				raise AssertionError("Fields do not match. i.e. Traceback: %s" %traceback.format_exc())	
 				
 	def assert_password_error(self,assert_error):
 		'''
-		Asserting password  Textbox error message
+		Asserting password	Textbox error message
 		'''
 		self.buy_time()
 		if assert_error == 'true':
 			if not self.pp_password_error:
 				raise AssertionError("Accepting Invalid values . i.e. Traceback: %s" %traceback.format_exc())		
 		elif assert_error == 'false':
-			if  self.pp_password_error:
+			if	self.pp_password_error:
 				raise AssertionError("Fields do not match. i.e. Traceback: %s" %traceback.format_exc())	
 
 	def assert_enterprise_domain_names_empty(self):
@@ -2080,10 +2089,10 @@ class SystemPage(WebPage):
 	
 	def set_uplink_priority_list_wifi_first(self):
 		'''
-		set  Uplink first Priority list as wifi-sta
+		set	 Uplink first Priority list as wifi-sta
 		'''
 		for i in range(1,2):
-			if not  self.uplink_priority_default_value.get_label_text() == 'Wifi-sta':
+			if not	self.uplink_priority_default_value.get_label_text() == 'Wifi-sta':
 				self.uplink_priority_Wifi_sta.click()
 				if self.arrow_up_disabled:
 					break
@@ -2093,7 +2102,7 @@ class SystemPage(WebPage):
 	
 	def set_uplink_priority_list_Eth0_second(self):
 		'''
-		set  Uplink second Priority list as Eth0
+		set	 Uplink second Priority list as Eth0
 		'''
 		logger.debug("SystemPage : Click on 'Eth0' in uplink priority list")
 		self.uplink_priority_Eth0.click()
@@ -2358,7 +2367,7 @@ class SystemPage(WebPage):
 		Deleting SNMP_trap user settings.
 		'''
 		if self.delete_traps:
-			logger.debug("SystemPage : Deleting SNMP trap settings. ")  
+			logger.debug("SystemPage : Deleting SNMP trap settings. ")	
 			self.delete_traps.click()
 
 	def edit_community_string(self):
@@ -2386,7 +2395,7 @@ class SystemPage(WebPage):
 		
 		
 	def click_new_vc_ip_address(self):
-		logger.debug("SystemPage : Clicks on new button under VC IP address  .")
+		logger.debug("SystemPage : Clicks on new button under VC IP address	 .")
 		self.new_vc_ip_address.click()
 		
 	def click_new_subnet(self):
@@ -2471,7 +2480,7 @@ class SystemPage(WebPage):
 	
 	def assert_subnet_vlan_id(self):
 		'''
-		asserts for  Must be number in range 1-4093 message
+		asserts for	 Must be number in range 1-4093 message
 		'''
 		if not self.vlan_id_error:
 			raise AssertionError("Accepting Invalid vlan id. i.e. Traceback: %s" %traceback.format_exc())
@@ -2492,7 +2501,7 @@ class SystemPage(WebPage):
 		
 	def assert_netmask_support_error(self):
 		'''
-		asserts for  "Valid subnet but not supported" message
+		asserts for	 "Valid subnet but not supported" message
 		'''
 		if not self.netmask_not_supported_error:
 			raise AssertionError("Accepting Invalid subnet vc ip. i.e. Traceback: %s" %traceback.format_exc())
@@ -2650,17 +2659,17 @@ class SystemPage(WebPage):
 
 	def set_uplink_priority_list_eth0_first(self):
 		'''
-		set  Uplink first Priority list as Eth0
+		set	 Uplink first Priority list as Eth0
 		'''
 		for i in range(1,3):
-			if not  self.uplink_priority_default_value.get_label_text() == 'Eth0':
+			if not	self.uplink_priority_default_value.get_label_text() == 'Eth0':
 				self.uplink_priority_Eth0.click()
 			if self.up_arrow_enable:
 				self.up_arrow_enable.click()
 
 	def set_uplink_priority_list_3G_4G_second(self):
 		'''
-		set  Uplink second Priority list as 3G/4G
+		set	 Uplink second Priority list as 3G/4G
 		'''
 		self.uplink_priority_3g_4g.click()
 		if self.arrow_up and self.arrow_down :
@@ -2874,27 +2883,24 @@ class SystemPage(WebPage):
 		logger.debug("SystemPage : Clicking on edit icon ")
 		self.vc_name_edit_icon.click()
 			
-	def set_non_default_values_cpu_util(self):
+	def set_non_default_values_cpu_util(self,iap):
 		'''
 		'''
-		self.edit_vc_name()
-		self.edit_virtual_controller_ip_values()
-		self.edit_virtual_controller_ip_address()
-		self.set_virtual_controller_ip(self.config.config_vars.ip_add)
-		self.save_virtual_controller_ip_address()
+		myDevice = Device.getDeviceObject(iap)
+		vlan_id = myDevice.get("vlan")
 		self.set_timezone(self.config.config_vars.pacific_time_utc_07)
 		self.set_prefered_band(self.config.config_vars.preferred_band_new_value)
 		self.set_ntp_server(self.config.config_vars.ntp_server)
 		self.set_vc_netmask(self.config.config_vars.vc_netmask)
 		self.set_vc_gateway(self.config.config_vars.vc_gateway)
-		self.set_vc_vlan(self.config.config_vars.vc_valid_vlan)
+		self.set_vc_vlan(vlan_id)
 		self.set_dyanamic_cpu_utilization(self.config.config_vars.dynamic_cpu_utilization_enable)
 		
 	def set_cpu_util_default_values(self):
 		'''
 		setting back Default values of Cpu util
 		'''
-		self.set_default_vc_name()
+		# self.set_default_vc_name()
 		self.set_dropdown_value_default('timezone')
 		self.set_dropdown_value_default('preferred band')
 		self.set_dropdown_value_default('dynamic cpu utilization')
@@ -2904,6 +2910,7 @@ class SystemPage(WebPage):
 	
 	def set_virtual_controller_name(self,name=None):
 		logger.debug("SystemPage : Click 'Edit Values' button")
+		time.sleep(7)
 		self.edit_values_name.click()
 		time.sleep(7)
 		logger.debug("SystemPage : Clicking on edit icon ")
@@ -2911,6 +2918,8 @@ class SystemPage(WebPage):
 		logger.debug("SystemPage : Write VC name into the text-box")
 		self.vc_name_textbox.set(name)
 		self.vc_name_textbox.set(name)
+		logger.debug("SystemPage : Click 'Save changes' button")
+		self.save_vc_name_id.click()
 		logger.debug("SystemPage : Click 'Save' button")
 		self.save_name.click()
 		time.sleep(7)
@@ -2926,6 +2935,8 @@ class SystemPage(WebPage):
 		logger.debug("SystemPage : Write VC IP into the text-box")
 		self.vc_ip_textbox.set(ip)
 		self.vc_ip_textbox.set(ip)
+		logger.debug("SystemPage : Click 'Save changes' button")
+		self.save_vc_ip_id .click()
 		logger.debug("SystemPage : Click 'Save' button")
 		self.save_ip.click()
 		logger.debug("SystemPage : Click Close icon button")
@@ -2956,7 +2967,7 @@ class SystemPage(WebPage):
 		logger.debug("SystemPage : Edit VC Gateway")
 		self.set_vc_gateway(conf.vc_gateway)
 		logger.debug("SystemPage : Edit VC VLAN")
-		self.set_vc_vlan(conf.vc_valid_vlan)
+		# self.set_vc_vlan(conf.vc_valid_vlan)
 		logger.debug("SystemPage: Scroll Down")
 		self.page_down()
 		logger.debug("SystemPage : Edit Dynamic CPU Utilization")
@@ -2981,7 +2992,7 @@ class SystemPage(WebPage):
 		logger.debug("SystemPage : Edit VC Gateway")
 		self.gen_vc_gateway.clear()
 		logger.debug("SystemPage : Edit VC VLAN")
-		self.gen_vc_vlan.clear()
+		# self.gen_vc_vlan.clear()
 		logger.debug("SystemPage: Scroll Down")
 		self.page_down()
 		logger.debug("SystemPage : Edit Dynamic CPU Utilization")
@@ -3028,6 +3039,9 @@ class SystemPage(WebPage):
 			self.mas_integration.set(mas)
 		logger.debug("SystemPage : Click 'Save Settings' button")
 		self._save_settings()
+		if self.reboot_ok:
+			time.sleep(3)
+			self.reboot_ok.click()
 		time.sleep(5)
 		
 	def set_dropdown_default_value(self, timezone1=True,band=True,utilization=True,auto=True,terminal=True,telnet=True,led=True,ssid=True,bridg=True,routing=True,proxy=True,mas=True):
@@ -3071,6 +3085,9 @@ class SystemPage(WebPage):
 			self.mas_integration.set(path.sys_disable)
 		logger.debug("SystemPage : Click 'Save Settings' button")
 		self._save_settings()
+		if self.reboot_ok:
+			time.sleep(3)
+			self.reboot_ok.click()
 		time.sleep(5)
 
 	def set_username_and_password_field(self,user = None,password = None):
@@ -3184,7 +3201,7 @@ class SystemPage(WebPage):
 		if uname:
 			logger.debug("SystemPage : Write valid user-name")
 			self.u_name.set(uname)
-		if 	pword:
+		if	pword:
 			logger.debug("SystemPage : Write password")
 			self.p_word.set(pword)
 		if retype:	
@@ -3236,23 +3253,202 @@ class SystemPage(WebPage):
 	
 		
 	def edit_dhcp_non_default_values(self):
+		conf = self.config.config_vars
 		logger.debug("SystemPage : Set value in 'AUTO JOIN MODE' drop-down")
-		self.auto_join_mode.set(path.mas_integration_value)
+		self.auto_join_mode.set(conf.mas_integration_value)
 		logger.debug("SystemPage : Set value in 'TERMINAL ACCESS' drop-down")
-		# self.terminal_access.set(path.mas_integration_value)
+		# self.terminal_access.set(conf.mas_integration_value)
 		logger.debug("SystemPage : Set value in 'TELNET SERVER' drop-down")
-		self.telnet_server.set(path.dynamic_radius_proxy_new_value)
+		self.telnet_server.set(conf.dynamic_radius_proxy_new_value)
 		logger.debug("SystemPage : Set value in 'LED DISPLAY' drop-down")
-		self.led_display.set(path.mas_integration_value)
+		self.led_display.set(conf.mas_integration_value)
 		logger.debug("SystemPage : Set value in 'EXTENDED SSID' drop-down")
-		self.extended_ssid.set(path.mas_integration_value)
+		self.extended_ssid.set(conf.mas_integration_value)
 		logger.debug("SystemPage : Set value in 'DENY INTER USING BRIDGING' drop-down")
-		self.deny_inter_using.set(path.dynamic_radius_proxy_new_value)
+		self.deny_inter_using.set(conf.dynamic_radius_proxy_new_value)
 		logger.debug("SystemPage : Set value in 'DENY LOCAL ROUTING' drop-down")
-		self.deny_local_routing.set(path.dynamic_radius_proxy_new_value)
+		self.deny_local_routing.set(conf.dynamic_radius_proxy_new_value)
 		logger.debug("SystemPage : Set value in 'dynamic_radius_proxy' drop-down")
-		self.dynamic_radius_proxy.set(path.dynamic_radius_proxy_new_value)
+		self.dynamic_radius_proxy.set(conf.dynamic_radius_proxy_new_value)
 		logger.debug("SystemPage : Set value in 'mas_integration' drop-down")
-		self.mas_integration.set(path.dynamic_radius_proxy_new_value)
+		self.mas_integration.set(conf.dynamic_radius_proxy_new_value)
 		
-			
+	def buy_time_2(self):
+		import time
+		time.sleep(1000)
+		
+	def page_down(self):
+		'''
+		scroll down the page
+		'''
+		self.browser.key_press(u'\ue009')
+		self.browser.key_press( u'\ue010')
+		
+	# def edit_vc_name(self,iap,name=None):
+		# myDevice = Device.getDeviceObject(iap)
+		# vcname = myDevice.get("vc_name")
+		# logger.debug("SystemPage : Click 'Edit Values' button")
+		# time.sleep(7)
+		# self.edit_values_name.click()
+		# self.browser._browser.find_element_by_xpath("//td[@title='%s']/following-sibling::td[1]/div[1]/a" %vcname).click()
+		# self.browser._browser.find_element_by_xpath("//td[@title='%s']/span[2]/span[2]/input" %vcname).clear()
+		# time.sleep(5)
+		# self.browser._browser.find_element_by_xpath("//td[@title='%s']/span[2]/span[2]/input" %vcname).send_keys(name)
+		# logger.debug("SystemPage : Click 'Save changes' button")
+		# self.browser._browser.find_element_by_xpath("//td[@title='%s']/following-sibling::td[1]/div[2]/a[1]" %vcname).click()
+		# raw_input("111111111")
+		# logger.debug("SystemPage : Click 'Save' button")
+		# self.save_name.click()
+		# time.sleep(7)
+		
+	def set_second_virtual_controller_name(self,name=None):
+		logger.debug("SystemPage : Click 'Edit Values' button")
+		time.sleep(7)
+		self.edit_values_name.click()
+		time.sleep(7)
+		logger.debug("SystemPage : Clicking on edit icon ")
+		self.second_vc_name_edit_icon.click()
+		logger.debug("SystemPage : Write VC name into the text-box")
+		self.second_vc_name_textbox.set(name)
+		self.second_vc_name_textbox.set(name)
+		logger.debug("SystemPage : Click 'Save changes' button")
+		self.second_save_vc_name_id.click()
+		logger.debug("SystemPage : Click 'Save' button")
+		self.save_name.click()
+		time.sleep(7)
+		
+	def setting_second_vc_default_name(self):
+		vc_name = devices.IAP_2.vc_name
+		vc_ip = devices.IAP_2.ip
+		conf = self.config.config_vars
+		logger.debug("SystemPage : Edit VC name")
+		self.set_second_virtual_controller_name(vc_name)
+		
+	def assert_system_page_vc_field_values(self, ap, command=None, expected=None):
+		logger.debug("FirmwarePage : creating object of Device")
+		myDevice = Device.getDeviceObject(ap)
+		logger.debug("FirmwarePage : waiting to receive prompt")
+		myDevice.receive("#")
+		logger.debug("FirmwarePage : passing command 'show version' ")
+		myDevice.transmit("%s"%command)
+		logger.debug("FirmwarePage : waiting to receive prompt")
+		output = myDevice.receive("#")
+		if not expected in output:
+			raise AssertionError("%s configuration is not pushed to Device" %expected)
+		
+	def set_new_vc_name(self,iap,name=None):
+		myDevice = Device.getDeviceObject(iap)
+		vcname = myDevice.get("vc_name")
+		logger.debug("SystemPage : Click 'Edit Values' button")
+		time.sleep(7)
+		self.edit_values_name.click()
+		logger.debug("SystemPage: Clicking on edit icon")
+		self.browser._browser.find_element_by_xpath("//td[@title='%s']/following-sibling::td[1]/div[1]/a" %vcname).click()
+		logger.debug("SystemPage: Clearing vc name text box")
+		self.browser._browser.find_element_by_xpath("//td[@title='%s']/span[2]/span[2]/input" %vcname).clear()
+		time.sleep(5)
+		logger.debug("SystemPage: Writing the name of the VC")
+		self.browser._browser.find_element_by_xpath("//td[@title='']/span[2]/span[2]/input").send_keys(name)
+		logger.debug("SystemPage : Click 'Save changes' button")
+		self.browser._browser.find_element_by_xpath("//td[@title='%s']/following-sibling::td[1]/div[2]/a[1]" %name).click()
+		logger.debug("SystemPage : Click 'Save' button")
+		self.save_name.click()
+		time.sleep(7)
+		
+	def set_new_vc_ip(self,iap,ip_address=None):
+		myDevice = Device.getDeviceObject(iap)
+		vcip = myDevice.get("ip")
+		logger.debug("SystemPage : Click 'Edit Values' button")
+		time.sleep(7)
+		self.edit_values_ip.click()
+		logger.debug("SystemPage: Clicking on edit icon")
+		self.browser._browser.find_element_by_xpath("//td[@title='%s']/following-sibling::td[1]/div[1]/a" %vcip).click()
+		logger.debug("SystemPage: Clearing vc ip text box")
+		self.browser._browser.find_element_by_xpath("//td[@title='%s']/span[2]/span[2]/input" %vcip).clear()
+		time.sleep(5)
+		logger.debug("SystemPage: Writing the ip of the VC")
+		self.browser._browser.find_element_by_xpath("//td[@title='']/span[2]/span[2]/input").send_keys(ip_address)
+		logger.debug("SystemPage : Click 'Save changes' button")
+		self.browser._browser.find_element_by_xpath("//td[@title='%s']/following-sibling::td[1]/div[2]/a[1]" %ip_address).click()
+		logger.debug("SystemPage : Click 'Save' button")
+		self.save_ip.click()
+		time.sleep(7)
+		
+	def setting_original_vc_name(self,iap,name=None):
+		myDevice = Device.getDeviceObject(iap)
+		vcname = myDevice.get("vc_name")
+		logger.debug("SystemPage : Click 'Edit Values' button")
+		time.sleep(7)
+		self.edit_values_name.click()
+		logger.debug("SystemPage: Clicking on edit icon")
+		self.browser._browser.find_element_by_xpath("//td[@title='%s']/following-sibling::td[1]/div[1]/a" %name).click()
+		logger.debug("SystemPage: Clearing vc name text box")
+		self.browser._browser.find_element_by_xpath("//td[@title='%s']/span[2]/span[2]/input" %name).clear()
+		time.sleep(5)
+		logger.debug("SystemPage: Writing the name of the VC")
+		self.browser._browser.find_element_by_xpath("//td[@title='']/span[2]/span[2]/input").send_keys(vcname)
+		logger.debug("SystemPage : Click 'Save changes' button")
+		self.browser._browser.find_element_by_xpath("//td[@title='%s']/following-sibling::td[1]/div[2]/a[1]" %vcname).click()
+		logger.debug("SystemPage : Click 'Save' button")
+		self.save_name.click()
+		time.sleep(7)
+		
+	def setting_original_vc_ip(self,iap,ip_address=None):
+		myDevice = Device.getDeviceObject(iap)
+		vcip = myDevice.get("ip")
+		logger.debug("SystemPage : Click 'Edit Values' button")
+		time.sleep(7)
+		self.edit_values_ip.click()
+		logger.debug("SystemPage: Clicking on edit icon")
+		self.browser._browser.find_element_by_xpath("//td[@title='%s']/following-sibling::td[1]/div[1]/a" %ip_address).click()
+		logger.debug("SystemPage: Clearing vc ip text box")
+		self.browser._browser.find_element_by_xpath("//td[@title='%s']/span[2]/span[2]/input" %ip_address).clear()
+		time.sleep(5)
+		logger.debug("SystemPage: Writing the ip of the VC")
+		self.browser._browser.find_element_by_xpath("//td[@title='']/span[2]/span[2]/input").send_keys(vcip)
+		logger.debug("SystemPage : Click 'Save changes' button")
+		self.browser._browser.find_element_by_xpath("//td[@title='%s']/following-sibling::td[1]/div[2]/a[1]" %vcip).click()
+		logger.debug("SystemPage : Click 'Save' button")
+		self.save_ip.click()
+		time.sleep(7)
+		
+	def check_non_default_values_vc_name_2(self,iap):
+		myDevice = Device.getDeviceObject(iap)
+		vlan_id = myDevice.get("vlan")
+		conf = self.config.config_vars
+		logger.debug("SystemPage : Edit VC TimeZone")
+		self.set_timezone(conf.pacific_time_utc_07)
+		logger.debug("SystemPage : Edit VC Preferred Band")
+		self.set_prefered_band(conf.prefered_band_2_4ghz)
+		logger.debug("SystemPage : Edit NTP Server")
+		self.set_ntp_server(conf.enterprise_domain_value5)
+		logger.debug("SystemPage : Edit VC Netmask")
+		self.set_vc_netmask(conf.vc_netmask)
+		logger.debug("SystemPage : Edit VC Gateway")
+		self.set_vc_gateway(conf.vc_gateway)
+		logger.debug("SystemPage : Edit VC VLAN")
+		self.set_vc_vlan(vlan_id)
+		logger.debug("SystemPage: Scroll Down")
+		self.page_down()
+		logger.debug("SystemPage : Edit Dynamic CPU Utilization")
+		self.set_dyanamic_cpu_utilization(conf.dynamic_cpu_utilization)
+		
+	def setting_default_values_2(self):
+		logger.debug("SystemPage : Edit VC TimeZone")
+		self.set_timezone(conf.timezone_value)
+		logger.debug("SystemPage : Edit VC Preferred Band")
+		self.set_prefered_band(conf.preferred_band_value)
+		logger.debug("SystemPage : Edit NTP Server")
+		self.ntp_server.clear()
+		logger.debug("SystemPage : Edit VC Netmask")
+		self.gen_vc_netmask.clear()
+		logger.debug("SystemPage : Edit VC Gateway")
+		self.gen_vc_gateway.clear()
+		logger.debug("SystemPage : Edit VC VLAN")
+		self.gen_vc_vlan.clear()
+		logger.debug("SystemPage: Scroll Down")
+		self.page_down()
+		logger.debug("SystemPage : Edit Dynamic CPU Utilization")
+		self.set_dyanamic_cpu_utilization(conf.dynamic_cpu_utilization_value)
+		
+		
