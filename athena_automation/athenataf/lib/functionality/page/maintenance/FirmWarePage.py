@@ -553,27 +553,6 @@ class FirmWarePage(WebPage):
         output = myDevice.receive("#")
         if not version in output:
             raise AssertionError("%s Device is not upgraded to firmware version" %version)  
-    
-    def asserts_IAP1_details_in_firmware_vc_table(self, IAP):
-        time.sleep(5)
-        if IAP == 'IAP_1':  
-            vc_name = devices.IAP_1.vc_name
-            location = devices.IAP_1.location
-            firmware_version = devices.IAP_1.firmware_version
-        if IAP == 'IAP_2':
-            vc_name = devices.IAP_2.vc_name
-            location = devices.IAP_2.location
-            firmware_version = devices.IAP_2.firmware_version
-        if IAP == 'IAP_3':
-            vc_name = devices.IAP_3.vc_name
-            location = devices.IAP_3.location
-            firmware_version = devices.IAP_3.firmware_version
-        if not self.browser._browser.find_element_by_xpath("//span[contains(.,'%s') and @class='ng-binding ng-scope']" %vc_name):
-            raise AssertionError('vc name is not displayed')
-        if not self.browser._browser.find_element_by_xpath("//span[contains(.,'%s') and @class='ng-binding ng-scope']/../following-sibling::td[2]/span[text()='%s']" %(vc_name,location)):
-            raise AssertionError('vc location is not displayed')
-        if not self.browser._browser.find_element_by_xpath("//span[contains(.,'%s') and @class='ng-binding ng-scope']/../following-sibling::td[3][@title='%s']" %(vc_name,firmware_version)):   
-            raise AssertionError('firmware version is not displayed')
             
     def select_vc_for_upgrade(self,iap):
         myDevice = Device.getDeviceObject(iap)
@@ -614,3 +593,19 @@ class FirmWarePage(WebPage):
                 raise AssertionError('Switch is still showing up on UI firmware')
         except:
             pass
+            
+    def asserts_IAP1_details_in_firmware_vc_table(self, IAP):
+        myDevice = Device.getDeviceObject(IAP)
+        vc_name = myDevice.get("vc_name")
+        location = myDevice.get("location")
+        firmware_version = myDevice.get("firmware_version")
+        if not self.browser._browser.find_element_by_xpath("//td[@title='%s']" %vc_name):
+            raise AssertionError('vc name is not displayed')
+        if not self.browser._browser.find_element_by_xpath("//td[@title='%s']/following-sibling::td[2]/span[2][@title='%s']" %(vc_name,location)):
+            raise AssertionError('vc location is not displayed')
+        if not self.browser._browser.find_element_by_xpath("//td[@title='%s']/following-sibling::td[3][@title='%s']" %(vc_name,firmware_version)):   
+            raise AssertionError('firmware version is not displayed')
+            
+    def assert_slave_details(self):
+        if self.firm_second_vc:
+             raise AssertionError('slave vc  is  displayed')

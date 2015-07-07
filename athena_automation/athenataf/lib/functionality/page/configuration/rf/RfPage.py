@@ -2399,3 +2399,39 @@ class RfPage(WebPage):
         '''
         logger.debug('Rf Page : Clicking on close overrides overlay ')
         self.close_overrides_overlay.click()
+        
+    def assert_min_max_transmit_power_for_country_us_and_in(self):
+        time.sleep(10)
+        logger.debug('RfPage : Get all options from min transmit power dropdown. ')
+        options = self.min_transmit_power.get_options()
+        s = 0
+        for x in range(0,8):
+            s = s+3
+            if not options[x] == str(s):
+                
+                raise AssertionError(" option %s is missing.  i.e. Traceback: %s " %(options[x],traceback.format_exc()))
+        options = self.max_transmit_power.get_options()
+        s = 6
+        for x in range(0,9):
+            s = s+3
+            if not options[x] == str(s):
+                
+                raise AssertionError(" option %s is missing.  i.e. Traceback: %s " %(options[x],traceback.format_exc()))
+        if not options[9] == 'Max':
+            raise AssertionError("Max option not present in max transmit power dropdown .i.e. Traceback: %s" %traceback.format_exc())
+            
+    def assert_arm_configuration(self,ap,armconfig=''):
+        '''
+        Asser min and max transmit power values 
+        '''
+        # logger.debug("FirmwarePage : creating object of Device")
+        myDevice = Device.getDeviceObject(ap)
+        # logger.debug("FirmwarePage : splitting the firmware version")
+        # logger.debug("FirmwarePage : waiting to receive prompt")
+        myDevice.receive("#")
+        # logger.debug("FirmwarePage : passing command 'show version' ")
+        myDevice.transmit("show arm config")
+        # logger.debug("FirmwarePage : waiting to receive prompt")
+        output = myDevice.receive("#")
+        if not armconfig in output:
+            raise AssertionError("%s is not pushed to %s" %(armconfig,ap))  

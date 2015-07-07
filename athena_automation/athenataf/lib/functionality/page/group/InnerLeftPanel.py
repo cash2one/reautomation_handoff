@@ -444,3 +444,9 @@ class InnerLeftPanel(WebPage):
                 logger.debug('InnerLeftPanel: Search switch in unprovisioned group ')
                 if not self.browser._browser.find_element_by_xpath("//span[contains(.,'Unprovisioned')]/../following-sibling::ul[2]/li/a//span/span[contains(.,'%s')]" %device_name):
                         raise AssertionError("InnerLeftPanel: Device %s is not present in unprovisioned group"%device_name)
+                        
+    def select_vc(self,iap):
+        myDevice = Device.getDeviceObject(iap)
+        vcname = myDevice.get("vc_name")
+        time.sleep(10)
+        self.browser._browser.find_element_by_xpath("//span[contains(.,'%s')]" %vcname).click() 
