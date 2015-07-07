@@ -99,29 +99,34 @@ class DefaultParameters(AthenaGUITestCase):
 	def test_ath_11239_configure_swarm_different_hardware_in_a_cluster(self):
 		'''
 		Configure cluster with AP135 as a Master and AP134 as a slave 
+		slave details must be in IAP_2
 		'''
+		# remove snapshots and check the configured values in IAP-2 i.e slave
+		
 		conf=self.config.config_vars
-		self.take_s1_snapshot('AP_ENV')
+		import os
+		os.environ['device'] = "IAP_2"
+		# self.take_s1_snapshot('AP_ENV')
 		inner_left_panel = self.TopPanel.click_slider_icon()
 		inner_left_panel.select_master_slave_group()
 		self.LeftPanel.go_to_network_page()
 		access_point = self.LeftPanel.go_to_access_points()
 		logger.debug('Clicking on edit button')
-		access_point_page.select_particular_iap_type('IAP_1')
+		access_point_page.select_particular_iap_type('IAP_2')
 		access_point_page.click_external_antenna_accordion()
 		access_point_page.set_24_ghz_antenna_gain(conf.channel_24g_value)
 		access_point_page.set_5_ghz_antenna_gain(conf.transmit_power_24g_value2)
 		access_point_page.save_settings()
-		self.take_s2_snapshot('AP_ENV')
-		access_point_page.select_particular_iap_type('IAP_1')
+		import os
+		os.environ['device'] = "IAP_2"
+		access_point.assert_backend('IAP_2','show ap-env',conf.channel_24g_value)
+		access_point.assert_backend('IAP_2','show ap-env',conf.transmit_power_24g_value2)
+		# self.take_s2_snapshot('AP_ENV')
+		access_point_page.select_particular_iap_type('IAP_2')
 		access_point_page.click_external_antenna_accordion()
 		access_point_page.set_24_ghz_antenna_gain(None)
 		access_point_page.set_5_ghz_antenna_gain(None)
 		access_point_page.save_settings()
-		self.take_s3_snapshot('AP_ENV')
-		self.assert_s1_s2_diff(None)
-		# self.assert_s1_s2_diff(AP_ENV)
-		self.assert_s1_s3_diff()
-		self.clear()
+		
 		
 		

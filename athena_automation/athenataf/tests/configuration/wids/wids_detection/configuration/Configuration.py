@@ -298,7 +298,10 @@ class Configuration(ConfigurationTest):
 		
 	def test_ath_11136_wids_config_unprovisioned_iap(self):
 		conf=self.config.config_vars
+		import os
+		os.environ['device'] = "IAP_1"
 		self.take_s1_snapshot('show_ids_detection_config')
+		self.TopPanel.go_to_allgroups()
 		device_mgmt = self.LeftPanel.go_to_device_management()
 		device_mgmt.get_and_search_mac_address()
 		device_mgmt.select_virtual_controller(device_mgmt.device_selector_1)
@@ -308,45 +311,90 @@ class Configuration(ConfigurationTest):
 		logger.debug('DeviceManagement: Clicking on ok button')
 		device_mgmt.ok_button.click()
 		device_mgmt.assert_group_name(conf.unprovisioned)
+		DeviceLibrary.factoryReset('IAP_1')
+		DeviceLibrary.configureWirelessNetwork('IAP_1')
+		time.sleep(90)
+		# raw_input('wait')
+		DeviceLibrary.getPrompt('IAP_1')
+		DeviceLibrary.connect_device_to_server('IAP_1')
+		time.sleep(300)
 		inner_left_panel = self.TopPanel.click_slider_icon()
-		if inner_left_panel.assert_group1_and_group2():
-			if inner_left_panel.assert_sample_group_with_vc_present():
-				manage_group_page = inner_left_panel.manage_group()
-				manage_group_page.move_virtual_controller_from_Mygroup(group1=True)
-				inner_left_panel.manage_group()
-				manage_group_page.delete_specific_group(group1=True)
+		time.sleep(20)
+		if not inner_left_panel.verify_unprovision_iap:
+			time.sleep(30)
+			self.browser.refresh()
+			time.sleep(10)
+			self.TopPanel.click_slider_icon()
+		inner_left_panel.select_unprovision_iap()
+		inner_left_panel.assert_unprovisioned_alert_popup()
+		inner_left_panel.select_wireless_configuration_module()
+		time.sleep(20)
+		# if inner_left_panel.assert_group1_and_group2():
+			# if inner_left_panel.assert_sample_group_with_vc_present():
+				# manage_group_page = inner_left_panel.manage_group()
+				# manage_group_page.move_virtual_controller_from_Mygroup(group1=True)
+				# inner_left_panel.manage_group()
+				# manage_group_page.delete_specific_group(group1=True)
 		
-		create_group_page = inner_left_panel.add_group()
-		create_group_page.set_group_name(conf.group_1)
-		create_group_page.select_virtual_controller(create_group_page.select_vc)
-		create_group_page.move_next()
-		create_group_page._set_group_default_device_password1()
+		# create_group_page = inner_left_panel.add_group()
+		# create_group_page.set_group_name(conf.group_1)
+		# create_group_page.select_virtual_controller(create_group_page.select_vc)
+		# create_group_page.move_next()
+		# create_group_page._set_group_default_device_password1()
 		# inner_left_panel.select_group(inner_left_panel.group_1)
-		inner_left_panel.expand_group1.click()
-		inner_left_panel.select_vc_inside_group.click()
+		# inner_left_panel.expand_group1.click()
+		# inner_left_panel.select_vc_inside_group.click()
 		
 		wids_page = self.LeftPanel.go_to_wids_page()
+		time.sleep(20)
 		wids_page.set_detection_infra_threat_detection_level_custom('Medium')
+		if inner_left_panel.close_hide_popup:
+			inner_left_panel.assert_unprovisioned_alert_popup()
 		wids_page.set_detection_clients_threat_detection_level_custom('High')
-		wids_page.save_settings()
+		if inner_left_panel.close_hide_popup:
+			inner_left_panel.assert_unprovisioned_alert_popup()
+		# wids_page.save_settings()
+		# if inner_left_panel.close_hide_popup:
+			# inner_left_panel.assert_unprovisioned_alert_popup()
 		
 		monitoring_page = self.LeftPanel.go_to_monitoring_page()
-		monitoring_page.monitoring_wids.click()
+		time.sleep(10)
+		# raw_input('wait1')
+		monitoring_wids_page = self.LeftPanel.go_to_monitoring_wids()
+		time.sleep(10)
+		# raw_input('wait2')
 		self.browser.assert_element(monitoring_page.infrastructure_detection_level_medium, "Infrastructure detection level is not set to medium ")
+		time.sleep(10)
 		self.browser.assert_element(monitoring_page.client_detection_level_high, "Client detection level is not set to high ")
+		import os
+		os.environ['device'] = "IAP_1"
 		self.take_s2_snapshot('show_ids_detection_config')
+		inner_left_panel.select_wireless_configuration_module()
+		time.sleep(10)
+		wids_page = self.LeftPanel.go_to_wids_page()
+		time.sleep(20)
+		wids_page.set_detection_infra_threat_detection_level_custom_changes('Off')
+		if inner_left_panel.close_hide_popup:
+			inner_left_panel.assert_unprovisioned_alert_popup()
+		wids_page.set_detection_clients_threat_detection_level_custom_changes('Off')
+		if inner_left_panel.close_hide_popup:
+			inner_left_panel.assert_unprovisioned_alert_popup()
 		
-		inner_left_panel = self.TopPanel.click_slider_icon()
-		if inner_left_panel.assert_group1_and_group2():
-			if inner_left_panel.assert_sample_group_with_vc_present():
-				manage_group_page = inner_left_panel.manage_group()
-				manage_group_page.move_virtual_controller_from_Mygroup(group1=True)
-				inner_left_panel.select_group(inner_left_panel.default_group_click)
-				inner_left_panel = self.TopPanel.click_slider_icon()
-				inner_left_panel.manage_group()
-				manage_group_page.delete_specific_group(group1=True)
-		self.take_s3_snapshot()
+		# inner_left_panel = self.TopPanel.click_slider_icon()
+		# if inner_left_panel.assert_group1_and_group2():
+			# if inner_left_panel.assert_sample_group_with_vc_present():
+				# manage_group_page = inner_left_panel.manage_group()
+				# manage_group_page.move_virtual_controller_from_Mygroup(group1=True)
+				# inner_left_panel.select_group(inner_left_panel.default_group_click)
+				# inner_left_panel = self.TopPanel.click_slider_icon()
+				# inner_left_panel.manage_group()
+				# manage_group_page.delete_specific_group(group1=True)
+		import os
+		os.environ['device'] = "IAP_1"
+		self.take_s3_snapshot('show_ids_detection_config')
 		self.assert_s1_s2_diff(0)
+		import os
+		os.environ['device'] = "IAP_1"
 		self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear()
 		
