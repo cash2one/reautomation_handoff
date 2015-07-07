@@ -16,7 +16,7 @@ class MonitoringPage(WebPage):
         self.test.assertPageLoaded(self)
 
     def isPageLoaded(self):
-        if self.overview_label:
+        if self.quicklinks:
             return True
         else:
             return False

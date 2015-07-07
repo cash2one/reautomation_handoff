@@ -7,6 +7,7 @@ import logging
 logger = logging.getLogger('athenataf')
 import traceback
 from athenataf.config import devices
+from Device_Module.ObjectModule import Device
 class AccessPointsPage(WebPage):
 	def __init__(self, test, browser, config):
 		time.sleep(5)
@@ -638,8 +639,11 @@ class AccessPointsPage(WebPage):
 		self.browser.key_press( u'\ue00f')
 		
 	def select_static_radio_button(self):
+		time.sleep(10)
+		# raw_input('click')
 		logger.debug("Clicking on static radio button")
 		self.static_radio.click()
+		time.sleep(10)
 	
 	def assert_ip_netmask_gateway(self,value):
 		logger.debug("Asserting the default value of netmask and gateway")
@@ -932,13 +936,13 @@ class AccessPointsPage(WebPage):
 		
 	def select_particular_vc(self,iap):
 		myDevice = Device.getDeviceObject(iap)
-		vcname = myDevice.get("ip")
+		ip = myDevice.get("ip")
 		self.browser._browser.find_element_by_xpath("//td[@title='%s']/following-sibling::td[6]" %ip).click()
 
 	def select_particular_iap_type(self,iap):
 		myDevice = Device.getDeviceObject(iap)
-		vcname = myDevice.get("ap_type")
-		self.browser._browser.find_element_by_xpath("//td[@title='%s']/following-sibling::td[3]" %ap_type).click()
+		aptype = myDevice.get("ap_type")
+		self.browser._browser.find_element_by_xpath("//td[@title='%s']/following-sibling::td[3]" %aptype).click()
 		
 	def get_and_set_slave_iap_details(self):
 		'''
@@ -961,6 +965,21 @@ class AccessPointsPage(WebPage):
 		
 		logger.debug("AccessPointsPage :set Ip Address Textbox")
 		self.dns_server.set(dev_dns_ip)
+		
+		
+	def assert_backend(device,command=None,expected=None):
+		'''
+		Device : IAP or switch to used for backend validation.
+		command : cli command
+		expected : expected result in cli o/partition
+		'''
+		myDevice = Device.getDeviceObject(ap)
+		# version = firmware_version.split('_')[0]
+		myDevice.receive("#")
+		myDevice.transmit("%s"%command)
+		output = myDevice.receive("#")
+		if not expected in output:
+			raise AssertionError("%s not found in config." %expected)
 		
 		
 		
