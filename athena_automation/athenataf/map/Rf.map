@@ -144,9 +144,9 @@ edit_24_ghz_label 							: button&xpath&//a[@id='show_5ghz_channels']/../label
 
 client_match_multiversion				:button&xpath&//select[@id='client_match' and @disabled='disabled']/../img[@title='Supported in 6.3.1.2-4.0.0 and above']
 
-slb_mode_multiversion					:button&xpath&//select[@id='slb_mode' and @disabled='disabled']/../img[@title='Supported in 6.3.1.2-4.0.0 and above']
+slb_mode_multiversion					:chain&xpath&//select[@id='slb_mode']/../img[@title='Supported in 6.3.1.2-4.0.0 and above']
 
-eightysupport_multiversion				:button&xpath&//select[@id='eightysupport' and @disabled='disabled']/../img[@title='Supported in 6.3.1.2-4.0.0 and above']
+eightysupport_multiversion				:label&xpath&//img[@id="conf_rf_form_support" and @class='ng-hide']
 override_flag_button_new					: button&xpath&//div[@class='override-icon icosolo icon_link_broken ng-scope']
 override_diff1								: button&xpath&//td[@class='overrides ar-td ng-scope']/span[2]
 override_diff2								: button&xpath&//td[@class='overrides ar-td ng-scope']/span[3]

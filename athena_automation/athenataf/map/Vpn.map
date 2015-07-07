@@ -98,7 +98,7 @@ tunnel_name_req_error						: label&xpath&//div[@id='vpn_tp_profile_name_error']/
 invalid_primary_peer_ip_error				: label&xpath&//div[@id='vpn_tp_primary_error' and @class="field-error"]/span
 shared_key_req_error						: label&xpath&//div[@id='vpn_tp_shared_key_error']/span
 l2_sublayer 								: checkbox&id&session_l2_sublayer
-multiversion_msg							: chain&xpath&//img[@title='Supported in 6.4.0.2-4.1.0 and above']
+multiversion_msg							: label&xpath&//img[@title='Supported in 6.4.0.2-4.1.0 and above']
 disabled_l2_sublayer						: button&xpath&//input[@id='session_l2_sublayer' and @disabled='disabled']
 created_session								: button&xpath&//select[@id='session_profiles']/option
 multiversion_msg1							: button&xpath&//img[@title='Supported in 6.3.1.2-4.0.0 and above']

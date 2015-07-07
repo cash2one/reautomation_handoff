@@ -46,7 +46,7 @@ group_name_1group    									: button&xpath&//span[text()='1group' and @class="
 default_group1											: button&xpath&//span[text()='default' and @class="ng-binding"]&1
 manage_groups_button						            : button&id&hide_manage
 create_groups_button						            : button&id&hide_manage_2
-all_groups_button 										: button&xpath&//span[text()='All Groups' and @class="ng-binding"]
+all_groups_button 										: button&xpath&//label[text()='All Groups' and @class="link-label heron-help-white ng-binding"]
 Mygroup													: button&xpath&//span[text()='Mygroup' and @class="ng-binding"]&0
 Mynew													: button&xpath&//span[text()='Mynew' and @class="ng-binding"]&0
 Mygroup2												: button&xpath&//span[text()='Mygroup2' and @class="ng-binding"]&0
