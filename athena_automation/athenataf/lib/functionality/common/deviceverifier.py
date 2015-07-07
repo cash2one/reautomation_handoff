@@ -14,28 +14,32 @@ class DeviceVerifier:
     def __init__(self, config, test, device=os.environ['device']):
         self.config = config
         try:
-            if not self.config.options.ignore_device:
-                self.get_config = Device.Device.getDeviceObject(device)
+            self.get_config = Device.Device.getDeviceObject(os.environ['device'])
         except Exception as err:
             print err
             raise
             pass
-        self.differ = TextDiffer()
-        self.test = test
-        self.s1 = None
-        self.s2 = None
-        self.s3 = None
-        self.device_results_test_dir = None
+		self.differ = TextDiffer()
+		self.test = test
+		self.s1 = {}
+		self.s2 = {}
+		self.s3 = {}
+		self.device_results_test_dir = None
 
     def _log_snapshot(self, name, snapshot):
         self.device_results_test_dir = os.path.join(self.config.device_verification_dir, self.test.current_test_id)
         if not os.path.isdir(self.device_results_test_dir): os.makedirs(self.device_results_test_dir)
         f = open(os.path.join(self.device_results_test_dir, "%s.txt" % name), "w")
+        if os.environ['device'] != 'IAP_1' and os.environ['device'] != 'Switch_1':
+            f = open(os.path.join(self.device_results_test_dir, "%s_%s.txt" % (name, os.environ['device'])), "w")
+        else:
+            f = open(os.path.join(self.device_results_test_dir, "%s.txt" % name), "w")
         f.write(snapshot)
         f.close()
         
     def _take_snapshot(self, type, extra_command = None):
-        config = self.get_config.get_running_config(extra_command)
+        # config = self.get_config.get_running_config(extra_command)
+        config = Device.Device.getDeviceObject(os.environ['device']).get_running_config(extra_command)
         config_string = config
         lines = config_string.split('\n')
         pseudo_snapshot = []
@@ -60,29 +64,43 @@ class DeviceVerifier:
         
     def take_s1_snapshot(self, extra_command = None):
         if not self.config.options.ignore_device:
-            self.clear()
+            self.clear(os.environ['device'])
             if not self.config.options.switch:
                 time.sleep(devices.CONFIG_CHANGE_WAIT_TIME)
-            self.s1 = self._take_snapshot("s1",  extra_command)
+            # self.s1 = self._take_snapshot("s1",  extra_command)
+            self.s1[os.environ['device']] = self._take_snapshot("s1", extra_command)
         
     def take_s2_snapshot(self, extra_command = None):
         if not self.config.options.ignore_device:
             if not  self.config.options.switch:
                 time.sleep(devices.CONFIG_CHANGE_WAIT_TIME)    
             self.s2 = self._take_snapshot("s2",  extra_command)
+            time.sleep(devices.CONFIG_CHANGE_WAIT_TIME)
+            # setattr(self, "s2_%s" %os.environ["device"], self._take_snapshot("s2",  extra_command))
+            self.s2[os.environ['device']] = self._take_snapshot("s2", extra_command)
+            # self.s2 = self._take_snapshot("s2",  extra_command)
         
     def take_s3_snapshot(self, extra_command = None):
         if not self.config.options.ignore_device:
             if not  self.config.options.switch:        
                 time.sleep(devices.CONFIG_CHANGE_WAIT_TIME)    
             self.s3 = self._take_snapshot("s3",  extra_command)        
+            # setattr(self, "s3_%s" %os.environ["device"], self._take_snapshot("s3",  extra_command))
+            self.s3[os.environ['device']] = self._take_snapshot("s3", extra_command)
+            # self.s3 = self._take_snapshot("s3",  extra_command)
         
     def _get_test_diff(self, num_of_context_lines):
         expected_config_diff = None
+        import os
+        print os.environ['device']
+        device = os.environ['device']
+        version = None
+        exec("version = devices.%s.version"%device)
+        print version
         if self.config.options.switch:
             diff_file_path = os.path.join(fwork.DEVICE_VERIFICATION_DIR+"\%s"%self.get_config.get('type') , "%s_s1_s2_diff.txt") % self.test.current_test_id
         else:
-            diff_file_path = os.path.join(fwork.DEVICE_VERIFICATION_DIR+"/%s"%self.get_config.get('type') +"/%s"%self.get_config.get('version') , "%s_s1_s2_diff.txt") % self.test.current_test_id
+            diff_file_path = os.path.join(fwork.DEVICE_VERIFICATION_DIR+"\%s"%self.get_config.get('type') +"\%s"%version, "%s_s1_s2_diff.txt") % self.test.current_test_id
         if os.path.isfile(diff_file_path):
             diff_handle = open(diff_file_path, "r")
             expected_config_diff_list = diff_handle.readlines()
@@ -115,14 +133,14 @@ class DeviceVerifier:
     
     def _get_snapshot_diff(self, type, left_snapshot, right_snapshot, num_of_context_lines):
         actual_config_diff = self.differ.get_difference(left_snapshot, right_snapshot, num_of_context_lines)
-        f = open(os.path.join(self.device_results_test_dir, "%s_actual_diff.txt" % type), "w")
+        f = open(os.path.join(self.device_results_test_dir, "%s_%s_actual_diff.txt" % (type,os.environ['device'])), "w")
         f.write(actual_config_diff)
         f.close()        
         return actual_config_diff
         
     def check_s1_s2_diff(self , num_of_context_lines):
         if not self.config.options.ignore_device:
-            calculated_diff = self._get_snapshot_diff("s1_s2",self.s1, self.s2, num_of_context_lines)
+            calculated_diff = self._get_snapshot_diff("s1_s2",self.s1[os.environ['device']], self.s2[os.environ['device']], num_of_context_lines)
             test_reference_diff = self._get_test_diff(num_of_context_lines)
             return self._check_diff_equality(calculated_diff, test_reference_diff)
         else:
@@ -130,16 +148,23 @@ class DeviceVerifier:
         
     def check_s1_s3_diff(self):
         if not self.config.options.ignore_device:
-            calculated_diff = self._get_snapshot_diff("s1_s3", self.s1, self.s3, None)
+            calculated_diff = self._get_snapshot_diff("s1_s3", self.s1[os.environ['device']], self.s3[os.environ['device']], None)
             return self._check_diff_equality(calculated_diff, "")
         else:
             return True
         
-    def clear(self):
+    def clear(self, device):
         if not self.config.options.ignore_device:
             self.s1 = None
             self.s2 = None
             self.s3 = None
+    
+            #self.s1.clear()
+            self.s1[device] = ""
+            #self.s2.clear()
+            self.s2[device] = ""
+            self.s3[device] = ""
+            #self.s3.clear()
     
     def get_device_current_status(self,device=None):
         if self.config.options.switch:

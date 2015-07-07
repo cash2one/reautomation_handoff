@@ -66,10 +66,11 @@ class LeftPanel(WebPage):
     def go_to_vpn(self):
         time.sleep(4)
         self.vpn_menu.click()
+        time.sleep(4)
+        self.vpn_menu.click()
         if self.save_pop_up:
             self.save_pop_up.click()
             self.vpn_menu.click()
-        return VpnPage(self.test, self.browser, self.config)
         
     def go_to_network_page(self):
         self.configuration.click()
@@ -85,6 +86,9 @@ class LeftPanel(WebPage):
 
     def go_to_rf_page(self):
         time.sleep(4)
+        time.sleep(7)
+        self.rf_menu.click()
+        time.sleep(7)
         self.rf_menu.click()
         return RfPage(self.test, self.browser, self.config)
                 
@@ -120,7 +124,8 @@ class LeftPanel(WebPage):
     def go_to_monitoring_notification_page(self):
         self.monitoring_notifications.click()
         
-    def go_to_monitoring_wids_page(self):
+    def go_to_monitoring_wids(self):
+        self.buy_time()
         self.monitoring_wids.click()
         self.buy_time()
         return MonitoringWidsPage(self.test, self.browser, self.config)
