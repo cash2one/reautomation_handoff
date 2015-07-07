@@ -1,0 +1,2 @@
++ wifi0_mode:spectrum
++ wifi1_mode:spectrum

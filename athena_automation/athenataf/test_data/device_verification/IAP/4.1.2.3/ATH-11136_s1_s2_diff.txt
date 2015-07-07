@@ -1,0 +1,48 @@
+! infrastructure detection level        :off
+! infrastructure detection level        :medium
+! detect-ap-spoofing                 disable  enable   enable   enable
+! detect-windows-bridge              disable  enable   enable   enable
+! signature-deauth-broadcast         disable  enable   enable   enable
+! signature-deassociation-broadcast  disable  enable   enable   enable
+! detect-adhoc-using-valid-ssid      disable  disable  enable   enable
+! detect-malformed-large-duration    disable  disable  enable   enable
+! detect-ap-spoofing                 enable   enable   enable   enable
+! detect-windows-bridge              enable   enable   enable   enable
+! signature-deauth-broadcast         enable   enable   enable   enable
+! signature-deassociation-broadcast  enable   enable   enable   enable
+! detect-adhoc-using-valid-ssid      enable   disable  enable   enable
+! detect-malformed-large-duration    enable   disable  enable   enable
+! client detection level        :off
+! client detection level        :high
+! Policies                           Status   Low      Medium   High
+! --------                           ------   ---      ------   ----
+! detect-valid-clientmisassociation  disable  enable   enable   enable
+! detect-disconnect-sta              disable  disable  enable   enable
+! detect-omerta-attack               disable  disable  enable   enable
+! detect-fatajack                    disable  disable  enable   enable
+! detect-block-ack-attack            disable  disable  enable   enable
+! detect-hotspotter-attack           disable  disable  enable   enable
+! detect-unencrypted-valid           disable  disable  enable   enable
+! detect-power-save-dos-attack       disable  disable  enable   enable
+! detect-eap-rate-anomaly            disable  disable  disable  enable
+! detect-rate-anomalies              disable  disable  disable  enable
+! detect-chopchop-attack             disable  disable  disable  enable
+! detect-tkip-replay-attack          disable  disable  disable  enable
+! signature-airjack                  disable  disable  disable  enable
+! signature-asleap                   disable  disable  disable  enable
+! Policies                           Status  Low      Medium   High
+! --------                           ------  ---      ------   ----
+! detect-valid-clientmisassociation  enable  enable   enable   enable
+! detect-disconnect-sta              enable  disable  enable   enable
+! detect-omerta-attack               enable  disable  enable   enable
+! detect-fatajack                    enable  disable  enable   enable
+! detect-block-ack-attack            enable  disable  enable   enable
+! detect-hotspotter-attack           enable  disable  enable   enable
+! detect-unencrypted-valid           enable  disable  enable   enable
+! detect-power-save-dos-attack       enable  disable  enable   enable
+! detect-eap-rate-anomaly            enable  disable  disable  enable
+! detect-rate-anomalies              enable  disable  disable  enable
+! detect-chopchop-attack             enable  disable  disable  enable
+! detect-tkip-replay-attack          enable  disable  disable  enable
+! signature-airjack                  enable  disable  disable  enable
+! signature-asleap                   enable  disable  disable  enable

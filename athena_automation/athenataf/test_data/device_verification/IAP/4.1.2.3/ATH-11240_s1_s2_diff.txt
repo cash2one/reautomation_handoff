@@ -1,0 +1,6 @@
+! name:24:de:c6:cb:1f:70
+! name:12:ab:34:cd:56:ef
+! ipaddr:10.15.141.38
+! netmask:255.255.255.248
+! gatewayip:10.15.141.33
+! dnsip:8.8.8.8
