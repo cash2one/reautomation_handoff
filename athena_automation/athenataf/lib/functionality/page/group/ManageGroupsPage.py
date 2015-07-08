@@ -18,12 +18,14 @@ class ManageGroupsPage(WebPage):
 
 
     def delete_group(self, group):
+        time.sleep(10)
         logger.debug("ManageGroupPage: Clicking on 'Group %s' group " %group)
-        self.browser._browser.find_element_by_xpath("//span[@data-ng-bind='grpObj.group.name' and text()='%s'" %group).click()
-        self.delete_group.click()
+        print self.browser._browser.find_element_by_xpath("//span[@id='group_sidebar_group_name_spn' and text()='%s']" %group)
+        self.browser._browser.find_element_by_xpath("//span[@id='group_sidebar_group_name_spn' and text()='%s']" %group).click()
+        self.delete_button.click()
         logger.debug("ManageGroupPage: Clicking on 'Close' icon ")
         self.close_icon.click()
-        if not self.browser._browser.find_element_by_xpath("//span[@data-ng-bind='grpObj.group.name' and text()='%s'" %group):
+        if not self.browser._browser.find_element_by_xpath("//span[@data-ng-bind='grpObj.group.name' and text()='%s']" %group):
             #self.logo.click()
             self.browser.refresh()
 
