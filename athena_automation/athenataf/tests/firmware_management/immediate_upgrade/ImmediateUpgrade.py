@@ -57,7 +57,7 @@ class ImmediateUpgrade(AthenaGUITestCase):
 		firmware_page.select_vc_for_upgrade('IAP_1')
 		firmware_page.select_vc_for_upgrade('IAP_2')
 		firmware_page.clicking_on_upgrade_firmware()
-		firmware_page.setting_firmware_upgrade_manual_option(option=conf.version_type_value_2,version=conf.firmware_upgrade_version)
+		firmware_page.setting_firmware_upgrade_manual_option(option=conf.version_type_value_2,version=conf.firmware_version_4122)
 		firmware_page.click_post_firmware_upgrade()
 		firmware_page.buy_time()
 		# time.sleep(400)
@@ -66,8 +66,8 @@ class ImmediateUpgrade(AthenaGUITestCase):
 		DeviceLibrary.getPrompt("IAP_2")
 		DeviceLibrary.connect_device_to_server("IAP_2")
 		time.sleep(5)
-		firmware_page.assert_firmware_version('IAP_1',conf.firmware_upgrade_version)
-		firmware_page.assert_firmware_version('IAP_2',conf.firmware_upgrade_version)
+		firmware_page.assert_firmware_version('IAP_1',conf.firmware_version_4122)
+		firmware_page.assert_firmware_version('IAP_2',conf.firmware_version_4122)
 		# self.take_s2_snapshot("show_version")
 		firmware_page.select_vc_for_upgrade('IAP_1')
 		firmware_page.select_vc_for_upgrade('IAP_2')
@@ -82,7 +82,6 @@ class ImmediateUpgrade(AthenaGUITestCase):
 		time.sleep(5)
 		firmware_page.assert_firmware_version('IAP_1',conf.firmware_base_version)
 		firmware_page.assert_firmware_version('IAP_2',conf.firmware_base_version)
-
 
 	def test_ath_9057_Immediate_upgrade_beta_image(self):
 		conf = self.config.config_vars
