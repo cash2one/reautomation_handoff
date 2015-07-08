@@ -222,7 +222,10 @@ class GroupManagementSwitch(SwitchConfigurationTest):
         
         
         
-    def test_ath_6439_create_new_group_with_both_switch_and_iap(self):  
+    def test_ath_6439_create_new_group_with_both_switch_and_iap(self):
+		'''
+		Pre condition : Assume that two device : 1 IAP and switch is already connected to server .
+		'''
         inner_left_panel = self.TopPanel.click_slider_icon()
         create_group_page = inner_left_panel.add_group()
         create_group_page.create_group_with_user_groupname_password('test','test123')
