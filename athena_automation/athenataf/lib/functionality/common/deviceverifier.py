@@ -19,12 +19,12 @@ class DeviceVerifier:
             print err
             raise
             pass
-		self.differ = TextDiffer()
-		self.test = test
-		self.s1 = {}
-		self.s2 = {}
-		self.s3 = {}
-		self.device_results_test_dir = None
+        self.differ = TextDiffer()
+        self.test = test
+        self.s1 = {}
+        self.s2 = {}
+        self.s3 = {}
+        self.device_results_test_dir = None
 
     def _log_snapshot(self, name, snapshot):
         self.device_results_test_dir = os.path.join(self.config.device_verification_dir, self.test.current_test_id)
@@ -64,7 +64,7 @@ class DeviceVerifier:
         
     def take_s1_snapshot(self, extra_command = None):
         if not self.config.options.ignore_device:
-            self.clear(os.environ['device'])
+            # self.clear(os.environ['device'])
             if not self.config.options.switch:
                 time.sleep(devices.CONFIG_CHANGE_WAIT_TIME)
             # self.s1 = self._take_snapshot("s1",  extra_command)
