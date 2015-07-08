@@ -226,4 +226,12 @@ function showOutput(id, name) {
 <col align='right' />
 <col align='right' />
 <col align='right' />
-</colgroup><tr id='header_row'><td>S_No</td><td>TESTLINK_ID</td><td>TEST_IDEA</td><td>IMPORT_PATH</td><td>TEST_CLASS</td><td>TEST_METHOD</td><td>TEST_DATA</td><td>RESULT</td><td>DURATION</td><td>EXCEPTION</td><td>TRACE</td><td>SCREENSHOT</td></tr>
+</colgroup><tr id='header_row'><td>S_No</td><td>TESTLINK_ID</td><td>TEST_IDEA</td><td>IMPORT_PATH</td><td>TEST_CLASS</td><td>TEST_METHOD</td><td>TEST_DATA</td><td>RESULT</td><td>DURATION</td><td>EXCEPTION</td><td>TRACE</td><td>SCREENSHOT</td></tr><tr id='failed_row'><td>1</td><td>ATH-6436</td><td>Not Provided</td><td>athenataf.tests.group_management.group_management_switch.GroupManagementSwitch</td><td>GroupManagementSwitch</td><td>test_ath_6436_switch_not_in_factory_default_configuration_registered_to_athena_it_appears_as_unprovisioned_device</td><td>{u'LAST_MODIFIED': u'', u'TEST_IDEA': u'', u'TESTLINK_ID': u'ATH-6436'}</td><td>ERROR</td><td>136.73</td><td>Exception in Test test_ath_6436_switch_not_in_factory_default_configuration_registered_to_athena_it_appears_as_unprovisioned_device: 'NoneType' object has no attribute 'set'</td><td>Traceback (most recent call last):
+  File "C:\Users\automation\Documents\GitHub\reautomation_handoff\athena_automation\athenataf\lib\test\TestRunner.py", line 266, in _execute_fixture
+    apply(getattr(test_obj, method_name))
+  File "C:\Users\automation\Documents\GitHub\reautomation_handoff\athena_automation\athenataf\tests\group_management\group_management_switch\GroupManagementSwitch.py", line 330, in test_ath_6436_switch_not_in_factory_default_configuration_registered_to_athena_it_appears_as_unprovisioned_device
+    device_management_page.unassign_switch_license("Switch_1")
+  File "C:\Users\automation\Documents\GitHub\reautomation_handoff\athena_automation\athenataf\lib\functionality\page\maintenance\device_management\DeviceManagementPage.py", line 557, in unassign_switch_license
+    self.mac_search_field.set(mac_address)
+AttributeError: 'NoneType' object has no attribute 'set'
+</td><td><a href='../../screenshots/ATH-6436_GroupManagementSwitch_test_ath_6436_switch_not_in_factory_default_configuration_registered_to_athena_it_appears_as_unprovisioned_device_1.png' target='_blank'>Screenshot# 1</a><br/></td></tr>

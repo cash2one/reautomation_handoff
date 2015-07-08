@@ -226,4 +226,18 @@ function showOutput(id, name) {
 <col align='right' />
 <col align='right' />
 <col align='right' />
-</colgroup><tr id='header_row'><td>S_No</td><td>TESTLINK_ID</td><td>TEST_IDEA</td><td>IMPORT_PATH</td><td>TEST_CLASS</td><td>TEST_METHOD</td><td>TEST_DATA</td><td>RESULT</td><td>DURATION</td><td>EXCEPTION</td><td>TRACE</td><td>SCREENSHOT</td></tr>
+</colgroup><tr id='header_row'><td>S_No</td><td>TESTLINK_ID</td><td>TEST_IDEA</td><td>IMPORT_PATH</td><td>TEST_CLASS</td><td>TEST_METHOD</td><td>TEST_DATA</td><td>RESULT</td><td>DURATION</td><td>EXCEPTION</td><td>TRACE</td><td>SCREENSHOT</td></tr><tr id='failed_row'><td>1</td><td>ATH-6436</td><td>Not Provided</td><td>athenataf.tests.group_management.group_management_switch.GroupManagementSwitch</td><td>GroupManagementSwitch</td><td>test_ath_6436_switch_not_in_factory_default_configuration_registered_to_athena_it_appears_as_unprovisioned_device</td><td>{u'LAST_MODIFIED': u'', u'TEST_IDEA': u'', u'TESTLINK_ID': u'ATH-6436'}</td><td>FAIL</td><td>336.08</td><td>AssertionError in Test test_ath_6436_switch_not_in_factory_default_configuration_registered_to_athena_it_appears_as_unprovisioned_device: .
+MonitoringSwitchesPage Page does not get loaded</td><td>Traceback (most recent call last):
+  File "C:\Users\automation\Documents\GitHub\reautomation_handoff\athena_automation\athenataf\lib\test\TestRunner.py", line 266, in _execute_fixture
+    apply(getattr(test_obj, method_name))
+  File "C:\Users\automation\Documents\GitHub\reautomation_handoff\athena_automation\athenataf\tests\group_management\group_management_switch\GroupManagementSwitch.py", line 331, in test_ath_6436_switch_not_in_factory_default_configuration_registered_to_athena_it_appears_as_unprovisioned_device
+    monitoring_switch_page = self.LeftPanel.go_to_monitoring_switches_page()
+  File "C:\Users\automation\Documents\GitHub\reautomation_handoff\athena_automation\athenataf\lib\functionality\page\common\LeftPanel.py", line 329, in go_to_monitoring_switches_page
+    return MonitoringSwitchesPage(self.test, self.browser, self.config)
+  File "C:\Users\automation\Documents\GitHub\reautomation_handoff\athena_automation\athenataf\lib\functionality\page\monitoring\MonitoringSwitchesPage.py", line 10, in __init__
+    self.test.assertPageLoaded(self)
+  File "C:\Users\automation\Documents\GitHub\reautomation_handoff\athena_automation\athenataf\lib\functionality\test\SwitchConfigurationTest.py", line 25, in assertPageLoaded
+    raise AssertionError("%s.\n%s Page does not get loaded" % (msg, page_name))
+AssertionError: .
+MonitoringSwitchesPage Page does not get loaded
+</td><td><a href='../../screenshots/ATH-6436_GroupManagementSwitch_test_ath_6436_switch_not_in_factory_default_configuration_registered_to_athena_it_appears_as_unprovisioned_device_1.png' target='_blank'>Screenshot# 1</a><br/></td></tr>

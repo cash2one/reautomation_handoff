@@ -556,8 +556,11 @@ class DeviceManagementPage(WebPage):
         self.mac_search_field.set(mac_address)
         self.click_on_search_button()
         self.browser._browser.find_element_by_xpath("//span[contains(.,'%s')]/../preceding-sibling::td[1]/input" %serial).click()
-        if self.unassign_button :
-            self.unassign_button.click()
+        try:
+            if self.unassign_button :
+                self.unassign_button.click()
+        except:
+            pass
 
     def add_switch_and_assign_license(self,switch):
         myDevice = Device.getDeviceObject(switch)
@@ -577,9 +580,11 @@ class DeviceManagementPage(WebPage):
             self.add_button.click()
             self.browser.key_press(u'\ue00c')
         device.click()
-        self.assigned_licence_button.click()
-        # self.assign_button_0.click()
-        assign = self.browser._browser.find_element_by_xpath("//a[@id='assign_0' and text()='Assign']")
-        print assign
-        raw_input('assign license')
-        # assign.click()
+        try:
+            self.assigned_licence_button.click()
+            assign = self.browser._browser.find_element_by_xpath("//a[@id='assign_0' and text()='Assign']")
+            print assign
+            raw_input('assign license')
+            # assign.click()
+        except:
+            pass

@@ -4732,3 +4732,12 @@
 [DEBUG]2015-07-08 14:13:09,944:TestRunner:discover:Line-201:: ATH-9713
 [DEBUG]2015-07-08 14:13:09,944:TestRunner:discover:Line-201:: ATH-9738
 [DEBUG]2015-07-08 14:13:09,946:run:<module>:Line-50:: TestRunner: Set Up
+[INFO]2015-07-08 14:15:51,367:SwitchModule:logSession:Line-284:: 
+ Entering server port, ..... type CTRL-z for port menu.
+
+>> 'nobody' initiated a new r/w session 
+
+User: admin
+Password: *******
+(ArubaS1500-12P) >enable
+Password:

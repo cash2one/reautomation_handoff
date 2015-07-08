@@ -44,3 +44,4 @@ Temporary Items
 .apdisk
 
 reautomation_handoff/athena_automation/results
+*.pyc
