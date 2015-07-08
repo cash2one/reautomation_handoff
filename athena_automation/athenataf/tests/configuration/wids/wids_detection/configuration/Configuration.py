@@ -1,8 +1,9 @@
 import logging
 logger = logging.getLogger('athenataf')
+import time
 
 from athenataf.lib.functionality.test.ConfigurationTest import ConfigurationTest
-
+from athenataf.lib.functionality.common import DeviceLibrary
 class Configuration(ConfigurationTest):
 	'''
 		Test class for Configuration.
@@ -240,19 +241,51 @@ class Configuration(ConfigurationTest):
 		
 	def test_ath_11137_wids_config_all_iaps_in_swarm(self):
 		self.take_s1_snapshot()
+		import os
+		os.environ['device'] = "IAP_1"
+		self.take_s1_snapshot('show_ids_detection_config')
+		import os
+		os.environ['device'] = "IAP_2"
+		time.sleep(140)
+		self.take_s1_snapshot('show_ids_detection_config')
+		time.sleep(30)
+		inner_left_panel = self.TopPanel.click_slider_icon()
+		inner_left_panel.select_master_slave_group()
 		wids_page = self.LeftPanel.go_to_wids_page()
 		wids_page.set_detection_infra_threat_detection_level_custom('High')
 		wids_page.set_detection_clients_threat_detection_level_custom_changes('Custom')
 		wids_page.setting_attacks()
 		wids_page.save_settings()
-		self.take_s2_snapshot()
+		import os
+		os.environ['device'] = "IAP_1"
+		self.take_s2_snapshot('show_ids_detection_config')
+		import os
+		os.environ['device'] = "IAP_2"
+		time.sleep(30)
+		self.take_s2_snapshot('show_ids_detection_config')
 		wids_page.assert_attacks()
 		wids_page.set_detection_infra_threat_detection_level('Off')
 		wids_page.set_detection_clients_threat_detection_level('Off')
-		self.take_s3_snapshot()
+		import os
+		os.environ['device'] = "IAP_1"
+		self.take_s3_snapshot('show_ids_detection_config')
+		import os
+		os.environ['device'] = "IAP_2"
+		time.sleep(30)
+		self.take_s3_snapshot('show_ids_detection_config')
+		import os
+		os.environ['device'] = "IAP_1"
 		self.assert_s1_s2_diff(2)
+		import os
+		os.environ['device'] = "IAP_2"
+		self.assert_s1_s2_diff(2)
+		import os
+		os.environ['device'] = "IAP_1"
 		self.assert_s1_s3_diff()
-		self.clear()
+		import os
+		os.environ['device'] = "IAP_2"
+		self.assert_s1_s3_diff()
+		# self.clear()
 		
 	def test_ath_11339_wids_config_infrastructure_and_clients_detection_level(self):
 		conf = self.config.config_vars

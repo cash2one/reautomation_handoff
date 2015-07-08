@@ -2423,16 +2423,16 @@ class RfPage(WebPage):
             
     def assert_arm_configuration(self,ap,armconfig=''):
         '''
-        Asser min and max transmit power values 
+        Assert arm configurations
         '''
-        # logger.debug("FirmwarePage : creating object of Device")
+        logger.debug("RFPage : creating object of Device")
         myDevice = Device.getDeviceObject(ap)
-        # logger.debug("FirmwarePage : splitting the firmware version")
-        # logger.debug("FirmwarePage : waiting to receive prompt")
+        # logger.debug("RFPage : splitting the firmware version")
+        logger.debug("RFPage : waiting to receive prompt")
         myDevice.receive("#")
-        # logger.debug("FirmwarePage : passing command 'show version' ")
+        logger.debug("RFPage : passing command 'show arm config' ")
         myDevice.transmit("show arm config")
-        # logger.debug("FirmwarePage : waiting to receive prompt")
+        logger.debug("RFPage : waiting to receive prompt")
         output = myDevice.receive("#")
         if not armconfig in output:
             raise AssertionError("%s is not pushed to %s" %(armconfig,ap)) 

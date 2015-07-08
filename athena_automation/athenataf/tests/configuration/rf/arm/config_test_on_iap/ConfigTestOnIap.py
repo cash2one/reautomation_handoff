@@ -255,56 +255,140 @@ class ConfigTestOnIap(ConfigurationTest):
             # manage_group_page.delete_group1()
  
         
-    def test_ath_11085_edit_config(self):
-        conf = self.config.config_vars
-        innerleftpanel = self.LeftPanel.click_slider_icon()
-        innerleftpanel.select_device1()
-        rf_page = self.LeftPanel.go_to_rf_page()
-        rf_page.set_rf_arm_fields(set=True)
-        self.browser.refresh()
-        rf_page.assert_override_flag_button(check='True')
-        rf_page.click_on_override_flag()
-        rf_page.aserts_overrides_diff()
-        rf_page.click_on_close_overrides_overlay()
-        innerleftpanel.click_on_close_icon()
-        innerleftpanel = self.LeftPanel.click_slider_icon()
-        innerleftpanel.select_default_group()
-        rf_page.set_rf_arm_fields(set=True)
-        self.browser.refresh()
-        rf_page.assert_override_flag_button(check='False')
-        innerleftpanel = self.LeftPanel.click_slider_icon()
-        innerleftpanel.select_device2()
-        rf_page.set_rf_arm_client_control_cm_calculating_interval(conf.cm_calculating_interval_66)
-        rf_page.set_rf_arm_client_control_cm_neighbor_matching(conf.vlanid)
-        rf_page.set_rf_arm_client_control_cm_threshold(conf.transmit_power_24g_value2)
-        rf_page.set_rf_arm_access_point_control_min_transmit_power(conf.min_transmit_power_value)
-        rf_page.set_rf_arm_access_point_control_max_transmit_power(conf.max_transmit_power_value1)
-        rf_page.enable_custom_valid_channel_and_set()
-        rf_page.save_changes()
-        self.browser.refresh()
-        rf_page.click_on_override_flag()
-        rf_page.click_on_resolve_all_overrides()
-        self.take_s2_snapshot()
-        rf_page.set_rf_arm_fields(set=False)
-        rf_page.save_changes()
-        self.take_s3_snapshot()
-        self.assert_s1_s2_diff(0)
-        self.assert_s1_s3_diff()
-        self.clear()
-        
+	def test_ath_11085_edit_config(self):
+		'''
+		as suggested by Michael
+		IAP1 : 4.1.1.7
+		IAP_2: 4.1.2.3
+		'''
+		conf = self.config.config_vars
+		import os
+		os.environ['device'] = 'IAP_2'
+		self.take_s1_snapshot("SHOW_ARM_CONFIG")
+		import os
+		os.environ['device'] = "IAP_1"
+		self.take_s1_snapshot("SHOW_ARM_CONFIG")
+		innerleftpanel = self.TopPanel.click_slider_icon()
+		create_group = innerleftpanel.add_group()
+		create_group.create_empty_group1(self.config.config_vars.group_1)
+		manage_group = innerleftpanel.manage_group()
+		manage_group.move_vc_to_group(self.config.config_vars.group_1,'IAP_2')
+		time.sleep(500)
+		DeviceLibrary.reconnect('IAP_2')
+		innerleftpanel = self.TopPanel.click_slider_icon()
+		innerleftpanel.click_on_expand_group_icon(innerleftpanel.expand_group_icon)
+		innerleftpanel.select_vc('IAP_1')
+		rf_page = self.LeftPanel.go_to_rf_page()
+		rf_page.set_rf_arm_client_control_band_sterring_mode(conf.band_streering_force_5ghz)
+		logger.debug('RFPage : Selecting Default access in airtime fairness mode')
+		rf_page.airtime_fairness_mode.set(conf.airtime_fairness_mode_default_access)
+		rf_page.cm_calculating_interval.set(conf.sixty)
+		rf_page.set_rf_arm_client_control_cm_neighbor_matching(conf.ninty_five)
+		logger.debug('RfPage : Setting vale of cm interval threshold to default value')
+		rf_page.cm_threshold.set(conf.cm_threshold_value2)
+		rf_page.set_rf_arm_client_control_slb_mode(conf.slb_mode_value_2nd)
+		logger.debug('RfPage : Setting max transmit power to default values')
+		rf_page.max_transmit_power.set(conf.min_transmit_power_value)
+		logger.debug('RfPage : Setting min transmit power to default values')
+		rf_page.min_transmit_power.set(conf.new_min_transmit_power_value)
+		rf_page.set_rf_arm_access_point_control_client_aware(conf.new_mhz_support_value)
+		logger.debug('RfPage : Setting scanning values')
+		rf_page.scanning.set(conf.new_mhz_support_value)
+		rf_page.set_rf_arm_access_point_control_wide_channel_bands(conf.wide_channel_bands_24ghz)
+		rf_page.set_rf_arm_access_point_control_mhz_support(conf.new_mhz_support_value)
+		logger.debug('RfPage : Clicking on Save button')
+		rf_page.save_settings.click()
+		rf_page.set_rf_arm_fields(set=True)
+		self.browser.refresh()
+		rf_page.assert_override_flag_button(check='True')
+		rf_page.click_on_override_flag()
+		rf_page.aserts_overrides_diff()
+		rf_page.click_on_close_overrides_overlay()
+		innerleftpanel.click_on_close_icon()
+		innerleftpanel = self.TopPanel.click_slider_icon()
+		innerleftpanel.select_default_group()
+		rf_page.set_rf_arm_fields(set=True)
+		self.browser.refresh()
+		rf_page.assert_override_flag_button(check='False')
+		innerleftpanel = self.TopPanel.click_slider_icon()
+		innerleftpanel.click_expand_group1_icon()
+		innerleftpanel.select_vc('IAP_2')
+		rf_page = self.LeftPanel.go_to_rf_page()
+		rf_page.set_rf_arm_client_control_cm_calculating_interval(conf.cm_calculating_interval_66)
+		rf_page.set_rf_arm_client_control_cm_neighbor_matching(conf.vlanid)
+		rf_page.set_rf_arm_client_control_cm_threshold(conf.transmit_power_24g_value2)
+		rf_page.set_rf_arm_access_point_control_min_transmit_power(conf.min_transmit_power_value)
+		rf_page.set_rf_arm_access_point_control_max_transmit_power(conf.max_transmit_power_value1)
+		rf_page.set_rf_arm_access_point_control_customized_valid_channel(check = 'true')
+		rf_page.enable_custom_valid_channel_and_set()
+		rf_page.save_changes()
+		self.browser.refresh()
+		rf_page.click_on_override_flag()
+		rf_page.click_on_resolve_all_overrides()
+		import os
+		os.environ['device'] = "IAP_1"
+		self.take_s2_snapshot("SHOW_ARM_CONFIG")
+		import os
+		os.environ['device'] = "IAP_2"
+		self.take_s2_snapshot("SHOW_ARM_CONFIG")
+		rf_page.set_rf_arm_fields(set=False)
+		rf_page.save_changes()
+		innerleftpanel = self.TopPanel.click_slider_icon()
+		innerleftpanel.select_default_group()
+		rf_page = self.LeftPanel.go_to_rf_page()
+		rf_page.set_rf_arm_fields(set=False)
+		rf_page.save_changes()
+		innerleftpanel = self.TopPanel.click_slider_icon()
+		manage_group = innerleftpanel.manage_group()
+		manage_group.move_vc_to_group(self.config.config_vars.default_group,'IAP_2')
+		time.sleep(300)
+		DeviceLibrary.reconnect('IAP_2')
+		manage_group = innerleftpanel.manage_group()
+		manage_group.delete_group(manage_group.group1)
+		import os
+		os.environ['device'] = "IAP_1"
+		self.take_s3_snapshot("SHOW_ARM_CONFIG")
+		import os
+		os.environ['device'] = "IAP_2"
+		self.take_s3_snapshot("SHOW_ARM_CONFIG")
+		import os
+		os.environ['device'] = "IAP_1"
+		self.assert_s1_s2_diff(0)
+		import os
+		os.environ['device'] = "IAP_2"
+		self.assert_s1_s2_diff(0)
+		import os
+		os.environ['device'] = "IAP_1"
+		self.assert_s1_s3_diff()
+		import os
+		os.environ['device'] = "IAP_2"
+		self.assert_s1_s3_diff()
+		# self.clear()
+		
     def test_ath_11322_custom_channel_verification_in_access_control_country_code_specific(self):
-        self.take_s1_snapshot()
         '''
-        Step1 and step 3 is remaining(country code)
+		test case executed on row swarm as suggested by Michael
         '''
+        inner_left = self.TopPanel.click_slider_icon()
+        inner_left.select_master_slave_group()
         rf_page = self.LeftPanel.go_to_rf_page()
-        rf_page.enable_custom_valid_channel_and_set()
+        rf_page.set_rf_arm_access_point_control_customized_valid_channel(check='true')
+        rf_page.click_on_edit_24_ghz()
+        rf_page.assert_24ghz_checkbox_values()
+        rf_page.click_on_close_24_ghz()
+        rf_page.click_on_edit_5_ghz()
+        rf_page.assert_5ghz_checkbox_values()
+        rf_page.click_on_close_5_ghz()
+        raw_input('wait')
+        rf_page.enable_custom_valid_channel_and_set() #show arm-channel
         rf_page.save_changes()
-        self.take_s2_snapshot()
+        time.sleep(120)
+        rf_page.assert_arm_channels('IAP_1','6        enable')
+        rf_page.assert_arm_channels('IAP_1','6+       enable')
+        rf_page.assert_arm_channels('IAP_1','153      enable')
+        rf_page.assert_arm_channels('IAP_1','157      enable')
         rf_page.set_rf_arm_access_point_control_customized_valid_channel(check=False)
         rf_page.save_changes()
-        self.take_s3_snapshot()
-        self.assert_s1_s2_diff(0)
-        self.assert_s1_s3_diff()
-        self.clear()
-        
+        time.sleep(120)
+        rf_page.assert_arm_channels('IAP_1','153      disable')
+        rf_page.assert_arm_channels('IAP_1','157      disable')
