@@ -29,7 +29,6 @@ class DeviceVerifier:
     def _log_snapshot(self, name, snapshot):
         self.device_results_test_dir = os.path.join(self.config.device_verification_dir, self.test.current_test_id)
         if not os.path.isdir(self.device_results_test_dir): os.makedirs(self.device_results_test_dir)
-        f = open(os.path.join(self.device_results_test_dir, "%s.txt" % name), "w")
         if os.environ['device'] != 'IAP_1' and os.environ['device'] != 'Switch_1':
             f = open(os.path.join(self.device_results_test_dir, "%s_%s.txt" % (name, os.environ['device'])), "w")
         else:
@@ -38,7 +37,7 @@ class DeviceVerifier:
         f.close()
         
     def _take_snapshot(self, type, extra_command = None):
-        # config = self.get_config.get_running_config(extra_command)
+        #config = self.get_config.get_running_config(extra_command)
         config = Device.Device.getDeviceObject(os.environ['device']).get_running_config(extra_command)
         config_string = config
         lines = config_string.split('\n')
@@ -64,18 +63,17 @@ class DeviceVerifier:
         
     def take_s1_snapshot(self, extra_command = None):
         if not self.config.options.ignore_device:
-            # self.clear(os.environ['device'])
+            self.clear(os.environ['device'])
             if not self.config.options.switch:
                 time.sleep(devices.CONFIG_CHANGE_WAIT_TIME)
-            # self.s1 = self._take_snapshot("s1",  extra_command)
+            # setattr(self, "s1_%s" %os.environ["device"], self._take_snapshot("s1",  extra_command))
             self.s1[os.environ['device']] = self._take_snapshot("s1", extra_command)
+            # self.s1 = self._take_snapshot("s1",  extra_command)
         
     def take_s2_snapshot(self, extra_command = None):
         if not self.config.options.ignore_device:
             if not  self.config.options.switch:
-                time.sleep(devices.CONFIG_CHANGE_WAIT_TIME)    
-            self.s2 = self._take_snapshot("s2",  extra_command)
-            time.sleep(devices.CONFIG_CHANGE_WAIT_TIME)
+                time.sleep(devices.CONFIG_CHANGE_WAIT_TIME)
             # setattr(self, "s2_%s" %os.environ["device"], self._take_snapshot("s2",  extra_command))
             self.s2[os.environ['device']] = self._take_snapshot("s2", extra_command)
             # self.s2 = self._take_snapshot("s2",  extra_command)
@@ -84,7 +82,6 @@ class DeviceVerifier:
         if not self.config.options.ignore_device:
             if not  self.config.options.switch:        
                 time.sleep(devices.CONFIG_CHANGE_WAIT_TIME)    
-            self.s3 = self._take_snapshot("s3",  extra_command)        
             # setattr(self, "s3_%s" %os.environ["device"], self._take_snapshot("s3",  extra_command))
             self.s3[os.environ['device']] = self._take_snapshot("s3", extra_command)
             # self.s3 = self._take_snapshot("s3",  extra_command)
@@ -94,13 +91,17 @@ class DeviceVerifier:
         import os
         print os.environ['device']
         device = os.environ['device']
+        # raw_input('device')
         version = None
         exec("version = devices.%s.version"%device)
         print version
+        # raw_input('version')
         if self.config.options.switch:
             diff_file_path = os.path.join(fwork.DEVICE_VERIFICATION_DIR+"\%s"%self.get_config.get('type') , "%s_s1_s2_diff.txt") % self.test.current_test_id
         else:
             diff_file_path = os.path.join(fwork.DEVICE_VERIFICATION_DIR+"\%s"%self.get_config.get('type') +"\%s"%version, "%s_s1_s2_diff.txt") % self.test.current_test_id
+        print diff_file_path
+        # raw_input('path')
         if os.path.isfile(diff_file_path):
             diff_handle = open(diff_file_path, "r")
             expected_config_diff_list = diff_handle.readlines()
@@ -132,7 +133,10 @@ class DeviceVerifier:
         #return left_diff == right_diff
     
     def _get_snapshot_diff(self, type, left_snapshot, right_snapshot, num_of_context_lines):
+        import os
         actual_config_diff = self.differ.get_difference(left_snapshot, right_snapshot, num_of_context_lines)
+        print "The device used for Snapshot"
+        print os.environ['device']
         f = open(os.path.join(self.device_results_test_dir, "%s_%s_actual_diff.txt" % (type,os.environ['device'])), "w")
         f.write(actual_config_diff)
         f.close()        
@@ -140,6 +144,10 @@ class DeviceVerifier:
         
     def check_s1_s2_diff(self , num_of_context_lines):
         if not self.config.options.ignore_device:
+            print "The snapshot key is:", os.environ['device']
+            print self.s1[os.environ['device']]
+            print self.s1[os.environ['device']]
+            print self.s2[os.environ['device']]
             calculated_diff = self._get_snapshot_diff("s1_s2",self.s1[os.environ['device']], self.s2[os.environ['device']], num_of_context_lines)
             test_reference_diff = self._get_test_diff(num_of_context_lines)
             return self._check_diff_equality(calculated_diff, test_reference_diff)
@@ -155,17 +163,13 @@ class DeviceVerifier:
         
     def clear(self, device):
         if not self.config.options.ignore_device:
-            self.s1 = None
-            self.s2 = None
-            self.s3 = None
-    
             #self.s1.clear()
             self.s1[device] = ""
             #self.s2.clear()
             self.s2[device] = ""
             self.s3[device] = ""
             #self.s3.clear()
-    
+
     def get_device_current_status(self,device=None):
         if self.config.options.switch:
             logger.debug("Switch Device status")
