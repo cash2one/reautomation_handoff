@@ -93,14 +93,13 @@ class Multiversion(ConfigurationTest):
         os.environ['device'] = "IAP_2"
         self.take_s3_snapshot()
         os.environ['device'] = "IAP_1"
-        self.assert_s1_s2_diff(o)
+        self.assert_s1_s2_diff(0)
         os.environ['device'] = "IAP_2"
-        self.assert_s1_s2_diff(o)
+        self.assert_s1_s2_diff(0)
         os.environ['device'] = "IAP_1"
         self.assert_s1_s3_diff()
         os.environ['device'] = "IAP_2"
         self.assert_s1_s3_diff()
-        self.clear()
     # def configure_deny_inter_user_bridging(self,ap):
         # import time
         # myDevice = Device.getDeviceObject(ap)
