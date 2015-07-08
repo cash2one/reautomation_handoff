@@ -71,6 +71,7 @@ class LeftPanel(WebPage):
         if self.save_pop_up:
             self.save_pop_up.click()
             self.vpn_menu.click()
+        return VpnPage(self.test, self.browser, self.config)
         
     def go_to_network_page(self):
         self.configuration.click()
