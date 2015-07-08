@@ -1,6 +1,0 @@
-[INFO]2015-07-08 15:01:48,052:run:<module>:Line-41:: Results directory: C:\Users\automation\Documents\GitHub\reautomation_handoff\athena_automation\results\08_Jul_2015_15_01_48
-[DEBUG]2015-07-08 15:01:48,053:run:<module>:Line-42:: Initializing variables
-[INFO]2015-07-08 15:01:48,078:run:<module>:Line-45:: ==============================
-[INFO]2015-07-08 15:01:48,078:run:<module>:Line-46:: TestRunner: Initialization
-[INFO]2015-07-08 15:01:48,078:TestRunner:__init__:Line-26:: Initializing TestRunner
-[DEBUG]2015-07-08 15:01:48,178:run:<module>:Line-48:: TestRunner: Discover Tests
