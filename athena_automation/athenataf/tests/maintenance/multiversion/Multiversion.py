@@ -56,6 +56,11 @@ class Multiversion(ConfigurationTest):
     def test_ath_11004_configure_gre_per_ap_tunnel_in_a_mixed_group(self):
         self.LeftPanel.go_to_network_page()
         self.NetworkPage.delete_network_if_present()
+        import os
+        os.environ['device'] = "IAP_1"
+        self.take_s1_snapshot()
+        import os
+        os.environ['device'] = "IAP_2"
         self.take_s1_snapshot()
         conf = self.config.config_vars
         basic_info = self.NetworkPage.create_new_network()
@@ -74,14 +79,26 @@ class Multiversion(ConfigurationTest):
         vpn_obj.set_backup_host(conf.vcip1,'false')
         vpn_obj.set_per_ap_tunnel('true')
         vpn_obj.save_settings()
+        os.environ['device'] = "IAP_1"
+        self.take_s2_snapshot()
+        os.environ['device'] = "IAP_2"
         self.take_s2_snapshot()
         vpn_obj.set_backup_host('','false')
         vpn_obj.set_primary_host_field('','true')
         vpn_obj.restore_Ipsec_default()
         self.LeftPanel.go_to_network_page()
         self.NetworkPage.delete_network_if_present()
+        os.environ['device'] = "IAP_1"
         self.take_s3_snapshot()
-        self.assert_s1_s2_diff(0)
+        os.environ['device'] = "IAP_2"
+        self.take_s3_snapshot()
+        os.environ['device'] = "IAP_1"
+        self.assert_s1_s2_diff(o)
+        os.environ['device'] = "IAP_2"
+        self.assert_s1_s2_diff(o)
+        os.environ['device'] = "IAP_1"
+        self.assert_s1_s3_diff()
+        os.environ['device'] = "IAP_2"
         self.assert_s1_s3_diff()
         self.clear()
     # def configure_deny_inter_user_bridging(self,ap):
