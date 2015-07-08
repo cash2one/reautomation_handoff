@@ -1,0 +1,6 @@
++ l2tpv3 tunnel tunnel1
++  primary peer-address 10.17.50.110
++ l2tpv3 session session
++  cookie len 4 value DDDDDDDD
++  tunnel-ip 255.255.255.0 mask 255.255.255.240 vlan 12
++  remote-end-id 10

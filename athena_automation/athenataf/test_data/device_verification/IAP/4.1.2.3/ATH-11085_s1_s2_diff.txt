@@ -1,0 +1,81 @@
++ show arm config
++ Minimum Transmit Power            :18
++ Maximum Transmit Power            :127
++ Band Steering Mode       :prefer-5ghz
++ Client Aware             :enable
++ Scanning                 :enable
++ Wide Channel Bands       :5ghz
++ 80Mhz Support            :disable
++ Air Time Fairness Mode   :fair-access
++ Client Match             :disable
++ CM NB Matching Percent   :75
++ CM Calculating Interval  :30
++ CM SLB Threshold         :2
++ CM SLB Balancing Mode    :channel based
++ CM Max Request           :5
++ CM Max Adoption          :5
++ CM Debug Level           :error
++ Custom Channels          :No
++ 2.4 GHz Channels
++ ----------------
++ Channel  Status
++ -------  ------
++ 1        enable
++ 2        disable
++ 3        disable
++ 4        disable
++ 5        disable
++ 6        enable
++ 7        disable
++ 8        disable
++ 9        disable
++ 10       disable
++ 11       enable
++ 1+       enable
++ 2+       disable
++ 3+       disable
++ 4+       disable
++ 5+       disable
++ 6+       disable
++ 7+       enable
++ 5.0 GHz Channels
++ ----------------
++ Channel  Status
++ -------  ------
++ 36       enable
++ 40       enable
++ 44       enable
++ 48       enable
++ 52       enable
++ 56       enable
++ 60       enable
++ 64       enable
++ 100      enable
++ 104      enable
++ 108      enable
++ 112      enable
++ 116      enable
++ 132      enable
++ 136      enable
++ 140      enable
++ 144      enable
++ 149      enable
++ 153      enable
++ 157      enable
++ 161      enable
++ 165      enable
++ 36+      enable
++ 44+      enable
++ 52+      enable
++ 60+      enable
++ 100+     enable
++ 108+     enable
++ 132+     enable
++ 140+     enable
++ 149+     enable
++ 157+     enable
++ 36E      enable
++ 52E      enable
++ 100E     enable
++ 132E     enable
++ 149E     enable

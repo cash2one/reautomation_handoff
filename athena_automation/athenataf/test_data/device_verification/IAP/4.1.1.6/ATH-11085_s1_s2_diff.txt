@@ -1,0 +1,98 @@
+! Minimum Transmit Power            :18
+! Maximum Transmit Power            :127
+! Band Steering Mode       :prefer-5ghz
+! Minimum Transmit Power            :15
+! Maximum Transmit Power            :18
+! Band Steering Mode       :disable
+! Wide Channel Bands       :5ghz
+! Wide Channel Bands       :none
+! Client Match             :disable
+! CM NB Matching Percent   :75
+! CM Calculating Interval  :30
+! CM SLB Threshold         :30
+! CM SLB Balancing Mode    :channel based
+! Client Match             :enable
+! CM NB Matching Percent   :50
+! CM Calculating Interval  :99
+! CM SLB Threshold         :15
+! CM SLB Balancing Mode    :channel+radio based
+! Custom Channels          :No
+! Custom Channels          :Yes
+! 1        enable
+! 1        disable
+! 6        enable
+! 6        disable
+! 1+       enable
+! 1+       disable
+! 36       enable
+! 40       enable
+! 44       enable
+! 48       enable
+! 52       enable
+! 56       enable
+! 60       enable
+! 64       enable
+! 100      enable
+! 104      enable
+! 108      enable
+! 112      enable
+! 116      enable
+! 132      enable
+! 136      enable
+! 140      enable
+! 144      enable
+! 36       disable
+! 40       disable
+! 44       disable
+! 48       disable
+! 52       disable
+! 56       disable
+! 60       disable
+! 64       disable
+! 100      disable
+! 104      disable
+! 108      disable
+! 112      disable
+! 116      disable
+! 132      disable
+! 136      disable
+! 140      disable
+! 144      disable
+! 153      enable
+! 157      enable
+! 161      enable
+! 165      enable
+! 36+      enable
+! 44+      enable
+! 52+      enable
+! 60+      enable
+! 100+     enable
+! 108+     enable
+! 132+     enable
+! 140+     enable
+! 149+     enable
+! 157+     enable
+! 36E      enable
+! 52E      enable
+! 100E     enable
+! 132E     enable
+! 149E     enable
+! 153      disable
+! 157      disable
+! 161      disable
+! 165      disable
+! 36+      disable
+! 44+      disable
+! 52+      disable
+! 60+      disable
+! 100+     disable
+! 108+     disable
+! 132+     disable
+! 140+     disable
+! 149+     disable
+! 157+     disable
+! 36E      disable
+! 52E      disable
+! 100E     disable
+! 132E     disable
+! 149E     disable
