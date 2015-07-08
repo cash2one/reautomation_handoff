@@ -338,10 +338,17 @@ class GroupManagementSwitch(SwitchConfigurationTest):
         import time
         time.sleep(120)
         self.browser.refresh()
+        
         inner_left_panel = self.TopPanel.click_slider_icon()
         manage_group_page = inner_left_panel.manage_group()
         manage_group_page.group_sidebar_close_icon.click()
         manage_group_page.move_unprovisioned_device('Switch_1','New Group','switch')
+        
+        inner_left_panel.manage_group()
+        manage_group_page.move_device_to_group('default','Switch_1')
+        
+        inner_left_panel.manage_group()
+        manage_group_page.delete_group('switch')
 
         
     def test_ath_6435_verify_factory_defaults_switch_shows_up_in_default_group_on_registration_to_athena(self):

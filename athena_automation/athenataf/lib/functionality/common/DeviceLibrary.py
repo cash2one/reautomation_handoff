@@ -19,8 +19,8 @@ def connect_device_to_server(device):
         myDevice.connect()
         myDevice.connect_device_to_server()
     i = 1
-    while i < 4:
-        if myDevice.get_device_status():
+    while i < 5:
+        if myDevice.get_device_status(strict=True):
             break
         else:
             time.sleep(10)
