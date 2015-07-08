@@ -45,3 +45,6 @@ Temporary Items
 
 reautomation_handoff/athena_automation/results
 *.pyc
+*.html
+*.log
+*.png
