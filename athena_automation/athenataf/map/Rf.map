@@ -101,6 +101,7 @@ channel_5ghz_128							: button&id&channel_5_checkbox_128
 channel_5ghz_132							: button&id&channel_5_checkbox_132
 channel_5ghz_136							: button&id&channel_5_checkbox_136
 channel_5ghz_140							: button&id&channel_5_checkbox_140
+channel_5ghz_144							: button&id&channel_5_checkbox_144
 channel_5ghz_149							: button&id&channel_5_checkbox_149
 channel_5ghz_153							: button&id&channel_5_checkbox_153
 channel_5ghz_157							: button&id&channel_5_checkbox_157
