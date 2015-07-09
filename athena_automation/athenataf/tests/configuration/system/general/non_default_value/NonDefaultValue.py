@@ -19,7 +19,7 @@ class NonDefaultValue(ConfigurationTest):
 		system_page.set_new_vc_ip("IAP_1",conf.ip_add)
 		system_page.set_non_default_values_cpu_util("IAP_1")
 		system_page._save_settings()
-		
+		time.sleep(10)
 		system_page.assert_system_page_vc_field_values("IAP_1","sh ru | inc name",conf.vc_name)
 		system_page.assert_system_page_vc_field_values("IAP_1","sh ru | inc virtual",conf.ip_add)
 		system_page.assert_system_page_vc_field_values("IAP_1","sh ru | inc time","Pacific-Time -07")
