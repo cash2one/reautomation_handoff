@@ -222,7 +222,10 @@ class GroupManagementSwitch(SwitchConfigurationTest):
         
         
         
-    def test_ath_6439_create_new_group_with_both_switch_and_iap(self):  
+    def test_ath_6439_create_new_group_with_both_switch_and_iap(self):
+		'''
+		Pre condition : Assume that two device : 1 IAP and switch is already connected to server .
+		'''
         inner_left_panel = self.TopPanel.click_slider_icon()
         create_group_page = inner_left_panel.add_group()
         create_group_page.create_group_with_user_groupname_password('test','test123')
@@ -325,19 +328,19 @@ class GroupManagementSwitch(SwitchConfigurationTest):
 
         
     def test_ath_6436_switch_not_in_factory_default_configuration_registered_to_athena_it_appears_as_unprovisioned_device(self):
-        # firmware_page = self.LeftPanel.go_to_maintenance_Firmware_page()
-        # device_management_page = self.LeftPanel.go_to_device_management()
-        # device_management_page.unassign_switch_license("Switch_1")
-        # monitoring_switch_page = self.LeftPanel.go_to_monitoring_switches_page()
-        # monitoring_switch_page.delete_switch_device_based_on_ip("Switch_1")
-        # DeviceLibrary.factoryReset("Switch_1")
-        # firmware_page = self.LeftPanel.go_to_maintenance_Firmware_page()
-        # device_management_page = self.LeftPanel.go_to_device_management()
-        # device_management_page.add_switch_and_assign_license("Switch_1")
-        # DeviceLibrary.connect_device_to_server("Switch_1")
-        # import time
-        # time.sleep(120)
-        # self.browser.refresh()
+        firmware_page = self.LeftPanel.go_to_maintenance_Firmware_page()
+        device_management_page = self.LeftPanel.go_to_device_management()
+        device_management_page.unassign_switch_license("Switch_1")
+        monitoring_switch_page = self.LeftPanel.go_to_monitoring_switches_page()
+        monitoring_switch_page.delete_switch_device_based_on_ip("Switch_1")
+        DeviceLibrary.factoryReset("Switch_1")
+        firmware_page = self.LeftPanel.go_to_maintenance_Firmware_page()
+        device_management_page = self.LeftPanel.go_to_device_management()
+        device_management_page.add_switch_and_assign_license("Switch_1")
+        DeviceLibrary.connect_device_to_server("Switch_1")
+        import time
+        time.sleep(120)
+        self.browser.refresh()
         
         inner_left_panel = self.TopPanel.click_slider_icon()
         manage_group_page = inner_left_panel.manage_group()
