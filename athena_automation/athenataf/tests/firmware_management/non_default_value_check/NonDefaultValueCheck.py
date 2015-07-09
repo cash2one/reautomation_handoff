@@ -29,13 +29,13 @@ class NonDefaultValueCheck(AthenaGUITestCase):
     def test_ath_11941_firmware_upgrade_in_vc_manual(self):
         conf = self.config.config_vars
         firmware_page = self.LeftPanel.go_to_maintenance_Firmware_page()
-        firmware_page.select_vc_for_upgrade('IAP_1')        
+        firmware_page.select_vc_for_upgrade('IAP_1')
         firmware_page.clicking_on_upgrade_firmware()
-        firmware_page.setting_firmware_upgrade_manual_option(conf.version_type_value_2,conf.firmware_version_4122)
+        firmware_page.setting_firmware_upgrade_manual_option(conf.version_type_value_2,conf.firmware_upgrade_version)
         firmware_page.click_post_firmware_upgrade()
-        time.sleep(1500)
-        # self.buy_time()       
+        time.sleep(1000)
+        # self.buy_time()
         DeviceLibrary.getPrompt("IAP_1")
         DeviceLibrary.connect_device_to_server('IAP_1')
         # self.buy_time()
-        firmware_page.assert_firmware_version('IAP_1',conf.firmware_version_4122)
+        firmware_page.assert_firmware_version('IAP_1',conf.firmware_upgrade_version)
