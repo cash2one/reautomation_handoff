@@ -1880,6 +1880,8 @@ class SystemPage(WebPage):
 		else:
 			logger.debug("SystemPage : Set password.")
 			self.pp_password.set(value)
+			self.browser.key_press(u'\ue004')
+		
 	def set_pp_retype_password(self,value):
 		'''
 		write PPPOE pp Retype  password 
@@ -1889,10 +1891,6 @@ class SystemPage(WebPage):
 			logger.debug("SystemPage : Set retype password.")
 			self.pp_password_retype.clear()	
 		else:
-			time.sleep(5)
-			self.browser.key_press(u'\ue00d')
-			time.sleep(5)
-			self.browser.key_press(u'\ue00d')
 			logger.debug("SystemPage : Set retype password.")
 			self.pp_password_retype.set(value)
 			time.sleep(3)
@@ -2943,13 +2941,6 @@ class SystemPage(WebPage):
 		if self.close_pop_up:
 			self.close_pop_up.click()
 	
-	def page_down(self):
-		'''
-		scroll down the page
-		'''
-		self.browser.key_press(u'\ue009')
-		self.browser.key_press( u'\ue00f')
-	
 	def check_non_default_values_vc_name(self):
 		conf = self.config.config_vars
 		logger.debug("SystemPage : Edit VC name")
@@ -3277,13 +3268,6 @@ class SystemPage(WebPage):
 		import time
 		time.sleep(1000)
 		
-	def page_down(self):
-		'''
-		scroll down the page
-		'''
-		self.browser.key_press(u'\ue009')
-		self.browser.key_press( u'\ue010')
-		
 	# def edit_vc_name(self,iap,name=None):
 		# myDevice = Device.getDeviceObject(iap)
 		# vcname = myDevice.get("vc_name")
@@ -3362,6 +3346,7 @@ class SystemPage(WebPage):
 		time.sleep(7)
 		self.edit_values_ip.click()
 		logger.debug("SystemPage: Clicking on edit icon")
+		time.sleep(7)
 		self.browser._browser.find_element_by_xpath("//td[@title='%s']/following-sibling::td[1]/div[1]/a" %vcip).click()
 		logger.debug("SystemPage: Clearing vc ip text box")
 		self.browser._browser.find_element_by_xpath("//td[@title='%s']/span[2]/span[2]/input" %vcip).clear()
@@ -3451,4 +3436,9 @@ class SystemPage(WebPage):
 		logger.debug("SystemPage : Edit Dynamic CPU Utilization")
 		self.set_dyanamic_cpu_utilization(conf.dynamic_cpu_utilization_value)
 		
-		
+	def click_reboot_ok_button(self):
+		logger.debug("SystemPage : Click on 'OK' button")
+		if self.reboot_ok:
+			time.sleep(3)
+			self.reboot_ok.click()
+		time.sleep(5)
