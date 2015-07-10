@@ -265,10 +265,10 @@ class SystemPage(WebPage):
 			self.extended_ssid.set(path.extended_ssid_value)
 		elif drop_box_elem == 'deny inter':
 			logger.debug("SystemPage : Set value in 'DENY INTER USING BRIDGING' drop-down")
-			self.deny_inter_using.set(path.deny_inter_using_value)
+			self.deny_inter_using.set(path.sys_disable)
 		elif drop_box_elem == 'deny local routing':
 			logger.debug("SystemPage : Set value in 'DENY LOCAL ROUTING' drop-down")
-			self.deny_local_routing.set(path.deny_local_routing_value)
+			self.deny_local_routing.set(path.sys_disable)
 		elif drop_box_elem == 'telnet server':
 			logger.debug("SystemPage : Set value in 'TELNET SERVER' drop-down")
 			self.telnet_server.set(path.sys_disable)

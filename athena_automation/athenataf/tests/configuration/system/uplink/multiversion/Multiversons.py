@@ -17,6 +17,7 @@ class Multiversons(ConfigurationTest):
 		'''
 		conf=self.config.config_vars
 		system_page = self.LeftPanel.go_to_system_page()
+		time.sleep(20)
 		os.environ['device'] = "IAP_1"
 		self.take_s1_snapshot()
 		os.environ['device'] = "IAP_2"

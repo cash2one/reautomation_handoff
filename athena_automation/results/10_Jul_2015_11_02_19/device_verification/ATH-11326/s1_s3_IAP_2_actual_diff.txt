@@ -1,0 +1,120 @@
++ show running-config
++ CLI's management authentication settings have been changed.  Your login credentials are now being re-checked...
++ Your credentials are still valid, command will now execute.
++ virtual-controller-country US
++ virtual-controller-key
++ name instant-C9:A2:D6
++ virtual-controller-ip 10.29.27.42
++ terminal-access
++ clock timezone none 00 00
++ rf-band all
++ allow-new-aps
++ allowed-ap
++ arm
++  wide-bands 5ghz
++  80mhz-support
++  min-tx-power 18
++  max-tx-power 127
++  band-steering-mode prefer-5ghz
++  air-time-fairness-mode fair-access
++  client-aware
++  scanning
++  client-match
++  client-match slb-mode 3
++ syslog-level warn ap-debug
++ syslog-level warn network
++ syslog-level warn security
++ syslog-level warn system
++ syslog-level warn user
++ syslog-level warn user-debug
++ syslog-level warn wireless
++ extended-ssid
++ mgmt-user admin
++ wlan access-rule instant
++  rule masterip 0.0.0.0 match tcp 80 80 permit
++  rule masterip 0.0.0.0 match tcp 4343 4343 permit
++  rule any any match udp 67 68 permit
++  rule any any match udp 53 53 permit
++ wlan access-rule default_wired_port_profile
++  rule any any match any any any permit
++ wlan access-rule wired-instant
++  rule masterip 0.0.0.0 match tcp 80 80 permit
++  rule masterip 0.0.0.0 match tcp 4343 4343 permit
++  rule any any match udp 67 68 permit
++  rule any any match udp 53 53 permit
++ wlan ssid-profile instant
++  enable
++  type employee
++  essid instant
++  opmode opensystem
++  max-authentication-failures 0
++  vlan guest
++  rf-band 2.4
++  captive-portal disable
++  dtim-period 1
++  inactivity-timeout 1000
++  broadcast-filter none
++  dmo-channel-utilization-threshold 90
++  local-probe-req-thresh 0
++  max-clients-threshold 64
++ auth-survivability cache-time-out 24
++ wlan external-captive-portal
++  server localhost
++  port 80
++  url "/"
++  auth-text "Authenticated"
++ blacklist-time 3600
++ auth-failure-blacklist-time 3600
++ ids
++  wireless-containment none
++ wired-port-profile wired-instant
++  switchport-mode access
++  allowed-vlan all
++  native-vlan guest
++  no shutdown
++  access-rule-name wired-instant
++  speed auto
++  duplex auto
++  no poe
++  type guest
++  captive-portal disable
++  no dot1x
++  inactivity-timeout 1000
++ wired-port-profile default_wired_port_profile
++  switchport-mode trunk
++  allowed-vlan all
++  native-vlan 1
++  shutdown
++  access-rule-name default_wired_port_profile
++  speed auto
++  duplex full
++  no poe
++  type employee
++  captive-portal disable
++  no dot1x
++  inactivity-timeout 1000
++ enet0-port-profile default_wired_port_profile
++ uplink
++  preemption
++  enforce none
++  failover-internet-pkt-lost-cnt 10
++  failover-internet-pkt-send-freq 30
++  failover-vpn-timeout 180
++ airgroup
++  disable
++ airgroupservice airplay
++  disable
++  description AirPlay
++ airgroupservice airprint
++  disable
++  description AirPrint
++ airgroupservice itunes
++  disable
++ airgroupservice allowall
++  disable
++ airgroupservice sharing
++  disable
++ airgroupservice remotemgmt
++  disable
++ airgroupservice chat
++  disable
