@@ -19,6 +19,7 @@ class NonDefaultValueCheck(AthenaGUITestCase):
         inner_left_panel.select_default_group()
         time.sleep(3)
         firmware_page.asserts_IAP1_details_in_firmware_vc_table('IAP_1')
+        time.sleep(3)
         firmware_page.asserts_IAP1_details_in_firmware_vc_table('IAP_2')
         time.sleep(2)
         inner_left_panel = self.TopPanel.click_slider_icon()
@@ -36,7 +37,7 @@ class NonDefaultValueCheck(AthenaGUITestCase):
         inner_left_panel = self.TopPanel.click_slider_icon()
         inner_left_panel.expand_group_icon1.click()
         logger.debug('InnerLeftPanel: Clicking on virtual controller ')
-        inner_left_panel.select_vc('IAP_3')
+        inner_left_panel.select_master_slave_master_vc('IAP_3')
         firmware_page.asserts_IAP1_details_in_firmware_vc_table('IAP_3')
         firmware_page.assert_slave_details()
 
