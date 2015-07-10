@@ -2294,14 +2294,13 @@ class RfPage(WebPage):
     def check_multiversion_text_availablility(self,elem):
         logger.debug('RFPage:Checking for multiversion flag msg  ')
         time.sleep(10)
-        self.browser.key_press(u'\ue009')
-        self.browser.key_press( u'\ue00f')
-        actions = self.browser.get_action_chain()
-        actions.move_to_element(self.elem).perform()
+        # self.browser.key_press(u'\ue009')
+        # self.browser.key_press( u'\ue00f')
+        # actions = self.browser.get_action_chain()
+        # actions.move_to_element(self.elem).perform()
         time.sleep(20)
-        if not self.elem:
+        if not elem:
             raise AssertionError(" 'Supported in 6.3.1.2-4.0.0 and above' message is not visible i.e. Traceback: %s" %traceback.format_exc())
-            
     def set_rf_arm_fields(self,set=False):
         '''
         Sets Rf ARM Fields
@@ -2322,15 +2321,15 @@ class RfPage(WebPage):
             self.channel_24ghz_7plus.click()
             self.channel_24ghz_11.click()
             self.click_on_edit_5_ghz()
-            self.channel_5ghz_100.click()
-            self.channel_5ghz_104.click()
-            self.channel_5ghz_108.click()
-            self.channel_5ghz_112.click()
-            self.channel_5ghz_116.click()
-            self.channel_5ghz_132.click()
-            self.channel_5ghz_136.click()
-            self.channel_5ghz_140.click()
-            self.channel_5ghz_144.click()
+            # self.channel_5ghz_100.click()
+            # self.channel_5ghz_104.click()
+            # self.channel_5ghz_108.click()
+            # self.channel_5ghz_112.click()
+            # self.channel_5ghz_116.click()
+            # self.channel_5ghz_132.click()
+            # self.channel_5ghz_136.click()
+            # self.channel_5ghz_140.click()
+            # self.channel_5ghz_144.click()
             self.channel_5ghz_149.click()
             self.save_changes()
         else:
@@ -2373,7 +2372,7 @@ class RfPage(WebPage):
         Clicks on Override Flag 
         '''
         logger.debug('Rf Page : Clicking Override Flag')
-        self.self.override_flag_button_new.click()
+        self.override_flag_button_new.click()
         
     def click_on_resolve_all_overrides(self):
         '''
@@ -2392,7 +2391,7 @@ class RfPage(WebPage):
         self.browser.assert_element(self.override_diff4, 'changes made in vc is not present')
         self.browser.assert_element(self.override_diff5, 'changes made in vc is not present')
         self.browser.assert_element(self.override_diff6, 'changes made in vc is not present')
-        self.browser.assert_element(self.override_diff7, 'changes made in vc is not present')
+        # self.browser.assert_element(self.override_diff7, 'changes made in vc is not present')
     
     def click_on_close_overrides_overlay(self):
         '''
@@ -2437,31 +2436,31 @@ class RfPage(WebPage):
         if not armconfig in output:
             raise AssertionError("%s is not pushed to %s" %(armconfig,ap)) 
 
-	def assert_slb_mode_multiversion(self,flag = False):
-		logger.debug('RFPage:Checking for multiversion flag msg	 ')
-		time.sleep(10)
-		# actions = self.browser.get_action_chain()
-		# actions.move_to_element(self.slb_mode_multiversion).perform()
-		# time.sleep(20)
-		if flag == True:
-			if not self.slb_mode_multiversion:
-				raise AssertionError(" 'Supported in 6.3.1.2-4.0.0 and above' message is not visible i.e. Traceback: %s" %traceback.format_exc())
-		else :
-			if self.slb_mode_multiversion:
-				raise AssertionError(" 'Supported in 6.3.1.2-4.0.0 and above' message is visible i.e. Traceback: %s" %traceback.format_exc())
+    def assert_slb_mode_multiversion(self,flag = False):
+        logger.debug('RFPage:Checking for multiversion flag msg  ')
+        time.sleep(10)
+        # actions = self.browser.get_action_chain()
+        # actions.move_to_element(self.slb_mode_multiversion).perform()
+        # time.sleep(20)
+        if flag == True:
+            if not self.slb_mode_multiversion:
+                raise AssertionError(" 'Supported in 6.3.1.2-4.0.0 and above' message is not visible i.e. Traceback: %s" %traceback.format_exc())
+        else :
+            if self.slb_mode_multiversion:
+                raise AssertionError(" 'Supported in 6.3.1.2-4.0.0 and above' message is visible i.e. Traceback: %s" %traceback.format_exc())
 
-	def assert_arm_channels(self,ap,channel=''):
-		'''
-		Assert min and max transmit power values 
-		'''
-		logger.debug("RFPage : creating object of Device")
-		myDevice = Device.getDeviceObject(ap)
-		logger.debug("RFPage : waiting to receive prompt")
-		myDevice.receive("#")
-		logger.debug("RFPage : passing command 'show aem-channels' ")
-		myDevice.transmit("show arm-channels")
-		logger.debug("RFPage : waiting to receive prompt")
-		output = myDevice.receive("#")
-		if not channel in output:
-			raise AssertionError("%s is not pushed to %s" %(channel,ap))  
-				
+    def assert_arm_channels(self,ap,channel=''):
+        '''
+        Assert min and max transmit power values 
+        '''
+        logger.debug("RFPage : creating object of Device")
+        myDevice = Device.getDeviceObject(ap)
+        logger.debug("RFPage : waiting to receive prompt")
+        myDevice.receive("#")
+        logger.debug("RFPage : passing command 'show aem-channels' ")
+        myDevice.transmit("show arm-channels")
+        logger.debug("RFPage : waiting to receive prompt")
+        output = myDevice.receive("#")
+        if not channel in output:
+            raise AssertionError("%s is not pushed to %s" %(channel,ap))  
+                

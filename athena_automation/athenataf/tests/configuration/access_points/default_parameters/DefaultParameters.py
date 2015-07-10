@@ -2,9 +2,9 @@ import logging
 logger = logging.getLogger('athenataf')
 
 
-from athenataf.lib.functionality.test.AthenaGUITestCase import AthenaGUITestCase
+from athenataf.lib.functionality.test.ConfigurationTest import ConfigurationTest
 
-class DefaultParameters(AthenaGUITestCase):
+class DefaultParameters(ConfigurationTest):
 	'''
 	Test class  for DefaultParameters.
 	'''

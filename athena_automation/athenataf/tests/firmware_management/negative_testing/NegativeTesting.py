@@ -12,8 +12,9 @@ class NegativeTesting(AthenaGUITestCase):
         firmware_page = self.LeftPanel.go_to_maintenance_Firmware_page()
         firmware_page.select_vc_for_upgrade("IAP_1")
         firmware_page.clicking_on_upgrade_firmware()
-        firmware_page.setting_firmware_upgrade_manual_option(conf.version_type_value_2,conf.firmware_downgrade_version)
+        firmware_page.setting_firmware_upgrade_manual_option(conf.version_type_value_2,conf.firmware_upgrade_version)
         firmware_page.click_post_firmware_upgrade()
+        import time
         time.sleep(5)
         firmware_page.select_vc_for_upgrade("IAP_1")
         firmware_page.assert_device_selector_disabled()

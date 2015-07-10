@@ -305,3 +305,9 @@ manage_group                                    :   button&xpath&//label[text()=
 
 infrastructure_detection_level_medium		: button&xpath&//div[@id='infrastructure_detection_level']/span[text()='medium']
 client_detection_level_high			        : button&xpath&//div[@id='client_detection_level']/span[text()='high']
+iap													: button&id&apsTable_name_display_0
+monitor_mode										: label&xpath&//span[@id ='mode' and @title='monitor']
+access_mode											: label&xpath&//span[@id ='mode' and @title='access']
+spectrum_mode										: label&xpath&//span[@id ='mode' and @title='spectrum']
+wireless_role_0          							: label&xpath&//span[@id='wirelessInterfaceTable_role_display_0']/..
+wireless_role_1          							: label&xpath&//span[@id='wirelessInterfaceTable_role_display_1']/..
