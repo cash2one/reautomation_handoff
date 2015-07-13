@@ -584,7 +584,6 @@ class DeviceManagementPage(WebPage):
             self.assigned_licence_button.click()
             assign = self.browser._browser.find_element_by_xpath("//a[@id='assign_0' and text()='Assign']")
             print assign
-            raw_input('assign license')
-            # assign.click()
+            assign.click()
         except:
             pass

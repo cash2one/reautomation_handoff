@@ -91,17 +91,14 @@ class DeviceVerifier:
         import os
         print os.environ['device']
         device = os.environ['device']
-        # raw_input('device')
         version = None
         exec("version = devices.%s.version"%device)
         print version
-        # raw_input('version')
         if self.config.options.switch:
             diff_file_path = os.path.join(fwork.DEVICE_VERIFICATION_DIR+"\%s"%self.get_config.get('type') , "%s_s1_s2_diff.txt") % self.test.current_test_id
         else:
             diff_file_path = os.path.join(fwork.DEVICE_VERIFICATION_DIR+"\%s"%self.get_config.get('type') +"\%s"%version, "%s_s1_s2_diff.txt") % self.test.current_test_id
         print diff_file_path
-        # raw_input('path')
         if os.path.isfile(diff_file_path):
             diff_handle = open(diff_file_path, "r")
             expected_config_diff_list = diff_handle.readlines()

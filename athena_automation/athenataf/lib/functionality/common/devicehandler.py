@@ -35,7 +35,6 @@ class DeviceHandler:
 
             output = t.read_eager()
             # print "First time : ",output.split("\n")
-            # raw_input("Check first output")
             if len(output)==0:
                 output = t.read_eager()
             if output.lower().find("more")!=-1:
@@ -64,7 +63,6 @@ class DeviceHandler:
             # print "Not macthed for any condition"
 
             # print output
-            # raw_input("asd")
         return 1
 
     def run(self,command):
@@ -151,7 +149,6 @@ class DeviceHandler:
             if stdout.lower().find("more")!=-1:
                 print "Find the more"
                 print len(stdout.split("\n"))
-                # raw_input("Check the length")
                 stdout.replace("-More-- (q) quit (u) pageup (/) search (n) repeat","")
                 stdout.replace("--More-- (q) quit (u) pageup (/) search (n) repeat\r--------------\r\r","")
             print "@@@@@@@@@@@@@@RUN@@@@@@@@@@@@@@@@@@"
@@ -165,51 +162,50 @@ class DeviceHandler:
 
 
     # def run(self,command):
-    # 	'''
-    # 	SSH connectivity via PLINK
-    # 	OS Check : Os version will be checked and decision is made to choose direct plink or via TCL .
-    # 	Param : Command : Command to run .
-    # 	type  : String
-    # 	'''
+    #   '''
+    #   SSH connectivity via PLINK
+    #   OS Check : Os version will be checked and decision is made to choose direct plink or via TCL .
+    #   Param : Command : Command to run .
+    #   type  : String
+    #   '''
     #
-    # 	import subprocess
-    # 	import platform
-    # 	windows_version = platform.platform()
-    # 	windows_version = windows_version.split('-')
-    # 	if windows_version[0] == 'Windows' and ('2008' in windows_version[1]):
-    # 		# This block is for ssh connectivity in windows8
+    #   import subprocess
+    #   import platform
+    #   windows_version = platform.platform()
+    #   windows_version = windows_version.split('-')
+    #   if windows_version[0] == 'Windows' and ('2008' in windows_version[1]):
+    #       # This block is for ssh connectivity in windows8
     #
-    # 		proc = subprocess.Popen([self.plink_path, "-ssh", self.device.ip, "-l", self.device.username, "-P", "22", "-pw", self.device.password], shell=False, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE )
-    # 		import time
-    # 		time.sleep(10)
-    # 		proc.stdin.write("\n%s\n" % command)
-    # 		stdout, stderr = proc.communicate()
-    # 	else:
-    # 		# This block is for all os version except windows8
-    # 		i = 2
-    # 		if self.device.protocol == "telnet":
-    # 			return_value = self.handleTelnetConnection()
-    # 			if  return_value == 0:
-    # 				self.handleTelnetConnection()
-    # 		while i!=0:
-    # 			proc = subprocess.Popen(["tclsh", self.tcl_script_path,self.device.ip,self.device.username,self.device.password,command,self.device.protocol,self.device.port],shell=False, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    # 			stdout, stderr = proc.communicate()
-    # 			# print "proc completed"
-    # 			if len(stdout.split("\n"))>40:
-    # 				# print "Got the status proceeding further"
-    # 				break
-    # 			else:
-    # 				# print "Try for one more time"
-    # 				# print stdout
-    # 				i = i -1
-    # 	if stdout.lower().find("more")!=-1:
-    # 		print "Find the more"
-    # 		print len(stdout.split("\n"))
-    # 		# raw_input("Check the length")
-    # 		stdout.replace("-More-- (q) quit (u) pageup (/) search (n) repeat","")
-    # 		stdout.replace("--More-- (q) quit (u) pageup (/) search (n) repeat\r--------------\r\r","")
-    # 	print stdout
-    # 	return proc.returncode, stdout, stderr
+    #       proc = subprocess.Popen([self.plink_path, "-ssh", self.device.ip, "-l", self.device.username, "-P", "22", "-pw", self.device.password], shell=False, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE )
+    #       import time
+    #       time.sleep(10)
+    #       proc.stdin.write("\n%s\n" % command)
+    #       stdout, stderr = proc.communicate()
+    #   else:
+    #       # This block is for all os version except windows8
+    #       i = 2
+    #       if self.device.protocol == "telnet":
+    #           return_value = self.handleTelnetConnection()
+    #           if  return_value == 0:
+    #               self.handleTelnetConnection()
+    #       while i!=0:
+    #           proc = subprocess.Popen(["tclsh", self.tcl_script_path,self.device.ip,self.device.username,self.device.password,command,self.device.protocol,self.device.port],shell=False, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    #           stdout, stderr = proc.communicate()
+    #           # print "proc completed"
+    #           if len(stdout.split("\n"))>40:
+    #               # print "Got the status proceeding further"
+    #               break
+    #           else:
+    #               # print "Try for one more time"
+    #               # print stdout
+    #               i = i -1
+    #   if stdout.lower().find("more")!=-1:
+    #       print "Find the more"
+    #       print len(stdout.split("\n"))
+    #       stdout.replace("-More-- (q) quit (u) pageup (/) search (n) repeat","")
+    #       stdout.replace("--More-- (q) quit (u) pageup (/) search (n) repeat\r--------------\r\r","")
+    #   print stdout
+    #   return proc.returncode, stdout, stderr
 
 
     def get_running_config(self, extra_command = None):

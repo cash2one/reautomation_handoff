@@ -76,7 +76,6 @@ class TopPanel(WebPage):
             raise AssertionError("Must be number in range 5-10080 Traceback: %s " %traceback.format_exc())
         
         self.set_idel_time_value()
-#         raw_input("wait")
         if not self.idle_timeout_error_2:
             raise AssertionError("Error while taking valid value because valid range is 5-10080 Traceback: %s " %traceback.format_exc())        
         

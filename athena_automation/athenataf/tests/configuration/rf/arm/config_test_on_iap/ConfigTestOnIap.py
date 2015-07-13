@@ -379,7 +379,6 @@ class ConfigTestOnIap(ConfigurationTest):
         rf_page.click_on_edit_5_ghz()
         rf_page.assert_5ghz_checkbox_values()
         rf_page.click_on_close_5_ghz()
-        raw_input('wait')
         rf_page.enable_custom_valid_channel_and_set() #show arm-channel
         rf_page.save_changes()
         time.sleep(120)

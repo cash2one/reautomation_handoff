@@ -25,10 +25,9 @@ class SwitchConfigurationTest(AthenaGUITestCase):
 			raise AssertionError("%s.\n%s Page does not get loaded" % (msg, page_name))
 
 	def tearDown(self):
-		# self.browser.refresh()
-		raw_input('wait')
-		# if self.LeftPanel.save_pop_up:
-			# self.LeftPanel.save_pop_up.click()
-			# import time
-			# time.sleep(10)
+		self.browser.refresh()
+		if self.LeftPanel.save_pop_up:
+			self.LeftPanel.save_pop_up.click()
+			import time
+			time.sleep(10)
 		self.LeftPanel.switch_configuration.click()

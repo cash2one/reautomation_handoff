@@ -409,25 +409,20 @@ class FirmWarePage(WebPage):
         if ((hour>=0) and (hour<=11)):
             logger.debug("FirmwarePage : Setting Session 'AM'..  ")
             self.SessionList.set(conf.session_AM)
-            # raw_input('session AM')
         elif ((hour>=12) and (hour<=23)):
             logger.debug("FirmwarePage : Setting Session 'AM'..  ")
             self.SessionList.set(conf.session_PM)
-            # raw_input('session PM')
             
         logger.debug("FirmwarePage : Setting Minute..  ")       
         if min<10:
             logger.debug("FirmwarePage : Setting '10' Minute..  ")
             self.TimeMinList.set('10')
-            # raw_input('Set 10 minutes')
         elif min>49 and min<60:
             logger.debug("FirmwarePage : Setting '00' Minute..  ")
             self.TimeMinList.set('00')
-            # raw_input('set 00 minutes')
         else:
             set_minute = str(((min/10)*10)+10)
             self.TimeMinList.set(set_minute)
-            # raw_input('set minutes accordingly')
             
         logger.debug("FirmwarePage : Setting Hour..  ")
         if min>49:
@@ -437,7 +432,6 @@ class FirmWarePage(WebPage):
                 if set_hour ==0:
                     logger.debug("FirmwarePage : Setting '12' Hour..  ")
                     self.TimeList.set('12')
-                    # raw_input('Set 12 hours')
                 elif set_hour==10 or set_hour==11:
                     self.TimeList.set(str(set_hour))
                     # logger.debug("FirmwarePage : Setting next Hour..  ")

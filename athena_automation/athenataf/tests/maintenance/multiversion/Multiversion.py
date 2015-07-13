@@ -139,8 +139,7 @@ class Multiversion(ConfigurationTest):
         # myDevice.receive("#")
         # myDevice.transmit("commit apply")
         # time.sleep(4)
-        # myDevice.receive("#")       
-        # raw_input('watot')
+        # myDevice.receive("#")
         
     def assert_running_config_include_deny(self,ap,denyconfig='',exists=False):
         myDevice = Device.getDeviceObject(ap)   
