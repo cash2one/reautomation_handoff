@@ -17,6 +17,7 @@ class Multiversons(ConfigurationTest):
 		'''
 		conf=self.config.config_vars
 		system_page = self.LeftPanel.go_to_system_page()
+		time.sleep(20)
 		os.environ['device'] = "IAP_1"
 		self.take_s1_snapshot()
 		os.environ['device'] = "IAP_2"
@@ -32,8 +33,8 @@ class Multiversons(ConfigurationTest):
 		system_page.set_pp_user(conf.Cell_Usb_User)
 		system_page.set_pp_password(conf.chap_secret)
 		system_page.page_down()
+		self.browser.key_press(u'\ue00f')
 		system_page.set_pp_retype_password(conf.chap_secret)
-		# system_page.pp_password_retype.set(conf.chap_secret)
 		system_page.pp_local_interafce.set('None')
 		system_page._save_settings()
 		os.environ['device'] = "IAP_1"

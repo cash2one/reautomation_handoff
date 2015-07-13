@@ -97,6 +97,20 @@ class CommandMap:
 							"show_arm_config" : "show arm config",
 							"show_ip_interface_brief": "show ip interface brief",
                             "show_summary_extended_ssid": "show summary | i Extended"
+				 },
+				 '4.1.1.7'	: {
+						"GET_DEVICE_STATUS" : "show ap debug cloud-server",
+						 "GET_RUN_CONFIG" : "show running-config",
+						 "PULL_DEVICE_UP" : "debug-cloud-server ",
+						 "show_summary" : "show summary | i Allow",
+                        "show_summary_Band" : "show summary | i Band",
+						 "AP_ENV" : "show ap-env",
+							"show_ids_detection_config" : "show ids-detection config",
+							"show_radio_config" : "show radio config",
+							"show_ids_protection_config" : "show ids-protection config",
+							"show_arm_config" : "show arm config",
+							"show_ip_interface_brief": "show ip interface brief",
+                            "show_summary_extended_ssid": "show summary | i Extended"
 				 }
 			}
 

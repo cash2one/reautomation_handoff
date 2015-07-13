@@ -177,6 +177,8 @@ class ConfigurationGroupLevel(AccessPointsTest):
 		self.clear()
 		
 	def test_ath_11224_radio_mode_monitor_to_spectrum(self):
+		import os
+		os.environ['device'] = "IAP_1"
 		self.take_s1_snapshot('AP_ENV')
 		access_point = self.LeftPanel.go_to_access_points()
 		access_point.edit_access_point()
@@ -189,8 +191,11 @@ class ConfigurationGroupLevel(AccessPointsTest):
 		# access_point.reboot_ok_button.click()
 		self.LeftPanel.go_to_monitoring_page()
 		access = self.LeftPanel.go_to_monitoring_access_points()
+		time.sleep(60)
+		# raw_input('se')
 		logger.debug('AccessPointsPage : Selecting iap')
 		access.iap.click()
+		time.sleep(30)
 		logger.debug('AccessPointsPage : Checking Mode')
 		if not access.spectrum_mode :
 			raise AssertionError('Mode is not set to spectrum')
@@ -199,7 +204,9 @@ class ConfigurationGroupLevel(AccessPointsTest):
 			raise AssertionError('Mode is not set to spectrum')
 		logger.debug('AccessPointsPage :  Checking 5GHZ Role')
 		if not access.wireless_role_1.get_attribute_value('title') == 'spectrum':
-			raise AssertionError('Mode is not set to spectrum')			
+			raise AssertionError('Mode is not set to spectrum')		
+		import os
+		os.environ['device'] = "IAP_1"
 		self.take_s2_snapshot('AP_ENV')
 		self.LeftPanel.go_to_network_page()
 		access_point = self.LeftPanel.go_to_access_points()
@@ -207,10 +214,16 @@ class ConfigurationGroupLevel(AccessPointsTest):
 		access_point.click_radio()
 		access_point.set_mode_to_default()
 		# access_point.reboot_ok_button.click()
+		import os
+		os.environ['device'] = "IAP_1"
 		self.take_s3_snapshot('AP_ENV')
+		import os
+		os.environ['device'] = "IAP_1"
 		self.assert_s1_s2_diff(0)
+		import os
+		os.environ['device'] = "IAP_1"
 		self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear()
 		
 		
 	def test_ath_11220_basic_info_edit_name(self):
@@ -306,6 +319,8 @@ class ConfigurationGroupLevel(AccessPointsTest):
 		self.clear()		
 		
 	def test_ath_11225_radio_mode_spectrum_to_monitor(self):
+		import os
+		os.environ['device'] = "IAP_1"
 		self.take_s1_snapshot('AP_ENV')
 		access_point = self.LeftPanel.go_to_access_points()
 		access_point.edit_access_point()
@@ -314,8 +329,11 @@ class ConfigurationGroupLevel(AccessPointsTest):
 		# access_point.ok.click()
 		self.LeftPanel.go_to_monitoring_page()
 		access = self.LeftPanel.go_to_monitoring_access_points()
+		time.sleep(60)
+		# raw_input('se')
 		logger.debug('AccessPointsPage : Selecting iap')
 		access.iap.click()
+		time.sleep(30)
 		logger.debug('AccessPointsPage : Checking Mode')
 		if not access.monitor_mode :
 			raise AssertionError('Mode is not set to Monitoring')
@@ -325,6 +343,8 @@ class ConfigurationGroupLevel(AccessPointsTest):
 		logger.debug('AccessPointsPage :  Checking 5GHZ Role')
 		if not access.wireless_role_1.get_attribute_value('title') == 'monitor' :
 			raise AssertionError('5GHZ is not set to Monitoring')
+		import os
+		os.environ['device'] = "IAP_1"
 		self.take_s2_snapshot('AP_ENV')
 		self.LeftPanel.go_to_network_page()
 		access_point = self.LeftPanel.go_to_access_points()
@@ -332,10 +352,16 @@ class ConfigurationGroupLevel(AccessPointsTest):
 		access_point.click_radio()
 		access_point.set_mode_to_access()
 		# access_point.ok.click()
+		import os
+		os.environ['device'] = "IAP_1"
 		self.take_s3_snapshot('AP_ENV')
+		import os
+		os.environ['device'] = "IAP_1"
 		self.assert_s1_s2_diff(0)
+		import os
+		os.environ['device'] = "IAP_1"
 		self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear()
 
 		
 		

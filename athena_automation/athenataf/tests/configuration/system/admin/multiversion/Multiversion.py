@@ -1,6 +1,6 @@
 import logging
 logger = logging.getLogger('athenataf')
-
+import time
 from athenataf.lib.functionality.test.ConfigurationTest import ConfigurationTest
 import os
 import pdb
@@ -17,6 +17,7 @@ class Multiversion(ConfigurationTest):
 		'''
 		conf = self.config.config_vars
 		system_page = self.LeftPanel.go_to_system_page()
+		time.sleep(10)
 		os.environ['device'] = "IAP_1"
 		self.take_s1_snapshot()
 		os.environ['device'] = "IAP_2"
