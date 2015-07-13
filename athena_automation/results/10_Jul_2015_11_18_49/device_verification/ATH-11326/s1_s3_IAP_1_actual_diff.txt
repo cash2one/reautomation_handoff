@@ -1,4 +1,0 @@
-+ show running-config
-+ CLI's management authentication settings have been changed.  Your login credentials are now being re-checked...
-+ Your credentials are no longer valid, you are being logged out.  Please login again with the up-to-date username and password.
-+ User:

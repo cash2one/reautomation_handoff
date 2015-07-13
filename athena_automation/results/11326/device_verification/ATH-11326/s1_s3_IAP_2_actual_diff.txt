@@ -1,4 +1,0 @@
-! show running-config
-! show running-config
-! CLI's management authentication settings have been changed.  Your login credentials are now being re-checked...
-! Your credentials are still valid, command will now execute.
