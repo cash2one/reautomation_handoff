@@ -821,7 +821,6 @@ class ManageGroupsPage(WebPage):
         # self.TopPanel.click_slider_icon()
         # self.slider_icon.click()
         logger.debug("ManageGroupPage: Select device ")
-        raw_input('check1')
         print self.browser._browser.find_element_by_xpath("//span[contains(.,'%s')]" %device_name)
         self.browser._browser.find_element_by_xpath("//span[contains(.,'%s')]" %device_name).click()
         import time
@@ -849,8 +848,6 @@ class ManageGroupsPage(WebPage):
             self.existing_group.click()
             logger.debug("ManageGroupPage: select group")           
             self.browser._browser.find_element_by_xpath("//span[contains(@id,'group_table_name') and text()='%s']" %group_name).click()
-            # print self.browser._browser.find_element_by_xpath("//span[contains(@id,'group_sidebar_save') and text()='Save']")
-            # raw_input('save')
             logger.debug("ManageGroupPage: Click save")         
             self.browser._browser.find_element_by_xpath("//span[contains(@id,'group_sidebar_save') and text()='Save']").click()
 
