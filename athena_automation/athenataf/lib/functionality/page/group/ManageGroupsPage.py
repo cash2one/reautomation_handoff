@@ -25,9 +25,9 @@ class ManageGroupsPage(WebPage):
         self.delete_button.click()
         logger.debug("ManageGroupPage: Clicking on 'Close' icon ")
         self.close_icon.click()
-        if not self.browser._browser.find_element_by_xpath("//span[@data-ng-bind='grpObj.group.name' and text()='%s']" %group):
+        # if not self.browser._browser.find_element_by_xpath("//span[@id='group_sidebar_group_name_spn' and text()='%s']" %group):
             #self.logo.click()
-            self.browser.refresh()
+        self.browser.refresh()
 
     def move_all_ap_to_group(self, group):
         logger.debug("ManageGroupPage: Clicking on 'All Group' group ")
@@ -862,8 +862,13 @@ class ManageGroupsPage(WebPage):
         myDevice = Device.getDeviceObject(device)
         if not "IAP" in device:
             logger.debug("ManageGroupPage: Click on switches_toggle")
-            self.switches_toggle.click()
-            self.switches_toggle.click()
+            try:
+                self.switches_toggle.click()
+                self.switches_toggle.click()
+            except:
+                self.manage_button.click()
+                self.switches_toggle.click()
+                self.switches_toggle.click()                
             device_name=myDevice.get("switch_name")
         else:
             self.browser._browser.find_element_by_xpath("//a[@id='toggle_vc']").click()
@@ -885,7 +890,11 @@ class ManageGroupsPage(WebPage):
         Clone group 
         '''
         logger.debug("ManageGroupPage: Clicking on 'samplegroup' group")
-        self.browser._browser.find_element_by_xpath("//span[contains(@id,'group_sidebar_group_name') and text()='%s']" % source).click()
+        try:
+            self.browser._browser.find_element_by_xpath("//span[contains(@id,'group_sidebar_group_name') and text()='%s']" % source).click()
+        except: 
+            self.manage_button.click()
+            self.browser._browser.find_element_by_xpath("//span[contains(@id,'group_sidebar_group_name') and text()='%s']" % source).click()
         logger.debug("ManageGroupPage: Clicking on 'Clone' button ")
         self.clone.click()
         logger.debug("ManageGroupPage: setting the group name")

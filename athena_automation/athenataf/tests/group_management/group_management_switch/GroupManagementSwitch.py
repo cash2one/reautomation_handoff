@@ -223,9 +223,9 @@ class GroupManagementSwitch(SwitchConfigurationTest):
         
         
     def test_ath_6439_create_new_group_with_both_switch_and_iap(self):
-		'''
-		Pre condition : Assume that two device : 1 IAP and switch is already connected to server .
-		'''
+        '''
+        Pre condition : Assume that two device : 1 IAP and switch is already connected to server .
+        '''
         inner_left_panel = self.TopPanel.click_slider_icon()
         create_group_page = inner_left_panel.add_group()
         create_group_page.create_group_with_user_groupname_password('test','test123')
@@ -239,44 +239,29 @@ class GroupManagementSwitch(SwitchConfigurationTest):
         inner_left_panel.assert_device_in_group('IAP_1','test')
         inner_left_panel.assert_device_in_group('Switch_1','test')
         
+        manage_group = inner_left_panel.manage_group()
+        manage_group.move_device_to_group('default','Switch_1')
         
-
+        manage_group = inner_left_panel.manage_group()
+        manage_group.move_device_to_group('default','IAP_1')
+        time.sleep(400)
+        DeviceLibrary.reconnect('IAP_1')
+        
+        manage_group = inner_left_panel.manage_group()
+        manage_group.delete_group('test')
+        
     def test_ath_6520_verify_unprovisioned_switches_are_seen_in_selection_while_creating_new_group(self):
-        # conf=self.config.config_vars
-        # firmware_page = self.LeftPanel.go_to_maintenance_Firmware_page()
-        # device_management_page = self.LeftPanel.go_to_device_management()
-        # device_management_page.search_device_mac_address_and_asserts()
-        # device_management_page.assert_non_preconfigured_group()
-        # inner_left_panel = self.TopPanel.click_slider_icon()
-        # if inner_left_panel.assert_group1_and_group2():
-            # if inner_left_panel.assert_sample_group_with_vc_present():
-                # manage_group_page = inner_left_panel.manage_group()
-                # manage_group_page.move_virtual_controller_from_Mygroup(group1=True)
-                # inner_left_panel.manage_group()
-                # manage_group_page.delete_specific_group(group1=True)
-    
-    
-        # inner_left_panel = self.TopPanel.click_slider_icon()
-        # inner_left_panel.asserting_unprovisioned_switch_list()
-        # inner_left_panel.select_unprovision_switch()
-        # group_page = inner_left_panel.click_configuration_page_new_group_button()
-
-        # group_page.create_unprovision_switch_group1(self.config.config_vars.group_1)
-        # inner_left_panel.click_expand_group1_icon()
-        # inner_left_panel.asserting_switch_inside_group()
-
-
-        # inner_left_panel.select_unprovision_switch()
-        # group_page = inner_left_panel.click_configuration_page_existing_group_button()
-        # group_page.select_group1_to_move_device()
-
-        # manage_group_page = inner_left_panel.manage_group()
-        # manage_group_page.move_all_switch_from_anygroup_to_default(group1=True)
-        # inner_left_panel.manage_group()
-        # manage_group_page.delete_specific_group(group1=True)
-        raw_input('ssss')
+        firmware_page = self.LeftPanel.go_to_maintenance_Firmware_page()
+        device_management_page = self.LeftPanel.go_to_device_management()
+        device_management_page.unassign_switch_license("Switch_1")
+        monitoring_switch_page = self.LeftPanel.go_to_monitoring_switches_page()
+        monitoring_switch_page.delete_switch_device_based_on_ip("Switch_1")
+        DeviceLibrary.factoryReset("Switch_1")
+        firmware_page = self.LeftPanel.go_to_maintenance_Firmware_page()
+        device_management_page = self.LeftPanel.go_to_device_management()
+        device_management_page.add_switch_and_assign_license("Switch_1")
+        DeviceLibrary.connect_device_to_server("Switch_1")
         inner_left_panel = self.TopPanel.click_slider_icon()
-        # group_page = inner_left_panel.add_group()
         inner_left_panel.assert_device_in_group('Switch_1','Unprovisioned')
         
         
@@ -324,7 +309,7 @@ class GroupManagementSwitch(SwitchConfigurationTest):
         time.sleep(5)
         manage_group_page.group_sidebar_close_icon.click()
         time.sleep(5)
-        manage_group_page.move_unprovisioned_device('New Group','switch')
+        manage_group_page.move_unprovisioned_device('Switch_1','New Group','switch')
 
         
     def test_ath_6436_switch_not_in_factory_default_configuration_registered_to_athena_it_appears_as_unprovisioned_device(self):
@@ -394,14 +379,13 @@ class GroupManagementSwitch(SwitchConfigurationTest):
         # manage_group_page.move_unprovisioned_device('Switch_2','New Group','group2')        
 
         manage_group = inner_left_panel.manage_group()
-        # manage_group.move_device_to_group('group2','IAP_1')
-        # time.sleep(400)
-        # DeviceLibrary.reconnect('IAP_1')
+        manage_group.move_device_to_group('group2','IAP_1')
+        time.sleep(400)
+        DeviceLibrary.reconnect('IAP_1')
         
-        # inner_left_panel.manage_group()
-        # inner_left_panel.manage_group()
-        # manage_group.move_device_to_group('group1','Switch_1')
-        # inner_left_panel.manage_group()
+        inner_left_panel.manage_group()
+        manage_group.move_device_to_group('group1','Switch_2')
+        inner_left_panel.manage_group()
         manage_group.move_device_to_group('group1','IAP_1')
         time.sleep(400)
         DeviceLibrary.reconnect('IAP_1')
@@ -411,20 +395,22 @@ class GroupManagementSwitch(SwitchConfigurationTest):
 
         
     def test_ath_6441_move_multiple_switches_from_one_group_to_another_group_having_a_switch(self):
-        # firmware_page = self.LeftPanel.go_to_maintenance_Firmware_page()
-        # device_management_page = self.LeftPanel.go_to_device_management()
-        # device_management_page.unassign_switch_license("Switch_1")
-        # monitoring_switch_page = self.LeftPanel.go_to_monitoring_switches_page()
-        # monitoring_switch_page.delete_switch_device_based_on_ip("Switch_1")
-        # DeviceLibrary.factoryReset("Switch_1")
-        # firmware_page = self.LeftPanel.go_to_maintenance_Firmware_page()
-        # device_management_page = self.LeftPanel.go_to_device_management()
-        # device_management_page.add_switch_and_assign_license("Switch_1")
-        # DeviceLibrary.connect_device_to_server("Switch_1")
-
-        # device_management_page.unassign_switch_license("Switch_2")
+        '''
+        This tescase was done with two device not 4 , if 3 device is used please uncommnet the scripts for 3rd device'''
+        firmware_page = self.LeftPanel.go_to_maintenance_Firmware_page()
+        device_management_page = self.LeftPanel.go_to_device_management()
+        device_management_page.unassign_switch_license("Switch_1")
         monitoring_switch_page = self.LeftPanel.go_to_monitoring_switches_page()
-        # monitoring_switch_page.delete_switch_device_based_on_ip("Switch_2")
+        monitoring_switch_page.delete_switch_device_based_on_ip("Switch_1")
+        DeviceLibrary.factoryReset("Switch_1")
+        firmware_page = self.LeftPanel.go_to_maintenance_Firmware_page()
+        device_management_page = self.LeftPanel.go_to_device_management()
+        device_management_page.add_switch_and_assign_license("Switch_1")
+        DeviceLibrary.connect_device_to_server("Switch_1")
+
+        device_management_page.unassign_switch_license("Switch_2")
+        monitoring_switch_page = self.LeftPanel.go_to_monitoring_switches_page()
+        monitoring_switch_page.delete_switch_device_based_on_ip("Switch_2")
         DeviceLibrary.factoryReset("Switch_2")
         import time
         firmware_page = self.LeftPanel.go_to_maintenance_Firmware_page()
@@ -460,6 +446,20 @@ class GroupManagementSwitch(SwitchConfigurationTest):
         manage_group_page.move_device_to_group('group1','Switch_2')
         # inner_left_panel.manage_group()
         # manage_group_page.move_device_to_group('group1','Switch_3')
+        
+        inner_left_panel.manage_group()
+        manage_group_page.move_device_to_group('default','Switch_1')
+        inner_left_panel.manage_group()
+        manage_group_page.move_device_to_group('default','Switch_2')
+        # inner_left_panel.manage_group()
+        # manage_group_page.move_device_to_group('default','Switch_3')
+
+
+        manage_group = inner_left_panel.manage_group()
+        manage_group.delete_group('group1')
+        manage_group = inner_left_panel.manage_group()
+        manage_group.delete_group('group2')
+
 
     
     def test_ath_6440_move_single_switch_from_one_group_to_another_group_having_a_switch(self):
@@ -484,7 +484,10 @@ class GroupManagementSwitch(SwitchConfigurationTest):
         firmware_page = self.LeftPanel.go_to_maintenance_Firmware_page()
         device_management_page = self.LeftPanel.go_to_device_management()
         device_management_page.add_switch_and_assign_license("Switch_2")
-        DeviceLibrary.connect_device_to_server("Switch_2")
+        try:
+            DeviceLibrary.connect_device_to_server("Switch_2")
+        except:
+            pass
         import time
         time.sleep(120)
         self.browser.refresh()
@@ -499,6 +502,17 @@ class GroupManagementSwitch(SwitchConfigurationTest):
         inner_left_panel.manage_group()
         manage_group_page.move_device_to_group('group1','Switch_2')
 
+
+        inner_left_panel.manage_group()
+        manage_group_page.move_device_to_group('default','Switch_1')
+        inner_left_panel.manage_group()
+        manage_group_page.move_device_to_group('default','Switch_2')
+
+
+        manage_group = inner_left_panel.manage_group()
+        manage_group.delete_group('group1')
+        manage_group = inner_left_panel.manage_group()
+        manage_group.delete_group('group2')
         
 
     def test_ath_6443_clone_a_new_group_from_existing_group(self):
@@ -512,12 +526,17 @@ class GroupManagementSwitch(SwitchConfigurationTest):
         # firmware_page = self.LeftPanel.go_to_maintenance_Firmware_page()
         # device_management_page = self.LeftPanel.go_to_device_management()
         # device_management_page.add_switch_and_assign_license("Switch_1")
-        # DeviceLibrary.connect_device_to_server("Switch_1")
-        
+        # try:
+            # DeviceLibrary.connect_device_to_server("Switch_1")
+        # except:
+            # pass
         # device_management_page.unassign_switch_license("Switch_2")
         # monitoring_switch_page = self.LeftPanel.go_to_monitoring_switches_page()
         # monitoring_switch_page.delete_switch_device_based_on_ip("Switch_2")
-        # DeviceLibrary.factoryReset("Switch_2")
+        # try:
+            # DeviceLibrary.factoryReset("Switch_2")
+        # except:
+            # pass
         # import time
         # time.sleep(40)
         # firmware_page = self.LeftPanel.go_to_maintenance_Firmware_page()
@@ -537,5 +556,19 @@ class GroupManagementSwitch(SwitchConfigurationTest):
         # manage_group_page.clone_group('group1','test')
         
         manage_group_page = inner_left_panel.manage_group()
-        manage_group_page.group_sidebar_close_icon.click()        
-        manage_group_page.move_unprovisioned_device('Switch_2','Existing Group','test')
+        # manage_group_page.group_sidebar_close_icon.click()        
+        # manage_group_page.move_unprovisioned_device('Switch_2','Existing Group','test')
+		
+        # inner_left_panel.manage_group()
+        manage_group_page.move_device_to_group('default','Switch_1')
+        inner_left_panel.manage_group()
+        manage_group_page.move_device_to_group('default','Switch_2')
+
+
+        manage_group = inner_left_panel.manage_group()
+        manage_group.delete_group('group1')
+        manage_group = inner_left_panel.manage_group()
+        manage_group.delete_group('test')
+		
+		
+		
