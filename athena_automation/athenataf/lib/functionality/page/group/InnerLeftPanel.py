@@ -423,10 +423,15 @@ class InnerLeftPanel(WebPage):
         if 'IAP' in device:
             logger.debug('InnerLeftPanel: Search IAP in group ')
             if not group == 'Unprovisioned':
+
+                try:
+ 
                 logger.debug('InnerLeftPanel:Click on + button ')
                 print self.browser._browser.find_element_by_xpath("//span[contains(.,'%s')]/../preceding-sibling::span[contains(@id,'show_swarms')]"%group)
-                # raw_input('ssss')
+
                 self.browser._browser.find_element_by_xpath("//span[contains(.,'%s')]/../preceding-sibling::span[contains(@id,'show_swarms')]"%group).click()
+                except:
+                    pass
                 if not self.browser._browser.find_element_by_xpath("//span[@id='group_sidebar_groupname' and contains(.,'%s')]/../../following-sibling::ul[*]/li/a/span[contains(.,'%s')]" %(group,device_name)):
                     raise AssertionError("InnerLeftPanel: Device %s is not present in %s"%(device_name,group))
             else:
@@ -436,8 +441,11 @@ class InnerLeftPanel(WebPage):
         else:
             logger.debug('InnerLeftPanel:Search switch in group ')
             if not group == 'Unprovisioned':
+                try:
                 logger.debug('InnerLeftPanel:Click on + button ')
-                self.browser._browser.find_element_by_xpath("//span[contains(.,'%s')]/../preceding-sibling::span[contains(@id,'show_swarms')]"%group).click
+                self.browser._browser.find_element_by_xpath("//span[contains(.,'%s')]/../preceding-sibling::span[contains(@id,'show_swarms')]"%group).click()
+                except:
+                    pass
                 if not self.browser._browser.find_element_by_xpath("//span[@id='group_sidebar_groupname' and contains(.,'%s')]/../../following-sibling::ul[*]/li/a/span[contains(.,'%s')]" %(group,device_name)):
                     raise AssertionError("InnerLeftPanel: Device %s is not present in %s"%(device_name,group))
             else:
