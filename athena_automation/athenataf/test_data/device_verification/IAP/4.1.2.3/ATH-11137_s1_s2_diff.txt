@@ -1,0 +1,70 @@
+! infrastructure detection level        :off
+! infrastructure detection level        :high
+!
+! ---------------------------------------------------
+! Policies                           Status  Low      Medium   High
+! --------                           ------  ---      ------   ----
+! detect-ap-spoofing                 enable  enable   enable   enable
+! detect-windows-bridge              enable  enable   enable   enable
+! signature-deauth-broadcast         enable  enable   enable   enable
+! signature-deassociation-broadcast  enable  enable   enable   enable
+! detect-adhoc-using-valid-ssid      enable  disable  enable   enable
+! detect-malformed-large-duration    enable  disable  enable   enable
+! detect-ap-impersonation            enable  disable  disable  enable
+! detect-adhoc-network               enable  disable  disable  enable
+! detect-valid-ssid-misuse           enable  disable  disable  enable
+! detect-wireless-bridge             enable  disable  disable  enable
+! detect-ht-40mhz-intolerance        enable  disable  disable  enable
+! detect-ht-greenfield               enable  disable  disable  enable
+! detect-ap-flood                    enable  disable  disable  enable
+! detect-client-flood                enable  disable  disable  enable
+! detect-bad-wep                     enable  disable  disable  enable
+! detect-cts-rate-anomaly            enable  disable  disable  enable
+! detect-rts-rate-anomaly            enable  disable  disable  enable
+! detect-invalid-addresscombination  enable  disable  disable  enable
+! detect-malformed-htie              enable  disable  disable  enable
+! detect-malformed-assoc-req         enable  disable  disable  enable
+! detect-malformed-frame-auth        enable  disable  disable  enable
+! detect-overflow-ie                 enable  disable  disable  enable
+! detect-overflow-eapol-key          enable  disable  disable  enable
+! detect-beacon-wrong-channel        enable  disable  disable  enable
+! detect-invalid-mac-oui             enable  disable  disable  enable
+! client detection level        :custom
+! detect-ap-spoofing                 disable  enable   enable   enable
+! detect-windows-bridge              disable  enable   enable   enable
+! signature-deauth-broadcast         disable  enable   enable   enable
+! signature-deassociation-broadcast  disable  enable   enable   enable
+! detect-adhoc-using-valid-ssid      disable  disable  enable   enable
+! detect-malformed-large-duration    disable  disable  enable   enable
+! detect-ap-impersonation            disable  disable  disable  enable
+! detect-adhoc-network               disable  disable  disable  enable
+! detect-valid-ssid-misuse           disable  disable  disable  enable
+! detect-wireless-bridge             disable  disable  disable  enable
+! detect-ht-40mhz-intolerance        disable  disable  disable  enable
+! detect-ht-greenfield               disable  disable  disable  enable
+! detect-ap-flood                    disable  disable  disable  enable
+! detect-client-flood                disable  disable  disable  enable
+! detect-bad-wep                     disable  disable  disable  enable
+! detect-cts-rate-anomaly            disable  disable  disable  enable
+! detect-rts-rate-anomaly            disable  disable  disable  enable
+! detect-invalid-addresscombination  disable  disable  disable  enable
+! detect-malformed-htie              disable  disable  disable  enable
+! detect-malformed-assoc-req         disable  disable  disable  enable
+! detect-malformed-frame-auth        disable  disable  disable  enable
+! detect-overflow-ie                 disable  disable  disable  enable
+! detect-overflow-eapol-key          disable  disable  disable  enable
+! detect-beacon-wrong-channel        disable  disable  disable  enable
+! detect-invalid-mac-oui             disable  disable  disable  enable
+! client detection level        :off
+!
+! ---------------------------------------------------
+! Policies                           Status   Low      Medium   High
+! --------                           ------   ---      ------   ----
+! detect-valid-clientmisassociation  disable  enable   enable   enable
+! detect-valid-clientmisassociation  enable   enable   enable   enable
+! detect-omerta-attack               disable  disable  enable   enable
+! detect-omerta-attack               enable   disable  enable   enable
+! detect-hotspotter-attack           disable  disable  enable   enable
+! detect-hotspotter-attack           enable   disable  enable   enable
+! detect-power-save-dos-attack       disable  disable  enable   enable
+! detect-power-save-dos-attack       enable   disable  enable   enable
