@@ -1,6 +1,6 @@
 import logging
 logger = logging.getLogger('athenataf')
-
+import time
 from athenataf.lib.functionality.test.ConfigurationTest import ConfigurationTest
 
 class Multiversion(ConfigurationTest):
@@ -31,9 +31,9 @@ class Multiversion(ConfigurationTest):
 		logger.debug('RfPage : Clicking on save settings')
 		rf_page.save_settings.click()
 		time.sleep(80)
-		rf_page.assert_arm_configuration('IAP_2','channel+radio based')
-		time.sleep(10)
 		rf_page.assert_arm_configuration('IAP_1','channel+radio based')
+		time.sleep(10)
+		rf_page.assert_arm_configuration('IAP_2','channel+radio based')
 		rf_page.set_rf_arm_client_control_slb_mode(None)
 		logger.debug('RfPage : Clicking on save settings')
 		rf_page.save_settings.click()
