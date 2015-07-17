@@ -459,7 +459,7 @@ class InnerLeftPanel(WebPage):
         myDevice = Device.getDeviceObject(iap)
         vcname = myDevice.get("vc_name")
         time.sleep(10)
-        self.browser._browser.find_element_by_xpath("//span[@class='swarm-name ng-binding swarm-with-alert' and contains(.,'%s')]" %vcname).click()
+        self.browser._browser.find_element_by_xpath("//span[contains(.,'%s')]" %vcname).click()
         
     def select_country_code(self,country_code = None):
         if self.select_country:
