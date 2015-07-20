@@ -515,11 +515,14 @@ class TestRunner:
     def tearDown(self):
         '''
             Tear Down for Test Runner
+			
+			Uncomment send_email if user wants to send the html report to mail
         '''
         for dev in self.aObjectRef.values():
             logger.info(dev)
             dev.disconnect()
         self.reporter.tearDown()    
+        # self.reporter.send_email("Test Report")    
 
         
 class TestInfo:

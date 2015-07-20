@@ -3,6 +3,9 @@ import os, types
 from athenataf.config import fwork
 import logging
 logger = logging.getLogger('athenataf')
+import sys
+import smtplib
+
     # ------------------------------------------------------------------------
     # HTML Template
 HTML_PREFIX = r"""<?xml version="1.0" encoding="UTF-8"?>
@@ -371,6 +374,34 @@ class TestReporter:
         logger.debug("Flushing contents.")            
         self._file.flush()
         
+    def send_email(self,subject):
+        import smtplib
+        import base64
+        from email.MIMEMultipart import MIMEMultipart
+        from email.MIMEText import MIMEText
+
+        recipient = "khundre@arubanetworks.com"
+        msg = MIMEMultipart()
+        msg['Subject'] = subject
+        msg['From'] = 'ryallurkar@arubanetworks.com'
+        msg['To'] = recipient
+
+        filename = os.path.join(self.config.html_frame_dir, "TestReport.html")
+        f = file(filename)
+        attachment = MIMEText(f.read())
+        attachment.add_header('Content-Disposition', 'attachment', filename=filename)           
+        msg.attach(attachment)
+
+        try:
+            smtpObj = smtplib.SMTP('mail.arubanetworks.com')
+            smtpObj.sendmail(msg['From'], msg['To'], msg.as_string())
+            print "Successfully sent email"
+        except SMTPException:
+            print "Error: unable to send email"
+        finally:
+            smtpObj.quit()
+
+        
     def tearDown(self):
         self._fileTable.write(HTML_PREFIX)
         self._file.write("</table>")
@@ -407,5 +438,3 @@ class TestReporter:
         self._fileTable.close()
         self._file.close()
         self._fileMain.close()
-#        from emailModule import send_mail_via_com
-#        send_mail_via_com("TESTREPORT", "Test Report", "rrkrishnan@arubanetworks.com", os.path.join(self.config.html_frame_dir, "TestReport.html"))
