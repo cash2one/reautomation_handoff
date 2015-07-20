@@ -1,4 +1,4 @@
-next											: chain&id&network_create_next
+next											: submit&text&Next
 passphrase										: textbox&name&wpa_passphrase
 retype_passphrase								: textbox&name&wpa_passphrase_retype
 splash_page_type								: select&name&security_captive_portal
@@ -8,7 +8,7 @@ authentication_server							: select&name&auth_server1
 blacklisting									: select&name&blacklist
 mac_authentication_dropdown						: button&text&MAC AUTHENTICATION&0
 wired_captive_portal							: select&name&external_captive
-captive_name									: textbox&id&Captive_Name&0
+captive_name									: textbox&xpath&//input[@id='Captive_Name']&0
 captive_type									: select&id&External_Selection&0
 captive_ip										: textbox&id&Captive_IP&0
 captive_url										: textbox&id&Captive_Url&0
@@ -60,7 +60,7 @@ name_error										: button&id&auth_server_name_error
 ip_error										: button&id&auth_ipaddr_error&0
 shared_key_error								: button&id&Auth_Sharedkey_error&0
 retype_shared_key_error 						: button&id&Retype_auth_shared_key_error&0
-name_error1										: button&text&* No special characters allowed, only - : and _ allowed
+name_error1										: button&text&* No special characters allowed, only - and _ allowed
 password_error									: button&xpath&//div[text()='* This field is required']&1
 type_error										: button&xpath&//div[text()='* This field is required']&2
 dot1x											: select&id&dot1x
@@ -82,7 +82,7 @@ delimiter_char_error							: label&xpath&//div[contains(.,": / , - space") and @
 accounting										: select&id&radius_accounting
 accounting_interval								: textbox&id&radius_interim_accounting_interval
 accounting_interval_error_msg					: label&id&int_act_interval_error_range
-max_auth_fail_error_msg							: label&xpath&//*[@id='max_auth_failures_error_range']&0
+max_auth_fail_error_msg							: label&id&max_auth_failures_error_range&0
 passphrase_req_error							: label&xpath&//div[contains(.,'Required') and @class="field-error column-error"]
 passphrase_hex_length_err						: label&id&wpa_passphrase_error_hex
 wep_key_len_error								: label&id&wep_key_size_error_26
@@ -168,10 +168,10 @@ captive_portal_error_msg						: label&id&captive_portal_profile_error
 use_https										: checkbox&id&SecurityUseHttps&0
 external_radius_server_disabled					: label&xpath&//option[@disabled='disabled' and @value='External-Radius-Server']
 external_auth_text								: label&xpath&//option[@disabled='disabled' and @value='External-Auth-Text']
-no_logo_image									: label&xpath&//label[@class= 'field-label image-field-label image-name ng-binding']
+no_logo_image									: label&xpath&//label[text()='No Logo Image']
 logo_upload										: label&id&img_upload_button
-logo_disabled_delete_button						: label&xpath&//label[@id='img_upload_button']/../../span[3]/label[@class="field-label ng-binding disabled"]
-disable_upload_button							: button&xpath&//li[@id="custom-logo" and @class="disabled"]/span[3]/ul/li/span[1]/label
+logo_disabled_delete_button						: label&xpath&//label[@class='field-label ng-binding disabled']
+disable_upload_button							: button&xpath&//li[@id='custom-logo' and @class="disabled"]/span[3]/ul/li/span[1][@id='img_upload_button']
 auth_shared_key_space_error						: label&id&Auth_Sharedkey_space_error
 auth_rfc										: checkbox&id&auth_rfc_3576
 auth_server_cancel_button						: button&id&confirm-save-cancel
@@ -197,3 +197,7 @@ drpmask         							    : textbox&id&drpmask
 drpgateway          							: textbox&id&drpgateway
 external_automatic_url_whitelisting				: select&id&external_automatic_url_whitelisting
 external_captive_portal_failure					: select&id&external_captive_portal_failure
+role_radio										: button&id&role-based
+drpvlan_error 									: label&id&drpvlan_error
+save_server1									: button&id&confirm-save-ok&1
+drpvlan_disabled          						: textbox&xpath&//input[@id='drpvlan' and @disabled='disabled']

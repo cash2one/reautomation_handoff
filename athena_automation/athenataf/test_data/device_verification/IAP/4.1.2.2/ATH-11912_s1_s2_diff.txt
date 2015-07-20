@@ -1,0 +1,35 @@
++ wlan access-rule %(Network_name)s
++  rule any any match any any any permit
++ wlan ssid-profile %(Network_name)s
++  enable
++  type employee
++  essid %(Network_name)s
++  opmode wpa2-psk-aes
++  max-authentication-failures 0
++  auth-server authradius
++  auth-server testradius_2
++  rf-band all
++  captive-portal disable
++  mac-authentication
++  mac-authentication-delimiter /
++  dtim-period 1
++  inactivity-timeout 1000
++  broadcast-filter none
++  server-load-balancing
++  radius-accounting
++  radius-interim-accounting-interval 60
++  multicast-rate-optimization
++  dynamic-multicast-optimization
++  dmo-channel-utilization-threshold 1
++  local-probe-req-thresh 0
++  max-clients-threshold 64
++ wlan auth-server authradius
++  ip 10.17.50.110
++  port 1812
++  acctport 1813
++  key 
++ wlan auth-server testradius_2
++  ip 10.17.50.110
++  port 1812
++  acctport 1813
++  key 

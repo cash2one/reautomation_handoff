@@ -1,0 +1,2 @@
++ uplink_vlan:300
++ enet0_bridging:1

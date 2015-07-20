@@ -1,0 +1,20 @@
++ wlan access-rule test1
++  rule any any match any any any permit
++  rule 10.10.1.1 255.255.255.255 match udp 67 68 deny
++  rule 10.1.1.1 255.255.255.255 match udp 53 53 deny
++ wlan ssid-profile test1
++  enable
++  type employee
++  essid test1
++  opmode wpa2-psk-aes
++  max-authentication-failures 0
++  auth-server InternalServer
++  rf-band all
++  captive-portal disable
++  mac-authentication
++  dtim-period 1
++  inactivity-timeout 1000
++  broadcast-filter none
++  dmo-channel-utilization-threshold 90
++  local-probe-req-thresh 0
++  max-clients-threshold 64

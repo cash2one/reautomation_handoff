@@ -1,0 +1,6 @@
++ wlan external-captive-portal testradius1
++  server 1.2.3.4
++  port 65534
++  url "www.athena.com"
++  auth-text ""
++  redirect-url "http://yahoo.com"

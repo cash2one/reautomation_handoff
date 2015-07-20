@@ -1,0 +1,2 @@
++ wlan access-rule "new role"
++  rule any any match any any any permit

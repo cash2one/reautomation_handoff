@@ -1,0 +1,36 @@
+  
+  mgmt-user admin 
+  
++ wlan access-rule test1
++  vlan 2300
++  captive-portal internal
++  calea
++  rule any any match any any any permit
++  rule any any match app 4399com deny
++  rule any any match webcategory web-based-email permit
++  bandwidth-limit downstream 1000
++  bandwidth-limit upstream 2000
+  wlan access-rule default_wired_port_profile
+   rule any any match any any any permit
+  
+   rule masterip 0.0.0.0 match tcp 4343 4343 permit
+   rule any any match udp 67 68 permit
+   rule any any match udp 53 53 permit
++ wlan ssid-profile test1
++  enable
++  type employee
++  essid test1
++  opmode wpa2-psk-aes
++  max-authentication-failures 0
++  auth-server InternalServer
++  rf-band all
++  captive-portal disable
++  dtim-period 1
++  inactivity-timeout 1000
++  broadcast-filter none
++  dmo-channel-utilization-threshold 90
++  local-probe-req-thresh 0
++  max-clients-threshold 64
+  
+  auth-survivability cache-time-out 24
+  

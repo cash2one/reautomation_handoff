@@ -8,16 +8,10 @@ class NetworkAssignedVlanDynamic(ConfigurationTest):
 	'''
 	
 	def test_ath_1641_check_dynamic_vlan_attribute_list(self):
-		self.take_s1_snapshot()
 		self.NetworkPage.delete_network_if_present()
 		basic_info     = self.NetworkPage.create_new_network()
 		virtual_lan    = basic_info.employee_network_info()
 		virtual_lan.check_dynamic_vlan_attribute_list()
-		self.take_s2_snapshot()
-		self.take_s3_snapshot()
-		self.assert_s1_s2_diff(0)
-		self.assert_s1_s3_diff()
-		self.clear()
 			
 	def test_ath_1642_create_vlan_assignment_rules(self):
 		'''

@@ -1,0 +1,4 @@
++ wifi0_arm_channel:153
++ wifi0_arm_power:12
++ wifi1_arm_channel:8
++ wifi1_arm_power:11

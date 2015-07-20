@@ -1,8 +1,8 @@
-vlan_settings				: button&xpath&//*[@id='accordion-section-3']/div[1]
+vlan_settings				: button&id&conf_networks_newnet_acc_arr3
 basic_info					: button&text&PRIMARY USAGE&0
 dynamic						: button&id&client_vlan_assignment_Dynamic
 save_settings				: button&id&ngSave
-network_assigned			: button&xpath&//*[@id='client_ip_assignment_Network Assigned']
+network_assigned			: radio&xpath&//input[@value='Network Assigned']
 network_type				: button&id&accordion-section-content-1&0
 network_list				: button&id&createNetwork
 security_settings			: button&css_class&accordion-arrow&3
@@ -12,12 +12,12 @@ vlan_rule_table				: button&css_class&VlanRuleColumn1&5
 vlan_static					: button&id&client_vlan_assignment_Static
 security_enterprise			: button&name&security_level&0
 vlan_networks_form			: button&name&networks_vlan_form
-security_accordion			: button&text&SECURITY&0
+security_accordion			: button&xpath&//div[@id='accordion-section-4']/div[1]/span
 rule_delete_button			: button&xpath&//a[@id='delete_vlan_role_rule']
 network_button				: button&xpath&//a[contains(*,'Networks')]
 rule_edit_button			: button&xpath&//a[@id='edit_vlan_role_rule']
 vlan_id						: textbox&id&access_rule_vlan_id&0
-vlan_id_2					: textbox&id&access_rule_vlan_id
+vlan_id_2					: textbox&id&access_rule_vlan_id&5
 save						: submit&id&save_roles_action&0
 save_1						: submit&id&save_roles_action&5
 access_rule_type_CALEA		: button&xpath&//span[text()='CALEA']
@@ -37,8 +37,8 @@ role_based					: button&id&role-based
 network_based				: button&id&network-based
 delete						: submit&xpath&//a[@id='access_control_delete_0']
 networks					: link&xpath&//a[contains(.,'Networks')]&1
-new_service_1				: select&id&Service_Role1
-new_destination_1			: select&id&Destination_Role1
+new_service_1				: select&id&Service_Role1&4
+new_destination_1			: select&id&Destination_Role1&4
 edit						: button&xpath&//a[@id='access_control_edit_0']
 calea_delete				: submit&xpath&//a[@id='calea_delete_link']
 calea_edit					: submit&xpath&//a[@id='calea_edit_link']
@@ -62,12 +62,13 @@ access_control_down_2		: button&css&#access_control_down_2
 access_control_up_3			: button&css&#access_control_up_3
 access_control_up_6			: button&css&#access_control_up_6
 edit_captive_portal			: button&id&edit_individual_captive_portal&0
-rule_type_1					: select&id&RuleType_Role1
+rule_type_1					: select&id&RuleType_Role1&1
+save_button					: button&id&save_roles_action&1
 delete_captive_portal		: button&id&delete_individual_captive_portal&0
-enforce_captive_portal		: button&text&Enforce Captive Portal&1
-edit_action_dropdown		: select&id&Action_Role1
-save_rule_button			: submit&id&save_roles_action
-save_rule_button_2			: submit&id&save_roles_action(deleted11)
+enforce_captive_portal		: button&text&Enforce Captive Portal&0
+edit_action_dropdown		: select&id&Action_Role1&0
+save_rule_button			: submit&id&save_roles_action&4
+save_rule_button_2			: submit&id&save_roles_action&6
 modified_rule_deny_h323tcp	: button&xpath&//span[@class="ng-binding" and contains(.,'Deny h323-tcp to all destinations')]
 change_rule_type			: select&id&RuleType_Role1&4
 created_captive_portal_msg	: button&xpath&//span[text()='Enforce Captive Portal']
@@ -152,13 +153,13 @@ cache_timeout				: textbox&xpath&//span[contains(.,'Cache timeout (global)')]/in
 security_key_management							: select&id&security_key_management
 auth_cache_timeout								: textbox&name&auth_cache_timeout
 default_role_test1								: button&xpath&//span[contains(.,'Default role:test1')]
-edit_disabled									: button&xpath&//a[@class='icosolo blue icon_edit ng-scope disabled']
-delete_disabled									: button&xpath&//a[@class='icosolo delete icon_delete ng-scope disabled']&3
+edit_disabled									: button&xpath&//a[@class='icosolo button blue icon_edit ng-scope disabled']
+delete_disabled									: button&xpath&//a[@class='icosolo button delete icon_delete ng-scope disabled']&3
 splash_page_type								: select&id&security_captive_portal
 role1_rule										: button&xpath&//span[contains(.,'role1')]&0
 role2_rule										: button&xpath&//span[contains(.,'role2')]&0
 delete_role										: button&xpath&//button[@id='delete_role' and text()='Delete']
-access_control_up_2								: button&id&access_control_up_2
+access_control_up_2								: button&css&#access_control_up_2>img
 role_test1										: button&xpath&//span[contains(.,'test1')]&1
 auth_server_2_disable							: select&xpath&//select[@id='auth_server2' and @ disabled="disabled"]
 delete_role_assignment_1						: button&xpath&//span[contains(.,'If AP-Group contains abcd assign role: default_wired_port_profile')]/../following-sibling::td[1]/div/a[2]
@@ -185,18 +186,18 @@ captive_portal_edit_link 						: button&xpath&//a[text() = 'Edit']
 cative_portal_type	 							: select&id&External_Selection&0
 auth_text			 							: textbox&id&Captive_AuthText&0
 save_captive_profile			 			    : button&id&cap-save&0
-log												: button&id&AccessRuleOptionLog&5
-dscp											: button&id&AccessRuleOptionDSCP&5
-cancel											: button&id&cancel_roles_action&4
+log												: button&id&AccessRuleOptionLog&0
+dscp											: button&id&AccessRuleOptionDSCP&0
+cancel											: button&id&cancel_roles_action&0
 cancel_2										: button&id&cancel_roles_action&5
-service_application								: radio&id&ac_app&4
+service_application								: radio&id&ac_app&0
 service_application_5							: radio&id&ac_app&5
 application_01_net								: checkbox&xpath&//span[text()='01net']/../input
 application_4399_com							: checkbox&xpath&//span[text()='4399com']/../input
-delete_01_net									: button&xpath&//span[contains(.,'Allow 01net')]/span[3]/a[6]
-delete_4399_com									: button&xpath&//span[contains(.,'Deny 4399com')]/span[3]/a[6]
-delete_adobe_update								: button&xpath&//span[contains(.,'Deny adobe_update')]/span[3]/a[6]
-delete_yahoo									: button&xpath&//span[contains(.,'yahoo')]/span[3]/a[6]
+delete_01_net									: button&xpath&//span[contains(.,'Allow 01net')]/following-sibling::span/a[6]
+delete_4399_com									: button&xpath&//span[contains(.,'Deny 4399com')]/following-sibling::span/a[6]
+delete_adobe_update								: button&xpath&//span[contains(.,'Deny adobe_update')]/following-sibling::span/a[6]
+delete_yahoo									: button&xpath&//span[contains(.,'yahoo')]/following-sibling::span/a[6]
 banner_title									: textbox&id&internal_banner_title&0
 header_color									: textbox&id&internal_header_color
 welcome_text									: textbox&name&internal_welcome_text
@@ -226,5 +227,6 @@ save_rule_button_7								: submit&id&save_roles_action&7
 delete_http										: button&xpath&//span[@class="ng-binding" and contains(.,'Deny http to all destination')]/../../span[2]/a[6]
 ng_wired_pre_auth_role							: button&id&ng_wired_pre_auth_role
 ng_Wired_Role_Mac_Auth							: button&id&ng_Wired_Role_Mac_Auth
-
-
+new_service_0									: select&id&Service_Role1&0
+new_destination_0								: select&id&Destination_Role1&0
+drpvlan_error 									: label&id&drpvlan_error

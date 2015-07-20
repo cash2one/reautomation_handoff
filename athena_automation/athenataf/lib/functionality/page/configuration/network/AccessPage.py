@@ -52,7 +52,7 @@ class AccessPage(WebPage):
 		self._add_new_rule()
 		self.rule_type_dropdown.set(self.config.config_vars.rule_calea_type)
 		logger.debug('AccessPage: Clicking on save setting button')
-		self.save_settings.click()
+		self.save_vlan.click()
 		
 	def assert_calea(self):
 		logger.debug('AccessPage: Asserting the CALEA Rule')
@@ -75,7 +75,7 @@ class AccessPage(WebPage):
 		logger.debug('AccessPage: Setting the value of Priority in dropdown list')
 		self.dot_1_priority_values.set(self.config.config_vars.dot_1_priority_value)
 		logger.debug('AccessPage: Clicking on save setting button')
-		self.save_settings.click()
+		self.save1.click()
 		
 	def access_rule_type_2(self):
 		logger.debug('AccessPage: Clicking on Add rule button')
@@ -89,9 +89,9 @@ class AccessPage(WebPage):
 		logger.debug('AccessPage: Setting the value of Action field')
 		self.action.set(self.config.config_vars.action)
 		logger.debug('AccessPage: Setting the ip address under action field')
-		self.action_ip4.set(self.config.config_vars.action_ip)
+		self.action_ip1.set(self.config.config_vars.action_ip)
 		logger.debug('AccessPage: Setting the port value under action field')
-		self.action_port4.set(self.config.config_vars.action_port)
+		self.action_port.set(self.config.config_vars.action_port)
 		logger.debug('AccessPage: Clicking on Log checkbox')
 		self.log.click()
 		logger.debug('AccessPage: Clicking oo Media checkbox')
@@ -113,12 +113,12 @@ class AccessPage(WebPage):
 		self.rule1.set(self.config.config_vars.rule_type)
 		logger.debug('AccessPage: Setting the value of Service field')		
 		self.service.set(self.config.config_vars.service)
-		logger.debug('AccessPage: Setting the protocol value')
-		self.service_protocol.set(self.config.config_vars.svc_protocol)
-		logger.debug('AccessPage: Setting the port value')
-		self.custom_tcp_port.set(self.config.config_vars.svc_port)
+		logger.debug('AccessPage: Setting the protocol value')		
+		self.protocol1.set(self.config.config_vars.svc_protocol)
+		logger.debug('AccessPage: Setting the port value')		
+		self.service_port1.set(self.config.config_vars.svc_port)
 		logger.debug('AccessPage: Clicking on save setting button')
-		self.save_settings.click()
+		self.save_button_1.click()
 		
 	def access_rule_type_4(self):
 		logger.debug('AccessPage: Clicking on Add rule button')
@@ -131,7 +131,7 @@ class AccessPage(WebPage):
 		logger.debug('AccessPage: Setting the Destination ip')
 		self.destination_ip1.set(self.config.config_vars.destination_ip)
 		logger.debug('AccessPage: Clicking on save setting button')
-		self.save_settings.click()
+		self.save_button_2.click()
 		
 	def access_rule_type_5(self):
 		logger.debug('AccessPage: Clicking on Add rule button')
@@ -156,7 +156,7 @@ class AccessPage(WebPage):
 		logger.debug('AccessPage: Clicking on 802.1 Priority checkbox')
 		self.p_802.click()
 		logger.debug('AccessPage: Clicking on save setting button')
-		self.save_settings.click()
+		self.save_button_3.click()
 		
 	def rule_type_calea(self):
 		logger.debug('AccessPage: Clicking on Add rule button')
@@ -170,7 +170,7 @@ class AccessPage(WebPage):
 		self.browser.key_press(u'\ue007')
 		self.browser.key_press('THERE')
 		logger.debug('AccessPage: Clicking on save setting button')
-		self.save_settings.click()
+		self.save_button_3.click()
 		
 	def create_new_role_1(self):
 		logger.debug('AccessPage: Clicking on New button to create new Role Assignment Rules')
@@ -219,7 +219,7 @@ class AccessPage(WebPage):
 			self.destination2.set(self.config.config_vars.destination2)
 			self.destination.set(self.config.config_vars.destination2)
 			logger.debug('AccessPage: Setting the Destination ip')
-			self.destination_ip4.set(self.config.config_vars.destination_ip)
+			self.destination_ip3.set(self.config.config_vars.destination_ip)
 			logger.debug('AccessPage: Setting the Destination netmask')
 			self.destination_mask2.set(self.config.config_vars.destination_mask)
 			logger.debug('AccessPage: Clicking on Log checkbox')
@@ -294,7 +294,7 @@ class AccessPage(WebPage):
 		logger.debug('AccessPage: Setting the value to Rule type')
 		self.rule_type.set(self.config.config_vars.Access_Control)
 		logger.debug('AccessPage: Setting the destination role ')
-		self.destination_role_2.set(self.config.config_vars.Access_Rule_Destination_Role)
+		self.destination_role.set(self.config.config_vars.Access_Rule_Destination_Role)
 		logger.debug('AccessPage: Setting the domain name ')
 		self.domain_name.set(self.config.config_vars.Access_Rule_Domain_Name)
 		logger.debug('AccessPage: Clicking on save setting button')
@@ -306,7 +306,7 @@ class AccessPage(WebPage):
 	def assert_downstream_error_message(self):
 		import traceback
 		logger.debug('AccessPage: Setting the value of Access Rule Downstream')
-		self.downstream.set('0')
+		self.downstream.set('1')
 		logger.debug('AccessPage: Clicking on save setting button')
 		self.save_settings.click()
 		if not self.downstream_error_message:
@@ -337,7 +337,7 @@ class AccessPage(WebPage):
 			raise AssertionError("'Classify Media' checkbox not present.Traceback: %s " %traceback.format_exc())	
 		if not self.new_dscp_tag_1:
 			raise AssertionError("'DSCP tag' checkbox not present.Traceback: %s " %traceback.format_exc())
-		if not self.blacklist_3:
+		if not self.new_blacklist_1:
 			raise AssertionError("'Blacklist' checkbox not present.Traceback: %s " %traceback.format_exc())
 		# if not self.new_disable_scaning_1:
 			# raise AssertionError("'Disable Scanning' checkbox not present.Traceback: %s " %traceback.format_exc())
@@ -461,7 +461,7 @@ class AccessPage(WebPage):
 	
 	def _save_rule(self):
 		logger.debug("Click 'SAVE' button..")
-		self.save_settings.click()
+		self.save_vlan.click()
 
 	def create_allow_adp_to_all_rule(self):
 		logger.debug("AccessPage : Calling method to Click on add button")
@@ -560,9 +560,7 @@ class AccessPage(WebPage):
 		logger.debug("AccessPage : set 'Destination' drop-down to 'To a domain name'...")
 		self.new_destination_1.set(self.config.config_vars.dest_to_a_domain)
 		logger.debug("AccessPage : Write domain name...")
-		import time
-		time.sleep(10)
-		self.domain_name.set(self.config.config_vars.Access_Rule_Domain_Name)
+		self.DomainName.set(self.config.config_vars.Access_Rule_Domain_Name)
 		self._save_rule()
 		
 	def create_allow_http_to_all_destinations_rule(self):
@@ -654,7 +652,7 @@ class AccessPage(WebPage):
 		logger.debug("AccessPage : set 'Destination' drop-down to 'To a domain name'...")
 		self.new_destination_1.set(self.config.config_vars.dest_to_a_domain)
 		logger.debug("AccessPage : Write domain name...")
-		self.domain_name.set(self.config.config_vars.Access_Rule_Domain_Name)
+		self.DomainName.set(self.config.config_vars.Access_Rule_Domain_Name)
 		self._save_rule()
 
 	def create_allow_msrpc_udp_except_to_a_server_rule(self):
@@ -701,7 +699,7 @@ class AccessPage(WebPage):
 		logger.debug("AccessPage : set 'Destination' drop-down to 'To a domain name'...")
 		self.new_destination_1.set(self.config.config_vars.dest_to_a_domain)
 		logger.debug("AccessPage : Write domain name...")
-		self.domain_name.set(self.config.config_vars.Access_Rule_Domain_Name)
+		self.DomainName.set(self.config.config_vars.Access_Rule_Domain_Name)
 		self._select_options()
 		self._save_rule()
 		
@@ -713,7 +711,7 @@ class AccessPage(WebPage):
 		logger.debug("AccessPage : Click 'DSCP tag' check box...")
 		self.new_dscp_tag_1.click()
 		logger.debug("AccessPage : Click 'Blacklist' check box...")
-		self.blacklist_3.click()
+		self.new_blacklist_1.click()
 		logger.debug("AccessPage : Click 'Disable scanning' check box...")
 		self.new_disable_scaning_1.click()
 		logger.debug("AccessPage : Click '802.1 priority' check box...")
@@ -815,13 +813,13 @@ class AccessPage(WebPage):
 		self._save_rule()
 		if not self.ip_addr_error_msg:
 			raise AssertionError("IP field accepting invalid values.Traceback: %s " %traceback.format_exc())
-		self.destination_ip4.set(self.config.config_vars.destination_ip_2)
+		self.destination_ip4.set(self.config.config_vars.destination_ip)
 		logger.debug("AccessPage : Writing netmask' ")
 		self.destination_netmask.set(self.config.config_vars.invalid_destination_ip)
 		self._save_rule()
 		if not self.netmaskd_error:
 			raise AssertionError("Netmask field accepting invalid values.Traceback: %s " %traceback.format_exc())
-		self.destination_netmask.set(self.config.config_vars.dest2_net_mask)
+		self.destination_netmask.set(self.config.config_vars.destination_mask)
 		self._save_rule()
 		
 	def create_deny_custom_other_except_to_a_network(self):
@@ -850,13 +848,13 @@ class AccessPage(WebPage):
 		self._save_rule()
 		if not self.ip_addr_error_msg:
 			raise AssertionError("IP field accepting invalid values.Traceback: %s " %traceback.format_exc())
-		self.destination_ip4.set(self.config.config_vars.destination_ip_2)
+		self.destination_ip4.set(self.config.config_vars.destination_ip)
 		logger.debug("AccessPage : Writing netmask' ")
 		self.destination_netmask.set(self.config.config_vars.invalid_destination_ip)
 		self._save_rule()
 		if not self.netmaskd_error:
 			raise AssertionError("Netmask field accepting invalid values.Traceback: %s " %traceback.format_exc())
-		self.destination_netmask.set(self.config.config_vars.dest2_net_mask)
+		self.destination_netmask.set(self.config.config_vars.destination_mask)
 		self._save_rule()
 		
 	def create_deny_svp_to_a_domain_name(self):
@@ -873,11 +871,11 @@ class AccessPage(WebPage):
 		logger.debug("AccessPage : Choosing 'To a Domain Name' ")
 		self.new_destination_1.set(self.config.config_vars.Destination_Role1_To_a_Domain_Name)
 		logger.debug("AccessPage : Writing Domain name' ")
-		self.domain_name.set(self.config.config_vars.invalid_domain_name1)
+		self.DomainName.set(self.config.config_vars.invalid_domain_name1)
 		self._save_rule()
 		if not self.invalid_domain_name_error:
 			raise AssertionError("Domain Name field accepting invalid values.Traceback: %s " %traceback.format_exc())
-		self.domain_name.set(self.config.config_vars.domain_names)
+		self.DomainName.set(self.config.config_vars.domain_names)
 		self._save_rule()
 		
 	def create_deny_http_proxy3_to_all_destinations(self):
@@ -956,13 +954,13 @@ class AccessPage(WebPage):
 		self._save_rule()
 		if not self.ip_addr_error_msg:
 			raise AssertionError("IP field accepting invalid values.Traceback: %s " %traceback.format_exc())
-		self.destination_ip4.set(self.config.config_vars.destination_ip_2)
+		self.destination_ip4.set(self.config.config_vars.destination_ip)
 		logger.debug("AccessPage : Writing netmask' ")
 		self.destination_netmask.set(self.config.config_vars.invalid_destination_ip)
 		self._save_rule()
 		if not self.netmaskd_error:
 			raise AssertionError("Netmask field accepting invalid values.Traceback: %s " %traceback.format_exc())
-		self.destination_netmask.set(self.config.config_vars.dest2_net_mask)
+		self.destination_netmask.set(self.config.config_vars.destination_mask)
 		self._save_rule()
 		
 	def create_deny_rtsp_except_to_a_network(self):
@@ -983,13 +981,13 @@ class AccessPage(WebPage):
 		self._save_rule()
 		if not self.ip_addr_error_msg:
 			raise AssertionError("IP field accepting invalid values.Traceback: %s " %traceback.format_exc())
-		self.destination_ip4.set(self.config.config_vars.destination_ip_2)
+		self.destination_ip4.set(self.config.config_vars.destination_ip)
 		logger.debug("AccessPage : Writing netmask' ")
 		self.destination_netmask.set(self.config.config_vars.invalid_destination_ip)
 		self._save_rule()
 		if not self.netmaskd_error:
 			raise AssertionError("Netmask field accepting invalid values.Traceback: %s " %traceback.format_exc())
-		self.destination_netmask.set(self.config.config_vars.dest2_net_mask)
+		self.destination_netmask.set(self.config.config_vars.destination_mask)
 		self._save_rule()
 		
 	def create_deny_smb_tcp_to_a_domain_name(self):
@@ -1006,11 +1004,11 @@ class AccessPage(WebPage):
 		logger.debug("AccessPage : Choosing 'To a Domain Name' ")
 		self.new_destination_1.set(self.config.config_vars.Destination_Role1_To_a_Domain_Name)
 		logger.debug("AccessPage : Writing Domain name' ")
-		self.domain_name.set(self.config.config_vars.invalid_domain_name)
+		self.DomainName.set(self.config.config_vars.invalid_domain_name1)
 		self._save_rule()
 		if not self.invalid_domain_name_error:
 			raise AssertionError("Domain Name field accepting invalid values.Traceback: %s " %traceback.format_exc())
-		self.domain_name.set(self.config.config_vars.domain_names)
+		self.DomainName.set(self.config.config_vars.domain_names)
 		self._save_rule()
 		
 	def create_deny_vocera_to_all_destinations(self):
@@ -1156,22 +1154,22 @@ class AccessPage(WebPage):
 		self.destination_role_2.set(self.config.config_vars.destination_value)
 		time.sleep(2)
 		logger.debug('AccessPage : Entering invalid ip address')
-		self.destination_ip4.set(self.config.config_vars.invalid_destination_ip_1)
+		self.destination_ip3.set(self.config.config_vars.invalid_destination_ip_1)
 		logger.debug('Access Page : Clicking on Save button')
 		self.save_settings.click()
-		if not self.ip_addr_error_msg:
+		if not self.destination_ip_error:
 			raise AssertionError("Destination ip error is not visible.Traceback: %s " %traceback.format_exc())
 # 		logger.debug('AccessPage : Entering invalid ip address')
 # 		self.destination_ip3.set(self.config.config_vars.invalid_destination_ip_2)
 # 		logger.debug('Access Page : Clicking on Save button')
 # 		self.save_settings.click()
-# 		if not self.ip_addr_error_msg:
+# 		if not self.destination_ip_error:
 # 			raise AssertionError("Destination ip error is not visible.Traceback: %s " %traceback.format_exc())
 		logger.debug('AccessPage : Entering invalid ip address')
-		self.destination_ip4.set(self.config.config_vars.invalid_destination_ip_3)
+		self.destination_ip3.set(self.config.config_vars.invalid_destination_ip_3)
 		logger.debug('Access Page : Clicking on Save button')
 		self.save_settings.click()
-		if not self.ip_addr_error_msg:
+		if not self.destination_ip_error:
 			raise AssertionError("Destination ip error is not visible.Traceback: %s " %traceback.format_exc())
 			
 			
@@ -1406,9 +1404,9 @@ class AccessPage(WebPage):
 		logger.debug("AccessPage : Select Destination-NAT.")
 		self.action_role2.set(self.config.config_vars.action_role_destination_nat)
 		logger.debug("AccessPage : Set Ip Address.")
-		self.action_ip4.set(self.config.config_vars.action_ip)
+		self.action_ip1.set(self.config.config_vars.action_ip)
 		logger.debug("AccessPage : Set port.")
-		self.action_port4.set(self.config.config_vars.action_port)
+		self.action_port.set(self.config.config_vars.action_port)
 		logger.debug("AccessPage : Click save")
 		self.save_settings.click()
 
@@ -1419,7 +1417,7 @@ class AccessPage(WebPage):
 		logger.debug("AccessPage : Select Allow.")
 		self.action_role3.set(self.config.config_vars.action_role_allow)
 		logger.debug("AccessPage : Click save")
-		self.save_settings.click()
+		self.save_button_1.click()
 		
 		logger.debug("AccessPage : Click on add icon.")
 		self.add_icon.click()
@@ -1428,19 +1426,19 @@ class AccessPage(WebPage):
 		logger.debug("AccessPage : Select Allow.")
 		self.action_role4.set(self.config.config_vars.action_role_source_nat)
 		logger.debug("AccessPage : Click on log check box")
-		self.new_log_1.click()
+		self.log_3.click()
 		logger.debug("AccessPage : Click on media check box")
-		self.new_classify_media_1.click()
+		self.media_3.click()
 		logger.debug("AccessPage : Click dscp check box")
-		self.new_dscp_tag_1.click()
+		self.dscp_3.click()
 		logger.debug("AccessPage : Click blacklist check box")
 		self.blacklist_3.click()
 		logger.debug("AccessPage : Click disable scanning check box")
-		self.new_disable_scaning_1.click()
+		self.disable_scanning_3.click()
 		logger.debug("AccessPage : Click on log check box")
-		self.new_dot1_priority_1.click()
+		self.p_802_3.click()
 		logger.debug("AccessPage : Click save")
-		self.save_settings.click()
+		self.save_button_2.click()
 		
 		logger.debug("AccessPage : Click on add icon.")
 		self.add_icon.click()
@@ -1449,7 +1447,7 @@ class AccessPage(WebPage):
 		logger.debug("AccessPage : Select Allow.")
 		self.action_role5.set(self.config.config_vars.action_role_deny)
 		logger.debug("AccessPage : Click save")
-		self.save_settings.click()
+		self.save_button_3.click()
 		
 		logger.debug("AccessPage : Click on add icon.")
 		self.add_icon.click()
@@ -1458,7 +1456,7 @@ class AccessPage(WebPage):
 		logger.debug("AccessPage : Select Allow.")
 		self.action_role6.set(self.config.config_vars.action_role_allow)
 		logger.debug("AccessPage : Click save")
-		self.save_settings.click()
+		self.save_button_4.click()
 
 		logger.debug("AccessPage : Click on add icon.")
 		self.add_icon.click()
@@ -1467,7 +1465,7 @@ class AccessPage(WebPage):
 		logger.debug("AccessPage : Select Allow.")
 		self.action_role7.set(self.config.config_vars.action_role_deny)
 		logger.debug("AccessPage : Click save")
-		self.save_settings.click()
+		self.save_button_5.click()
 		
 	def create_multiple_roles(self):
 		logger.debug("AccessPage : Click on new role.")
@@ -1490,13 +1488,13 @@ class AccessPage(WebPage):
 		logger.debug("AccessPage : Select Custom.")
 		self.service_role2.set(self.config.config_vars.service_role_CUSTOM)
 		logger.debug("AccessPage : Set invalid port no.")
-		self.custom_tcp_port.set('12313132141131651651651654161165165165616')
+		self.service_port_1.set('12313132141131651651651654161165165165616')
 		self.save_settings.click()
 		if not self.invalid_port_error:
 			import traceback
 			raise AssertionError("Invalid erro * Valid range is 1-65534 message missing .Traceback: %s " %traceback.format_exc())
 		logger.debug("AccessPage : Set port no.")
-		self.custom_tcp_port.set(self.config.config_vars.tcp_port_range)
+		self.service_port_1.set(self.config.config_vars.tcp_port_range)
 		logger.debug("AccessPage : Click save")
 		self.save_settings.click()
 		
@@ -1506,12 +1504,12 @@ class AccessPage(WebPage):
 		logger.debug("AccessPage : Select Custom.")
 		self.service_role3.set(self.config.config_vars.service_role_CUSTOM)
 		logger.debug("AccessPage : Select UDP.")
-		self.service_protocol.set(self.config.config_vars.protocol_udp)
+		self.protocol1.set(self.config.config_vars.protocol_udp)		
 		logger.debug("AccessPage : Set port no.")
-		self.custom_tcp_port.set(self.config.config_vars.udp_port_range)
+		self.service_port1.set(self.config.config_vars.udp_port_range)
 		logger.debug("AccessPage : Click save")
-		self.save_settings.click()
-
+		self.save_button_1.click()
+		
 	def assert_role_in_role_assignment_rules(self):
 		logger.debug("AccessPage : Click on new.")
 		self.new_role_assign.click()
@@ -1540,7 +1538,7 @@ class AccessPage(WebPage):
 		logger.debug('Access Page : Entering invalid value in Vlan Id')
 		self.vlan_id.set('0')
 		logger.debug('Access Page : Clicking on Save button')
-		self.save_settings.click()
+		self.save_vlan.click()
 		if not self.invalid_vlan_id_error:
 			raise AssertionError("Invalid vlan id error is not present.Traceback: %s " %traceback.format_exc())
 		logger.debug('Access Page : Entering valid value in Vlan Id')
@@ -1548,7 +1546,7 @@ class AccessPage(WebPage):
 		if not self.created_rule_vlan_assignment:
 			raise AssertionError("Newly created rule is not present.Traceback: %s " %traceback.format_exc())
 		logger.debug('Access Page : Clicking on Save button')
-		self.save_settings.click()
+		self.save_vlan.click()
 
 	def access_rule_to_a_network(self):
 		logger.debug('Access Page : Clicking on + icon')
@@ -1557,10 +1555,10 @@ class AccessPage(WebPage):
 		logger.debug('Set destination to a network')
 		self.destination_role_2.set(self.config.config_vars.destination2)
 		logger.debug('Set Destination ip')
-		self.destination_ip4.set(self.config.config_vars.destination_ip_1)
+		self.destination_ip3.set(self.config.config_vars.destination_ip)
 		logger.debug('Set Destination netmask')
-		self.destination_netmask.set(self.config.config_vars.destination_mask)
-		self.save_settings.click()
+		self.destination_mask2.set(self.config.config_vars.destination_mask)
+		self.save_vlan.click()
 
 	def create_external_captive_portal(self):
 		logger.debug('Access Page : Clicking on + icon')
@@ -1575,7 +1573,7 @@ class AccessPage(WebPage):
 		logger.debug('Access Page : Selecting the value of Captive Portal Profile')
 		self.captive_profile.set(self.config.config_vars.Captive_Profile_Default)
 		logger.debug('Access Page : Clicking on Save button')
-		self.save_settings.click()
+		self.save_vlan.click()
 		
 		
 	def create_single_vlan_rule_calea(self):
@@ -1585,7 +1583,7 @@ class AccessPage(WebPage):
 		logger.debug('Access Page : Choosing rule type CALEA')
 		self.rule_type_3.set(self.config.config_vars.access_rule_calea)
 		logger.debug('Access Page : Clicking on Save button')
-		self.save_settings.click()
+		self.save_vlan.click()
 		if not self.created_rule_calea:
 			raise AssertionError("Newly created calea rule is not present.Traceback: %s " %traceback.format_exc())
 		
@@ -1735,7 +1733,7 @@ class AccessPage(WebPage):
 		
 	def create_new_external_captive_portal(self):
 		logger.debug("AccessPage :set captive portal profile as new.")
-		self.captive_profile.set(self.config.config_vars.captive_portal_profile)
+		self.captive_portal_profile_select.set(self.config.config_vars.captive_portal_profile)
 		logger.debug("AccessPage :set captive portal name.")
 		self.captive_name.set(self.config.config_vars.Role_Name)
 		logger.debug("AccessPage : Set Ip.")
@@ -1751,34 +1749,34 @@ class AccessPage(WebPage):
 		logger.debug("AccessPage : Choosing 'Destination-NAT' ")
 		self.new_action_1.set(self.config.config_vars.action_dropdown_destination_nat)
 		logger.debug("AccessPage : Writing ip address' ")
-		self.action_ip4.set(self.config.config_vars.invalid_destination_ip)
+		self.action_ip0.set(self.config.config_vars.invalid_destination_ip)
 		self._save_rule()
-		if not self.ip_address_field_error:
+		if not self.ip_address_field_error0:
 			raise AssertionError("IP field accepting invalid values.Traceback: %s " %traceback.format_exc())
-		self.action_ip4.set(self.config.config_vars.action_ip4)
+		self.action_ip0.set(self.config.config_vars.action_ip4)
 		logger.debug("AccessPage : Writing port number' ")
-		self.action_port4.set(self.config.config_vars.invalid_port)
+		self.port_textbox0.set(self.config.config_vars.invalid_port)
 		self._save_rule()
-		if not self.ac_destination_port_error:
+		if not self.ac_destination_port_error0:
 			raise AssertionError("Port field accepting invalid values.Traceback: %s " %traceback.format_exc())
 		logger.debug("AccessPage : Writing port number' ")
-		self.action_port4.set(self.config.config_vars.action_port4)
+		self.port_textbox0.set(self.config.config_vars.action_port4)
 		
 	def select_to_a_network(self):
 		logger.debug("AccessPage : Choosing 'To a network' ")
 		self.new_destination_1.set(self.config.config_vars.Destination_Role1_To_a_network)
 		logger.debug("AccessPage : Writing ip address' ")
-		self.destination_ip4.set(self.config.config_vars.invalid_destination_ip)
+		self.destination_ip0.set(self.config.config_vars.invalid_destination_ip)
 		self._save_rule()
-		if not self.ip_addr_error_msg:
+		if not self.ip_addr_error_msg0:
 			raise AssertionError("IP field accepting invalid values.Traceback: %s " %traceback.format_exc())
-		self.destination_ip4.set(self.config.config_vars.destination_ip_2)
+		self.destination_ip0.set(self.config.config_vars.destination_ip)
 		logger.debug("AccessPage : Writing netmask' ")
-		self.destination_netmask.set(self.config.config_vars.invalid_destination_ip)
+		self.destination_netmask0.set(self.config.config_vars.invalid_destination_ip)
 		self._save_rule()
-		if not self.netmaskd_error:
+		if not self.destination_netmask_error0:
 			raise AssertionError("Netmask field accepting invalid values.Traceback: %s " %traceback.format_exc())
-		self.destination_netmask.set(self.config.config_vars.dest2_net_mask)
+		self.destination_netmask0.set(self.config.config_vars.dest2_net_mask)
 		logger.debug("AccessPage : Click save.")
 		self._save_rule()
 	
@@ -1791,7 +1789,7 @@ class AccessPage(WebPage):
 		self._save_rule()
 		if not self.ip_addr_error_msg:
 			raise AssertionError("IP field accepting invalid values.Traceback: %s " %traceback.format_exc())
-		self.destination_ip4.set(self.config.config_vars.destination_ip_2)
+		self.destination_ip4.set(self.config.config_vars.destination_ip)
 		logger.debug("AccessPage : Writing netmask' ")
 		self.destination_netmask.set(self.config.config_vars.invalid_destination_ip)
 		logger.debug("AccessPage : Click save.")
@@ -1799,7 +1797,7 @@ class AccessPage(WebPage):
 		if not self.netmaskd_error:
 			raise AssertionError("Netmask field accepting invalid values.Traceback: %s " %traceback.format_exc())
 		logger.debug("AccessPage : Writing netmask' ")
-		self.destination_netmask.set(self.config.config_vars.dest2_net_mask)
+		self.destination_netmask.set(self.config.config_vars.destination_mask)
 		logger.debug("AccessPage : Click save.")
 		self._save_rule()
 			
@@ -1908,12 +1906,12 @@ class AccessPage(WebPage):
 		logger.debug("AccessPage : Choosing 'To a Domain Name' ")
 		self.new_destination_1.set(self.config.config_vars.Destination_Role1_To_a_Domain_Name)
 		logger.debug("AccessPage : Writing Domain name' ")
-		self.domain_name.set(self.config.config_vars.invalid_domain_name)
+		self.DomainName.set(self.config.config_vars.invalid_domain_name1)
 		logger.debug("AccessPage : Click save.")
 		self._save_rule()
 		if not self.invalid_domain_name_error:
 			raise AssertionError("Domain Name field accepting invalid values.Traceback: %s " %traceback.format_exc())
-		self.domain_name.set(self.config.config_vars.domain_names)
+		self.DomainName.set(self.config.config_vars.domain_names)
 		logger.debug("AccessPage : Click save.")
 		self._save_rule()
 		
@@ -2013,12 +2011,12 @@ class AccessPage(WebPage):
 		logger.debug("AccessPage : Choosing 'To a Domain Name' ")
 		self.new_destination_1.set(self.config.config_vars.Destination_Role1_To_a_Domain_Name)
 		logger.debug("AccessPage : Writing Domain name' ")
-		self.domain_name.set(self.config.config_vars.invalid_domain_name)
+		self.DomainName.set(self.config.config_vars.invalid_domain_name1)
 		logger.debug("AccessPage : Click save.")
 		self._save_rule()
 		if not self.invalid_domain_name_error:
 			raise AssertionError("Domain Name field accepting invalid values.Traceback: %s " %traceback.format_exc())
-		self.domain_name.set(self.config.config_vars.domain_names)
+		self.DomainName.set(self.config.config_vars.domain_names)
 		logger.debug("AccessPage : Click save.")
 		self._save_rule()
 		
@@ -2078,14 +2076,14 @@ class AccessPage(WebPage):
 		logger.debug("AccessPage : Choosing 'CUSTOM' ")
 		self.new_service_1.set(self.config.config_vars.Service_Role1_custom)
 		logger.debug("AccessPage : Choosing 'OTHER' ")
-		self.service_protocol.set(self.config.config_vars.protocols_other)
+		self.default_role_service_protocol.set(self.config.config_vars.protocols_other)
 		logger.debug("AccessPage : Writing protocol id' ")
-		self.protocol_id.set(self.config.config_vars.invalid_protocol_id)
+		self.default_protocol_id.set(self.config.config_vars.invalid_protocol_id)
 		logger.debug("AccessPage : Click save.")
 		self._save_rule()
 		if not self.protocol_id_error_msg:
 			raise AssertionError(" Protocol ID field accepting invalid values.Traceback: %s " %traceback.format_exc())
-		self.protocol_id.set(self.config.config_vars.protocol_id)
+		self.default_protocol_id.set(self.config.config_vars.protocol_id)
 		self.select_destination_nat()
 		self.select_to_a_network()
 		
@@ -2120,7 +2118,7 @@ class AccessPage(WebPage):
 			self.destination_netmask.set(self.config.config_vars.dest_netmask)
 		elif destination == 'To a Domain Name':
 			logger.debug("AccessPage : Write domain name...")
-			self.domain_name.set(self.config.config_vars.Access_Rule_Domain_Name)
+			self.DomainName.set(self.config.config_vars.Access_Rule_Domain_Name)
 		if options:
 			self._select_options()
 		logger.debug("AccessPage : Click save.")
@@ -2153,7 +2151,7 @@ class AccessPage(WebPage):
 		logger.debug('AccessPage : Entering invalid value')
 		self.custom_tcp_port.set('0')
 		logger.debug('AccessPage : Clicking on save button')
-		self.save_settings.click()
+		self.save1.click()
 		time.sleep(5)
 		if not self.invalid_port_error:
 			raise AssertionError("Invalid port error is not visible.Traceback: %s " %traceback.format_exc())
@@ -2167,7 +2165,7 @@ class AccessPage(WebPage):
 		logger.debug('AccessPage : Entering invalid ip')
 		self.destination_ip4.set('0')
 		logger.debug('AccessPage : Clicking on save button')		
-		self.save_settings.click()
+		self.save1.click()
 		time.sleep(5)
 		if not self.ip_addr_error_msg:
 			raise AssertionError("Invalid ip error is not visible.Traceback: %s " %traceback.format_exc())
@@ -2178,11 +2176,11 @@ class AccessPage(WebPage):
 		self.new_log_1.click()
 		self.new_classify_media_1.click()
 		self.new_dscp_tag_1.click()
-		self.blacklist_3.click()
+		self.new_blacklist_1.click()	
 		self.new_disable_scaning_1.click()
 		self.new_dot1_priority_1.click()
 		logger.debug('AccessPage : Clicking on save button')			
-		self.save_settings.click()
+		self.save1.click()
 		if not self.new_created_deny_tcp_role:
 			raise AssertionError("Newly created rule name is not visible.Traceback: %s " %traceback.format_exc())			
 		time.sleep(2)
@@ -2228,14 +2226,14 @@ class AccessPage(WebPage):
 		logger.debug('AccessPage : Choosing To a domain name from action dropdown')
 		self.destination_role_2.set(self.config.config_vars.destination_domain_option)
 		logger.debug('AccessPage : Entering invalid value in domain textbox')
-		self.domain_name.set('x')
+		self.domain_textbox.set('x')
 		logger.debug('AccessPage : Clicking on save button')			
 		self.save_settings.click()
-		if not self.invalid_domain_name_error:
+		if not self.invalid_domain_name_error_1:
 			raise AssertionError("Invalid domain name message is not visible.Traceback: %s " %traceback.format_exc())			
 		time.sleep(2)
 		logger.debug('AccessPage : Entering valid value in domain textbox')
-		self.domain_name.set(self.config.config_vars.valid_domain_name)
+		self.domain_textbox.set(self.config.config_vars.valid_domain_name)
 		logger.debug('AccessPage : Clicking on save button')			
 		self.save_settings.click()
 		if not self.new_created_deny_smb_domain:
@@ -2312,7 +2310,7 @@ class AccessPage(WebPage):
 		logger.debug("AccessPage : write 'Port' number...")
 		self.custom_tcp_port.set(port_num)
 		logger.debug("AccessPage : Click 'Save' button...")
-		self.save_settings.click()
+		self.save1.click()
 		if validity == 'valid':
 			if self.port_range_error_msg_new:
 				raise AssertionError("'* Valid range is 1-65534' message present.Traceback: %s " %traceback.format_exc())
@@ -2328,51 +2326,51 @@ class AccessPage(WebPage):
 		logger.debug("AccessPage : set 'RULE TYPE' drop-down to 'VLAN Assignment'...")
 		self.new_rule_type_1.set(self.config.config_vars.access_rule_type_vlan_assignment)
 		logger.debug("VirtualLanPage : Writing vlan id in text box...")
-		self.vlan_id.set(self.config.config_vars.vlan_id_alpha)
+		self.vlan_id_4.set(self.config.config_vars.vlan_id_alpha)
 		logger.debug("VirtualLanPage : Clicking save button...")
-		self.save_settings.click()
+		self.save1.click()
 		if not self.invalid_vlan_id_error_4:
 			raise AssertionError("Vlan ID range error not found. i.e . Traceback: %s" % traceback.format_exc())
 		
 		logger.debug("VirtualLanPage : Writing vlan id in text box...")
-		self.vlan_id.set(self.config.config_vars.vlan_id_num_invalid)
+		self.vlan_id_4.set(self.config.config_vars.vlan_id_num_invalid)
 		logger.debug("VirtualLanPage : Clicking save button...")
-		self.save_settings.click()
+		self.save1.click()
 		if not self.invalid_vlan_id_error_4:
 			raise AssertionError("Vlan ID range error not found. i.e . Traceback: %s" % traceback.format_exc())
 		
 		logger.debug("VirtualLanPage : Writing vlan id in text box...")
-		self.vlan_id.set(self.config.config_vars.vlan_id_num_except)
+		self.vlan_id_4.set(self.config.config_vars.vlan_id_num_except)
 		logger.debug("VirtualLanPage : Clicking save button...")
-		self.save_settings.click()
+		self.save1.click()
 		if not self.reserve_vlan_id_error:
 			raise AssertionError("'VLAN 3333 is reserved' error message not found. i.e . Traceback: %s" % traceback.format_exc())
 		
 		logger.debug("VirtualLanPage : Writing vlan id in text box...")
-		self.vlan_id.set(self.config.config_vars.vlan_id_spcl_char)
+		self.vlan_id_4.set(self.config.config_vars.vlan_id_spcl_char)
 		logger.debug("VirtualLanPage : Clicking save button...")
-		self.save_settings.click()
+		self.save1.click()
 		if not self.invalid_vlan_id_error_4:
 			raise AssertionError("Vlan ID range error not found. i.e . Traceback: %s" % traceback.format_exc())
 			
 		logger.debug("VirtualLanPage : Writing vlan id in text box...")
-		self.vlan_id.set('')
+		self.vlan_id_4.set('')
 		logger.debug("VirtualLanPage : Clicking save button...")
-		self.save_settings.click()
+		self.save1.click()
 		if not self.invalid_vlan_id_error_4:
 			raise AssertionError("Vlan ID range error not found. i.e . Traceback: %s" % traceback.format_exc())
 			
 		logger.debug("VirtualLanPage : Writing vlan id in text box...")
-		self.vlan_id.set(self.config.config_vars.Vlan_Id)
+		self.vlan_id_4.set(self.config.config_vars.Vlan_Id)
 		logger.debug("VirtualLanPage : Clicking save button...")
-		self.save_settings.click()
+		self.save1.click()
 		if self.invalid_vlan_id_error_4 or self.reserve_vlan_id_error:
 			raise AssertionError("Vlan ID as number was not accepted. i.e . Traceback: %s" % traceback.format_exc())
 			
 		logger.debug("VirtualLanPage : Clicking edit icon...")
 		self.edit_icon_vlan.click()
 		logger.debug("AccessPage : set 'RULE TYPE' drop-down to 'Access Control'...")
-		self.new_rule_type_vlan.set(self.config.config_vars.rule_type)
+		self.new_rule_type_1.set(self.config.config_vars.rule_type)
 		logger.debug("VirtualLanPage : Clicking save button...")
 		self.save_vlan.click()
 		
@@ -2386,42 +2384,42 @@ class AccessPage(WebPage):
 		logger.debug("AccessPage : Writing alphabet in IP Address textbox...")
 		self.action_ip4.set(self.config.config_vars.port_alpha)
 		logger.debug("AccessPage : Clicking save button...")
-		self.save_settings.click()
+		self.save1.click()
 		if not self.ip_address_field_error:
 			raise AssertionError("'Invalid IP address' error message not found... i.e . Traceback: %s" % traceback.format_exc())
 			
 		logger.debug("AccessPage : Writing number in IP Address textbox...")
 		self.action_ip4.set(self.config.config_vars.port_num_valid)
 		logger.debug("AccessPage : Clicking save button...")
-		self.save_settings.click()
+		self.save1.click()
 		if not self.ip_address_field_error:
 			raise AssertionError("'Invalid IP address' error message not found... i.e . Traceback: %s" % traceback.format_exc())
 			
 		logger.debug("AccessPage : Writing in-range number in IP Address textbox...")
 		self.action_ip4.set(self.config.config_vars.ip_invalid)
 		logger.debug("AccessPage : Clicking save button...")
-		self.save_settings.click()
+		self.save1.click()
 		if not self.ip_address_field_error:
 			raise AssertionError("'Invalid IP address' error message not found... i.e . Traceback: %s" % traceback.format_exc())
 			
 		logger.debug("AccessPage : Writing special characters in IP Address textbox...")
 		self.action_ip4.set(self.config.config_vars.port_char)
 		logger.debug("AccessPage : Clicking save button...")
-		self.save_settings.click()
+		self.save1.click()
 		if not self.ip_address_field_error:
 			raise AssertionError("'Invalid IP address' error message not found... i.e . Traceback: %s" % traceback.format_exc())
 			
 		logger.debug("AccessPage : Writing null characters in IP Address textbox...")
 		self.action_ip4.set('')
 		logger.debug("AccessPage : Clicking save button...")
-		self.save_settings.click()
+		self.save1.click()
 		if not self.ip_address_field_error:
 			raise AssertionError("'Invalid IP address' error message not found... i.e . Traceback: %s" % traceback.format_exc())
 			
 		logger.debug("AccessPage : Writing valid ip address in IP Address textbox...")
 		self.action_ip4.set(self.config.config_vars.ip_valid_value)
 		logger.debug("AccessPage : Clicking save button...")
-		self.save_settings.click()
+		self.save1.click()
 		if self.ip_address_field_error:
 			raise AssertionError("'Invalid IP address' error message found... i.e . Traceback: %s" % traceback.format_exc())
 			
@@ -2435,42 +2433,42 @@ class AccessPage(WebPage):
 		logger.debug("AccessPage : Writing alphabet in Port textbox...")
 		self.action_port4.set(self.config.config_vars.port_alpha)
 		logger.debug("AccessPage : Clicking save button...")
-		self.save_settings.click()
+		self.save1.click()
 		if not self.ac_destination_port_error:
 			raise AssertionError("'Invalid IP address' error message not found... i.e . Traceback: %s" % traceback.format_exc())
 			
 		logger.debug("AccessPage : Writing invalid number in Port textbox...")
 		self.action_port4.set(self.config.config_vars.port_num_invalid)
 		logger.debug("AccessPage : Clicking save button...")
-		self.save_settings.click()
+		self.save1.click()
 		if not self.ac_destination_port_error:
 			raise AssertionError("'Invalid IP address' error message not found... i.e . Traceback: %s" % traceback.format_exc())
 			
 		logger.debug("AccessPage : Writing invalid number in Port textbox...")
 		self.action_port4.set(self.config.config_vars.port_num_invalid_0)
 		logger.debug("AccessPage : Clicking save button...")
-		self.save_settings.click()
+		self.save1.click()
 		if not self.ac_destination_port_error:
 			raise AssertionError("'Invalid IP address' error message not found... i.e . Traceback: %s" % traceback.format_exc())
 			
 		logger.debug("AccessPage : Writing special characters in Port textbox...")
 		self.action_port4.set(self.config.config_vars.port_char)
 		logger.debug("AccessPage : Clicking save button...")
-		self.save_settings.click()
+		self.save1.click()
 		if not self.ac_destination_port_error:
 			raise AssertionError("'Invalid IP address' error message not found... i.e . Traceback: %s" % traceback.format_exc())
 			
 		logger.debug("AccessPage : Writing null characters in Port textbox...")
 		self.action_port4.set('')
 		logger.debug("AccessPage : Clicking save button...")
-		self.save_settings.click()
+		self.save1.click()
 		if not self.ac_destination_port_error:
 			raise AssertionError("'Invalid IP address' error message not found... i.e . Traceback: %s" % traceback.format_exc())
 			
 		logger.debug("AccessPage : Writing valid ip address in Port textbox...")
 		self.action_port4.set(self.config.config_vars.port_num_valid)
 		logger.debug("AccessPage : Clicking save button...")
-		self.save_settings.click()
+		self.save1.click()
 		if self.ac_destination_port_error:
 			raise AssertionError("'Invalid IP address' error message found... i.e . Traceback: %s" % traceback.format_exc())
 			
@@ -2486,49 +2484,49 @@ class AccessPage(WebPage):
 		logger.debug("AccessPage : Write alphabet in 'Protocol Id' textbox...")
 		self.protocol_id.set(self.config.config_vars.port_alpha)
 		logger.debug("AccessPage : Clicking save button...")
-		self.save_settings.click()
+		self.save1.click()
 		if not self.protocol_id_error:
 			raise AssertionError("'Valid range is 1 - 255' error message not found. i.e . Traceback: %s" % traceback.format_exc())
 			
 		logger.debug("AccessPage : Write invalid number in 'Protocol Id' textbox...")
 		self.protocol_id.set(self.config.config_vars.port_num_invalid_0)
 		logger.debug("AccessPage : Clicking save button...")
-		self.save_settings.click()
+		self.save1.click()
 		if not self.protocol_id_error:
 			raise AssertionError("'Valid range is 1 - 255' error message not found. i.e . Traceback: %s" % traceback.format_exc())
 			
 		logger.debug("AccessPage : Write invalid number in 'Protocol Id' textbox...")
 		self.protocol_id.set(self.config.config_vars.protocol_id_invalid)
 		logger.debug("AccessPage : Clicking save button...")
-		self.save_settings.click()
+		self.save1.click()
 		if not self.protocol_id_error:
 			raise AssertionError("'Valid range is 1 - 255' error message not found. i.e . Traceback: %s" % traceback.format_exc())
 			
 		logger.debug("AccessPage : Write special chars in 'Protocol Id' textbox...")
 		self.protocol_id.set(self.config.config_vars.port_char)
 		logger.debug("AccessPage : Clicking save button...")
-		self.save_settings.click()
+		self.save1.click()
 		if not self.protocol_id_error:
 			raise AssertionError("'Valid range is 1 - 255' error message not found. i.e . Traceback: %s" % traceback.format_exc())
 			
 		logger.debug("AccessPage : Write more than 3 chars in 'Protocol Id' textbox...")
 		self.protocol_id.set(self.config.config_vars.port_num_valid)
 		logger.debug("AccessPage : Clicking save button...")
-		self.save_settings.click()
+		self.save1.click()
 		if not self.protocol_id_error:
 			raise AssertionError("'Valid range is 1 - 255' error message not found. i.e . Traceback: %s" % traceback.format_exc())
 			
 		logger.debug("AccessPage : Write null chars in 'Protocol Id' textbox...")
 		self.protocol_id.set('')
 		logger.debug("AccessPage : Clicking save button...")
-		self.save_settings.click()
+		self.save1.click()
 		if not self.protocol_id_error:
 			raise AssertionError("'Valid range is 1 - 255' error message not found. i.e . Traceback: %s" % traceback.format_exc())
 			
 		logger.debug("AccessPage : Write valid number in 'Protocol Id' textbox...")
 		self.protocol_id.set(self.config.config_vars.service_protocol_id)
 		logger.debug("AccessPage : Clicking save button...")
-		self.save_settings.click()
+		self.save1.click()
 		if self.protocol_id_error:
 			raise AssertionError("'Valid range is 1 - 255' error message not found. i.e . Traceback: %s" % traceback.format_exc())
 			
@@ -2539,7 +2537,7 @@ class AccessPage(WebPage):
 		logger.debug("AccessPage : set 'SERVICE' drop-down to 'Any'...")
 		self.new_service_1.set(self.config.config_vars.service_default_value)
 		logger.debug("VirtualLanPage : Clicking save button...")
-		self.save_settings.click()
+		self.save1.click()
 		
 	def validate_ip_network_based_access_rule(self):
 		logger.debug("AccessPage : click on 'Edit' icon...")
@@ -2551,42 +2549,42 @@ class AccessPage(WebPage):
 		logger.debug("AccessPage : Writing alphabet in IP Address textbox...")
 		self.destination_ip4.set(self.config.config_vars.port_alpha)
 		logger.debug("AccessPage : Clicking save button...")
-		self.save_settings.click()
+		self.save1.click()
 		if not self.ip_addr_error_msg:
 			raise AssertionError("'Invalid IP address' error message not found... i.e . Traceback: %s" % traceback.format_exc())
 			
 		logger.debug("AccessPage : Writing number in IP Address textbox...")
 		self.destination_ip4.set(self.config.config_vars.port_num_valid)
 		logger.debug("AccessPage : Clicking save button...")
-		self.save_settings.click()
+		self.save1.click()
 		if not self.ip_addr_error_msg:
 			raise AssertionError("'Invalid IP address' error message not found... i.e . Traceback: %s" % traceback.format_exc())
 			
 		logger.debug("AccessPage : Writing in-range number in IP Address textbox...")
 		self.destination_ip4.set(self.config.config_vars.ip_invalid)
 		logger.debug("AccessPage : Clicking save button...")
-		self.save_settings.click()
+		self.save1.click()
 		if not self.ip_addr_error_msg:
 			raise AssertionError("'Invalid IP address' error message not found... i.e . Traceback: %s" % traceback.format_exc())
 			
 		logger.debug("AccessPage : Writing special characters in IP Address textbox...")
 		self.destination_ip4.set(self.config.config_vars.port_char)
 		logger.debug("AccessPage : Clicking save button...")
-		self.save_settings.click()
+		self.save1.click()
 		if not self.ip_addr_error_msg:
 			raise AssertionError("'Invalid IP address' error message not found... i.e . Traceback: %s" % traceback.format_exc())
 			
 		logger.debug("AccessPage : Writing null characters in IP Address textbox...")
 		self.destination_ip4.set('')
 		logger.debug("AccessPage : Clicking save button...")
-		self.save_settings.click()
+		self.save1.click()
 		if not self.ip_addr_error_msg:
 			raise AssertionError("'Invalid IP address' error message not found... i.e . Traceback: %s" % traceback.format_exc())
 			
 		logger.debug("AccessPage : Writing valid ip address in IP Address textbox...")
 		self.destination_ip4.set(self.config.config_vars.ip_valid_value)
 		logger.debug("AccessPage : Clicking save button...")
-		self.save_settings.click()
+		self.save1.click()
 		if self.ip_addr_error_msg:
 			raise AssertionError("'Invalid IP address' error message found... i.e . Traceback: %s" % traceback.format_exc())
 			
@@ -2597,7 +2595,7 @@ class AccessPage(WebPage):
 		logger.debug("AccessPage : set 'DESTINATION' drop-down to 'To all destinations'...")
 		self.new_destination_1.set(self.config.config_vars.destination_default_value)
 		logger.debug("VirtualLanPage : Clicking save button...")
-		self.save_settings.click()
+		self.save1.click()
 		
 	def validate_netmask_network_based_access_rule(self):
 		logger.debug("AccessPage : click on 'Edit' icon...")
@@ -2609,49 +2607,49 @@ class AccessPage(WebPage):
 		logger.debug("AccessPage : Writing alphabet in Netmask textbox...")
 		self.destination_netmask.set(self.config.config_vars.port_alpha)
 		logger.debug("AccessPage : Clicking save button...")
-		self.save_settings.click()
+		self.save1.click()
 		if not self.netmaskd_error:
 			raise AssertionError("'Enter a valid netmask' error message not found... i.e . Traceback: %s" % traceback.format_exc())
 			
 		logger.debug("AccessPage : Writing number in Netmask textbox...")
 		self.destination_netmask.set(self.config.config_vars.protocol_id_invalid)
 		logger.debug("AccessPage : Clicking save button...")
-		self.save_settings.click()
+		self.save1.click()
 		if not self.netmaskd_error:
 			raise AssertionError("'Enter a valid netmask' error message not found... i.e . Traceback: %s" % traceback.format_exc())
 			
 		logger.debug("AccessPage : Writing in-range number in Netmask textbox...")
 		self.destination_netmask.set(self.config.config_vars.ip_invalid)
 		logger.debug("AccessPage : Clicking save button...")
-		self.save_settings.click()
+		self.save1.click()
 		if not self.netmaskd_error:
 			raise AssertionError("'Enter a valid netmask' error message not found... i.e . Traceback: %s" % traceback.format_exc())
 			
 		logger.debug("AccessPage : Writing invalid ip in Netmask textbox...")
 		self.destination_netmask.set(self.config.config_vars.invalid_ip)
 		logger.debug("AccessPage : Clicking save button...")
-		self.save_settings.click()
+		self.save1.click()
 		if not self.netmaskd_error:
 			raise AssertionError("'Enter a valid netmask' error message not found... i.e . Traceback: %s" % traceback.format_exc())
 			
 		logger.debug("AccessPage : Writing special characters in Netmask textbox...")
 		self.destination_netmask.set(self.config.config_vars.port_char)
 		logger.debug("AccessPage : Clicking save button...")
-		self.save_settings.click()
+		self.save1.click()
 		if not self.netmaskd_error:
 			raise AssertionError("'Enter a valid netmask' error message not found... i.e . Traceback: %s" % traceback.format_exc())
 			
 		logger.debug("AccessPage : Writing null characters in Netmask textbox...")
 		self.destination_netmask.set('')
 		logger.debug("AccessPage : Clicking save button...")
-		self.save_settings.click()
+		self.save1.click()
 		if not self.netmaskd_error:
 			raise AssertionError("'Enter a valid netmask' error message not found... i.e . Traceback: %s" % traceback.format_exc())
 			
 		logger.debug("AccessPage : Writing valid netmask in Netmask textbox...")
 		self.destination_netmask.set(self.config.config_vars.dest_netmask)
 		logger.debug("AccessPage : Clicking save button...")
-		self.save_settings.click()
+		self.save1.click()
 		if self.netmaskd_error:
 			raise AssertionError("'Enter a valid netmask' error message found... i.e . Traceback: %s" % traceback.format_exc())
 			
@@ -2663,9 +2661,9 @@ class AccessPage(WebPage):
 		logger.debug("AccessPage : set 'Destination' drop down to 'To a domain name'...")
 		self.new_destination_1.set(self.config.config_vars.destination_domain_option)
 		logger.debug("AccessPage : Writing alphabet in 'Domain Name' textbox...")
-		self.domain_name.set(self.config.config_vars.domain_name_alpha)
+		self.DomainName.set(self.config.config_vars.domain_name_alpha)
 		logger.debug("AccessPage : Clicking save button...")
-		self.save_settings.click()
+		self.save1.click()
 		if self.invalid_domain_name_error:
 			raise AssertionError("'Invalid Domain name' error message found... i.e . Traceback: %s" % traceback.format_exc())
 		logger.debug("AccessPage : click on 'Edit' icon...")
@@ -2674,9 +2672,9 @@ class AccessPage(WebPage):
 		self.edit_pencil.click()
 			
 		logger.debug("AccessPage : Writing numbers in 'Domain Name' textbox...")
-		self.domain_name.set(self.config.config_vars.domain_name_num)
+		self.DomainName.set(self.config.config_vars.domain_name_num)
 		logger.debug("AccessPage : Clicking save button...")
-		self.save_settings.click()
+		self.save1.click()
 		if self.invalid_domain_name_error:
 			raise AssertionError("'Invalid Domain name' error message found... i.e . Traceback: %s" % traceback.format_exc())
 		logger.debug("AccessPage : click on 'Edit' icon...")
@@ -2685,16 +2683,16 @@ class AccessPage(WebPage):
 		self.edit_pencil.click()
 			
 		logger.debug("AccessPage : Writing invalid special chars in 'Domain Name' textbox...")
-		self.domain_name.set(self.config.config_vars.port_char)
+		self.DomainName.set(self.config.config_vars.port_char)
 		logger.debug("AccessPage : Clicking save button...")
-		self.save_settings.click()
+		self.save1.click()
 		if not self.invalid_domain_name_error:
 			raise AssertionError("'Invalid Domain name' error message not found... i.e . Traceback: %s" % traceback.format_exc())
 			
 		logger.debug("AccessPage : Writing valid special chars in 'Domain Name' textbox...")
-		self.domain_name.set(self.config.config_vars.domain_name_spcl_char)
+		self.DomainName.set(self.config.config_vars.domain_name_spcl_char)
 		logger.debug("AccessPage : Clicking save button...")
-		self.save_settings.click()
+		self.save1.click()
 		if self.invalid_domain_name_error:
 			raise AssertionError("'Invalid Domain name' error message found... i.e . Traceback: %s" % traceback.format_exc())
 		logger.debug("AccessPage : click on 'Edit' icon...")
@@ -2703,16 +2701,16 @@ class AccessPage(WebPage):
 		self.edit_pencil.click()
 		
 		logger.debug("AccessPage : Writing null char in 'Domain Name' textbox...")
-		self.domain_name.set('')
+		self.DomainName.set('')
 		logger.debug("AccessPage : Clicking save button...")
-		self.save_settings.click()
+		self.save1.click()
 		if not self.domain_name_req_err:
 			raise AssertionError("'This field is required' error message not found... i.e . Traceback: %s" % traceback.format_exc())
 			
 		logger.debug("AccessPage : set 'DESTINATION' drop-down to 'To all destinations'...")
 		self.new_destination_1.set(self.config.config_vars.destination_default_value)
 		logger.debug("VirtualLanPage : Clicking save button...")
-		self.save_settings.click()
+		self.save1.click()
 		
 	def validate_role_assignment_string(self):
 		logger.debug("AccessPage : click 'New' button under Role Assignment Rules...")
@@ -2942,7 +2940,7 @@ class AccessPage(WebPage):
 			self.destination_netmask.set(mask)				
 		if not domain == '':
 			logger.debug('Setting Destination domain')			
-			self.domain_name.set(domain)
+			self.DomainName.set(domain)
 		logger.debug("AccessPage : Clicking on save button")
 		self._save_rule()
 		
@@ -3018,7 +3016,7 @@ class AccessPage(WebPage):
 		self.action_role3.set(self.config.config_vars.service_action_value)
 		time.sleep(2)
 		logger.debug('AccessPage : Clicking on save button')			
-		self.save_settings.click()
+		self.save_button_1.click()
 		logger.debug('AccessPage : Clicking on + button')
 		self.add_rule_plus_button.click()
 		time.sleep(2)
@@ -3028,11 +3026,11 @@ class AccessPage(WebPage):
 		self.action_role4.set(self.config.config_vars.action_dropdown_destination_nat)
 		time.sleep(2)
 		logger.debug('Entering valid ip and port number')
-		self.action_ip4.set(self.config.config_vars.ip_valid_value)
-		self.action_port4.set(self.config.config_vars.custom_port_value)
+		self.ipaddress_textbox.set(self.config.config_vars.ip_valid_value)
+		self.port_textbox.set(self.config.config_vars.custom_port_value)
 		time.sleep(2)
 		logger.debug('AccessPage : Clicking on save button')			
-		self.save_settings.click()
+		self.save_button_2.click()
 		logger.debug('AccessPage : Clicking on + button')
 		self.add_rule_plus_button.click()
 		time.sleep(2)
@@ -3040,7 +3038,7 @@ class AccessPage(WebPage):
 		self.service_role5.set(self.config.config_vars.Service_Role1_dns)
 		time.sleep(2)
 		logger.debug('AccessPage : Clicking on save button')			
-		self.save_settings.click()
+		self.save_button_3.click()
 		logger.debug('AccessPage : Clicking on + button')
 		self.add_rule_plus_button.click()
 		time.sleep(2)
@@ -3048,7 +3046,7 @@ class AccessPage(WebPage):
 		self.service_role6.set(self.config.config_vars.service_gre)
 		time.sleep(2)
 		logger.debug('AccessPage : Clicking on save button')			
-		self.save_settings.click()
+		self.save_button_4.click()
 		logger.debug('AccessPage : Clicking on + button')
 		self.add_rule_plus_button.click()
 		time.sleep(2)
@@ -3058,22 +3056,22 @@ class AccessPage(WebPage):
 		self.action_role7.set(self.config.config_vars.action_deny)
 		time.sleep(2)
 		logger.debug('AccessPage : Clicking on save button')			
-		self.save_settings.click()
+		self.save_button_5.click()
 		logger.debug('AccessPage : Clicking on + button')
 		self.add_rule_plus_button.click()
 		time.sleep(2)
 		logger.debug('AccessPage : Choosing bootp option from service dropdown')
 		self.service_bootp_dropdown_6.set(self.config.config_vars.service_bootp_value)
 		logger.debug('AccessPage : Enable all networks options')
-		self.new_log_1.click()
-		self.new_classify_media_1.click()
-		self.new_dscp_tag_1.click()
-		self.blacklist_3.click()
+		self.new_log_2.click()
+		self.new_classify_media_2.click()
+		self.new_dscp_tag_2.click()
+		self.new_blacklist_2.click()
 		# self.new_disable_scaning_2.click()
-		self.new_dot1_priority_1.click()
+		self.new_dot1_priority_2.click()
 		time.sleep(2)
 		logger.debug('AccessPage : Clicking on save button')			
-		self.save_settings.click()
+		self.save_button_6.click()
 		logger.debug('AccessPage : Clicking on + button')
 		self.add_rule_plus_button.click()
 		time.sleep(2)
@@ -3082,15 +3080,15 @@ class AccessPage(WebPage):
 		logger.debug('AccessPage : Choosing Deny from action dropdown')
 		self.action_dropdown_7.set(self.config.config_vars.action_deny)
 		logger.debug('AccessPage : Enable all networks options')
-		self.new_log_1.click()
-		self.new_classify_media_1.click()
-		self.new_dscp_tag_1.click()
-		self.blacklist_3.click()
+		self.new_log_3.click()
+		self.new_classify_media_3.click()
+		self.new_dscp_tag_3.click()
+		self.new_blacklist_3.click()	
 		# self.new_disable_scaning_3.click()
-		self.new_dot1_priority_1.click()
+		self.new_dot1_priority_3.click()
 		time.sleep(2)
 		logger.debug('AccessPage : Clicking on save button')			
-		self.save_settings.click()
+		self.save_button_7.click()
 		logger.debug('AccessPage : Clicking on + button')
 		self.add_rule_plus_button.click()
 		time.sleep(2)
@@ -3099,15 +3097,15 @@ class AccessPage(WebPage):
 		logger.debug('AccessPage : Choosing Source-NAT from action dropdown')
 		self.action_dropdown_8.set(self.config.config_vars.service_action_value)
 		logger.debug('AccessPage : Enable all networks options')
-		self.new_log_1.click()
-		self.new_classify_media_1.click()
-		self.new_dscp_tag_1.click()
-		self.blacklist_3.click()
+		self.new_log_4.click()
+		self.new_classify_media_4.click()
+		self.new_dscp_tag_4.click()
+		self.new_blacklist_4.click()	
 		# self.new_disable_scaning_4.click()
-		self.new_dot1_priority_1.click()
+		self.new_dot1_priority_4.click()
 		time.sleep(2)
 		logger.debug('AccessPage : Clicking on save button')			
-		self.save_settings.click()
+		self.save_button_8.click()
 		logger.debug('AccessPage : Clicking on + button')
 		self.add_rule_plus_button.click()
 		time.sleep(2)
@@ -3116,11 +3114,11 @@ class AccessPage(WebPage):
 		logger.debug('AccessPage : Choosing Destination-NAT from action dropdown')
 		self.action_dropdown_9.set(self.config.config_vars.action_dropdown_destination_nat)
 		logger.debug('Entering valid ip and port number')
-		self.action_ip4.set(self.config.config_vars.ip_valid_value)
-		self.action_port4.set(self.config.config_vars.custom_port_value)
+		self.ipaddress_textbox_1.set(self.config.config_vars.ip_valid_value)
+		self.port_textbox_1.set(self.config.config_vars.custom_port_value)
 		time.sleep(2)
 		logger.debug('AccessPage : Clicking on save button')			
-		self.save_settings.click()
+		self.save_button_9.click()
 		time.sleep(3)
 				
 	def create_wired_diff_rule_types(self):
@@ -3164,7 +3162,7 @@ class AccessPage(WebPage):
 		logger.debug('AccessPage : Choosing allow from action dropdown')
 		self.new_action_1.set(self.config.config_vars.action_role_allow)
 		logger.debug('AccessPage : Clicking on save button')			
-		self.save_settings.click()
+		self.save1.click()
 		logger.debug('AccessPage : Clicking on + button')
 		self.add_rule_plus_button.click()
 		logger.debug('AccessPage : Choosing https option from service dropdown')
@@ -3180,7 +3178,7 @@ class AccessPage(WebPage):
 		logger.debug('AccessPage : Choosing allow from action dropdown')
 		self.action_role3.set(self.config.config_vars.action_role_allow)
 		logger.debug('AccessPage : Clicking on save button')			
-		self.save_settings.click()
+		self.save_button_1.click()
 		logger.debug('AccessPage : Clicking on + button')
 		self.add_rule_plus_button.click()
 		logger.debug('AccessPage : Choosing http-proxy3 option from service dropdown')
@@ -3188,7 +3186,7 @@ class AccessPage(WebPage):
 		logger.debug('AccessPage : Choosing allow from action dropdown')
 		self.action_role4.set(self.config.config_vars.action_role_allow)
 		logger.debug('AccessPage : Clicking on save button')			
-		self.save_settings.click()
+		self.save_button_2.click()
 		logger.debug('AccessPage : Clicking on + button')
 		self.add_rule_plus_button.click()
 		logger.debug('AccessPage : Choosing gre option from service dropdown')
@@ -3196,7 +3194,7 @@ class AccessPage(WebPage):
 		logger.debug('AccessPage : Choosing allow from action dropdown')
 		self.action_role5.set(self.config.config_vars.action_role_allow)
 		logger.debug('AccessPage : Clicking on save button')			
-		self.save_settings.click()
+		self.save_button_3.click()
 		logger.debug('AccessPage : Clicking on + button')
 		self.add_rule_plus_button.click()
 		logger.debug('AccessPage : Choosing h323-tcp option from service dropdown')
@@ -3204,7 +3202,7 @@ class AccessPage(WebPage):
 		logger.debug('AccessPage : Choosing Deny from action dropdown')
 		self.action_role6.set(self.config.config_vars.action_role_allow)
 		logger.debug('AccessPage : Clicking on save button')			
-		self.save_settings.click()
+		self.save_button_4.click()
 		logger.debug('AccessPage : Clicking on + button')
 		self.add_rule_plus_button.click()
 		logger.debug('AccessPage : Choosing h323-tcp option from service dropdown')
@@ -3212,7 +3210,7 @@ class AccessPage(WebPage):
 		logger.debug('AccessPage : Choosing Deny from action dropdown')
 		self.action_role7.set(self.config.config_vars.action_role_allow)
 		logger.debug('AccessPage : Clicking on save button')			
-		self.save_settings.click()
+		self.save_button_5.click()
 		logger.debug('AccessPage : Clicking on + button')
 		self.add_rule_plus_button.click()
 		logger.debug('AccessPage : Choosing h323-tcp option from service dropdown')
@@ -3220,7 +3218,7 @@ class AccessPage(WebPage):
 		logger.debug('AccessPage : Choosing Deny from action dropdown')
 		self.action_role8.set(self.config.config_vars.action_role_allow)
 		logger.debug('AccessPage : Clicking on save button')			
-		self.save_settings.click()		
+		self.save_button_6.click()		
 		logger.debug('AccessPage : Clicking on + button')
 		self.add_rule_plus_button.click()
 		logger.debug('AccessPage : Choosing http option from service dropdown')
@@ -3228,7 +3226,7 @@ class AccessPage(WebPage):
 		logger.debug('AccessPage : Choosing allow from action dropdown')
 		self.action_dropdown_7.set(self.config.config_vars.action_deny)
 		logger.debug('AccessPage : Clicking on save button')			
-		self.save_settings.click()
+		self.save_button_7.click()
 		logger.debug('AccessPage : Clicking on + button')
 		self.add_rule_plus_button.click()
 		logger.debug('AccessPage : Choosing https option from service dropdown')
@@ -3236,7 +3234,7 @@ class AccessPage(WebPage):
 		logger.debug('AccessPage : Choosing allow from action dropdown')
 		self.action_dropdown_8.set(self.config.config_vars.action_deny)
 		logger.debug('AccessPage : Clicking on save button')			
-		self.save_settings.click()
+		self.save_button_8.click()
 		logger.debug('AccessPage : Clicking on + button')
 		self.add_rule_plus_button.click()
 		logger.debug('AccessPage : Choosing http-proxy option from service dropdown')
@@ -3244,7 +3242,7 @@ class AccessPage(WebPage):
 		logger.debug('AccessPage : Choosing allow from action dropdown')
 		self.action_dropdown_9.set(self.config.config_vars.action_deny)
 		logger.debug('AccessPage : Clicking on save button')			
-		self.save_settings.click()
+		self.save_button_9.click()
 						
 	def assert_default_rule_edit_and_delete(self):
 		if not self.default_rule_edit and self.default_rule_delete:
@@ -3265,9 +3263,9 @@ class AccessPage(WebPage):
 		logger.debug("AccessPage : Choosing 'CUSTOM' ")
 		self.new_service_1.set(self.config.config_vars.Service_Role1_custom)
 		logger.debug("AccessPage : Choosing 'OTHER' ")
-		self.service_protocol.set(self.config.config_vars.protocols_other)
+		self.default_role_service_protocol.set(self.config.config_vars.protocols_other)
 		logger.debug("AccessPage : Writing protocol id' ")
-		self.protocol_id.set(self.config.config_vars.invalid_protocol_id)
+		self.default_protocol_id.set(self.config.config_vars.invalid_protocol_id)
 		logger.debug('AccessPage : Clicking on save button')
 		self._save_rule()
 		if not self.protocol_id_error_msg:
@@ -3327,14 +3325,14 @@ class AccessPage(WebPage):
 		self.service_protocol.set(self.config.config_vars.protocols_tcp)
 		self.custom_tcp_port.set(self.config.config_vars.invalid_upstream)
 		logger.debug("AccessPage : Click 'Save' button...")
-		self.save_settings.click()
+		self.save1.click()
 		if not self.invalid_port_error:
 			raise AssertionError("'* Valid range is 1-65534' message not present.Traceback: %s " %traceback.format_exc())
 		logger.debug("AccessPage : set 'PROTOCOL' drop-down to 'UDP'...")
 		self.service_protocol.set(self.config.config_vars.service_protocol_udp)
 		self.custom_tcp_port.set(self.config.config_vars.invalid_upstream)
 		logger.debug("AccessPage : Click 'Save' button...")
-		self.save_settings.click()
+		self.save1.click()
 		if not self.invalid_port_error:
 			raise AssertionError("'* Valid range is 1-65534' message not present.Traceback: %s " %traceback.format_exc())
 		logger.debug("AccessPage : set 'PROTOCOL' drop-down to 'OTHER'...")
@@ -3355,7 +3353,7 @@ class AccessPage(WebPage):
 			self.destination_netmask.set(mask)				
 		if not domain == '':
 			logger.debug('Setting Destination domain')			
-			self.domain_name.set(domain)
+			self.DomainName.set(domain)
 					
 		logger.debug("AccessPage : Click 'Log' check box...")
 		self.new_log_1.click()
@@ -3364,7 +3362,7 @@ class AccessPage(WebPage):
 		logger.debug("AccessPage : Click 'DSCP tag' check box...")
 		self.new_dscp_tag_1.click()
 		logger.debug("AccessPage : Click 'Blacklist' check box...")
-		self.blacklist_3.click()
+		self.new_blacklist_1.click()
 		logger.debug("AccessPage : Click 'Disable scanning' check box...")
 		self.new_disable_scaning_1.click()
 		logger.debug("AccessPage : Click '802.1 priority' check box...")
@@ -3399,16 +3397,12 @@ class AccessPage(WebPage):
 		logger.debug('AccessPage : Selecting the value of Service Role')
 		self.service_role3.set(self.config.config_vars.service_bootp)
 		logger.debug('AccessPage : Clicking on save button')
-		self.save_settings.click()
+		self.save_button_1.click()
 		logger.debug("AccessPage : Clicking on New button..")
 		self.create_new_role.click()
 		logger.debug("AccessPage: Writing role name")
 		self.role_input.set(self.config.config_vars.role_name_1)
 		self.save_role.click()
-		import time
-		time.sleep(10)
-		# import pdb
-		# pdb.set_trace()
 		logger.debug("AccessPage: Clicking on add button..")
 		self.add_rule_plus_button.click()
 		logger.debug('AccessPage : Selecting the value of Service Role')
@@ -3424,7 +3418,7 @@ class AccessPage(WebPage):
 		logger.debug('AccessPage : Selecting the value of Action Role')
 		self.action_role3.set(self.config.config_vars.service_action_value)
 		logger.debug('AccessPage : Clicking on save setting button')
-		self.save_settings.click()
+		self.save_button_1.click()
 		logger.debug("AccessPage : Clicking on New button..")
 		self.create_new_role.click()
 		logger.debug("AccessPage: Writing role name")
@@ -3445,7 +3439,7 @@ class AccessPage(WebPage):
 		logger.debug('AccessPage : Selecting the value of Action Role')
 		self.action_role3.set(self.config.config_vars.service_action_value)
 		logger.debug('AccessPage : Clicking on save setting button')
-		self.save_settings.click()
+		self.save_button_1.click()
 		# self.finish.click()
 		
 	def select_role(self,element):
@@ -3503,7 +3497,7 @@ class AccessPage(WebPage):
 		logger.debug("AccessPage : Click 'DSCP tag' check box...")
 		self.new_dscp_tag_1.click()
 		logger.debug("AccessPage : Click 'Blacklist' check box...")
-		self.blacklist_3.click()
+		self.new_blacklist_1.click()
 		logger.debug("AccessPage : Click '802.1 priority' check box...")
 		self.new_dot1_priority_1.click()
 		logger.debug("AccessPage : checking 'DSCP tag' Dropdown...")
@@ -3511,7 +3505,7 @@ class AccessPage(WebPage):
 		logger.debug("AccessPage : checking '802.1 priority' Dropdown...")
 		self.browser.assert_element(self.dot_1_priority_values, "802.1 Priority Value dropdown is not present")
 		logger.debug('AccessPage: Clicking on save setting button')
-		self.save_settings.click()
+		self.save1.click()
 		
 	def create_rule_two(self):
 		'''
@@ -3522,15 +3516,15 @@ class AccessPage(WebPage):
 		logger.debug('AccessPage : Choosing adp option from service dropdown')
 		self.service_role2.set(self.config.config_vars.service_role_dhcp)
 		logger.debug('AccessPage: Clicking on Log checkbox')
-		self.new_log_1.click()
+		self.log.click()
 		logger.debug('AccessPage: Clicking oo Media checkbox')
-		self.new_classify_media_1.click()
+		self.media.click()
 		logger.debug('AccessPage: Clicking on Description tag checkbox')
-		self.new_dscp_tag_1.click()
+		self.dscp.click()
 		logger.debug('AccessPage: Clicking on BlackList checkbox')
-		self.blacklist_3.click()
+		self.blacklist.click()
 		logger.debug('AccessPage: Clicking on 802.1 Priority checkbox')
-		self.new_dot1_priority_1.click()
+		self.p_802.click()
 		logger.debug('AccessPage: Clicking on save setting button')
 		self.save_settings.click()
 		
@@ -3543,17 +3537,17 @@ class AccessPage(WebPage):
 		logger.debug('AccessPage : Choosing adp option from service dropdown')
 		self.service_role3.set(self.config.config_vars.Service_Role1_dns)	
 		logger.debug("AccessPage : Click on log check box")
-		self.new_log_1.click()
+		self.log_7.click()
 		logger.debug("AccessPage : Click on media check box")
-		self.new_classify_media_1.click()
+		self.media_7.click()
 		logger.debug("AccessPage : Click dscp check box")
-		self.new_dscp_tag_1.click()
+		self.dscp_7.click()
 		logger.debug("AccessPage : Click blacklist check box")
-		self.blacklist_3.click()
+		self.blacklist_7.click()
 		logger.debug("AccessPage : Click on log check box")
-		self.new_dot1_priority_1.click()
+		self.p_802_7.click()
 		logger.debug("AccessPage : Click save")
-		self.save_settings.click()
+		self.save_button_1.click()
 		
 	def enable_pre_authentication_role1(self):
 		'''
@@ -3582,7 +3576,7 @@ class AccessPage(WebPage):
 		logger.debug("AccessPage : checking DSCP tag checkbox...")
 		self.browser.assert_element(self.new_dscp_tag_1, "DSCP tag checkbox is not present")
 		logger.debug("AccessPage : checking Blacklist checkbox...")
-		self.browser.assert_element(self.blacklist_3, "Blacklist checkbox is not present")
+		self.browser.assert_element(self.new_blacklist_1, "Blacklist checkbox is not present")
 		logger.debug("AccessPage : checking 802.1 Priority checkbox...")
 		self.browser.assert_element(self.new_dot1_priority_1, "802.1 Priority checkbox is not present")
 	
@@ -3599,7 +3593,7 @@ class AccessPage(WebPage):
 		logger.debug('AccessPage : Clicking on Antivirus button')
 		self.antivirus1.click()
 		logger.debug('AccessPage : Clicking on save button')			
-		self.save_settings.click()
+		self.save_vlan.click()
 		
 	def create_rule_with_appcategory_collaboration_deny(self):
 		'''
@@ -3609,11 +3603,11 @@ class AccessPage(WebPage):
 		logger.debug('AccessPage : Choosing Deny from action dropdown')
 		self.action_role2.set(self.config.config_vars.action_role_deny)
 		logger.debug('AccessPage : Choosing Application Category radio button')
-		self.ac_app_category2.click()
+		self.ac_app_category1.click()
 		logger.debug('AccessPage : Clicking on Collaboration button')
 		self.Collaboration1.click()
 		logger.debug('AccessPage : Clicking on save button')			
-		self.save_settings.click()
+		self.save_vlan.click()
 	
 	def create_rule_with_appcategory_gaming_allow(self):
 		'''
@@ -3621,24 +3615,24 @@ class AccessPage(WebPage):
 		'''
 		self.click_add_rule_plus_button()
 		logger.debug('AccessPage : Choosing Application Category radio button')
-		self.ac_app_category3.click()
+		self.ac_app_category1.click()
 		logger.debug('AccessPage : Choosing allow from action dropdown')
 		self.action_role3.set(self.config.config_vars.action_role_allow)
 		logger.debug('AccessPage : Clicking on Gaming button')
 		self.Gaming1.click()
 		logger.debug("AccessPage : Click on log check box")
-		self.log_7.click()
+		self.new_log_1.click()
 		logger.debug("AccessPage : Click dscp check box")
-		self.dscp_7.click()
+		self.new_dscp_tag_1.click()
 		logger.debug("AccessPage : Choose DS2 value")
 		self.dscp_tag_value7.set(self.config.config_vars.dscp_tag_value_DS2)
 		logger.debug("AccessPage : Click blacklist check box")
-		self.blacklist_7.click()
+		self.new_blacklist_1.click()
 		logger.debug("AccessPage : Click on log check box")
-		self.p_802_7.click()
+		self.new_dot1_priority_1.click()
 		self.dot_1_priority_value6.set(self.config.config_vars.custom_port_value)
 		logger.debug('AccessPage : Clicking on save button')			
-		self.save_settings.click()
+		self.save_vlan.click()
 	
 	def creating_different_application_access_rule(self):
 		logger.debug('AccessPage :Clicking on Add rule button')
@@ -3654,46 +3648,46 @@ class AccessPage(WebPage):
 		logger.debug('AccessPage :Clicking on "01 Net" checkbox')
 		self.application_01_net.click()
 		logger.debug('AccessPage: Clicking on save setting button')
-		self.save_settings.click()
+		self.save_vlan.click()
 		
 		logger.debug('AccessPage :Clicking on Add rule button')
 		self.add_rule_plus_button.click()
 		logger.debug('AccessPage :Clicking on Application Service')
-		self.service_application_5.click()
+		self.service_application.click()
 		logger.debug('AccessPage :Clicking on "4399 Com " checkbox')
 		self.application_4399_com.click()
 		logger.debug('AccessPage : Choosing Deny from action dropdown')
 		self.action_role2.set(self.config.config_vars.action_deny)
 		logger.debug('AccessPage: Clicking on save setting button')
-		self.save_settings.click()		
+		self.save_vlan.click()		
 		
 		logger.debug('AccessPage :Clicking on Add rule button')
 		self.add_rule_plus_button.click()
 		logger.debug('AccessPage :Clicking on Application Service')
-		self.service_application_6.click()
+		self.service_application.click()
 		logger.debug('AccessPage :Clicking on "Adobe Update " checkbox')
 		self.application_adobe_update.click()
 		logger.debug('AccessPage : Choosing Deny from action dropdown')
 		self.action_role3.set(self.config.config_vars.action_deny)
 		logger.debug('AccessPage: Clicking on save setting button')
-		self.save_settings.click()
+		self.save_vlan.click()
 		
 		logger.debug('AccessPage :Clicking on Add rule button')
 		self.add_rule_plus_button.click()
 		logger.debug('AccessPage :Clicking on Application Service')
-		self.service_application_7.click()
+		self.service_application.click()
 		logger.debug('AccessPage :Clicking on "Yahoo" checkbox')
 		self.application_yahoo.click()
 		logger.debug('AccessPage: Clicking on Log checkbox')
-		self.log_3.click()
+		self.new_log_1.click()
 		logger.debug('AccessPage: Clicking on Description tag checkbox')
-		self.dscp_3.click()
-		self.dscp_tag.set(self.config.config_vars.dscp_tag_value_59)
+		self.new_dscp_tag_1.click()
+		self.dscp_tag_value7.set(self.config.config_vars.dscp_tag_value_59)
 		logger.debug('AccessPage: Clicking on BlackList checkbox')
-		self.blacklist_3.click()
+		self.new_blacklist_1.click()
 		logger.debug('AccessPage: Clicking on 802.1 Priority checkbox')
 		self.new_dot1_priority_1.click()
-		self.dot_1_priority.set(self.config.config_vars.priority_value_4)
+		self.dot_1_priority_value6.set(self.config.config_vars.priority_value_4)
 		logger.debug('AccessPage: Clicking Application Throttling checkbox')
 		self.application_throttling.click()
 		logger.debug('AccessPage: Setting Throttling Downstream value')
@@ -3701,7 +3695,7 @@ class AccessPage(WebPage):
 		logger.debug('AccessPage: Setting Throttling Upstream value')
 		self.throttle_upstream.set(self.config.config_vars.upstream)
 		logger.debug('AccessPage: Clicking on save setting button')
-		self.save_button_2.click()
+		self.save_vlan.click()
 	
 	def create_rule_with_webtegory_shopping_permit(self):
 		'''
@@ -3715,21 +3709,21 @@ class AccessPage(WebPage):
 		logger.debug('AccessPage : Clicking on shopping button')
 		self.shopping.click()
 		logger.debug('AccessPage : Clicking on save button')			
-		self.save_settings.click()
+		self.save_vlan.click()
 	
-	def create_rule_with_webtegory_travel_deny(self):
-		'''
-		Creates Access Rule with Web Category Shopping Permit 
-		'''
-		self.click_add_rule_plus_button()
-		logger.debug('AccessPage : Choosing Deny from action dropdown')
-		self.action_role2.set(self.config.config_vars.action_role_deny)
-		logger.debug('AccessPage : Choosing Web Category radio button')
-		self.ac_web_category1.click()
-		logger.debug('AccessPage : Clicking on shopping button')
-		self.travel.click()
-		logger.debug('AccessPage : Clicking on save button')			
-		self.save_settings.click()
+	# def create_rule_with_webtegory_travel_deny(self):
+		# '''
+		# Creates Access Rule with Web Category Shopping Permit 
+		# '''
+		# self.click_add_rule_plus_button()
+		# logger.debug('AccessPage : Choosing Deny from action dropdown')
+		# self.action_role2.set(self.config.config_vars.action_role_deny)
+		# logger.debug('AccessPage : Choosing Web Category radio button')
+		# self.ac_web_category.click()
+		# logger.debug('AccessPage : Clicking on shopping button')
+		# self.travel.click()
+		# logger.debug('AccessPage : Clicking on save button')			
+		# self.save_vlan.click()
 	
 	def asserts_sevices_options(self):
 		'''
@@ -3746,13 +3740,13 @@ class AccessPage(WebPage):
 		logger.debug("AccessPage : checking Log checkbox...")
 		self.browser.assert_element(self.new_log_1, "Log checkbox is not present")
 		logger.debug("AccessPage : checking Blacklist checkbox...")
-		self.browser.assert_element(self.blacklist_3, "Blacklist checkbox is not present")
+		self.browser.assert_element(self.new_blacklist_1, "Blacklist checkbox is not present")
 		logger.debug('AccessPage : Clicking on Web Reputation button')
-		self.webreputation1.click()
+		self.webreputation.click()
 		logger.debug("AccessPage : checking Log checkbox...")
 		self.browser.assert_element(self.new_log_1, "Log checkbox is not present")
 		logger.debug("AccessPage : checking Blacklist checkbox...")
-		self.browser.assert_element(self.blacklist_3, "Blacklist checkbox is not present")
+		self.browser.assert_element(self.new_blacklist_1, "Blacklist checkbox is not present")
 		
 	def validate_application_throttening_option(self):
 		'''
@@ -3762,19 +3756,19 @@ class AccessPage(WebPage):
 		self.service_application.click()
 		self.asserts_service_options()
 		logger.debug('AccessPage : Clicking on Application Throttening Ckeckbox')
-		self.application_throttling1.click()
+		self.application_throttling.click()
 		logger.debug("AccessPage : checking Downstream Textbox...")
-		self.browser.assert_element(self.throttle_downstream1, "Downstream Textbox is not present")
+		self.browser.assert_element(self.throttle_downstream, "Downstream Textbox is not present")
 		logger.debug("AccessPage : checking UPtream Textbox...")
-		self.browser.assert_element(self.throttle_upstream1, "UPtream Textbox is not present")
+		self.browser.assert_element(self.throttle_upstream, "UPtream Textbox is not present")
 		logger.debug("AccessPage : Write value in 'Downstream' textbox...")
-		self.throttle_downstream1.set(self.config.config_vars.invalid_upstream)
+		self.throttle_downstream.set(self.config.config_vars.invalid_upstream)
 		logger.debug("AccessPage : Write value in 'Upstream' textbox...")
-		self.throttle_upstream1.set(self.config.config_vars.invalid_downstream)
+		self.throttle_upstream.set(self.config.config_vars.invalid_downstream)
 		logger.debug('AccessPage : Clicking on Antivirus button')
 		self.antivirus1.click()
 		logger.debug('AccessPage : Clicking on save button')			
-		self.save_settings.click()
+		self.save_vlan.click()
 		logger.debug("AccessPage : checking Downstream Textbox Error message...")
 		self.browser.assert_element(self.throttle_downstream_error1, "Downstream Textbox Error message is not present")
 		logger.debug("AccessPage : checking Upstream Textbox Error message...")
@@ -3785,7 +3779,7 @@ class AccessPage(WebPage):
 		'''
 		logger.debug('AccessPage: Clicking on Description tag checkbox')
 		self.new_dscp_tag_1.click()
-		options = self.dscp_tag_values.get_options()
+		options = self.dscp_tag_value7.get_options()
 		for x in range(0,64):
 			if not options[x] == 'DS'+str(x):
 				raise AssertionError("DSCP TAG option DS%x is not present.Traceback: %s")
@@ -3870,7 +3864,7 @@ class AccessPage(WebPage):
 		logger.debug('AccessPage : Choosing Source-NAT from action dropdown')
 		self.action_role2.set(self.config.config_vars.service_action_value)
 		logger.debug('AccessPage : Clicking on save button')   
-		self.save_settings.click()
+		self.save_vlan.click()
 		
 	def assert_options(self,logoption = False, dscptag = False, blacklist = False, priority_802 = False,media = False,scanning = False):
 		'''
@@ -3878,16 +3872,16 @@ class AccessPage(WebPage):
 		'''
 		if logoption:
 			logger.debug('AccessPage : Checking log checkbox')
-			self.browser.assert_element(self.log,'Log checkbox is not present')
+			self.browser.assert_element(self.new_log_1,'Log checkbox is not present')
 		if dscptag:
 			logger.debug('AccessPage : Checking dscp checkbox')
-			self.browser.assert_element(self.dscp,'dscp checkbox is not present')
+			self.browser.assert_element(self.new_dscp_tag_1,'dscp checkbox is not present')
 		if blacklist:
 			logger.debug('AccessPage : Checking blacklist checkbox')
-			self.browser.assert_element(self.blacklist,'blacklist checkbox is not present')
+			self.browser.assert_element(self.new_blacklist_1,'blacklist checkbox is not present')
 		if priority_802:
 			logger.debug('AccessPage : Checking priority_802 checkbox')
-			self.browser.assert_element(self.p_802,'priority_802 checkbox is not present')
+			self.browser.assert_element(self.new_dot1_priority_1,'priority_802 checkbox is not present')
 		if media:
 			logger.debug('AccessPage : Checking log checkbox')
 			self.browser.assert_element(self.media,'media checkbox is not present')
@@ -3936,10 +3930,10 @@ class AccessPage(WebPage):
 		logger.debug('AccessPage : Choosing Custom option from service dropdown')
 		self.service_role2.set(self.config.config_vars.service_custom)
 		logger.debug("AccessPage : write 'Port' number...")
-		self.custom_tcp_port.set(self.config.config_vars.invalid_port_range)
+		self.default_role_custom_tcp_port.set(self.config.config_vars.invalid_port_range)
 		logger.debug("AccessPage : Click 'Save' button...")
-		self.save_settings.click()
-		if not self.port_range_error:
+		self.save_vlan.click()
+		if not self.port_error_end_start_msg:
 			raise AssertionError("'* End must be > start' message not present.Traceback: %s " %traceback.format_exc())
 			
 	def check_mac_address_and_dhcp_option_in_wired_network(self):
@@ -3968,9 +3962,9 @@ class AccessPage(WebPage):
 		self.destination_role_2.set(destination)
 		if ip:
 			logger.debug("AccessPage : Set Ip Address.")
-			self.destination_ip3.set(ip)
+			self.destination_ip0.set(ip)
 		logger.debug("AccessPage : Click save")
-		self.save_settings.click()
+		self.save_vlan.click()
 		
 	def create_access_rule_for_role_based_2(self,service = None,action=None,destination=None,ip=None):
 		logger.debug("AccessPage : Click on add icon.")
@@ -3983,9 +3977,9 @@ class AccessPage(WebPage):
 		self.destination_role_3.set(destination)
 		if ip:
 			logger.debug("AccessPage : Set Ip Address.")
-			self.destination_ip6.set(ip)
+			self.destination_ip0.set(ip)
 		logger.debug("AccessPage : Click save")
-		self.save_settings.click()
+		self.save_vlan.click()
 		
 	def create_access_rule_for_role_based_3(self,service = None,action=None,destination=None,ip=None):
 		logger.debug("AccessPage : Click on add icon.")
@@ -3998,9 +3992,9 @@ class AccessPage(WebPage):
 		self.destination_role_4.set(destination)
 		if ip:
 			logger.debug("AccessPage : Set Ip Address.")
-			self.destination_ip1.set(ip)
+			self.destination_ip0.set(ip)
 		logger.debug("AccessPage : Click save")
-		self.save_button_2.click()
+		self.save_vlan.click()
 		
 	def create_access_rule_for_role_based_4(self,service = None,action=None,destination=None,ip=None):
 		logger.debug("AccessPage : Click on add icon.")
@@ -4013,9 +4007,9 @@ class AccessPage(WebPage):
 		self.destination_role_5.set(destination)
 		if ip:
 			logger.debug("AccessPage : Set Ip Address.")
-			self.destination_ip2.set(ip)
+			self.destination_ip0.set(ip)
 		logger.debug("AccessPage : Click save")
-		self.save_button_3.click()		
+		self.save_vlan.click()		
 	def create_access_role_assignment_rule(self, str, operator=False, attribute=False, role=False):
 		logger.debug("AccessPage : Click on new.")
 		self.new_role_assign.click()
@@ -4065,7 +4059,7 @@ class AccessPage(WebPage):
 		logger.debug('AccessPage : Asserting Web Category option')
 		self.browser.assert_element(self.ac_web_category,'Web Category option is not present')
 		logger.debug('AccessPage : Asserting Web Reputation option')
-		self.browser.assert_element(self.webreputation1,'Web Reputation option is not present')
+		self.browser.assert_element(self.webreputation,'Web Reputation option is not present')
 		
 	def asserting_rule_type_options(self, bandwidth = True):
 		logger.debug('AccessPage : Asserting Captive Portal option')
@@ -4094,40 +4088,40 @@ class AccessPage(WebPage):
 		logger.debug('AccessPage :Clicking on Add rule button')
 		self.add_rule_plus_button.click()
 		logger.debug('AccessPage :Clicking on Application Service')
-		self.service_application_6.click()
+		self.service_application.click()
 		logger.debug('AccessPage :Clicking on "Adobe Update " checkbox')
 		self.application_adobe_update.click()
 		logger.debug('AccessPage : Choosing Deny from action dropdown')
 		self.action_role3.set(self.config.config_vars.action_deny)
 		logger.debug('AccessPage: Clicking on save setting button')
-		self.save_settings.click()
+		self.save_vlan.click()
 	
 	def create_rule_with_web_reputation_Selecting_Deny(self):
 		'''
 		Creates Access Rule with WebReputation Selecting Deny 
 		'''	
-		access.click_add_rule_plus_button()
+		self.click_add_rule_plus_button()
 		logger.debug('AccessPage : Clicking on Web reputation radio')
-		access.webreputation2.click()
+		self.webreputation.click()
 		logger.debug('AccessPage : Clicking on slider')
-		access.selectorreputation1.click()
+		self.selectorreputation1.click()
 		logger.debug('AccessPage : Selecting Deny')
-		access.action_role3.set(conf.action_deny)
-		access.select_sites('Suspicious WRI 21-40')
+		self.action_role4.set(self.config.config_vars.action_deny)
+		self.select_sites('Suspicious WRI 21-40')
 		logger.debug('AccessPage : Clicking on save settings')
-		access.save_settings.click()
+		self.save_vlan.click()
 		
 	def creating_captive_portal_rule(self):
 		logger.debug("AccessPage: Setting Rule Type")
 		self.set_rule_type('Captive portal')
 		logger.debug("AccessPage: Clicking on save button")
-		self.save_settings.click()
+		self.save_vlan.click()
 		
 	def creating_calea_rule(self):
 		logger.debug("AccessPage: Setting Rule Type")
 		self.set_rule_type('CALEA')
 		logger.debug("AccessPage: Clicking on save button")
-		self.save_settings.click()
+		self.save_vlan.click()
 		
 	def creating_bandwidth_contract_rule(self):
 		logger.debug("AccessPage: Setting Rule Type")
@@ -4136,19 +4130,19 @@ class AccessPage(WebPage):
 		self.downstream_textbox.set(self.config.config_vars.downstream_value)
 		self.upstream_textbox.set(self.config.config_vars.upstream_value)
 		logger.debug("AccessPage: Clicking on save button")
-		self.save_settings.click()
+		self.save_vlan.click()
 	
 	def creating_service_application_rule(self):
 		logger.debug('AccessPage :Clicking on Add rule button')
 		self.add_rule_plus_button.click()
 		logger.debug('AccessPage :Clicking on Application Service')
-		self.service_application_5.click()
+		self.service_application.click()
 		logger.debug('AccessPage :Clicking on "4399 Com " checkbox')
 		self.application_4399_com.click()
 		logger.debug('AccessPage : Choosing Deny from action dropdown')
 		self.action_role2.set(self.config.config_vars.action_deny)
 		logger.debug('AccessPage: Clicking on save setting button')
-		self.save_settings.click()
+		self.save_vlan.click()
 	
 	def create_rule_with_webtegory_travel_deny(self):
 		'''
@@ -4157,11 +4151,11 @@ class AccessPage(WebPage):
 		logger.debug('AccessPage :Clicking on Add rule button')
 		self.click_add_rule_plus_button()
 		logger.debug('AccessPage : Choosing Web Category radio button')
-		self.ac_web_category_2.click()
+		self.ac_web_category.click()
 		logger.debug('AccessPage : Clicking on shopping button')
 		self.travel.click()
 		logger.debug('AccessPage : Clicking on save button')			
-		self.save_settings.click()
+		self.save_vlan.click()
 		
 	def create_multiple_app_category_rules(self):
 		'''
@@ -4185,11 +4179,11 @@ class AccessPage(WebPage):
 		logger.debug("AccessPage : Click 'DSCP tag' check box...")
 		self.new_dscp_tag_1.click()
 		logger.debug("AccessPage : Click 'Blacklist' check box...")
-		self.blacklist_3.click()
+		self.new_blacklist_1.click()
 		logger.debug("AccessPage : Click '802.1 priority' check box...")
 		self.new_dot1_priority_1.click()
 		logger.debug('AccessPage : Clicking on save button')			
-		self.save_settings.click()
+		self.save1.click()
 		
 		
 		self.click_add_rule_plus_button()
@@ -4241,4 +4235,4 @@ class AccessPage(WebPage):
 		self.p_802_7.click()
 		self.dot_1_priority_value6.set(self.config.config_vars.custom_port_value)
 		logger.debug('AccessPage : Clicking on save button')			
-		self.save_settings.click()
+		self.save_button_1.click()

@@ -1,0 +1,46 @@
++ wlan access-rule test1
++  rule any any match any any any permit
++ wlan access-rule guest
++  rule any any match any any any permit
++ wlan ssid-profile test1
++  enable
++  type guest
++  essid test1
++  wep-key  1
++  opmode static-wep
++  max-authentication-failures 0
++  vlan 1
++  auth-server InternalServer
++  set-vlan AP-Group contains aruba 120
++  rf-band all
++  captive-portal internal
++  dtim-period 1
++  inactivity-timeout 1000
++  broadcast-filter none
++  dmo-channel-utilization-threshold 90
++  local-probe-req-thresh 0
++  max-clients-threshold 64
++ wlan ssid-profile guest
++  enable
++  type guest
++  essid guest
++  opmode static-wep
++  max-authentication-failures 0
++  vlan 1
++  auth-server InternalServer
++  set-vlan AP-Group contains aruba 120
++  rf-band all
++  captive-portal internal
++  dtim-period 1
++  inactivity-timeout 1000
++  broadcast-filter none
++  dmo-channel-utilization-threshold 90
++  local-probe-req-thresh 0
++  max-clients-threshold 64
+!  banner-text "Welcome to Guest Network"
+!  terms-of-use "Please read and accept terms and conditions and then login."
+!  use-policy "This network is not secure and use it at your own risk."
+!  redirect-url "http://www.yahoo.com"
+!  banner-text "Title Header - Hello"
+!  terms-of-use "Welcome to Aruba"
+!  use-policy "Confirm your BYOD"

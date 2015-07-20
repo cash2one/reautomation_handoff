@@ -1,0 +1,20 @@
+! Wireless Containment                   :none
+! Wireless Containment                   :tarpit-all-sta
+! infrastructure protection level        :off
+! infrastructure protection level        :high
+! Policies                  Status   Low      High
+! --------                  ------   ---      ----
+! protect-ssid              disable  enable   enable
+! rogue-containment         disable  enable   enable
+! protect-adhoc-network     disable  disable  enable
+! protect-ap-impersonation  disable  disable  enable
+! client protection level                :off
+! Policies                  Status  Low      High
+! --------                  ------  ---      ----
+! protect-ssid              enable  enable   enable
+! rogue-containment         enable  enable   enable
+! protect-adhoc-network     enable  disable  enable
+! protect-ap-impersonation  enable  disable  enable
+! client protection level                :custom
+! protect-windows-bridge  disable  disable  enable
+! protect-windows-bridge  enable   disable  enable

@@ -1,0 +1,9 @@
++ wlan sta-profile
++  essid Guest123
++  cipher-suite wpa-tkip-psk
++  uplink-band dot11g
+!  enforce none
+!  enforce ethernet
+!  failover-internet
+!  failover-vpn-timeout 180
+!  failover-vpn-timeout 3600

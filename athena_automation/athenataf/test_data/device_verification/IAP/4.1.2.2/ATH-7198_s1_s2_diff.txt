@@ -1,0 +1,40 @@
++ wlan access-rule %(Network_name)s
++  rule any any match any any any permit
++ wlan ssid-profile %(Network_name)s
++  enable
++  type guest
++  essid %(Network_name)s
++  opmode wpa2-psk-aes
++  max-authentication-failures 5
++  vlan guest
++  auth-server authradius
++  auth-server InternalServer
++  rf-band all
++  captive-portal external profile testuser
++  wispr
++  dtim-period 1
++  inactivity-timeout 1000
++  broadcast-filter none
++  server-load-balancing
++  radius-reauth-interval 1
++  radius-accounting
++  radius-interim-accounting-interval 15
++  blacklist
++  dmo-channel-utilization-threshold 90
++  local-probe-req-thresh 0
++  max-clients-threshold 64
++ wlan auth-server authradius
++  ip 10.17.50.110
++  port 1812
++  acctport 1813
++  key 
++ wlan external-captive-portal testuser
++  server 1.2.3.4
++  port 80
++  url "www.bing.com"
++  auth-text ""
++  auto-whitelist-disable
++  https
++ wlan walled-garden
++  white-list "yahoo.com"
++  black-list "www.bing.com"

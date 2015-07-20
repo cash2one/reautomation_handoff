@@ -232,7 +232,7 @@ class SecurityLevelOpen(ConfigurationTest):
 		security_page = self.LeftPanel.go_to_security()
 		security_page.delete_2_external_servers()
 		self.take_s3_snapshot()
-		self.assert_s1_s2_diff(o)
+		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
 		self.clear()
 

@@ -1,6 +1,7 @@
 import logging
 logger = logging.getLogger('athenataf')
 from athenataf.lib.functionality.test.ConfigurationTest import ConfigurationTest
+import time
 
 class External_Portal_Type_Radius_Auth(ConfigurationTest):
 	'''
@@ -29,6 +30,7 @@ class External_Portal_Type_Radius_Auth(ConfigurationTest):
 	def _delete_captive_role_if_present(self):
 		self.NetworkPage.delete_network_if_present()
 		self.NetworkPage.delete_wired_network_if_present()
+		self.NetworkPage.delete_custom_guest_network_if_present()
 		security_page = self.LeftPanel.go_to_security()
 		security_page.delete_authentication_server()
 		security_page.delete_authentication_server2()
@@ -41,8 +43,10 @@ class External_Portal_Type_Radius_Auth(ConfigurationTest):
 			security_page.whitelist_delete.click()
 		if security_page.walled_save:
 			security_page.walled_save.click()	
-		if security_page.is_external_captive_profile_present():
-			security_page.delete_external_captive_role()
+		security_page.click_on_external_captive_accordion()
+		security_page.delete_external_captive_portal_2()
+		security_page.delete_captive_portal()
+		time.sleep(5)	
 		self.LeftPanel.go_to_network_page()
 		
 		
@@ -80,11 +84,11 @@ class External_Portal_Type_Radius_Auth(ConfigurationTest):
 		security.set_splash_page_type('External')
 		security.create_external_captive_portal_1(https=False)
 		security.configure_auth_server_settings(mac_authentication=True)
-		security.set_delimiter_characrter(conf.delimeter_dot)
+		security.set_delimiter_characrter(conf.hyphen)
 		security.create_external_radius_server_in_auth_server_one()
 		security.assert_authentication_server2('Select')
 		security.set_reauth_interval_options(conf.reauth_30)
-		self.browser.assert_element(self.blacklist_whitelist, "blacklisting not set to default value")
+		self.browser.assert_element(security.blacklist_whitelist, "blacklisting not set to default value")
 		security.set_encryption(conf.enable_option)
 		security.set_security_key_management(conf.Authentication_wpa2)
 		security.set_pass_phrase_format(conf.pass_phrase_format_64_hexa_chars)
@@ -101,13 +105,13 @@ class External_Portal_Type_Radius_Auth(ConfigurationTest):
 		
 	def test_ath_8375_edit_a_profile_type_of_a_external_captive_portal(self):
 		conf = self.config.config_vars
-		self.NetworkPage.delete_network_if_present()
+		self._delete_captive_role_if_present()
 		self.take_s1_snapshot()
 		basic_info = self.NetworkPage.create_new_network()
 		virtual_lan = basic_info.guest_network_info()
 		security = virtual_lan.click_on_next()
 		security.assert_splash_page_required_fields()
-		access = security.create_captive_portal_profile(True)
+		access = security.create_captive_portal_profile(True,True)
 		access.finish_network_setup()
 		self.take_s2_snapshot()
 		edit_network_page = self.NetworkPage.edit_network()
@@ -118,7 +122,7 @@ class External_Portal_Type_Radius_Auth(ConfigurationTest):
 		edit_network_page.save_captive_profile_button()
 		edit_network_page._save_settings()
 		self.LeftPanel.go_to_network_page()
-		self.NetworkPage.delete_network_if_present()
+		self._delete_captive_role_if_present()
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
@@ -130,6 +134,7 @@ class External_Portal_Type_Radius_Auth(ConfigurationTest):
 		'''
 		self.NetworkPage.delete_network_if_present()
 		self.NetworkPage.delete_wired_network_if_present()
+		self.NetworkPage.delete_custom_guest_network_if_present()
 		security_page = self.LeftPanel.go_to_security() 
 		security_page.delete_authentication_server()
 		security_page.delete_authentication_server2()
@@ -142,11 +147,15 @@ class External_Portal_Type_Radius_Auth(ConfigurationTest):
 		if security_page.walled_save:
 			security_page.walled_save.click()
 		time.sleep(5)	
+		security_page.click_on_external_captive_accordion()
+		security_page.delete_external_captive_portal_2()
+		security_page.delete_captive_portal()
+		time.sleep(5)	
 		self.LeftPanel.go_to_network_page()		
 		
 	def test_ath_7197_Portal_radius_authenticatoin_with_https_single_external_auth_server_with_mac_static_wep(self):
 		conf = self.config.config_vars
-		self._delete_network_auth_servers_blacklist_whitelist()
+		self._delete_captive_role_if_present()
 		self.take_s1_snapshot()
 		basic_info = self.NetworkPage.create_new_network()
 		vlan_obj = basic_info.guest_network_info()
@@ -162,7 +171,7 @@ class External_Portal_Type_Radius_Auth(ConfigurationTest):
 		access = security.click_on_next()
 		access.finish_network_setup()
 		self.take_s2_snapshot()
-		self._delete_network_auth_servers_blacklist_whitelist()
+		self._delete_captive_role_if_present()
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()

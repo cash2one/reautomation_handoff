@@ -3,7 +3,7 @@ divice_vc										: button&id&deviceManagementTable_serial_display_0
 select											: select&xpath&//select[@name='selectedTypeMain']
 select_button									: button&xpath&//button[@class = 'button blue' and text() = 'Select']
 unassign_button									: button&xpath&//span[@class= 'ng-binding' and text() = 'Unassign']
-unassigned_licence_text 						: button&xpath&//span[@id = 'deviceManagementTable_licensed_display_0' and contains(.,'Unassigned')]
+unassigned_licence_text 						: button&xpath&//span[@id = 'deviceManagementTable_subscription_key_display_0' and contains(.,'Unassigned')]
 device_selector_1		 						: checkbox&xpath&//td[@id='deviceManagementTable_row_selector_0']/input
 assigned_licence_button 						: button&xpath&//span[@class= 'ng-binding' and text() ='Assign License(s)']
 assign_button			 						: button&xpath&//div[@id='licensesTable_row_actions_1']/a
@@ -12,16 +12,16 @@ mac_search_field								: textbox&id&deviceManagementTable_mac_search_field
 search_button   								: button&id&deviceManagementTable_search_confirm
 mac_display   			        				: button&id&deviceManagementTable_mac_display_0
 type_display   			        				: button&id&deviceManagementTable_model_display_0
-serial_number_label								: label&xpath&//label[@class="ng-scope ng-binding" and text()='SERIAL NUMBER']
-mac_address_label								: label&xpath&//label[@class="ng-scope ng-binding" and text()='MAC ADDRESS']
-type_label										: label&xpath&//label[@class="ng-scope ng-binding" and text()='TYPE']&0
+serial_number_label								: label&xpath&//label[@class='ng-binding ng-scope' and text()='SERIAL NUMBER']
+mac_address_label								: label&xpath&//label[@class="ng-binding ng-scope" and text()='MAC ADDRESS']
+type_label										: label&xpath&//label[@class="ng-binding ng-scope" and text()='TYPE']&0
 add_device										: button&xpath&//span[@ng-bind="deviceMgmt_Labels.where_device" and text()='Add Devices']
 activation_key									: textbox&xpath&//input[@name="device_activation_key"]
 device_mac_address								: textbox&xpath&//input[@name="device_mac_addr"]
 add_button										: button&id&add_devices_manually
-cancel_button									: button&xpath&close_device_popup
+cancel_button									: button&id&close_device_popup&1
 unassign_key									: label&xpath&//span[@id='deviceManagementTable_licensed_display_0' and contains(.,'Unassigned')]
-assign_license									: button&xpath&save_assignment
+assign_license									: button&id&save_assignment
 assign_button_0									: button&id&assign_0
 license_key										: label&xpath&//a[@id='assign_0']/../../../td[1]/span[2]
 subscription_key								: label&xpath&deviceManagementTable_licensed_display_0
@@ -33,7 +33,7 @@ group_name										: label&id&deviceManagementTable_prov_group_name_display_0
 default_group									: button&xpath&//select[@id='selectedGroup']/option[text()='default']
 all_group										: button&xpath&//select[@id='selectedGroup']/option[text()='All Groups']		
 permission_denied_msg   					    : label&xpath&//div[@id='ConfirmContent_common' and text()='Permission Denied']
-close_assign_popup	 							: button&xpath&//div[@id='close_assign_popup']
+close_assign_popup	 							: button&xpath&//div[@id='close_assign_popup']/span
 group_text_group1		 						: button&xpath&//span[@id='deviceManagementTable_prov_group_name_display_0' and contains(.,'group1')]
 created_group1             						: button&xpath&//select[@id='selectedGroup']/option[text()='group1']	
 add_group_button								: button&xpath&//div[@class="add-group-button button blue small icosolo icon_add"]
@@ -54,7 +54,15 @@ cancel_icon_2									: button&xpath&//div[@id='cancel' and @class="button_close
 switch_tab       							  	 : button&id&device_switch
 vc_tab          								 : button&id&device_vc
 assign_button_2     						   	 : button&id&assign_2
-ok_button                						 : button&xpath&//div[@id='warnigBox_common_Alert']/div[2]/div/a
+ok_button                						 : button&xpath&//a[@id='alert_close_button']
 
 created_group2                				   : button&xpath&//select[@id='selectedGroup']/option[text()='group2']
 no_device_found_msg      					  : label&id&deviceManagementTable__no_data_msg
+assign_button_enable     						 : button&xpath&//a[@class='button blue small ng-scope']&0
+
+assign_group_success_ok_button                   : button&xpath&//a[@class = 'button gray ConfirmCancel warning_but' and text()='OK']&2
+
+dev_password										: textbox&id&cddc_password&0
+confirm_dev_password								: textbox&id&cddc_password_confirm&0
+set_password										: button&xpath&//button[text()='Set Password']
+assignGroup_btn										: button&id&assignGroup_btn

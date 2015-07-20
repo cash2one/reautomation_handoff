@@ -1,0 +1,35 @@
+  
+  
+  
+  arm
+!  wide-bands 24ghz
+!  min-tx-power 12
+!  max-tx-power 18
+!  band-steering-mode prefer-5ghz
+!  air-time-fairness-mode fair-access
+!  client-aware
+!  scanning
+!  client-match slb-mode 2
+  
+  
+  syslog-level warn ap-debug 
+  syslog-level warn network 
+  
+  
+  
+  arm
+!  wide-bands all
+!  80mhz-support
+!  min-tx-power 9
+!  max-tx-power 24
+!  band-steering-mode balance-bands
+!  air-time-fairness-mode preferred-access
+!  client-match
+!  client-match nb-matching 80
+!  client-match calc-threshold 10
+!  client-match calc-interval 50
+!  client-match slb-mode 3
+  
+  
+  syslog-level warn ap-debug 
+  syslog-level warn network 

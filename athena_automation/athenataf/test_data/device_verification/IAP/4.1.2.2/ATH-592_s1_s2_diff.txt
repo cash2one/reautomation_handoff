@@ -1,0 +1,37 @@
++ wlan access-rule %(Network_name)s
++  rule any any match any any any permit
++ wlan ssid-profile %(Network_name)s
++  enable
++  type guest
++  essid %(Network_name)s
++  opmode wpa-psk-tkip
++  max-authentication-failures 2
++  vlan 20
++  auth-server %(auth_server_value)s
++  auth-server %(auth_server_value_2)s
++  rf-band all
++  captive-portal internal
++  mac-authentication
++  mac-authentication-delimiter :
++  mac-authentication-upper-case
++  dtim-period 1
++  inactivity-timeout 1000
++  broadcast-filter none
++  server-load-balancing
++  radius-reauth-interval 1440
++  radius-accounting
++  radius-interim-accounting-interval 60
++  blacklist
++  dmo-channel-utilization-threshold 90
++  local-probe-req-thresh 0
++  max-clients-threshold 64
++ wlan auth-server %(auth_server_value)s
++  ip 10.17.50.110
++  port 1812
++  acctport 1813
++  key 
++ wlan auth-server %(auth_server_value_2)s
++  ip 10.17.50.110
++  port 1812
++  acctport 1813
++  key 

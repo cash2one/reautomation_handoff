@@ -1,6 +1,7 @@
 import logging
 logger = logging.getLogger('athenataf')
 from athenataf.lib.functionality.test.ConfigurationTest import ConfigurationTest
+import time
 
 class InternalAcknowledged(ConfigurationTest):
 	'''
@@ -45,6 +46,7 @@ class InternalAcknowledged(ConfigurationTest):
 		edit_network.click_security_accordion()
 		edit_network.set_guest_network_security_level_Splash_page_visuals_defaults()
 		self.take_s2_snapshot()
+		self.LeftPanel.go_to_network_page()
 		self.NetworkPage.assert_new_network()
 		self._delete_network_auth_server()
 		self.take_s3_snapshot()
@@ -82,9 +84,9 @@ class InternalAcknowledged(ConfigurationTest):
 		
 		
 	def test_ath_588_both_wpa_and_wpa2_two_external_authservers(self): 
-		self.take_s1_snapshot()
 		conf = self.config.config_vars
 		self._delete_network_auth_server()
+		self.take_s1_snapshot()
 		basic_info = self.NetworkPage.create_new_network()
 		vlan_obj = basic_info.guest_network_info()
 		security = vlan_obj.use_vlan_defaults()
@@ -97,6 +99,8 @@ class InternalAcknowledged(ConfigurationTest):
 		self.browser.assert_drop_down_value(security.blacklisting, conf.disable_option, "blacklisting not set to default value")
 		security.configure_encryption('Enabled',False,conf.Authentication_wpa2)
 		security.set_splash_page_visulas()
+		access = security.click_on_next()
+		access.finish_network_setup()
 		self.take_s2_snapshot()
 		self._delete_network_auth_server()
 		self.take_s3_snapshot()
@@ -140,8 +144,8 @@ class InternalAcknowledged(ConfigurationTest):
 		
 	def test_ath_910_mac_auth_enabled_external_server(self):
 		conf = self.config.config_vars
-		self.NetworkPage.delete_network_if_present()
-		self.NetworkPage.delete_wired_network_if_present()
+		self.LeftPanel.go_to_network_page()
+		self._delete_network_auth_server()
 		self.take_s1_snapshot()
 		basic_info = self.NetworkPage.create_new_network()
 		virtual_lan = basic_info.guest_network_info()
@@ -166,16 +170,23 @@ class InternalAcknowledged(ConfigurationTest):
 		
 	def test_ath_1894_mac_auth_enabled_external_server(self):
 		conf = self.config.config_vars
-		self.NetworkPage.delete_network_if_present()
-		self.NetworkPage.delete_wired_network_if_present()
+		self._delete_network_auth_server()
+		security_page = self.LeftPanel.go_to_security()
+		security_page.click_on_external_captive_accordion()
+		security_page.delete_external_captive_role()
+		self.LeftPanel.go_to_network_page()
 		self.take_s1_snapshot()
 		basic_info = self.NetworkPage.create_new_network()
 		virtual_lan = basic_info.guest_network_info()
 		security = virtual_lan.select_virtual_controller()
-		security.configure_splash_page_type(conf.splash_page_external_auth_text)
+		security.configure_splash_page_type(conf.Splash_page_external)
 		security.set_mac_authentication_value('Enabled')
+		logger.debug('SecurityPage : Setting new external server to Authentication Server 1')
+		security.authentication_server.set(self.config.config_vars.new_external_server)
 		security.create_authentication_server(name=conf.auth_server_name, ip=conf.auth_ipaddr, sharedkey=conf.auth_shared_key,retypekey=conf.auth_shared_key,rfc=True,nas_ip=conf.external_captive_ip,nas_identifier_value=conf.external_captive_ip)
+		security.select_auth_server_internalserver('2')
 		security.configure_reauth_interval(conf.reauth_2,conf.reauth_intrvl_unit_hrs)
+		security.set_wispr('Enabled')
 		security.enable_accounting_interval(conf.default_time_out)
 		security.set_accounting_mode()
 		security.configure_blacklisting(conf.termination_disabled)
@@ -183,13 +194,15 @@ class InternalAcknowledged(ConfigurationTest):
 		security.configure_encryption(conf.wispr_enable,'False',conf.Authentication_wpa2)
 		security.set_passphrase_retype(conf.passphrase_invalid_hex_value,conf.passphrase_invalid_hex_value)
 		security.create_external_captive_portal_1(portal_failure = False,whitelisting=True)
-		security.set_captive_portal_failure(allow = True)
-		security.set_automatic_url_whitelisting(url = True)
 		access = security.click_on_next()
 		access.finish_network_setup()
 		self.take_s2_snapshot()
 		self.NetworkPage.assert_new_network()
 		self._delete_network_auth_server()
+		security_page = self.LeftPanel.go_to_security()
+		security_page.click_on_external_captive_accordion()
+		security_page.delete_external_captive_role()
+		self.LeftPanel.go_to_network_page()
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()

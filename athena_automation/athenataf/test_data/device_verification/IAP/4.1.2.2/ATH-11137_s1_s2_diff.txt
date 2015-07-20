@@ -1,6 +1,6 @@
 ! infrastructure detection level        :off
 ! infrastructure detection level        :high
-!
+!                                                    
 ! ---------------------------------------------------
 ! Policies                           Status  Low      Medium   High
 ! --------                           ------  ---      ------   ----
@@ -56,7 +56,7 @@
 ! detect-beacon-wrong-channel        disable  disable  disable  enable
 ! detect-invalid-mac-oui             disable  disable  disable  enable
 ! client detection level        :off
-!
+!                                                    
 ! ---------------------------------------------------
 ! Policies                           Status   Low      Medium   High
 ! --------                           ------   ---      ------   ----

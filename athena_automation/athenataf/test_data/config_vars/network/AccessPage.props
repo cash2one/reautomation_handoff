@@ -14,9 +14,7 @@ role_operator2 									:  Is the role
 role_operator1 									:  contains
 destination_mask 								:  255.255.0.0
 dot_1_priority_value 							:  3
-destination_ip_2                              :10.10.1.0
-destination_ip 									:  8.8.8.8
-destination_ip_1                                :  10.10.0.0
+destination_ip 									:  10.1.1.0
 Access_Control 									:  Access Control
 Access_Rule_Downstream 							:  1
 action_port 									:  5000
@@ -36,7 +34,7 @@ destination_default_value						:  To all destinations
 service_adp										:  adp
 service_bootp									:  bootp
 dest_particular_server							:  To a particular server
-dest_ip											:  10.10.0.0
+dest_ip											:  10.10.1.1
 service_cfgm									:  cfgm-tcp
 dest_except_partclr_server						:  Except to a particular server
 service_custom									:  CUSTOM
@@ -85,7 +83,7 @@ protocols_other									: OTHER
 protocols_tcp									: TCP
 invalid_port									: 0
 port											: 10
-invalid_domain_name                             : 123mko
+invalid_domain_name1                             : 123mko
 domain_names									: google.com
 vlan_id_0										:  0
 vlan_id_4094									:  4094
@@ -157,7 +155,7 @@ policy_text										: Use this network at your own risk It is not secured
 captive_role_ip 								: 10.17.50.110
 captive_portal_name 							: testRole
 captive_role_port 								: 5000
-action_ip4										: 10.30.40.50
+action_ip4										: 10.1.1.1
 action_port4									: 1453
 Service_Role1_http_proxy						: http
 Service_Role1_h323_tcp							: h323-tcp
@@ -216,23 +214,15 @@ string_max_len									: abcdefghijklmnopqrstuvwxyz1234567
 string_max_len_mac								: abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789abcd
 role_assignment_string_quotes					: ''"
 valid_destination_ip							: 10.1.1.1
-valid_destination_ip_1                          : 10.1.1.0
-valid_destination_ip_2                          : 10.0.0.0
 service_http									: https
 netbios_destination_ip							: 192.168.10.1
-netbios_destination_ip_1						: 192.168.10.0
 ntp_destination_ip								: 10.16.10.1
-ntp_destination_ip_1							: 10.16.10.0
-ntp_destination_ip_2							: 10.16.0.0
 papi_destination_ip								: 172.10.10.1
-papi_destination_ip_1							: 172.10.10.0
 pop3_destination_ip								: 172.10.10.168
-pop3_destination_ip_1							: 172.10.10.0
-dest1_net_mask									: 255.255.255.0
+dest1_net_mask									: 255.255.252.0
 dest2_net_mask									: 255.255.255.0
 Port_26											: 26
 dest3_net_mask									: 255.0.0.0
-dest3_net_mask_1                                :255.255.255.0
 dscp_tag_value_DS10								: DS10
 priority_value_7								: 7
 dscp_tag_value_DS2								: DS2

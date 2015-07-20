@@ -1,0 +1,26 @@
++ wlan access-rule %(Network_name)s
++  rule any any match any any any permit
++ wlan ssid-profile %(Network_name)s
++  enable
++  type employee
++  essid %(Network_name)s
++  opmode wpa2-aes
++  max-authentication-failures 0
++  auth-server InternalServer
++  rf-band all
++  captive-portal disable
++  dtim-period 1
++  inactivity-timeout 1000
++  broadcast-filter none
++  dmo-channel-utilization-threshold 90
++  local-probe-req-thresh 0
++  max-clients-threshold 64
++ wlan auth-server authradius
++  ip 172.16.0.0
++  port 65534
++  acctport 65534
++  timeout 25
++  deadtime 1440
++  retry-count 2
++  key 
++  nas-ip 10.10.10.10

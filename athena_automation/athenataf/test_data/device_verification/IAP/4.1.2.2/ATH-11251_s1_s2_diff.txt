@@ -1,0 +1,5 @@
+! Name  Type  VLAN  DHCP Relay  DHCP Relay Servers  DHCP Option 82  VLAN IP  VLAN Mask  Split Tunnel
+! ----  ----  ----  ----------  ------------------  --------------  -------  ---------  ------------
+! Name    Type            VLAN  DHCP Relay  DHCP Relay Servers  DHCP Option 82  VLAN IP  VLAN Mask  Split Tunnel
+! ----    ----            ----  ----------  ------------------  --------------  -------  ---------  ------------
+! athena  Centralized,L2  44    ON          10.10.1.1           None                                enable

@@ -1,0 +1,22 @@
++ wlan access-rule test1
++  rule any any match any any any permit
++ wlan access-rule "new role"
++  rule any any match appcategory antivirus permit
++  rule any any match webcategory web-based-email permit
++  rule any any match app adobe-update deny
++  rule any any match webreputation moderate-risk-sites deny
++ wlan ssid-profile test1
++  enable
++  type employee
++  essid test1
++  opmode wpa2-psk-aes
++  max-authentication-failures 0
++  auth-server InternalServer
++  rf-band all
++  captive-portal disable
++  dtim-period 1
++  inactivity-timeout 1000
++  broadcast-filter none
++  dmo-channel-utilization-threshold 90
++  local-probe-req-thresh 0
++  max-clients-threshold 64

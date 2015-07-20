@@ -1,0 +1,20 @@
+! Beacon Interval:100
+! 802.11d/802.11h:disable
+! Interference Immunity Level:2
+! Channel Switch Announcement Count:0
+! Beacon Interval:85
+! 802.11d/802.11h:enable
+! Interference Immunity Level:5
+! Channel Switch Announcement Count:8
+! Background Spectrum Monitor:disable
+! Background Spectrum Monitor:enable
+! Legacy Mode:disable
+! Beacon Interval:100
+! 802.11d/802.11h:disable
+! Interference Immunity Level:2
+! Channel Switch Announcement Count:0
+! Legacy Mode:enable
+! Beacon Interval:450
+! 802.11d/802.11h:enable
+! Interference Immunity Level:1
+! Channel Switch Announcement Count:4

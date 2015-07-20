@@ -392,7 +392,9 @@ class EmployeeSecurityLevelPersonal(ConfigurationTest):
 		self.NetworkPage.delete_wired_network_if_present()
 		security_page = self.LeftPanel.go_to_security() 
 		security_page.delete_authentication_server()
+		self.browser.refresh()
 		security_page.delete_authentication_server2()
+		self.browser.refresh()
 		self.LeftPanel.go_to_network_page()
 		
 	def test_ath_9333_edit_personal_wpa_2_personal_employee_network_with_band_key_management(self):
@@ -842,7 +844,7 @@ class EmployeeSecurityLevelPersonal(ConfigurationTest):
 		self.clear()
 		
 	def test_ath_11913_edit_personal_wpa_2_personal_employee_network_with_airtime_value_each_radio(self):
-		self._delete_network_auth_server()
+		self._delete_external_radius_servers()
 		self.take_s1_snapshot()
 		basic_info = self.NetworkPage.create_new_network()
 		virtual_lan = basic_info.voice_network_dmo_channel_utilization_and_multicast_transmission('Employee',self.config.config_vars.background_wmm,'Enabled')
@@ -859,9 +861,9 @@ class EmployeeSecurityLevelPersonal(ConfigurationTest):
 		self.LeftPanel.assert_delta_config_icon()
 		edit_network = self.NetworkPage.edit_network()
 		edit_network.assert_wpa_2_personal_voice_network_with_airtime_each_radio_value()
-		self.LeftPanel.go_to_network_page()
+		network_page = self.LeftPanel.go_to_network_page()
 		self.take_s2_snapshot()
-		self._delete_network_auth_server()
+		self._delete_external_radius_servers()
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
@@ -1037,15 +1039,17 @@ class EmployeeSecurityLevelPersonal(ConfigurationTest):
 		edit_network_page = self.NetworkPage.edit_network()
 		edit_network_page.click_advanced_settings_accordion()
 		edit_network_page.set_besteffort_wmm_share_default()
-		edit_network_page.click_vlans_accordion()
+		# edit_network_page.click_vlans_accordion()
 		edit_network_page.click_security_accordion()
 		edit_network_page.select_internalserver()
 		edit_network_page.checking_for_authentication_server2_visibility()
 		edit_network_page._save_settings()
 		self.NetworkPage.assert_new_network()
 		edit_network_page = self.NetworkPage.edit_network()
-		edit_network_page.click_vlans_accordion()
+		# edit_network_page.click_vlans_accordion()
 		edit_network_page.click_security_accordion()
+		import time
+		time.sleep(30)
 		edit_network_page.checking_for_authentication_server()
 		edit_network_page.checking_for_authentication_server2_visibility()
 		self.take_s2_snapshot()
@@ -1057,7 +1061,7 @@ class EmployeeSecurityLevelPersonal(ConfigurationTest):
 		self.assert_s1_s3_diff()
 		self.clear()
 		
-	def test_ath_11920_create_personal_wpa_2_personal_employee_network_with_video_wmm_share(self):
+	def test_ath_11920_create_personal_wpa_2_and_wpa_personal_employee_network_with_video_wmm_share(self):
 		self._delete_external_radius_servers()
 		self.take_s1_snapshot()
 		conf = self.config.config_vars
@@ -1067,12 +1071,7 @@ class EmployeeSecurityLevelPersonal(ConfigurationTest):
 		security = vlan_obj.click_on_next()
 		# security = vlan_obj.use_vlan_defaults()
 		# access = security.set_both_wpa_2_wpa_passphrase_format_64_hexadecimal_chars()
-		security.set_security_key_management(conf.wpa_personal)
-		security.set_open_roaming_nondefault()
-		security.set_pass_phrase_format(conf.pass_phrase_format_64_hexa_chars)
-		security.set_passphrase_retype()
-		security.enable_mac_authentication()
-		access = security.return_acces_page()
+		access = security.set_both_wpa_2_wpa_passphrase_format_64_hexadecimal_chars()
 		access.finish_network_setup()
 		self.NetworkPage.assert_new_network()
 		edit_network_page = self.NetworkPage.edit_network()
@@ -1326,15 +1325,4 @@ class EmployeeSecurityLevelPersonal(ConfigurationTest):
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
 		self.clear()		
-
-
-	def _delete_network_auth_server(self):
-		'''
-		Delete wireless and auth servers
-		'''
-		self.NetworkPage.delete_network_if_present()
-		self.NetworkPage.delete_wired_network_if_present()
-		security_page = self.LeftPanel.go_to_security()
-		security_page.delete_authentication_server()
-		security_page.delete_authentication_server2()
-		self.LeftPanel.go_to_network_page()
+		

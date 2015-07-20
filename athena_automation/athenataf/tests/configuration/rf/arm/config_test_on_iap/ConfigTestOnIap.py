@@ -389,5 +389,5 @@ class ConfigTestOnIap(ConfigurationTest):
         rf_page.set_rf_arm_access_point_control_customized_valid_channel(check=False)
         rf_page.save_changes()
         time.sleep(120)
-        # rf_page.assert_arm_channels('IAP_1','153      disable')
-        # rf_page.assert_arm_channels('IAP_1','157      disable')
+        rf_page.assert_arm_channels('IAP_1','153      disable')
+        rf_page.assert_arm_channels('IAP_1','157      disable')

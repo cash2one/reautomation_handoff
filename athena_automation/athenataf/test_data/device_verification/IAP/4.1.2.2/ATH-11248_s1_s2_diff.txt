@@ -1,0 +1,5 @@
+! Name  Type  VLAN  DHCP Relay  DHCP Relay Servers  DHCP Option 82  VLAN IP  VLAN Mask  Split Tunnel
+! ----  ----  ----  ----------  ------------------  --------------  -------  ---------  ------------
+! Name  Type            VLAN  DHCP Relay  DHCP Relay Servers       DHCP Option 82  VLAN IP  VLAN Mask      Split Tunnel
+! ----  ----            ----  ----------  ------------------       --------------  -------  ---------      ------------
+! Demo  Centralized,L3  10    ON          10.10.10.10,11.1.1.100   None            1.1.1.1  255.255.255.0  enable

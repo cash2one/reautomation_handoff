@@ -1,0 +1,44 @@
++ wlan access-rule test1
++  rule any any match any any any permit
++ wlan access-rule guest
++  rule any any match any any any permit
++ wlan ssid-profile test1
++  enable
++  type guest
++  essid test1
++  opmode wpa-psk-tkip
++  max-authentication-failures 3
++  vlan guest
++  auth-server InternalServer
++  rf-band all
++  captive-portal internal
++  mac-authentication
++  mac-authentication-delimiter :
++  mac-authentication-upper-case
++  dtim-period 1
++  inactivity-timeout 1000
++  broadcast-filter none
++  blacklist
++  dmo-channel-utilization-threshold 90
++  local-probe-req-thresh 0
++  max-clients-threshold 64
++ wlan ssid-profile guest
++  enable
++  type guest
++  essid guest
++  opmode wpa-psk-tkip
++  max-authentication-failures 3
++  vlan guest
++  auth-server InternalServer
++  rf-band all
++  captive-portal internal
++  mac-authentication
++  mac-authentication-delimiter :
++  mac-authentication-upper-case
++  dtim-period 1
++  inactivity-timeout 1000
++  broadcast-filter none
++  blacklist
++  dmo-channel-utilization-threshold 90
++  local-probe-req-thresh 0
++  max-clients-threshold 64

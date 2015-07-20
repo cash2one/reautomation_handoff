@@ -1,0 +1,26 @@
++ wlan access-rule %(Network_name)s
++  rule any any match any any any permit
++ wlan ssid-profile %(Network_name)s
++  enable
++  type guest
++  essid %(Network_name)s
++  opmode static-wep
++  max-authentication-failures 0
++  vlan guest
++  auth-server InternalServer
++  rf-band all
++  captive-portal external profile %(Captive_Role_Name)s
++  dtim-period 1
++  inactivity-timeout 1000
++  broadcast-filter none
++  radius-reauth-interval 900
++  blacklist
++  dmo-channel-utilization-threshold 90
++  local-probe-req-thresh 0
++  max-clients-threshold 64
++ wlan external-captive-portal %(Captive_Role_Name)s
++  server 10.17.50.110
++  port 5000
++  url "www.yahoo.com"
++  auth-text "RoleTest"
++  auto-whitelist-disable

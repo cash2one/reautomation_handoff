@@ -1,0 +1,24 @@
++ wlan access-rule %(wired_network_name)s
++  rule any any match any any any permit
++ wlan auth-server authradius
++  ip 10.17.50.110
++  port 1812
++  acctport 1813
++  key 
++ wlan walled-garden
++  white-list "www.gmail.com"
++  black-list "www.bing.com"
++ wired-port-profile %(wired_network_name)s
++  switchport-mode trunk
++  allowed-vlan all
++  native-vlan guest
++  no shutdown
++  access-rule-name %(wired_network_name)s
++  speed auto
++  duplex auto
++  poe
++  type guest
++  auth-server authradius
++  captive-portal external
++  no dot1x
++  inactivity-timeout 1000

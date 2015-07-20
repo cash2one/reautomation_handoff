@@ -1,4 +1,4 @@
-next								: chain&id&network_create_next
+next								: button&text&Next
 networkname							: textbox&id&nameTxt
 wireless							: button&id&wireless_type
 employee							: button&id&PrimaryUsageEmployee

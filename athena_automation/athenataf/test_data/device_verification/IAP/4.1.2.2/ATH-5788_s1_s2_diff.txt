@@ -1,0 +1,68 @@
++ wlan access-rule network1
++  rule any any match appcategory antivirus permit
++  rule any any match appcategory collaboration permit
++  rule any any match appcategory gaming permit log blacklist tos 2 dot1p-priority 1
++  rule any any match webreputation moderate-risk-sites deny
++ wlan access-rule network2
++  rule any any match app 01net permit
++  rule any any match app 4399com deny
++  rule any any match app adobe-update deny
++  rule any any match app yahoo permit log blacklist tos 59 dot1p-priority 4 throttle-upstream 500 throttle-downstream 400
++ wlan access-rule network3
++  rule any any match webcategory swimsuits-and-intimate-apparel permit
++  rule any any match webcategory web-based-email permit
++ wlan access-rule %(Network_name)s
++  rule any any match any any any permit
++  rule any any match webreputation trustworthy-sites permit
++ wired-port-profile network1
++  switchport-mode trunk
++  allowed-vlan all
++  native-vlan guest
++  no shutdown
++  access-rule-name network1
++  speed auto
++  duplex auto
++  poe
++  type employee
++  captive-portal disable
++  no dot1x
++  inactivity-timeout 1000
++ wired-port-profile network2
++  switchport-mode trunk
++  allowed-vlan all
++  native-vlan guest
++  no shutdown
++  access-rule-name network2
++  speed auto
++  duplex auto
++  poe
++  type employee
++  captive-portal disable
++  no dot1x
++  inactivity-timeout 1000
++ wired-port-profile network3
++  switchport-mode trunk
++  allowed-vlan all
++  native-vlan guest
++  no shutdown
++  access-rule-name network3
++  speed auto
++  duplex auto
++  poe
++  type employee
++  captive-portal disable
++  no dot1x
++  inactivity-timeout 1000
++ wired-port-profile %(Network_name)s
++  switchport-mode trunk
++  allowed-vlan all
++  native-vlan guest
++  no shutdown
++  access-rule-name %(Network_name)s
++  speed auto
++  duplex auto
++  poe
++  type employee
++  captive-portal disable
++  no dot1x
++  inactivity-timeout 1000

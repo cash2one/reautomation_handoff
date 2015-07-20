@@ -1,0 +1,6 @@
+! infrastructure protection level        :off
+! infrastructure protection level        :custom
+! client protection level                :off
+! client protection level                :low
+! protect-valid-sta       disable  enable   enable
+! protect-valid-sta       enable   enable   enable

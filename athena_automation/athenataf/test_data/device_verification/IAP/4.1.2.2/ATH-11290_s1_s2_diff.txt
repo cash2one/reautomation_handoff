@@ -1,0 +1,23 @@
++ wlan access-rule %(wired_network_name)s
++  rule any any match any any any permit
+!  auth-text "Authenticated"
+!  auth-text "Authentication Via External Radius Server"
++ wlan external-captive-portal RoleTest
++  server 10.2.112.10
++  port 80
++  url "/guest/guest_register.php"
++  auth-text "Authentication Via External Radius Server"
++ wired-port-profile %(wired_network_name)s
++  switchport-mode trunk
++  allowed-vlan all
++  native-vlan guest
++  no shutdown
++  access-rule-name %(wired_network_name)s
++  speed auto
++  duplex auto
++  poe
++  type guest
++  auth-server InternalServer
++  captive-portal external profile RoleTest
++  no dot1x
++  inactivity-timeout 1000

@@ -1,0 +1,23 @@
++ wlan access-rule %(Network_name)s
++  rule any any match any any any permit
++ wlan ssid-profile %(Network_name)s
++  enable
++  type guest
++  essid %(Network_name)s
++  opmode opensystem
++  max-authentication-failures 0
++  vlan guest
++  auth-server InternalServer
++  rf-band all
++  captive-portal external profile RoleTest
++  dtim-period 1
++  inactivity-timeout 1000
++  broadcast-filter none
++  dmo-channel-utilization-threshold 90
++  local-probe-req-thresh 0
++  max-clients-threshold 64
++ wlan external-captive-portal %(Captive_Role_Name)s
++  server 10.2.112.10
++  port 80
++  url "/guest/guest_register.php"
++  auth-text "Authenticated"

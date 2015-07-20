@@ -1,0 +1,19 @@
++ wlan access-rule %(Network_name)s
++  rule any any match any any any permit
++ wlan ssid-profile %(Network_name)s
++  enable
++  type guest
++  essid %(Network_name)s
++  opmode opensystem
++  max-authentication-failures 0
++  vlan guest
++  set-role-pre-auth %(Network_name)s
++  set-role-mac-auth %(Network_name)s
++  rf-band all
++  captive-portal disable
++  dtim-period 1
++  inactivity-timeout 1000
++  broadcast-filter none
++  dmo-channel-utilization-threshold 90
++  local-probe-req-thresh 0
++  max-clients-threshold 64

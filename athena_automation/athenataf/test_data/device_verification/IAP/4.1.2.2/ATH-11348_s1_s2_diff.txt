@@ -1,0 +1,14 @@
+! Wireless Containment                   :none
+! Wired Containment                      :off
+! infrastructure protection level        :off
+! Wireless Containment                   :tarpit-all-sta
+! Wired Containment                      :on
+! infrastructure protection level        :low
+! protect-ssid              disable  enable   enable
+! rogue-containment         disable  enable   enable
+! protect-ssid              enable   enable   enable
+! rogue-containment         enable   enable   enable
+! client protection level                :off
+! client protection level                :low
+! protect-valid-sta       disable  enable   enable
+! protect-valid-sta       enable   enable   enable

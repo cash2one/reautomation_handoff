@@ -1,4 +1,4 @@
-next							:chain&id&network_create_next
+next							:button&text&Next
 network_assigned				:button&xpath&//input[@id='client_ip_assignment_Network Assigned']
 default							:button&id&client_vlan_assignment_Default
 back							:button&text&Back

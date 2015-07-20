@@ -59,7 +59,9 @@ class SecurityPage(WebPage):
 		
 	def save_settings(self):
 		logger.debug('SecurityPage: Clicking save settings button')
-		self.save_setting.click()
+		time.sleep(4)
+		if self.save_setting:
+			self.save_setting.click()
 		self.buy_time()
 		
 	def buy_time(self):
@@ -80,7 +82,6 @@ class SecurityPage(WebPage):
 		for i in range(1,4):
 			self.external_captive_profile.click()
 			if not self.captive_role:
-				logger.debug('SecurityPage: All Captive Roles deleted')
 				break
 			self.buy_time()
 			logger.debug('SecurityPage: Clicking n Captive Role')
@@ -166,6 +167,9 @@ class SecurityPage(WebPage):
 			time.sleep(20)
 			
 	def delete_captive_portal(self):
+		if self.external_captive_profile:
+			time.sleep(4)
+			self.external_captive_profile.click()
 		if self.captive_role:
 			time.sleep(3)
 			logger.debug('SecurityPage: Clicking n Captive Role')
@@ -173,7 +177,8 @@ class SecurityPage(WebPage):
 			logger.debug('SecurityPage: Clicking delete button')
 			self.delete_external_captive.click()
 			logger.debug('SecurityPage: Clicking save settings button')
-			self.save_setting.click()
+			if self.save_setting:
+				self.save_setting.click()
 			time.sleep(15)
 		if self.captive_portal_name:
 			time.sleep(3)
@@ -182,7 +187,8 @@ class SecurityPage(WebPage):
 			logger.debug('SecurityPage: Clicking delete button')
 			self.delete_external_captive_2.click()
 			logger.debug('SecurityPage: Clicking save settings button')
-			self.save_setting.click()
+			if self.save_setting:
+				self.save_setting.click()
 			time.sleep(15)
 			
 	def create_new_captive_portal(self):
@@ -214,6 +220,7 @@ class SecurityPage(WebPage):
 		
 	def click_on_external_captive_accordion(self):
 		logger.debug('SecurityPage: Clicking on External Captive Portal Accordion')
+		time.sleep(4)
 		self.external_captive_profile.click()
 		
 	def delete_authentication_server(self):
@@ -229,6 +236,7 @@ class SecurityPage(WebPage):
 			self.buy_time()
 			self.browser.accept_alert()
 			self.buy_time()
+			self.browser.refresh()
 			
 	def delete_user_for_internal_server(self):	
 		self.buy_time()
@@ -286,7 +294,7 @@ class SecurityPage(WebPage):
 		logger.debug("SecurityPage : Click on role name.")
 		self.role4.click()
 		logger.debug("SecurityPage : Click Delete.")
-		self.delete_role_1.click()
+		self.delete_role.click()
 		logger.debug("SecurityPage : Access alert.")
 		self.browser.accept_alert()
 		self.buy_time()
@@ -429,6 +437,10 @@ class SecurityPage(WebPage):
 		time.sleep(4)	
 		if self.walled_new_save:
 			self.walled_new_save.click()
+		logger.debug('SecurityPage: Clicking save button')
+		if self.walled_save:
+			self.walled_save.click()
+			
 	def edit_whitelist_domain(self):
 		self.whitelist_table_element.click()
 		self.buy_time()
@@ -618,11 +630,11 @@ class SecurityPage(WebPage):
 		logger.debug('SecurityPage : Create VLAN rule')
 		self.rule_type_dropdown_2.set(self.config.config_vars.rule_type_vlan)
 		logger.debug('SecurityPage : Entering invalid vlan id')
-		self.vlan_id_textbox.set(self.config.config_vars.invalid_vlan_id_value)
+		self.vlan_id_textbox_1.set(self.config.config_vars.invalid_vlan_id_value)
 		logger.debug('SecurityPage : Clicking on Save button')
 		self.rule_save_button_2.click()
 		logger.debug('SecurityPage : Entering valid vlan id')
-		self.vlan_id_textbox.set(self.config.config_vars.valid_vlan_id_value)
+		self.vlan_id_textbox_1.set(self.config.config_vars.valid_vlan_id_value)
 		logger.debug('SecurityPage : Clicking on Save button')
 		self.rule_save_button_2.click()
 		logger.debug('SecurityPage : Clicking on add(+) button')
@@ -642,13 +654,13 @@ class SecurityPage(WebPage):
 		logger.debug('SecurityPage : Create Bandwidth Contract rule')
 		self.rule_type_dropdown_2.set(self.config.config_vars.rule_type_bw)
 		logger.debug('SecurityPage : Entering invalid upstream, downstream')
-		self.downstream_textbox.set(self.config.config_vars.invalid_downstream_value)
-		self.upstream_textbox.set(self.config.config_vars.invalid_upstream_value)			
+		self.downstream_textbox_1.set(self.config.config_vars.invalid_downstream_value)
+		self.upstream_textbox_1.set(self.config.config_vars.invalid_upstream_value)			
 		logger.debug('SecurityPage : Clicking on Save button')
 		self.rule_save_button_2.click()
 		logger.debug('SecurityPage : Entering valid upstream, downstream')
-		self.downstream_textbox.set(self.config.config_vars.valid_downstream)
-		self.upstream_textbox.set(self.config.config_vars.valid_downstream)			
+		self.downstream_textbox_1.set(self.config.config_vars.valid_downstream)
+		self.upstream_textbox_1.set(self.config.config_vars.valid_downstream)			
 		logger.debug('SecurityPage : Clicking on Save button')
 		self.rule_save_button_2.click()
 		logger.debug('SecurityPage : Clicking on Save settings')
@@ -697,7 +709,7 @@ class SecurityPage(WebPage):
 			self.newly_created_role.click()
 			time.sleep(8)
 			logger.debug('SecurityPage : Clicking on delete button')
-			self.delete_role_1.click()
+			self.delete_role.click()
 			self.browser.accept_alert()
 			
 	def create_role_if_not_present(self):
@@ -797,6 +809,7 @@ class SecurityPage(WebPage):
 		# self.internal_server_name.click()
 		self.browser.refresh()
 		self.go_to_user_for_internal_server()
+
 		if self.internal_server_delete_button :
 			logger.debug("SecurityPage : Click delete button.")  
 			self.internal_server_delete_button.click()
@@ -898,6 +911,9 @@ class SecurityPage(WebPage):
 		logger.debug("SecurityPage : Set retry count.")			
 		self.retry_count.set(self.config.config_vars.retry_count_valid)
 		self.NAS_ip.set(self.config.config_vars.auth_nas_ip_addr_valid)
+		logger.debug("SecuritPage: Write DRP vlan value")
+		if not self.drpvlan_disabled:
+			self.drpvlan.set(self.config.config_vars.reauth_value)
 		logger.debug("SecurityPage :Click save.")		
 		self.auth_server_save.click()
 		time.sleep(15)
@@ -905,6 +921,7 @@ class SecurityPage(WebPage):
 	def delete_authentication_server_radius(self):
 		# logger.debug("SecurityPage : Click auth server name.")	
 		# self.auth_server_name.click()
+		time.sleep(5)
 		logger.debug("SecurityPage : Click delete button.")			
 		self.delete_auth_server.click()
 		logger.debug("SecurityPage : Accept alert.")			
@@ -1018,6 +1035,9 @@ class SecurityPage(WebPage):
 		self.auth_server_shared_key.set(self.config.config_vars.coa_valid_shared_key)
 		logger.debug('SecurityPage : Setting retype shared key ')
 		self.auth_server_retype_shared_key.set(self.config.config_vars.coa_valid_retype_shared_key)
+		logger.debug("SecuritPage: Write DRP vlan value")
+		# if not self.drpvlan_disabled:
+			# self.drpvlan.set(self.config.config_vars.reauth_value)
 		logger.debug('SecurityPage : Clicking on Save Server button')
 		self.auth_server_save.click()			
 		time.sleep(5)
@@ -1117,6 +1137,7 @@ class SecurityPage(WebPage):
 			self.buy_time()
 			self.browser.accept_alert()
 			self.buy_time()
+			self.browser.refresh()
 			
 	def back_to_network_page(self):
 		logger.debug('SecurityPage : Returning to Network page')
@@ -1136,14 +1157,9 @@ class SecurityPage(WebPage):
 			self.delete_edited_blacklist_domain()
 			logger.debug('SecurityPage : calling delete_edited_whitelist_domain')
 			self.delete_edited_whitelist_domain()
-			logger.debug('SecurityPage : clicking on Save button')
-			time.sleep(5)
-			self.walled_save.click()
-			time.sleep(5)
-		logger.debug('SecurityPage: Clicking save button')
-		if self.walled_save :
-			self.walled_save.click()
-			time.sleep(5)
+		else:
+			logger.debug('SecurityPage : clicking on Cancel button')
+			self.walled_cancel.click()
 	
 	def click_on_external_captive_protal_button(self):
 		'''
@@ -1196,6 +1212,8 @@ class SecurityPage(WebPage):
 		time.sleep(6)
 		logger.debug('SecurityPage: Clicking save button')
 		self.captive_portal_save_button.click()
+		if self.captive_portal_save_button:
+			self.captive_portal_save_button.click()
 		time.sleep(6)
 		
 	def asserting_captive_portal(self):
@@ -1224,26 +1242,33 @@ class SecurityPage(WebPage):
 			self.captive_role_2.click()
 			logger.debug('SecurityPage: Clicking delete button')
 			self.delete_external_captive_5.click()
-		if self.captive_role_3:
-			time.sleep(3)
-			logger.debug('SecurityPage: Clicking on Captive Role')
-			self.captive_role_3.click()
-			logger.debug('SecurityPage: Clicking delete button')
-			self.delete_external_captive_3.click()
 		if self.captive_role_4:
 			time.sleep(3)
 			logger.debug('SecurityPage: Clicking on Captive Role')
 			self.captive_role_4.click()
 			logger.debug('SecurityPage: Clicking delete button')
 			self.delete_external_captive_4.click()
-			logger.debug('SecurityPage: Clicking save settings button')
+			time.sleep(2)	
+		if self.captive_role_3:
+			time.sleep(3)
+			logger.debug('SecurityPage: Clicking on Captive Role')
+			self.captive_role_3.click()
+			logger.debug('SecurityPage: Clicking delete button')
+			self.delete_external_captive_3.click()
+			time.sleep(3)
+		if self.delete_external_captive_testuser:
+			time.sleep(3)
+			logger.debug('SecurityPage: Deleting testuser captive portal')
+			self.delete_external_captive_testuser.click()
+		if self.save_setting:
 			self.save_setting.click()
-			time.sleep(15)	
+		#self.browser.refresh()
 	
 	def create_new_server(self):
 		'''
 		clicks on new button
 		'''
+		time.sleep(5)
 		logger.debug('Security: Clicks on new button')
 		self.create_auth_server.click()
 	
@@ -1299,6 +1324,9 @@ class SecurityPage(WebPage):
 		if nas_identifier_value:
 			logger.debug('SecurityPage : Setting NAS Identifier. ')
 			self.nas_identifier.set(nas_identifier_value)
+		logger.debug("SecuritPage: Write DRP vlan value")
+		if not self.drpvlan_disabled:
+			self.drpvlan.set(self.config.config_vars.reauth_value)
 	
 	def click_edit_auth_server(self):
 		'''
@@ -1498,15 +1526,18 @@ class SecurityPage(WebPage):
 		self.blacklist_textbox.set(self.config.config_vars.single_quote_domain_name)
 		logger.debug('SecurityPage: Clicking save button')
 		self.walled_new_save.click()
-		if self.domain_name_error_msg:
+		if not self.domain_name_error_msg:
 			raise AssertionError("Domain Name field accepting invalid values i.e . Traceback: %s" % traceback.format_exc())
 		logger.debug("SecurityPage :Setting the domain name. ")
-		self.blacklist_textbox.set(self.config.config_vars.single_quote_domain_name)
+		self.blacklist_textbox.set(self.config.config_vars.edited_whitelist_domain_name)
 		logger.debug('SecurityPage: Clicking ok button')
+		self.buy_time()
 		self.walled_new_save.click()
+		self.buy_time()
+		self.buy_time()
 		if self.walled_new_save:
 			self.walled_new_save.click()
-			
+		
 	def validate_auth_server_1(self):
 		'''
 		Validate Authentication Server1 fields.
@@ -1517,7 +1548,7 @@ class SecurityPage(WebPage):
 		time.sleep(2)
 		self.validate_auth_server_default_values()
 		self.set_auth_server_name(conf.invalid_radius_server_name)
-		self.set_auth_server_ip_address(conf.invalid_radius_server_ip)
+		self.set_auth_server_ip_address(conf.auth_nas_ip_addr_invalid)
 		self.set_auth_shared_key_retype(conf.invalid_radius_server_shared_key,conf.invalid_radius_server_shared_key)
 		self.set_auth_server_accounting_port(conf.invalid_radius_server_acc_port_0)
 		self.set_auth_server_time_out(conf.invalid_radius_server_time_out_31)
@@ -1768,11 +1799,13 @@ class SecurityPage(WebPage):
 	
 	def delete_coa_servers(self):
 		logger.debug('SecurityPage : Delete created server')
+		time.sleep(4)
 		if self.coa_server:
 			logger.debug('SecurityPage : Clicking on created coaServer')
 			self.coa_server.click()
 			logger.debug('SecurityPage :Calling delete_authentication_server_radius method ')
 			self.delete_authentication_server_radius()
+		time.sleep(4)
 		if self.coa_server1:
 			logger.debug('SecurityPage : Clicking on created coaServer')
 			self.coa_server1.click()
@@ -1809,6 +1842,7 @@ class SecurityPage(WebPage):
 			self.ldap_server.click()
 			logger.debug('SecurityPage :Calling delete_authentication_server_radius method ')
 			self.delete_authentication_server_radius()
+		time.sleep(3)
 		if self.ldap_server1:
 			logger.debug('SecurityPage : Clicking on created LDAPServer')
 			self.ldap_server1.click()
@@ -1835,7 +1869,8 @@ class SecurityPage(WebPage):
 			self.admin_dn.set(admin)
 		if passphrase: 
 			logger.debug('SecurityPage : Writing passphrase')
-			self.ldap_admin_password.set(self.config.config_vars.ldap_valid_password)
+			# self.ldap_admin_password.set(self.config.config_vars.ldap_valid_password)
+			self.ldap_admin_password.set(passphrase)
 			logger.debug('SecurityPage : Writing retype passphrase')
 			self.ldap_admin_repassword.set(retypepass)
 		if base:
@@ -1853,7 +1888,6 @@ class SecurityPage(WebPage):
 		if retry:
 			logger.debug('SecurityPage : Writing retry count')
 			self.LDAP_RetryCount.set(retry)
-
 		logger.debug('SecurityPage : Clicking on Save Server button')
 		self.auth_server_save.click()
 	
@@ -2011,62 +2045,17 @@ class SecurityPage(WebPage):
 			self.Retype_auth_tacacs_shared_key.set(retype)
 		if port:	
 			logger.debug('Services: Writing ip address')
-			self.auth_tacacs_ipaddr.set(port)
+			self.Auth_Tacacs_Port.set(port)
 		if timeout:	
 			logger.debug('Services: Writing ip address')
-			self.Auth_Tacacs_Port.set(timeout)
+			self.auth_tacacs_timeout.set(timeout)
 		if ip:	
 			logger.debug('Services: Writing ip address')
-			self.auth_tacacs_timeout.set(ip)
+			self.auth_tacacs_ipaddr.set(ip)
 		if retry:
 			logger.debug('Services: Writing ip address')
 			self.auth_tacacs_retry_count.set(retry)
-		self.save_auth_server()	
-		
-	def create_coa_server(self):
-		import traceback
-		time.sleep(3)
-		logger.debug('SecurityPage : Clicking on New button')
-		self.create_auth_server.click()
-		time.sleep(2)
-		logger.debug('SecurityPage : Clicking on CoA_only')
-		self.coa_only_checkbox.click()
-		logger.debug('SecurityPage : Enter invalid values in the fields')
-		logger.debug('SecurityPage : Setting invalid server name ')
-		self.authentication_server_name.set(self.config.config_vars.coa_invalid_name)
-		logger.debug('SecurityPage : Setting invalid ip')
-		self.auth_server_ip_address.set(self.config.config_vars.coa_invalid_ip)
-		logger.debug('SecurityPage : Setting invalid shared key ')
-		self.auth_server_shared_key.set(self.config.config_vars.coa_invalid_shared_key)
-		logger.debug('SecurityPage : Setting invalid retype shared key ')
-		self.auth_server_retype_shared_key.set(self.config.config_vars.coa_invalid_retype_shared_key)
-		logger.debug('SecurityPage : Clicking on Save Server button')
-		self.auth_server_save.click()
-		time.sleep(5)
-		if not self.auth_server_name_error:
-			raise AssertionError("COA invalid name message not visible .Traceback: %s " %traceback.format_exc())
-		if not self.coa_invalid_ipaddr_msg:
-			raise AssertionError("COA invalid ip message not visible .Traceback: %s " %traceback.format_exc())
-		if not self.coa_invalid_sharedkey_msg:
-			raise AssertionError("COA invalid shared key message not visible .Traceback: %s " %traceback.format_exc())
-		if not self.coa_invalid_retype_shared_msg:
-			raise AssertionError("COA invalid retyrp shared key message not visible .Traceback: %s " %traceback.format_exc())
-		time.sleep(2)
-		logger.debug('SecurityPage : Enter valid values in the fields')
-		logger.debug('SecurityPage : Setting server name ')
-		self.authentication_server_name.set(self.config.config_vars.coa_valid_name)
-		logger.debug('SecurityPage : Setting ip')
-		self.auth_server_ip_address.set(self.config.config_vars.coa_valid_ip)
-		logger.debug('SecurityPage : Setting shared key ')
-		self.auth_server_shared_key.set(self.config.config_vars.coa_valid_shared_key)
-		logger.debug('SecurityPage : Setting retype shared key ')
-		self.auth_server_retype_shared_key.set(self.config.config_vars.coa_valid_retype_shared_key)
-		logger.debug('SecurityPage : Clicking on Save Server button')
-		self.auth_server_save.click()			
-		time.sleep(5)
-		if not self.created_server_name_type:
-			raise AssertionError("Created server redius type is not visible .Traceback: %s " %traceback.format_exc())
-		time.sleep(2)
+		self.save_auth_server()
 		
 	def set_air_group_coa_port(self,value='5999'):
 		'''
@@ -2170,11 +2159,11 @@ class SecurityPage(WebPage):
 		logger.debug('SecurityPage : Asserting Network option')
 		self.browser.assert_element(self.network_service,'Network option is not present')
 		logger.debug('SecurityPage : Asserting Application Category option')
-		self.browser.assert_element(self.ac_app_category1,'Application Category option is not present')
+		self.browser.assert_element(self.ac_app_category_1,'Application Category option is not present')
 		logger.debug('SecurityPage : Asserting Application option')
 		self.browser.assert_element(self.service_application,'Application option is not present')
 		logger.debug('SecurityPage : Asserting Web Category option')
-		self.browser.assert_element(self.ac_web_category,'Web Category option is not present')
+		self.browser.assert_element(self.ac_web_category_1,'Web Category option is not present')
 		logger.debug('SecurityPage : Asserting Web Reputation option')
 		self.browser.assert_element(self.webreputation1,'Web Reputation option is not present')
 		
@@ -2227,7 +2216,7 @@ class SecurityPage(WebPage):
 		Edits captive portal.
 		'''
 		logger.debug("SecurityPage : Click on edit icon.")
-		self.edit_captive_portal1.click()
+		self.edit_testradius1.click()
 		time.sleep(5)
 		# logger.debug('SecurityPage: Setting the captive portal Name')
 		# self.name_text_box.set(name)
@@ -2272,6 +2261,7 @@ class SecurityPage(WebPage):
 		'''
 		Deletes Captive portal testradius1
 		'''
+		time.sleep(3)
 		if self.delete_external_captive_1:
 			logger.debug('SecurityPage: Clicking delete button')
 			self.delete_external_captive_1.click()	
@@ -2287,8 +2277,10 @@ class SecurityPage(WebPage):
 		time.sleep(6)
 		
 	def deleting_cp1(self):
+		time.sleep(4)
 		if self.delete_cp1 :
 			logger.debug('SecurityPage : Deleting Cp1 ...Clicking on Delete button')
+			time.sleep(3)
 			self.delete_cp1.click()
 				
 	def assert_captive_ip_error(self,ip_error):
@@ -2350,8 +2342,8 @@ class SecurityPage(WebPage):
 		logger.debug('SecurityPage: Asserting default captive portal type')
 		if not self.captive_portal_type.get_selected() == self.config.config_vars.Captive_Role_Text:
 			raise AssertionError('SecurityPage: Captive portal type is not set to Authentication text')
-		options = self.captive_portal_type.get_options()
-		if not options[1] == self.config.config_vars.Captive_Role_Radius_Authentication:
+		# options = self.captive_portal_type.get_options()
+		if not self.captive_portal_type.options[0] == self.config.config_vars.Captive_Role_Radius_Authentication:
 			raise AssertionError('SecurityPage:In Captive portal type Radius_Authentication is not listed')
 			
 	def assert_default_captive_portal_values(self):
@@ -2359,23 +2351,23 @@ class SecurityPage(WebPage):
 		asserts default values of default captive portal 
 		'''
 		logger.debug('Security : Asserting default value of ip')
-		if not self.captive_portal_ip.get() == self.config.config_vars.localhost:
-			raise AssertionError('SecurityPage:In Captive portal IP is not set to Localhost')
+		# if not self.captive_portal_ip.get() == self.config.config_vars.localhost:
+			# raise AssertionError('SecurityPage:In Captive portal IP is not set to Localhost')
 		logger.debug('Security : Asserting default value of url')
 		if not self.captive_portal_url.get() == self.config.config_vars.external_captive_url:
 			raise AssertionError('SecurityPage:In Captive portal url is not set to /')
 		logger.debug('Security : Asserting default value of captive portal failure')
-		if not self.Security_CaptivePortalFailure.get_selected() == self.config.config_vars.external_captive_portal_failure:
+		if not self.captive_portal_failure.get_selected() == self.config.config_vars.external_captive_portal_failure:
 			raise AssertionError('SecurityPage:In Captive portal failure is not set to deny internet')
 		logger.debug('Security : Asserting automatic url whitelisting')
-		if not self.Secuirty_AutoUrlWhitelisting.is_selected():
+		if not self.auto_url_whitelisting.is_selected():
 			raise AssertionError('SecurityPage:In Captive portal url whitelisting is not selected')
-		self.Security_CaptivePortalFailure.set(self.config.config_vars.captive_portal_failure_allow)
+		self.captive_portal_failure.set(self.config.config_vars.captive_portal_failure_allow)
 		logger.debug('Security : Asserting default value of auth text')
 		if not self.captive_portal_auth_text.get() == self.config.config_vars.external_captive_auth_text:
 			raise AssertionError('SecurityPage:In Captive portal auth text is not set to external_captive_auth_text')
 		logger.debug('Security : Asserting default value of redirect url')
-		if not self.Captive_RedirectUrl.get() == '':
+		if not self.redirect_url.get() == '':
 			raise AssertionError('SecurityPage:In Captive portal redirect url is not set to blank')
 			
 	def set_captive_portal_type(self,value):
@@ -2387,22 +2379,23 @@ class SecurityPage(WebPage):
 		
 	def create_app_rf_rules(self):
 		self.clicking_on_add_rule()
-		self.ac_app_category6.click()
+		self.ac_app_category_1.click()
 		self.antivirus1.click()
 		self.rule_save_button_1.click()
-		self.ac_app_category6.click()
+		self.clicking_on_add_rule()
+		self.ac_app_category_1.click()
 		self.Collaboration1.click()
 		self.action_role.set(self.config.config_vars.action_role)
-		self.rule_save_button_2.click()
-		self.save_setting.click()
+		self.rule_save_button_1.click()
+		# self.save_setting.click()
 
 	def click_app_category_service(self):
 		'''
 		Clicks 'App category' service radio button.
 		'''
-		if self.ac_app_category1:
+		if self.ac_app_category_1:
 			logger.debug('Security : Selecting app-category service')
-			self.ac_app_category1.click()
+			self.ac_app_category_1.click()
 			
 	def click_antivirus(self):
 		'''
@@ -2424,33 +2417,33 @@ class SecurityPage(WebPage):
 		'''
 		Select log option checkbox.
 		'''
-		if self.options_log_6:
+		if self.options_log_1:
 			logger.debug('Security : Selecting log option checkbox')
-			self.options_log_6.click()
+			self.options_log_1.click()
 
 	def select_dscp_option(self):
 		'''
 		Select dscp option checkbox.
 		'''
-		if self.options_dscp_6:
+		if self.options_dscp_1:
 			logger.debug('Security : Selecting dscp option checkbox')
-			self.options_dscp_6.click()
+			self.options_dscp_1.click()
 
 	def select_blacklist_option(self):
 		'''
 		Select blacklist option checkbox.
 		'''
-		if self.options_blacklist_6:
+		if self.options_blacklist_1:
 			logger.debug('Security : Selecting blacklist option checkbox')
-			self.options_blacklist_6.click()
+			self.options_blacklist_1.click()
 
 	def select_priority_option(self):
 		'''
 		Select priority option checkbox.
 		'''
-		if self.options_p_802_6:
+		if self.options_p_802_1:
 			logger.debug('Security : Selecting priority option checkbox')
-			self.options_p_802_6.click()
+			self.options_p_802_1.click()
 
 	def access_control_save_roles_action(self):
 		'''
@@ -2479,17 +2472,17 @@ class SecurityPage(WebPage):
 		'''
 		Sets Downstream value.
 		'''
-		if self.downstream_textbox:
+		if self.downstream_textbox_1:
 			logger.debug('Security : Setting Downstream value')
-			self.downstream_textbox.set(value)
+			self.downstream_textbox_1.set(value)
 			
 	def set_bandwidth_upstream_value(self,value):
 		'''
 		Sets Upstream value.
 		'''
-		if self.upstream_textbox:
+		if self.upstream_textbox_1:
 			logger.debug('Security : Setting Upstream value')
-			self.upstream_textbox.set(value)
+			self.upstream_textbox_1.set(value)
 			
 	def check_uncheck_bandwidth_contract_options(self,downstream=False,upstream=False):
 		'''
@@ -2497,58 +2490,58 @@ class SecurityPage(WebPage):
 		'''
 		if downstream:
 			logger.debug('Security : Selcting PerUnit for downstream.')
-			if not self.peruserdownstream.is_selected():
-				self.peruserdownstream.click()
+			if not self.peruserdownstream_1.is_selected():
+				self.peruserdownstream_1.click()
 		else:
 			logger.debug('Security : Unchecking PerUnit for downstream.')
-			if self.peruserdownstream.is_selected():
-				self.peruserdownstream.click()
+			if self.peruserdownstream_1.is_selected():
+				self.peruserdownstream_1.click()
 				
 		if upstream:
 			logger.debug('Security : Selcting PerUnit for upstream.')
-			if not self.peruserupstream.is_selected():
-				self.peruserupstream.click()
+			if not self.peruserupstream_1.is_selected():
+				self.peruserupstream_1.click()
 		else:
 			logger.debug('Security : Unchecking PerUnit for upstream.')
-			if self.peruserupstream.is_selected():
-				self.peruserupstream.click()
+			if self.peruserupstream_1.is_selected():
+				self.peruserupstream_1.click()
 				
 	def click_web_category_service(self):
 		'''
 		Clicks 'Web category' service radio button.
 		'''
-		if self.ac_web_category_6:
+		if self.ac_web_category_1:
 			logger.debug('Security : Selecting Web-category service')
-			self.ac_web_category_6.click()
+			self.ac_web_category_1.click()
 
 	def web_category_select_log_blacklist(self,log=False,blacklist=False):
 		'''
 		Select log and blacklist option checkbox.
 		'''
 		if log:
-			if not self.web_category_log_7.is_selected():
+			if not self.web_category_log_1.is_selected():
 				logger.debug('Security : Selecting log option checkbox')
-				self.web_category_log_7.click()
+				self.web_category_log_1.click()
 		else:
-			if self.web_category_log_7.is_selected():
+			if self.web_category_log_1.is_selected():
 				logger.debug('Security : Unchecking log option checkbox')
-				self.web_category_log_7.click()
+				self.web_category_log_1.click()
 				
 		if blacklist:
-			if not self.web_category_blacklist_7.is_selected():
+			if not self.web_category_blacklist_1.is_selected():
 				logger.debug('Security : Selecting log option checkbox')
-				self.web_category_blacklist_7.click()
+				self.web_category_blacklist_1.click()
 		else:
-			if self.web_category_blacklist_7.is_selected():
+			if self.web_category_blacklist_1.is_selected():
 				logger.debug('Security : Unchecking log option checkbox')
-				self.web_category_blacklist_7.click()
+				self.web_category_blacklist_1.click()
 				
 	def set_vlan_id(self,vlan_id=None):
 		'''
 		Set vlan id.
 		'''
 		logger.debug('SecurityPage : Entering valid vlan id')
-		self.vlan_id_textbox.set(vlan_id)		
+		self.vlan_id_textbox_1.set(vlan_id)		
 		
 		
 	def check_global_search(self,value):
@@ -2561,3 +2554,100 @@ class SecurityPage(WebPage):
 			self.browser.key_press( u'\ue007')
 			if self.search_result:
 				logger.debug('SecurityPage :Global search tab displaying results')
+				
+	def click_save_roles_action(self):
+		'''
+		Clicks on save button
+		'''
+		if self.rule_save_button_6:
+			logger.debug('Security : Clicking on Save button')
+			self.rule_save_button_6.click()
+	
+	def click_hacking(self):
+		'''
+		Clicks 'Hacking'  check button.
+		'''
+		if self.hacking:
+			logger.debug('Security : Selecting Hacking checkbox')
+			self.hacking.click()
+	
+	def set_rule_type_4(self,rule_type):
+		'''
+		Select rule type dropdown value.
+		'''
+		logger.debug('SecurityPage : Selecting rule type.')
+		self.rule_type_dropdown_4.set(rule_type)
+	
+	def set_throttling_downstream_value(self,value):
+		'''
+		Sets Downstream value.
+		'''
+		if self.throttle_downstream_1:
+			logger.debug('Security : Setting Downstream value')
+			self.throttle_downstream_1.set(value)
+			
+	def set_throttling_upstream_value(self,value):
+		'''
+		Sets Upstream value.
+		'''
+		if self.throttle_upstream_1:
+			logger.debug('Security : Setting Upstream value')
+			self.throttle_upstream_1.set(value)
+	
+	def assert_captive_portal_name(self):
+		logger.debug("Asserting captive portal name textbox ")
+		if not self.default_captive_name_disabled:
+			raise AssertionError("SecurityPage: Default name is editable")
+	
+	def assert_external_captive_portal_default(self):
+		'''
+		Capitive Type : Authentiation text
+		Capitive Ip : 10.30.40.50
+		Capitive Url : /
+		Capitive Port : 80
+		Capitive Portal Failure : Deny Internet
+		Url Whitelisting : checked
+		Auth Text : Authenticated
+		Redirect Url : 
+		'''
+		conf = self.config.config_vars
+		logger.debug('Network : SecuritPage : Checking Captive Type selected as Authentiation text by default')
+		self.browser.assert_drop_down_value(self.captive_portal_type, conf.captive_portal_auth_text, "capitive Type  not set to Authentiation text by default")
+		logger.debug('Network : SecuritPage : Checking Captive Ip selected as 10.30.40.50 by default')
+		self.browser.assert_text(self.captive_portal_ip, conf.external_captive_ip, "capitive Ip  not set to 10.30.40.50  by default", "value")
+		logger.debug('Network : SecuritPage : Checking Captive Url selected as / by default')
+		self.browser.assert_text(self.captive_portal_url, conf.external_captive_url, "capitive Url  not set to /  by default", "value")
+		logger.debug('Network : SecuritPage : Checking Captive Port selected as 80 by default')
+		self.browser.assert_text(self.captive_portal_port, conf.external_captive_port, "capitive Url  not set to 80 by default", "value")
+		# logger.debug('Network : SecuritPage : Checking Captive Portal Failure selected as Deny Internet by default')
+		# self.browser.assert_drop_down_value(self.Security_CaptivePortalFailure, conf.external_captive_portal_failure, "capitive Portal Failure  not set to Deny Internet by default")
+		logger.debug('Network : SecuritPage : Checking Url Whitelisting is checked  by default')
+		self.browser.assert_check_box_value(self.auto_url_whitelisting, "Url Whitelisting checkbox is not checked by default", uncheck=True)
+		logger.debug('Network : SecuritPage : Checking Captive Auth Text selected as  by default')
+		self.browser.assert_text(self.captive_portal_auth_text, conf.external_captive_auth_text, "capitive Auth Text not set to Authenticated by default", "value")
+		logger.debug('Network : SecuritPage : Checking Captive Redirect Url selected as  by default')
+		self.browser.assert_text(self.redirect_url, '', "capitive Redirect Url textbox not Empty by default", "value")
+	
+	def click_captive_cancel_button(self):
+		logger.debug("External Capitive Page: Clicking on Cancel button")
+		if self.cancel:
+			self.cancel.click()
+		
+	def asserting_captive_portal_name(self):
+		logger.debug("Asserting captive portal name error message")
+		if not self.Captive_Name_splchars_error:
+			raise AssertionError("Captive portal name is accepting qoutes")
+	
+	def assert_created_roles(self):
+		logger.debug("Asserting Antivirus Role")
+		if not self.delete_antivirus:
+			raise AssertionError("Antivirus Role is not created")
+		logger.debug("Asserting Collaboration Role")
+		if not self.delete_collaboration:
+			raise AssertionError("Collaboration Role is not created")
+	#changes made by suganya		
+	def set_drp_vlan_value(self,value=None):
+		logger.debug('SecurityPage: Writing drpvlan')
+		if not self.drpvlan_disabled:
+			self.drpvlan.set(value)
+		

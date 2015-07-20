@@ -1,0 +1,9 @@
++ wlan tacacs-server testRole
++  ip 10.10.10.10
++  key 
++  timeout 5
++ wlan tacacs-server TAC123
++  ip 10.10.10.10
++  port 65534
++  key 
++  timeout 30

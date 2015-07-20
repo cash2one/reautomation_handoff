@@ -1,0 +1,6 @@
++ wlan auth-server Myradius
++  ip 10.23.24.25
++  port 1812
++  acctport 1813
++  key 
++  drp-ip 10.23.24.26 255.255.255.0 vlan 10 gateway 10.23.24.1

@@ -1,0 +1,2 @@
++ wifi0_mode:monitor
++ wifi1_mode:monitor

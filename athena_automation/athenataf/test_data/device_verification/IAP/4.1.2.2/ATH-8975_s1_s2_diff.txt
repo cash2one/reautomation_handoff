@@ -1,0 +1,2 @@
++ wifi1_arm_channel:1
++ wifi1_arm_power:0

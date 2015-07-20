@@ -1,0 +1,8 @@
++ wlan external-captive-portal testradius1
++  server 10.10.1.120
++  port 54321
++  url "www.arubathena.com"
++  auth-text "Aruba123"
++  redirect-url "http://google.com"
++  server-fail-through
++  auto-whitelist-disable

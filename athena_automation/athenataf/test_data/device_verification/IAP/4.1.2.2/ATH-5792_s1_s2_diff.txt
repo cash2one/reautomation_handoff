@@ -1,0 +1,27 @@
++ wlan access-rule %(Network_name)s
++  vlan 2300
++  captive-portal external
++  calea
++  rule any any match udp 1718 1719 src-nat
++  rule any any match any any any permit
++ wlan ssid-profile %(Network_name)s
++  enable
++  type guest
++  essid %(Network_name)s
++  opmode opensystem
++  max-authentication-failures 0
++  auth-server InternalServer
++  rf-band all
++  captive-portal internal
++  dtim-period 1
++  inactivity-timeout 1000
++  broadcast-filter none
++  dmo-channel-utilization-threshold 90
++  local-probe-req-thresh 0
++  max-clients-threshold 64
++ wlan captive-portal
++  background-color 13421772
++  banner-color 16750848
++  banner-text "Welcome to Guest Network"
++  terms-of-use "This network is not secure, and use is at your own risk"
++  use-policy "Please read terms and conditions before using Guest Network"

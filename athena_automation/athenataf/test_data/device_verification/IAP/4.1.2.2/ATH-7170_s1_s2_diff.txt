@@ -1,0 +1,41 @@
++ wlan access-rule %(Network_name)s
++  rule any any match any any any permit
++ wlan ssid-profile %(Network_name)s
++  enable
++  type guest
++  essid %(Network_name)s
++  opmode wpa2-psk-aes
++  max-authentication-failures 0
++  auth-server %(auth_server_value)s
++  auth-server %(auth_server_value_2)s
++  rf-band all
++  captive-portal external profile %(Captive_Role_Name)s
++  mac-authentication
++  mac-authentication-delimiter :
++  mac-authentication-upper-case
++  dtim-period 1
++  inactivity-timeout 1000
++  broadcast-filter none
++  server-load-balancing
++  radius-reauth-interval 120
++  radius-accounting
++  dmo-channel-utilization-threshold 90
++  local-probe-req-thresh 0
++  max-clients-threshold 64
++ wlan auth-server %(auth_server_value)s
++  ip %(auth_ipaddr_value)s
++  port %(default_AuthPort)s
++  acctport %(default_Auth_Account_Port)s
++  key 
++ wlan auth-server %(auth_server_value_2)s
++  ip %(auth_ipaddr_value)s
++  port %(default_AuthPort)s
++  acctport %(default_Auth_Account_Port)s
++  key 
++  auth-text ""
++  auto-whitelist-disable
++  https
++ wlan external-captive-portal %(Captive_Role_Name)s
++  server %(Captive_Role_Ip)s
++  port %(Captive_Role_Port)s
++  url "www.yahoo.com"

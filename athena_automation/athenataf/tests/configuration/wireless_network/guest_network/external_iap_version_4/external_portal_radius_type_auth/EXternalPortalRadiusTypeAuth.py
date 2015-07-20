@@ -1,6 +1,7 @@
 import logging
 logger = logging.getLogger('athenataf')
 from athenataf.lib.functionality.test.ConfigurationTest import ConfigurationTest
+import time
 
 class EXternalPortalRadiusTypeAuth(ConfigurationTest):
 	'''
@@ -14,6 +15,7 @@ class EXternalPortalRadiusTypeAuth(ConfigurationTest):
 		'''
 		self.NetworkPage.delete_network_if_present()
 		self.NetworkPage.delete_wired_network_if_present()
+		self.NetworkPage.delete_custom_guest_network_if_present()
 		security_page = self.LeftPanel.go_to_security() 
 		security_page.delete_authentication_server()
 		security_page.delete_authentication_server2()
@@ -25,10 +27,15 @@ class EXternalPortalRadiusTypeAuth(ConfigurationTest):
 			security_page.whitelist_delete.click()
 		if security_page.walled_save:
 			security_page.walled_save.click()
-		time.sleep(5)	
+		time.sleep(5)
+		security_page.delete_user_for_internal_server()
+		security_page.click_on_external_captive_accordion()
+		security_page.delete_external_captive_portal_2()
+		security_page.delete_captive_portal()
+		time.sleep(5)
 		self.LeftPanel.go_to_network_page()
 
-	def test_ath_7195_External_Portal_Radius_Authenticatoin_with_HTTPS_Two_ExternalAuth_with_MAC_Both_WPA_and_WPA2(self):
+	def test_ath_7195_External_Portal_Radius_Authenticatoin_with_https_Two_ExternalAuth_with_MAC_Both_WPA_and_WPA2(self):
 		conf = self.config.config_vars
 		self._delete_network_auth_server()
 		self.take_s1_snapshot()
@@ -46,6 +53,7 @@ class EXternalPortalRadiusTypeAuth(ConfigurationTest):
 		security.configure_auth_server_settings(blacklisting=False,mac_authentication=True,uppercase_support=True)
 		logger.debug('SecurityPage: Writing delimiter')
 		security.personal_delimeter.set(self.config.config_vars.hyphen)
+		security.configure_auth_server_settings(blacklisting=True)
 		security.set_max_auth_failures_value('5')
 		security.configure_reauth_interval(conf.max_auth_failure_valid_num,conf.reauth_intrvl_unit_hrs)		
 		security.create_external_radiuds_server('1')
@@ -89,7 +97,8 @@ class EXternalPortalRadiusTypeAuth(ConfigurationTest):
 		security.personal_delimeter.set(self.config.config_vars.hyphen)
 		security.create_external_radiuds_server('1')
 		security.select_auth_server_internalserver('2')
-		security.configure_reauth_interval(conf.two,conf.reauth_intrvl_unit_min)		
+		security.configure_reauth_interval(conf.two,conf.reauth_intrvl_unit_min)	
+		security.set_wispr('Enabled')
 		security.enable_accounting_interval(conf.thirty)
 		logger.debug('Network : SecurityPage : Configuring Accounting mode as Authentication ')
 		security.accounting_mode.set(conf.accounting_mode)
@@ -110,6 +119,7 @@ class EXternalPortalRadiusTypeAuth(ConfigurationTest):
 		
 	def test_ath_7198_External_Portal_Radius_Authenticatoin_with_HTTPS_Two_ExternalAuth_with_WISPr_Both_WPA_and_WPA2(self):
 		conf = self.config.config_vars
+		self.LeftPanel.go_to_network_page()
 		self._delete_network_auth_server()
 		self.take_s1_snapshot()
 		basic_info = self.NetworkPage.create_new_network()
@@ -142,73 +152,6 @@ class EXternalPortalRadiusTypeAuth(ConfigurationTest):
 		self.take_s2_snapshot()
 		self.NetworkPage.assert_new_network()
 		self._delete_network_auth_server()
-		self.take_s3_snapshot()
-		self.assert_s1_s2_diff(0)
-		self.assert_s1_s3_diff()
-		self.clear()
-		
-	def test_ath_6841_iap4_splash_page_type_external_default(self):
-		conf = self.config.config_vars
-		self.NetworkPage.delete_network_if_present()
-		self.take_s1_snapshot()
-		basic_info = self.NetworkPage.create_new_network()
-		virtual_lan = basic_info.guest_network_info()
-		security = virtual_lan.select_virtual_controller()
-		security.configure_splash_page_type(conf.Splash_page_external)
-		security.click_on_next_button()
-		security.assert_default_captive_portal_profile_error()
-		security.set_captive_portal_profile('default')
-		security.click_on_edit_captive_portal()
-		security.assert_default_captive_portal_type()
-		security.assert_default_captive_portal_auth_text()
-		security.click_captive_profile_cancel_button()
-		security.assert_default_users()
-		security.assert_internal_authenticated_fields()
-		security.add_internal_sever_user()
-		access = security.use_security_default()
-		access.finish_network_setup()
-		self.take_s2_snapshot()
-		self.LeftPanel.go_to_network_page()
-		self.NetworkPage.delete_network_if_present()
-		self.take_s3_snapshot()
-		self.assert_s1_s2_diff(0)
-		self.assert_s1_s3_diff()
-		self.clear()
-
-	def test_ath_5787_iap4_web_reputation(self):
-		conf = self.config.config_vars
-		self.NetworkPage.delete_network_if_present()
-		self.take_s1_snapshot()
-		basic_info = self.NetworkPage.create_new_network()
-		virtual_lan = basic_info.employee_network_info()
-		security = virtual_lan.click_on_next()
-		security._set_phrase()
-		access = security.click_on_next()
-		access.click_network_access()
-		access.click_add_rule_plus_button()
-		logger.debug('AccessPage : Clicking on Application cattegory radio')
-		access.ac_app_category2.click()
-		access.assert_options(logoption = True, dscptag = True, blacklist = True, priority_802 = True)
-		logger.debug('AccessPage : Clicking on Web reputation radio')
-		access.webreputation.click()
-		access.select_slider()
-		access.select_sites('Trustworthy WRI > 81')
-		logger.debug('AccessPage : Clicking on save settings')
-		access.save_settings.click()
-		access.click_add_rule_plus_button()
-		logger.debug('AccessPage : Clicking on Web reputation radio')
-		access.webreputation2.click()
-		logger.debug('AccessPage : Clicking on slider')
-		access.selectorreputation1.click()
-		logger.debug('AccessPage : Selecting Deny')
-		access.action_role3.set(conf.action_deny)
-		access.select_sites('Suspicious WRI 21-40')
-		logger.debug('AccessPage : Clicking on save settings')
-		access.save_button_1.click()
-		access.finish_network_setup()
-		self.take_s2_snapshot()
-		self.LeftPanel.go_to_network_page()
-		self.NetworkPage.delete_network_if_present()
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()

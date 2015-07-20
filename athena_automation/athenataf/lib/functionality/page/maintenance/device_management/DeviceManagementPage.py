@@ -79,6 +79,8 @@ class DeviceManagementPage(WebPage):
         if not self.unassigned_licence_text:        
             self.device_selector_1.click()
             self.click_unassign_button()
+            if self.assign_group_success_ok_button:
+                self.assign_group_success_ok_button.click()
             self.buy_time()
 
     def click_assign_license_button(self):
@@ -97,6 +99,8 @@ class DeviceManagementPage(WebPage):
         logger.debug("DeviceManagement Page : Clicking on 'Assign' button.. ")
         if self.assign_button:
             self.assign_button.click()
+        if self.assign_group_success_ok_button:
+            self.assign_group_success_ok_button.click()
             self.buy_time()
             
     def click_on_search_icon(self):
@@ -105,6 +109,8 @@ class DeviceManagementPage(WebPage):
         '''
         logger.debug("DeviceManagement Page: Clicking on Search Icon ")
         self.search_icon.click()
+        if not self.mac_search_field:
+            self.search_icon.click()
 
     def search_mac_address(self, mac):
         '''
@@ -125,7 +131,7 @@ class DeviceManagementPage(WebPage):
         search Mac Address
         '''
         mac_ad = devices.IAP_1.mac_address
-        type = devices.IAP_1.iap_type
+        type = devices.IAP_1.ap_type
         serial_num = devices.IAP_1.serial_no
         self.click_on_search_icon()
         self.search_mac_address(mac_ad)
@@ -196,14 +202,21 @@ class DeviceManagementPage(WebPage):
         logger.debug("DeviceManagement Page: Clicks on vc checkbox")
         self.device_selector_1.click()
         logger.debug("DeviceManagement Page: Clicking on Unassign Button")
-        self.unassign_button.click()
+        #if device is already in unassigned state no need to search for the unassign button . Hence using the try except block
+        try:
+            self.unassign_button.click()
+        except:
+            pass
         
     def assign_license_to_device(self):
         logger.debug("DeviceManagement Page: Clicks on vc checkbox")
+        self.buy_time()
         self.device_selector_1.click()
         logger.debug("DeviceManagement Page: Clicking on 'Assign License' Button")
+        self.buy_time()
         self.assign_license.click()
         logger.debug("DeviceManagement Page: Clicking on 'Assign' Button")
+        self.buy_time()
         self.assign_button_0.click()
         
     def assert_subscription_key(self):
@@ -226,6 +239,8 @@ class DeviceManagementPage(WebPage):
             self.select_assign_group()
             self.set_assign_group(self.all_group)
             self.click_assign()
+            if self.assign_group_success_ok_button:
+                self.assign_group_success_ok_button.click()         
 
     def select_assign_group(self):
         '''
@@ -262,14 +277,19 @@ class DeviceManagementPage(WebPage):
         Assign group if present else create new group and assign. 
         '''
         logger.debug("DeviceManagement Page : Checking for group if present. ")     
-        self.device_selector_1.click()
+        if not self.device_selector_1.is_selected():
+			self.device_selector_1.click()
         self.select_assign_group()
-        logger.debug("DeviceManagement Page : Clicking on 'group1'. ")
-        self.created_group1.click()
+        # logger.debug("DeviceManagement Page : Clicking on 'group1'. ")
+        # no need to create a new group and assign device to that group if default group is there 
+        logger.debug("DeviceManagement Page : Clicking on default group. ")
+        self.default_group.click()
+        # self.created_group1.click()
         self.click_assign()
-        logger.debug("DeviceManagement Page : Clicking on 'OK' button. ")
-        self.ok_button.click()
-        self.buy_time()
+        if self.ok_button:
+            logger.debug("DeviceManagement Page : Clicking on 'OK' button. ")
+            self.ok_button.click()
+            self.buy_time()
         
     def adding_group(self,name=None):
         logger.debug("DeviceManagement Page: Clicks on vc checkbox")
@@ -280,9 +300,17 @@ class DeviceManagementPage(WebPage):
         self.new_group_name.set(name)
         logger.debug("DeviceManagement Page: Click on add button")
         self.add_group_button.click()
-        logger.debug("DeviceManagement Page: Click on 'Assign' button")
-        self.click_assign()
-        
+        logger.debug("CreateGroupPage: writing password in Password textbox ")
+        self.dev_password.set(self.config.config_vars.device_password)
+        logger.debug("CreateGroupPage: writing password to confirm password in ConfirmPassword textbox ")
+        self.confirm_dev_password.set(self.config.config_vars.device_password)
+        logger.debug("CreateGroupPage: clicking on save button ")
+        self.set_password.click()
+        print self.browser._browser.find_element_by_xpath("//select[@id='selectedGroup']/option[text()='%s']"%name)
+        self.browser._browser.find_element_by_xpath("//select[@id='selectedGroup']/option[text()='%s']"%name).click()
+        self.assignGroup_btn.click()
+        if self.assign_group_success_ok_button:
+            self.assign_group_success_ok_button.click()     
         
         
         
@@ -299,6 +327,8 @@ class DeviceManagementPage(WebPage):
         Gets Mac Address and Search it
         '''
         mac_ad = self.get_device_mac_address()
+        import time
+        time.sleep(10)
         self.click_on_search_icon()
         self.search_mac_address(mac_ad)
         self.click_on_search_button()
@@ -324,8 +354,9 @@ class DeviceManagementPage(WebPage):
         '''
         Clicks on Ok button
         '''
-        logger.debug('DeviceManagement: Clicking on ok button')
-        self.ok_button.click()
+        if self.ok_button:
+            logger.debug('DeviceManagement: Clicking on ok button')
+            self.ok_button.click()
     
     def assign_group_to_device(self):
         self.select_assign_group()
@@ -345,7 +376,7 @@ class DeviceManagementPage(WebPage):
         Asserts Permission Denied Message
         ''' 
         logger.debug("DeviceManagement Page : checking Permission denied message ")
-        self.browser.assert_element(self.device_exist_error, 'License is not assigned')
+        self.browser.assert_element(self.permission_denied_msg, 'License is not assigned')
     
     def create_group(self, group_name):
         '''
@@ -393,9 +424,10 @@ class DeviceManagementPage(WebPage):
         logger.debug("DeviceManagement Page : Clicking on 'group1'. ")
         self.default_group.click()
         self.click_assign()
-        logger.debug("DeviceManagement Page : Clicking on 'OK' button. ")
-        self.ok_button.click()
-        self.buy_time()
+        if self.ok_button:
+            logger.debug("DeviceManagement Page : Clicking on 'OK' button. ")
+            self.ok_button.click()
+            self.buy_time()
         
     def search_device_using_mac_address_2(self,mac_ad = None):
         '''
@@ -467,6 +499,9 @@ class DeviceManagementPage(WebPage):
             self.click_assign_license_button()
             self.click_assign_button_2()
             self.buy_time()
+            if self.assign_group_success_ok_button:
+                logger.debug("DeviceManagement Page: clicking 'OK' button ")
+                self.assign_group_success_ok_button.click()
 
     def assign_already_created_group2(self):
         '''
@@ -478,8 +513,9 @@ class DeviceManagementPage(WebPage):
         logger.debug("DeviceManagement Page : Clicking on 'group2'. ")
         self.created_group2.click()
         self.click_assign()
-        logger.debug("DeviceManagement Page : Clicking on 'OK' button. ")
-        self.ok_button.click()
+        if self.assign_group_success_ok_button:
+            logger.debug("DeviceManagement Page: clicking 'OK' button ")
+            self.assign_group_success_ok_button.click()
         self.buy_time()
 
     def search_device_and_add_if_not_exist(self,mac_ad = None,key=None):
@@ -587,3 +623,12 @@ class DeviceManagementPage(WebPage):
             assign.click()
         except:
             pass
+			
+    def assert_assigned_group1_label(self):
+        logger.debug("DeviceManagement Page: Asserting Newly assigned Group1 ")
+        if self.group_text_group1:
+            return True
+        else:
+            return False
+                
+           

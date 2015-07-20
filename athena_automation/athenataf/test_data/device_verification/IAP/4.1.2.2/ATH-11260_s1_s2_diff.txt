@@ -1,0 +1,5 @@
+! Name  Type  VLAN  Network  Netmask  Exclude Address  Default Router  DNS Server  Domain Name  Lease Time  DHCP Option  DHCP Host
+! ----  ----  ----  -------  -------  ---------------  --------------  ----------  -----------  ----------  -----------  ---------
+! Name    Type      VLAN  Network      Netmask        Exclude Address  Default Router  DNS Server   Domain Name  Lease Time  DHCP Option     DHCP Host
+! ----    ----      ----  -------      -------        ---------------  --------------  ----------   -----------  ----------  -----------     ---------
+! athena  Local,L3  10    10.10.10.10  255.255.255.0  10.10.10.15      0.0.0.0         10.10.10.15  google.com   18000        type_23="42"   

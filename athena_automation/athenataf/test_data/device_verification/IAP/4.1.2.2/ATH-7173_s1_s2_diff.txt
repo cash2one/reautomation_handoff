@@ -1,0 +1,32 @@
++ wlan access-rule %(Network_name)s
++  rule any any match any any any permit
++ wlan ssid-profile %(Network_name)s
++  enable
++  type guest
++  essid %(Network_name)s
++  opmode wpa2-psk-aes
++  max-authentication-failures 5
++  vlan guest
++  auth-server %(auth_server_value)s
++  rf-band all
++  captive-portal external
++  wispr
++  dtim-period 1
++  inactivity-timeout 1000
++  broadcast-filter none
++  radius-reauth-interval 15
++  radius-accounting
++  radius-accounting-mode user-association
++  radius-interim-accounting-interval 30
++  blacklist
++  dmo-channel-utilization-threshold 90
++  local-probe-req-thresh 0
++  max-clients-threshold 64
++ wlan auth-server %(auth_server_value)s
++  ip %(auth_ipaddr_value)s
++  port %(default_AuthPort)s
++  acctport %(default_Auth_Account_Port)s
++  key 
++ wlan walled-garden
++  white-list "yahoo.com"
++  black-list "www.bing.com"

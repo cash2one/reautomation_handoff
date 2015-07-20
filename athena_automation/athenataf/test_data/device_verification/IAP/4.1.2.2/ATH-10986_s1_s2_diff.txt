@@ -1,0 +1,35 @@
++ wlan access-rule test1
++  rule any any match any any any permit
++ wlan access-rule guest
++  rule any any match any any any permit
++ wlan ssid-profile test1
++  enable
++  type guest
++  essid test1
++  opmode opensystem
++  max-authentication-failures 0
++  set-role mac-address-and-dhcp-options matches-regular-expression 255 default_wired_port_profile
++  rf-band all
++  captive-portal internal
++  dtim-period 1
++  inactivity-timeout 1000
++  broadcast-filter none
++  dmo-channel-utilization-threshold 90
++  local-probe-req-thresh 0
++  max-clients-threshold 64
++ wlan ssid-profile guest
++  enable
++  type employee
++  essid guest
++  opmode wpa2-psk-aes
++  max-authentication-failures 0
++  auth-server InternalServer
++  set-role mac-address-and-dhcp-options matches-regular-expression 255 default_wired_port_profile
++  rf-band all
++  captive-portal disable
++  dtim-period 1
++  inactivity-timeout 1000
++  broadcast-filter none
++  dmo-channel-utilization-threshold 90
++  local-probe-req-thresh 0
++  max-clients-threshold 64

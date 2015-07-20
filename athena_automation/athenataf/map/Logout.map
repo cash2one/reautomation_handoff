@@ -3,3 +3,7 @@ logout_button						: button&text&Logout
 logged_out_sso						: label&xpath&//div[contains(text(),'You have logged out')]
 logged_out_devel					: textbox&id&primary_email
 iap_logout							: button&id&logout
+
+logout_user_link 					: button&id&LoginUserName
+account_settings_hidden				: label&xpath&//div[@class="AdminSettings ng-hide"]
+manage_license						: button&xpath&//a[text()='Manage my License']

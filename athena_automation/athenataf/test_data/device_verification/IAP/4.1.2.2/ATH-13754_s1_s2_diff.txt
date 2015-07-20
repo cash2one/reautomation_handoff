@@ -1,0 +1,6 @@
++ wlan external-captive-portal Cp1
++  server 1.2.2.2
++  port 1200
++  url "www.mymail.com"
++  auth-text "Authentication text"
++  auto-whitelist-disable

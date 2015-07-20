@@ -10,13 +10,17 @@ class ExternalIAPVersion4(ConfigurationTest):
 
 	def test_ath_7182_multiple_captive_portal_page(self):
 		conf = self.config.config_vars
-		self.NetworkPage.delete_network_if_present()
+		self._delete_network_auth_server()
 		self.take_s1_snapshot()
-		security_page = self.LeftPanel.go_to_security() 
+		security_page = self.LeftPanel.go_to_security()
 		security_page.click_on_external_captive_protal_button()
 		security_page.create_new_captive_portal_1(conf.captive_text_1,conf.captive_role_type,conf.Captive_Role_Ip,conf.redirect_url,conf.Captive_Role_Port,auth_text=None,http1=True)
 		security_page.create_new_captive_portal_1(conf.captive_text_2,conf.captive_role_type,conf.Captive_Role_Ip,conf.redirect_url,conf.Captive_Role_Port,auth_text=None,http1=False)
+		security_page.save_settings()
+		security_page.click_on_external_captive_protal_button()
 		security_page.create_new_captive_portal_1(conf.auth_server_name_value,conf.Captive_Role_Text,conf.Captive_Role_Ip,conf.redirect_url,conf.Captive_Role_Port,conf.Captive_Role_Text,http1=False)
+		security_page.save_settings()
+		security_page.click_on_external_captive_protal_button()
 		security_page.create_new_captive_portal_1(conf.captive_text_3,conf.Captive_Role_Text,conf.Captive_Role_Ip,conf.redirect_url,conf.Captive_Role_Port,conf.Captive_Role_Text,http1=False)
 		security_page.save_settings()
 		self.LeftPanel.go_to_network_page()
@@ -27,15 +31,13 @@ class ExternalIAPVersion4(ConfigurationTest):
 		security.edit_captive_portal_profile()
 		access = security.click_on_next()
 		access.finish_network_setup()
+		time.sleep(6)
 		self.take_s2_snapshot()
 		security_page = self.LeftPanel.go_to_security() 
 		security_page.click_on_external_captive_protal_button()
 		security_page.asserting_captive_portal()
 		self.LeftPanel.go_to_network_page()
-		self.NetworkPage.delete_network_if_present()
-		security_page = self.LeftPanel.go_to_security() 
-		security_page.click_on_external_captive_protal_button()
-		security_page.delete_external_captive_portal_2()
+		self._delete_network_auth_server()
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
@@ -43,7 +45,7 @@ class ExternalIAPVersion4(ConfigurationTest):
 		
 	def test_ath_7171_auth_text_portal_profile_user_radius_failover_with_wpa2_encryption(self):
 		conf = self.config.config_vars
-		self.NetworkPage.delete_network_if_present()
+		self._delete_network_auth_server()
 		self.take_s1_snapshot()
 		basic_info = self.NetworkPage.create_new_network()
 		virtual_lan = basic_info.guest_network_info()
@@ -63,9 +65,6 @@ class ExternalIAPVersion4(ConfigurationTest):
 		self.take_s2_snapshot()
 		self.LeftPanel.go_to_network_page()
 		self._delete_network_auth_server()
-		security_page = self.LeftPanel.go_to_security()
-		security_page.click_on_external_captive_protal_button()
-		security_page.delete_captive_portal()
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
@@ -74,8 +73,11 @@ class ExternalIAPVersion4(ConfigurationTest):
 		
 	def test_ath_7168_external_auth_type_profile_internal_user_auth_with_mac(self):
 		conf = self.config.config_vars
-		self.NetworkPage.delete_network_if_present()
+		self._delete_network_auth_server()
 		security_page = self.LeftPanel.go_to_security()
+		security_page.go_to_user_for_internal_server()
+		if security_page.if_internal_server_guest_present():  
+			security_page.delete_internal_server()
 		security_page.click_on_external_captive_protal_button()
 		security_page.delete_captive_portal()
 		self.LeftPanel.go_to_network_page()
@@ -98,9 +100,9 @@ class ExternalIAPVersion4(ConfigurationTest):
 		self.LeftPanel.go_to_network_page()
 		self._delete_network_auth_server()
 		security_page = self.LeftPanel.go_to_security()
-		security_page.click_on_external_captive_protal_button()
-		security_page.delete_captive_portal()
-		
+		security_page.go_to_user_for_internal_server()
+		if security_page.if_internal_server_guest_present():  
+			security_page.delete_internal_server()
 		security_page = self.LeftPanel.go_to_security() 
 		security_page.click_walled_garden_accordion()
 		
@@ -119,6 +121,7 @@ class ExternalIAPVersion4(ConfigurationTest):
 		'''
 		self.NetworkPage.delete_network_if_present()
 		self.NetworkPage.delete_wired_network_if_present()
+		self.NetworkPage.delete_custom_guest_network_if_present()
 		security_page = self.LeftPanel.go_to_security() 
 		security_page.delete_authentication_server()
 		security_page.delete_authentication_server2()
@@ -131,6 +134,10 @@ class ExternalIAPVersion4(ConfigurationTest):
 		if security_page.walled_save:
 			security_page.walled_save.click()
 		import time
+		time.sleep(5)
+		security_page.click_on_external_captive_accordion()
+		security_page.delete_external_captive_portal_2()
+		security_page.delete_captive_portal()
 		time.sleep(5)
 		self.LeftPanel.go_to_network_page()
 
@@ -267,10 +274,14 @@ class ExternalIAPVersion4(ConfigurationTest):
 		# logger.debug('SecurityPage :Set Accouting Interval :30 mins')
 		# security.accounting_interval.set(conf.thirty)
 		logger.debug("SecurityPage : Writing valid numbers in reauth interval text-box...")
-		security.reauth_interval.set(self.config.config_vars.fifteen)
+		security.reauth_interval.set(security.config.config_vars.fifteen)
 		security.configure_encryption('Enabled',conf.key_mngmt_static,'none')
 		security.set_wep_key_size('64-bit')
-		security.set_wep_passphrase(conf.ten_hexa_decimal_chars,conf.ten_hexa_decimal_chars)
+		logger.debug("SecurityPage : Writing Personal Wep key")
+		security.personal_wep_key.set(security.config.config_vars.ten_hexa_decimal_chars)
+		logger.debug("SecurityPage : re Writing Personal Wep key")
+		security.personal_re_wep_key.set(security.config.config_vars.ten_hexa_decimal_chars)
+		# security.set_wep_passphrase(conf.ten_hexa_decimal_chars,conf.ten_hexa_decimal_chars)
 		access = security.click_on_next()
 		access.finish_network_setup()
 		self.LeftPanel.assert_delta_config_icon()
@@ -301,13 +312,7 @@ class ExternalIAPVersion4(ConfigurationTest):
 			
 	def test_ath_7170_external_create_auth_text_portal_profile_user_two_radius_auth_with_wpa_encryption(self):
 		conf = self.config.config_vars
-		security_page = self.LeftPanel.go_to_security()
-		security_page.delete_authentication_server()
-		security_page.delete_authentication_server2()
-		if security_page.is_external_captive_profile_present():
-			security_page.delete_external_captive_role()
-		self.LeftPanel.go_to_network_page()
-		self.NetworkPage.delete_network_if_present()
+		self._delete_network_auth_server()
 		self.take_s1_snapshot()
 		basic_info = self.NetworkPage.create_new_network()
 		virtual_lan = basic_info.guest_network_info()
@@ -330,12 +335,7 @@ class ExternalIAPVersion4(ConfigurationTest):
 		access.finish_network_setup()
 		self.NetworkPage.assert_new_network()
 		self.take_s2_snapshot()
-		self.NetworkPage.delete_network_if_present()
-		security_page = self.LeftPanel.go_to_security()
-		security_page.delete_authentication_server()
-		security_page.delete_authentication_server2()
-		if security_page.is_external_captive_profile_present():
-			security_page.delete_external_captive_role()
+		self._delete_network_auth_server()
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
@@ -343,7 +343,12 @@ class ExternalIAPVersion4(ConfigurationTest):
 		
 	def test_ath_6841_iap4_splash_page_type_external_default(self):
 		conf = self.config.config_vars
-		self.NetworkPage.delete_network_if_present()
+		self._delete_network_auth_server()
+		security_page = self.LeftPanel.go_to_security()
+		security_page.go_to_user_for_internal_server()
+		if security_page.if_internal_server_guest_present():  
+			security_page.delete_internal_server()
+		self.LeftPanel.go_to_network_page()
 		self.take_s1_snapshot()
 		basic_info = self.NetworkPage.create_new_network()
 		virtual_lan = basic_info.guest_network_info()
@@ -351,11 +356,12 @@ class ExternalIAPVersion4(ConfigurationTest):
 		security.configure_splash_page_type(conf.Splash_page_external)
 		security.click_on_next_button()
 		security.assert_default_captive_portal_profile_error()
-		security.set_captive_portal_profile('default')
-		security.click_on_edit_captive_portal()
-		security.assert_default_captive_portal_type()
-		security.assert_default_captive_portal_auth_text()
-		security.click_captive_profile_cancel_button()
+		security.set_captive_portal_profile('-- New --')
+		# security.click_on_edit_captive_portal()
+		# security.assert_default_captive_portal_type()
+		# security.assert_default_captive_portal_auth_text()
+		# security.click_captive_profile_cancel_button()
+		security.create_external_captive_portal_2()
 		security.assert_default_users()
 		security.assert_internal_authenticated_fields()
 		security.add_internal_sever_user()
@@ -363,7 +369,11 @@ class ExternalIAPVersion4(ConfigurationTest):
 		access.finish_network_setup()
 		self.take_s2_snapshot()
 		self.LeftPanel.go_to_network_page()
-		self.NetworkPage.delete_network_if_present()
+		self._delete_network_auth_server()
+		security_page = self.LeftPanel.go_to_security()
+		security_page.go_to_user_for_internal_server()
+		if security_page.if_internal_server_guest_present():  
+			security_page.delete_internal_server()
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
@@ -371,8 +381,7 @@ class ExternalIAPVersion4(ConfigurationTest):
 
 	def test_ath_11014_verify_walled_garden_ui_screen_alignment(self):
 		conf = self.config.config_vars
-		self.NetworkPage.delete_network_if_present()
-		self.LeftPanel.go_to_network_page()
+		self._delete_network_auth_server()
 		self.take_s1_snapshot()
 		basic_info = self.NetworkPage.create_new_network()
 		virtual_lan = basic_info.employee_network_info()
@@ -400,7 +409,7 @@ class ExternalIAPVersion4(ConfigurationTest):
 		
 	def test_ath_11034_check_for_security_eridien_display_2(self):
 		conf = self.config.config_vars
-		self.NetworkPage.delete_network_if_present()
+		self._delete_network_auth_server()
 		self.take_s1_snapshot()
 		basic_info = self.NetworkPage.create_new_network()
 		virtual_lan = basic_info.employee_network_info()
@@ -413,8 +422,8 @@ class ExternalIAPVersion4(ConfigurationTest):
 		security_page = self.LeftPanel.go_to_security()
 		security_page.assert_security_page()
 		self.take_s2_snapshot()
-		network_page = self.LeftPanel.go_to_network_page()
-		self.NetworkPage.delete_network_if_present()
+		self.LeftPanel.go_to_network_page()
+		self._delete_network_auth_server()
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
@@ -426,8 +435,7 @@ class ExternalIAPVersion4(ConfigurationTest):
 			If it throw the AssertionError then, Assertion message will Raise
 		'''
 		conf = self.config.config_vars
-		self.NetworkPage.delete_network_if_present()
-		self.LeftPanel.go_to_network_page()
+		self._delete_network_auth_server()
 		self.take_s1_snapshot()
 		basic_info = self.NetworkPage.create_new_network()
 		virtual_lan = basic_info.employee_network_info()
@@ -438,6 +446,7 @@ class ExternalIAPVersion4(ConfigurationTest):
 		security_page.click_walled_garden_accordion()
 		security_page.click_walled_garden_link()
 		security_page.create_blacklist_new_domain_with_single_qoutes()
+		security_page.walled_save.click()
 		# security_page.edit_blacklist_domain()
 		self.take_s2_snapshot()
 		

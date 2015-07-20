@@ -16,4 +16,3 @@
 +  dmo-channel-utilization-threshold 90
 +  local-probe-req-thresh 0
 +  max-clients-threshold 64
-+  okc-disable

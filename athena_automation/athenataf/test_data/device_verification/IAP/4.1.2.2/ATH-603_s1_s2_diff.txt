@@ -1,0 +1,26 @@
++ wlan access-rule %(Network_name)s
++  rule any any match any any any permit
++ wlan ssid-profile %(Network_name)s
++  enable
++  type guest
++  essid %(Network_name)s
++  wep-key  1
++  opmode static-wep
++  max-authentication-failures 0
++  vlan guest
++  auth-server InternalServer
++  rf-band all
++  captive-portal external profile testuser
++  dtim-period 1
++  inactivity-timeout 1000
++  broadcast-filter none
++  dmo-channel-utilization-threshold 90
++  local-probe-req-thresh 0
++  max-clients-threshold 64
++ wlan external-captive-portal testuser
++  server 1.2.3.4
++  port 80
++  url "www.bing.com"
++  auth-text ""
++  redirect-url "http://www.google.com"
++  https

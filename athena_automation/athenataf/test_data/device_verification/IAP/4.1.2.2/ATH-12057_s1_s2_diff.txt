@@ -1,0 +1,17 @@
++ wlan auth-server rad1
++  ip 15.15.1.51
++  port 6553
++  acctport 3556
++  timeout 15
++  deadtime 10
++  retry-count 5
++  key 
++  nas-ip 10.12.13.14
++  nas-id NASID
++  rfc3576
++  cppm-rfc3576-port 65534
++ wlan auth-server rad2
++  ip 19.16.1.101
++  port 1812
++  acctport 1813
++  key 

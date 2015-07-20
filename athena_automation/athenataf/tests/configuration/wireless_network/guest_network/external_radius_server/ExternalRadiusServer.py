@@ -1,6 +1,7 @@
 import logging
 logger = logging.getLogger('athenataf')
 from athenataf.lib.functionality.test.ConfigurationTest import ConfigurationTest
+import time
 
 class ExternalRadiusServer(ConfigurationTest):
 	'''
@@ -9,11 +10,7 @@ class ExternalRadiusServer(ConfigurationTest):
 
 	def test_ath_6811_two_external_auth_server_with_mac_auth(self):
 		conf = self.config.config_vars
-		self.NetworkPage.delete_network_if_present()
-		security_page = self.LeftPanel.go_to_security()
-		security_page.click_on_external_captive_protal_button()
-		security_page.delete_captive_portal()
-		self.LeftPanel.go_to_network_page()
+		self._delete_network_auth_server()
 		self.take_s1_snapshot()
 		basic_info = self.NetworkPage.create_new_network()
 		vlan_obj = basic_info.guest_network_info()
@@ -40,20 +37,31 @@ class ExternalRadiusServer(ConfigurationTest):
 		Delete wireless and auth servers 
 		'''
 		self.NetworkPage.delete_network_if_present()
+		self.NetworkPage.delete_wired_network_if_present()
+		self.NetworkPage.delete_custom_guest_network_if_present()
 		security_page = self.LeftPanel.go_to_security() 
 		security_page.delete_authentication_server()
 		security_page.delete_authentication_server2()
-		self.LeftPanel.go_to_network_page()	
+		security_page.delete_internal_server()
+		security_page.click_walled_garden_accordion()
+		security_page.click_walled_garden_link()
+		if 	security_page.blacklist_delete_domain:
+			security_page.blacklist_delete_domain.click()
+		if security_page.whitelist_delete:
+			security_page.whitelist_delete.click()
+		if security_page.walled_save:
+			security_page.walled_save.click()
+		time.sleep(5)	
+		security_page.click_on_external_captive_accordion()
+		security_page.delete_external_captive_portal_2()
+		security_page.click_on_external_captive_accordion()
+		security_page.delete_external_captive_role()
+		time.sleep(5)	
+		self.LeftPanel.go_to_network_page()
 		
 	def test_ath_618_mac_auth_enabled_wpa2(self):
 		conf = self.config.config_vars
-		self.NetworkPage.delete_network_if_present()
-		security_page = self.LeftPanel.go_to_security()
-		security_page.delete_authentication_server()
-		security_page.click_on_external_captive_protal_button()
-		security_page.delete_captive_portal()
-		security_page.delete_user_for_internal_server()
-		self.LeftPanel.go_to_network_page()
+		self._delete_network_auth_server()
 		self.take_s1_snapshot()
 		basic_info = self.NetworkPage.create_new_network()
 		vlan_obj = basic_info.guest_network_info()
@@ -72,12 +80,7 @@ class ExternalRadiusServer(ConfigurationTest):
 		access = security.click_on_next()
 		access.finish_network_setup()
 		self.take_s2_snapshot()
-		self.NetworkPage.delete_network_if_present()
-		security_page = self.LeftPanel.go_to_security()
-		security_page.delete_authentication_server()
-		security_page.click_on_external_captive_protal_button()
-		security_page.delete_captive_portal()
-		security_page.delete_user_for_internal_server()
+		self._delete_network_auth_server()
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
@@ -85,11 +88,7 @@ class ExternalRadiusServer(ConfigurationTest):
 
 	def test_ath_617_static_wep(self):
 		conf = self.config.config_vars
-		self.NetworkPage.delete_network_if_present()
-		security_page = self.LeftPanel.go_to_security()
-		security_page.click_on_external_captive_protal_button()
-		security_page.delete_captive_portal()
-		self.LeftPanel.go_to_network_page()
+		self._delete_network_auth_server()
 		self.take_s1_snapshot()
 		basic_info = self.NetworkPage.create_new_network()
 		vlan_obj = basic_info.guest_network_info()
@@ -109,10 +108,7 @@ class ExternalRadiusServer(ConfigurationTest):
 		access = security.click_on_next()
 		access.finish_network_setup()
 		self.take_s2_snapshot()
-		self.NetworkPage.delete_network_if_present()
-		security_page = self.LeftPanel.go_to_security()
-		security_page.click_on_external_captive_protal_button()
-		security_page.delete_captive_portal()
+		self._delete_network_auth_server()
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
@@ -120,10 +116,7 @@ class ExternalRadiusServer(ConfigurationTest):
 		
 	
 	def test_ath_616_both_wpa_and_wpa2_two_radius_servers(self):
-		self.NetworkPage.delete_network_if_present()
-		security_page = self.LeftPanel.go_to_security()
-		security_page.delete_authentication_server()
-		self.LeftPanel.go_to_network_page()
+		self._delete_network_auth_server()
 		conf = self.config.config_vars
 		self.take_s1_snapshot()
 		basic_info = self.NetworkPage.create_new_network()
@@ -139,9 +132,7 @@ class ExternalRadiusServer(ConfigurationTest):
 		access = security.click_on_next()
 		access.finish_network_setup()
 		self.take_s2_snapshot()
-		self.NetworkPage.delete_network_if_present()
-		security_page = self.LeftPanel.go_to_security()
-		security_page.delete_authentication_server()
+		self._delete_network_auth_server()
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
@@ -149,7 +140,7 @@ class ExternalRadiusServer(ConfigurationTest):
 		
 	def test_ath_613_encryption_none(self):
 		conf = self.config.config_vars
-		self.NetworkPage.delete_network_if_present()
+		self._delete_network_auth_server()
 		self.take_s1_snapshot()
 		basic_info = self.NetworkPage.create_new_network()
 		virtual_lan = basic_info.guest_network_info()
@@ -160,8 +151,7 @@ class ExternalRadiusServer(ConfigurationTest):
 		access = security.use_security_default()
 		access.finish_network_setup()
 		self.take_s2_snapshot()
-		self.LeftPanel.go_to_network_page()
-		self.NetworkPage.delete_network_if_present()
+		self._delete_network_auth_server()
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
@@ -169,10 +159,7 @@ class ExternalRadiusServer(ConfigurationTest):
 		
 	def test_ath_614_wpa_personal(self):
 		conf = self.config.config_vars
-		self.NetworkPage.delete_network_if_present()
-		security_page = self.LeftPanel.go_to_security()
-		security_page.delete_authentication_server()
-		self.LeftPanel.go_to_network_page()
+		self._delete_network_auth_server()
 		self.take_s1_snapshot()
 		basic_info = self.NetworkPage.create_new_network()
 		virtual_lan = basic_info.guest_network_info()
@@ -183,15 +170,12 @@ class ExternalRadiusServer(ConfigurationTest):
 		security.set_accounting_mode()
 		security.set_encryption(conf.wireless_encryption)
 		security.set_security_key_management(conf.Authentication_wpa2)
-		security.set_passphrase_retype()
+		security.set_passphrase_retype(conf.Auth_Sharedkey,conf.Auth_Sharedkey)
 		security.create_external_captive_portal_1(whitelisting=False)
 		access = security.click_on_next()
 		access.finish_network_setup()
 		self.take_s2_snapshot()
-		self.LeftPanel.go_to_network_page()
-		self.NetworkPage.delete_network_if_present()
-		security_page = self.LeftPanel.go_to_security()
-		security_page.delete_authentication_server()
+		self._delete_network_auth_server()
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
@@ -199,7 +183,7 @@ class ExternalRadiusServer(ConfigurationTest):
 
 	def test_ath_615_external_portal_radius_authenticatoin_with_https_internalauth_none(self):
 		conf = self.config.config_vars
-		self._delete_captive_role_if_present()
+		self._delete_network_auth_server()
 		self.take_s1_snapshot()
 		basic_info = self.NetworkPage.create_new_network()
 		virtual_lan = basic_info.guest_network_info()
@@ -222,9 +206,9 @@ class ExternalRadiusServer(ConfigurationTest):
 		access.finish_network_setup()
 		self.NetworkPage.assert_new_network()
 		self.take_s2_snapshot()
-		self._delete_captive_role_if_present()
+		self._delete_network_auth_server()
 		self.take_s3_snapshot()
-		self.assert_s1_s2_diff(o)
+		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
 		self.clear()
 		
@@ -251,16 +235,15 @@ class ExternalRadiusServer(ConfigurationTest):
 		
 	def test_ath_3865_shared_password_validation(self):
 		conf = self.config.config_vars
-		self.NetworkPage.delete_network_if_present()
-		self.NetworkPage.delete_wired_network_if_present()
+		self._delete_network_auth_server()
 		basic_info = self.NetworkPage.create_new_network()
 		virtual_lan = basic_info.guest_network_info()
 		security = virtual_lan.select_virtual_controller()
 		security.configure_splash_page_type(conf.Splash_page_Acknowledged)
-		security.set_captive_portal_profile('default')
 		security.set_encryption('Enabled')
+		# security.set_captive_portal_profile('default')
 		security.set_security_key_management(conf.Authentication_wpa2)
 		security.set_pass_phrase_format(conf.pass_phrase_format_8_63_chars)
-		security.validation_passphrase_8_to_63_format()
+		security.validate_passphrase_8_to_63_chars()
 		security.set_pass_phrase_format(conf.pass_phrase_format_64_hexa_chars)
-		security.validation_passphrase_64_hex_format()		
+		security.validate_passphrase_64_hex_chars()		

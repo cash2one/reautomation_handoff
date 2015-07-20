@@ -212,17 +212,17 @@ class TestRunner:
             print(self.aObjectRef.values())
             for dev in self.aObjectRef.values():
                 dev.connect()
-            # while retries < 5:
-                # dev = self.aObjectRef[os.environ['device']]
-                # if dev.get_device_status():
-                    # break
-                # retries = retries + 1
-            # if retries == 5:
-                # logger.info("*** DEVICE IS NOT UP. ABORTING TEST EXECUTION. ***")
-                # for dev in self.aObjectRef.values():
-                    # dev.disconnect()
-                # import sys
-                # sys.exit(1)
+            while retries < 5:
+                dev = self.aObjectRef[os.environ['device']]
+                if dev.get_device_status(strict=True):
+                    break
+                retries = retries + 1
+            if retries == 5:
+                logger.info("*** DEVICE IS NOT UP. ABORTING TEST EXECUTION. ***")
+                for dev in self.aObjectRef.values():
+                    dev.disconnect()
+                import sys
+                sys.exit(1)
 
         
     def _get_test_result_map(self, test_info):
@@ -247,11 +247,11 @@ class TestRunner:
     def _execute_fixture(self, test_obj, method_name, test_result):
         try:
             if not method_name.startswith("test"):
-                if not self.config.options.ignore_device:
-                    retries = 0
+                # if not self.config.options.ignore_device:
+                    # retries = 0
                     # while retries < 3:
                         # dev = self.aObjectRef[os.environ['device']]
-                        # if dev.get_device_status():
+                        # if dev.get_device_status(strict=True):
                             # break
                         # retries = retries + 1
                     # if retries == 3:

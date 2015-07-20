@@ -88,3 +88,5 @@ select_country								: select&xpath&//div[@class="country-select-overlay-contai
 country_code_save							: button&xpath&//div[@class="country-select-overlay-container"]/div[2]/div[1]/div[3]/div[1]/a[2]
 ok_alert_button								: button&id&alert_close_button
 
+group1_without_vc							: button&xpath&//span[contains(.,'(0)')]/span[text()='group1']
+special_char_group_1						: button&xpath&//span[contains(.,'(0)')]/span[text()='@#$ a$']

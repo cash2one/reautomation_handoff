@@ -9,7 +9,7 @@ delete											: button&xpath&//a[@id='blacklist_delete']
 delete_all										: button&text&Delete All
 external_captive_profile					    : button&text&EXTERNAL CAPTIVE PORTAL&0
 captive_role									: button&xpath&//td[@title="RoleTest"]
-roles_accordion									: button&xpath&//*[@id='accordion-section-3']/div[1]/span
+roles_accordion									: button&css_class&accordion-arrow&3
 create_role										: button&id&create_role
 role_input										: textbox&name&role_input
 ok												: button&id&create_new_role
@@ -28,7 +28,7 @@ captive_portal_ip								: textbox&id&Captive_IP&1
 captive_portal_url								: textbox&id&Captive_Url&1
 captive_portal_port								: textbox&id&Captive_Port&1
 captive_portal_auth_text						: textbox&id&Captive_AuthText&1
-captive_portal_save_button						: button&id&cap-save&1
+captive_portal_save_button						: button&id&cap-save
 name											: button&text&NAME&4
 auth_server_name								: button&text&authradius
 user_for_internal_server						: button&text&USER FOR INTERNAL SERVER
@@ -55,7 +55,7 @@ whitelist_edit									: button&id&blacklist_edit&1
 whitelist_delete								: button&id&blacklist_delete
 walled_save										: submit&xpath&//*[@id='walled-save']
 walled_cancel									: submit&id&walled-cancel
-walled_new_save									: submit&id&walled-new-save
+walled_new_save									: button&id&walled-new-save
 edited_blacklist_table_element					: button&xpath&//span[contains(.,'www.bing.com')]
 edited_whitelist_table_element					: button&xpath&//span[contains(.,'www.gmail.com')]
 blacklisting_accordion							: button&xpath&//div[@id='accordion-section-4']/div[1]/span
@@ -77,7 +77,7 @@ access_rule_add_button							: button&id&tableheadingicon
 service_dropdown								: select&id&Service_Role2
 rule_type_dropdown_1							: select&id&RuleType_Role2
 rule_type_dropdown_2							: select&id&RuleType_Role3
-rule_save_button_1								: button&id&save_roles_action&5
+rule_save_button_1								: button&id&save_roles_action&0
 rule_save_button_2								: button&id&save_roles_action&6
 rule_save_button_3								: button&id&save_roles_action&7
 rule_save_button_4								: button&id&save_roles_action&8
@@ -147,7 +147,7 @@ confirm-save-close-server						: button&xpath&//a[@id="confirm-save-close-server
 auth_server_name_error							: button&id&auth_server_name_error&0
 auth_sharedkey_space_error						: button&id&Auth_Sharedkey_space_error&0
 coa_only_checkbox								: button&id&auth_coa_only
-coa_invalid_ipaddr_msg							: button&id&auth_ipaddr_error&0
+coa_invalid_ipaddr_msg							: label&id&auth_ipaddr_error&0
 coa_invalid_sharedkey_msg						: button&id&Auth_Sharedkey_error&0
 coa_invalid_retype_shared_msg					: button&id&Retype_auth_shared_key_error&0
 created_server_name_type						: button&xpath&//span[contains(.,'coa')]/../following-sibling::td[1]/span[2]
@@ -175,7 +175,7 @@ delete_external_captive_2						: button&xpath&//span[contains(.,'testRole')]/../
 delete_role1									: button&xpath&//span[contains(.,'role1')]/../following-sibling::td[1]/div/a[contains(@id,'delete_role')]
 delete_role2									: button&xpath&//span[contains(.,'role2')]/../following-sibling::td[1]/div/a[contains(@id,'delete_role')]
 delete_role3									: button&xpath&//span[contains(.,'role3')]/../following-sibling::td[1]/div/a[contains(@id,'delete_role')]
-network_delete_button_disabled_1				: button&xpath&//td[contains(.,'test1')]/following-sibling::td/div/a[@class="icosolo delete icon_delete ng-scope disabled"]&0
+network_delete_button_disabled_1				: button&xpath&//td[contains(.,'test1')]/following-sibling::td/div/a[@class="icosolo button delete icon_delete ng-scope disabled"]&0
 
 security_use_https								: checkbox&id&SecurityUseHttps&1
 edit_testradius1								: button&xpath&//span[@class="ng-scope ng-binding" and contains(.,'testradius1')]/../following-sibling::td/div/a[1]
@@ -192,7 +192,7 @@ drpip           								: textbox&id&drpip
 drpmask         							    : textbox&id&drpmask
 drpgateway          							: textbox&id&drpgateway
 drpvlan           								: textbox&id&drpvlan
-edit_auth_server								: button&id&edit_auth_server
+edit_auth_server								: button&id&edit_auth_server&0
 disabled_auth_server							: button&xpath&//span[contains(.,'authradius') ]/../../td[3]/div/a[2][@class='icosolo delete icon_delete ng-scope disabled']
 nas_identifier									: textbox&id&nas_id
 tacacs_radio							        : button&id&AuthName3
@@ -250,19 +250,19 @@ tac123_delete									: button&xpath&//td[@title='TAC123']/following-sibling::td
 default_rule									: button&xpath&//span[contains(.,'Allow any to all destinations')]&0
 delete_default									: button&id&access_control_delete_0
 
-network_service									: button&id&ac_network&4
+network_service									: button&id&ac_network&0
 ac_app_category1								: button&id&ac_app_category&4
-service_application								: radio&id&ac_app&4
+service_application								: radio&id&ac_app&0
 ac_web_category									: button&id&ac_web_category&4
-webreputation1        						    : radio&id&ac_web_reputation&4	
-rule_captive_portal								: select&xpath&//select[@id='RuleType_Role1']/option[text()='Captive portal']&4
-rule_calea										: select&xpath&//select[@id='RuleType_Role1']/option[text()='CALEA']&4
-rule_bandwidth									: select&xpath&//select[@id='RuleType_Role1']/option[text()='Bandwidth Contract']&4
+webreputation1        						    : radio&id&ac_web_reputation&0	
+rule_captive_portal								: select&xpath&//select[@id='RuleType_Role1']/option[text()='Captive portal']&0
+rule_calea										: select&xpath&//select[@id='RuleType_Role1']/option[text()='CALEA']&0
+rule_bandwidth									: select&xpath&//select[@id='RuleType_Role1']/option[text()='Bandwidth Contract']&0
 cancel_button_1									: button&id&ngCancel
 captive_portal_failure							: select&id&Security_CaptivePortalFailure&1
 auto_url_whitelisting							: checkbox&id&Secuirty_AutoUrlWhitelisting&1
 redirect_url									: textbox&id&Captive_RedirectUrl&1
-edit_captive_portal1							: button&id&EditExternalCaptive&1
+edit_captive_portal1							: button&xpath&//td[@title="default"]//following-sibling::td[1]/div/a[@id='EditExternalCaptive']
 delete_captive_portal							: button&id&ExternalCaptivePortalTable_row_actions_1
 edit_external_captive							: button&xpath&//span[contains(.,'Cp1')]/../following-sibling::td[1]/div/a[@id='EditExternalCaptive']
 delete_cp1										: button&xpath&//span[contains(.,'Cp1')]/../following-sibling::td[1]/div/a[@id='DeleteExternalCaptive']
@@ -270,11 +270,11 @@ captive_ip_error       						    : label&id&Captive_IP_error&1
 captive_url_req_error      					    : label&id&Captive_Uri_req_error&1
 captive_port_error        	  					: label&id&Captive_Port_error&1
 captive_auth_text_req_error        	  			: label&id&Captive_Authtext_req_error&1
-default_captive_name_disabled					: input&xpath&//input[@name="Captive_Name" and  @disabled="disabled"]&1
+default_captive_name_disabled					: textbox&xpath&//input[@name="Captive_Name" and @disabled="disabled"]&1
 ac_app_category6								: radio&id&ac_app_category&6
 antivirus1										: checkbox&xpath&//input[@id='role_search']/../../div[1]/div[1]/input
 Collaboration1									: checkbox&xpath&//input[@id='role_search']/../../div[1]/div[4]/input
-action_role										: select&id&Action_Role2
+action_role										: select&id&Action_Role3
 
 throttle_enable									: checkbox&id&throttle_enable
 options_log_6           						: button&id&AccessRuleOptionLog&5
@@ -289,3 +289,28 @@ peruserupstream           						: button&id&peruserupstream&6
 ac_web_category_6								: button&id&ac_web_category&6
 localSearchText									: textbox&xpath&//input[@ng-model='localSearchText']
 search_result									: button&xpath&//div[@class="searchContent ng-isolate-scope"]
+
+rule_save_button_6								: button&xpath&//*[@id='save_roles_action']
+ac_app_category_1								: button&id&ac_app_category&0
+options_log_1		          					: button&id&AccessRuleOptionLog&0
+options_dscp_1           						: button&id&AccessRuleOptionDSCP&0
+options_blacklist_1          					: button&id&AccessRuleOptionBlackList&0
+options_p_802_1           						: button&id&AccessRuleOptionP802&0
+downstream_textbox_1							: textbox&id&access_downstream&0
+upstream_textbox_1								: textbox&id&access_upstream&0
+peruserdownstream_1								: button&id&peruserdownstream&0
+peruserupstream_1								: button&id&peruserupstream&0
+ac_web_category_1								: button&id&ac_web_category&0
+web_category_log_1           					: button&id&AccessRuleOptionLog&0
+web_category_blacklist_1          				: button&id&AccessRuleOptionBlackList&0
+hacking											: checkbox&xpath&//input[@id='role_search']/../../div[1]/div[6]/input
+rule_type_dropdown_4							: select&id&RuleType_Role4
+vlan_id_textbox_1								: textbox&id&access_rule_vlan_id&0
+throttle_downstream_1							: textbox&id&throttle_downstream
+throttle_upstream_1								: textbox&id&throttle_upstream
+confirm_yes										: button&xpath&//a[@id='confirm-save-ok']/span[text()='Yes']
+
+disabled_default								: textbox&xpath&//input[@id='Captive_Name' and @disabled='disabled']&1
+delete_antivirus								: button&xpath&//span[contains(.,'Allow Antivirus')]/following-sibling::span/a[6]
+delete_collaboration							: button&xpath&//span[contains(.,'Deny Collaboration')]/following-sibling::span/a[6]
+delete_external_captive_testuser				: button&xpath&//span[contains(.,'testuser')]/../following-sibling::td[1]/div/a[@id='DeleteExternalCaptive']

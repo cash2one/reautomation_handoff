@@ -1,0 +1,20 @@
+! Wireless Containment                   :none
+! Wired Containment                      :off
+! infrastructure protection level        :custom
+! Wireless Containment                   :deauth-only
+! Wired Containment                      :on
+! infrastructure protection level        :low
+! protect-ssid              disable  enable   enable
+! rogue-containment         disable  enable   enable
+! protect-ssid              enable   enable   enable
+! rogue-containment         enable   enable   enable
+! client protection level                :low
+! client protection level                :high
+! Policies                Status   Low      High
+! --------                ------   ---      ----
+! protect-valid-sta       enable   enable   enable
+! protect-windows-bridge  disable  disable  enable
+! Policies                Status  Low      High
+! --------                ------  ---      ----
+! protect-valid-sta       enable  enable   enable
+! protect-windows-bridge  enable  disable  enable

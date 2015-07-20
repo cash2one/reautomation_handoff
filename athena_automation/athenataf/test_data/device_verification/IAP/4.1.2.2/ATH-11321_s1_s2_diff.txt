@@ -1,0 +1,2 @@
++ mgmt-user viewonly  read-only
++ mgmt-user Guestnetwork  guest-mgmt

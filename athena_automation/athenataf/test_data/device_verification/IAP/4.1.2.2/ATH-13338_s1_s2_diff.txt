@@ -1,0 +1,6 @@
++ wlan tacacs-server testRole
++  ip 10.10.10.10
++  port 65534
++  key 
++  timeout 30
++  retry-count 5
