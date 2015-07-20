@@ -160,3 +160,17 @@ class TopPanel(WebPage):
         if not self.user_profile_name.get_attribute_value('text') == name:
             raise AssertionError("User name is not set to given name %s",name)        
         
+	def import_device():
+		'''
+		Clicks on Import button
+		'''
+		logger.debug("Clicking on import")
+		self.device_import.click()
+		
+		
+	def assert_visible_slider_icon(self):
+		logger.debug('InnerLeftPanel: Asserting the slider icon')
+		if self.slider_icon_visible:
+			return True
+		else:
+			return False

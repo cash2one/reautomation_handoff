@@ -17,3 +17,6 @@ cancel_session_timeout						: button&id&cancel-session-timeout
 idle_timeout_error_2						: button&xpath&//span[text()="Must be number in range 5-10080" and contains(@class,'ng-hide')]
 close_user_setting_pop_up					: button&id&cancel&3
 user_profile_name							: button&xpath&//ul[@class='UserCredentials']/li[1]/a
+device_import									: button&css&unpro_alert_link>label
+close_user_settings							:button&xpath&//div[@id='cancel']/span
+slider_icon_visible							: button&xpath&//span[@class="slider-menu-icon toggleGroupOff"]

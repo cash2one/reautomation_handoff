@@ -1,0 +1,71 @@
+! wlan access-rule instant
+!  rule masterip 0.0.0.0 match tcp 80 80 permit
+!  rule masterip 0.0.0.0 match tcp 4343 4343 permit
+!  rule any any match udp 67 68 permit
+!  rule any any match udp 53 53 permit
+! wlan access-rule network1
+!  rule any any match any any any permit
+! wlan ssid-profile instant
+! wlan access-rule test1
+!  rule any any match any any any permit
+! 
+! wlan access-rule testwired
+!  rule any any match any any any permit
+! 
+! wlan access-rule network2
+!  rule any any match any any any permit
+! 
+! wlan ssid-profile network1
+!  essid instant
+!  opmode opensystem
+!  essid network1
+!  opmode wpa2-psk-aes
+!  vlan guest
+!  rf-band 2.4
+!  auth-server InternalServer
+!  rf-band all
++ wlan ssid-profile test1
++  enable
++  type employee
++  essid test1
++  opmode wpa2-psk-aes
++  max-authentication-failures 0
++  auth-server InternalServer
++  rf-band all
++  captive-portal disable
++  dtim-period 1
++  inactivity-timeout 1000
++  broadcast-filter none
++  dmo-channel-utilization-threshold 90
++  local-probe-req-thresh 0
++  max-clients-threshold 64
++ wlan ssid-profile network2
++  enable
++  type voice
++  essid network2
++  opmode wpa2-psk-aes
++  max-authentication-failures 0
++  auth-server InternalServer
++  rf-band all
++  captive-portal disable
++  dtim-period 1
++  inactivity-timeout 1000
++  broadcast-filter none
++  dmo-channel-utilization-threshold 90
++  local-probe-req-thresh 0
++  max-clients-threshold 64
+!  server 10.30.40.50
+!  server localhost
++ wired-port-profile testwired
++  switchport-mode trunk
++  allowed-vlan all
++  native-vlan guest
++  no shutdown
++  access-rule-name testwired
++  speed auto
++  duplex auto
++  poe
++  type employee
++  captive-portal disable
++  no dot1x
++  inactivity-timeout 1000

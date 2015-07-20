@@ -3208,8 +3208,7 @@ class EditNetworkPage(WebPage):
 		self.click_on_advanced_settings_accordion()
 		logger.debug("EditNetworkPage : Disable the AirTime and Each Radio field")
 		self.setting_airtime_value()
-		#changes made by suganya
-		# self.setting_each_radio_value()
+		self.setting_each_radio_value()
 		logger.debug("EditNetworkPage : Disable Dynamic Multicast Optimization")
 		self.dynamicmulticast.set(self.config.config_vars.disabled)
 		logger.debug("EditNetworkPage : Set DMO Channel Utilization Threshold to 90")
@@ -3722,3 +3721,19 @@ class EditNetworkPage(WebPage):
 		self.passphrase.set(password)
 		logger.debug("EditNetworkPage : Set Re Passphrase.")
 		self.retype_passphrase.set(password)
+		
+	def page_down(self):
+		'''
+		scroll down the page
+		'''
+		self.browser.key_press(u'\ue009')
+		self.browser.key_press( u'\ue00f')
+		
+	def setting_splash_page_type_internal_acknowledge(self,value=None):
+		logger.debug('EditNetworkPage: Clicking on Security accordion')
+		time.sleep(10)
+		self.security_accordion.click()
+		time.sleep(10)
+		self.security_accordion.click()
+		logger.debug('EditNetworkPage: Selecting splash page type ')
+		self.splash_page_type.set(value)

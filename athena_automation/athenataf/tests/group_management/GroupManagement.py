@@ -2,8 +2,11 @@ import logging
 logger = logging.getLogger('athenataf')
 
 from athenataf.lib.functionality.test.AthenaGUITestCase import AthenaGUITestCase
+from athenataf.lib.functionality.common import DeviceLibrary
+from athenataf.lib.functionality.test.GroupConfigurationTest import GroupConfigurationTest
+import time
 
-class GroupManagement(AthenaGUITestCase):
+class GroupManagement(GroupConfigurationTest):
 	'''
 	Test class for group management.
 	'''
@@ -80,7 +83,7 @@ class GroupManagement(AthenaGUITestCase):
 		manage_group_page1.move_virtual_controller()
 		inner_left_panel.manage_group()
 		manage_group_page1.delete_empty_group()
-		self.connect_device()
+		# self.connect_device()
 		self.take_s2_snapshot()
 		self.TopPanel.innerleft_panel_icon.click()
 		self.take_s3_snapshot()
@@ -118,7 +121,7 @@ class GroupManagement(AthenaGUITestCase):
 		inner_left_panel.manage_group()
 		manage_group_page.delete_empty_group()
 		inner_left_panel.assert_group_not_exist()
-		self.connect_device()
+		# self.connect_device()
 		self.take_s2_snapshot()
 		self.TopPanel.innerleft_panel_icon.click()
 		self.take_s3_snapshot()
@@ -150,7 +153,7 @@ class GroupManagement(AthenaGUITestCase):
 		inner_left_panel.manage_group()
 		manage_group_page1.delete_empty_group1()
 		inner_left_panel.assert_group_not_exist()
-		self.connect_device()
+		# self.connect_device()
 		self.take_s2_snapshot()
 		self.TopPanel.innerleft_panel_icon.click()
 		self.take_s3_snapshot()
@@ -164,32 +167,35 @@ class GroupManagement(AthenaGUITestCase):
 			if inner_left_panel.assert_sample_group_with_vc_present():
 				manage_group_page = inner_left_panel.manage_group()
 				manage_group_page.move_virtual_controller()
+				inner_left_panel.select_default_group()
+				inner_left_panel = self.TopPanel.click_slider_icon()
 				inner_left_panel.manage_group()
 				manage_group_page.delete_empty_group()
 			elif inner_left_panel.assert_sample_group_without_vc_present():
+				inner_left_panel.select_default_group()
+				inner_left_panel = self.TopPanel.click_slider_icon()
 				manage_group_page = inner_left_panel.manage_group()
 				manage_group_page.delete_empty_group()
-		self.take_s1_snapshot()
 		create_group_page = inner_left_panel.add_group()
 		create_group_page.create_empty_group()
 		inner_left_panel.add_group()
 		create_group_page.create_multiple_groups()
+		time.sleep(300)
+		DeviceLibrary.reconnect("IAP_1")
 		manage_group_page = inner_left_panel.manage_group()
 		manage_group_page.move_virtual_controller2()
+		time.sleep(300)
+		DeviceLibrary.reconnect("IAP_1")
 		inner_left_panel.manage_group()
 		manage_group_page.delete_empty_group1()
 		inner_left_panel.manage_group()
 		manage_group_page.move_virtual_controller()
+		time.sleep(300)
+		DeviceLibrary.reconnect("IAP_1")
 		inner_left_panel.manage_group()
 		manage_group_page.delete_empty_group()
-		self.connect_device()
-		self.take_s2_snapshot()
 		inner_left_panel.assert_virtual_controller()
 		self.TopPanel.innerleft_panel_icon.click()
-		self.take_s3_snapshot()
-		self.assert_s1_s2_diff(None)
-		self.assert_s1_s3_diff()
-		self.clear()
 		
 	def test_ath_889_duplicate_groups(self):
 		inner_left_panel = self.TopPanel.click_slider_icon()
@@ -197,12 +203,15 @@ class GroupManagement(AthenaGUITestCase):
 			if inner_left_panel.assert_sample_group_with_vc_present():
 				manage_group_page = inner_left_panel.manage_group()
 				manage_group_page.move_virtual_controller()
+				inner_left_panel.select_default_group()
+				inner_left_panel = self.TopPanel.click_slider_icon()
 				inner_left_panel.manage_group()
 				manage_group_page.delete_empty_group()
 			elif inner_left_panel.assert_sample_group_without_vc_present():
+				inner_left_panel.select_default_group()
+				inner_left_panel = self.TopPanel.click_slider_icon()
 				manage_group_page = inner_left_panel.manage_group()
 				manage_group_page.delete_empty_group()
-		self.take_s1_snapshot()
 		create_group_page = inner_left_panel.add_group()
 		create_group_page.create_empty_group()
 		inner_left_panel.add_group()
@@ -210,12 +219,6 @@ class GroupManagement(AthenaGUITestCase):
 		create_group_page.assert_duplicate_group_warning()
 		manage_group_page = inner_left_panel.manage_group()
 		manage_group_page.delete_empty_group()
-		self.take_s2_snapshot()
-		self.TopPanel.innerleft_panel_icon.click()
-		self.take_s3_snapshot()
-		self.assert_s1_s2_diff(None)
-		self.assert_s1_s3_diff()
-		self.clear()
 		
 	def test_ath_6703_delete_default_group(self):
 		inner_left_panel = self.TopPanel.click_slider_icon()
@@ -291,7 +294,6 @@ class GroupManagement(AthenaGUITestCase):
 
 	def test_ath_8199_navigation_all_groups(self):
 		inner_left_panel = self.TopPanel.click_slider_icon()
-		self.take_s1_snapshot()
 		create_group_page = inner_left_panel.add_group()
 		create_group_page.create_empty_group()
 		inner_left_panel.assert_group_exist()
@@ -299,16 +301,11 @@ class GroupManagement(AthenaGUITestCase):
 		inner_left_panel.select_wireless_configuration_module()
 		all_groups = inner_left_panel.click_all_groups_label()
 		all_groups.assert_group_name_and_aps()
-		self.take_s2_snapshot()
 		self.browser.refresh()
 		inner_left_panel = self.TopPanel.click_slider_icon()
 		manage_group_page = inner_left_panel.manage_group()
 		manage_group_page.delete_current_working_group()
-		self.browser.refresh()
-		self.take_s3_snapshot()
-		self.assert_s1_s2_diff(None)
-		self.assert_s1_s3_diff()
-		self.clear()	
+		
 	def test_ath_6709_create_groups_and_check_group_sorting(self):
 		inner_left_panel = self.TopPanel.click_slider_icon()
 		create_group_page = inner_left_panel.add_group()

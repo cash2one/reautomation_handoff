@@ -898,3 +898,66 @@ class ManageGroupsPage(WebPage):
         self.group_name.set(destination)
         logger.debug("ManageGroupPage: Clicking on 'Save' button ")
         self.save_group.click()
+    def move_virtual_controller6(self):
+        logger.debug("ManageGroupPage: Clicking on 'group2' group ")
+        if self.group2:
+            self.group2.click()
+            time.sleep(5)
+            if self.select_all.is_selected():
+                self.select_all.click()
+            logger.debug("ManageGroupPage: Clicking on vc checkbox ")
+            self.virtual_controller.click()
+            logger.debug("ManageGroupPage: Clicking on 'Move' button ")
+            self.move.click()
+            self.buy_time()
+            logger.debug("ManageGroupPage: Clicking on default 'group' ")
+            self.default_group1.click()
+            logger.debug("ManageGroupPage: Clicking on 'Save' button ")
+            self.save.click()
+            if not self.virtual_controller:
+                self.logo.click()
+            time.sleep(6)
+            
+    def move_virtual_controller_from_default_to_samplegroup(self):
+        logger.debug("ManageGroupPage: Moving VC from one group to another group")
+        if self.default_group:
+            time.sleep(2)
+            self.default_group.click()
+            time.sleep(4)
+            if self.select_all.is_selected():
+                self.select_all.click()
+            logger.debug("ManageGroupPage: Clicking on vc checkbox ")
+            self.virtual_controller.click()
+            logger.debug("ManageGroupPage: Clicking on 'Move' button ")
+            self.move.click()
+            self.buy_time()
+            self.sample_group1.click()
+            # self.move_to_group1.click()
+            logger.debug("ManageGroupPage: Clicking on 'Save' button ")
+            self.save.click()
+            if not self.virtual_controller:
+                self.logo.click()
+            time.sleep(6)
+
+    def move_virtual_controller_from_default_to_group1(self):
+        logger.debug("ManageGroupPage: Moving VC from one group to another group")
+        if self.default_group:
+            time.sleep(2)
+            self.default_group.click()
+            time.sleep(4)
+            if self.select_all.is_selected():
+                self.select_all.click()
+            logger.debug("ManageGroupPage: Clicking on vc checkbox ")
+            self.virtual_controller.click()
+            logger.debug("ManageGroupPage: Clicking on 'Move' button ")
+            self.move.click()
+            self.buy_time()
+            self.move_to_group1.click()
+            # self.move_to_group1.click()
+            logger.debug("ManageGroupPage: Clicking on 'Save' button ")
+            self.save.click()
+            if not self.virtual_controller:
+                self.logo.click()
+            time.sleep(6)
+            
+            

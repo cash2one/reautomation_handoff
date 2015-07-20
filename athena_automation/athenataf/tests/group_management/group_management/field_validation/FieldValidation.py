@@ -2,8 +2,9 @@ import logging
 logger = logging.getLogger('athenataf')
 
 from athenataf.lib.functionality.test.AthenaGUITestCase import AthenaGUITestCase
+from athenataf.lib.functionality.test.GroupConfigurationTest import GroupConfigurationTest
 
-class FieldValidation(AthenaGUITestCase):
+class FieldValidation(GroupConfigurationTest):
 	'''
 	Test class for FieldValidation.
 	'''
@@ -15,7 +16,6 @@ class FieldValidation(AthenaGUITestCase):
 	def test_ath_11528_group_name_validation(self):
 		conf=self.config.config_vars
 		inner_left_panel = self.TopPanel.click_slider_icon()
-		self.take_s1_snapshot()
 		create_group_page = inner_left_panel.add_group()
 		create_group_page.create_multiple_empty_groups(conf.group_name_with_spcl_char)
 		create_group_page = inner_left_panel.add_group()
@@ -32,19 +32,13 @@ class FieldValidation(AthenaGUITestCase):
 		create_group_page = inner_left_panel.add_group()
 		create_group_page.create_multiple_empty_groups(conf.group_name_starts_with_num)
 		create_group_page.assert_duplicate_group_warning()
-		self.take_s2_snapshot()
 		manage_group_page=inner_left_panel.manage_group()
 		manage_group_page.delete_four_empty_groups()
-		self.take_s3_snapshot()
-		self.assert_s1_s2_diff(None)
-		self.assert_s1_s3_diff()
-		self.clear()
 		
 		
 	def test_ath_11522_password_validation(self):
 		conf=self.config.config_vars
 		inner_left_panel = self.TopPanel.click_slider_icon()
-		self.take_s1_snapshot()
 		create_group_page = inner_left_panel.add_group()
 		create_group_page.create_group_for_assertion(conf.mynew)
 		create_group_page.set_group_password(conf.abc)

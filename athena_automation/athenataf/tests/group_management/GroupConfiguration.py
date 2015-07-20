@@ -3,8 +3,10 @@ logger = logging.getLogger('athenataf')
 import time
 
 from athenataf.lib.functionality.test.AthenaGUITestCase import AthenaGUITestCase
+from athenataf.lib.functionality.common import DeviceLibrary
+from athenataf.lib.functionality.test.GroupConfigurationTest import GroupConfigurationTest
 
-class GroupConfiguration(AthenaGUITestCase):
+class GroupConfiguration(GroupConfigurationTest):
 	'''
 	Test class for group management.
 	'''
@@ -15,16 +17,20 @@ class GroupConfiguration(AthenaGUITestCase):
 		security_page = virtual_lan_page.select_virtual_controller()
 		access_page = security_page.configure_employee_security()
 		access_page.finish_network_setup()
-		
+
 	def test_ath_880_configure_group_with_member(self):
 		inner_left_panel = self.TopPanel.click_slider_icon()
 		if inner_left_panel.assert_group():
 			if inner_left_panel.assert_sample_group_with_vc_present():
 				manage_group_page = inner_left_panel.manage_group()
 				manage_group_page.move_virtual_controller()
+				inner_left_panel.select_default_group()
+				inner_left_panel = self.TopPanel.click_slider_icon()
 				inner_left_panel.manage_group()
 				manage_group_page.delete_empty_group()
-			elif inner_left_panel.assert_sample_group_without_vc_present():
+			if inner_left_panel.assert_sample_group_without_vc_present():
+				inner_left_panel.select_default_group()
+				inner_left_panel = self.TopPanel.click_slider_icon()
 				manage_group_page = inner_left_panel.manage_group()
 				manage_group_page.delete_empty_group()
 		self.take_s1_snapshot()
@@ -32,8 +38,12 @@ class GroupConfiguration(AthenaGUITestCase):
 		create_group_page.create_group()
 		inner_left_panel.assert_group_exist()
 		inner_left_panel.select_sample_group()
+		time.sleep(300)
+		DeviceLibrary.reconnect("IAP_1")
 		network_page = self.LeftPanel.go_to_network_page()
 		self._create_network(network_page)
+		time.sleep(60)
+		self.take_s2_snapshot()
 		network_page.assert_new_network()
 		network_page.delete_network_if_present()
 		self.TopPanel.click_slider_icon()
@@ -44,14 +54,15 @@ class GroupConfiguration(AthenaGUITestCase):
 		inner_left_panel.manage_group()
 		manage_group_page.delete_empty_group()
 		inner_left_panel.assert_group_not_exist()
-		self.connect_device()
-		self.take_s2_snapshot()
+		
+		time.sleep(300)
+		DeviceLibrary.reconnect("IAP_1")
 		self.TopPanel.innerleft_panel_icon.click()
 		self.take_s3_snapshot()
-		self.assert_s1_s2_diff(None)
+		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
 		self.clear()
-		
+
 	def test_ath_882_delete_configuration(self):
 		inner_left_panel = self.TopPanel.click_slider_icon()
 		if inner_left_panel.assert_group():
@@ -70,6 +81,7 @@ class GroupConfiguration(AthenaGUITestCase):
 		inner_left_panel.select_sample_group()
 		network_page = self.LeftPanel.go_to_network_page()
 		self._create_network(network_page)
+		self.take_s2_snapshot()
 		network_page.assert_new_network()
 		network_page.delete_network_if_present()
 		network_page.assert_network_not_exist()
@@ -81,23 +93,25 @@ class GroupConfiguration(AthenaGUITestCase):
 		inner_left_panel.manage_group()
 		manage_group_page.delete_empty_group()
 		inner_left_panel.assert_group_not_exist()
-		self.connect_device()
-		self.take_s2_snapshot()
 		self.TopPanel.innerleft_panel_icon.click()
 		self.take_s3_snapshot()
-		self.assert_s1_s2_diff(None)
+		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
 		self.clear()
-		
+
 	def test_ath_881_move_vcs_between_the_group(self):
 		inner_left_panel = self.TopPanel.click_slider_icon()
 		if inner_left_panel.assert_group():
 			if inner_left_panel.assert_sample_group_with_vc_present():
 				manage_group_page = inner_left_panel.manage_group()
 				manage_group_page.move_virtual_controller()
+				inner_left_panel.select_default_group()
+				inner_left_panel = self.TopPanel.click_slider_icon()
 				inner_left_panel.manage_group()
 				manage_group_page.delete_empty_group()
-			elif inner_left_panel.assert_sample_group_without_vc_present():
+			if inner_left_panel.assert_sample_group_without_vc_present():
+				inner_left_panel.select_default_group()
+				inner_left_panel = self.TopPanel.click_slider_icon()
 				manage_group_page = inner_left_panel.manage_group()
 				manage_group_page.delete_empty_group()
 		self.take_s1_snapshot()
@@ -111,16 +125,22 @@ class GroupConfiguration(AthenaGUITestCase):
 		inner_left_panel = self.TopPanel.click_slider_icon()
 		inner_left_panel.add_group()
 		create_group_page.create_multiple_groups()
+		time.sleep(300)
+		DeviceLibrary.reconnect("IAP_1")
 		inner_left_panel.select_new_group()
 		self.LeftPanel.go_to_network_page()
 		self._create_network(network_page)
 		network_page.assert_new_network()
+		time.sleep(60)
+		self.take_s2_snapshot()
 		self.TopPanel.click_slider_icon()
 		manage_group_page = inner_left_panel.manage_group()
 		manage_group_page.move_virtual_controller2()
 		inner_left_panel.manage_group()
 		manage_group_page.move_virtual_controller()
 		inner_left_panel.select_sample_group()
+		time.sleep(300)
+		DeviceLibrary.reconnect("IAP_1")
 		self.LeftPanel.go_to_network_page()
 		network_page.delete_network_if_present()
 		network_page.assert_network_not_exist()
@@ -136,10 +156,8 @@ class GroupConfiguration(AthenaGUITestCase):
 		manage_group_page.delete_empty_group()
 		manage_group_page=inner_left_panel.manage_group()
 		manage_group_page.delete_empty_group1()
-		self.connect_device()
-		self.take_s2_snapshot()
 		self.TopPanel.innerleft_panel_icon.click()
 		self.take_s3_snapshot()
-		self.assert_s1_s2_diff(None)
+		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
 		self.clear()

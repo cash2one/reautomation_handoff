@@ -1,0 +1,25 @@
+! wlan ssid-profile instant
+! wlan access-rule test1
+!  rule any any match any any any permit
+! 
+! wlan ssid-profile test1
+!  type employee
+!  essid instant
+!  opmode opensystem
+!  type guest
+!  essid test1
+!  opmode wpa2-aes
+!  rf-band 2.4
+!  captive-portal disable
+!  rf-band all
+!  captive-portal internal
+!  inactivity-timeout 1000
+!  inactivity-timeout 3600
++ wlan captive-portal
++  background-color 65280
++  banner-color 255
++  banner-text "Welcome to Guest Network"
++  terms-of-use "This network is not secure and use it at your own risk."
++  use-policy "Please read and accept terms and conditions and then login."
+!  server 10.30.40.50
+!  server localhost
