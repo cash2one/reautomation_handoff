@@ -351,7 +351,7 @@ class SecurityLevelOpen(ConfigurationTest):
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear()
 		
 	def test_ath_11933_edit_open_employee_network_with_authentication_server_2(self):
  		self.take_s1_snapshot()
@@ -377,7 +377,7 @@ class SecurityLevelOpen(ConfigurationTest):
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear('IAP_1')
 		
 	def test_ath_11934_edit_open_employee_network_with_accounting_interval_accounting_load_balancing_de(self):
  		self.take_s1_snapshot()
@@ -527,7 +527,7 @@ class SecurityLevelOpen(ConfigurationTest):
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear()
 		
 	def test_ath_11939_edit_open_employee_network_with_blacklisting_max_authentication_failure(self):
 

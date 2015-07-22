@@ -1,7 +1,7 @@
 import logging
 logger = logging.getLogger('athenataf')
 from athenataf.lib.functionality.test.ConfigurationTest import ConfigurationTest
-
+import time
 class EmployeeSecurityLevelPersonal(ConfigurationTest):
 	'''
 	Test class for Employee Security Level Personal testcases.
@@ -684,7 +684,7 @@ class EmployeeSecurityLevelPersonal(ConfigurationTest):
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear('IAP_1')
 		
 	def test_ath_11908_create_personal_wpa_2_personal_employee_network_with_broadcast_filtering_dtim_in(self):
 		self.NetworkPage.delete_network_if_present()
@@ -711,7 +711,7 @@ class EmployeeSecurityLevelPersonal(ConfigurationTest):
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear('IAP_1')
 		
 	def test_ath_11909_edit_personal_wpa_2_personal_employee_network_with_broadcast_filtering_dtim_in(self):
 		self.NetworkPage.delete_network_if_present()
@@ -743,7 +743,7 @@ class EmployeeSecurityLevelPersonal(ConfigurationTest):
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear()
 		
 		
 	def test_ath_11910_edit_personal_wpa_2_personal_employee_network_with_broadcast_filtering_dtim_interval(self):
@@ -777,7 +777,7 @@ class EmployeeSecurityLevelPersonal(ConfigurationTest):
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear('IAP_1')
 		
 	def test_ath_11911_edit_personal_wpa_2_personal_employee_network_with_authentication_server_2_delim(self):
 		self._delete_external_radius_servers()
@@ -949,6 +949,7 @@ class EmployeeSecurityLevelPersonal(ConfigurationTest):
 		edit_network_page = self.NetworkPage.edit_network()
 		edit_network_page.click_security_accordion()
 		edit_network_page.check_wpa_blacklisting_enable()
+		self.LeftPanel.go_to_network_page()
 		self.NetworkPage.assert_new_network()
 		self.LeftPanel.go_to_network_page()
 		self.take_s2_snapshot()
@@ -957,7 +958,7 @@ class EmployeeSecurityLevelPersonal(ConfigurationTest):
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear()
 		
 	def test_ath_11917_edit_personal_wpa_personal_employee_network_with_background_wmm_share_Blacklistist(self):
 		self.NetworkPage.delete_network_if_present()
@@ -985,7 +986,7 @@ class EmployeeSecurityLevelPersonal(ConfigurationTest):
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear()
 		
 	def test_ath_11918_edit_personal_wpa_2_personal_employee_network_with_best_effort_wmm_share_static(self):
 		self._delete_external_radius_servers()
@@ -1048,7 +1049,6 @@ class EmployeeSecurityLevelPersonal(ConfigurationTest):
 		edit_network_page = self.NetworkPage.edit_network()
 		# edit_network_page.click_vlans_accordion()
 		edit_network_page.click_security_accordion()
-		import time
 		time.sleep(30)
 		edit_network_page.checking_for_authentication_server()
 		edit_network_page.checking_for_authentication_server2_visibility()
@@ -1059,7 +1059,7 @@ class EmployeeSecurityLevelPersonal(ConfigurationTest):
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear()
 		
 	def test_ath_11920_create_personal_wpa_2_and_wpa_personal_employee_network_with_video_wmm_share(self):
 		self._delete_external_radius_servers()
@@ -1113,7 +1113,7 @@ class EmployeeSecurityLevelPersonal(ConfigurationTest):
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear()
 	def test_ath_11922_create_personal_static_wep_employee_network_with_voice_wmm_share_key_management(self):
 		self.NetworkPage.delete_network_if_present()
 		self.take_s1_snapshot()
@@ -1135,7 +1135,7 @@ class EmployeeSecurityLevelPersonal(ConfigurationTest):
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear('IAP_1')
 		
 	def test_ath_11923_edit_personal_static_wep_employee_network_with_voice_wmm_share(self):
 		self._delete_external_radius_servers()
@@ -1168,7 +1168,7 @@ class EmployeeSecurityLevelPersonal(ConfigurationTest):
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear('IAP_1')
 		
 	def test_ath_11924_edit_personal_static_wep_employee_network_with_content_filtering_blacklisting_ma(self):
 		self._delete_external_radius_servers()

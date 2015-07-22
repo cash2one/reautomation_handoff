@@ -241,7 +241,7 @@ class Default(ConfigurationTest):
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear('IAP_1')
 		
 	def test_ath_12428_default_value_security_sp_iternal_auth_as_1_external_as2_external(self):
 		conf = self.config.config_vars
