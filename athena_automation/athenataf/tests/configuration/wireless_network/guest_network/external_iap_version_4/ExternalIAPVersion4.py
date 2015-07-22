@@ -459,4 +459,4 @@ class ExternalIAPVersion4(ConfigurationTest):
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear()

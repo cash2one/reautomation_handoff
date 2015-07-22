@@ -1,7 +1,7 @@
 import logging
 logger = logging.getLogger('athenataf')
 
-
+import time
 from athenataf.lib.functionality.test.ConfigurationTest import ConfigurationTest
 
 class NonDefaultValue(ConfigurationTest):
@@ -25,6 +25,7 @@ class NonDefaultValue(ConfigurationTest):
 		security_page.create_authentication_server('Myradius','10.23.24.25','Aruba#123','Aruba#123',mask = '255.255.255.0',dip='10.23.24.26',gateway = '10.23.24.1',vlan='15')
 		logger.debug('SecurityPage : Clicking save button')
 		security_page.auth_server_save.click()
+		time.sleep(10)
 		system = self.LeftPanel.go_to_system_page()
 		system.set_general_dynamic_proxy('disabled')
 		system._save_settings()

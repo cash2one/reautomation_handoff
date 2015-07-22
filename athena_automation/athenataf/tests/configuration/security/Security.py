@@ -215,7 +215,7 @@ class Security(ConfigurationTest):
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear()
 		
 	def test_ath_11033_check_for_security_meridien_display(self):
 		conf = self.config.config_vars
@@ -239,7 +239,7 @@ class Security(ConfigurationTest):
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear()
 		
 		
 	def test_ath_11016_verify_external_captive_portal_page(self):
