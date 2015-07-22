@@ -47,9 +47,9 @@
 +  ip 10.17.50.110
 +  port 1812
 +  acctport 1813
-+  key 
++  key
 + wlan auth-server %(auth_server_value_2)s
 +  ip 10.17.50.110
 +  port 1812
 +  acctport 1813
-+  key 
++  key

@@ -26,7 +26,7 @@
 +  ip 10.17.50.110
 +  port 1812
 +  acctport 1813
-+  key 
++  key
 + wlan external-captive-portal RoleTest
 +  server 10.17.50.110
 +  port 5000

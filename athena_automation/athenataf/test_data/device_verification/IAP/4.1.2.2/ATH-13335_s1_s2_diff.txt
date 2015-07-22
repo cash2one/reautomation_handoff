@@ -2,7 +2,7 @@
 +  ip 1.2.3.4
 +  port 389
 +  admin-dn arubathena.com
-+  admin-password 
++  admin-password
 +  base-dn google.com
 +  filter (objectclass=*)
 +  key-attribute sAMAccountName
@@ -12,7 +12,7 @@
 +  timeout 30
 +  retry-count 5
 +  admin-dn aruba.com
-+  admin-password 
++  admin-password
 +  base-dn gmail.com
 +  filter (objectclass=*)
 +  key-attribute apple

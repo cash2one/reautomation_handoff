@@ -4,7 +4,7 @@
 +  timeout 30
 +  retry-count 5
 +  admin-dn aruba.com
-+  admin-password 
++  admin-password
 +  base-dn gmail.com
 +  filter (objectclass=*)
 +  key-attribute apple
