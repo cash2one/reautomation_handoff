@@ -20,6 +20,7 @@ class FirmWarePage(WebPage):
 
     def upgrade_firmware_switch(self):
         logger.debug('Selecting Switch tab')
+        time.sleep(3)
         self.switch_tab.click
         self.switch_tab.click
         logger.debug('Clicking on switch checkbox')
@@ -44,7 +45,7 @@ class FirmWarePage(WebPage):
             raise AssertionError("FirmwarePage : Firmware mac address is not visible")
         if not self.location :
             raise AssertionError("FirmwarePage : Firmware location is not visible")
-        if not self.status :
+        if not (self.upgrade_firmware_label or self.upgrade_sucessful_icon or self.upgrage_status_fail):
             raise AssertionError("FirmwarePage : Firmware status is not visible")
         if not self.version :
             raise AssertionError("FirmwarePage : Firmware version is not visible")
@@ -235,6 +236,14 @@ class FirmWarePage(WebPage):
         if self.disable_upgrade_button:
             raise AssertionError("FirmWarePage : 'Upgrade' button does not enabled ")
             
+    def asserting_upgrade_failure_error(self):
+        logger.debug("clicking on upgrade button")
+        self.post_firmware_upgrade.click()
+        logger.debug("asserting permission denied error")
+        if not self.alert_close:
+            raise AssertionError("permission denied error message is not available")
+        logger.debug("clicking on ok button")
+        self.alert_close.click()
     def clicking_on_upgrade_firmware(self):
         logger.debug("FirmwarePage : Clicking on Upgrade Firmware ")
         self.upgrade_button.click()
@@ -298,6 +307,7 @@ class FirmWarePage(WebPage):
     def asserting_version_error_message(self):
         logger.debug("FirmWarePage: Asserting version textbox")
         self.browser.assert_element(self.version_error_message, "versionerror message not displayed")
+        self.cancel_firmware.click()
         
     def select_second_vc(self):
         '''
@@ -347,6 +357,7 @@ class FirmWarePage(WebPage):
         logger.debug("FirmwarePage : Selecting Version ")
         self.version_list.set(version)
         self.upgrade_firmware()
+        import time
         time.sleep(600)
         
     def assert_upgrading_status(self):
@@ -387,7 +398,10 @@ class FirmWarePage(WebPage):
         self.manual_upgrade.click()
         logger.debug("FirmwarePage : Selecting Type ")
         self.version_type.set(option)
-        self.version_list.set(version)
+        if self.version_list:
+            self.version_list.set(version)
+        if self.firmware_version_text:
+            self.firmware_version_text.set(version)
         time.sleep(5)
         
     def select_version_type(self,type=None):

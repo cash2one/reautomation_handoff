@@ -45,4 +45,10 @@ switch2												: checkbox&xpath&//td[@id='createSwitchListTable_row_selector
 switch3												: checkbox&xpath&//td[@id='createSwitchListTable_row_selector_2']/input
 switch4												: checkbox&xpath&//td[@id='createSwitchListTable_row_selector_3']/input
 create_new_group_label 								: label&xpath&//label[text()='Create New Group']
+manage_groups_button								: button&id&hide_manage
+Mygroup												: button&xpath&//span[text()='Mygroup' and @class="ng-binding"]&0
+Mynew												: button&xpath&//span[text()='Mynew' and @class="ng-binding"]&0
+manage_group_close									: button&xpath&//a[@id='close_group_manage']/span
 save_unprovisional_device							: button&id&group_sidebar_creategroup_btn
+password_page_cancel								: submit&xpath&//span[text()='Cancel' and @ng-bind="labels.action_cancel"]&1
+create_group_cancel									: button&id&hide_manage_overlay&0

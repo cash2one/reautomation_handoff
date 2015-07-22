@@ -46,7 +46,7 @@ save_pop_up									: button&id&CAN_NAV_Alert_Ok
 
 edit_route_label							: button&xpath&//span[text()='EDIT ROUTE']/..
 checksum_checkbox							: button&id&tunnel_checksum
-destination_error_msg						: button&xpath&//*[@id='vpn_destination_error']/span
+destination_error_msg						: button&id&vpn_destination_error
 netmask_error_msg							: button&id&vpn_netmask_error
 gateway_error_msg							: button&id&vpn_gateway_error
 primary_peer_error_msg						: button&xpath&//span[text()='Invalid IP Address format']&0

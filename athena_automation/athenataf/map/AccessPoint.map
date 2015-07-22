@@ -69,7 +69,7 @@ dns_invalid_error									: label&id&ap_dns_server_error
 domain_invalid_error								: label&id&ap_domain_name_error
 reboot_ok_button									: button&xpath&//div[@id='confirm-save-box']/div/div/a[@ng-click="redirectToAPDetail()"]	
 type_134_iap_edit									: button&xpath&//td[@title='AP-134']/following-sibling::td[3]
-type_135_iap_edit									: button&xpath&//td[@title='RAP-109']/following-sibling::td[3]
+type_135_iap_edit									: button&xpath&//td[@title='AP-135']/following-sibling::td[3]
 external_antenna_accordion							: button&xpath&//div[@id='accordion-section-3']/div[1]/div/label[text()='EXTERNAL ANTENNA']
 antenna_gain_24ghz   								: textbox&xpath&//input[@id='24GHzgain']
 antenna_gain_5ghz									: textbox&xpath&//input[@id='5GHzgain']

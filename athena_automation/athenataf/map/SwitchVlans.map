@@ -57,7 +57,7 @@ edit_vlan_3												: button&id&configVlansTable_inline_edit_action_2
 update_vlan_4											: button&id&configVlansTable_accept_edit_3
 edit_vlan_4												: button&id&configVlansTable_inline_edit_action_3
 duplicate_ip_error										: label&xpath&//li[text()=' "IP ADDRESS": Duplicate IP ADDRESS']
-ok_error_button											: button&xpath&//div[@id='configuration-switches-vlansTable']/div[2]/span/div/a
+ok_error_button											: button&xpath&//div[@id='configuration-switches-vlansTable']/div[2]/div[2]/span/div/a
 edit_cancle_1											: button&id&configVlansTable_cancel_edit_&0
 edit_cancle_2											: button&id&configVlansTable_cancel_edit_&1
 duplicate_id											: label&xpath&//li[text()=' "ID": Duplicate VLAN ID']
@@ -167,3 +167,8 @@ invalid_vlan_id_error_msg								: label&css&.overlay-warn-content>ul>li
 set_description_33_char_error_msg						: button&xpath&//li[contains(.,'"DESCRIPTION": VLAN Description cannot exceed more than 32 characters')]
 no_of_vlans												: label&xpath&//span[text()='4 ']
 edit_vlan_1												: button&id&configVlansTable_inline_edit_action_0
+ip_error_ok_button								: button&xpath&//*[@id='ConfirmContent_common' and @class = 'icosolo icon_alert']/following-sibling::div/div/a
+duplicate_vlan_ip_network								: label&xpath&//div[text()="Duplicate vlan IP network addresses for vlans ['45']"]
+
+
+

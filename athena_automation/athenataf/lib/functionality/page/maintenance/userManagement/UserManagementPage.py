@@ -11,7 +11,7 @@ class UserManagementPage(WebPage):
 
 
     def isPageLoaded(self):
-        if self.add_user:
+        if self.user_mgmt_label:
             return True    
         else:
             return False
@@ -75,8 +75,10 @@ class UserManagementPage(WebPage):
         if self.new_admin:  
             self.buy_time()
             logger.debug("UserManagement: Clicking on delete button")
-            self.delete_new_user.click() 
+            self.administrator_delete.click() 
+            self.buy_time()
             self.delete_alert.click()
+            self.buy_time()
             if self.close_delete_user_pop_up:
                 self.close_delete_user_pop_up.click()
             import time
@@ -129,6 +131,10 @@ class UserManagementPage(WebPage):
         self.access_level.set(access_level)
         logger.debug("UserManagement: Clicking on 'Save' button")
         self.save_button.click()
+        if self.user_create_success_ok_button:
+            logger.debug("UserManagement: Clicking on 'OK' button")
+            self.user_create_success_ok_button.click()
+        self.browser.refresh()
         self.buy_time()
 
     def delete_if_any_user_present(self):
@@ -151,6 +157,10 @@ class UserManagementPage(WebPage):
             self.confirm_save_button.click()
             self.buy_time()
             
+        if self.read_write_user2:
+            self.read_write_user2.click()
+            self.confirm_save_button.click()
+            self.buy_time()
     def assert_read_write_user(self):
         '''
         Delete Read Write User 
@@ -181,8 +191,9 @@ class UserManagementPage(WebPage):
         sets group for user
         '''
         logger.debug('UserManagement :setting user scope')
-        self.user_scope_second.set(scope)
-        
+        self.scope_close.click()
+        self.user_scope_text_box.set(scope)
+        self.browser.key_press(u'\ue004')
     def save_user_configuration(self):
         '''
         clicks on save button 
@@ -242,4 +253,18 @@ class UserManagementPage(WebPage):
             return True
         else:
             return False
+                
+    def delete_first_user(self):
+        if self.delete_new_user :
+            logger.debug("UserManagement: Clicking on delete button")
+            self.delete_new_user.click() 
+            self.buy_time()
+            self.delete_alert.click()
+            self.buy_time()
+        
+            
+    def delete_any_user(self):
+        logger.debug("UserManagement: Deleting all users ")
+        for x in range(0,4):
+            self.delete_first_user()
                 

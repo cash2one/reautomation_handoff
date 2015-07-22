@@ -130,3 +130,9 @@ dhcp_edit									: button&xpath&//td[@title="testUser"]/../td[5]/div/a[1]
 
 char_255_error								: button&text&* Must be 1-255 chars&0
 client_per_branch_error_2					: button&xpath&//span[text()='* Valid range is 1 - ']/../span[text()='101']&0
+duplicate_dhcp_name_error					: button&id&ConfirmContent_common
+warning_box_ok								: button&xpath&//div[@id='warnigBox_common_Alert']/div[2]/div/a
+distributed_accordion						: button&text&DISTRIBUTED DHCP SCOPES&0
+override_flag_top_panel						: button&xpath&//div[@class='override-icon icosolo icon_link_broken ng-scope']
+close_group_icon							: button&xpath&//span[@class='slider-menu-icon toggleGroup']
+override_resolv_button						: button&id&resolve_all_overrides

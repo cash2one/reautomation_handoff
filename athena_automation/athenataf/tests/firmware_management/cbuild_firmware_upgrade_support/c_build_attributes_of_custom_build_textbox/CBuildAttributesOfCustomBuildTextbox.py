@@ -9,13 +9,15 @@ class CBuildAttributesOfCustomBuildTextbox(AthenaGUITestCase):
 
 	def test_ath_9179_verify_attributes_of_textbox_which_is_used_to_enter_custom_build_number(self):
 		conf = self.config.config_vars
+
 		firmware_page = self.LeftPanel.go_to_maintenance_Firmware_page()
-		firmware_page.upgrade_firmware_using_custom_build_option(conf.special_char_version,"IAP_1")
+		firmware_page.upgrade_firmware_using_custom_build_option(conf.special_char_version)
+
 		firmware_page.asserting_version_error_message()
-		firmware_page.cancel_firmware_upgrade()
-		firmware_page.upgrade_firmware_using_custom_build_option(conf.hrs8,"IAP_1")
+		# firmware_page.cancel_firmware_upgrade()
+		firmware_page.upgrade_firmware_using_custom_build_option(conf.hrs8)
 		firmware_page.asserting_version_error_message()
-		firmware_page.cancel_firmware_upgrade()
+		#firmware_page.click_cancel_icon()
 		
 	def test_ath_9173_cbuild_images_sync_with_athena(self):
 		'''

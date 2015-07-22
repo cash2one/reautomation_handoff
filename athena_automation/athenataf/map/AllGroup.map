@@ -7,6 +7,6 @@ group1_group									: button&xpath&//tr[@id='allgroupsTable_select_row_2']/td[1
 group2_group									: button&xpath&//tr[@id='allgroupsTable_select_row_3']/td[1]/span[contains(.,'group2')]
 group_name_label        						: button&xpath&//label[text()='Name']&1
 ap_label          								: button&xpath&//label[text()='APs']&1
-samplegroup         						 	: button&xpath&//tr[@id='allgroupsTable_select_row_1']/td[1]/span[contains(.,'samplegroup')]
-default_aps          							: button&xpath&//tr[@id='allgroupsTable_select_row_0']/td[2]/span[contains(.,'1')]
-samplegroup_aps         						: button&xpath&//tr[@id='allgroupsTable_select_row_1']/td[2]/span[contains(.,'0')]
+samplegroup         						 	: button&xpath&//*[@id="configuration-allgroups-allgroupsTable"]/tbody/tr/td/span[contains(.,'samplegroup')]
+default_aps          							: button&xpath&//span[contains(.,'default')]/../following-sibling::td/span[contains(.,'1')]&0
+samplegroup_aps         						: button&xpath&//span[contains(.,'samplegroup')]/../following-sibling::td/span[contains(.,'0')]&0

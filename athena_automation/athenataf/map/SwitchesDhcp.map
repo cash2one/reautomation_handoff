@@ -3,7 +3,7 @@ dhcp_name								: textbox&id&Distributed_DHCP_UsrName
 dhcp_network							: textbox&id&DHCPPool_IPAddres
 dhcp_netmask							: textbox&id&DHCPPool_Net_Mask
 dhcp_router								: textbox&id&Distributed_DHCP_Default_Routes
-dhcppool_option_type					: select&id&dhcppool_option_type
+dhcppool_option_type					: select&id&dhcppool_option_type&0
 dhcp_add								: button&id&Finish_add&0
 dhcp_delete								: button&id&Delete_Distribute_0
 dhcp_duplicate_error					: label&id&dhcppool_name_dup_error
@@ -80,7 +80,62 @@ wins_server_error_msg					: button&id&dhcp_pool_wins_server_error
 exclude_address_error_msg				: button&id&dist_ip_start_error
 option_code_error_msg					: button&text&* Valid range is 1 - 255
 option_value_error_msg					: button&css&div[class$='value-field-error ng-binding']
-delete_dhcp_pool						: button&id&confirm-save-ok&0
-
-
+confirm_delete_dhcp_pool				: button&xpath&//a[@id='confirm-save-ok']&0
+netmask_subnet_larger_error				: label&id&dist_dhcp_netmask_isSubnetLarger_error
+ascii_name_present						: button&xpath&//span[contains(.,'-+-' )]
+unicode_name_present					: button&xpath&//span[contains(.,'???' )]
+special_char_name_present				: button&xpath&//span[contains(.,'@#$@' )]
+japanese_char_name_present				: button&xpath&//span[contains(.,'???' )]
+german_char_name_present				: button&xpath&//span[contains(.,'schön' )]
+dhcp_pools_display						: button&id&configDHCPTable_col_display_arrow
+dhcp_name_col_display_toggle			: checkbox&id&configDHCPTable_dhcp_name_col_display_toggle
+dhcp_ip_col_display_toggle  			: checkbox&id&configDHCPTable_dhcp_ip_col_display_toggle
+dhcp_netmask_col_display_toggle 		: checkbox&id&configDHCPTable_dhcp_netmask_col_display_toggle
+dhcp_router_col_display_toggle   		: checkbox&id&configDHCPTable_dhcp_router_col_display_toggle
+dhcp_name_col_label              		: label&xpath&//th[@id='configDHCPTable_dhcpscope_name']/label
+dhcp_network_col_label          		: label&xpath&//th[@id='configDHCPTable_dhcppool_network']/label
+dhcp_netmask_col_label              	: label&xpath&//th[@id='configDHCPTable_dhcppool_netmask']/label
+dhcp_router_col_label              		: label&xpath&//th[@id='configDHCPTable_dhcppool_def_router']/label
+dns_add_button_hidden     				: button&id&add_new_dns_server&9
+wns_add_button_hidden     				: button&id&add_new_wins_server&9
+exclude_ip_add_hidden     				: button&id&add_new_ip_range&3
+distributed_ip_start_3     				: textbox&id&distributed_ip_start3
+distributed_ip_end_3     				: textbox&id&distributed_ip_end3
+assert_4_dhcp_pools						:  button&xpath&//span[@class='badge label ng-binding' and contains(.,'4')]	
+dhcp_count_0							: label&xpath&//span[@class="badge label ng-binding" and contains(.,'0')]
+days									: textbox&id&DHCPPool_LTime_Days
+hour									: textbox&id&DHCPPool_LTime_Hrs
+minute									: textbox&id&DHCPPool_LTime_Mins
+dhcppool_option_code_2					: textbox&id&dhcppool_option_code1
+dhcppool_option_type_2					: select&id&dhcppool_option_type&1
+dhcppool_option_value_2					: textbox&id&dhcppool_option_name1
+edit_pool_1								: button&xpath&//span[contains(.,'POOL-1')]/../following-sibling::td[4]/div/a[1]
+dhcppool_ip_dup_error					: label&id&dhcppool_ip_dup_error
+dhcp_test1_delete						: button&xpath&//span[contains(.,'TEST-1')]/../../td[5]/div/a[2]
+dhcp_test2_delete						: button&xpath&//span[contains(.,'TEST-2')]/../../td[5]/div/a[2]
+dhcp_pool4_delete						: button&xpath&//span[contains(.,'POOL-4')]/../../td[5]/div/a[2]
+dhcppool_option_code_3    				: textbox&id&dhcppool_option_code2
+dhcppool_option_type_3    			    : select&id&dhcppool_option_type&2
+dhcppool_option_value_3     			: textbox&id&dhcppool_option_name2
+dhcppool_option_code_4    				: textbox&id&dhcppool_option_code3
+dhcppool_option_type_4    			    : select&id&dhcppool_option_type&3
+dhcppool_option_value_4     			: textbox&id&dhcppool_option_name3
+dhcppool_option_code_5    				: textbox&id&dhcppool_option_code4
+dhcppool_option_type_5   			    : select&id&dhcppool_option_type&4
+dhcppool_option_value_5     			: textbox&id&dhcppool_option_name4
+dhcppool_option_code_6    				: textbox&id&dhcppool_option_code5
+dhcppool_option_type_6   			    : select&id&dhcppool_option_type&5
+dhcppool_option_value_6     			: textbox&id&dhcppool_option_name5
+dhcppool_option_code_7    				: textbox&id&dhcppool_option_code6
+dhcppool_option_type_7   			    : select&id&dhcppool_option_type&6
+dhcppool_option_value_7     			: textbox&id&dhcppool_option_name6
+dhcppool_option_code_8    				: textbox&id&dhcppool_option_code7
+dhcppool_option_type_8   			    : select&id&dhcppool_option_type&7
+dhcppool_option_value_8     			: textbox&id&dhcppool_option_name7
+dhcp_pool3_delete						: button&xpath&//span[contains(.,'POOL-3')]/../../td[5]/div/a[2]
+dhcp_pool2_delete						: button&xpath&//span[contains(.,'POOL-2')]/../../td[5]/div/a[2]
+dhcp_pool_test1_network_label			: label&xpath&//span[contains(.,'TEST-1')]/../following-sibling::td[1][contains(.,'5.5.5.5')]
+dhcp_pool_test2_network_label			: label&xpath&//span[contains(.,'TEST-2')]/../following-sibling::td[1][contains(.,'5.5.5.6')]
+dhcp_pretest_delete						: button&xpath&//span[contains(.,'PRETEST')]/../../td[5]/div/a[2]
+dhcp_pool_pretest						: label&xpath&//span[contains(.,'PRETEST')]
 

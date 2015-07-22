@@ -5,3 +5,4 @@ start_date_label								: label&xpath&//table[@id='Maintenance_License_Table']/t
 end_date_label									: label&xpath&//table[@id='Maintenance_License_Table']/thead/tr[1]/th[4]/label
 capacity_label									: label&xpath&//table[@id='Maintenance_License_Table']/thead/tr[1]/th[5]/label
 used_label										: label&xpath&//table[@id='Maintenance_License_Table']/thead/tr[1]/th[6]/label
+go_to_next_page									: button&xpath&//a[@id="SUBSCRIPTION_KEY_TABLE_page_jump_confirm"]

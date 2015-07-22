@@ -35,4 +35,5 @@ switches									: button&xpath&//a[@id='configSubMenu']/label[text()='Switches'
 dhcp_pools									: label&text&DHCP Pools
 subscription_key_disabled					: button&xpath&//a[@id='Licenses_Link' and @state='disable']
 device_management							: button&xpath&//a[@id='Device_Management_Link' and @state='disable']
-SwitchesSubMenu								: link&id&SwitchesSubMenu
+switches_sub_menu							: button&xpath&//a[@id='SwitchesSubMenu']/label
+switch_group								: button&xpath&//span[@class="ng-scope ng-binding" and contains(.,'switch')]

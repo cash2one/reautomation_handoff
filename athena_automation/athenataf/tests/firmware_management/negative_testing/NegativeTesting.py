@@ -1,6 +1,7 @@
 import logging
 logger = logging.getLogger('athenataf')
 from athenataf.lib.functionality.test.AthenaGUITestCase import AthenaGUITestCase
+import time
 
 class NegativeTesting(AthenaGUITestCase):
     '''
@@ -35,7 +36,7 @@ class NegativeTesting(AthenaGUITestCase):
         firmware_page = self.LeftPanel.go_to_maintenance_Firmware_page()
         firmware_page.upgrade_button.click()
         firmware_page.assert_no_vc_error_message()
-        firmware_page.ok_button.click()
+        firmware_page.warning_ok_button.click()
         
     def _view_monitoring_pages(self):
         self.LeftPanel.go_to_monitoring_page()

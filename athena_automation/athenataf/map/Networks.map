@@ -50,3 +50,5 @@ guest_nw1										: button&xpath&//span[text()='Guest-Nw1']
 guest_nw1_delete								: button&xpath&//span[text() ='Guest-Nw1']/../../td[5]/div/a[2]
 guest_nw2										: button&xpath&//span[text()='Guest-Nw2']
 guest_nw2_delete								: button&xpath&//span[text() ='Guest-Nw2']/../../td[5]/div/a[2]
+
+security_accordion								: button&text&SECURITY&0

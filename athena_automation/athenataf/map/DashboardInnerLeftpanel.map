@@ -14,7 +14,7 @@ default_switch								: button&xpath&//span[text()='switch']&0
 switch										: button&xpath&//*[@id='group_name_2']&0
 group1										: button&xpath&//span[@title="group1"]
 group2										: button&xpath&//span[@title="group2"]
-aruba_switch								: button&id&sw_swarm_name_0
+aruba_switch								: button&id&sw_swarm_name_0&0
 expand_switch_icon							: button&xpath&//span[text()='group1']/../../span[1]
 group_1										: button&text&group1&0
 manage_groups_button						: button&id&hide_manage
@@ -89,4 +89,13 @@ country_code_save							: button&xpath&//div[@class="country-select-overlay-cont
 ok_alert_button								: button&id&alert_close_button
 
 group1_without_vc							: button&xpath&//span[contains(.,'(0)')]/span[text()='group1']
+
+default_group_swarm_name					: button&xpath&//span[@id='swarm_name_0' and text() = 'Instant-CB:E2:0E']
+unprovision_iap								: button&xpath&//span[@id='group_sidebar_unpro_swarmicon']/following-sibling::span[text() = 'Instant-CB:E2:0E']
+
+mygroup_0_name_with_vc						: button&xpath&//span[@id='group_sidebar_groupname' and text()='Mygroup']/following-sibling::span[text()='1']
+mygroup_0_name_without_vc					: button&xpath&//span[@id='group_sidebar_groupname' and text()='Mygroup']/following-sibling::span[text()='0']
+
+mygroup2_name_with_vc						: button&xpath&//span[@id='group_sidebar_groupname' and text()='Mygroup2']/following-sibling::span[text()='1']
+mygroup2_name_without_vc					: button&xpath&//span[@id='group_sidebar_groupname' and text()='Mygroup2']/following-sibling::span[text()='0']
 special_char_group_1						: button&xpath&//span[contains(.,'(0)')]/span[text()='@#$ a$']

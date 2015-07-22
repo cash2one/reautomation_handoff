@@ -9,7 +9,7 @@ class UserAccountSettings(AthenaGUITestCase):
 
 	def test_ath_8214_validate_user_interface(self):
 		self.TopPanel.validate_user_interface()
-		self.TopPanel.setting_default_value()
+		# self.TopPanel.setting_default_value()
 
 	def test_ath_8219_validate_time_zone(self):
 		self.TopPanel.validate_time_zone()
@@ -20,7 +20,7 @@ class UserAccountSettings(AthenaGUITestCase):
 
 	def test_ath_8217_login_Logout(self):
 		self.logout()
-		self.login('default')
+		self.login(access_level = 'default')
 		
 	def test_ath_8218_login_Logout(self):
 		conf = self.config.config_vars
@@ -28,7 +28,7 @@ class UserAccountSettings(AthenaGUITestCase):
 		user_management_page.delete_if_any_user_present()
 		user_management_page.create_new_user(conf.email_read_write,conf.user_setting_group_value,conf.user_access_level_read_write)
 		self.logout()
-		self.login('read_write')
+		self.login(access_level = 'read_write')
 		inner_left_panel = self.TopPanel.click_slider_icon()
 		inner_left_panel.assert_virtual_controller()
 		inner_left_panel.click_on_close_icon()

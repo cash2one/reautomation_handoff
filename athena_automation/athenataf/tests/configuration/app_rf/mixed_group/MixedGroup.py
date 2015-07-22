@@ -18,7 +18,7 @@ class MixedGroup(ConfigurationTest):
 	def test_ath_6126_check_the_multiversion_control_tooltip(self):
 		conf = self.config.config_vars
 		self.NetworkPage.delete_network_if_present()
-		self.take_s1_snapshot()
+		# self.take_s1_snapshot()
 		basic_info = self.NetworkPage.create_new_network()
 		virtual_lan = basic_info.employee_network_info()
 		security = virtual_lan.use_vlan_defaults()
@@ -63,7 +63,7 @@ class MixedGroup(ConfigurationTest):
 		conf = self.config.config_vars
 		self.take_s1_snapshot()
 		firmware_page = self.LeftPanel.go_to_maintenance_Firmware_page()
-		firmware_page.upgrade_firmware_using_custom_build_option(conf.version_firmware_2,"IAP_1")
+		firmware_page.upgrade_firmware_using_custom_build_option(conf.version_firmware_3)
 		firmware_page.upgrade_firmware()
 		firmware_page.asserting_device_upgrade_status()
 		# self.connect_device()
@@ -77,7 +77,7 @@ class MixedGroup(ConfigurationTest):
 		conf = self.config.config_vars
 		self.take_s1_snapshot()
 		firmware_page = self.LeftPanel.go_to_maintenance_Firmware_page()
-		firmware_page.upgrade_firmware_using_custom_build_option(conf.version_firmware,"IAP_1")
+		firmware_page.upgrade_firmware_using_custom_build_option(conf.version_firmware)
 		firmware_page.upgrade_firmware()
 		firmware_page.asserting_device_upgrade_status()
 		# self.connect_device()

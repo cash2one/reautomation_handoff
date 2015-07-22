@@ -28,11 +28,13 @@ version_type           									: select&id&LVersion
 firmware_version_text         							: textbox&id&firmwareVersion
 ap_over_details_table									: button&css&.ap-details-table
 aps_box			 										: button&xpath&//div[@class ='ap-details-cell ng-scope ng-binding']
+aps_box_1			 										: chain&xpath&//div[@class ='ap-details-cell ng-scope ng-binding' and text()= '1']&0
 latest_version_number_text 								: button&xpath&//label[@ng-bind='latestVersion']
 select_device_disabled									: checkbox&xpath&//td[@id='firmwareUpgradeVcTable_row_selector_0']/input[@disabled="disabled"]
 later_date_radio										: radio&id&schedule-later
 dateField_textbox										: textbox&id&dateField
 post_firmware_upgrade									: button&id&post_firmware_upgrade
+alert_close                                             :button&id&alert_close_button
 cancel_upgrade											: button&xpath&//*[@id='firmwareUpgradeVcTable_select_row_0']/td[6]/span[2]/span/button
 Firmware_modem_country 									: select&xpath&//select[@id='Firmware_modem_country']
 TimeList												: select&xpath&//select[@id='TimeList']
@@ -41,7 +43,7 @@ SessionList												: select&xpath&//select[@id='SessionList']
 disable_subscription									: link&xpath&//a[@id='Licenses_Link' and @state="disable"]/label
 disable_device_management								: link&xpath&//a[@id='Device_Management_Link' and @state="disable"]
 disable_upgrade_button									: button&xpath&//a[@id="post_firmware_upgrade" and @class="button large standard disable-upgrade"]
-upgrade_status											: label&xpath&//tr[@id='firmwareUpgradeVcTable_select_row_0']/td[6]/span[2]/span/span/span
+upgrade_status											: label&xpath&//*[@id='firmwareUpgradeVcTable_select_row_0']/td[6]/span[2]/span
 version_list											: select&id&VersionList
 firm_vc_name											: button&id&firmwareUpgradeVcTable_vc_name_display_0
 firm_vc_location										: button&xpath&//span[@class='responsive-colhead ng-scope ng-binding']&1
@@ -70,5 +72,11 @@ upgrading_status										: button&xpath&//span[text()='STATUS']/../span[2]/span
 select_switch											: checkbox&xpath&//td[@id='firmwareUpgradeSwitchTable_row_selector_0']/input
 cancel_icon												: button&id&cancel_upgrade_firmware
 reboot													: button&text&Reboot
-version_unavailable_img									: label&xpath&//div[@class='message-notify with-icon response-unavailable']/span
+version_unavailable_img									: label&xpath&//span[text()='Unavailable']
 upgrade_failed											: label&xpath&//span[text()='STATUS']/../span[2]/span[contains(.,'failed')]
+upgrade_sucessful_icon									: label&id&main_fw_upgrade_req_no&0
+upgrage_status_fail										: label&id&main_fw_switch_update_fail&0
+upgrade_firmware_label									: label&id&main_fw_upgrade_req_yes&0
+
+upgrade_successful1										: label&id&fw_vc_required_no
+ap_row_checkbox           : checkbox&xpath&//span[@id='fw_vc_required_yes' and text() ='Upgrade firmware']/../../../../preceding-sibling::td[5]/input&0

@@ -14,8 +14,8 @@ gateway												: textbox&id&configSwitchesTable_sw_default_gateway_field_0
 edit												: button&id&configSwitchesTable_inline_edit_action_0
 save												: button&id&configSwitchesTable__accept_edit_0
 switch_count										: button&css&span[class*='badge label ng-binding']
-mac_address_1										: label&xpath&//*[@id='configSwitchesTable_sw_mac_addr_display_0']
-host_name											: textbox&id&configSwitchesTable_sw_hostname_display_0
+mac_address_1										: label&xpath&//span[@id='configSwitchesTable_sw_mac_addr_display_0']
+host_name											: label&xpath&//span[@id='configSwitchesTable_sw_hostname_display_0']
 ip_assign_dhcp										: textbox&xpath&//span[@id='configSwitchesTable_sw_ip_assign_display_0' and text()='DHCP']
 default_ip_address									: textbox&xpath&//span[@id='configSwitchesTable_sw_ip_addr_display_0' and text()='-']
 default_netmask										: textbox&xpath&//span[@id='configSwitchesTable_sw_netmask_display_0' and text()='-']
@@ -29,3 +29,11 @@ ip_error											: label&xpath&//li[text()=' "IP ADDRESS": Not a valid IP ADDR
 ip_netmask_error_ok									: button&xpath&//div[@id='configuration-switches-switchesTable']/div[2]/span/div/a
 invalid_hostname_error								: label&xpath&//li[text()=' "HOSTNAME": HOSTNAME cannot be more than 63 characters']
 blank_hostname_error								: label&xpath&//li[text()=' "HOSTNAME": Field is required.']
+switch_hostname										: label&xpath&//td[@key = 'sw_hostname']
+
+
+ip_assign_static									: textbox&xpath&//span[@id='configSwitchesTable_sw_ip_assign_display_0' and text()='Static']
+static_default_ip_address							: textbox&xpath&//span[@id='configSwitchesTable_sw_ip_addr_display_0' and text()='']
+static_default_netmask								: textbox&xpath&//span[@id='configSwitchesTable_sw_netmask_display_0' and text()='']
+static_default_gateway								: textbox&xpath&//span[@id='configSwitchesTable_sw_default_gateway_display_0' and text()='']
+gateway_error										: label&xpath&//li[text()=' "DEFAULT GATEWAY": Not a valid IP ADDRESS']

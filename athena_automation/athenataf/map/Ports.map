@@ -326,5 +326,7 @@ port_page_vlan_47									: label&id&configPortsTable_vlan_display_47
 port_page_poe_47									: label&id&configPortsTable_poe_display_47
 port_page_speed_47									: label&id&configPortsTable_speed_display_47
 
-
-
+check_box_2											: checkbox&xpath&//td[@id='configPortsTable_row_selector_2']/input
+check_box_2_speed									: label&xpath&//span[contains(.,'100 Mbps') and @id='configPortsTable_speed_display_2']
+port_24th											: button&id&configPortsTable_port_no_display_23
+uplink_port_4th_24port								: button&id&configPortsTable_port_no_display_27
