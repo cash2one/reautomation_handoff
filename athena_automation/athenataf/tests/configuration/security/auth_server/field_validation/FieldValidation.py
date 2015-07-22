@@ -1,7 +1,7 @@
 import logging
 logger = logging.getLogger('athenataf')
 
-
+import time
 from athenataf.lib.functionality.test.ConfigurationTest import ConfigurationTest
 
 class FieldValidation(ConfigurationTest):
@@ -14,6 +14,7 @@ class FieldValidation(ConfigurationTest):
 		self.NetworkPage.delete_network_if_present()
 		#changes made by suganya
 		system = self.LeftPanel.go_to_system_page()
+		time.sleep(20)
 		system.set_general_dynamic_proxy('disabled')
 		system._save_settings()
 		security = self.LeftPanel.go_to_security()
@@ -21,6 +22,7 @@ class FieldValidation(ConfigurationTest):
 		self.take_s1_snapshot()
 		security.validate_auth_server_1()
 		system = self.LeftPanel.go_to_system_page()
+		time.sleep(20)
 		system.set_general_dynamic_proxy('enabled')
 		system._save_settings()
 		security = self.LeftPanel.go_to_security()
@@ -39,12 +41,13 @@ class FieldValidation(ConfigurationTest):
 		network_page = self.LeftPanel.go_to_network_page()
 		self.NetworkPage.delete_network_if_present()
 		system = self.LeftPanel.go_to_system_page()
+		time.sleep(20)
 		system.set_general_dynamic_proxy('disabled')
 		system._save_settings()
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear()
 		
 	def test_ath_13334_Field_validation_for_coa_only_server(self):
 		conf = self.config.config_vars
@@ -83,4 +86,4 @@ class FieldValidation(ConfigurationTest):
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear()

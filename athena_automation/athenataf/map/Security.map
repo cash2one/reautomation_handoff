@@ -28,7 +28,7 @@ captive_portal_ip								: textbox&id&Captive_IP&1
 captive_portal_url								: textbox&id&Captive_Url&1
 captive_portal_port								: textbox&id&Captive_Port&1
 captive_portal_auth_text						: textbox&id&Captive_AuthText&1
-captive_portal_save_button						: button&id&cap-save
+captive_portal_save_button						: button&id&cap-save&1
 name											: button&text&NAME&4
 auth_server_name								: button&text&authradius
 user_for_internal_server						: button&text&USER FOR INTERNAL SERVER

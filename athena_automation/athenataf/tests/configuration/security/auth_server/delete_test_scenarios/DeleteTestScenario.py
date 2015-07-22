@@ -25,7 +25,7 @@ class DeleteTestScenario(ConfigurationTest):
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear()
 	
 	def test_ath_13335_delete_the_created_ldap_server(self):
 		conf = self.config.config_vars
@@ -46,7 +46,7 @@ class DeleteTestScenario(ConfigurationTest):
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear()
 
 	def test_ath_13336_check_default_value_in_authentication_server(self):
 		conf = self.config.config_vars
@@ -86,5 +86,5 @@ class DeleteTestScenario(ConfigurationTest):
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear()
 				
