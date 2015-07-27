@@ -4,7 +4,7 @@ import logging
 logger = logging.getLogger('athenataf')
 import time
 from athenataf.config import devices
-from athenataf.lib.util.dateandtime import *
+# from athenataf.lib.util.dateandtime import *
 from Device_Module.ObjectModule import Device
 class FirmWarePage(WebPage):
     def __init__(self, test, browser, config):
@@ -86,7 +86,7 @@ class FirmWarePage(WebPage):
         self.post_upgrade.click()
     
     
-    def verify_custom_build_drop_down_menu(self,iap=None):
+    def verify_custom_build_drop_down_menu(self,iap):
         logger.debug("FirmwarePage : Clicking on device ")
         self.select_vc_for_upgrade(iap)
         logger.debug("FirmwarePage : Clicking on Upgrade Firmware ")
@@ -262,6 +262,7 @@ class FirmWarePage(WebPage):
         self.manual_upgrade.click()
         logger.debug("FirmwarePage : Selecting Type ")
         self.version_type.set(option)
+        time.sleep(5)
         self.version_list.set(version)
         time.sleep(5)
     
@@ -565,7 +566,9 @@ class FirmWarePage(WebPage):
     def select_vc_for_upgrade(self,iap):
         myDevice = Device.getDeviceObject(iap)
         vcname = myDevice.get("vc_name")
-        self.browser._browser.find_element_by_xpath("//td[@title='%s']/preceding-sibling::td/input" %vcname).click()
+        time.sleep(3)
+        if not self.browser._browser.find_element_by_xpath("//td[@title='%s']/preceding-sibling::td/input" %vcname).is_selected():
+            self.browser._browser.find_element_by_xpath("//td[@title='%s']/preceding-sibling::td/input" %vcname).click()
 
     def get_latest_recommended_version(self):
         return self.latest_version_number_text.get_label_text()
@@ -617,3 +620,24 @@ class FirmWarePage(WebPage):
     def assert_slave_details(self):
         if self.firm_second_vc:
              raise AssertionError('slave vc  is  displayed')
+             
+    def check_version_is_availability(self,valid_version,invalid_version):
+        self.firmware_version_text.set(valid_version) 
+        self.browser.key_press( u'\ue007')
+        time.sleep(1)
+        if self.version_available:
+            logger.debug('version is available')
+        self.auto_upgrade.click()
+        time.sleep(2)
+        self.manual_upgrade.click()
+        logger.debug("FirmwarePage : Selecting Custom build option ")
+        self.version_type.set(self.config.config_vars.version_type_value)
+        self.firmware_version_text.set(invalid_version) 
+        self.browser.key_press( u'\ue007')
+        time.sleep(1)
+        if self.version_unavailable_img:
+            logger.debug('version is unavailable')
+
+    def cancel_firmware_upgrade(self):
+        logger.debug('clicking on firmware upgrade cancel button')
+        self.cancel_firmware.click()     

@@ -51,7 +51,9 @@ class NegativeTesting(AthenaGUITestCase):
         self.browser.refresh()
         firmware_page = self.LeftPanel.go_to_maintenance_Firmware_page()
         firmware_page.isPageLoaded()    
-        self.logout_and_login_back()
+        self.logout()
+        time.sleep(5)
+        self.login()
         firmware_page = self.LeftPanel.go_to_maintenance_Firmware_page()
         firmware_page.isPageLoaded()  
     

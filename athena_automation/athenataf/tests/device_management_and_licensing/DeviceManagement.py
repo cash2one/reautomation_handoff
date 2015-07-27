@@ -44,9 +44,6 @@ class DeviceManagement(DeviceManagementTest):
         self.browser.refresh()
         self.TopPanel.go_to_allgroups()
         
-    def test_ath_9172_upgrade_with_cbuild_firmware(self):
-        firmware = self.LeftPanel.go_to_maintenance()
-        firmware.upgrade_firmware_using_custom_build_option(version = True)
 
     def test_ath_9651_search_features(self):
         conf = self.config.config_vars

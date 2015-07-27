@@ -39,7 +39,7 @@ class DefaultValueCheck(AthenaGUITestCase):
 		
 	def test_ath_9170_verify_customer_build_drop_menu_under_tracks(self):
 		firmware_page = self.LeftPanel.go_to_maintenance_Firmware_page()
-		firmware_page.verify_custom_build_drop_down_menu()
+		firmware_page.verify_custom_build_drop_down_menu("IAP_1")
 		
 	def test_ath_9171_verification_of_cbuild_image(self):
 		'''

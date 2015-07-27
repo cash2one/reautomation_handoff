@@ -160,12 +160,14 @@ class DeviceVerifier:
         
     def clear(self, device):
         if not self.config.options.ignore_device:
-            #self.s1.clear()
-            self.s1[device] = ""
-            #self.s2.clear()
-            self.s2[device] = ""
-            self.s3[device] = ""
-            #self.s3.clear()
+			if not device:
+				self.s1.clear()
+				self.s2.clear()
+				self.s3.clear()
+			else:
+				self.s2[device] = ""
+				self.s1[device] = ""
+				self.s3[device] = ""
 
     def get_device_current_status(self,device=None):
         if self.config.options.switch:

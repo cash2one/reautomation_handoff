@@ -1,6 +1,7 @@
 import logging
 logger = logging.getLogger('athenataf')
 from athenataf.lib.functionality.test.AthenaGUITestCase import AthenaGUITestCase
+import time
 
 class CBuildAttributesOfCustomBuildTextbox(AthenaGUITestCase):
 	'''
@@ -9,15 +10,13 @@ class CBuildAttributesOfCustomBuildTextbox(AthenaGUITestCase):
 
 	def test_ath_9179_verify_attributes_of_textbox_which_is_used_to_enter_custom_build_number(self):
 		conf = self.config.config_vars
-
 		firmware_page = self.LeftPanel.go_to_maintenance_Firmware_page()
-		firmware_page.upgrade_firmware_using_custom_build_option(conf.special_char_version)
-
+		firmware_page.upgrade_firmware_using_custom_build_option(conf.special_char_version,"IAP_1")
 		firmware_page.asserting_version_error_message()
 		# firmware_page.cancel_firmware_upgrade()
-		firmware_page.upgrade_firmware_using_custom_build_option(conf.hrs8)
+		firmware_page.upgrade_firmware_using_custom_build_option(conf.hrs8,"IAP_1")
 		firmware_page.asserting_version_error_message()
-		#firmware_page.click_cancel_icon()
+		# firmware_page.cancel_firmware_upgrade()
 		
 	def test_ath_9173_cbuild_images_sync_with_athena(self):
 		'''
@@ -33,3 +32,11 @@ class CBuildAttributesOfCustomBuildTextbox(AthenaGUITestCase):
 		firmware_page.clicking_on_upgrade_firmware()
 		firmware_page.upgrade_firmware_using_custom_build_option_for_switch(conf.switch_version_2,"Switch_1")
 		firmware_page.asserting_upgrade_button()
+		
+	def test_ath_9172_upgrade_with_cbuild_firmware(self):
+		conf = self.config.config_vars
+		firmware = self.LeftPanel.go_to_maintenance()
+		firmware.upgrade_firmware_using_custom_build_option(conf.version_firmware,"IAP_1")
+		firmware.check_version_is_availability(conf.c_builb_image_version , conf.version_firmware)
+		time.sleep(4)
+		firmware.cancel_firmware.click()
