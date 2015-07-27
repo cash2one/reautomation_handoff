@@ -42,7 +42,8 @@ class TopPanel(WebPage):
         logger.debug("Clicking on user icon")
         self.user_setting.click()
         logger.debug("Checking the user name")
-        if not self.user_name:
+        username = self.config.global_vars.email
+        if not self.browser._browser.find_element_by_xpath("//ul[@class='UserCredentials']/li/span[text()='%s']" %username):
             raise AssertionError("Display user name is not correct Traceback: %s " %traceback.format_exc())
         logger.debug("Checking the account setting option")
         if not self.account_settings:
