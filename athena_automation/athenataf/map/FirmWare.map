@@ -28,7 +28,7 @@ version_type           									: select&id&LVersion
 firmware_version_text         							: textbox&id&firmwareVersion
 ap_over_details_table									: button&css&.ap-details-table
 aps_box			 										: button&xpath&//div[@class ='ap-details-cell ng-scope ng-binding']
-aps_box_1			 										: chain&xpath&//div[@class ='ap-details-cell ng-scope ng-binding' and text()= '1']&0
+aps_box_1			 										: chain&xpath&//span[text()='APs']/../div[text()='1']
 latest_version_number_text 								: button&xpath&//label[@ng-bind='latestVersion']
 select_device_disabled									: checkbox&xpath&//td[@id='firmwareUpgradeVcTable_row_selector_0']/input[@disabled="disabled"]
 later_date_radio										: radio&id&schedule-later
