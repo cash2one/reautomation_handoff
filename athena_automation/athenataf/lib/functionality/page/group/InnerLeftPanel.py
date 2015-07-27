@@ -476,3 +476,8 @@ class InnerLeftPanel(WebPage):
         vcname = myDevice.get("vc_name")
         time.sleep(10)
         self.browser._browser.find_element_by_xpath("//span[ contains(.,'%s') and @id='swarm_name_1']" %vcname).click()    
+        
+    def click_on_default_group_expand_plus_icon(self):
+        logger.debug('InnerLeftPanel: Clicking on plus(+) icon to expand the group')
+        self.expand_group_icon.click()
+        time.sleep(4)
