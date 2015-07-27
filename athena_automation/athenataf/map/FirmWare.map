@@ -44,7 +44,7 @@ disable_subscription									: link&xpath&//a[@id='Licenses_Link' and @state="di
 disable_device_management								: link&xpath&//a[@id='Device_Management_Link' and @state="disable"]
 disable_upgrade_button									: button&xpath&//a[@id="post_firmware_upgrade" and @class="button large standard disable-upgrade"]
 upgrade_status											: label&xpath&//*[@id='firmwareUpgradeVcTable_select_row_0']/td[6]/span[2]/span
-version_list											: select&id&VersionList
+version_list											: select&xpath&//*[@id='VersionList']
 firm_vc_name											: button&id&firmwareUpgradeVcTable_vc_name_display_0
 firm_vc_location										: button&xpath&//span[@class='responsive-colhead ng-scope ng-binding']&1
 firm_vc_version											: button&id&firmwareUpgradeVcTable_version_display_0
@@ -80,3 +80,6 @@ upgrade_firmware_label									: label&id&main_fw_upgrade_req_yes&0
 
 upgrade_successful1										: label&id&fw_vc_required_no
 ap_row_checkbox           : checkbox&xpath&//span[@id='fw_vc_required_yes' and text() ='Upgrade firmware']/../../../../preceding-sibling::td[5]/input&0
+
+
+version_available 										: label&xpath&//span[text()='Available']
