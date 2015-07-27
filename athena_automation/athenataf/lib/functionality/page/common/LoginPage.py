@@ -50,7 +50,7 @@ class LoginPage(WebPage):
         elif access_level == 'default':
             self.username.set(self.config.global_vars.email)
         else :
-            self.username.set(self.config.global_vars.email_administrator)
+            self.username.set(self.config.config_vars.administrator_user)
         self.password.set(self.config.global_vars.password)
         self.submit.click()
         self._handle_manage_license()

@@ -36,22 +36,37 @@ class UserManagement(MaintenanceTest):
 
 
     def test_ath_1928_delete_existing_user(self):
+        conf = self.config.config_vars
         user_management_page=self.LeftPanel.go_to_user_management()
         user_management_page.delete_current_adminstrator_user()
-        user_management_page.delete_new_administrator_user_if_present()
-        user_management_page.create_adminstrator_user()
+        
+        # if user_management_page.assert_new_administrator_user():
+            # user_management_page.delete_if_any_user_present()
 
-        user_management_page.user_create_success_ok_button.click()
-        user_management_page.delete_new_administrator_user_if_present()
-
+        user_management_page.create_new_user(conf.administrator_user,conf.user_setting_group_value,conf.administrator_access_level)
+        if not user_management_page.assert_new_administrator_user():
+            raise AssertionError('Newly created user is not displayed in the list')
+            
+        if user_management_page.assert_new_administrator_user():
+            user_management_page.delete_if_any_user_present()
+            
     def test_ath_8207_edit_existing_user(self):
+        conf = self.config.config_vars
         user_management_page=self.LeftPanel.go_to_user_management()
-        user_management_page.delete_new_administrator_user_if_present()
-        user_management_page.create_adminstrator_user()
+        if user_management_page.assert_new_administrator_user():
+            user_management_page.delete_if_any_user_present()
+        user_management_page.create_new_user(conf.administrator_user,conf.user_setting_group_value,conf.administrator_access_level)
+        if not user_management_page.assert_new_administrator_user():
+            raise AssertionError('Newly created user is not displayed in the list')
+
         user_management_page.change_access_level_read_write()
+        if user_management_page.user_create_success_ok_button:
+            user_management_page.user_create_success_ok_button.click()
         user_management_page.change_access_level_read_only()
-        user_management_page.user_create_success_ok_button.click()
-        user_management_page.delete_new_administrator_user_if_present()
+        if user_management_page.user_create_success_ok_button:
+            user_management_page.user_create_success_ok_button.click()
+        if user_management_page.assert_new_administrator_user():
+            user_management_page.delete_if_any_user_present()
 
     def test_ath_8211_edit_a_read_only_user(self):
         conf = self.config.config_vars

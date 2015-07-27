@@ -67,7 +67,7 @@ class UserManagementPage(WebPage):
         self.buy_time()
 
     def delete_current_adminstrator_user(self):
-        if self.current_admin:
+        if self.browser._browser.find_element_by_xpath("//span[text()='%s']"%self.config.global_vars.email):
             if self.delete_user:
                 raise AssertionError("the current administrator user can be deletable i.e. Traceback: %s" %traceback.format_exc())
 
@@ -94,13 +94,11 @@ class UserManagementPage(WebPage):
             self.buy_time()
             logger.debug("UserManagement: Setting the access level ")
             self.access_level.set(self.config.config_vars.access_level_read_write)
+            self.user_scope.set(self.config.config_vars.default_user_scope)
+            self.browser.key_press(u'\ue004')           
             logger.debug("UserManagement: Clicking on 'Save' button")
             self.save_button.click()
-            if self.user_scope_error:
-                self.user_scope.set(self.config.config_vars.default_user_scope)
-            logger.debug("UserManagement: Clicking on 'Save' button")
-            self.save_button.click()
-
+            
     def change_access_level_read_only(self):
         if self.new_admin:
             self.buy_time()
@@ -108,10 +106,11 @@ class UserManagementPage(WebPage):
             self.new_admin.click()
             logger.debug("UserManagement: Clicking on edit")
             self.edit_new_user.click()
+            self.buy_time()
             logger.debug("UserManagement: Setting the access level ")
             self.access_level.set(self.config.config_vars.access_level_read_only)
-            if self.user_scope_error:
-                self.user_scope.set(self.config.config_vars.default_user_scope)
+            self.user_scope.set(self.config.config_vars.default_user_scope)
+            self.browser.key_press(u'\ue004')           
             logger.debug("UserManagement: Clicking on 'Save' button")
             self.save_button.click()
 
@@ -131,9 +130,12 @@ class UserManagementPage(WebPage):
         self.access_level.set(access_level)
         logger.debug("UserManagement: Clicking on 'Save' button")
         self.save_button.click()
-        if self.user_create_success_ok_button:
-            logger.debug("UserManagement: Clicking on 'OK' button")
-            self.user_create_success_ok_button.click()
+        try:
+            if self.user_create_success_ok_button:
+                logger.debug("UserManagement: Clicking on 'OK' button")
+                self.user_create_success_ok_button.click()
+        except:
+            pass
         self.browser.refresh()
         self.buy_time()
 
