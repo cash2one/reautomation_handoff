@@ -30,7 +30,7 @@ class ExternalRadiusServer(ConfigurationTest):
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear()
 		
 	def _delete_network_auth_server(self):
 		'''
@@ -112,7 +112,7 @@ class ExternalRadiusServer(ConfigurationTest):
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear()
 		
 	
 	def test_ath_616_both_wpa_and_wpa2_two_radius_servers(self):
@@ -155,7 +155,7 @@ class ExternalRadiusServer(ConfigurationTest):
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear()
 		
 	def test_ath_614_wpa_personal(self):
 		conf = self.config.config_vars
@@ -179,7 +179,7 @@ class ExternalRadiusServer(ConfigurationTest):
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear()
 
 	def test_ath_615_external_portal_radius_authenticatoin_with_https_internalauth_none(self):
 		conf = self.config.config_vars
@@ -210,7 +210,7 @@ class ExternalRadiusServer(ConfigurationTest):
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear()
 		
 		
 	def _delete_captive_role_if_present(self):

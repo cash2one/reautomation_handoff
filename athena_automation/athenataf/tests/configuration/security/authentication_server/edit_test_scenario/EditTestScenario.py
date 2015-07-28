@@ -35,7 +35,7 @@ class EditTestScenario(ConfigurationTest):
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear()
 		
 	def test_ath_13338_check_default_value_in_authentication_server(self):
 		conf = self.config.config_vars
@@ -68,7 +68,7 @@ class EditTestScenario(ConfigurationTest):
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear()
 		
 	def test_ath_13330_edit_coa_only_server(self):
 		conf = self.config.config_vars
@@ -94,7 +94,7 @@ class EditTestScenario(ConfigurationTest):
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear()
 		
 	def test_ath_12057_edit_the_created_radius_server(self):
 		conf = self.config.config_vars
@@ -137,5 +137,5 @@ class EditTestScenario(ConfigurationTest):
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear()
 		

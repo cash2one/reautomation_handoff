@@ -841,7 +841,7 @@ class EmployeeSecurityLevelPersonal(ConfigurationTest):
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear()
 		
 	def test_ath_11913_edit_personal_wpa_2_personal_employee_network_with_airtime_value_each_radio(self):
 		self._delete_external_radius_servers()
@@ -867,7 +867,7 @@ class EmployeeSecurityLevelPersonal(ConfigurationTest):
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear()
 	
 	def test_ath_11914_edit_personal_wpa_2_personal_employee_network_with_airtime_dmo_channel_utilization(self):
 		'''
@@ -899,7 +899,7 @@ class EmployeeSecurityLevelPersonal(ConfigurationTest):
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear()
 		
 	def test_ath_11915_edit_personal_wpa2_personal_employee_network_with_24ghz_max_24ghz_min_5ghz(self):
 		self._delete_external_radius_servers()
@@ -935,7 +935,7 @@ class EmployeeSecurityLevelPersonal(ConfigurationTest):
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear()
 		
 	def test_ath_11916_create_personal_wpa_personal_employee_network_with_background_wmm_share_virtual(self):
 		self._delete_external_radius_servers()
@@ -1022,7 +1022,7 @@ class EmployeeSecurityLevelPersonal(ConfigurationTest):
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear()
 		
 	def test_ath_11919_edit_personal_wpa_2_personal_employee_network_with_best_effort_wmm_share_default(self):
 		self._delete_external_radius_servers()

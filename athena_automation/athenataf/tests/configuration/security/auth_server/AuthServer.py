@@ -127,7 +127,7 @@ class AuthServer(ConfigurationTest):
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear()
 		
 	def test_ath_8852_verify_captive_portal_logo_upload_feature_enabled_on_iap_41(self):
 		self.LeftPanel.go_to_network_page()
@@ -146,7 +146,7 @@ class AuthServer(ConfigurationTest):
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear()
 		
 	def test_ath_8853_verify_captive_portal_logo_feature_on_iap_with_below_41_versions(self):
 		self.NetworkPage.delete_network_if_present()

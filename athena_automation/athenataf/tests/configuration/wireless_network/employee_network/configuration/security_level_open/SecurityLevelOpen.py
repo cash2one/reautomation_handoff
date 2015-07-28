@@ -437,7 +437,7 @@ class SecurityLevelOpen(ConfigurationTest):
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear()
 
 	def test_ath_11936_edit_open_employee_network_with_accounting_interval_uppercase_support_accounting(self):
  		self.take_s1_snapshot()
@@ -469,7 +469,7 @@ class SecurityLevelOpen(ConfigurationTest):
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear()
 
 	def test_ath_11937_edit_open_employee_network_with_disable_ssid_accounting_int(self):
 		conf = self.config.config_vars

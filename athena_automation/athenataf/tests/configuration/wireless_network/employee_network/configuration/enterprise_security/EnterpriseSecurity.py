@@ -3098,7 +3098,7 @@ class EnterpriseSecurity(ConfigurationTest):
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear()
 		
 	def test_ath_11896_edit_enterprise_dynamic_WEP_employee_network_with_disable_SSID_accounting_interv(self):
 		self.take_s1_snapshot()	
@@ -3304,7 +3304,7 @@ class EnterpriseSecurity(ConfigurationTest):
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear()
 		
 	def test_ath_11904_edit_enterprise_dynamic_WEP_employee_network_with_mac_authentication_mac_authe(self):
 		self.take_s1_snapshot()	
@@ -3360,7 +3360,7 @@ class EnterpriseSecurity(ConfigurationTest):
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear()
 		
 	def test_ath_11906_edit_enterprise_dynamic_WEP_employee_network_with_authentication_server2_accounting(self):
 		self._delete_network_auth_server()
@@ -3391,7 +3391,7 @@ class EnterpriseSecurity(ConfigurationTest):
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear()
 		
 	
 		

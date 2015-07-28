@@ -78,7 +78,7 @@ class InternalAuthenticated(ConfigurationTest):
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		# self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear()
 		
 	def test_ath_596_one_external_radius_servers_wpa_2_peronsal_with_mac_auth_enabled(self):
 		conf = self.config.config_vars
@@ -168,7 +168,7 @@ class InternalAuthenticated(ConfigurationTest):
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear()
 		
 	def test_ath_590_internal_server_encryption_none(self):
 		conf = self.config.config_vars
@@ -196,7 +196,7 @@ class InternalAuthenticated(ConfigurationTest):
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		# self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear()
 		
 	def test_ath_594_internal_server_static_wep(self):
 		conf = self.config.config_vars
@@ -235,4 +235,4 @@ class InternalAuthenticated(ConfigurationTest):
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear()

@@ -58,6 +58,7 @@ class ExternalCaptivePortal(ConfigurationTest):
 		self.clear()
 		
 	def test_ath_11039_field_validation_radius_authentication(self):
+		conf = self.config.config_vars
 		security_page = self.LeftPanel.go_to_security()
 		security_page.click_on_external_captive_accordion()
 		security_page.create_new_captive_portal_1(name=conf.Role_Name,type=conf.captive_role_type,ip=conf.dynm_blklst_default_time,url='',port=conf.invalid_radius_server_retry_count_0,auth_text=None,http1=False)

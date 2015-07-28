@@ -68,7 +68,7 @@ class ExternalIAPVersion4(ConfigurationTest):
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear()
 		
 		
 	def test_ath_7168_external_auth_type_profile_internal_user_auth_with_mac(self):
@@ -202,7 +202,7 @@ class ExternalIAPVersion4(ConfigurationTest):
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear()
 
 	def test_ath_7172_external_wipsr_enabled_auth_text_captive_portal_profile(self):
 		conf = self.config.config_vars
@@ -235,7 +235,7 @@ class ExternalIAPVersion4(ConfigurationTest):
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear()
 
 	def test_ath_7167_edit_external_splash_default_profile(self):
 		conf = self.config.config_vars
@@ -254,7 +254,7 @@ class ExternalIAPVersion4(ConfigurationTest):
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear()
 
 
 	def test_ath_7169_create_auth_text_portal_auth_text_captive_portal_profile(self):
@@ -291,7 +291,7 @@ class ExternalIAPVersion4(ConfigurationTest):
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear()
 	
 	def test_ath_6839_group_with_iap_version_3_4_and_below(self):
 		conf = self.config.config_vars
@@ -405,7 +405,7 @@ class ExternalIAPVersion4(ConfigurationTest):
 		self.take_s3_snapshot()
 		self.assert_s1_s2_diff(0)
 		self.assert_s1_s3_diff()
-		self.clear()
+		# self.clear()
 		
 	def test_ath_11034_check_for_security_eridien_display_2(self):
 		conf = self.config.config_vars
