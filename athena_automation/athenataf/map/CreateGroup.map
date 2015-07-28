@@ -3,7 +3,7 @@ group_name											: textbox&id&new_group_name
 next												: button&css&.button.large.blue.standard.ng-binding&1
 error_message										: button&id&group_name_required_error
 logo												: button&css_class&logo
-warning_box											: button&xpath&//div[text()='Group name exists']
+warning_box											: button&xpath&//div[text()='Group name already exists']
 OK													: submit&xpath&//div[@id='warnigBox_common_Alert']/div[2]/div/a
 cancel												: submit&xpath&//span[text()='Cancel' and @ng-bind="labels.action_cancel"]&0
 select_vc											: checkbox&xpath&//td[@id='createVCListTable_row_selector_0']/input
@@ -30,7 +30,7 @@ confirm_device_password								: textbox&id&cddc_password_confirm&1
 save1												: button&xpath&//*[@id='save_group_withcdc']
 select_all_switch									: checkbox&xpath&//input[@id="createSwitchListTable_toggle_select_all"]
 group_name_length_error								: button&id&group_name_length_error
-cancel_group_button									: button&id&hide_manage_overlay
+cancel_group_button									: button&id&hide_manage_overlay&1
 cddc_password_length_error							: button&id&cddc_password_length_error&1
 cddc_password_mismatch_error						: button&id&cddc_password_mismatch_error&1
 create_page_textbox									: textbox&id&createVCListTable_page_jump_input

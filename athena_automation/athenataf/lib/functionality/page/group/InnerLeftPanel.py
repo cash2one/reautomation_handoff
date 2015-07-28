@@ -18,13 +18,17 @@ class InnerLeftPanel(WebPage):
         else:
             return False 
             
-    def add_group(self):
-        logger.debug('InnerLeftPanel: Clicking on Add icon')
-        time.sleep(4)
-        self.add_button.click()
-        # if self.all_group1:
-            # pass
-        return CreateGroupPage(self.test, self.browser, self.config)
+	def add_group(self):
+		logger.debug('InnerLeftPanel: Clicking on Add icon')
+		time.sleep(4)
+		# self.add_button.click()
+		logger.debug("Clicking on 'Manage' icon")
+		self.manage.click()
+		logger.debug("Clicking on CreateGroupPage tab")
+		self.create_groups_button.click()
+		# if self.all_group1:
+			# pass
+		return CreateGroupPage(self.test, self.browser, self.config)
         
     def manage_group(self):
         logger.debug('InnerLeftPanel: Clicking on "Manage" icon')

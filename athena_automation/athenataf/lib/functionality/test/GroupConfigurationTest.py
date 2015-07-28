@@ -2,7 +2,7 @@ from athenataf.lib.functionality.test.AthenaGUITestCase import AthenaGUITestCase
 from athenataf.lib.functionality.page.configuration.network.NetworkPage import NetworkPage
 import time
 import logging
-logger = logging.getLogger('athenataf')    
+logger = logging.getLogger('athenataf')	   
 
 class GroupConfigurationTest(AthenaGUITestCase):
 

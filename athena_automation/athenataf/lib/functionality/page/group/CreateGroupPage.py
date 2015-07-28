@@ -109,7 +109,7 @@ class CreateGroupPage(WebPage):
             logger.debug('Create Group : Clicking ok button')
             self.OK.click()
             logger.debug('Create Group : Clicking cancel button')
-            self.cancel.click()
+            self.password_page_cancel.click()
             if self.error_message:
                 pass
         else:

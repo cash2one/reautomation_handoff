@@ -42,7 +42,7 @@ class NonDefaultValue(ConfigurationTest):
 		logger.debug("SystemPage : Click 'Save Settings' button")
 		system_page._save_settings()
 		system_page.click_reboot_ok_button()
-		time.sleep(60)
+		time.sleep(120)
 		system_page.assert_system_page_vc_field_values("IAP_1","sh ru | inc allow","allowed-vlan all")
 		system_page.assert_system_page_vc_field_values("IAP_1","sh ru | inc telnet","telnet-server")
 		system_page.assert_system_page_vc_field_values("IAP_1","sh ru | inc led","led-off")

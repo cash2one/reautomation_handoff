@@ -86,3 +86,4 @@ delete_button										: button&css&#group_sidebar_delete
 manage_button										: button&xpath&//label[text()='MANAGE']/../..
 
 special_char_group										: button&xpath&//span[text()='@#$ a$' and @class="ng-binding"]&0
+reboot_ok_button									: button&id&confirm-save-ok&0

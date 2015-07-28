@@ -99,3 +99,4 @@ mygroup_0_name_without_vc					: button&xpath&//span[@id='group_sidebar_groupname
 mygroup2_name_with_vc						: button&xpath&//span[@id='group_sidebar_groupname' and text()='Mygroup2']/following-sibling::span[text()='1']
 mygroup2_name_without_vc					: button&xpath&//span[@id='group_sidebar_groupname' and text()='Mygroup2']/following-sibling::span[text()='0']
 special_char_group_1						: button&xpath&//span[contains(.,'(0)')]/span[text()='@#$ a$']
+create_groups_button						: button&id&hide_manage_2
