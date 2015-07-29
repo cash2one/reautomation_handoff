@@ -416,6 +416,7 @@ class FirmWarePage(WebPage):
     def set_upgrade_after_ten_mins(self):
         conf = self.config.config_vars
         logger.debug("FirmwarePage : Schedule time  ")
+        from athenataf.lib.util.dateandtime import *
         t = get_current_hour_minute_second()
         hour = int(t[0])
         min = int(t[1])
