@@ -22,20 +22,20 @@ delete_new_user 						: button&xpath&//a[@id='deleteUser_1']
 default_user_scope   					: select&xpath&//span[@class='group-name-style ng-binding']
 edit_new_user							: button&xpath&//a[@id='editUser_1']
 close_delete_user_pop_up                : button&xpath&//span[@class='overlay-close-icon']&6
-delete_read_only_user                	: button&xpath&//span[contains(.,'admin1234567@alpha.com')]/../following-sibling::td[3]/a[2]
+delete_read_only_user                	: button&xpath&//span[contains(.,'admin123456@alpha.com')]/../following-sibling::td[3]/a[2]
 delete_read_write_user                	: button&xpath&//span[contains(.,'aruba123@alpha.com')]/../following-sibling::td[3]/a[2]
 confirm_save_button		                : button&xpath&//a[@id='confirm-save-ok']/span&0
 user_scope_text_box						: textbox&xpath&//input[contains(@id,"id_autogen")]
 
 read_write_user1 						: label&xpath&//span[contains(.,'aruba123@alpha.com')]/../../td[contains(.,'read/write')]
 read_write_user1_delete 				: label&xpath&//span[text()='USERNAME']/../span[contains(.,'aruba123@alpha.com')]/../../td[4]/a[2]
-read_only_user1_delete					: label&xpath&//span[text()='USERNAME']/../span[contains(.,'admin1234567@alpha.com')]/../../td[4]/a[2]
+read_only_user1_delete					: label&xpath&//span[text()='USERNAME']/../span[contains(.,'admin123456@alpha.com')]/../../td[4]/a[2]
 user_scope_second						: textbox&id&s2id_group_List
 default_group1							: label&xpath&//td[@title="group1"]
-read_write_user2 						: label&xpath&//span[contains(.,'admin1234567@alpha.com')]/../../td[contains(.,'read/write')]
-read_only_user_edit						: label&xpath&//span[text()='USERNAME']/../span[contains(.,'admin1234567@alpha.com')]/../../td[4]/a[1]
+read_write_user2 						: label&xpath&//span[contains(.,'admin123456@alpha.com')]/../../td[contains(.,'read/write')]
+read_only_user_edit						: label&xpath&//span[text()='USERNAME']/../span[contains(.,'admin123456@alpha.com')]/../../td[4]/a[1]
 read_write_user_edit					: label&xpath&//span[text()='USERNAME']/../span[contains(.,'aruba123@alpha.com')]/../../td[4]/a[1]
-read_only_admistrator					: label&xpath&//span[contains(.,'admin1234567@alpha.com')]/../../td[contains(.,'administrator')]
+read_only_admistrator					: label&xpath&//span[contains(.,'admin123456@alpha.com')]/../../td[contains(.,'administrator')]
 read_write_admistrator 					: label&xpath&//span[contains(.,'aruba123@alpha.com')]/../../td[contains(.,'administrator')]
 read_only_user1							: label&xpath&//span[contains(.,'aruba123@alpha.com')]/../../td[contains(.,'read only')]
 support_access_on						: button&text&Support Access ON
@@ -49,7 +49,7 @@ user_create_dialog_box_close_icon		: button&id&maintenance_newuser_close_icon
 
 
 
-only_read		 : label&xpath&//span[text()='USERNAME']/../span[contains(.,'admin1234567@alpha.com')]/../../td[contains(.,'read only')]
+only_read		 : label&xpath&//span[text()='USERNAME']/../span[contains(.,'admin123456@alpha.com')]/../../td[contains(.,'read only')]
 user_mgmt_label							: label&xpath&//label[@id='maintenance_usrMgmnt_user_header']
 scope_close								: button&xpath&//div[@id='s2id_group_List']/ul/li[1]/a
 administrator_delete					: button&xpath&//td[@title ='admin1@alpha.com']/../td[@title = 'administrator']/../td[4]/a[2]
