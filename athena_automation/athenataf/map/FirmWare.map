@@ -15,13 +15,13 @@ firmware_version_label 									: label&text&RECOMMENDED FIRMWARE VERSION
 no_data_msg 									        : label&id&firmwareUpgradeVcTable__no_data_msg
 vc_name													: label&text&VC NAME&1
 aps													    : label&text&APs&1
-location_label	     								    : label&xpath&//table[@id='firmwareUpgradeVCTable']/thead/tr/th[4]
+location_label	     								    : label&xpath&//table[@id='firmwareUpgradeVCTable']/thead/tr/th[4]&0
 firmware_version	     							    : label&text&FIRMWARE VERSION&1
 status_label											: label&text&STATUS&1
 no_vc_error_message										: label&id&ConfirmContent_common
 warning_ok_button										: button&xpath&//div[@id='warnigBox_common_Alert']/div[2]/div/a
 cbuild_image											: label&css&.message-notify.with-icon.response-available
-post_upgrade											: button&css&#post_firmware_upgrade
+post_upgrade											: button&css&#post_firmware_upgrade&1
 select_device          									: checkbox&xpath&//td[@id='firmwareUpgradeVcTable_row_selector_0']/input
 manual_upgrade           								: radio&id&manual-upgrade
 version_type           									: select&id&LVersion
