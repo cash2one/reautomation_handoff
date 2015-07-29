@@ -626,23 +626,23 @@ class ManageGroupsPage(WebPage):
 		if not self.Mygroup2 :
 			self.logo.click()
 			
-	def move_virtual_controller5(self):
-		logger.debug("ManageGroupPage: Clicking on 'default' group ")
-		self.default_group.click()
-		if self.select_all.is_selected():
-			self.select_all.click()
-		logger.debug("ManageGroupPage: Clicking on vc checkbox ")
-		self.virtual_controller.click()
-		logger.debug("ManageGroupPage: Clicking on 'Move' button ")
-		self.move.click()
-		self.buy_time()
-		self.reboot_ok_button.click()
-		logger.debug("ManageGroupPage: Clicking on 'samplegroup' group ")
-		self.sample_group.click()
-		logger.debug("ManageGroupPage: Clicking on 'Save' button ")
-		self.save.click()
-		if not self.virtual_controller:
-			self.logo.click()
+	# def move_virtual_controller5(self):
+		# logger.debug("ManageGroupPage: Clicking on 'default' group ")
+		# self.default_group.click()
+		# if self.select_all.is_selected():
+			# self.select_all.click()
+		# logger.debug("ManageGroupPage: Clicking on vc checkbox ")
+		# self.virtual_controller.click()
+		# logger.debug("ManageGroupPage: Clicking on 'Move' button ")
+		# self.move.click()
+		# self.buy_time()
+		# self.reboot_ok_button.click()
+		# logger.debug("ManageGroupPage: Clicking on 'samplegroup' group ")
+		# self.sample_group.click()
+		# logger.debug("ManageGroupPage: Clicking on 'Save' button ")
+		# self.save.click()
+		# if not self.virtual_controller:
+			# self.logo.click()
 			
 	def move_virtual_controller_group1(self):
 		logger.debug("ManageGroupPage: Clicking on 'Mygroup' group ")
@@ -655,8 +655,6 @@ class ManageGroupsPage(WebPage):
 			self.virtual_controller.click()
 			logger.debug("ManageGroupPage: Clicking on 'Move' button ")
 			self.move.click()
-			self.buy_time()
-			self.reboot_ok_button.click()
 			self.buy_time()
 			self.reboot_ok_button.click()
 			self.buy_time()
@@ -1032,4 +1030,22 @@ class ManageGroupsPage(WebPage):
 				self.logo.click()
 			time.sleep(6)
 			
+	def click_on_create_group_tab(self):
+		'''
+		clicks on create group tab
+		'''
+		logger.debug('ManageGroupPage : Clickiing create group tab')
+		if self.create_groups_button :
+			self.create_groups_button.click()
+			return CreateGroupPage(self.test, self.browser, self.config)
 			
+	def move_switches_to_switch_group(self,from_grop,vc):
+		'''
+		Manage Group Page : moving switches to switch group
+		'''
+		self.select_group(from_grop)
+		self.selects_and_delects_iap_Switch(True,vc)
+		self.click_move_button()
+		self.move_to_switch_group.click()
+		self.save_move_vc()
+		time.sleep(5)

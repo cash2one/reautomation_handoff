@@ -107,7 +107,7 @@ class NonDefaultValueCheck(GroupConfigurationTest):
 				inner_left_panel = self.TopPanel.click_slider_icon()
 				manage_group_page = inner_left_panel.manage_group()
 				manage_group_page.delete_empty_mygroup()
-		if  inner_left_panel.assert_mynew_group():
+		if	inner_left_panel.assert_mynew_group():
 			manage_group_page = inner_left_panel.manage_group()
 			manage_group_page.delete_empty_mynew_group()
 		create_group_page = inner_left_panel.add_group()
@@ -144,7 +144,7 @@ class NonDefaultValueCheck(GroupConfigurationTest):
 				inner_left_panel = self.TopPanel.click_slider_icon()
 				manage_group_page = inner_left_panel.manage_group()
 				manage_group_page.delete_empty_mygroup()
-		if  inner_left_panel.assert_mynew_group():
+		if	inner_left_panel.assert_mynew_group():
 			manage_group_page = inner_left_panel.manage_group()
 			manage_group_page.delete_empty_mynew_group()
 			manage_group_page.click_manage_group_close_button()
@@ -171,7 +171,7 @@ class NonDefaultValueCheck(GroupConfigurationTest):
 		inner_left_panel = self.TopPanel.click_slider_icon()
 		inner_left_panel.delete_multiple_groups()
 		inner_left_panel = self.TopPanel.click_slider_icon()
-		if  inner_left_panel.assert_mygroup_without_vc_present():
+		if	inner_left_panel.assert_mygroup_without_vc_present():
 			inner_left_panel.select_default_group()
 			inner_left_panel = self.TopPanel.click_slider_icon()
 			manage_group_page = inner_left_panel.manage_group()
@@ -279,7 +279,7 @@ class NonDefaultValueCheck(GroupConfigurationTest):
 		network_page = self.LeftPanel.go_to_network_page()
 		basic_info = network_page.create_new_network()
 		vlan = basic_info.voice_network_info()
-		security  = vlan.use_vlan_defaults()        
+		security  = vlan.use_vlan_defaults()		
 		security.enable_mac_authentication()
 		access_page = security.click_on_next()
 		access_page.finish_network_setup()		
@@ -296,6 +296,7 @@ class NonDefaultValueCheck(GroupConfigurationTest):
 		DeviceLibrary.factoryReset("IAP_1")
 		time.sleep(100)
 		DeviceLibrary.reconnect("IAP_1")
+		time.sleep(300)
 		inner_left_panel = self.TopPanel.click_slider_icon()
 		inner_left_panel.select_default_group()
 		mac = devices.IAP_1.mac_address

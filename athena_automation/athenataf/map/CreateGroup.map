@@ -27,7 +27,7 @@ alpha_group_i										: button&xpath&//span[@id='group_name_9']/span[text()='ij
 alpha_group_j										: button&xpath&//span[@id='group_name_10']/span[text()='jk']
 device_password										: textbox&id&cddc_password&1
 confirm_device_password								: textbox&id&cddc_password_confirm&1
-save1												: button&xpath&//*[@id='save_group_withcdc']
+save1												: button&xpath&//button[@class = 'button large blue standard ng-binding']&2
 select_all_switch									: checkbox&xpath&//input[@id="createSwitchListTable_toggle_select_all"]
 group_name_length_error								: button&id&group_name_length_error
 cancel_group_button									: button&id&hide_manage_overlay&1
