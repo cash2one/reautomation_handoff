@@ -93,7 +93,7 @@ class ScheduledUpgrade(AthenaGUITestCase):
         firmware_page.upgrade_button.click()
         firmware_page.select_later_date_radio()
         firmware_page.set_upgrade_after_ten_mins()
-        firmware_page.click_post_firmware_upgrade()
+        firmware_page.post_upgrade.click()
         firmware_page.cancel_upgrade.click()
         self.browser.refresh()
         firmware_page.assert_cancel_upgrade_button()
