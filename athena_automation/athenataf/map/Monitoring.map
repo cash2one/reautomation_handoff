@@ -311,3 +311,4 @@ access_mode											: label&xpath&//span[@id ='mode' and @title='access']
 spectrum_mode										: label&xpath&//span[@id ='mode' and @title='spectrum']
 wireless_role_0          							: label&xpath&//span[@id='wirelessInterfaceTable_role_display_0']/..
 wireless_role_1          							: label&xpath&//span[@id='wirelessInterfaceTable_role_display_1']/..
+mac_address											: label&xpath&//span[@id='apsTable_name_display_0']
