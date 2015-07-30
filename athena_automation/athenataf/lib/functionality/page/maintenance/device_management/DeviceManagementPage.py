@@ -140,7 +140,7 @@ class DeviceManagementPage(WebPage):
         if not self.divice_vc.get_attribute_value('text') == serial_num :
             raise AssertionError('serial number is not displayed')
         logger.debug("DeviceManagement Page: Checking Device Mac Address ")
-        if not self.mac_display.get_attribute_value('text') == mac_ad :
+        if not self.mac_display.get_attribute_value('text') == mac_ad.upper() :
             raise AssertionError('Mac Address is not displayed')
         logger.debug("DeviceManagement Page: Checking Device Type ")
         if not self.type_display.get_attribute_value('text') == type :

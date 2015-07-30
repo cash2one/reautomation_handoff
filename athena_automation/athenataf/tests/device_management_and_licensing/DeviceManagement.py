@@ -100,6 +100,7 @@ class DeviceManagement(DeviceManagementTest):
         # create_group_page.create_group1()
         # inner_left_panel.click_on_close_icon()
         user_mgmt = self.LeftPanel.go_to_user_management()
+        user_mgmt.delete_any_user()
         if not user_mgmt.assert_read_write_user():
             user_mgmt.create_new_user(conf.email_read_only,conf.user_setting_group_value,conf.user_access_level_read_only)
         device_management_page = self.LeftPanel.go_to_device_management()
@@ -333,6 +334,7 @@ class DeviceManagement(DeviceManagementTest):
     def test_ath_10806_reassign_group_as_read_only_user_device_list_from_activate_license_and_group_assigned(self):
         conf = self.config.config_vars
         user_mgmt = self.LeftPanel.go_to_user_management()
+        user_mgmt.delete_any_user()     
         if not user_mgmt.assert_read_only_user():
             user_mgmt.create_new_user(conf.email_read_only, conf.user_setting_group_value, conf.access_level_read_only)
         self.logout()
@@ -722,16 +724,16 @@ class DeviceManagement(DeviceManagementTest):
         monitoring_page.navigate_to_all_ap()
         monitoring_page.asserts_aps_are_up()
         
-    def test_ath_4420_unassign_license(self):
-        conf=self.config.config_vars
-        self.TopPanel.go_to_allgroups()
-        device_mngmt_page = self.LeftPanel.go_to_device_management()
-        device_mngmt_page.get_and_search_mac_address()
-        if device_mngmt_page.unassigned_licence_text:
-            device_mngmt_page.change_device1_to_assigned()
-            device_mngmt_page.change_device1_to_unassigned()
-            device_mngmt_page.assert_device_unassigned()
-        elif not device_mngmt_page.unassigned_licence_text:
-            device_mngmt_page.change_device1_to_unassigned()
-            device_mngmt_page.assert_device_unassigned()
-            device_mngmt_page.change_device1_to_assigned()
+    # def test_ath_4420_unassign_license(self):
+        # conf=self.config.config_vars
+        # self.TopPanel.go_to_allgroups()
+        # device_mngmt_page = self.LeftPanel.go_to_device_management()
+        # device_mngmt_page.get_and_search_mac_address()
+        # if device_mngmt_page.unassigned_licence_text:
+            # device_mngmt_page.change_device1_to_assigned()
+            # device_mngmt_page.change_device1_to_unassigned()
+            # device_mngmt_page.assert_device_unassigned()
+        # elif not device_mngmt_page.unassigned_licence_text:
+            # device_mngmt_page.change_device1_to_unassigned()
+            # device_mngmt_page.assert_device_unassigned()
+            # device_mngmt_page.change_device1_to_assigned()
