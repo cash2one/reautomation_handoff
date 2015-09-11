@@ -11,7 +11,7 @@ logger = logging.getLogger('athenataf')
 import os
 
 class DeviceVerifier:
-    def __init__(self, config, test, device=os.environ['device']):
+    def __init__(self, config, test, device=os.environ['device'])
         self.config = config
         try:
             self.get_config = Device.Device.getDeviceObject(os.environ['device'])
