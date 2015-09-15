@@ -207,22 +207,22 @@ class TestRunner:
         
     def setUp(self):
         self.reporter.setUp()
-        if not self.config.options.ignore_device:
-            retries = 0
-            print(self.aObjectRef.values())
-            for dev in self.aObjectRef.values():
-                dev.connect()
-            while retries < 5:
-                dev = self.aObjectRef[os.environ['device']]
-                if dev.get_device_status(strict=True):
-                    break
-                retries = retries + 1
-            if retries == 5:
-                logger.info("*** DEVICE IS NOT UP. ABORTING TEST EXECUTION. ***")
-                for dev in self.aObjectRef.values():
-                    dev.disconnect()
-                import sys
-                sys.exit(1)
+        # if not self.config.options.ignore_device:
+            # retries = 0
+            # print(self.aObjectRef.values())
+            # for dev in self.aObjectRef.values():
+                # dev.connect()
+            # while retries < 5:
+                # dev = self.aObjectRef[os.environ['device']]
+                # if dev.get_device_status(strict=True):
+                    # break
+                # retries = retries + 1
+            # if retries == 5:
+                # logger.info("*** DEVICE IS NOT UP. ABORTING TEST EXECUTION. ***")
+                # for dev in self.aObjectRef.values():
+                    # dev.disconnect()
+                # import sys
+                # sys.exit(1)
 
         
     def _get_test_result_map(self, test_info):
