@@ -32,35 +32,35 @@ class IAP_1:
 
 
 
-class Client_1:
-	ip = "10.29.27.21"
-	eth_ip = "10.29.254.20"
-	username = "athenatest"
-	password = "Test1234"
-	type = "CLIENT"
-	os = "Win8"
-	protocol = "ssh"
-	mac = "c4:d9:87:00:f5:32"
-	location = "Chennai"
+# class Client_1:
+	# ip = "10.29.27.21"
+	# eth_ip = "10.29.254.20"
+	# username = "athenatest"
+	# password = "Test1234"
+	# type = "CLIENT"
+	# os = "Win8"
+	# protocol = "ssh"
+	# mac = "c4:d9:87:00:f5:32"
+	# location = "Chennai"
 
 
-class Switch_1:
-	consoleIp = "10.15.148.253"
-	consoleUsername = "admin"
-	consolePassword = "aruba123"
-	ip = "10.15.148.38"
-	username = "admin"
-	password = "admin123"
-	enable = "enable"
-	type = "SWITCH"
-	version = 4.0
-	server = "54.179.64.28"
-	protocol = "telnet"
-	port = "7004"
-	prompt = ") #"
-	switch_name = "ArubaS2500"
-	location = "Bangalore, Karnataka, India"
-	mac = '00:0b:86:a4:3a:80'
-	serial = "BY0007437"
-	activation_id = 'WHB7HTO3'
+# class Switch_1:
+	# consoleIp = "10.15.148.253"
+	# consoleUsername = "admin"
+	# consolePassword = "aruba123"
+	# ip = "10.15.148.38"
+	# username = "admin"
+	# password = "admin123"
+	# enable = "enable"
+	# type = "SWITCH"
+	# version = 4.0
+	# server = "54.179.64.28"
+	# protocol = "telnet"
+	# port = "7004"
+	# prompt = ") #"
+	# switch_name = "ArubaS2500"
+	# location = "Bangalore, Karnataka, India"
+	# mac = '00:0b:86:a4:3a:80'
+	# serial = "BY0007437"
+	# activation_id = 'WHB7HTO3'
 
