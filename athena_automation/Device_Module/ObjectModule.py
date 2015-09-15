@@ -68,7 +68,7 @@ class Device(object):
         else:
             cls.lock.release()
             print('getDeviceObject - lock released by string %s' %(devObjString))
-            raise noDeviceObjAvailable('no device object created with string %s' %devObjString)
+            # raise noDeviceObjAvailable('no device object created with string %s' %devObjString)
             
     @classmethod
     def createDeviceObject(cls, classNameString, devObjString):
