@@ -13,7 +13,7 @@ class IAP_1:
 	username = "admin"
 	password = "test123"
 	type = "IAP"
-	version = '4.1.1.2'
+	version = '4.0.0.0'
 	server = "jenkins-DeployDemo-SNG-411.test.SNG1.arubathena.com"
 	protocol = "ssh"
 	port = "7011"
