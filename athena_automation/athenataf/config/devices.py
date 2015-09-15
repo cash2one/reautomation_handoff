@@ -16,7 +16,7 @@ class IAP_1:
 	version = '4.0.0.0'
 	server = "jenkins-DeployDemo-SNG-411.test.SNG1.arubathena.com"
 	protocol = "ssh"
-	port = "7011"
+	port = "7012"
 	ap_type = "AP-225"
 	mac = "24:de:c6:cb:76:cc"
 	mac_address = "24:de:c6:cb:1f:70"
