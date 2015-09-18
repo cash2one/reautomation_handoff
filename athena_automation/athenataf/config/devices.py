@@ -11,7 +11,7 @@ class IAP_1:
 	consolePassword = "Aruba@123"
 	ip = "10.15.141.54"
 	username = "admin"
-	password = "123test"
+	password = "test123"
 	type = "IAP"
 	version = '4.0.0.0'
 	server = "jenkins-DeployDemo-SNG-411.test.SNG1.arubathena.com"
